@@ -1,0 +1,28 @@
+<% content_for(:sidemenu) do %>
+  <%= render('projects/panel', active: :index_inspections, project: @project) %>
+<% end %>
+<h1 class="title is-1"><%= Project.model_name.human %></h1>
+<h2 class="subtitle is-3"><%= @project %></h2>
+<h2 class="subtitle is-4"><%= t('.title') %></h2>
+
+<table class="table is-striped">
+  <thead>
+    <tr>
+      <td> <%= Inspection.human_attribute_name(:on) %></td>
+      <td> <%= t('global.edit') %> </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @inspections.each do |i| %>
+      <tr>
+        <td>
+          <%= link_to(l(i.at_date), project_inspection_path(@project, i)) %>
+        </td>
+        <td>
+          <%= link_to(icon('fas', 'wrench'),
+                      edit_project_inspection_path(@project, i)) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

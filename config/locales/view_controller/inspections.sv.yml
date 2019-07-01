@@ -1,0 +1,25 @@
+sv:
+  inspections:
+    index:
+      title: Besiktningar
+
+    new:
+      title: Ny besiktning
+
+    edit:
+      title: Redigera besiktning
+
+    panel:
+      new: Ny besiktning
+
+    create:
+      success: Besiktning skapades
+
+    update:
+      success: Besiktningen uppdaterades
+
+    destroy:
+      success: Besiktningen raderades
+
+    upcoming:
+      title: Kommande besiktningar

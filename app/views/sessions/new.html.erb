@@ -1,0 +1,12 @@
+<!--
+<% content_for(:sidemenu) do %>
+  <%= render('presentation/panel') %>
+<% end %>
+-->
+  <div class="cointainer has-text-centered">
+    <div class="column is-4 is-3-fullhd is-offset-4">
+      <h3 class="title has-text-grey"><%= t('.title') %></h3>
+      <p class="subtitle has-text-grey"><%= t('.subtitle') %></p>    
+      <%= render('/sessions/form') %>
+    </div>   
+  </div> 

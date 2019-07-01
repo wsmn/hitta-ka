@@ -1,0 +1,6 @@
+sv:
+  global:
+    delete: Radera
+    edit: Redigera
+    save: Spara
+    search: Sök

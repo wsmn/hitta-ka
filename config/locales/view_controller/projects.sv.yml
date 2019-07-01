@@ -1,0 +1,51 @@
+sv:
+  projects:
+    create:
+      success: Projektet skapades
+
+    index:
+      title: Projekt
+
+    show:
+      title: "Projekt | %{project}"
+
+    new:
+      title: Nytt projekt
+    
+    form:
+      customer: Kund
+      new_customer: Ny kund
+      project_name: Projektnamn
+      ID: Projekt-ID
+      status: Status
+      category: Kategori
+      type: Typ
+      description: Beskrivning
+      cancel: Avbryt
+
+    project_panel:
+      all_inspections: Alla besiktningar
+      new_inspection: Ny besiktning
+      show_project: Visa projektet
+      edit_project: Redigera projekt
+      new_image: Ladda upp bild
+      all_images: Alla bilder
+
+    panel:
+      all_projects: Alla projekt
+      new: Nytt projekt
+
+    destroy:
+      success: Projektet raderades!
+
+    edit:
+      title: Redigera projekt
+
+    update:
+      success: Projektet uppdaterades
+
+    filter:
+      unfiltered: Ofiltrerat
+
+    images:
+      title: Bilder

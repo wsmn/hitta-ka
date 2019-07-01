@@ -1,0 +1,22 @@
+<% active ||= :none %>
+<% project ||= nil %>
+
+<p class="menu-label">
+  <%= Project.model_name.human(count: 2) %>
+</p>
+<ul class="menu-list">
+  <%= active_menu(projects_path, active, :index) do %>
+    <%= icon('fas', 'list') %>
+    <%= t('.all_projects') %>
+  <% end %>
+
+  <%= active_menu(new_project_path, active, :new) do %>
+    <%= icon('fas', 'plus-square') %>
+    <%= t('.new') %>
+  <% end %>
+</ul>
+
+<% if project.present? %>
+  <br />
+  <%= render('/projects/project_panel', project: project, active: active) %>
+<% end %>

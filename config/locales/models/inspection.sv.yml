@@ -1,0 +1,23 @@
+sv:
+  model:
+    inspection:
+      kinds:
+        other: Övrig
+  activerecord:
+    models:
+      inspection:
+        one: Besiktning
+        other: Besiktningar
+
+    attributes:
+      inspection:
+        customer: Kund
+        customer_id: Kund
+        at_date: Datum
+
+    errors:
+      models:
+        inspection:
+          attributes:
+            customer_id:
+              blank: En kund måste väljas.

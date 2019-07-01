@@ -1,0 +1,34 @@
+<aside class="column menu is-2 aside is-fullheight is-hidden-touch bg-gray-900">
+  <ul class="menu-list">
+    <li>
+      <%= link_to(account_path,
+                  class: aside_item_class(['home'])) do %>
+        <%= icon('fas', 'home') %>
+        <%= t('.home') %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to(projects_path,
+                  class: aside_item_class(['projects', 'inspections', 'images'])) do %>
+        <%= icon('fas', 'tasks') %>
+        <%= Project.model_name.human(count: 2) %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to(customers_path,
+                  class: aside_item_class(['customers'])) do %>
+        <%= icon('fas', 'users') %>
+        <%= Customer.model_name.human(count: 2) %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to(time_entries_path,
+                  class: aside_item_class(['time_entries'])) do %>
+        <%= icon('fas', 'clock') %>
+        <%= TimeEntry.model_name.human(count: 2) %>
+      <% end %>
+    </li>
+  </ul>
+  <%= yield(:sidemenu) %>
+
+</aside>

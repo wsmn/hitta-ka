@@ -1,0 +1,67 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/inspections
+    docker:
+      - image: circleci/ruby:2.6.3-node
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_PATH: vendor/bundle
+          BUNDLE_RETRY: 3
+          PGHOST: 127.0.0.1
+          PGUSER: inspector
+          RAILS_ENV: test
+      - image: circleci/postgres:9.6.3-alpine
+        environment:
+          POSTGRES_USER: inspector
+          POSTGRES_DB: inspections_test
+          POSTGRES_PASSWORD: ""
+    steps:
+      - checkout
+
+      - run:
+          name: Which bundler?
+          command: bundle -v
+
+      - restore_cache:
+          keys:
+            - gem-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - gem-cache-{{ .Branch }}
+            - gem-cache
+
+      - run:
+          name: Bundle install
+          command: bundle check || bundle install
+
+      - save_cache:
+          name: Save ruby cache
+          key: gem-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-cache-{{ .Branch }}
+            - yarn-cache
+
+      - run: yarn install
+
+      - save_cache:
+          key: yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - run:
+          name: Database setup
+          command: bin/rails db:schema:load --trace
+
+      - run:
+          name: Run rspec
+          command: |
+            bundle exec rspec --profile 10 \
+                              --format progress

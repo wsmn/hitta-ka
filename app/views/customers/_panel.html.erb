@@ -1,0 +1,25 @@
+<% active ||= :none %>
+<% customer ||= nil %>
+<p class="menu-label">
+  <%= Customer.model_name.human(count: 2) %>
+</p>
+<ul class="menu-list">
+  <%= active_menu(customers_path, active, :index) do %>
+    <%= icon('fas', 'list') %>
+    <%= t('.all_customers') %>
+  <% end %>
+  <%= active_menu(new_customer_path, active, :new) do %>
+    <%= icon('fas', 'plus') %>
+    <%= t('.new_customer') %>
+  <% end %>
+  <% if customer.present? %>
+    <%= active_menu(customer_path(customer), active, :show) do %>
+      <%= icon('fas', 'address-card-o') %>
+      <%= t('.show_customer') %>
+    <% end %>
+    <%= active_menu(edit_customer_path(customer), active, :edit) do %>
+      <%= icon('fas', 'wrench') %>
+      <%= t('.edit_customer') %>
+    <% end %>
+  <% end %>
+</ul>
