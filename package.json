@@ -1,16 +1,16 @@
 {
-  "name": "inspection",
+  "name": "hitta-ka",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^4.0.2",
+    "@rails/webpacker": "^4.0.7",
+    "autoprefixer": "^9.6.0",
     "bulma": "^0.5.1",
+    "core-js": "^3",
+    "mapbox-gl": "^1.1.0",
     "pikaday": "^1.6.0",
-    "tailwindcss": "^1.0.0-beta.8"
+    "tailwindcss": "^1.0.4"
   },
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
-    "webpack": "^4.x.x",
-    "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-dev-server": "^3.7.2"
   }
 }

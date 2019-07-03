@@ -35,6 +35,6 @@ class PresentationController < ApplicationController
       completed: 5,
       total: 4,
     }
-    render(layout: 'application')
+    render(layout: "application")
   end
 end

@@ -1,5 +1,3 @@
-
-
 const menuToggle = {
   addListener(event) {
     event.preventDefault();
