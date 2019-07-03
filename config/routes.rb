@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get('404', controller: :errors, action: :not_found)
-  get('422', controller: :errors, action: :unacceptable)
-  get('500', controller: :errors, action: :internal_error)
+  get("404", controller: :errors, action: :not_found)
+  get("422", controller: :errors, action: :unacceptable)
+  get("500", controller: :errors, action: :internal_error)
   resources(:passwords, controller: "clearance/passwords", only: %i[create new])
   resource(:session, controller: :sessions, only: %i[create])
 
