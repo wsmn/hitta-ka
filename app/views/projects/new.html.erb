@@ -1,8 +1,0 @@
-<% content_for(:sidemenu) do %>
-  <%= render('panel', active: :new) %>
-<% end %>
-
-<div class="w-full -mt-8">
-	<h1 class="text-3xl font-medium text-blue-900"><%= t('.title') %>  <i class="ml-2 far fa-sm fa-folder-open"></i></h1>
-	<%= render('form', project: @project) %>  
-</div>
