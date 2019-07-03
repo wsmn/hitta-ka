@@ -1,0 +1,9 @@
+sv:
+  errors:
+    not_found:
+      title: Hittade ingen sida!
+      description: Den kanske håller på att byggas fortfarande?
+    unacceptable:
+      title: Så där får ni inte göra!
+    internal_error:
+      title: Någonting blev fel, attans!

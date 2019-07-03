@@ -2,40 +2,35 @@
 
 # Controller for landing page
 class PresentationController < ApplicationController
+  before_action(:require_login, only: :account)
+  layout('landing')
   def index
-    render(layout: 'landing')
   end
 
-  def about 
-    render(layout: 'landing')
+  def about
   end
 
-  def contact 
-    render(layout: 'landing')
+  def contact
   end
 
-  def kontrollansvarig 
-    render(layout: 'landing')
+  def kontrollansvarig
   end
 
-  def map 
-    render(layout: 'landing')
+  def map
   end
 
-  def connect 
-    render(layout: 'landing')
+  def connect
   end
 
-  def support 
-    render(layout: 'landing')
+  def support
   end
 
-  def home2 
-    render(layout: 'landing')
-  end  
+  def home2
+  end
 
   def account
-    @customers=Customer.all    
+    layout('application')
+    @customers=Customer.all
     @counts = {
       active: Project.active.count,
       completed: Project.completed.count,
