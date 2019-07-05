@@ -18,9 +18,18 @@ sv:
 
     about:
       about: Om oss
+      about us: Om oss
 
     contact:
       contact: Kontakt
+      how_can_we_help_you?: Vad kan vi hjälpa dig med?
+      choose_an_appropriate_category_below_and_we_will_contact_you_as_soon_as_possible: Välj en lämplig kategori nedan så kontaktar vi dig så snabbt som vi kan.
+      website_issues: Fel på sidan
+      have_you_found_any_errors_on_the_website_or_in_the_documentation: Har du hittat ett fel på hemsidan eller i dokumentation?
+      general_support: Allmän support
+      is_there_something_that_you_need_help_with_contact_us: Är det något som du behöver hjälp med? Hör av dig!
+      improvements: Förbättringar
+      do_you_have_any_suggestions_how_we_can_improve: Har du förslag på något vi kan göra bättre? Hör av dig!
 
     support_error:
       error: FEL PÅ HEMSIDAN
