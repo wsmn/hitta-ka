@@ -3,7 +3,7 @@
 # Controller for landing page
 class PresentationController < ApplicationController
   before_action(:require_login, only: :account)
-  layout('landing')
+  layout("landing")
   def index
   end
 
@@ -29,13 +29,12 @@ class PresentationController < ApplicationController
   end
 
   def account
-    layout('application')
-    @customers=Customer.all
+    layout("application")
+    @customers = Customer.all
     @counts = {
       active: Project.active.count,
       completed: Project.completed.count,
       total: Project.all.count,
     }
   end
-
 end

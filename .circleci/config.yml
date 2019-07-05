@@ -14,7 +14,7 @@ jobs:
       - image: circleci/postgres:9.6.3-alpine
         environment:
           POSTGRES_USER: inspector
-          POSTGRES_DB: inspections_test
+          POSTGRES_DB: hitta_ka_test
           POSTGRES_PASSWORD: ""
     steps:
       - checkout
