@@ -22,6 +22,30 @@ sv:
     contact:
       contact: Kontakt
 
+    support_error:
+      error: FEL PÅ HEMSIDAN
+      name: Namn
+      email: E-mail
+      on what page did you come across the error?: På vilken sida såg du felet?
+      what web browser are you using?: Vilken webbläsare använder du?
+      describe the problem: Beskriv problemet
+      send: Skicka in
+
+    support_general:
+      please describe what you need help with: Beskriv vad du behöver hjälp med
+      support: SUPPORT
+      name: Namn
+      email: E-mail
+
+    support_improvement:
+      how can we improve?: Vad tycker du att vi kan göra bättre?
+      improvement: FÖRBÄTTRINGSFÖRSLAG
+      name: Namn
+      email: E-mail
+      what_page: Vilken sida gäller det?
+      describe_what_we_can_improve : Beskriv vad vi kan förbättra
+      send: Skicka in
+
     connect:
       connect: Kontakt
       company_name: Företagsnamn

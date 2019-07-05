@@ -13,7 +13,7 @@
         <div class="flex flex-wrap -mx-8 bg-gray-200">
           <div class="w-5/6 md:w-1/3 mx-auto md:mt-0 px-8">
             <div class="">
-              <%= link_to(support_path, class: 'box shadow-2xl') do %>
+              <%= link_to(support_error_path, class: 'box shadow-2xl h-56') do %>
                 <div class="mt-4 ml-2 mb-4">
                   <figure class="media-left">
                     <span class="icon has-text-primary">
@@ -24,7 +24,7 @@
                     Fel på sidan
                   </h1>
                   <p class="font-medium mt-8">
-                    Har du hittat ett fel på hemsidan, dokumentation osv.
+                    Har du hittat ett fel på hemsidan eller i dokumentation?
                   </p>
                 </div>
               <% end %>
@@ -32,7 +32,7 @@
           </div>
           <div class="w-5/6 md:w-1/3 mx-auto mt-8 md:mt-0 px-8">
             <div class="">
-              <%= link_to(support_path, class: 'box shadow-2xl') do %>
+              <%= link_to(support_general_path, class: 'box shadow-2xl h-56') do %>
                 <div class="mt-4 ml-2 mb-4">
                   <figure class="media-left">
                     <span class="icon has-text-primary">
@@ -43,7 +43,7 @@
                     Allmän support
                   </h1>
                   <p class="font-medium mt-8">
-                    Har du hittat ett fel på hemsidan, dokumentation osv.
+                    Är det något som du behöver hjälp med? Hör av dig!
                   </p>
                 </div>
               <% end %>
@@ -51,7 +51,7 @@
           </div>
           <div class="w-5/6 md:w-1/3 mx-auto mt-8 md:mt-0 px-8 mb-20 md:mb-0">
             <div class="">
-              <%= link_to(support_path, class: 'box shadow-2xl') do %>
+              <%= link_to(support_improvement_path, class: 'box shadow-2xl h-56') do %>
                 <div class="mt-4 ml-2 mb-4">
                   <figure class="media-left">
                     <span class="icon has-text-primary">
@@ -62,7 +62,7 @@
                     Förbättrningar
                   </h1>
                   <p class="font-medium mt-8">
-                    har du förslag på något vi kan göra bättre? Tveka inte att höra av dig.
+                    Har du förslag på något vi kan göra bättre? Hör av dig!
                   </p>
                 </div>
               <% end %>
