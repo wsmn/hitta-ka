@@ -29,12 +29,12 @@ class PresentationController < ApplicationController
   end
 
   def account
-    layout("application")
-    @customers = Customer.all
+    @customers = []
     @counts = {
-      active: Project.active.count,
-      completed: Project.completed.count,
-      total: Project.all.count,
+      active: 8,
+      completed: 5,
+      total: 4,
     }
+    render(layout: 'application')
   end
 end
