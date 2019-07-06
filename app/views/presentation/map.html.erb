@@ -9,7 +9,7 @@
       </p>
       <div class="w-full md:w-1/2 mx-auto mt-4">
         <p class="control is-expanded">
-        <input class="input" type="text" placeholder="Kommun">
+          <input class="input" type="text" placeholder="Kommun">
         </p>
       </div>
     </div>
@@ -37,7 +37,7 @@
                   </h1>
                   <figure class="media-center mt-2">
                     <span class="icon has-text-primary">
-                    <i class="fas fa-lg fa-pencil-ruler"></i>
+                      <i class="fas fa-lg fa-pencil-ruler"></i>
                     </span>
                   </figure>
                 </div>
@@ -53,7 +53,7 @@
                   </h1>
                   <figure class="media-center mt-2">
                     <span class="icon has-text-primary">
-                    <i class="fas fa-lg fa-hammer"></i>
+                      <i class="fas fa-lg fa-hammer"></i>
                     </span>
                   </figure>
                 </div>
@@ -69,7 +69,7 @@
                   </h1>
                   <figure class="media-center mt-2">
                     <span class="icon has-text-primary">
-                    <i class="fas fa-lg fa-ruler"></i>
+                      <i class="fas fa-lg fa-ruler"></i>
                     </span>
                   </figure>
                 </div>
@@ -85,7 +85,7 @@
                   </h1>
                   <figure class="media-center mt-2">
                     <span class="icon has-text-primary">
-                    <i class="fas fa-lg fa-hard-hat"></i>
+                      <i class="fas fa-lg fa-hard-hat"></i>
                     </span>
                   </figure>
                 </div>
@@ -97,7 +97,11 @@
     </div>
   </div>
   <div class="w-full h-full mx-auto">
-    <div id="map" data-companies="<%= '{ }' %>" data-access-token="<%= ENV.fetch('MAPBOX_API_KEY', '') %>">
+    <div
+      class="w-full h-64 sm:h-full"
+      id="map"
+      data-companies="<%= @company_geojson.to_json %>"
+      data-access-token="<%= ENV.fetch('MAPBOX_API_KEY', '') %>">
     </div>
   </div>
 </div>

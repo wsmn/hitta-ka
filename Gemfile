@@ -11,6 +11,7 @@ gem "rails", "~> 5.2"
 gem "bootsnap"
 gem "clearance" # Authentication
 gem "font-awesome-sass"
+gem "geocoder"
 gem "mini_magick"
 gem "pg"
 gem "puma", "~> 3.7"
