@@ -1,23 +1,23 @@
 <%= simple_form_for(:session, url: session_path) do |form| %>
-  <div class="box">
-    <%= form.input(:email, as: 'email', input_html: { autofocus: true }) %>
-    <%= form.input(:password) %>
-    <div class="field">
-      <label class="checkbox">
-        <input type="checkbox">
-          <%= t('.remember') %>
-      </label>
-        <div class="column is-fullwidth">
-          <%= bulma_button(form, text: 'Logga in') %>          
-      </div>
-    </div>
-  </div>
-  <div class="other-links">
-    <p class="has-text-grey">
-      <% if Clearance.configuration.allow_sign_up? %>
-        <%= link_to t(".sign_up"), sign_up_path %>
-      <% end %>
-      <%= link_to t(".forgot_password"), new_password_path %>      
-    </p>
-  </div>
+	<div class="max-w-sm mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+		<%= form.input(:email, as: 'email', input_html: { autofocus: true }, label_html: { class: 'text-sm font-bold' }) %>
+		<%= form.input(:password, label_html: { class: 'text-sm font-bold' }) %>
+		<div class="field">
+			<label class="checkbox">
+				<input type="checkbox">
+				<%= t('.remember') %>
+			</label>
+			<div class="column is-fullwidth">
+				<%= bulma_button(form, text: 'Logga in') %>
+			</div>
+		</div>
+	</div>
+	<div class="other-links">
+		<p class="has-text-grey">
+			<% if Clearance.configuration.allow_sign_up? %>
+				<%= link_to t(".sign_up"), sign_up_path %>
+			<% end %>
+			<%= link_to t(".forgot_password"), new_password_path %>
+		</p>
+	</div>
 <% end %>

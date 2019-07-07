@@ -5,4 +5,4 @@ sv:
     required:
       text: 'required'
       mark: '*'
-      html: '(*)'
+      html: ''

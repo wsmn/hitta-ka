@@ -11,12 +11,12 @@
     <%= csrf_meta_tags %>
     <%= render('application/favicon') %>
   </head>
-  <body>
+  <body class="bg-gray-200">
     <header>
       <%= render('header') %>
     </header>
     <div class="flex h-full">
-      <div class="w-full bg-gray-200">
+      <div class="w-full">
         <div class="w-full">
           <%= yield %>
         </div>
