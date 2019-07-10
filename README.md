@@ -17,4 +17,4 @@ User.create!(email: 'youremail@mail.com', role: :admin, password: 'your-new-pass
 ```
 
 ## Status
-[![CircleCI](https://circleci.com/gh/davidwessman/inspections/tree/master.svg?style=shield)](https://circleci.com/gh/davidwessman/inspections/tree/master)
+[![CircleCI](https://circleci.com/gh/wesmn/hitta-ka/tree/master.svg?style=shield)](https://circleci.com/gh/wesmn/hitta-ka/tree/master)
