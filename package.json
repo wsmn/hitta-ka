@@ -6,6 +6,8 @@
     "autoprefixer": "^9.6.0",
     "bulma": "^0.5.1",
     "core-js": "^3",
+    "esm": "^3.1.0",
+    "lodash.template": "^4.5.0",
     "mapbox-gl": "^1.1.0",
     "pikaday": "^1.6.0",
     "tailwindcss": "^1.0.4"
