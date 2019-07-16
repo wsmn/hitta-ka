@@ -24,7 +24,7 @@ gem "webpacker"
 
 group :development, :test do
   gem "bullet"
-  gem "capybara", "~> 3.25"
+  gem "capybara", "~> 3.26"
   gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "rspec-rails"
