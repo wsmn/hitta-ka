@@ -1,0 +1,82 @@
+<div class="bg-gray-900">
+	<div class="container mx-auto">
+		<div class="w-4/5 mx-auto">
+			<div class="w-full">
+				<div class="flex flex-wrap text-center md:text-left md:mb-16">
+					<div class="w-1/3 md:w-1/4 mt-8 md:mt-20">
+						<span class="font-bold text-md text-white">
+							<%= t('.get_started') %>
+						</span>
+						<p class="text-sm text-gray-400 mt-2">
+                            <%= link_to(sign_in_path, class: 'text-blue-400') do %>
+                                <%= t('.sign_in') %>
+                            <% end %>
+						</p>
+						<p class="text-sm text-gray-400">
+                            <%= link_to(map_path, class: 'text-blue-400') do %>
+                                <%= t('.map') %>
+                            <% end %>
+						</p>
+						<p class="text-sm text-gray-400">
+                            <%= link_to(connect_path, class: 'text-blue-400') do %>
+                                <%= t('.connect') %>
+                            <% end %>
+						</p>
+					</div>
+					<div class="w-1/3 md:w-1/4 mt-8 md:mt-20">
+						<span class="font-bold text-md text-white">
+							<%= t('.contact') %>
+						</span>
+						<p class="text-sm text-gray-400 mt-2">
+                            <%= link_to(support_general_path, class: 'text-blue-400') do %>
+                                <%= t('.support') %>
+                            <% end %>
+						</p>
+                        <p class="text-sm text-gray-400">
+                            <%= link_to(support_error_path, class: 'text-blue-400') do %>
+                                <%= t('.website_errors') %>
+                            <% end %>
+                        </p>
+                        <p class="text-sm text-gray-400">
+                            <%= link_to(support_improvement_path, class: 'text-blue-400') do %>
+                                <%= t('.suggestions') %>
+                            <% end %>
+                        </p>
+					</div>
+					<div class="w-1/3 md:w-1/4 mt-8 md:mt-20">
+						<span class="font-bold text-md text-white">
+							<%= t('.about') %>
+						</span>
+						<p class="text-sm text-gray-400 mt-2">
+                            <%= link_to(about_path, class: 'text-blue-400') do %>
+                                <%= t('.about_us') %>
+                            <% end %>
+						</p>
+						<p class="text-sm text-gray-400">
+                            <%= link_to(kontrollansvarig_path, class: 'text-blue-400') do %>
+                                <%= t('.KA') %>
+                            <% end %>
+						</p>
+						<p class="text-sm text-gray-400">
+							How does it work?
+						</p>
+					</div>
+					<div class="w-full mx-auto md:w-1/4 mt-4 md:mt-24 lg:mt-16 xl:mt-12">
+						<div class="max-w-xs mt-2 mx-auto">
+							<%= image_tag('home_image.svg')%>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="w-full mx-auto border-t border-gray-500">
+				<div class="text-center py-4">
+					<span class="font-semibold text-xs text-gray-400 ml-2">
+						Copyright © 2019 <%= link_to(root_path) do %>
+                            Apti.se
+                        <% end %>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

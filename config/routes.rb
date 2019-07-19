@@ -32,5 +32,6 @@ Rails.application.routes.draw do
   get(:map, controller: :presentation, action: :map)
   get(:connect, controller: :presentation, action: :connect)
   get(:home2, controller: :presentation, action: :home2)
+  get(:form, controller: :presentation, action: :form)
   root(controller: :presentation, action: :index)
 end

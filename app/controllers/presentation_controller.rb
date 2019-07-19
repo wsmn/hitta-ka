@@ -30,6 +30,9 @@ class PresentationController < ApplicationController
   def home2
   end
 
+  def form
+  end
+
   def account
     @customers = []
     @counts = {

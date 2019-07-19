@@ -19,6 +19,7 @@ sv:
     about:
       about: Om oss
       about us: Om oss
+      connect: Anslut företag!
 
     contact:
       contact: Kontakt
@@ -41,13 +42,13 @@ sv:
       send: Skicka in
 
     support_general:
-      please describe what you need help with: Beskriv vad du behöver hjälp med
+      please describe what you need help with: Beskriv vad du behöver hjälp med.
       support: SUPPORT
       name: Namn
       email: E-mail
 
     support_improvement:
-      how can we improve?: Vad tycker du att vi kan göra bättre?
+      how can we improve?: Vad tycker du att vi kan förbättra?
       improvement: FÖRBÄTTRINGSFÖRSLAG
       name: Namn
       email: E-mail
