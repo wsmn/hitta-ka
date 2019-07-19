@@ -8,7 +8,7 @@ module.exports = {
         'white': '#1E1E2F',
       },
       height: {
-        'screen': '48px',
+        'screen': '200px',
       },
       minHeight: {
         'screen': '70vh',
