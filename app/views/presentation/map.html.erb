@@ -1,18 +1,19 @@
-<div class="container mx-auto h-screen">
-  <div class="w-full mx-auto mt-8 md:mt-12 lg:mt-20 xl:mt-8 mb-3">
+<div class="w-full mx-auto h-screen">
+  <div class="w-full mx-auto mt-4 md:mt-12 lg:mt-20 xl:mt-8 mb-3">
     <div class="w-3/4 mx-auto text-center">
       <h1 class="text-3xl md:text-5xl font-sans font-bold text-blue-900">
         Karta
       </h1>
       <p class="font-medium text-gray-600">
-        Välj vilken typ av projekt du ska göra:
+        I vilken kommun vill du hitta en kontrollansvarig?
       </p>
-      <div class="w-full md:w-1/2 mx-auto mt-4">
+      <div class="w-full md:w-1/4 mx-auto mt-4">
         <p class="control is-expanded">
           <input class="input" type="text" placeholder="Kommun">
         </p>
       </div>
     </div>
+    <!--
     <div class="w-3/4 mx-auto">
       <div class="flex md:hidden">
         <div class="field w-full mx-auto mt-2">
@@ -95,10 +96,12 @@
         </div>
       </div>
     </div>
+    -->
   </div>
+
   <div class="w-full h-full mx-auto">
     <div
-      class="w-full" style="height:70%"
+      class="w-full" style="height:300%"
       id="map"
       data-companies="<%= @company_geojson.to_json %>"
       data-access-token="<%= ENV.fetch('MAPBOX_API_KEY', '') %>">
