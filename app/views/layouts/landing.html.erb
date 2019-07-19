@@ -15,15 +15,13 @@
 		<header>
 			<%= render('header') %>
 		</header>
-		<div class="flex">
-			<div class="w-full">
-				<div class="w-full min-h-screen">
+			<div class="min-h-screen flex flex-col">
+				<div class="flex-grow">
 					<%= yield %>
 				</div>
 				<footer>
 					<%= render('footer') %>
 				</footer>
 			</div>
-		</div>
 	</body>
 </html>
