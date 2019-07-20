@@ -11,17 +11,15 @@
 		<%= csrf_meta_tags %>
 		<%= render('application/favicon') %>
 	</head>
-	<body class="bg-gray-200">
-		<header>
-			<%= render('header') %>
-		</header>
-			<div class="min-h-screen flex flex-col">
-				<div class="flex-grow">
-					<%= yield %>
-				</div>
-				<footer>
-					<%= render('footer') %>
-				</footer>
+		<body class="bg-gray-200 min-h-screen flex flex-col ">
+			<header>
+				<%= render('header') %>
+			</header>
+			<div class="flex-grow">
+				<%= yield %>
 			</div>
-	</body>
+			<footer>
+				<%= render('footer') %>
+			</footer>
+		</body>
 </html>
