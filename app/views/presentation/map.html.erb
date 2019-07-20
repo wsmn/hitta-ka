@@ -101,7 +101,7 @@
 
   <div class="w-full h-full mb-4 mx-auto">
     <div
-      class="w-full" style="height:300%"
+      class="w-full md:w-10/12 mx-auto" style="height:70%"
       id="map"
       data-companies="<%= @company_geojson.to_json %>"
       data-access-token="<%= ENV.fetch('MAPBOX_API_KEY', '') %>">
