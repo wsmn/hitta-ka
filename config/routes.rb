@@ -25,9 +25,9 @@ Rails.application.routes.draw do
 
   get(:about, controller: :presentation, action: :about)
   get(:contact, controller: :presentation, action: :contact)
-  get(:support_error, controller: :presentation, action: :support_error)
-  get(:support_general, controller: :presentation, action: :support_general)
-  get(:support_improvement, controller: :presentation, action: :support_improvement)
+  get(:support_error, controller: :presentation, action: :support_error, path: "support-error")
+  get(:support_general, controller: :presentation, action: :support_general, path: "support-general")
+  get(:support_improvement, controller: :presentation, action: :support_improvement, path: "support-improvement")
   get(:kontrollansvarig, controller: :presentation, action: :kontrollansvarig)
   get(:map, controller: :presentation, action: :map)
   get(:connect, controller: :presentation, action: :connect)
