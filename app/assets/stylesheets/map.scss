@@ -1,13 +1,14 @@
 #map {
-  }
-  /* Optional: Makes the sample page fill the window. */
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-y:scroll;
-    -webkit-overflow-scrolling: touch;
-  }
+}
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
 
 .connect-image {
   background: url(asset_path("connect2.jpg"));
@@ -18,4 +19,6 @@
   background-color: #999;
 }
 
-ul li { padding: 5px 0px; }
+ul li {
+  padding: 5px 0px;
+}

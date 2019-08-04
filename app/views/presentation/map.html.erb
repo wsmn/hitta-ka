@@ -22,7 +22,10 @@
 		<div class="flex">
 			<div class="w-1/2 mx-auto">
 				<div class="w-5/6 mx-auto">
-					<div class="shadow-xl rounded-md bg-white" style="height:45vh">
+					<div class="shadow-xl rounded-md bg-white p-3" style="height:45vh">
+						<% @companies.each do |company| %>
+							<%= company.to_s %>
+						<% end %>
 					</div>
 				</div>
 			</div>
