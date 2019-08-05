@@ -2,12 +2,12 @@
 <html lang="<%= I18n.locale %>">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apti</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
+    <title>Apti - Hitta Kontrollansvariga nära dig!</title>
     <%= stylesheet_link_tag('application', media: 'all', 'data-turbolinks-track': 'reload') %>
     <%= javascript_include_tag('application', 'data-turbolinks-track': 'reload') %>
+    <%= stylesheet_pack_tag('application', media: 'all') %>
     <%= javascript_pack_tag('application') %>
-    <%= stylesheet_pack_tag('application') %>
     <%= csrf_meta_tags %>
     <%= render('application/favicon') %>
   </head>
@@ -20,12 +20,12 @@
         <%= render('application/sidemenu') %>
         <div class="column bg-gray-200">
           <section class="section">
-          <%= yield(:title) %>
-          <%= render('flashes') %>
-          <%= yield %>
+            <%= yield(:title) %>
+            <%= render('flashes') %>
+            <%= yield %>
           </section>
         </div>
       </div>
     </div>
-    </body>
+  </body>
 </html>

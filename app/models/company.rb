@@ -10,6 +10,10 @@ class Company < ApplicationRecord
     [longitude, latitude]
   end
 
+  def to_s
+    name
+  end
+
   def to_feature
     {
       "type": "Feature",
