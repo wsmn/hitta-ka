@@ -20,7 +20,7 @@ User.create!(email: 'youremail@mail.com', role: :admin, password: 'your-new-pass
 - Run 'rails console'
 - In the console, input:
 ```
-company = Company.new())
+company = Company.new()
 company.name = "Company AB"
 company.address = { street: 'Road 1', postal_code: '11122', city: 'Small City', country: 'Sweden' }
 company.slug = 'compab'
