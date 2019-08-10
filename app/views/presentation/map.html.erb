@@ -21,10 +21,22 @@
 	<div class="w-full mx-auto mt-16">
 		<div class="flex">
 			<div class="w-1/2 mx-auto">
-				<div class="w-5/6 mx-auto">
+				<div class="w-4/5 mx-auto">
 					<div class="shadow-xl rounded-md bg-white p-3" style="height:45vh">
 						<% @companies.each do |company| %>
-							<%= company.to_s %>
+							<div class="bg-gray-200 p-3 mb-4">
+								<div class="flex">
+									<div class="bg-gray-400 rounded-full h-16 w-16 flex items-center justify-center text-white font-bold">
+										Logo
+									</div>
+									<div class="w-3/4 p-2">
+										<p class="font-bold text-xl text-blue-900">
+											<%= company.to_s %>
+										</p>
+										<%= company.geocode_address %>
+									</div>
+								</div>
+							</div>
 						<% end %>
 					</div>
 				</div>
