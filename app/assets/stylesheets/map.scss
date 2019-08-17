@@ -10,15 +10,6 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-.connect-image {
-  background: url(asset_path("connect2.jpg"));
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #999;
-}
-
 ul li {
   padding: 5px 0px;
 }
@@ -35,4 +26,27 @@ ul li {
 
 .mapboxgl-popup-content-wrapper {
   padding: 1%;
+}
+
+.marker {
+  border: none;
+  cursor: pointer;
+  height: 56px;
+  width: 56px;
+  background-image: url(asset_path('marker.png'));
+  background-color: rgba(0, 0, 0, 0);
+}
+
+input[type="radio"]:checked + label span {
+  background-color: #3490DC; //bg-blue
+  box-shadow: 0px 0px 0px 2px white inset;
+}
+
+input[type="radio"]:checked + label{
+   color: #3490DC; //text-blue
+}
+
+input[type="radio"] + label span {
+  transition: background .2s,
+    transform .2s;
 }

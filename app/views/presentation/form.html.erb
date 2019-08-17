@@ -43,6 +43,40 @@
 							</label>
 							<textarea class="h-32 shadow appearance-none block w-full bg-white text-grey-darker border border-grey-lighter rounded py-4 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey mt-2" id="subject" type="message" placeholder="Förklara hur man hittar problemet..."></textarea>
 						</div>
+						<!--
+						<div class="mb-6 bg-gray-200">
+							<input type="radio" name="radio" class="hidden"/>
+							<label for="radio1" class="flex items-center cursor-pointer text-xl">
+							 	<span class="w-4 h-4 bg-white inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
+								 Nyproduktion
+							</label>
+						</div>
+-->
+						<div class="mb-6">
+							<div class="px-2">
+								<div class="flex items-center -mx-2">
+								  	<div class="w-1/2 mr-2 bg-gray-200 hover:bg-blue-600 hover:text-white h-12 text-center focus:bg-blue-600">
+										<div class="mt-2 ml-3">
+											<input id="radio1" type="radio" name="radio" class="hidden"/>
+											<label for="radio1" class="flex items-center cursor-pointer text-lg">
+							 					<span class="w-4 h-4 bg-white inline-block mr-3 rounded-full border border-grey flex-no-shrink"></span>
+												 Nyproduktion
+											</label>
+										</div>
+									</div>
+									<div class="w-1/2 mr-2 bg-gray-200 hover:bg-blue-600 hover:text-white text-center">
+										<div class="mt-2 ml-3">
+											<input id="radio2" type="radio" name="radio" class="hidden"/>
+											<label for="radio2" class="flex items-center cursor-pointer text-lg">
+													<span class="w-4 h-4 bg-white inline-block mr-3 rounded-full border border-grey flex-no-shrink"></span>
+													Renovering
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<div class="flex items-center justify-center">
 							<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-full rounded focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" type="button">
 								<%= t('.send') %>
