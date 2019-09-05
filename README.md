@@ -9,6 +9,20 @@ The application is written in Ruby on Rails, download the repository and get sta
 - Install [`bundler`](https://bundler.io)
 - Run `bin/setup` inside this repository.
 
+### Install SSL for localhost
+https://github.com/FiloSottile/mkcert
+```
+brew install mkcert
+mkcert -install
+cd config/ssl
+mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
+mv example.com+5-key.pem example-key.pem
+mv example.com+5.pem example.pem
+rails s
+```
+
+Application should be available at `https://localhost:8443`.
+
 ### Create user
 - Run `rails console`
 - In the console, input:
