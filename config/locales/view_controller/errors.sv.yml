@@ -1,8 +1,9 @@
 sv:
   errors:
     not_found:
-      title: Hittade ingen sida!
-      description: Den kanske håller på att byggas fortfarande?
+      title: Sidan hittades inte!
+      description: Den kanske håller på att byggas fortfarande? Om du tror det är fel på sidan, tryck på knappen nedan för att skapa ett supportärende.
+      contact: Kontakta support
     unacceptable:
       title: Så där får ni inte göra!
     internal_error:

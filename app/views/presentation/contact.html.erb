@@ -1,11 +1,11 @@
-<div class="container mx-auto">
-	<div class="w-full mx-auto mt-8 md:mt-12 lg:mt-20 xl:mt-24">
-		<div class="w-full mx-auto text-center">
+<div class="container flex lg:absolute mx-auto h-full inset-0 items-center">
+	<div class="w-full mx-auto mt-10 md:mt-20 lg:-mt-16">
+		<div class="w-11/12 md:w-full mx-auto text-center">
 			<h1 class="text-2xl md:text-4xl lg:text-5xl font-sans font-bold text-gray-200">
 				<%= t('.how_can_we_help_you?') %>
 			</h1>
 			<div class="w-4/5 mx-auto">
-				<p class="font-medium text-blue-500 mt-8">
+				<p class="font-medium text-sm md:text-base text-blue-500 mt-8">
 					<%= t('.choose_an_appropriate_category_below_and_we_will_contact_you_as_soon_as_possible') %>
 				</p>
 			</div>
@@ -13,57 +13,72 @@
 		<div class="w-11/12 md:w-full mx-auto">
 			<div class="px-2 mt-8 md:mt-24">
 				<div class="flex flex-wrap mx-0 md:-mx-8">
-					<div class="w-11/12 lg:w-1/3 max-w-xl mx-auto px-0 md:px-8">
+					<div class="w-4/5 lg:w-1/3 max-w-xl mx-auto px-0 md:px-8">
 						<div class="">
-							<%= link_to(support_error_path, class: 'box shadow-xl h-56 hover:bg-blue-500 hover:text-white') do %>
-								<div class="mt-4 ml-2 mb-4">
-									<figure class="media-left">
-										<span class="icon text-blue-500 hover:text-white">
-										<i class="fas fa-2x fa-tools"></i>
+							<%= link_to(support_error_path, class: 'box shadow-2xl h-32 md:h-56 hover:bg-gray-400') do %>
+								<div class="-mt-1 ml-0 md:mt-4 md:ml-2 md:mb-4">
+									<figure class="media-left flex md:hidden">
+										<span class="icon text-blue-500">
+											<i class="fas fa-lg fa-tools"></i>
 										</span>
 									</figure>
-									<h1 class="text-xl font-sans font-bold text-blue-900 mt-2">
+									<figure class="media-left hidden md:flex ml-1">
+										<span class="icon text-blue-500">
+											<i class="fas fa-2x fa-tools"></i>
+										</span>
+									</figure>
+									<h1 class="text-sm md:text-xl font-bold text-blue-900 mt-1 md:mt-3">
 										<%= t('.website_issues') %>
 									</h1>
-									<p class="font-medium mt-8">
+									<p class="font-medium text-sm md:text-base mt-2 md:mt-8">
 										<%= t('.have_you_found_any_errors_on_the_website_or_in_the_documentation') %>
 									</p>
 								</div>
 							<% end %>
 						</div>
 					</div>
-					<div class="w-11/12 lg:w-1/3 max-w-xl mx-auto mt-8 lg:mt-0 px-0 md:px-8">
+					<div class="w-4/5 lg:w-1/3 max-w-xl mx-auto mt-8 lg:mt-0 px-0 md:px-8">
 						<div class="">
-							<%= link_to(support_general_path, class: 'box shadow-xl h-56') do %>
-								<div class="mt-4 ml-2 mb-4">
-									<figure class="media-left">
+							<%= link_to(support_general_path, class: 'box shadow-2xl h-32 md:h-56 hover:bg-gray-400') do %>
+								<div class="-mt-1 ml-0 md:mt-4 md:ml-2 md:mb-4">
+									<figure class="media-left flex md:hidden">
+										<span class="icon text-blue-500">
+											<i class="fas fa-lg fa-lightbulb"></i>
+										</span>
+									</figure>
+									<figure class="media-left hidden md:flex">
 										<span class="icon text-blue-500">
 										<i class="fas fa-2x fa-lightbulb"></i>
 										</span>
 									</figure>
-									<h1 class="text-xl font-sans font-bold text-blue-900 mt-2">
+									<h1 class="text-sm md:text-xl font-bold text-blue-900 mt-1 md:mt-3">
 										<%= t('.general_support') %>
 									</h1>
-									<p class="font-medium mt-8">
+									<p class="font-medium text-sm md:text-base mt-2 md:mt-8">
 										<%= t('.is_there_something_that_you_need_help_with_contact_us') %>
 									</p>
 								</div>
 							<% end %>
 						</div>
 					</div>
-					<div class="w-11/12 lg:w-1/3 max-w-xl mx-auto mt-8 lg:mt-0 px-0 md:px-8 mb-20 lg:mb-0">
+					<div class="w-4/5 lg:w-1/3 max-w-xl mx-auto mt-8 lg:mt-0 px-0 md:px-8 mb-20 lg:mb-0">
 						<div class="">
-							<%= link_to(support_improvement_path, class: 'box shadow-xl h-56') do %>
-								<div class="mt-4 ml-2 mb-4">
-									<figure class="media-left">
+							<%= link_to(support_improvement_path, class: 'box shadow-2xl h-32 md:h-56 hover:bg-gray-400') do %>
+								<div class="-mt-1 ml-0 md:mt-4 md:ml-2 md:mb-4">
+									<figure class="media-left flex md:hidden">
+										<span class="icon text-blue-500">
+											<i class="fas fa-lg fa-headphones-alt"></i>
+										</span>
+									</figure>
+									<figure class="media-left hidden md:flex">
 										<span class="icon text-blue-500">
 										<i class="fas fa-2x fa-headphones-alt"></i>
 										</span>
 									</figure>
-									<h1 class="text-xl font-sans font-bold text-blue-900 mt-2">
+									<h1 class="text-sm md:text-xl font-bold text-blue-900 mt-1 md:mt-3">
 										<%= t('.improvements') %>
 									</h1>
-									<p class="font-medium mt-8">
+									<p class="font-medium text-sm md:text-base mt-2 md:mt-8">
 										<%= t('.do_you_have_any_suggestions_how_we_can_improve') %>
 									</p>
 								</div>
