@@ -49,3 +49,16 @@ input[type="radio"] + label span {
   transition: background .2s,
     transform .2s;
 }
+
+.mapboxgl-map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  }
+
+
+.companylist {
+  height: calc(100% - 8rem);
+
+}

@@ -1,4 +1,106 @@
-<div class="w-full md:w-11/12 xl:w-4/5 mx-auto">
+<div class="w-full flex lg:absolute h-full">
+	<div class="w-1/4 bg-gray-200">
+		<div class="w-full mx-auto h-full">
+			<div class="w-full flex justify-center h-32">
+				<div class="w-3/4">
+					<input type="search" class="w-full justify-center shadow rounded-sm p-3 mt-10 mx-auto" placeholder="Stad,kommun,län...">
+				</div>
+			</div>
+			<div class="p-3 border border-white overflow-y-auto companylist">
+				<% @companies.each do |company| %>
+					<div class="p-3 mb-4">
+						<div class="flex">
+							<div class="bg-gray-400 rounded-full h-16 w-16 flex items-center justify-center text-white font-bold">
+								Logo
+							</div>
+							<div class="w-3/4 p-2">
+								<p class="font-bold text-xl text-blue-900">
+									<%= company.to_s %>
+								</p>
+								<%= company.geocode_address %>
+							</div>
+						</div>
+					</div>
+				<% end %>
+				<% @companies.each do |company| %>
+				<div class="p-3 mb-4">
+					<div class="flex">
+						<div class="bg-gray-400 rounded-full h-16 w-16 flex items-center justify-center text-white font-bold">
+							Logo
+						</div>
+						<div class="w-3/4 p-2">
+							<p class="font-bold text-xl text-blue-900">
+								<%= company.to_s %>
+							</p>
+							<%= company.geocode_address %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+			<% @companies.each do |company| %>
+			<div class="p-3 mb-4">
+				<div class="flex">
+					<div class="bg-gray-400 rounded-full h-16 w-16 flex items-center justify-center text-white font-bold">
+						Logo
+					</div>
+					<div class="w-3/4 p-2">
+						<p class="font-bold text-xl text-blue-900">
+							<%= company.to_s %>
+						</p>
+						<%= company.geocode_address %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		<% @companies.each do |company| %>
+		<div class="p-3 mb-4">
+			<div class="flex">
+				<div class="bg-gray-400 rounded-full h-16 w-16 flex items-center justify-center text-white font-bold">
+					Logo
+				</div>
+				<div class="w-3/4 p-2">
+					<p class="font-bold text-xl text-blue-900">
+						<%= company.to_s %>
+					</p>
+					<%= company.geocode_address %>
+				</div>
+			</div>
+		</div>
+	<% end %>
+
+			</div>
+		</div>
+	</div>
+	<div class="w-3/4">
+		<div class="w-full h-full"
+			id="map"
+			data-companies="<%= @company_geojson.to_json %>"
+			data-access-token="<%= ENV.fetch('MAPBOX_API_KEY', '') %>">
+		</div>
+		<div class="w-4/5 mx-auto flex lg:hidden mt-8 mb-16">
+			<div class="w-full mx-auto">
+				<div class="shadow-xl rounded-md bg-white p-3" style="height:55vh"></div>
+					<% @companies.each do |company| %>
+						<div class="bg-gray-200 p-3 mb-4">
+							<div class="flex">
+								<div class="bg-gray-400 rounded-full h-16 w-16 flex items-center justify-center text-white font-bold">
+									Logo
+								</div>
+								<div class="w-3/4 p-2">
+									<p class="font-bold text-xl text-blue-900">
+										<%= company.to_s %>
+									</p>
+									<%= company.geocode_address %>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+	</div>
+</div>
+
+<!--<div class="w-full md:w-11/12 xl:w-4/5 mx-auto">
 	<div class="w-full mx-auto mt-4 md:mt-12 lg:mt-8 mb-3">
 		<div class="w-3/4 mx-auto text-center">
 			<h1 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-gray-100">
@@ -76,3 +178,4 @@
 		</div>
 	</div>
 </div>
+-->
