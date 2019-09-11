@@ -15,7 +15,7 @@
 				<div class="box">
 					<div class="field is-grouped">
 						<p class="control is-expanded">
-							<input class="input" type="text" placeholder="Län, kommun, stad">
+							<input class="input" type="text" aria-label="search" placeholder="Län, kommun, stad">
 						</p>
 						<p class="control">
 							<a class="button is-info">
@@ -47,7 +47,7 @@
 							Använd den interaktiva kartan för att hitta lokala företag nära dig. Sortera efter erfarenhet, specialisering och betyg.
 						</p>
 						<p class="mt-2">
-							<%= link_to(about_path, class: 'text-blue-400') do %>
+							<%= link_to(about_path, class: 'text-blue-500') do %>
 								<%= t('.read_more') %>
 							<% end %>
 						</p>
@@ -66,8 +66,8 @@
 						<p class="mt-4 text-sm">
 							Spara tid och pengar med hjälp av standardiserade formulär som underlättar för både kund och företag.
 						</p>
-						<p class="text-blue-400 mt-2">
-							<%= link_to(form_path, class: 'text-blue-400') do %>
+						<p class="mt-2">
+							<%= link_to(form_path, class: 'text-blue-500') do %>
 								<%= t('.read_more') %>
 							<% end %>
 						</p>
@@ -86,8 +86,8 @@
 						<p class="mt-4 text-sm">
 							Företagen granskas så att de har de certifikat som krävs för att vara verksamma som kontrollansvariga.
 						</p>
-						<p class="text-blue-400 mt-2">
-							<%= link_to(about_path, class: 'text-blue-400') do %>
+						<p class="mt-2">
+							<%= link_to(about_path, class: 'text-blue-500') do %>
 								<%= t('.read_more') %>
 							<% end %>
 						</p>
