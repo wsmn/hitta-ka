@@ -17,7 +17,11 @@ const handleMapBox = {
 
     const map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mapbox/streets-v11"
+    });
+
+    map.on('style.load', function() {
+      addLayer();
     });
 
     map.on("load", function() {
@@ -29,6 +33,10 @@ const handleMapBox = {
         clusterMaxZoom: 14,
         clusterRadius: 50
       });
+
+        var url = 'https://raw.githubusercontent.com/perliedman/svenska-landskap/master/svenska-landskap.geo.json';
+        map.addSource('landskap', { type: 'geojson', data: url});
+
       map.addLayer({
         id: "clusters",
         type: "circle",

@@ -19,11 +19,9 @@
       <div class="columns">
         <%= render('application/sidemenu') %>
         <div class="column bg-gray-200">
-          <section class="section">
-            <%= yield(:title) %>
-            <%= render('flashes') %>
-            <%= yield %>
-          </section>
+          <%= yield(:title) %>
+          <%= render('flashes') %>
+          <%= yield %>
         </div>
       </div>
     </div>
