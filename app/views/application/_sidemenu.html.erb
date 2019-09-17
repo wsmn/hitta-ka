@@ -1,22 +1,31 @@
-<aside class="column menu is-2 aside is-fullheight is-hidden-touch bg-gray-900">
-    <div class="w-full flex mb-6 -mt-2 border-b border-gray-400">
-			<div class="w-1/6 mb-4">
-				<div class="lg:w-8 xl:w-10 mt-2">
-					<%= image_tag('profile_pic.svg')%>
-				</div>
+<div class="w-1/5 hidden lg:block bg-gray-900">
+  <div class="w-full border-b border-gray-100 p-2 flex">
+      <div class="w-1/6 ml-4">
+        <div class="lg:w-10 xl:w-12 mt-4 ml-2">
+          <%= image_tag('profile_pic.svg')%>
+        </div>
       </div>
-      <div class="w-5/6 p-4">
-        <h3 class="lg:text-md xl:text-lg font-medium text-gray-200"><p class=""> <%= current_user.name %></p></h3>
+      <div class="w-5/6 p-6">
+        <h3 class="lg:text-md xl:text-2xl font-medium text-gray-200"><p class=""> <%= current_user.name %></p></h3>
       </div>
-		</div>
+  </div>
+  <div class="w-4/5 mx-auto mt-4">
   <ul class="menu-list">
-    <li>
-      <%= link_to(account_path,
-                  class: aside_item_class(['home'])) do %>
-        <%= icon('fas', 'home') %>
-        <%= t('.home') %>
-      <% end %>
-    </li>
-  </ul>
-  <%= yield(:sidemenu) %>
-</aside>
+      <li>
+        <%= link_to(account_path,
+                    class: aside_item_class(['home'])) do %>
+          <%= icon('fas', 'home', class: "mr-2 text-blue-500 fa-lg") %>
+          <%= t('.home') %>
+        <% end %>
+      </li>
+      <li>
+          <%= link_to(settings_path,
+                      class: aside_item_class(['settings'])) do %>
+            <%= icon('fas', 'user-cog', class: "mr-2 text-blue-500 fa-lg") %>
+            <%= t('.settings') %>
+          <% end %>
+        </li>
+    </ul>
+    <%= yield(:sidemenu) %>
+  </div>
+</div>

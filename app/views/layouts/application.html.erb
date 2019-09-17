@@ -11,18 +11,16 @@
     <%= csrf_meta_tags %>
     <%= render('application/favicon') %>
   </head>
-  <body>
+  <body class="flex flex-col h-full bg-gray-200">
     <header>
       <%= render('header') %>
     </header>
-    <div class="column w-full">
-      <div class="columns">
+    <div class="flex-grow relative">
+      <div class="w-full flex absolute h-full">
         <%= render('application/sidemenu') %>
-        <div class="column bg-gray-200">
-          <%= yield(:title) %>
-          <%= render('flashes') %>
-          <%= yield %>
-        </div>
+        <%= yield(:title) %>
+        <%= render('flashes') %>
+        <%= yield %>
       </div>
     </div>
   </body>

@@ -59,6 +59,11 @@ input[type="radio"] + label span {
 
 
 .companylist {
-  height: calc(100% - 8rem);
+  height: calc(100% - 12rem);
+}
 
+.safarifix {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }

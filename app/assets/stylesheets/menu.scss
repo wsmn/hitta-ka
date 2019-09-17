@@ -1,29 +1,20 @@
-.aside {
-  background: $primary-background;
-  padding: 2rem 1rem 1rem 1.5rem; 
-
-  &.is-fullheight {
-    min-height: 100vh;
+.menu-list {
+  a {
+    color: $white;
+    &:hover {
+      background-color: #3490DC;
+      color: $white;
+    }
   }
 
-  .menu-list {
-    a {
-      color: $white; 
-      &:hover {
-        background-color: $primary;
-        color: $white;
-      }
-    }
+  p {
+    border-radius: 2px;
+    display: block;
+    padding: .5em .75em;
 
-    p {
-      border-radius: 2px;
-      display: block;
-      padding: .5em .75em;
-
-      &.is-active {
-        background-color: $primary;
-        color: $white;
-      }
+    &.is-active {
+      background-color: $primary;
+      color: $white;
     }
   }
 }

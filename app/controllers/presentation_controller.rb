@@ -44,6 +44,10 @@ class PresentationController < ApplicationController
     render(layout: "application")
   end
 
+  def settings
+    render(layout: "application")
+  end
+
   private
 
   def company_geojson(companies)
