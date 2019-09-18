@@ -61,3 +61,15 @@ input[type="radio"] + label span {
 .companylist {
   height: calc(100% - 12rem);
 }
+
+.sidemenu {
+  width: 26rem;
+}
+
+.inherit-width {
+  width:inherit;
+}
+
+.calcwidth {
+  width: calc(100% - 21rem);
+}
