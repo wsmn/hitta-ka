@@ -1,14 +1,21 @@
 .menu-list {
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
   a {
     color: $white;
+    height: 50px;
     &:hover {
-      background-color: #3490DC;
+      background-color: #1A2939;
+      border-left: 5px solid #188CFB;
       color: $white;
     }
   }
 
   p {
-    border-radius: 2px;
+    border-radius: 3px;
     display: block;
     padding: .5em .75em;
 

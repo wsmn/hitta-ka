@@ -1,31 +1,57 @@
-<div class="sidemenu hidden lg:block bg-gray-900">
-  <div class="w-full border-b border-gray-100 p-2 flex">
-      <div class="w-1/6 ml-4">
-        <div class="lg:w-10 xl:w-12 mt-4 ml-2">
-          <%= image_tag('profile_pic.svg')%>
-        </div>
-      </div>
-      <div class="w-5/6 p-6">
-        <h3 class="lg:text-md xl:text-2xl font-medium text-gray-200"><p class=""> <%= current_user.name %></p></h3>
-      </div>
-  </div>
-  <div class="w-4/5 mx-auto mt-4">
-  <ul class="menu-list">
-      <li>
-        <%= link_to(account_path,
-                    class: aside_item_class(['home'])) do %>
-          <%= icon('fas', 'home', class: "mr-2 text-blue-500 fa-lg") %>
-          <%= t('.home') %>
-        <% end %>
-      </li>
-      <li>
-          <%= link_to(settings_path,
-                      class: aside_item_class(['settings'])) do %>
-            <%= icon('fas', 'user-cog', class: "mr-2 text-blue-500 fa-lg") %>
-            <%= t('.settings') %>
-          <% end %>
-        </li>
-    </ul>
-    <%= yield(:sidemenu) %>
-  </div>
+<div class="sidemenu hidden lg:block">
+  	<div class="w-full border-b border-gray-900 p-2 flex">
+	  	<div class="w-1/6 ml-4">
+			<div class="lg:w-10 xl:w-12 mt-4 ml-2">
+				<%= image_tag('profile_pic.svg')%>
+			</div>
+		</div>
+		<div class="w-5/6 p-6">
+			<h3 class="lg:text-md xl:text-2xl font-medium text-gray-200"><p class=""><%= current_user.name %></p></h3>
+		</div>
+	</div>
+	<div class="w-full mt-4">
+		<h2 class="text-gray-400 opacity-50 font-semibold ml-4">Main</h2>
+		<ul class="menu-list text-gray-300 mt-2">
+			<li>
+				<%= link_to(account_path,
+							class: aside_item_class(['home'])) do %>
+				<%= icon('fas', 'home', class: "ml-4 mr-2 text-gray-500 mt-2") %>
+				<div class="opacity-75 inline font-semibold">
+					<%= t('.home') %>
+				</div>
+				<% end %>
+			</li>
+			<li>
+				<%= link_to(account_path,
+							class: aside_item_class(['projects'])) do %>
+				<%= icon('fas', 'tasks', class: "ml-4 mr-2 text-gray-500 mt-2") %>
+				<div class="opacity-75 inline font-semibold">
+					<%= t('.projects') %>
+				</div>
+				<% end %>
+			</li>
+			<li>
+				<%= link_to(account_path,
+							class: aside_item_class(['customers'])) do %>
+				<%= icon('fas', 'users', class: "ml-4 mr-2 text-gray-500 mt-2") %>
+				<div class="opacity-75 inline font-semibold">
+					<%= t('.customers') %>
+				</div>
+				<% end %>
+			</li>
+		</ul>
+		<h2 class="text-gray-400 opacity-50 font-semibold ml-4 mt-4">Settings</h2>
+		<ul class="menu-list mt-2">
+			<li>
+				<%= link_to(settings_path,
+							class: aside_item_class(['settings'])) do %>
+					<%= icon('fas', 'user-cog', class: "ml-4 mr-2 text-gray-500 mt-2") %>
+				<div class="opacity-75 inline font-semibold">
+					<%= t('.settings') %>
+				</div>
+				<% end %>
+			</li>
+		</ul>
+		<%= yield(:sidemenu) %>
+	</div>
 </div>
