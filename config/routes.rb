@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get(:sign_up, controller: "clearance/users", action: :new, path: "sign-up")
   get(:account, controller: :presentation, action: :account)
   get(:settings, controller: :presentation, action: :settings)
+  get(:projects, controller: :presentation, action: :projects)
+  get(:project, controller: :presentation, action: :project)
 
   resource(:search, only: []) do
     post(:project)

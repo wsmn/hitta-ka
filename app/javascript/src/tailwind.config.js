@@ -484,5 +484,16 @@ module.exports = {
     zIndex: ['responsive'],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.calcwidth': {
+          width: 'calc(100% - 22rem)',
+        }
+      }
+
+      addUtilities(newUtilities, ['responsive'])
+    }
+  ]
+
 }
