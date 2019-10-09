@@ -17,7 +17,7 @@ const handleMapBox = {
 
     const map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/mapbox/streets-v11"
+      style: "mapbox://styles/wsmn/ck1jfxf161o851cq9tg7dbgce"
     });
 
     map.on('style.load', function() {
@@ -34,8 +34,7 @@ const handleMapBox = {
         clusterRadius: 50
       });
 
-        var url = 'https://raw.githubusercontent.com/perliedman/svenska-landskap/master/svenska-landskap.geo.json';
-        map.addSource('landskap', { type: 'geojson', data: url});
+      map.addControl(new mapboxgl.NavigationControl(), "top-left");
 
       map.addLayer({
         id: "clusters",

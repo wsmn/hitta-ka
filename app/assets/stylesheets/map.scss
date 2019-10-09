@@ -51,16 +51,8 @@ input[type="radio"] + label span {
     transform .2s;
 }
 
-.mapboxgl-map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  }
-
-
 .companylist {
-  height: calc(100% - 12rem);
+  height: calc(100% - 5rem);
 }
 
 .sidemenu {
@@ -92,7 +84,7 @@ input[type="radio"] + label span {
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
-  padding: 0 18px;
+  padding: 0 0px;
   display: none;
   overflow: hidden;
 
