@@ -29,6 +29,9 @@ class PresentationController < ApplicationController
   end
 
   def home2
+        @companies = Company.where.not(latitude: nil, longitude: nil)
+    @company_geojson = company_geojson(@companies)
+    render layout: "map"
   end
 
   def form
