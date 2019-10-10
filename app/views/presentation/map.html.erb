@@ -1,4 +1,4 @@
-<div class="w-full flex h-full absolute">
+<div class="w-full lg:flex flex-col h-auto lg:h-full lg:absolute">
 	<div class="w-full flex maxcontentwidth mx-auto">
 		<div class="w-1/4 hidden xl:flex pl-8 py-4">
 			<div class="w-full mx-auto">
@@ -267,9 +267,9 @@
 			</div>
 		</div>
 		<div class="w-full xl:w-3/4 relative">
-			<div class="flex flex-wrap lg:p-0 xl:p-8">
-				<div class="w-full lg:w-2/3 relative">
-					<div class="lg:border-t lg:border-l lg:border-b lg:border-gray-400 xl:rounded-l-lg" style="height:55vh"
+			<div class="flex flex-wrap lg:p-0 xl:p-8 h-screen lg:h-auto">
+				<div class="w-full lg:w-2/3 relative bg-white mapheight lg:h-auto">
+					<div class="lg:border-t lg:border-l lg:border-b lg:border-gray-400 xl:rounded-l-lg" style="height:100%"
 						id="map"
 						data-companies="<%= @company_geojson.to_json %>"
 						data-landskap="<%= @company_geojson.to_json %>"
@@ -320,14 +320,13 @@
 							</p>
 						</div>
 					</div>
-					<div class="flex-grow mt-6">
+					<div class="flex-col mt-4">
 						<p class="font-bold text-xl text-blue-900">
 							About the company
 						</p>
 						<p class="text-sm text-gray-600 mt-2">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sed viverra ipsum nunc aliquet bibendum enim.
-							In massa tempor nec feugiat. Nunc aliquet bibendum enim facilisis gravida. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper.
-						</p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Dolor sed viverra ipsum nunc aliquet bibendum enim. In massa tempor nec feugiat. Nunc aliquet bibendum enim facilisis gravida.
 						<ul class="mt-2">
 							<li>
 								<div class="w-5 inline-block text-center text-xl">
