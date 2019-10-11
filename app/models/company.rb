@@ -3,7 +3,7 @@ class Company < ApplicationRecord
   after_validation(:geocode)
 
   def geocode_address
-    [address['street'], address['postal_code'], address['city'], address['country']].compact.join(', ')
+    [address["street"], address["postal_code"], address["city"], address["country"]].compact.join(", ")
   end
 
   def coordinates
@@ -19,16 +19,16 @@ class Company < ApplicationRecord
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": coordinates
+        "coordinates": coordinates,
       },
       "properties": {
         "company_id": id,
         "name": name,
         "info_window": ApplicationController.new.render_to_string(
           partial: "companies/pop_up",
-          locals: { company: self }
-        )
-      }
+          locals: {company: self}
+        ),
+      },
     }
   end
 end

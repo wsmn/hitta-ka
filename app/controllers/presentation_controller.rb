@@ -29,7 +29,7 @@ class PresentationController < ApplicationController
   end
 
   def home2
-        @companies = Company.where.not(latitude: nil, longitude: nil)
+    @companies = Company.where.not(latitude: nil, longitude: nil)
     @company_geojson = company_geojson(@companies)
     render layout: "map"
   end
@@ -64,7 +64,7 @@ class PresentationController < ApplicationController
   def company_geojson(companies)
     {
       type: "FeatureCollection",
-      features: companies.map(&:to_feature)
+      features: companies.map(&:to_feature),
     }
   end
 end

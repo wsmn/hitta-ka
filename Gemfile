@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 ruby "2.6.3"
-gem "rails", "~> 5.2"
+gem "rails", "~> 6.0"
 
 gem "bootsnap"
 gem "clearance" # Authentication
@@ -15,7 +15,7 @@ gem "geocoder"
 gem "mini_magick"
 gem "pg"
 gem "puma", "~> 4.2"
-gem "sassc-rails"
+gem "sass-rails"
 gem "simple_form"
 gem "textacular", "~> 5.2"
 gem "turbolinks"
@@ -32,6 +32,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "rails_real_favicon"
   gem "foreman"
   gem "standardrb"
 end
