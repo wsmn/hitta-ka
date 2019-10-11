@@ -4,12 +4,12 @@
     padding: 0;
   }
   a {
-    color: $white;
+    color: #ffffff;
     height: 50px;
     &:hover {
       background-color: #1A2939;
       border-left: 5px solid #188CFB;
-      color: $white;
+      color: #ffffff;
     }
   }
 
@@ -20,7 +20,7 @@
 
     &.is-active {
       background-color: $primary;
-      color: $white;
+      color: #ffffff;
     }
   }
 }
