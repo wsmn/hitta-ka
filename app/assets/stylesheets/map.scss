@@ -23,17 +23,16 @@ ul li {
 }
 
 .mapboxgl-popup-close-button {
-  display: none;
+  width: 20px;
+  display: true;
 }
 
 .mapboxgl-popup-content {
   font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
-  padding: 0;
-  width: 180px;
-}
-
-.mapboxgl-popup-content-wrapper {
-  padding: 1%;
+  background-color: yellow;
+  background: #000000;
+  padding: 50px;
+  width: 200px;
 }
 
 .marker {
