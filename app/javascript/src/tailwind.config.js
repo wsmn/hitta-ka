@@ -486,6 +486,12 @@ module.exports = {
   },
   corePlugins: {},
   plugins: [
+    function ({addComponents,config}) {
+      const containerFluid = {
+          '.container-fluid': {maxWidth: config('theme.screens.xl')}
+      }
+      addComponents(containerFluid)
+    },
     function({ addUtilities }) {
       const newUtilities = {
         '.calcwidth': {
