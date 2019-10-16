@@ -1,6 +1,6 @@
 <div class="w-full flex h-full absolute">
-  <div class="w-full flex maxcontentwidth">
-    <div class="w-1/4 hidden xl:flex py-4 bg-gray-800 border-r border-gray-400 border-t max-w-lg">
+  <div class="w-full flex">
+    <div class="w-1/4 xxl:w-1/5 hidden xl:flex py-4 bg-gray-800 border-r border-gray-400 border-t">
       <div class="w-full mx-auto">
         <div class="w-full flex justify-center h-24">
           <div class="w-full px-10 mt-4">
@@ -14,9 +14,9 @@
         </div>
       </div>
     </div>
-    <div class="w-full xl:w-3/4 relative xl:border-t xl:border-gray-400">
+    <div class="w-full xl:w-3/4 xxl:w-4/5 relative xl:border-t xl:border-gray-400">
       <div class="flex flex-wrap lg:p-0 xl:px-10 xl:py-8 h-screen lg:h-auto">
-        <div class="w-full lg:w-2/3 relative bg-white mapheight lg:h-auto">
+        <div class="w-full lg:w-2/3 xxl:w-3/4 relative bg-white mapheight lg:h-auto">
           <div class="w-full lg:border-t lg:border-l lg:border-b lg:border-gray-500 xl:rounded-l" style="height:100%"
             id="map"
             data-companies="<%= @company_geojson.to_json %>"
@@ -52,7 +52,7 @@
           </div>
           <!--Desktop info end-->
         </div>
-        <div class="w-full lg:w-1/3 p-10 flex flex-col bg-white xl:rounded-r border-t border-r border-b border-gray-500">
+        <div class="w-full lg:w-1/3 xxl:w-1/4 p-10 flex flex-col bg-white xl:rounded-r border-t border-r border-b border-gray-500">
           <%= render('companies/map_sidebar', company: @companies.first) if @companies.first %>
         </div>
       </div>
