@@ -1,17 +1,17 @@
-<div class="container sm:mx-auto xl:mx-auto mb-12 md:mb-20 lg:mb-20 xl:mb-40 xxl:mb-48 mt-8 md:mt-20 lg:mt-24 xl:mt-32 xxl:mt-40">
-	<div class="flex flex-wrap w-full justify-center">
-		<div class="w-full xl:w-1/2 xxl:w-2/5 mt-4 mb-4">
-			<div class="w-full mx-auto xl:mx-0 xl:w-5/6 xxl:w-11/12 mx-auto">
-				<div class="w-4/5 lg:w-2/3 xl:w-full mx-auto xl:mx-0">
-					<h1 class="text-2xl md:text-4xl xl:text-5xl xxl:text-6xl font-sans font-bold text-gray-100 text-left">
+<div class="container-fluid sm:mx-auto xl:mx-auto mb-12 md:mb-20 lg:mb-20 xl:mb-40 mt-8 md:mt-20 lg:mt-24 xl:mt-32">
+	<div class="flex flex-wrap">
+		<div class="w-full xl:w-1/2 lg:ml-6 mt-4 mb-4">
+			<div class="w-full mx-auto xl:mx-0 xl:w-5/6">
+				<div class="w-4/5 lg:w-8/12 xl:w-full mx-auto xl:mx-0">
+					<h1 class="text-2xl md:text-4xl xl:text-5xl font-sans font-bold text-gray-100 text-left">
 						Hitta Kontrollansvariga nära dig!
 					</h1>
-					<h2 class="text-base xxl:text-xl font-medium text-gray-500 text-left mt-4">
+					<h2 class="font-medium text-gray-500 text-left mt-4">
 						Letar ni efter en certifierad kontrollansvarig enligt PBL till ert nästa byggprojekt? Välj län, kommun eller stad nedan för att hitta seriösa aktörer nära dig.
 					</h2>
 				</div>
 			</div>
-			<div class="w-4/5 lg:w-8/12 xl:w-4/5 xxl:w-11/12 mx-auto xl:mx-0 mt-8 xl:mt-12">
+			<div class="w-4/5 lg:w-8/12 xl:w-4/5 mx-auto xl:mx-0 mt-8 xl:mt-12">
 				<div class="box">
 					<div class="field is-grouped">
 						<p class="control is-expanded">
@@ -26,8 +26,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-1/2 xl:w-2/5 mx-auto xxl:mx-0 mt-2">
-			<div class="max-w-xl xxl:max-w-2xl mx-auto mt-8">
+		<div class="w-1/2 xl:w-2/5 mx-auto mt-2">
+			<div class="max-w-xl mx-auto mt-8">
 				<%= image_tag('home_house_blue.svg', alt: 'Builders')%>
 			</div>
 		</div>
@@ -35,19 +35,19 @@
 </div>
 
 <div class="bg-white">
-	<div class="container px-4 mx-auto">
-		<div class="flex flex-wrap xxl:w-10/12 mx-auto">
+	<div class="container-fluid px-4 mx-auto">
+		<div class="flex flex-wrap">
 			<div class="w-full md:w-1/3 mb-12 mt-12">
 				<div class="w-4/5 mx-auto">
 					<div class="w-full">
-						<p class="font-bold text-xl xxl:text-2xl text-blue-900">
+						<p class="font-bold text-xl text-blue-900">
 							Karta
 						</p>
-						<p class="mt-4 text-sm xxl:text-base">
+						<p class="mt-4 text-sm">
 							Använd den interaktiva kartan för att hitta lokala företag nära dig. Sortera efter erfarenhet, specialisering och betyg.
 						</p>
 						<p class="mt-2">
-							<%= link_to(about_path, class: 'text-indigo-600 text-sm xxl:text-base') do %>
+							<%= link_to(about_path, class: 'text-indigo-600') do %>
 								<%= t('.read_more') %>
 							<% end %>
 						</p>
@@ -60,14 +60,14 @@
 			<div class="w-full md:w-1/3 mt-12 mb-12">
 				<div class="w-4/5 mx-auto">
 					<div class="w-full">
-						<p class="font-bold text-xl xxl:text-2xl text-blue-900">
+						<p class="font-bold text-xl text-blue-900">
 							Formulär
 						</p>
-						<p class="mt-4 text-sm xxl:text-base">
+						<p class="mt-4 text-sm">
 							Spara tid och pengar med hjälp av standardiserade formulär som underlättar för både kund och företag.
 						</p>
 						<p class="mt-2">
-							<%= link_to(form_path, class: 'text-indigo-600 text-sm xxl:text-base') do %>
+							<%= link_to(form_path, class: 'text-indigo-600') do %>
 								<%= t('.read_more') %>
 							<% end %>
 						</p>
@@ -80,14 +80,14 @@
 			<div class="w-full md:w-1/3 mt-12 mb-12">
 				<div class="w-4/5 mx-auto">
 					<div class="w-full">
-						<p class="font-bold text-xl xxl:text-2xl text-blue-900">
+						<p class="font-bold text-xl text-blue-900">
 							Certifierade KA
 						</p>
-						<p class="mt-4 text-sm xxl:text-base">
+						<p class="mt-4 text-sm">
 							Företagen granskas så att de har de certifikat som krävs för att vara verksamma som kontrollansvariga.
 						</p>
 						<p class="mt-2">
-							<%= link_to(about_path, class: 'text-indigo-600 text-sm xxl:text-base') do %>
+							<%= link_to(about_path, class: 'text-indigo-600') do %>
 								<%= t('.read_more') %>
 							<% end %>
 						</p>
@@ -101,7 +101,7 @@
 	</div>
 </div>
 
-<div class="container-fluid py-24 mx-auto">
+<div class="container-fluid mx-auto py-24">
 	<div class="w-5/6 xl:w-full mx-auto">
 		<div class="w-4/5 xl:w-1/2 mx-auto">
 			<p class="font-bold text-center text-2xl text-white">
