@@ -34,7 +34,7 @@
 	</div>
 </div>
 
-<div class="bg-white">
+<div class="bg-gray-100 border-b border-gray-500">
 	<div class="container-fluid mx-auto">
 		<div class="flex flex-wrap">
 			<div class="w-full md:w-1/3 mb-12 mt-12">
@@ -100,34 +100,87 @@
 		</div>
 	</div>
 </div>
-
-<div class="container-fluid mx-auto py-24">
-	<div class="w-full md:w-full flex flex-wrap mx-auto justify-center p-8 lg:p-0">
-		<div class="w-full md:w-1/2 lg:w-2/5">
-			<div class="w-full lg:w-5/6 xl:w-4/5">
-				<p class="font-bold text-3xl text-white text-center md:text-left">
-					Anslut ditt företag idag!
+<div class="bg-gray-100">
+	<div class="container-fluid mx-auto">
+		<div class="flex flex-col items-center p-10">
+			<div class="w-full lg:w-1/3 text-center mx-auto mt-24">
+				<p class="text-3xl text-blue-900">
+					Frequently asked questions and answers.
 				</p>
-				<div class="w-full md:w-11/12 lg:w-full">
-					<p class="text-xl text-white text-center md:text-left mt-4">
-						Vill du att ditt företag ska visas på kartan? Kontakta oss idag.
+			</div>
+			<div class="w-full sm:w-9/12 md:w-3/5 xl:w-2/5 flex mx-auto mt-16">
+				<div class="bg-indigo-400 rounded h-6 w-6 flex items-center justify-center text-white font-bold">
+					<%= icon('fas', 'plus', class: 'font-bold') %>
+				</div>
+				<div class="ml-4 md:mt-1">
+					<p class="text-blue-900">
+						Kostar det något för mig som privatperson?
+					</p>
+				</div>
+			</div>
+			<div class="w-full sm:w-9/12 md:w-3/5 xl:w-2/5 flex mx-auto mt-12">
+				<div class="bg-indigo-400 rounded h-6 w-6 flex items-center justify-center text-white font-bold">
+					<%= icon('fas', 'plus', class: 'font-bold') %>
+				</div>
+				<div class="ml-4 md:mt-1">
+					<p class="text-blue-900">
+						Varför finns det inga företag registrerade i min kommun?
+					</p>
+				</div>
+			</div>
+			<div class="w-full sm:w-9/12 md:w-3/5 xl:w-2/5 flex mx-auto mt-12">
+				<div class="bg-indigo-400 rounded h-6 w-6 flex items-center justify-center text-white font-bold">
+					<%= icon('fas', 'plus', class: 'font-bold') %>
+				</div>
+				<div class="ml-4 md:mt-1">
+					<p class="text-blue-900">
+						Hur funkar det? Kopplar ni ihop företag med privatpersoner?
+					</p>
+				</div>
+			</div>
+			<div class="w-full sm:w-9/12 md:w-3/5 xl:w-2/5 flex mx-auto mt-12 mb-32">
+				<div class="bg-indigo-400 rounded h-6 w-6 flex items-center justify-center text-white font-bold">
+					<%= icon('fas', 'plus', class: 'font-bold') %>
+				</div>
+				<div class="ml-4 md:mt-1">
+					<p class="text-blue-900">
+						Kostar det något för mig som privatperson?
 					</p>
 				</div>
 			</div>
 		</div>
-		<div class="w-full md:w-1/2 lg:w-2/5 items-center flex justify-center md:justify-end mt-8 md:mt-0">
-			<div class="flex hover:border-gray-400 hover:text-gray-400 font-medium">
-				<%= link_to(connect_path, class: 'bg-blue-600 border-blue-600 border hover:bg-blue-500 hover:border-blue-500 py-3 px-3 rounded text-white') do %>
-				<%= t('.connect') %>
-				<%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>
-				<% end %>
+	</div>
+	<div class="max-w-2xl mx-auto">
+		<%= image_tag('home_image.svg', alt: 'Buildings')%>
+	</div>
+</div>
+<div class="container-fluid mx-auto py-24">
+		<div class="w-full md:w-full flex flex-wrap mx-auto justify-center p-8 lg:p-0">
+			<div class="w-full md:w-1/2 lg:w-2/5">
+				<div class="w-full lg:w-5/6 xl:w-4/5">
+					<p class="font-bold text-3xl text-white text-center md:text-left">
+						Anslut ditt företag idag!
+					</p>
+					<div class="w-full md:w-11/12 lg:w-full">
+						<p class="text-xl text-white text-center md:text-left mt-4">
+							Vill du att ditt företag ska visas på kartan? Kontakta oss idag.
+						</p>
+					</div>
+				</div>
 			</div>
-			<div class="flex ml-4 hover:border-gray-400 hover:text-gray-400 font-medium">
-				<%= link_to(contact_path, class: 'border border-white hover:border-gray-500 hover:text-gray-500 py-3 px-3 rounded text-white') do %>
-				<%= t('.contact_us') %>
-				<%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>
-				<% end %>
+			<div class="w-full md:w-1/2 lg:w-2/5 items-center flex justify-center md:justify-end mt-8 md:mt-0">
+				<div class="flex hover:border-gray-400 hover:text-gray-400 font-medium">
+					<%= link_to(connect_path, class: 'bg-blue-600 border-blue-600 border hover:bg-blue-500 hover:border-blue-500 py-3 px-3 rounded text-white') do %>
+					<%= t('.connect') %>
+					<%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>
+					<% end %>
+				</div>
+				<div class="flex ml-4 hover:border-gray-400 hover:text-gray-400 font-medium">
+					<%= link_to(contact_path, class: 'border border-white hover:border-gray-500 hover:text-gray-500 py-3 px-3 rounded text-white') do %>
+					<%= t('.contact_us') %>
+					<%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>
+					<% end %>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
