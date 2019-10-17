@@ -36,65 +36,85 @@
 
 <div class="bg-gray-100 border-b border-gray-500">
 	<div class="container-fluid mx-auto">
-		<div class="flex flex-wrap">
-			<div class="w-full md:w-1/3 mb-12 mt-12">
-				<div class="w-4/5 mx-auto">
-					<div class="w-full">
-						<p class="font-bold text-xl text-blue-900">
-							Karta
-						</p>
-						<p class="mt-4 text-sm">
-							Använd den interaktiva kartan för att hitta lokala företag nära dig. Sortera efter erfarenhet, specialisering och betyg.
-						</p>
-						<p class="mt-2">
-							<%= link_to(about_path, class: 'text-indigo-600') do %>
-								<%= t('.read_more') %>
-							<% end %>
-						</p>
-					</div>
-					<div class="w-1/3 mt-2 mx-auto">
-						<%= image_tag('home_map.svg', alt: 'Map')%>
-					</div>
+		<div class="w-full flex p-10 flex-wrap items-center">
+			<div class="w-full lg:w-1/2 flex flex-wrap justify-center lg:justify-start mt-8 lg:mt-24 mb-8 lg:mb-24">
+				<div class="w-full md:w-5/6">
+					<h3 class="text-gray-800 text-center lg:text-left text-4xl font-bold">
+						Varför hitta Kontrollansvariga via Apti.se?
+					</h3>
+				</div>
+				<div class="w-full md:w-4/5">
+					<p class="text-gray-600 text-center lg:text-left mt-4">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						Dolor sed viverra ipsum nunc aliquet bibendum enim. In massa tempor nec feugiat. Nunc aliquet bibendum enim facilisis gravida.
+						Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Amet luctus venenatis lectus magna fringilla.
+					</p>
 				</div>
 			</div>
-			<div class="w-full md:w-1/3 mt-12 mb-12">
-				<div class="w-4/5 mx-auto">
-					<div class="w-full">
-						<p class="font-bold text-xl text-blue-900">
-							Formulär
-						</p>
-						<p class="mt-4 text-sm">
-							Spara tid och pengar med hjälp av standardiserade formulär som underlättar för både kund och företag.
-						</p>
-						<p class="mt-2">
-							<%= link_to(form_path, class: 'text-indigo-600') do %>
-								<%= t('.read_more') %>
-							<% end %>
-						</p>
+			<div class="w-full md:w-4/5 lg:w-1/2 mx-auto mt-12 lg:mt-24 mb-12 lg:mb-24">
+				<div class="flex">
+					<div class="w-1/2 flex flex-wrap justify-end pr-10 pb-10 border-b border-r border-gray-300 content-start">
+						<div class="w-full flex justify-end">
+							<div class="bg-indigo-200 rounded h-10 w-10 flex items-center justify-center text-indigo-700 font-bold">
+								<%= icon('fas', 'map-marked-alt', class: 'font-bold text-2xl') %>
+							</div>
+						</div>
+						<div class="w-full text-right mt-4">
+							<span class="block font-bold text-xl text-blue-900">
+								Interaktiv karta
+							</span>
+							<span class="block text-sm text-gray-600">
+								Använd den interaktiva kartan för att hitta lokala företag nära dig. Sortera efter erfarenhet, specialisering och betyg.
+							</span>
+						</div>
+					</div>
+					<div class="w-1/2 flex flex-wrap justify-end pl-10 pb-10 border-b border-l border-gray-300 content-start">
+						<div class="w-full flex">
+							<div class="bg-indigo-200 rounded h-10 w-10 flex items-center justify-center text-indigo-700 font-bold">
+								<%= icon('fas', 'file-alt', class: 'font-bold text-2xl') %>
+							</div>
+						</div>
+						<div class="w-full text-left mt-4">
+							<span class="block font-bold text-xl text-blue-900">
+								Anpassade formulär
+							</span>
+							<span class="block text-sm text-gray-600">
+								Spara tid och pengar med hjälp av standardiserade formulär som underlättar för både kund och företag.
+							</span>
+						</div>
 					</div>
 				</div>
-				<div class="w-1/4 mx-auto">
-					<%= image_tag('home_documents.svg', alt: 'Documents')%>
-				</div>
-			</div>
-			<div class="w-full md:w-1/3 mt-12 mb-12">
-				<div class="w-4/5 mx-auto">
-					<div class="w-full">
-						<p class="font-bold text-xl text-blue-900">
-							Certifierade KA
-						</p>
-						<p class="mt-4 text-sm">
-							Företagen granskas så att de har de certifikat som krävs för att vara verksamma som kontrollansvariga.
-						</p>
-						<p class="mt-2">
-							<%= link_to(about_path, class: 'text-indigo-600') do %>
-								<%= t('.read_more') %>
-							<% end %>
-						</p>
+				<div class="flex">
+					<div class="w-1/2 flex flex-wrap justify-end pr-10 pt-10 border-t border-r border-gray-300 content-start">
+						<div class="w-full flex justify-end">
+							<div class="bg-indigo-200 rounded h-10 w-10 flex items-center justify-center text-indigo-700 font-bold">
+								<%= icon('fas', 'user-check', class: 'font-bold text-2xl') %>
+							</div>
+						</div>
+						<div class="w-full text-right mt-4">
+							<span class="block font-bold text-xl text-blue-900">
+								Certifierade KA
+							</span>
+							<span class="block text-sm text-gray-600">
+								Företagen granskas så att de har de certifikat som krävs för att vara verksamma som kontrollansvariga.
+							</span>
+						</div>
 					</div>
-				</div>
-				<div class="w-1/4 mx-auto">
-					<%= image_tag('about_checker.svg', alt: 'Certified')%>
+					<div class="w-1/2 flex flex-wrap justify-end pl-10 pt-10 border-t border-l border-gray-300 content-start">
+						<div class="w-full flex">
+							<div class="bg-indigo-200 rounded h-10 w-10 flex items-center justify-center text-indigo-700 font-bold">
+								<%= icon('fas', 'map-marked-alt', class: 'font-bold text-2xl') %>
+							</div>
+						</div>
+						<div class="w-full text-left mt-4">
+							<span class="block font-bold text-xl text-blue-900">
+								Interaktiv karta
+							</span>
+							<span class="block text-sm text-gray-600">
+								Använd den interaktiva kartan för att hitta lokala företag nära dig. Sortera efter erfarenhet, specialisering och betyg.
+							</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -155,32 +175,32 @@
 	</div>
 </div>
 <div class="container-fluid mx-auto py-24">
-		<div class="w-full md:w-full flex flex-wrap mx-auto justify-center p-8 lg:p-0">
-			<div class="w-full md:w-1/2 lg:w-2/5">
-				<div class="w-full lg:w-5/6 xl:w-4/5">
-					<p class="font-bold text-3xl text-white text-center md:text-left">
-						Anslut ditt företag idag!
+	<div class="w-full md:w-full flex flex-wrap mx-auto justify-center p-8 lg:p-0">
+		<div class="w-full md:w-1/2 lg:w-2/5">
+			<div class="w-full lg:w-5/6 xl:w-4/5">
+				<p class="font-bold text-3xl text-white text-center md:text-left">
+					Anslut ditt företag idag!
+				</p>
+				<div class="w-full md:w-11/12 lg:w-full">
+					<p class="text-xl text-white text-center md:text-left mt-4">
+						Vill du att ditt företag ska visas på kartan? Kontakta oss idag.
 					</p>
-					<div class="w-full md:w-11/12 lg:w-full">
-						<p class="text-xl text-white text-center md:text-left mt-4">
-							Vill du att ditt företag ska visas på kartan? Kontakta oss idag.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="w-full md:w-1/2 lg:w-2/5 items-center flex justify-center md:justify-end mt-8 md:mt-0">
-				<div class="flex hover:border-gray-400 hover:text-gray-400 font-medium">
-					<%= link_to(connect_path, class: 'bg-blue-600 border-blue-600 border hover:bg-blue-500 hover:border-blue-500 py-3 px-3 rounded text-white') do %>
-					<%= t('.connect') %>
-					<%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>
-					<% end %>
-				</div>
-				<div class="flex ml-4 hover:border-gray-400 hover:text-gray-400 font-medium">
-					<%= link_to(contact_path, class: 'border border-white hover:border-gray-500 hover:text-gray-500 py-3 px-3 rounded text-white') do %>
-					<%= t('.contact_us') %>
-					<%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>
-					<% end %>
 				</div>
 			</div>
 		</div>
+		<div class="w-full md:w-1/2 lg:w-2/5 items-center flex justify-center md:justify-end mt-8 md:mt-0">
+			<div class="flex hover:border-gray-400 hover:text-gray-400 font-medium">
+				<%= link_to(connect_path, class: 'bg-blue-600 border-blue-600 border hover:bg-blue-500 hover:border-blue-500 py-3 px-3 rounded text-white') do %>
+				<%= t('.connect') %>
+				<%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>
+				<% end %>
+			</div>
+			<div class="flex ml-4 hover:border-gray-400 hover:text-gray-400 font-medium">
+				<%= link_to(contact_path, class: 'border border-white hover:border-gray-500 hover:text-gray-500 py-3 px-3 rounded text-white') do %>
+				<%= t('.contact_us') %>
+				<%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>
+				<% end %>
+			</div>
+		</div>
 	</div>
+</div>
