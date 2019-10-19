@@ -1,0 +1,63 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <%= link_to(root_path, class: 'flex items-center p-4') do%>
+          <%= image_tag('apti_logo.svg', alt: 'Home', style: 'width: 3.75rem;') %>
+        <% end %>
+    <a role="button" aria-label="navbar" class="navbar-burger">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    </a>
+    </div>
+
+    <div class="navbar-menu">
+    <div class="navbar-start">
+      <%= link_to(t('.home'),
+            root_path,
+            class: navbar_is_active('navbar-item is-tab', 'home')) %>
+      <%= link_to(t('.map'),
+            map_path,
+            class: navbar_is_active('navbar-item is-tab', 'map')) %>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <%= link_to(t('.kontrollansvarig'),
+            kontrollansvarig_path,
+            class: navbar_is_active('navbar-link is-tab', 'kontrollansvarig')) %>
+        <div class="navbar-dropdown">
+          <%= link_to(t('.about'),
+                about_path,
+                class: navbar_is_active('navbar-item is-tab', 'about')) %>
+          <%= link_to(t('.connect'),
+                connect_path,
+                class: navbar_is_active('navbar-item is-tab', 'connect')) %>
+          <hr class="navbar-divider">
+          <%= link_to(t('.contact'),
+                contact_path,
+                class: navbar_is_active('navbar-item is-tab', 'contact')) %>
+        </div>
+      </div>
+      </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <% if signed_in? %>
+          <%= link_to(account_path, class: 'bg-blue-100 hover:bg-blue-200 border border-gray-400 py-2 px-3 rounded mr-3') do %>
+          <%= icon('fas', 'user', class: 'mr-1 text-black') %>
+          <%= t('.account') %>
+          <% end %>
+          <%= link_to(sign_out_path, method: :delete, class: 'hover:bg-gray-400 border border-gray-400 py-2 px-2 rounded') do %>
+          <%= icon('fas', 'sign-out-alt', class: 'mr-1 text-black') %>
+          <%= t('.sign_out') %>
+          <% end %>
+        <% else %>
+          <%= link_to(connect_path, class: 'bg-blue-600 text-white hover:bg-blue-700 hover:border-blue-700 hover:text-white border border-blue-600 py-2 px-2 rounded mr-3') do %>
+          <%= t('.connect') %>
+          <% end %>
+          <%= link_to(sign_in_path, class: 'border border-gray-400 hover:border-gray-600 py-2 px-3 rounded') do %>
+          <%= icon('fas', 'sign-in-alt', class: 'mr-1 text-black') %>
+          <%= t('.sign_in') %>
+          <% end %>
+        <% end %>
+      </div>
+      </div>
+    </div>
+</nav>
