@@ -4,3 +4,4 @@ import '../menu';
 import '../notifications';
 import '../shortcuts';
 import '../maps';
+import './navigation';
