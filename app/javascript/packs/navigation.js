@@ -1,4 +1,3 @@
-
 import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue/dist/vue.esm'
 
@@ -9,7 +8,7 @@ document.addEventListener('turbolinks:load', () => {
         el: '#nav',
         data: function () {
         return {
-            isOpen: true,
+            isOpen: false,
         }
         },
         methods: {
@@ -31,7 +30,7 @@ document.addEventListener('turbolinks:load', () => {
             immediate: true,
             handler(isOpen) {
             if (isOpen) {
-                document.body.style.setProperty('overflow', 'hidden')
+                document.body.style.setProperty('overflow', 'auto')
             } else {
                 document.body.style.removeProperty('overflow')
             }
