@@ -54,8 +54,13 @@
 		</button>
 	</div>
 	<div class="w-1/2 px-2">
-		<button class="py-2 w-full shadow-md no-underline rounded-lg bg-green-500 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
-			Meddelande
-		</button>
+		<div id="modal">
+			<button id="show-modal" @click="showModal = true" class="py-2 w-full shadow-md no-underline rounded-lg bg-green-500 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
+				Meddelande
+			</button>
+			<modal v-if="showModal" @close="showModal = false">
+			<h3 slot="header">custom header</h3>
+			</modal>
+		</div>
 	</div>
 </div>
