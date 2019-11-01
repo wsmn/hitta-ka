@@ -1,61 +1,61 @@
 <div class="w-full flex mr-2">
-  <div class="">
-    <div class="bg-red-400 rounded-lg h-16 w-16 lg:h-20 lg:w-20 xxl:h-24 xxl:w-24 flex items-center justify-center text-white font-bold">
-      Logo
-    </div>
-  </div>
-  <div class="w-11/12 ml-4">
-    <p class="font-bold text-xl xxl:text-2xl text-blue-900">
-      <%= @companies.first %>
-    </p>
-    <p class="text-sm xxl:text-lg text-blue-900 mt-1 font-light">
-      Jrnvgsgatan 7, 25224 </br> Helsingborg
-    </p>
-  </div>
-  </div>
-  <div class="flex-col mt-10 xxl:mt-12">
-  <p class="font-semibold text-xl xxl:text-2xl text-blue-900">
-    About the company
-  </p>
-  <p class="text-sm xxl:text-base text-gray-600 mt-2">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Dolor sed viverra ipsum nunc aliquet bibendum enim. In massa tempor nec feugiat. Nunc aliquet bibendum enim facilisis gravida. <a href="#" class="text-blue-400">Läs mer...</a>
-  <ul class="mt-8 xxl:mt-10">
-    <li>
-      <div class="w-5 inline-block text-center text-xl xxl:text-2xl">
-        <%= icon('fas', 'map-marker-alt', class: "text-blue-900 mt-2 fa-2xl") %>
-      </div>
-      <div class="text-gray-600 inline ml-2 text-sm xxl:text-base">
-        <%= t('.Helsingborg') %>
-      </div>
-    </li>
-    <li class="-mt-1">
-      <div class="w-4 inline-block text-center text-xl xxl:text-2xl">
-        <%= icon('fas', 'car', class: "text-blue-900 mt-2 fa-2xl") %>
-      </div>
-      <div class="text-gray-600 inline ml-3 text-sm xxl:text-base">
-        <%= t('.Helsingborg') %>, <%= t('.Höganäs') %>, <%= t('.Klippan') %>, <%= t('.Lund') %>
-      </div>
-    </li>
-    <li class="-mt-1">
-      <div class="w-4 inline-block text-center text-xl xxl:text-2xl">
-        <%= icon('fas', 'user-tie', class: "text-blue-900 mt-2 fa-2xl") %>
-      </div>
-      <div class="text-gray-600 inline ml-3 text-sm xxl:text-base">
-        <%= t('.Certifierad kontrollansvarig') %>, <%= t('.Projektledare') %>
-      </div>
-    </li>
-  </ul>
-  </div>
-  <div class="w-full flex mt-12 -mx-2">
-  <div class="w-1/2 px-2">
-    <button class="py-2 w-full shadow-md no-underline rounded-lg bg-blue-700 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-blue-500 focus:outline-none active:shadow-none">
-      Förfrågan
-    </button>
-  </div>
-  <div class="w-1/2 px-2">
-    <button class="py-2 w-full shadow-md no-underline rounded-lg bg-green-500 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
-      Meddelande
-    </button>
-  </div>
+	<div class="">
+		<div class="bg-red-400 rounded-lg h-16 w-16 lg:h-20 lg:w-20 xxl:h-24 xxl:w-24 flex items-center justify-center text-white font-bold">
+			Logo
+		</div>
+	</div>
+	<div class="w-11/12 ml-4">
+		<p class="font-bold text-xl xxl:text-2xl text-blue-900">
+			<%= @companies.first %>
+		</p>
+		<p class="text-sm xxl:text-lg text-blue-900 mt-1 font-light">
+			Jrnvgsgatan 7, 25224 </br> Helsingborg
+		</p>
+	</div>
+</div>
+<div class="flex-col mt-10 xxl:mt-12">
+	<p class="font-semibold text-xl xxl:text-2xl text-blue-900">
+		About the company
+	</p>
+	<p class="text-sm xxl:text-base text-gray-600 mt-2">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		Dolor sed viverra ipsum nunc aliquet bibendum enim. In massa tempor nec feugiat. Nunc aliquet bibendum enim facilisis gravida. <a href="#" class="text-blue-400">Läs mer...</a>
+	<ul class="mt-8 xxl:mt-10">
+		<li>
+			<div class="w-5 inline-block text-center text-xl xxl:text-2xl">
+				<%= icon('fas', 'map-marker-alt', class: "text-blue-900 mt-2 fa-2xl") %>
+			</div>
+			<div class="text-gray-600 inline ml-2 text-sm xxl:text-base">
+				<%= t('.Helsingborg') %>
+			</div>
+		</li>
+		<li class="-mt-1">
+			<div class="w-4 inline-block text-center text-xl xxl:text-2xl">
+				<%= icon('fas', 'car', class: "text-blue-900 mt-2 fa-2xl") %>
+			</div>
+			<div class="text-gray-600 inline ml-3 text-sm xxl:text-base">
+				<%= t('.Helsingborg') %>, <%= t('.Höganäs') %>, <%= t('.Klippan') %>, <%= t('.Lund') %>
+			</div>
+		</li>
+		<li class="-mt-1">
+			<div class="w-4 inline-block text-center text-xl xxl:text-2xl">
+				<%= icon('fas', 'user-tie', class: "text-blue-900 mt-2 fa-2xl") %>
+			</div>
+			<div class="text-gray-600 inline ml-3 text-sm xxl:text-base">
+				<%= t('.Certifierad kontrollansvarig') %>, <%= t('.Projektledare') %>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="w-full flex mt-12">
+	<div class="w-1/2 px-2">
+		<button class="py-2 w-full shadow-md no-underline rounded-lg bg-blue-700 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-blue-500 focus:outline-none active:shadow-none">
+			Förfrågan
+		</button>
+	</div>
+	<div class="w-1/2 px-2">
+		<button class="py-2 w-full shadow-md no-underline rounded-lg bg-green-500 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
+			Meddelande
+		</button>
+	</div>
 </div>
