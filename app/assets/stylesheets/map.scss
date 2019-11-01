@@ -10,6 +10,11 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+input {
+  -webkit-border-radius:0;
+  border-radius:0;
+}
+
 .bg_color_home {
   background-color: #132B56;
 }
