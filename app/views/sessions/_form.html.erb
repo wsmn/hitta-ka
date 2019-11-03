@@ -1,23 +1,28 @@
-<%= simple_form_for(:session, url: session_path) do |form| %>
-	<div class="max-w-sm mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-		<%= form.input(:email, as: 'email', input_html: { autofocus: true }, label_html: { class: 'text-sm font-bold' }) %>
-		<%= form.input(:password, label_html: { class: 'text-sm font-bold' }) %>
-		<div class="field">
-			<label class="checkbox">
-				<input type="checkbox">
-				<%= t('.remember') %>
-			</label>
-			<div class="column is-fullwidth">
-				<%= bulma_button(form, text: 'Logga in') %>
+<div class="p-2">
+	<div class="container flex bg-white rounded-lg shadow mx-auto max-w-sm mt-4 md:mt-8">
+		<div class="w-full p-8 text-left">
+			<h1 class="text-gray-900 text-2xl font-bold"><%= t('.sign_in_to_your_account') %></h1>
+			<div class="mb-6">
+				<span class="text-gray-600 text-sm">
+					<%= t('.dont_have_an_account?') %>
+				</span>
+				<%= link_to(connect_path, class: 'text-gray-700 text-sm font-semibold') do %>
+					<%= t('.connect') %>
+				<% end %>
 			</div>
+			<%= simple_form_for(:session, url: session_path) do |form| %>
+				<%= form.input(:email, as: 'email', input_html: { autofocus: true }, input_html: { class: 'bg-gray-200 border-none shadow-none rounded' }, label_html: { class: 'text-gray-700 text-sm font-bold' }) %>
+				<%= form.input(:password, input_html: { autofocus: true }, input_html: { class: 'bg-gray-200 border-none shadow-none rounded' }, label_html: { class: 'text-gray-700 text-sm font-bold mt-6' }) %>
+				<p class="text-center text-sm text-gray-600 hover:text-gray-800 -mt-2">
+					<% if Clearance.configuration.allow_sign_up? %>
+						<%= link_to t(".sign_up"), sign_up_path %>
+					<% end %>
+					<%= link_to t(".forgot_password"), new_password_path %>
+				</p>
+				<div class="mt-6">
+					<%= form.button(:submit, class: "w-full bg-gray-800 hover:bg-gray-500 text-white text-sm h-10 font-semibold rounded") %>
+				</div>
+			<% end %>
 		</div>
 	</div>
-	<div class="other-links">
-		<p class="text-gray-400">
-			<% if Clearance.configuration.allow_sign_up? %>
-				<%= link_to t(".sign_up"), sign_up_path %>
-			<% end %>
-			<%= link_to t(".forgot_password"), new_password_path %>
-		</p>
-	</div>
-<% end %>
+</div>

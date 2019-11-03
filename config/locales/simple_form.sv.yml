@@ -6,3 +6,6 @@ sv:
       text: 'required'
       mark: '*'
       html: ''
+    labels:
+      defaults:
+        password: 'Lösenord'

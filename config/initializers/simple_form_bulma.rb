@@ -8,7 +8,7 @@ SimpleForm.setup do |config|
   end
 
   # Css defaults
-  config.button_class = "button is-primary"
+  config.button_class = "button"
   config.error_notification_class = "notification is-warning"
   config.boolean_label_class = nil
 

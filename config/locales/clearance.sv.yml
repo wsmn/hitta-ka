@@ -16,7 +16,7 @@ sv:
   helpers:
     label:
       password:
-        email: Epost
+        email: Email
       password_reset:
         password: Välj lösenord
     submit:
@@ -46,9 +46,13 @@ sv:
       remember: Kom ihåg mig
       forgot_password: Glömt lösenord?
       sign_up: Skapa konto
+      sign_in_to_your_account: Logga in på ditt konto
+      dont_have_an_account?: Har du inget konto?
+      connect: Anslut idag!
+      password: Lösenord
     new:
       title: Logga in
-      subtitle: Vänligen logga in för att fortsätta.      
+      subtitle: Vänligen logga in för att fortsätta.
   users:
     new:
       sign_in: Logga in

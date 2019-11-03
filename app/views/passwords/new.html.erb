@@ -1,15 +1,22 @@
-<div class="w-11/12 mx-auto">
-    <div class="max-w-sm mx-auto text-center mt-8 md:mt-32">
-      <h3 class="title text-gray-400"><%= t('.title') %></h3>
-      <div class="box">
-          <div id="clearance" class="password-reset">
-            <p><%= t('.description') %></p>
-            <%= simple_form_for(:password, url: passwords_path) do |f| %>
-              <%= f.input(:email, input_html: { autofocus: true },
-                                  label: t('helpers.label.password.email')) %>
-              <%= bulma_button(f, text: t('helpers.submit.password.submit')) %>
-            <% end %>
-          </div>
-        </div>
-    </div>
-  </div>
+<div class="p-6 mt-8 mb-32 md:mt-32">
+	<div class="container flex bg-white rounded-lg shadow mx-auto max-w-sm mt-4 md:mt-8">
+		<div class="w-full p-8 text-center">
+			<h1 class="text-gray-900 text-2xl font-bold"><%= t('.title') %></h1>
+			<div id="clearance" class="password-reset">
+				<div class="mb-4">
+					<span class="text-gray-600 text-base">
+						<%= t('.description') %>
+					</span>
+				</div>
+				<%= simple_form_for(:password, url: passwords_path) do |f| %>
+						<%= f.input(:email, input_html: { class: 'bg-gray-200 border-none shadow-none rounded autofocus: true' }, label_html: { class: 'text-gray-700 text-sm font-bold' },
+						label: t('helpers.label.password.email')) %>
+						<div class="mt-6">
+							<%= f.button(:submit, class: "w-full bg-gray-800 hover:bg-gray-500 text-white text-sm h-10 font-semibold rounded") %>
+						</div>
+				<% end %>
+			</div>
+
+		</div>
+	</div>
+</div>
