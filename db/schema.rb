@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_11_144616) do
+ActiveRecord::Schema.define(version: 2019_11_10_170438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -50,6 +50,20 @@ ActiveRecord::Schema.define(version: 2019_10_11_144616) do
     t.index ["longitude"], name: "index_companies_on_longitude"
     t.index ["name"], name: "index_companies_on_name"
     t.index ["slug"], name: "index_companies_on_slug"
+  end
+
+  create_table "csp_reports", force: :cascade do |t|
+    t.string "blocked_uri"
+    t.string "disposition"
+    t.string "document_uri"
+    t.string "effective_directive"
+    t.string "violated_directive"
+    t.string "referrer"
+    t.integer "status_code"
+    t.jsonb "raw_report"
+    t.string "raw_browser"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
