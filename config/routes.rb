@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get("404", controller: :errors, action: :not_found)
   get("422", controller: :errors, action: :unacceptable)
   get("500", controller: :errors, action: :internal_error)
+  post("csp-violation-report", controller: :csp_reports, action: :create)
   resources(:passwords, controller: :passwords, only: %i[create new])
   resource(:session, controller: :sessions, only: %i[create])
 
