@@ -14,12 +14,9 @@ Rails.application.config.content_security_policy do |policy|
   end
   # Not supported in Safari, required by Chrome for Mapbox-workers
   policy.worker_src(:self, :https, :blob)
-  #   policy.default_src :self, :https
-  #   policy.font_src    :self, :https, :data
-  #   policy.img_src     :self, :https, :data
-  #   policy.object_src  :none
-  #   policy.script_src  :self, :https
-  #   policy.style_src   :self, :https
+
+  policy.object_src(:none)
+  policy.base_uri(:none)
 
   # Specify URI for violation reports
   policy.report_uri("/csp-violation-report")
