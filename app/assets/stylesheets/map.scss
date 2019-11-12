@@ -150,3 +150,7 @@ input[type="radio"] + label span {
 .transition-medium {
   transition-duration:.2s
 }
+
+/* Stops the mobile nav menu flashing in link clicks and reloads */
+
+[v-cloak] { display: none; }
