@@ -30,7 +30,7 @@ document.addEventListener('turbolinks:load', () => {
             immediate: true,
             handler(isOpen) {
             if (isOpen) {
-                document.body.style.setProperty('overflow', 'auto')
+                document.body.style.setProperty('overflow', 'hidden')
             } else {
                 document.body.style.removeProperty('overflow')
             }
