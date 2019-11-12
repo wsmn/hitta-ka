@@ -1,4 +1,5 @@
 class CspReportsController < ApplicationController
+  skip_before_action(:verify_authenticity_token)
 
   def create
     report_base = JSON.parse(request.body.read)
