@@ -20,10 +20,6 @@ const handleMapBox = {
       style: "mapbox://styles/wsmn/ck1jfxf161o851cq9tg7dbgce"
     });
 
-    map.on('style.load', function() {
-      addLayer();
-    });
-
     map.on("load", function() {
       const companies = JSON.parse(mapElement.dataset.companies);
       map.addSource("companies", {

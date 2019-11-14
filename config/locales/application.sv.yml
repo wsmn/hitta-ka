@@ -1,0 +1,11 @@
+sv:
+  application:
+    header:
+      about: Om oss
+      account: Konto
+      connect_company: Anslut företag
+      home: Hem
+      kontrollansvarig: Kontrollansvarig
+      map: Karta
+      sign_in: Logga in
+      sign_out: Logga ut
