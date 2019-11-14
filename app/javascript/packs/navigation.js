@@ -1,41 +1,12 @@
-import TurbolinksAdapter from 'vue-turbolinks'
-import Vue from 'vue/dist/vue.esm'
+import TurbolinksAdapter from "vue-turbolinks";
+import Vue from "vue/dist/vue.esm";
+import Navigation from "../components/navigation.vue";
 
-Vue.use(TurbolinksAdapter)
+Vue.use(TurbolinksAdapter);
+Vue.component('navigation', Navigation);
 
-document.addEventListener('turbolinks:load', () => {
-    const app = new Vue({
-        el: '#nav',
-        data: function () {
-        return {
-            isOpen: false,
-        }
-        },
-        methods: {
-        open() {
-            this.isOpen = true
-            this.$nextTick(() => {
-            this.$refs.closeButton.focus()
-            })
-        },
-        close() {
-            this.isOpen = false
-            this.$nextTick(() => {
-            this.$refs.openButton.focus()
-            })
-        }
-        },
-        watch: {
-        isOpen: {
-            immediate: true,
-            handler(isOpen) {
-            if (isOpen) {
-                document.body.style.setProperty('overflow', 'hidden')
-            } else {
-                document.body.style.removeProperty('overflow')
-            }
-            }
-        }
-        }
-    });
+document.addEventListener("turbolinks:load", () => {
+  const app = new Vue({
+    el: "#nav",
+  });
 });
