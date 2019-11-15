@@ -2,7 +2,7 @@
     <transition name="modal">
         <div class="modal-mask">
             <div class="modal-wrapper">
-                <div class="w-full flex flex-wrap">
+                <div class="modal-body w-full flex flex-wrap">
                     <div class="w-full mx-auto p-4 lg:p-0">
                         <div class="w-full lg:w-1/2 xl:w-1/3 mx-auto bg-white shadow-xl rounded mt-8">
                             <div class="w-full flex border-b border-gray-400 py-4 px-8 items-center">
@@ -57,12 +57,12 @@
                                 </div>
                                 <div class="w-full flex justify-end mt-6">
                                     <div class="w-1/4 mr-4">
-                                        <button @click="$emit('close')" class="py-2 w-full shadow-md no-underline rounded-lg bg-red-500 text-white font-bold text-sm hover:text-white hover:bg-red-400 focus:outline-none active:shadow-none">
+                                        <button @click="$emit('close')" class="py-2 w-full shadow-md no-underline rounded bg-red-300 text-red-600 font-bold text-sm hover:text-white hover:bg-red-400 focus:outline-none active:shadow-none">
                                             Cancel
                                         </button>
                                     </div>
                                     <div class="w-1/4">
-                                        <button class="py-2 w-full shadow-md no-underline rounded-lg bg-green-500 text-white font-bold text-sm hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
+                                        <button class="py-2 w-full shadow-md no-underline rounded bg-green-500 text-white font-bold text-sm hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
                                             Send
                                         </button>
                                     </div>
@@ -92,6 +92,11 @@
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
+}
+
+.modal-body {
+  height: 100%;
+  overflow-y: auto;
 }
 
 .modal-enter {
