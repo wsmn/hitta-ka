@@ -1,12 +1,12 @@
-<div id="nav" class="bg-gray-900 md:bg-white shadow">
-	<div class="md:px-4">
+<div id="nav" class="bg-gray-900">
+	<div class="container md:px-12 lg:px-0">
 		<nav class="relative flex flex-wrap items-center justify-between md:py-2">
-			<div class="relative z-10 flex-shrink-0 pl-4 py-4 md:p-0">
+			<div class="relative z-10 flex-shrink-0 pl-4 py-4 lg:p-0">
 				<%= link_to(root_path) do%>
 					<%= image_tag('apti_logo.svg', alt: 'Home', style: 'width: 3.75rem;') %>
 				<% end %>
 			</div>
-			<div class="flex-shrink-0 pr-4 md:hidden">
+			<div class="flex-shrink-0 pr-4 lg:hidden">
 				<button ref="openButton" @click="open" type="button" class="block text-gray-600 focus:outline-none focus:text-gray-600" aria-label="Menu">
 					<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
 					<path d="M3 6C3 5.44772 3.44772 5 4 5H20C20.5523 5 21 5.44772 21 6C21 6.55228 20.5523 7 20 7H4C3.44772 7 3 6.55228 3 6Z"/>
@@ -15,20 +15,20 @@
 					</svg>
 				</button>
 			</div>
-			<div class="hidden md:block md:ml-10 md:flex md:items-baseline md:justify-between md:bg-transparent">
-				<div class="lg:absolute inset-0 flex items-center lg:ml-24">
+			<div class="hidden lg::block lg:ml-4 lg:flex lg:items-baseline lg:justify-between lg:bg-transparent">
+				<div class="lg:absolute inset-0 flex items-center lg:ml-24 text-white font-medium">
 					<%= link_to(t('.home'),
 							root_path,
-							class: 'text-gray-900 hover:text-gray-600') %>
+							class: 'hover:text-gray-600') %>
 					<%= link_to(t('.map'),
 							map_path,
-							class: 'ml-10 text-gray-900 hover:text-gray-600') %>
+							class: 'ml-10 hover:text-gray-600') %>
 					<%= link_to(t('.kontrollansvarig'),
 							kontrollansvarig_path,
-							class: 'ml-10 text-gray-900 hover:text-gray-600') %>
+							class: 'ml-10 hover:text-gray-600') %>
 					<%= link_to(t('.about'),
 							about_path,
-							class: 'ml-10 text-gray-900 hover:text-gray-600') %>
+							class: 'ml-10 hover:text-gray-600') %>
 				</div>
 				<div class="ml-10 relative flex items-baseline">
 					<% if signed_in? %>
@@ -36,16 +36,16 @@
 						<%= icon('fas', 'user', class: 'mr-1 text-black') %>
 						<%= t('.account') %>
 						<% end %>
-						<%= link_to(sign_out_path, method: :delete, class: 'hover:bg-gray-400 border border-gray-400 py-2 px-2 rounded') do %>
-						<%= icon('fas', 'sign-out-alt', class: 'mr-1 text-black') %>
+						<%= link_to(sign_out_path, method: :delete, class: 'hover:bg-gray-500 border border-gray-500 py-2 px-2 rounded text-white hover:text-white') do %>
+						<%= icon('fas', 'sign-out-alt', class: 'mr-1 text-white') %>
 						<%= t('.sign_out') %>
 						<% end %>
 					<% else %>
 						<%= link_to(connect_path, class: 'bg-blue-600 text-white hover:bg-blue-700 hover:border-blue-700 hover:text-white border border-blue-600 py-2 px-2 rounded mr-3') do %>
 						<%= t('.connect') %>
 						<% end %>
-						<%= link_to(sign_in_path, class: 'border border-gray-400 hover:border-gray-600 py-2 px-3 rounded') do %>
-						<%= icon('fas', 'sign-in-alt', class: 'mr-1 text-black') %>
+						<%= link_to(sign_in_path, class: 'hover:bg-gray-500 border border-gray-500 py-2 px-2 rounded text-white hover:text-white') do %>
+						<%= icon('fas', 'sign-in-alt', class: 'mr-1 text-white') %>
 						<%= t('.sign_in') %>
 						<% end %>
 					<% end %>
@@ -54,7 +54,7 @@
 		</nav>
 	</div>
 	<div v-cloak>
-		<div class="md:hidden">
+		<div class="lg:hidden">
 			<!-- Off-canvas menu background overlay -->
 			<transition
 				enter-class="opacity-0"

@@ -2,9 +2,9 @@
     <transition name="modal">
         <div class="modal-mask">
             <div class="modal-wrapper">
-                <div class="modal-body w-full flex flex-wrap">
+                <div class="modal-body flex flex-wrap md:items-center">
                     <div class="w-full mx-auto p-4 lg:p-0">
-                        <div class="w-full lg:w-1/2 xl:w-1/3 mx-auto bg-white shadow-xl rounded mt-8">
+                        <div class="w-full lg:w-1/2 xl:w-1/3 mx-auto bg-white shadow-xl rounded mt-8 max-w-xl">
                             <div class="w-full flex border-b border-gray-400 py-4 px-8 items-center">
                                 <div class="w-3/4">
                                     <p class="font-bold text-2xl text-gray-800">

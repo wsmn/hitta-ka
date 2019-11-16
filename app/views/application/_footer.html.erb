@@ -1,10 +1,10 @@
 <div class="bg-gray-900 border-t border-gray-800">
 	<div class="container mx-auto">
 		<div class="w-full md:w-4/5 mx-auto">
-			<div class="flex flex-wrap text-left md:mb-8 md:justify-end">
-				<div class="w-full md:w-1/2 lg:w-2/3 mt-8 md:mt-12 justify-center md:justify-start px-16 md:pl-16 md:pr-0">
+			<div class="flex flex-wrap text-left md:mb-8 md:justify-end text-center md:text-left">
+				<div class="w-full md:w-1/2 lg:w-2/3 mt-8 md:mt-12 justify-center md:justify-start px-8 md:px-16 md:pl-16 md:pr-0">
 					<%= link_to(root_path) do%>
-						<%= image_tag('apti_logo.svg', alt: 'Home', style: 'width: 3rem;', class: 'mt-1') %>
+						<%= image_tag('apti_logo.svg', alt: 'Home', style: 'width: 3rem;', class: 'mt-1 mx-auto md:mx-0') %>
 					<% end %>
 					<div class="w-full md:w-full mt-5">
 						<span class="font-semibold text-md text-gray-500">
@@ -12,7 +12,7 @@
 						</span>
 					</div>
 				</div>
-				<div class="w-full md:w-1/2 lg:w-1/3 mt-8 md:mt-12 flex flex-col text-left px-16">
+				<div class="w-full md:w-1/2 lg:w-1/3 mt-8 md:mt-12 flex flex-col text-left px-16 md:px-8 text-center md:text-left">
 					<span class="font-bold text-md md:text-lg text-gray-400 uppercase">
 						<%= t('.länkar') %>
 					</span>
@@ -25,13 +25,13 @@
 									<% end %>
 								</li>
 								<li class="-mb-1">
-									<%= link_to(connect_path, class: 'text-gray-500 hover:text-white') do %>
-										<%= t('.connect') %>
+									<%= link_to(contact_path, class: 'text-gray-500 hover:text-white') do %>
+										<%= t('.contact') %>
 									<% end %>
 								</li>
 								<li class="-mb-1">
-									<%= link_to(contact_path, class: 'text-gray-500 hover:text-white') do %>
-										<%= t('.contact') %>
+									<%= link_to(connect_path, class: 'text-gray-500 hover:text-white') do %>
+										<%= t('.connect') %>
 									<% end %>
 								</li>
 							</ul>
