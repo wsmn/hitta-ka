@@ -1,7 +1,7 @@
-<div id="nav" class="bg-gray-900 md:bg-white shadow h-16">
-  <div class="md:px-4">
-    <nav class="relative flex flex-wrap items-center justify-between md:py-2">
-      <div class="relative z-10 flex-shrink-0 pl-4 py-4 md:p-0">
+<div id="nav" class="bg-gray-900">
+	<div class="px-1 lg:px-4">
+	<nav class="relative flex flex-wrap items-center justify-between lg:py-2">
+      <div class="relative z-10 flex-shrink-0 pl-4 py-4 lg:p-0">
         <%= link_to(root_path) do %>
           <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 3.75rem") %>
         <% end %>
@@ -15,29 +15,29 @@
         :sign-out='<%= sign_out_link %>'
         :authenticity='"<%= form_authenticity_token %>"'
       ></navigation>
-      <div class="hidden md:block md:ml-10 md:flex flex-grow items-baseline justify-between md:bg-transparent" >
+      <div class="hidden lg:block lg:ml-10 lg:flex flex-grow items-baseline justify-between lg:bg-transparent text-white font-medium" >
         <div class="inset-0 flex items-center py-2">
-          <%= link_to(t('application.header.home'), root_url, class: "text-gray-900 hover:text-gray-600 mr-6") %>
-          <%= link_to(t('application.header.map'), map_url, class: "text-gray-900 hover:text-gray-600 mr-6") %>
-          <%= link_to(t('application.header.kontrollansvarig'), kontrollansvarig_url, class: "text-gray-900 hover:text-gray-600 mr-6") %>
-          <%= link_to(t('application.header.about'), about_url, class: "text-gray-900 hover:text-gray-600 mr-6") %>
+          <%= link_to(t('application.header.home'), root_url, class: "hover:text-gray-600 mr-6") %>
+          <%= link_to(t('application.header.map'), map_url, class: "hover:text-gray-600 mr-6") %>
+          <%= link_to(t('application.header.kontrollansvarig'), kontrollansvarig_url, class: "hover:text-gray-600 mr-6") %>
+          <%= link_to(t('application.header.about'), about_url, class: "hover:text-gray-600 mr-6") %>
         </div>
-        <div class="ml-10 relative flex items-baseline">
+        <div class="ml-10 relative flex items-baseline text-black">
           <% if signed_in? %>
             <%= link_to(account_path, class: "bg-blue-100 hover:bg-blue-200 border border-gray-400 py-2 px-3 rounded mr-3") do %>
               <%= icon('fas', 'user', class: 'mr-1 text-black')%>
               <%= t('application.header.account') %>
             <% end %>
-            <%= link_to(sign_out_path, method: 'delete', class: "text-gray-900 hover:text-gray-600 border border-gray-400 py-2 px-3 rounded mr-3") do %>
-              <%= icon('fas', 'sign-out-alt', class: 'mr-1 text-black')%>
+            <%= link_to(sign_out_path, method: 'delete', class: "hover:bg-gray-500 border border-gray-500 py-2 px-2 rounded text-white hover:text-white") do %>
+              <%= icon('fas', 'sign-out-alt', class: 'mr-1 text-white')%>
               <%= t('application.header.sign_out') %>
             <% end %>
           <% else %>
-            <%= link_to(connect_path, class: "bg-blue-100 hover:bg-blue-200 border border-gray-400 py-2 px-3 rounded mr-3") do %>
+            <%= link_to(connect_path, class: "bg-blue-600 text-white hover:bg-blue-700 hover:border-blue-700 hover:text-white border border-blue-600 py-2 px-2 rounded mr-3") do %>
               <%= t('application.header.connect_company') %>
             <% end %>
-            <%= link_to(sign_in_path, class: "text-gray-900 hover:text-gray-600 border border-gray-400 py-2 px-3 rounded mr-3") do %>
-              <%= icon('fas', 'sign-in-alt', class: 'mr-1 text-black')%>
+            <%= link_to(sign_in_path, class: "hover:bg-gray-500 border border-gray-500 py-2 px-2 rounded text-white hover:text-white") do %>
+              <%= icon('fas', 'sign-in-alt', class: 'mr-1 text-white')%>
               <%= t('application.header.sign_in') %>
             <% end %>
           <% end %>

@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div class="flex-shrink-0 pr-4 md:hidden">
+    <div class="flex-shrink-0 pr-4 lg:hidden">
       <button
         ref="openButton"
         @click="open"
@@ -23,7 +23,7 @@
     </div>
 
     <div v-cloak>
-      <div class="md:hidden">
+      <div class="lg:hidden">
         <transition
           enter-class="opacity-0"
           enter-active-class="ease-out transition-medium"
