@@ -1,0 +1,5 @@
+sv:
+  map:
+    index:
+      search: Sök
+      search_placeholder: Län, kommun, stad

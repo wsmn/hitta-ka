@@ -8,15 +8,16 @@ sv:
       logged_time_entries: Loggade timmar
 
     index:
-      title: Hem
       active_projects: Aktiva projekt
       completed_projects: Avslutade projekt
-      total_project_count: Totalt antal projekt
-      logged_time_entries: Loggade timmar
-      connect: Anslut företag
+      connect: Anslut företag!
       contact_us: Kontakta oss
+      logged_time_entries: Loggade timmar
       read_more: Läs mer..
       search: Sök
+      search_placeholder: Län, kommun, stad
+      title: Hem
+      total_project_count: Totalt antal projekt
 
     about:
       about: Om oss

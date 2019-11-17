@@ -2,13 +2,12 @@
 
 require "rails_helper"
 RSpec.describe("Searches", type: :request) do
-  # describe("GET /project") do
-  #   it("renders project page, then do search request") do
-  #     sign_in
-  #     get(questions_path)
-  #     post(project_search_path, xhr: true,
-  #                               params: {search: {text: "David!"}})
-  #     expect(response).to have_http_status(200)
-  #   end
-  # end
+  describe("GET /project") do
+    it("renders root page, then do search request") do
+      sign_in
+      get(root_path)
+      post(company_search_url, params: {search: {text: "David!"}})
+      expect(response).to redirect_to(map_url(search: "David!"))
+    end
+  end
 end
