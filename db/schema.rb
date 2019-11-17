@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_10_170438) do
+ActiveRecord::Schema.define(version: 2019_11_17_165919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2019_11_10_170438) do
     t.index ["latitude"], name: "index_companies_on_latitude"
     t.index ["longitude"], name: "index_companies_on_longitude"
     t.index ["name"], name: "index_companies_on_name"
-    t.index ["slug"], name: "index_companies_on_slug"
+    t.index ["slug"], name: "index_companies_on_slug", unique: true
   end
 
   create_table "csp_reports", force: :cascade do |t|

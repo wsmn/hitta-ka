@@ -4,7 +4,21 @@
       <div class="w-full mx-auto">
         <div class="w-full flex justify-center h-24">
           <div class="w-full px-10 mt-4">
-            <input type="search" class="w-full justify-center shadow rounded-sm p-3 mx-auto" placeholder="Stad,kommun,län...">
+            <%= form_with(scope: :search, url: company_search_path) do |form| %>
+              <div class="flex items-center w-full p-3 mx-auto bg-white shadow rounded-sm">
+                <% if @search_value %>
+                  <%= link_to(map_path) do %>
+                    <%= icon('fas', 'times-circle', class: 'mr-3') %>
+                  <% end %>
+                <% end %>
+                <%= form.text_field(:text, id: 'text', placeholder: t('.search_placeholder'),
+                                              aria: { label: 'text' }, local: false,
+                                              value: @search_value,
+                                              class: 'w-full mx-auto appearance-none focus:outline-none') %>
+                <%= form.submit(class: 'flex-shrink-0 button is-info', value: t('.search'),
+                                data: {disable_with: false}) %>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="px-10 companylist overflow-auto">
@@ -20,7 +34,6 @@
           <div class="w-full lg:border-t lg:border-l lg:border-b lg:border-gray-500 xl:rounded-l" style="height:100%"
             id="map"
             data-companies="<%= @company_geojson.to_json %>"
-            data-landskap="<%= @company_geojson.to_json %>"
             data-access-token="<%= ENV.fetch('MAPBOX_API_KEY', '') %>">
           </div>
           <div class="w-full absolute flex xl:hidden top-0 mx-auto justify-center">

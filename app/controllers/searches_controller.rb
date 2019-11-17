@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SearchesController < ApplicationController
-  before_action(:require_login)
+  before_action(:require_login, except: [:company])
 
   def project
     @projects = Project.includes(:customer)
@@ -10,6 +10,14 @@ class SearchesController < ApplicationController
 
   def customer
     @customers = Customer.text_search(search_param)
+  end
+
+  def company
+    respond_to do |format|
+      format.html {
+        redirect_to(map_path(search: search_param))
+      }
+    end
   end
 
   private
