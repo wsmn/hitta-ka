@@ -11,8 +11,8 @@
 				<% end %>
 			</div>
 			<%= simple_form_for(:session, url: session_path) do |form| %>
-				<%= form.input(:email, as: 'email', input_html: { autofocus: true }, input_html: { class: 'bg-gray-200 border-none shadow-none rounded' }, label_html: { class: 'text-gray-700 text-sm font-bold' }) %>
-				<%= form.input(:password, input_html: { autofocus: true }, input_html: { class: 'bg-gray-200 border-none shadow-none rounded' }, label_html: { class: 'text-gray-700 text-sm font-bold mt-6' }) %>
+				<%= form.input(:email, as: 'email', input_html: { autofocus: true }, input_html: { class: 'bg-gray-200 shadow-inner rounded' }, label_html: { class: 'text-gray-700 text-sm font-bold' }) %>
+				<%= form.input(:password, input_html: { autofocus: true }, input_html: { class: 'bg-gray-200 shadow-inner rounded' }, label_html: { class: 'text-gray-700 text-sm font-bold mt-6' }) %>
 				<p class="text-center text-sm text-gray-600 hover:text-gray-800 -mt-2">
 					<% if Clearance.configuration.allow_sign_up? %>
 						<%= link_to t(".sign_up"), sign_up_path %>

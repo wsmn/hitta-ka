@@ -32,11 +32,13 @@ ul li {
 }
 
 .mapboxgl-popup-content {
-  font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
-  background-color: yellow;
-  background: #000000;
-  padding: 50px;
-  width: 200px;
+    overflow-y: scroll;
+    background-color: #000000;
+}
+
+.popupCustom .mapboxgl-popup-content {
+    background-color: ffffff;
+    padding: 30px;
 }
 
 .marker {

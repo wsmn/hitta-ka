@@ -120,7 +120,7 @@ const handleMapBox = {
           center: features[0].geometry.coordinates
         });
 
-        new mapboxgl.Popup()
+        new mapboxgl.Popup({className: 'popupCustom'})
           .setLngLat(coordinates)
           .setHTML(infoWindow)
           .addTo(map);
