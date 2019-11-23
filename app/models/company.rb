@@ -14,6 +14,14 @@ class Company < ApplicationRecord
     name
   end
 
+  def to_json
+    {
+      id: self.id,
+      name: self.name,
+      coordinates: self.coordinates,
+    }
+  end
+
   def to_feature
     {
       "type": "Feature",
@@ -24,10 +32,6 @@ class Company < ApplicationRecord
       "properties": {
         "company_id": id,
         "name": name,
-        "info_window": ApplicationController.new.render_to_string(
-          partial: "companies/pop_up",
-          locals: {company: self}
-        ),
       },
     }
   end
