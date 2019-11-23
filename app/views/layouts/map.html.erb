@@ -14,10 +14,10 @@
     <%= render('application/favicon') %>
   </head>
     <body class="flex flex-col">
-      <header>
+      <header data-behaviour="vue">
         <%= render('header') %>
       </header>
-      <div class="flex flex-grow relative bg-gray-200">
+      <div class="flex flex-grow relative bg-gray-200" data-behaviour="vue">
         <%= yield %>
       </div>
     </body>
