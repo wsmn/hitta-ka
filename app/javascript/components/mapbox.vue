@@ -11,7 +11,7 @@ import mapboxgl from "mapbox-gl/dist/mapbox-gl";
 
 export default {
   name: "Mapbox",
-  props: ["accessToken", "companies"],
+  props: ["accessToken", "companies", "company"],
   data: () => ({
     mapbox: () => {},
     map: () => {},
@@ -135,6 +135,12 @@ export default {
       this.companies.forEach(company => {
         bounds.extend(company.coordinates);
       });
+      if (bounds.isEmpty()) {
+        console.log("No bounds!")
+        let sweden = [10.510684, 55.037336, 24.177166, 69.060151]
+        bounds.extend([sweden[0], sweden[1]]);
+        bounds.extend([sweden[2], sweden[3]]);
+      }
       this.map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
     },
   },
@@ -156,6 +162,41 @@ export default {
         type: "FeatureCollection",
         features: features
       };
+    }
+  },
+  watch: {
+    companies: {
+      immediate: true,
+      handler: function(companies, old_companies) {
+        if (this.map.getSource == undefined) {
+          return;
+        }
+        let source = this.map.getSource("companies");
+        if (source) {
+          source.setData(this.companyGeojson);
+          this.fitBounds();
+        }
+      }
+    },
+    company: {
+      immediate: true,
+      handler: function(company, old_company) {
+        if (company == null) {
+          this.fitBounds();
+          return;
+        }
+
+        if (this.map.getSource == undefined) {
+          return;
+        }
+
+        let source = this.map.getSource("companies");
+        if (source) {
+          this.map.flyTo({
+            center: company.coordinates
+          });
+        }
+      }
     }
   }
 };

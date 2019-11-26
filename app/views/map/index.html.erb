@@ -1,4 +1,6 @@
+<%= @search_value %>
 <company-map
-  access-token="<%= ENV.fetch('MAPBOX_API_KEY', '') %>"
-  authenticity='<%= form_authenticity_token %>'
+  access-token=<%= ENV.fetch('MAPBOX_API_KEY', '') %>
+  authenticity=<%= form_authenticity_token %>
+  search-value="<%= @search_value %>"
 >

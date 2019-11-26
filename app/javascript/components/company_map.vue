@@ -5,7 +5,9 @@
         <company-list
           :companies="companies"
           :currentCompany="currentCompany"
+          :initialSearch="searchValue"
           @select="selectCompany"
+          @search="searchCompanies"
         ></company-list>
       </div>
       <div class="w-full xl:w-3/4 xxl:w-4/5 relative">
@@ -16,6 +18,7 @@
             <mapbox
               :accessToken="accessToken"
               :companies="companies"
+              :company="currentCompany"
               @select="selectCompany"
             ></mapbox>
           </div>
@@ -29,17 +32,16 @@
 <script>
 export default {
   name: "CompanyMap",
-  props: ["accessToken", "authenticity"],
+  props: ["accessToken", "authenticity", "searchValue"],
   data: () => ({
     companies: () => [],
     currentCompany: () => {},
   }),
   mounted() {
-    this.fetchCompanies();
+    this.searchCompanies(this.searchValue);
   },
   methods: {
-    fetchCompanies() {
-      this.loading = true;
+    searchCompanies(searchValue) {
       this.$http({
         method: "POST",
         url: "/search/company.json",
@@ -47,11 +49,12 @@ export default {
             'X-CSRF-Token': this.authenticity,
         },
         data: {
+          search: searchValue,
         }
       })
         .then(result => {
           this.companies = result.data;
-          this.currentCompany = this.companies[0];
+          this.currentCompany = null;
         })
         .catch(err => {
           console.log("Failed to fetch companies: ", err);
