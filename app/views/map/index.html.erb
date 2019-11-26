@@ -29,10 +29,10 @@
       </div>
     </div>
     <div class="w-full xl:w-3/4 xxl:w-4/5 relative">
-      <div class="flex flex-wrap lg:p-0 xl:px-10 xl:py-8 h-screen lg:h-auto">
-          <div class="w-full flex-wrap lg:hidden">
+      <div class="flex flex-wrap lg:p-0 xl:px-10 xl:py-8 h-screen lg:h-auto bg-white">
+          <div class="w-full lg:w-1/2 mx-auto flex-col xl:hidden lg:mt-4 lg:mb-4">
               <%= form_with(scope: :search, url: company_search_path) do |form| %>
-                <div class="flex items-center w-full p-3 mx-auto bg-white shadow rounded-sm">
+                <div class="flex items-center w-full p-3 mx-auto bg-white border border-gray-200 shadow rounded-sm">
                   <% if @search_value %>
                     <%= link_to(map_path) do %>
                       <%= icon('fas', 'times-circle', class: 'mr-3') %>
