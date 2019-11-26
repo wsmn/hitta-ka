@@ -65,7 +65,9 @@
       </div>
     </div>
     <div v-else>
-      <div style="height=600px"></div>
+      <div style="height=600px">
+        Sök efter ett företag eller välj ett på kartan!
+      </div>
     </div>
   </div>
 </template>

@@ -30,8 +30,8 @@ class SearchesController < ApplicationController
   end
 
   def search_place
-    search_value = params.fetch("search", {})
-    companies = if search_value != {}
+    search_value = params.fetch("search", "")
+    companies = if search_value != ""
       Company.near(search_value, 50, units: "km")
     else
       Company.where.not(latitude: nil).where.not(longitude: nil)
