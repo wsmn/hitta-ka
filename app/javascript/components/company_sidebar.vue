@@ -65,7 +65,7 @@
       </div>
     </div>
     <div v-else>
-      <div style="height=600px">
+      <div>
         <div class="w-full flex items-center mr-2 items-center">
           <div class="">
             <div class="border-2 border-gray-800 rounded-lg h-12 w-12 lg:h-12 lg:w-12 flex items-center justify-center text-gray-800 text-3xl font-bold">
