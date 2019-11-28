@@ -11,18 +11,20 @@
         ></company-list>
       </div>
       <div class="w-full xl:w-3/4 xxl:w-4/5 relative">
-        <div class="flex flex-wrap lg:p-0 xl:px-10 xl:py-8">
-          <div
-            class="w-full lg:w-2/3 xxl:w-3/4 relative bg-white mapheight"
-          >
-            <mapbox
-              :accessToken="accessToken"
-              :companies="companies"
-              :company="currentCompany"
-              @select="selectCompany"
-            ></mapbox>
+        <div class="lg:p-0 xl:px-10 xl:py-8">
+          <div class="flex flex-wrap inline-block h-screen lg:h-auto">
+            <div
+              class="w-full lg:w-2/3 xxl:w-3/4 bg-white mapheight lg:h-auto"
+            >
+              <mapbox
+                :accessToken="accessToken"
+                :companies="companies"
+                :company="currentCompany"
+                @select="selectCompany"
+              ></mapbox>
+            </div>
+            <company-sidebar :company="currentCompany"></company-sidebar>
           </div>
-          <company-sidebar :company="currentCompany"></company-sidebar>
         </div>
       </div>
     </div>

@@ -43,7 +43,7 @@ export default {
           type: "geojson",
           data: this.companyGeojson,
           cluster: true,
-          clusterMaxZoom: 14,
+          clusterMaxZoom: 10,
           clusterRadius: 50
         });
         this.map.addLayer({
