@@ -13,8 +13,8 @@ export default {
   name: "Mapbox",
   props: ["accessToken", "companies", "company"],
   data: () => ({
-    mapbox: () => {},
-    map: () => {},
+    mapbox: null,
+    map: null,
     mapStyle: "mapbox://styles/wsmn/ck1jfxf161o851cq9tg7dbgce",
   }),
   mounted() {
@@ -142,7 +142,9 @@ export default {
         bounds.extend([sweden[0], sweden[1]]);
         bounds.extend([sweden[2], sweden[3]]);
       }
-      this.map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+      if (this.map) {
+        this.map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+      }
     },
   },
   computed: {
@@ -169,7 +171,7 @@ export default {
     companies: {
       immediate: true,
       handler: function(companies, old_companies) {
-        if (this.map.getSource == undefined) {
+        if (this.map == null) {
           return;
         }
         let source = this.map.getSource("companies");

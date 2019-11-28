@@ -34,14 +34,16 @@ export default {
   name: "CompanyMap",
   props: ["accessToken", "authenticity", "searchValue"],
   data: () => ({
-    companies: () => [],
-    currentCompany: () => {},
+    companies: [],
+    currentCompany: null,
+    loading: false,
   }),
   mounted() {
     this.searchCompanies(this.searchValue);
   },
   methods: {
     searchCompanies(searchValue) {
+      this.loading = true;
       this.$http({
         method: "POST",
         url: "/search/company.json",
@@ -59,6 +61,7 @@ export default {
         .catch(err => {
           console.log("Failed to fetch companies: ", err);
         });
+      this.loading = false;
     },
     selectCompany(companyId) {
       for (let company of this.companies) {
