@@ -17,6 +17,9 @@ class SearchesController < ApplicationController
       format.html {
         redirect_to(map_path(search: search_param))
       }
+      format.json {
+        render(json: search_place.map(&:to_json))
+      }
     end
   end
 
@@ -24,5 +27,16 @@ class SearchesController < ApplicationController
 
   def search_param
     params.require(:search).fetch(:text, "")
+  end
+
+  def search_place
+    search_value = params.fetch("search", "")
+    companies = if search_value != ""
+      Company.near(search_value, 50, units: "km")
+    else
+      Company.where.not(latitude: nil).where.not(longitude: nil)
+    end
+
+    companies
   end
 end

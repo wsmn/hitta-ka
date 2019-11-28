@@ -128,6 +128,7 @@
 
 <script>
 export default {
+  name: 'Navigation',
   data() {
     return {
       isOpen: false
@@ -136,7 +137,6 @@ export default {
   props: ["signedIn", "links", "signIn", "signOut", "accountLink", "connectLink", "authenticity"],
   computed: {
     processedLinks: function() {
-      console.log(this.signOut)
       if (typeof this.links == String) {
         return JSON.parse(this.links);
       } else {

@@ -40,7 +40,7 @@
           <div class="flex items-center justify-between w-full mx-auto bg-white shadow rounded">
             <%= form.text_field(:text, id: 'text', placeholder: t('.search_placeholder'),
                                           aria: { label: 'text' }, local: false,
-                                          class: 'appearance-none rounded-l rounded-r-none p-3 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white w-4/5 focus:outline-none focus:border-blue-500') %>
+                                          class: 'appearance-none rounded-l rounded-r-none p-3 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white w-4/5 focus:outline-none') %>
             <%= form.submit(class: 'bg-blue-600 hover:bg-blue-500 border-blue-600 hover:border-blue-500 px-8 rounded-r rounded-l-none text-white font-bold p-3 border-t border-b border-r', value: t('.search'),
                             data: {disable_with: false}) %>
           </div>

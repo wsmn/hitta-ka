@@ -19,7 +19,7 @@ body {
 }
 
 .mapheight {
-  height: 60vh;
+  height: 56vh;
 }
 
 ul li {
@@ -156,3 +156,7 @@ input[type="radio"] + label span {
 /* Stops the mobile nav menu flashing in link clicks and reloads */
 
 [v-cloak] { display: none; }
+
+*:focus {
+  outline: none;
+}
