@@ -18,6 +18,7 @@ class Company < ApplicationRecord
     {
       id: self.id,
       name: self.name,
+      address: self.geocode_address,
       coordinates: self.coordinates,
     }
   end

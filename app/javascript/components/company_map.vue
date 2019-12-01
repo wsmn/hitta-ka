@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex h-full absolute">
     <div class="w-full flex flex-wrap">
-      <div class="w-full lg:w-1/4 lg:max-w-md flex md:py-4 bg-gray-900">
+      <div class="w-full lg:w-1/3 xl:w-1/4 lg:max-w-md flex py-4 bg-gray-900">
         <company-list
           :companies="companies"
           :currentCompany="currentCompany"
@@ -10,11 +10,11 @@
           @search="searchCompanies"
         ></company-list>
       </div>
-      <div class="w-full lg:w-3/4 xxl:w-4/5 relative md:px-10 lg:p-0 bg-gray-900 lg:bg-gray-200">
+      <div class="w-full lg:w-2/3 xl:w-3/4 xxl:w-4/5 relative md:px-10 lg:p-0 bg-gray-900 lg:bg-gray-200">
         <div class="lg:p-0 xl:p-8">
           <div class="flex flex-wrap inline-block h-screen lg:h-auto">
             <div
-              class="w-full lg:w-2/3 xxl:w-3/4 bg-white mapheight lg:h-auto"
+              class="w-full xl:w-2/3 xxl:w-3/4 bg-white mapheight xl:h-auto"
             >
               <mapbox
                 :accessToken="accessToken"

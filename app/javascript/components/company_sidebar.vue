@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full lg:w-1/3 xxl:w-1/4 p-6 xl:p-10 flex flex-col bg-white xl:rounded-r border-t border-r border-b border-gray-500"
+    class="w-full xl:w-1/3 xxl:w-1/4 p-6 xl:p-10 flex flex-col bg-white xl:rounded-r border-t border-r border-b border-gray-500"
   >
     <div v-if="company">
       <div class="w-full flex mr-2">
