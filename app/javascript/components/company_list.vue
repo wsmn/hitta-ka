@@ -1,7 +1,7 @@
 <template>
   <div class="w-full mx-auto">
-    <div class="w-full flex justify-center h-24">
-      <div class="w-full px-10 mt-4">
+    <div class="w-full flex justify-center md:h-16 lg:h-16 xl:h-24">
+      <div class="w-full md:px-10 lg:px-4 xl:px-8 mt-0 lg:-mt-4 xl:mt-4">
         <form @submit.prevent="handleSearch">
           <div
             class="flex items-center w-full px-3 py-2 mx-auto bg-white shadow rounded-sm"
@@ -30,7 +30,7 @@
         </form>
       </div>
     </div>
-    <div v-if="companies.length" class="px-10 companylist overflow-auto py-4">
+    <div v-if="companies.length" class="px-4 xl:px-8 companylist overflow-auto py-4 hidden lg:block">
       <div
         v-for="company in companies"
         :key="company.company_id"
@@ -40,22 +40,27 @@
       >
         <div class="flex items-center p-1">
           <div
-            class="bg-blue-400 rounded-full h-16 w-16 flex items-center justify-center text-white font-bold mr-4"
+            class="bg-red-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4"
           >
             Logo
           </div>
           <div class="w-3/4">
-            <p class="font-semibold text-lg">{{ company.name }}</p>
+            <p class="font-semibold text-md">{{ company.name }}</p>
             <p class="text-sm font-light font-sans">{{ company.address }}</p>
           </div>
         </div>
       </div>
     </div>
-    <div v-else class="px-10 companylist overflow-auto text-center">
-      <span v-if="searchValue" class="text-white">
-      Inga resultat, prova att söka på någonting annat!
-      </span>
-      <span v-else>
+    <div v-else class="w-2/3 mx-auto companylist overflow-auto text-center">
+      <div v-if="searchValue" class="mt-4">
+        <span class="text-base xl:text-lg text-white">
+          Inga resultat, prova att söka på någonting annat!
+        </span>
+        <div class="w-2/3 xl:w-1/2 mx-auto mt-8">
+          <img v-bind:src="require('images/company_empty.svg')" />
+        </div>
+      </div>
+      <span v-else class="text-white">
         Det finns inga företag att hitta ännu.
       </span>
     </div>
