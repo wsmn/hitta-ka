@@ -38,7 +38,7 @@ export default {
     },
     addClusters() {
       this.map.on("load", () => {
-        this.map.addControl(new mapboxgl.NavigationControl(), "top-left");
+        this.map.addControl(new mapboxgl.NavigationControl(), "top-right");
         this.map.addSource("companies", {
           type: "geojson",
           data: this.companyGeojson,
@@ -72,6 +72,8 @@ export default {
             ]
           }
         });
+
+        this.map.resize();
 
         this.map.addLayer({
           id: "cluster-count",

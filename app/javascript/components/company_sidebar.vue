@@ -77,7 +77,7 @@
             </p>
           </div>
         </div>
-        <div class="w-full flex items-center mr-2 mt-16">
+        <div class="w-full flex items-center mr-2 mt-4 xl:mt-16">
           <div class="">
             <div class="bg-gray-800 rounded-lg h-12 w-12 lg:h-12 lg:w-12 flex items-center justify-center text-white text-3xl font-bold">
               2
@@ -89,7 +89,7 @@
             </p>
           </div>
         </div>
-        <div class="w-full flex items-center mr-2 mt-16">
+        <div class="w-full flex items-center mr-2 mt-4 xl:mt-16">
           <div class="">
             <div class="border-2 border-gray-800 rounded-lg h-12 w-12 lg:h-12 lg:w-12 flex items-center justify-center text-gray-800 text-3xl font-bold">
               3
@@ -101,7 +101,7 @@
             </p>
           </div>
         </div>
-        <div class="w-7/12 flex mx-auto flex items-center mt-4">
+        <div class="w-1/3 xl:w-7/12 flex mx-auto flex items-center mt-4">
           <div class="max-w-xs mx-auto mt-12">
             <img v-bind:src="require('images/message_map.svg')" />
           </div>
