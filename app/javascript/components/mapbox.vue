@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl";
 
 export default {
@@ -38,7 +39,7 @@ export default {
     },
     addClusters() {
       this.map.on("load", () => {
-        this.map.addControl(new mapboxgl.NavigationControl(), "top-left");
+        this.map.addControl(new mapboxgl.NavigationControl(), "top-right");
         this.map.addSource("companies", {
           type: "geojson",
           data: this.companyGeojson,

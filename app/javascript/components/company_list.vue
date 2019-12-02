@@ -39,9 +39,7 @@
         @click="handleClick(company)"
       >
         <div class="flex items-center p-1">
-          <div
-            class="bg-red-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4"
-          >
+          <div class="bg-red-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4">
             Logo
           </div>
           <div class="w-3/4">
