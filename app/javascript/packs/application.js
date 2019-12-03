@@ -9,6 +9,8 @@ import CompanySidebar from "../components/company_sidebar.vue";
 import Mapbox from "../components/mapbox.vue";
 import Modal from "../components/modal.vue";
 import ModalButton from "../components/modal_button.vue";
+import FormModal from "../components/form_modal.vue";
+import FormModalButton from "../components/form_modal_button.vue";
 import Navigation from "../components/navigation.vue";
 import TurbolinksAdapter from "vue-turbolinks";
 import Vue from "vue/dist/vue.esm";
@@ -22,6 +24,8 @@ Vue.component("company-sidebar", CompanySidebar);
 Vue.component("mapbox", Mapbox);
 Vue.component("modal", Modal);
 Vue.component("modal-button", ModalButton);
+Vue.component("form_modal", FormModal);
+Vue.component("form-modal-button", FormModalButton);
 Vue.component("navigation", Navigation);
 
 document.addEventListener("turbolinks:load", () => {
