@@ -87,22 +87,27 @@
                 >{{ link.name }}</a>
               </div>
               <div class="border-t-2 border-gray-200 px-4 pt-6">
-                <div v-if="signedIn" class="flex flex-row">
-                  <a :key="accountLink.name"
-                    :href="accountLink.url"
-                    class="bg-blue-100 hover:bg-blue-200 border border-gray-400 py-2 px-3 rounded mr-3"
-                  >
-                    <i class="fas fa-user mr-1 text-black"></i>
-                    {{ accountLink.name }}
-                  </a>
-                  <form class="flex" method="post" :action="signOut.url">
-                    <input type="hidden" name="_method" value="delete">
-                    <input type="hidden" name="authenticity_token" :value="authenticity">
-                    <button class="text-gray-900 hover:text-gray-600 border border-gray-400 py-2 px-3 rounded mr-3">
-                      <i class="fas fa-sign-out-alt mr-1 text-black"></i>
-                      {{ signOut.name }}
-                    </button>
-                  </form>
+                <div v-if="signedIn" class="flex flex-col">
+                  <div class="w-full mb-4">
+                    <p class="block text-xs font-semibold text-green-600 uppercase tracking-wider">Konto</p>
+                  </div>
+                  <div class="flex flex-row">
+                    <a :key="accountLink.name"
+                      :href="accountLink.url"
+                      class="bg-blue-100 hover:bg-blue-200 border border-gray-400 py-2 px-3 rounded mr-3"
+                    >
+                      <i class="fas fa-user mr-1 text-black"></i>
+                      {{ accountLink.name }}
+                    </a>
+                    <form class="flex" method="post" :action="signOut.url">
+                      <input type="hidden" name="_method" value="delete">
+                      <input type="hidden" name="authenticity_token" :value="authenticity">
+                      <button class="text-gray-900 hover:text-gray-600 border border-gray-400 py-2 px-3 rounded mr-3">
+                        <i class="fas fa-sign-out-alt mr-1 text-black"></i>
+                        {{ signOut.name }}
+                      </button>
+                    </form>
+                  </div>
                 </div>
                 <div v-else>
                   <a :key="connectLink.name"
