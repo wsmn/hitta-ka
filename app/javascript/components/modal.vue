@@ -5,106 +5,130 @@
         <div class="modal-body flex flex-wrap md:items-center">
           <div class="w-full mx-auto p-4 lg:p-0">
             <div
-              class="w-full lg:w-1/2 xl:w-1/3 mx-auto bg-white shadow-xl rounded mt-8 max-w-xl"
+              class="w-full lg:w-1/2 xl:w-1/3 mx-auto bg-white shadow-xl rounded-lg mt-8 max-w-2xl"
             >
-              <div
-                class="w-full flex border-b border-gray-400 py-4 px-8 items-center"
-              >
-                <div class="w-3/4">
-                  <p class="font-bold text-2xl text-gray-800">
-                    Send message to
+              <div class="w-full flex border-b border-gray-400 p-5 items-center">
+                <div class="w-3/4 md:w-4/5 lg:w-5/6">
+                  <p class="font-bold text-base lg:text-lg text-gray-800">
+                    Skicka meddelande till
                   </p>
-                  <p class="font-bold text-2xl text-blue-500">
+                  <p class="font-bold leading-tight text-base lg:text-base text-blue-500">
                     Cömpany AB
                   </p>
                 </div>
-                <div class="w-1/4 flex items-center">
+                <div class="w-1/4 md:w-1/5 lg:w-1/6 flex items-center">
                   <img v-bind:src="require('images/message_map.svg')" />
                 </div>
               </div>
-              <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-                <div class="-mx-3 md:flex mb-6">
-                  <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label
-                      class="tracking-wide text-gray-800 text-base font-bold"
-                    >
-                      First Name
-                    </label>
-                    <input
-                      class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
-                      id="grid-first-name"
-                      type="text"
-                    />
+              <div class="p-5 flex flex-col">
+                <div class="flex flex-wrap mb-6 items-center">
+                  <div class="hidden lg:w-1/3 lg:block">
+                    <div class="pr-2">
+                      <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">Namn</h2>
+                    </div>
                   </div>
-                  <div class="w-full md:w-1/2 px-3">
-                    <label
-                      class="tracking-wide text-gray-800 text-base font-bold"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2"
-                      id="grid-last-name"
+                  <div class="w-full lg:w-2/3 flex flex-wrap">
+                    <div class="w-1/2 pr-2">
+                      <h2 class="tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1">
+                        Förnamn
+                      </h2>
+                      <input
+                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-email-adress"
                       type="text"
-                    />
+                      />
+                    </div>
+                    <div class="w-1/2 pl-2">
+                      <h2 class="tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1">
+                        Efternamn
+                      </h2>
+                      <input
+                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-email-adress"
+                      type="text"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div class="-mx-3 md:flex mb-6">
-                  <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label
-                      class="tracking-wide text-gray-800 text-base font-bold"
-                    >
-                      Email
-                    </label>
-                    <input
-                      class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
+                <div class="flex flex-wrap mb-6 items-center">
+                  <div class="w-full lg:w-1/3">
+                    <div class="pr-2">
+                      <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">Telefonnummer</h2>
+                    </div>
+                  </div>
+                  <div class="w-full lg:w-2/3">
+                    <div class="w-full">
+                      <input
+                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-email-adress"
                       type="text"
                     />
+                    </div>
                   </div>
-                  <div class="w-full md:w-1/2 px-3">
-                    <label
-                      class="tracking-wide text-gray-800 text-base font-bold"
-                    >
-                      Phone
-                      <p class="font-normal text-gray-600 inline">(optional)</p>
-                    </label>
-                    <input
-                      class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2"
-                      id="grid-phone-number"
+                </div>
+                <div class="flex flex-wrap mb-6 items-center">
+                  <div class="w-full lg:w-1/3">
+                    <div class="pr-2">
+                      <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">Email</h2>
+                    </div>
+                  </div>
+                  <div class="w-full lg:w-2/3">
+                    <div class="w-full">
+                      <input
+                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-email-adress"
                       type="text"
                     />
+                    </div>
                   </div>
                 </div>
-                <div class="flex flex-wrap -mx-3">
-                  <div class="w-full px-3">
-                    <label
-                      class="tracking-wide text-gray-900 text-base font-bold"
-                    >
-                      Message
-                      <p class="font-normal text-gray-600 inline">
-                        (Max 1000 words)
-                      </p>
-                    </label>
-                    <textarea
-                      class="appearance-none mt-2 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32"
+                <div class="flex flex-wrap mb-6 items-center">
+                  <div class="w-full lg:w-1/3">
+                    <div class="pr-2">
+                      <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">Ämne</h2>
+                    </div>
+                  </div>
+                  <div class="w-full lg:w-2/3">
+                    <div class="w-full">
+                      <input
+                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-email-adress"
+                      type="text"
+                    />
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-wrap">
+                  <div class="w-full lg:w-1/3">
+                    <div class="pr-1">
+                      <h2 class="text-sm lg:text-base text-gray-700 font-semibold">Meddelande</h2>
+                      <p class="text-xs lg:text-sm font-semibold lg:mt-1 text-gray-500 mb-1 lg:mb-0">Här skriver du ditt meddelande till företaget .Max 1000 ord.</p>
+                    </div>
+                  </div>
+                  <div class="w-full lg:w-2/3">
+                    <div class="w-full">
+                      <textarea
+                      class="appearance-none resize-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-24"
                       id="subject"
-                      type="description"
-                    ></textarea>
+                      type="description">
+                      </textarea>
+                    </div>
                   </div>
                 </div>
-                <div class="w-full flex justify-end mt-6">
-                  <div class="w-1/4 mr-4">
+              </div>
+              <div class="w-full flex border-t border-gray-300 py-5 px-5">
+                <div class="w-full flex justify-end items-center">
+                  <div class="w-20 mr-3">
                     <button
                       @click="close"
-                      class="py-2 w-full shadow-md no-underline rounded bg-red-300 text-red-600 font-bold text-sm hover:text-white hover:bg-red-400 focus:outline-none active:shadow-none"
+                      class="w-full text-blue-600 uppercase font-bold text-xs hover:text-blue-300"
                     >
                       Cancel
                     </button>
                   </div>
-                  <div class="w-1/4">
+                  <div class="w-16">
                     <button
-                      class="py-2 w-full shadow-md no-underline rounded bg-green-500 text-white font-bold text-sm hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none"
+                      class="py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-blue-600 text-white font-bold text-xs hover:text-white hover:bg-blue-500 focus:outline-none active:shadow-none"
                     >
                       Send
                     </button>

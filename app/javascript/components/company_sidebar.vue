@@ -53,12 +53,12 @@
       <div class="w-full flex mt-6 xl:mt-12">
         <div class="w-1/2 px-2">
           <form-modal-button
-          class-name="py-2 w-full shadow-md no-underline rounded-lg bg-blue-700 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-blue-500 focus:outline-none active:shadow-none"
+          class-name="py-2 w-full shadow-md no-underline rounded bg-blue-700 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-blue-500 focus:outline-none active:shadow-none"
         ></form-modal-button>
         </div>
         <div class="w-1/2 px-2">
           <modal-button
-            class-name="py-2 w-full shadow-md no-underline rounded-lg bg-green-500 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none"
+            class-name="py-2 w-full shadow-md no-underline rounded bg-green-500 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none"
           ></modal-button>
         </div>
       </div>

@@ -22,7 +22,7 @@
             <button
               type="submit"
               name="commit"
-              class="bg-blue-600 hover:bg-blue-500 border-blue-600 hover:border-blue-500 px-4 py-2 rounded text-white font-bold border-t border-b border-r"
+              class="py-2 px-2 w-16 uppercase shadow-md no-underline rounded bg-blue-600 text-white font-bold text-xs hover:text-white hover:bg-blue-500 focus:outline-none active:shadow-none"
             >
             Sök
             </button>
