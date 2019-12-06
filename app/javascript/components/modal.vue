@@ -1,6 +1,6 @@
 <template>
   <transition name="modal">
-    <div class="modal-mask" @click="close">
+    <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-body flex flex-wrap md:items-center">
           <div class="w-full mx-auto p-4 lg:p-0">
@@ -12,7 +12,7 @@
                   <p class="font-bold text-base lg:text-lg text-gray-800">
                     Skicka meddelande till
                   </p>
-                  <p class="font-bold leading-tight text-base lg:text-base text-blue-500">
+                  <p class="font-bold leading-tight text-base lg:text-lg text-blue-500">
                     Cömpany AB
                   </p>
                 </div>
@@ -24,26 +24,26 @@
                 <div class="flex flex-wrap mb-6 items-center">
                   <div class="hidden lg:w-1/3 lg:block">
                     <div class="pr-2">
-                      <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">Namn</h2>
+                      <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0 mt-4">Namn</h2>
                     </div>
                   </div>
                   <div class="w-full lg:w-2/3 flex flex-wrap">
                     <div class="w-1/2 pr-2">
-                      <h2 class="tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1">
+                      <h2 class="tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2">
                         Förnamn
                       </h2>
                       <input
-                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-email-adress"
                       type="text"
                       />
                     </div>
                     <div class="w-1/2 pl-2">
-                      <h2 class="tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1">
+                      <h2 class="tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2">
                         Efternamn
                       </h2>
                       <input
-                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-email-adress"
                       type="text"
                       />
@@ -59,7 +59,7 @@
                   <div class="w-full lg:w-2/3">
                     <div class="w-full">
                       <input
-                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-email-adress"
                       type="text"
                     />
@@ -75,7 +75,7 @@
                   <div class="w-full lg:w-2/3">
                     <div class="w-full">
                       <input
-                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-email-adress"
                       type="text"
                     />
@@ -91,7 +91,7 @@
                   <div class="w-full lg:w-2/3">
                     <div class="w-full">
                       <input
-                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-email-adress"
                       type="text"
                     />
@@ -102,13 +102,13 @@
                   <div class="w-full lg:w-1/3">
                     <div class="pr-1">
                       <h2 class="text-sm lg:text-base text-gray-700 font-semibold">Meddelande</h2>
-                      <p class="text-xs lg:text-sm font-semibold lg:mt-1 text-gray-500 mb-1 lg:mb-0">Här skriver du ditt meddelande till företaget .Max 1000 ord.</p>
+                      <p class="text-xs lg:text-sm font-semibold lg:mt-1 text-gray-500 mb-1 lg:mb-0">Här skriver du ditt meddelande till företaget. Max 1000 ord.</p>
                     </div>
                   </div>
                   <div class="w-full lg:w-2/3">
                     <div class="w-full">
                       <textarea
-                      class="appearance-none resize-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-24"
+                      class="text-sm appearance-none resize-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-24"
                       id="subject"
                       type="description">
                       </textarea>
@@ -118,19 +118,19 @@
               </div>
               <div class="w-full flex border-t border-gray-300 py-5 px-5">
                 <div class="w-full flex justify-end items-center">
-                  <div class="w-20 mr-3">
+                  <div class="w-20 mr-2">
                     <button
                       @click="close"
-                      class="w-full text-blue-600 uppercase font-bold text-xs hover:text-blue-300"
+                      class="w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300"
                     >
-                      Cancel
+                      Avbryt
                     </button>
                   </div>
-                  <div class="w-16">
+                  <div class="w-20">
                     <button
-                      class="py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-blue-600 text-white font-bold text-xs hover:text-white hover:bg-blue-500 focus:outline-none active:shadow-none"
+                      class="py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none"
                     >
-                      Send
+                      Skicka
                     </button>
                   </div>
                 </div>

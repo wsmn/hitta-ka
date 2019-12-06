@@ -4,7 +4,7 @@
             <div class="modal-wrapper">
                 <div class="modal-body flex flex-wrap lg:items-center">
                     <div class="w-full flex flex-wrap p-4 lg:p-0">
-                        <div class="w-full md:w-2/3 lg:w-5/6 xl:w-2/3 flex flex-wrap mx-auto bg-gray-300 rounded-lg border border-gray-400">
+                        <div class="w-full md:w-2/3 lg:w-5/6 xl:w-2/3 flex flex-wrap mx-auto bg-gray-300 rounded-lg border border-gray-400" @click.stop>
                             <div class="w-full lg:w-2/3 xl:w-2/3 p-4 xl:p-8">
                                 <div class="lg:px-4 flex flex-col">
                                     <div class="-mx-3 md:flex">
