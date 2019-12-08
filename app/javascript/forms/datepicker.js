@@ -1,5 +1,5 @@
 import Pikaday from 'pikaday';
-import 'pikaday/scss/pikaday.scss';
+import 'pikaday/css/pikaday.css';
 
 const fields = document.getElementsByClassName('datepicker');
 
