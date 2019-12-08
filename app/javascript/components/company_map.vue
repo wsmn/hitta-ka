@@ -6,6 +6,7 @@
           :companies="companies"
           :currentCompany="currentCompany"
           :initialSearch="searchValue"
+          :loading="loading"
           @select="selectCompany"
           @search="searchCompanies"
         ></company-list>
@@ -59,11 +60,12 @@ export default {
         .then(result => {
           this.companies = result.data;
           this.currentCompany = null;
+        this.loading = false;
         })
         .catch(err => {
+          this.loading = false;
           console.log("Failed to fetch companies: ", err);
         });
-      this.loading = false;
     },
     selectCompany(companyId) {
       for (let company of this.companies) {

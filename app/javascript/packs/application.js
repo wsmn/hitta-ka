@@ -12,6 +12,7 @@ import ModalButton from "../components/modal_button.vue";
 import FormModal from "../components/form_modal.vue";
 import FormModalButton from "../components/form_modal_button.vue";
 import Navigation from "../components/navigation.vue";
+import LoadingProgress from "../components/loading_progress.vue";
 import TurbolinksAdapter from "vue-turbolinks";
 import Vue from "vue/dist/vue.esm";
 import axios from "axios";
@@ -27,6 +28,7 @@ Vue.component("modal-button", ModalButton);
 Vue.component("form_modal", FormModal);
 Vue.component("form-modal-button", FormModalButton);
 Vue.component("navigation", Navigation);
+Vue.component("loading-progress", LoadingProgress);
 
 document.addEventListener("turbolinks:load", () => {
   let elements = document.querySelectorAll('[data-behaviour="vue"');

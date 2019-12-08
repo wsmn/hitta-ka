@@ -30,6 +30,7 @@
         </form>
       </div>
     </div>
+    <loading-progress :active="loading" />
     <div v-if="companies.length" class="px-4 xl:px-8 companylist overflow-auto py-4 hidden lg:block">
       <div
         v-for="company in companies"
@@ -58,8 +59,8 @@
           <img v-bind:src="require('images/company_empty.svg')" />
         </div>
       </div>
-      <span v-else class="text-white">
-        Det finns inga företag att hitta ännu.
+      <span v-if="loading" class="text-white">
+        Laddar in företag.
       </span>
     </div>
   </div>
@@ -68,7 +69,7 @@
 <script>
 export default {
   name: "CompanyList",
-  props: ["companies", "currentCompany", "initialSearch"],
+  props: ["companies", "currentCompany", "initialSearch", "loading"],
   data: () => ({
     searchValue: ""
   }),

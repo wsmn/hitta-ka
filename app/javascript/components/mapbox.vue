@@ -199,6 +199,7 @@ export default {
           this.map.flyTo({
             center: company.coordinates
           });
+          this.map.resize();
         }
       }
     }
