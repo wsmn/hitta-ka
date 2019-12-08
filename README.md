@@ -19,9 +19,20 @@ mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
 mv example.com+5-key.pem example-key.pem
 mv example.com+5.pem example.pem
 rails s
+
+# In a different terminal
+./bin/webpack-dev-server
 ```
 
 Application should be available at `https://localhost:8443`.
+
+### Webpack
+
+If editing a lot of javascript code which needs to be recompiled, start the `webpack-dev-server` separately.
+In a terminal separate from `rails s`:
+```
+./bin/webpack-dev-server
+```
 
 ### Create user
 - Run `rails console`
