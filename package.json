@@ -10,6 +10,7 @@
     "esm": "^3.1.0",
     "lodash.template": "^4.5.0",
     "mapbox-gl": "^1.1.0",
+    "moment": "^2.24.0",
     "pikaday": "^1.6.0",
     "tailwindcss": "^1.0.4",
     "vue": "^2.6.10",

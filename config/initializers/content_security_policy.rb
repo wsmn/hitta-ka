@@ -7,7 +7,7 @@
 Rails.application.config.content_security_policy do |policy|
   policy.connect_src(:self, :https, "https://*.tiles.mapbox.com", "https://api.mapbox.com")
   if Rails.env.development?
-    policy.connect_src(:self, :https, "http://localhost:3035", "ws://localhost:3035")
+    policy.connect_src(:self, :https, "https://localhost:3035", "wss://localhost:3035")
     policy.script_src(:self, :https, :unsafe_eval)
   else
     policy.script_src(:self, :https)
