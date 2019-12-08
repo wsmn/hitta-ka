@@ -4,9 +4,7 @@
       <div class="modal-wrapper">
         <div class="modal-body flex flex-wrap md:items-center">
           <div class="w-full mx-auto p-4 lg:p-0">
-            <div
-              class="w-full lg:w-1/2 xl:w-1/3 mx-auto bg-white shadow-xl rounded-lg mt-8 max-w-2xl"
-            >
+            <form class="w-full lg:w-1/2 xl:w-1/3 mx-auto bg-white shadow-xl rounded-lg mt-8 max-w-2xl" @submit="checkForm">
               <div class="w-full flex border-b border-gray-400 p-5 items-center">
                 <div class="w-3/4 md:w-4/5 lg:w-5/6">
                   <p class="font-bold text-base lg:text-lg text-gray-800">
@@ -32,19 +30,22 @@
                       <h2 class="tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2">
                         Förnamn
                       </h2>
-                      <input
+                      <input :class="{'border-red-500 border-4': errors.length}"
                       class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-email-adress"
+                      id="name"
+                      v-model="name"
+                      name="name"
                       type="text"
                       />
+                      <p v-if="errors.length" class="text-red-500 text-xs -mt-5 italic">Var god fyll i namn.</p>
                     </div>
                     <div class="w-1/2 pl-2">
                       <h2 class="tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2">
                         Efternamn
                       </h2>
-                      <input
+                      <input :class="{'border-red-500': errors.length}"
                       class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-email-adress"
+                      id="lastname"
                       type="text"
                       />
                     </div>
@@ -60,8 +61,10 @@
                     <div class="w-full">
                       <input
                       class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-email-adress"
-                      type="text"
+                      id="phone"
+                      v-model="phone"
+                      type="phone"
+                      name="phone"
                     />
                     </div>
                   </div>
@@ -74,11 +77,13 @@
                   </div>
                   <div class="w-full lg:w-2/3">
                     <div class="w-full">
-                      <input
-                      class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-email-adress"
-                      type="text"
-                    />
+                      <input :class="{'border-red-500': errors.length}"
+                        class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="email"
+                        v-model="email"
+                        type="email"
+                        name="email"
+                      />
                     </div>
                   </div>
                 </div>
@@ -127,7 +132,7 @@
                     </button>
                   </div>
                   <div class="w-20">
-                    <button
+                    <button type="submit" value="Submit"
                       class="py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none"
                     >
                       Skicka
@@ -135,7 +140,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -149,12 +154,36 @@ export default {
   data() {
     return {
       showModal: false,
-      company: "Cömpany"
+      company: "Cömpany",
+      errors: [],
+      name: null,
+      email: null
     };
   },
   methods: {
     close() {
         this.$emit("close");
+    },
+    checkForm: function (e) {
+      this.errors = [];
+
+      if (!this.name) {
+        this.errors.push("Name required.");
+      }
+      if (!this.email) {
+        this.errors.push('Email required.');
+      } else if (!this.validEmail(this.email)) {
+        this.errors.push('Valid email required.');
+      }
+
+      if (!this.errors.length) {
+        return true;
+      }
+      e.preventDefault();
+    },
+    validEmail: function (email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
     }
   }
 };
