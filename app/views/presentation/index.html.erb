@@ -56,83 +56,80 @@
 </div>
 <div class="bg-gray-100">
   <div class="container mx-auto">
-    <div class="w-full flex flex-wrap items-center p-10 lg:p-0">
-      <div class="w-full lg:w-1/2 flex flex-wrap justify-center lg:justify-start mt-8 lg:mt-12 mb-2 lg:mb-24">
-        <div class="w-full md:w-2/3 lg:w-full">
-          <h3 class="w-full lg:w-4/5 text-gray-800 text-center lg:text-left text-4xl font-bold">
-            Varför hitta Kontrollansvariga via Apti.se?
+    <div class="w-full flex flex-wrap p-10 lg:p-24">
+      <div class="w-full lg:w-1/2 flex flex-wrap justify-center lg:justify-start">
+        <div class="">
+          <h3 class="w-full lg:w-4/5 text-gray-800 text-center lg:text-left text-2xl font-extrabold">
+            Välj vem du vill kontakta
           </h3>
-        </div>
-        <div class="w-full md:w-2/3 lg:w-3/4">
-          <p class="text-gray-600 text-center lg:text-left mt-12 md:mt-8 lg:mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Dolor sed viverra ipsum nunc aliquet bibendum enim. In massa tempor nec feugiat. Nunc aliquet bibendum enim facilisis gravida.
-            Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Amet luctus venenatis lectus magna fringilla.
-          </p>
+          <div class="w-full md:w-4/5 lg:w-full mx-auto lg:mx-0 mt-4">
+            <p class="text-gray-600 text-center lg:text-left">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Dolor sed viverra ipsum nunc aliquet bibendum enim.
+            </p>
+            <div class="flex mt-8">
+              <div class="w-16">
+                <%= icon('fas', 'user-check', class: 'font-bold text-blue-500 text-2xl') %>
+              </div>
+              <div class="ml-4">
+                  <p class="leading-none font-semibold">Certifierade kontrollansvariga</p>
+                  <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+            </div>
+            <div class="flex mt-8">
+              <div class="w-16">
+                <%= icon('fas', 'file-alt', class: 'font-bold text-blue-500 text-2xl') %>
+              </div>
+              <div class="ml-4">
+                  <p class="leading-none font-semibold">Standardiserade formulär</p>
+                  <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+            </div>
+            <div class="flex mt-8">
+              <div class="w-16">
+                <%= icon('fas', 'map-marked-alt', class: 'font-bold text-blue-500 text-2xl') %>
+              </div>
+              <div class="ml-4">
+                  <p class="leading-none font-semibold">Interaktiv karta</p>
+                  <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="w-full md:w-4/5 lg:w-1/2 mx-auto mt-4 mb-12 lg:mb-24 p-4 md:p-10">
-        <div class="flex">
-          <div class="w-1/2 flex flex-wrap justify-end pr-4 pb-4 md:pr-10 md:pb-10 border-b border-r border-gray-300 content-start">
-            <div class="w-full flex justify-end">
-              <div class="bg-indigo-200 rounded h-10 w-10 flex items-center justify-center text-indigo-700 font-bold">
-                <%= icon('fas', 'map-marked-alt', class: 'font-bold text-2xl') %>
+      <div class="w-full md:w-4/5 lg:w-1/2 flex items-center mx-auto px-4 py-8 lg:py-0 lg:pl-16 xl:pl-32">
+        <div class="flex flex-wrap">
+          <div class="w-full bg-white hover:bg-blue-600 text-blue-900 hover:text-white shadow-xl rounded p-2 mb-4">
+            <div class="flex items-center p-1">
+              <div class="bg-red-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4">
+                Logo
               </div>
-            </div>
-            <div class="w-full text-right mt-4">
-              <span class="block font-bold text-xl text-blue-900">
-                Interaktiv karta
-              </span>
-              <span class="block text-sm text-gray-600">
-                Använd den interaktiva kartan för att hitta lokala företag nära dig. Sortera efter erfarenhet, specialisering och betyg.
-              </span>
+              <div class="w-3/4">
+                <p class="font-semibold text-md">Företag A</p>
+                <p class="text-sm font-light font-sans">Company address</p>
+              </div>
             </div>
           </div>
-          <div class="w-1/2 flex flex-wrap justify-end pl-4 pb-4 md:pl-10 md:pb-10 border-b border-l border-gray-300 content-start">
-            <div class="w-full flex">
-              <div class="bg-indigo-200 rounded h-10 w-10 flex items-center justify-center text-indigo-700 font-bold">
-                <%= icon('fas', 'file-alt', class: 'font-bold text-2xl') %>
+          <div class="w-full bg-white hover:bg-blue-600 text-blue-900 hover:text-white shadow-lg rounded p-2 mb-4">
+            <div class="flex items-center p-1">
+              <div class="bg-green-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4">
+                Logo
               </div>
-            </div>
-            <div class="w-full text-left mt-4">
-              <span class="block font-bold text-xl text-blue-900">
-                Formulär
-              </span>
-              <span class="block text-sm text-gray-600">
-                Spara tid och pengar med hjälp av standardiserade formulär som underlättar för både kund och företag.
-              </span>
+              <div class="w-3/4">
+                <p class="font-semibold text-md">Företag B</p>
+                <p class="text-sm font-light font-sans">Company address</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="flex">
-          <div class="w-1/2 flex flex-wrap justify-end pr-4 pt-4 md:pr-10 md:pt-10 border-t border-r border-gray-300 content-start">
-            <div class="w-full flex justify-end">
-              <div class="bg-indigo-200 rounded h-10 w-10 flex items-center justify-center text-indigo-700 font-bold">
-                <%= icon('fas', 'user-check', class: 'font-bold text-2xl') %>
+          <div class="w-full bg-white hover:bg-blue-600 text-blue-900 hover:text-white shadow-lg rounded p-2 mb-4">
+            <div class="flex items-center p-1">
+              <div class="bg-blue-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4">
+                Logo
               </div>
-            </div>
-            <div class="w-full text-right mt-4">
-              <span class="block font-bold text-xl text-blue-900">
-                Certifierade KA
-              </span>
-              <span class="block text-sm text-gray-600">
-                Företagen granskas så att de har de certifikat som krävs för att vara verksamma som kontrollansvariga.
-              </span>
-            </div>
-          </div>
-          <div class="w-1/2 flex flex-wrap justify-end pl-4 pt-4 md:pl-10 md:pt-10 border-t border-l border-gray-300 content-start">
-            <div class="w-full flex">
-              <div class="bg-indigo-200 rounded h-10 w-10 flex items-center justify-center text-indigo-700 font-bold">
-                <%= icon('fas', 'map-marked-alt', class: 'font-bold text-2xl') %>
+              <div class="w-3/4">
+                <p class="font-semibold text-md">Företag C</p>
+                <p class="text-sm font-light font-sans">Company address</p>
               </div>
-            </div>
-            <div class="w-full text-left mt-4">
-              <span class="block font-bold text-xl text-blue-900">
-                Interaktiv karta
-              </span>
-              <span class="block text-sm text-gray-600">
-                Använd den interaktiva kartan för att hitta lokala företag nära dig. Sortera efter erfarenhet, specialisering och betyg.
-              </span>
             </div>
           </div>
         </div>

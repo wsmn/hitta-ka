@@ -4,7 +4,7 @@
       <div class="w-full md:px-10 lg:px-4 xl:px-8 mt-0 lg:-mt-4 xl:mt-4">
         <form @submit.prevent="handleSearch">
           <div
-            class="flex items-center w-full px-3 py-2 mx-auto bg-white shadow rounded-sm"
+            class="flex items-center w-full px-3 py-2 mx-auto bg-white shadow rounded-none md:rounded-sm"
           >
             <i
               v-if="hasSearchValue"
@@ -37,7 +37,7 @@
         class="bg-white hover:bg-blue-600 text-blue-900 hover:text-white rounded p-2 mb-6"
         :class="{ 'bg-blue-400': company == currentCompany }"
         @click="handleClick(company)"
-      >
+        >
         <div class="flex items-center p-1">
           <div class="bg-red-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4">
             Logo
