@@ -10,7 +10,7 @@
       <div class="w-full lg:w-1/2 xl:w-1/3 mx-auto p-4 lg:p-0">
         <form
           class="w-full mx-auto bg-white shadow-xl rounded-lg mt-8 max-w-2xl"
-          @submit="checkForm"
+          @submit="checkForm" @click.stop
         >
           <div class="w-full flex border-b border-gray-400 p-5 items-center">
             <div class="w-3/4 md:w-4/5 lg:w-5/6">

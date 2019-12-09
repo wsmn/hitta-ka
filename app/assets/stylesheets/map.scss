@@ -160,3 +160,12 @@ input[type="radio"] + label span {
 *:focus {
   outline: none;
 }
+
+.animate-card {
+  transition:all .2s ease-in-out;
+}
+
+.animate-card:hover {
+  margin-left: -12px;
+  transition: all .2s ease-in-out;
+}
