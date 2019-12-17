@@ -1,46 +1,41 @@
-<div class="container sm:mx-auto xl:mx-auto mb-12 md:mb-20 lg:mb-20 xl:mb-32 mt-8 md:mt-16 lg:mt-24 xl:mt-24">
-	<div class="w-full xl:w-11/12 mx-auto flex flex-wrap">
-		<div class="w-full text-white text-center">
-			<div class="w-1/2 mx-auto">
-				<h1 class="text-2xl md:text-3xl md:text-5xl font-sans font-bold text-gray-200">
-					<%= t('.about_us') %>
-				</h1>
-				<p class="italic">"Our philosophy is to provide the most convinient and affordable service for finding a kontrollansvarig to your next byggprojekt."</p>
-			</div>
-		</div>
-		<div class="w-full md:w-1/2">
-			<div class="w-full mx-auto xl:mx-0 xl:w-full">
-				<div class="w-10/12 lg:w-8/12 xl:w-full mx-auto xl:mx-0 mt-0 md:mt-4">
-					<p class="font-bold text-lg text-blue-600 mt-2">
-						Varför startades apti.se?
-					</p>
-					<p class="mt-4 text-gray-200">
-						<ul class="text-white">
-							<li>
-								1. På grund av ett stort behov av ett tydligt och anpassningsbart verktyg för att hitta certifierade kontrollansvariga.
-							</li>
-							<li>
-								2. För att underlätta den första kontakten mellan kund och företag. Detta genom formulär designade för att hjälpa kunden att presentera sitt projekt på bästa sätt samt för att ge den kontrollansvariga en bra överblick av projektet.
-							</li>
-						</ul>
-					</p>
-					<p class="font-bold text-lg text-blue-600 mt-6">
-						Men man kan ju redan hitta certifierade kontrollansvariga via boverket?
-					</p>
-					<p class="mt-4 text-gray-200">
-						Ja det kan man.
-					</p>
-					<p class="font-bold text-lg text-blue-900 mt-6">
-						Hjälper till att koppla ihop kunder och företag.
-					</p>
-					<p class="mt-4">
-						Målet med KA är att hjälpa privatpersoner och företag att hitta certifierade kontrollansvariga för deras byggprojekt.
-					</p>
+<div class="container sm:mx-auto px-8 py-4 lg:px-0 lg:py-24 xl:py-32">
+	<div class="w-full mx-auto flex flex-wrap items-center">
+			<div class="w-full lg:w-1/2 flex flex-wrap justify-center lg:justify-start">
+				<div class="">
+					<h1 class="text-gray-200 text-left text-4xl lg:text-5xl font-bold">
+						Om oss
+					</h1>
+					<div class="mx-auto lg:mx-0 mt-5 pr-4">
+						<p class="text-blue-400 uppercase font-medium">En plattform för kontrollansvariga</p>
+						<p class="text-gray-200 text-left text-base lg:text-lg leading-relaxed mt-3">
+							Apti grundades 2019, med målet att underlätta processen för privatpersoner att hitta certifierade kontrollansvariga i sitt närområde.
+							Vår målsättning är att förenkla processen att hitta och kontakta företag med rätt expertis för ditt byggprojekt.
+						</p>
+						<p class="text-gray-200 text-left text-base lg:text-lg leading-relaxed mt-8">
+							Apti riktar sig mot dig med byggtankar men även mot de företag som vill synas och söker uppdrag. En perfekt match helt enkelt.
+						</p>
+						<p class="text-gray-200 ext-left text-base lg:text-lg leading-relaxed">
+							Har du några frågor? Tveka inte att kontakta oss.
+						</p>
+					</div>
+					<div class="w-full items-center flex justify-left mt-8">
+						<div class="flex hover:border-gray-400 hover:text-gray-400 font-medium">
+							<%= link_to(connect_path, class: 'bg-blue-600 border-blue-600 border hover:bg-blue-500 hover:border-blue-500 py-3 px-3 rounded text-white') do %>
+								<%= t('.connect') %>
+								<%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>
+							<% end %>
+						</div>
+						<div class="flex ml-4 hover:border-gray-400 hover:text-gray-400 font-medium">
+							<%= link_to(contact_path, class: 'border border-white hover:border-gray-500 hover:text-gray-500 py-3 px-3 rounded text-white') do %>
+								<%= t('.contact_us') %>
+								<%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>
+							<% end %>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="w-1/2 mx-auto">
-			<div class="max-w-lg mx-auto mt-16 xl:mt-12">
+		<div class="w-4/5 lg:w-1/2 lg:mx-auto">
+			<div class="max-w-xs lg:max-w-md lg:mx-auto mb-8 lg:mb-0 mt-16 xl:mt-12">
 				<%= image_tag('about_us.svg', alt: 'Profile')%>
 			</div>
 		</div>
