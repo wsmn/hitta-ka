@@ -11,6 +11,7 @@ import Modal from "../components/modal.vue";
 import MessageModal from "../components/message_modal.vue";
 import FormModal from "../components/form_modal.vue";
 import Navigation from "../components/navigation.vue";
+import Questionnaire from "../components/questionnaire.vue";
 import LoadingProgress from "../components/loading_progress.vue";
 import TurbolinksAdapter from "vue-turbolinks";
 import Vue from "vue/dist/vue.esm";
@@ -27,6 +28,7 @@ Vue.component("mapbox", Mapbox);
 Vue.component("message-modal", MessageModal);
 Vue.component("modal", Modal);
 Vue.component("navigation", Navigation);
+Vue.component("questionnaire", Questionnaire);
 
 document.addEventListener("turbolinks:load", () => {
   let elements = document.querySelectorAll('[data-behaviour="vue"');
