@@ -4,6 +4,7 @@
 class PresentationController < ApplicationController
   before_action(:require_login, only: :account)
   layout("landing")
+
   def index
   end
 
@@ -20,12 +21,6 @@ class PresentationController < ApplicationController
   end
 
   def support
-  end
-
-  def home2
-    @companies = Company.where.not(latitude: nil, longitude: nil)
-    @company_geojson = company_geojson(@companies)
-    render layout: "map"
   end
 
   def form
