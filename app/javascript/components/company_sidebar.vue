@@ -116,6 +116,9 @@ export default {
     imageLoaded() {
       this.$emit('loaded');
     },
+  },
+  created: function() {
+    this.$emit('loaded');
   }
 };
 </script>
