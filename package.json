@@ -5,7 +5,6 @@
     "@rails/webpacker": "^4.0.7",
     "autoprefixer": "^9.6.0",
     "axios": "^0.19.0",
-    "bulma": "^0.5.1",
     "core-js": "^3",
     "esm": "^3.1.0",
     "lodash.template": "^4.5.0",
