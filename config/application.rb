@@ -53,6 +53,6 @@ module Inspections
 
     config.exceptions_app = routes
 
-    config.x.app_url = ENV.fetch("APP_URL") { "kontrollansvarig.se" }
+    config.x.app_url = ENV.fetch("APP_URL") { "apti.se" }
   end
 end

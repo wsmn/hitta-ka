@@ -23,10 +23,10 @@
                 <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 2.75rem", class: "mr-5") %>
               <% end %>
             </div>
-            <%= link_to(t('application.header.home'), root_url, class: "text-blue-600 hover:text-gray-600 ml-5 mr-5") %>
-            <%= link_to(t('application.header.map'), map_url, class: "hover:text-gray-600 mr-5") %>
-            <%= link_to(t('application.header.kontrollansvarig'), kontrollansvarig_url, class: "hover:text-gray-600 mr-5") %>
-            <%= link_to(t('application.header.about'), about_url, class: "hover:text-gray-600 mr-5") %>
+            <%= link_to(t('application.header.home'), root_url, class: header_active("presentation#index", "hover:text-gray-600 ml-5", "text-blue-600")) %>
+            <%= link_to(t('application.header.map'), map_url, class: header_active("map#index", "hover:text-gray-600 ml-5", "text-blue-600")) %>
+            <%= link_to(t('application.header.kontrollansvarig'), kontrollansvarig_url, class: header_active("presentation#kontrollansvarig", "hover:text-gray-600 ml-5", "text-blue-600")) %>
+            <%= link_to(t('application.header.about'), about_url, class: header_active("presentation#about", "hover:text-gray-600 ml-5 mr-5", "text-blue-600")) %>
           </div>
           <div class="dropdown relative flex items-center text-black inline-block">
             <div class="border-l border-gray-500 h-6 flex items-center justify-end">
