@@ -21,10 +21,11 @@
                 :accessToken="accessToken"
                 :companies="companies"
                 :company="currentCompany"
+                :resize="resize"
                 @select="selectCompany"
               ></mapbox>
             </div>
-            <company-sidebar :company="currentCompany"></company-sidebar>
+            <company-sidebar @loaded="sidebarLoaded" :company="currentCompany"></company-sidebar>
           </div>
         </div>
       </div>
@@ -40,6 +41,7 @@ export default {
     companies: [],
     currentCompany: null,
     loading: false,
+    resize: 0,
   }),
   mounted() {
     this.searchCompanies(this.searchValue);
@@ -75,6 +77,9 @@ export default {
         }
       }
       this.currentCompany = null;
+    },
+    sidebarLoaded() {
+      this.resize += 1;
     }
   }
 };

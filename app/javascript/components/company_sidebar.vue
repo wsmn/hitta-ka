@@ -99,7 +99,7 @@
         </div>
         <div class="w-1/3 xl:w-7/12 flex mx-auto flex items-center mt-4">
           <div class="max-w-xs mx-auto mt-12">
-            <img v-bind:src="require('images/message_map.svg')" />
+            <img @load="imageLoaded" :src="require('images/message_map.svg')" />
           </div>
         </div>
       </div>
@@ -111,6 +111,11 @@
 export default {
   name: "CompanySidebar",
   props: ["company"],
-  data: () => ({})
+  data: () => ({}),
+  methods: {
+    imageLoaded() {
+      this.$emit('loaded');
+    },
+  }
 };
 </script>
