@@ -1,6 +1,4 @@
 import "styles/application";
-import "../notifications";
-import "../shortcuts";
 
 import CompanyList from "../components/company_list.vue";
 import CompanyMap from "../components/company_map.vue";
@@ -9,6 +7,7 @@ import Mapbox from "../components/mapbox.vue";
 import Modal from "../components/modal.vue";
 import MessageModal from "../components/message_modal.vue";
 import FormModal from "../components/form_modal.vue";
+import Flash from "../components/flash.vue";
 import Navigation from "../components/navigation.vue";
 import Questionnaire from "../components/questionnaire.vue";
 import LoadingProgress from "../components/loading_progress.vue";
@@ -22,6 +21,7 @@ Vue.component("company-list", CompanyList);
 Vue.component("company-map", CompanyMap);
 Vue.component("company-sidebar", CompanySidebar);
 Vue.component("form-modal", FormModal);
+Vue.component("flash", Flash);
 Vue.component("loading-progress", LoadingProgress);
 Vue.component("mapbox", Mapbox);
 Vue.component("message-modal", MessageModal);

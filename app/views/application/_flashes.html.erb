@@ -1,10 +1,7 @@
 <% if flash.any? %>
-  <div class="notifications">
-    <% user_facing_flashes.each do |key, value| -%>
-      <div class="notification is-<%= bulma_notification(key) %>">
-        <button class="delete"></button>
-        <%= value %>
-      </div>
-    <% end -%>
+  <div class="container mx-auto">
+    <% flash.each do |type, value| %>
+      <flash text=<%= value %> type=<%= type %>></flash>
+    <% end %>
   </div>
 <% end %>
