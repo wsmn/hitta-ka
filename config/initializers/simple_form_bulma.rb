@@ -37,16 +37,6 @@ SimpleForm.setup do |config|
     b.use :hint, wrap_with: {tag: "p", class: "help is-info"}
   end
 
-  config.wrappers :vertical_datepicker, tag: "div", class: "field" do |b|
-    b.use :html5
-    b.optional :readonly
-    b.use :label, class: "label"
-    b.use :input, wrap_with: {tag: "p", class: "control"},
-                  class: "input datepicker"
-    b.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-    b.use :hint, wrap_with: {tag: "p", class: "help is-info"}
-  end
-
   config.wrappers :vertical_boolean, tag: "div", class: "field" do |b|
     b.use :html5
     b.optional :readonly
@@ -106,22 +96,6 @@ SimpleForm.setup do |config|
         bb.wrapper tag: "p", class: "control" do |bc|
           bc.use :input, wrap_with: {tag: "span", class: "select"}, class: ""
         end
-        bb.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-        bb.use :hint, wrap_with: {tag: "p", class: "help is-info"}
-      end
-    end
-  end
-
-  config.wrappers :horizontal_datepicker, tag: "div",
-                                          class: "field is-horizontal" do |b|
-    b.use :html5
-    b.optional :readonly
-    b.use :label, class: "label", wrap_with: {tag: "div",
-                                              class: "field-label is-normal",}
-    b.wrapper tag: "div", class: "field-body" do |ba|
-      ba.wrapper tag: "div", class: "field" do |bb|
-        bb.use :input, wrap_with: {tag: "p", class: "control"},
-                       class: "input datepicker"
         bb.use :error, wrap_with: {tag: "p", class: "help is-danger"}
         bb.use :hint, wrap_with: {tag: "p", class: "help is-info"}
       end
@@ -194,7 +168,6 @@ SimpleForm.setup do |config|
     check_boxes: :vertical_radio_and_checkboxes,
     radio_buttons: :vertical_radio_and_checkboxes,
     boolean: :vertical_boolean,
-    datepicker: :vertical_datepicker,
     collection: :vertical_select,
     select: :vertical_select,
     text: :textarea,

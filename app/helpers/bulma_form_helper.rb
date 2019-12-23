@@ -3,7 +3,6 @@ module BulmaFormHelper
     simple_form_for(model,
       wrapper: :horizontal_form,
       wrapper_mappings: {
-        datepicker: :horizontal_datepicker,
         select: :horizontal_select,
         boolean: :horizontal_boolean,
         check_boxes: :horizontal_radio_and_checkboxes,
