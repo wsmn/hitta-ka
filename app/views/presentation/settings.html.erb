@@ -1,199 +1,181 @@
-<div class="w-full lg:calcwidth flex bg-gray-200 overflow-y-auto">
-    <div class="font-sans flex flex-col w-full lg:w-3/4 mx-auto mb-40">
-        <div class="flex-grow container mx-auto sm:px-4 md:px-0 pt-8 p-4">
-            <div class="w-full mb-12">
-                <h1 class="text-3xl font-bold text-gray-800">Account settings</h1>
+<div class="w-full overflow-y-auto lg:flex-grow p-4 lg:p-0 mt-4">
+    <div class="flex-grow container mx-auto sm:px-4 pt-6">
+        <div class="w-full mb-12">
+            <h1 class="text-3xl font-bold text-gray-800">Account settings</h1>
+        </div>
+        <div class="w-full flex">
+            <div class="w-1/3 mt-6 hidden lg:flex">
+                <div class="w-5/6">
+                    <h2 class="text-lg font-semibold">Basic information</h2>
+                    <p class="text-ba mt-4 text-gray-700">Set your login preferences, help us personalize your experience and make big account settings here.</p>
+                </div>
             </div>
-            <div class="w-full flex">
-                <div class="w-1/3 mt-6 hidden lg:flex">
-                    <div class="w-5/6">
-                        <h2 class="text-lg font-semibold">Basic information</h2>
+            <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
+                <div class="w-full flex bg-gray-300 lg:hidden">
+                    <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
+                        <h2 class="text-lg text-gray-900 font-semibold">Basic information</h2>
                         <p class="text-ba mt-4 text-gray-700">Set your login preferences, help us personalize your experience and make big account settings here.</p>
                     </div>
                 </div>
-                <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
-                    <div class="w-full flex bg-gray-300 lg:hidden">
-                        <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
-                            <h2 class="text-lg text-gray-900 font-semibold">Basic information</h2>
-                            <p class="text-ba mt-4 text-gray-700">Set your login preferences, help us personalize your experience and make big account settings here.</p>
+                <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+                    <div class="-mx-3 md:flex mb-6">
+                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="tracking-wide text-gray-800 text-base font-bold">
+                                First Name
+                            </label>
+                            <input class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
+                        </div>
+                        <div class="w-full md:w-1/2 px-3">
+                            <label class="tracking-wide text-gray-800 text-base font-bold">
+                                Last Name
+                            </label>
+                            <input class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2" id="grid-last-name" type="text">
                         </div>
                     </div>
-                    <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-                        <div class="-mx-3 md:flex mb-6">
-                            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                                <label class="tracking-wide text-gray-800 text-base font-bold">
-                                    First Name
-                                </label>
-                                <input class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
-                            </div>
-                            <div class="w-full md:w-1/2 px-3">
-                                <label class="tracking-wide text-gray-800 text-base font-bold">
-                                    Last Name
-                                </label>
-                                <input class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2" id="grid-last-name" type="text">
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap -mx-3">
-                            <div class="w-full px-3">
-                                <label class="tracking-wide text-gray-800 text-base font-bold">
-                                    Email Adress
-                                </label>
-                                <input class="appearance-none mt-1 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="email">
-                            </div>
+                    <div class="flex flex-wrap -mx-3">
+                        <div class="w-full px-3">
+                            <label class="tracking-wide text-gray-800 text-base font-bold">
+                                Email Adress
+                            </label>
+                            <input class="appearance-none mt-1 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="email">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="w-full flex mt-12 lg:mt-6">
-                <div class="w-1/3 mt-6 hidden lg:flex">
-                    <div class="w-5/6">
-                        <h2 class="text-lg font-semibold">Company settings</h2>
+        </div>
+        <div class="w-full flex mt-12 lg:mt-6">
+            <div class="w-1/3 mt-6 hidden lg:flex">
+                <div class="w-5/6">
+                    <h2 class="text-lg font-semibold">Company settings</h2>
+                    <p class="text-ba mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload a logo. Select the areas that your company is active in.</p>
+                </div>
+            </div>
+            <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
+                <div class="w-full flex bg-gray-300 lg:hidden">
+                    <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
+                        <h2 class="text-lg text-gray-900 font-semibold">Company settings</h2>
                         <p class="text-ba mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload a logo. Select the areas that your company is active in.</p>
                     </div>
                 </div>
-                <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
-                    <div class="w-full flex bg-gray-300 lg:hidden">
-                        <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
-                            <h2 class="text-lg text-gray-900 font-semibold">Company settings</h2>
-                            <p class="text-ba mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload a logo. Select the areas that your company is active in.</p>
+                <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+                    <div class="flex flex-wrap -mx-3">
+                        <div class="w-full px-3">
+                            <label class="tracking-wide text-gray-900 text-base font-bold">
+                                Company name
+                            </label>
+                            <input class="appearance-none mt-1 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="company_name">
                         </div>
                     </div>
-                    <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-                        <div class="flex flex-wrap -mx-3">
-                            <div class="w-full px-3">
-                                <label class="tracking-wide text-gray-900 text-base font-bold">
-                                    Company name
-                                </label>
-                                <input class="appearance-none mt-1 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="company_name">
-                            </div>
+                    <div class="-mx-3 md:flex mb-6">
+                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="tracking-wide text-gray-800 text-base font-bold">
+                                Address
+                            </label>
+                            <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
                         </div>
-                        <div class="-mx-3 md:flex mb-6">
-                            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                                <label class="tracking-wide text-gray-800 text-base font-bold">
-                                    Address
-                                </label>
-                                <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
-                            </div>
-                            <div class="w-full md:w-1/2 px-3">
-                                <label class="tracking-wide text-gray-800 text-base font-bold">
-                                    City
-                                </label>
-                                <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2" id="grid-last-name" type="text">
-                            </div>
+                        <div class="w-full md:w-1/2 px-3">
+                            <label class="tracking-wide text-gray-800 text-base font-bold">
+                                City
+                            </label>
+                            <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2" id="grid-last-name" type="text">
                         </div>
-                        <div class="-mx-3 md:flex mb-6">
-                            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                                <label class="tracking-wide text-gray-800 text-base font-bold">
-                                    Zip-code
-                                </label>
-                                <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
-                            </div>
-                            <div class="w-full md:w-1/2 px-3">
-                                <label class="tracking-wide text-gray-800 text-base font-bold">
-                                    Country
-                                </label>
-                                <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2" id="grid-last-name" type="text">
-                            </div>
+                    </div>
+                    <div class="-mx-3 md:flex mb-6">
+                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="tracking-wide text-gray-800 text-base font-bold">
+                                Zip-code
+                            </label>
+                            <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
                         </div>
-                        <div class="flex flex-wrap -mx-3">
-                            <div class="w-full flex-wrap px-3 mb-3">
-                                <label class="tracking-wide text-gray-800 text-base font-bold">
-                                    Logotype
-                                </label>
-                                <div class="flex mt-2">
-                                    <div class="rounded-full h-16 w-16 bg-blue-400 flex mr-3 items-center justify-center">
-                                        <p class="text-white font-bold text-xs">Logo</p>
-                                    </div>
-                                    <div class="mt-5 ml-4">
-                                        <label class="items-center px-4 py-2 bg-white text-blue-500 rounded-lg uppercase border border-blue-500 cursor-pointer hover:bg-blue-700 hover:border-blue-700 hover:text-white">
-                                            <span class="text-sm">Change</span>
-                                        </label>
-                                    </div>
+                        <div class="w-full md:w-1/2 px-3">
+                            <label class="tracking-wide text-gray-800 text-base font-bold">
+                                Country
+                            </label>
+                            <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2" id="grid-last-name" type="text">
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap -mx-3">
+                        <div class="w-full flex-wrap px-3 mb-3">
+                            <label class="tracking-wide text-gray-800 text-base font-bold">
+                                Logotype
+                            </label>
+                            <div class="flex mt-2">
+                                <div class="rounded-full h-16 w-16 bg-blue-400 flex mr-3 items-center justify-center">
+                                    <p class="text-white font-bold text-xs">Logo</p>
+                                </div>
+                                <div class="mt-5 ml-4">
+                                    <label class="items-center px-4 py-2 bg-white text-blue-500 rounded-lg uppercase border border-blue-500 cursor-pointer hover:bg-blue-700 hover:border-blue-700 hover:text-white">
+                                        <span class="text-sm">Change</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="w-full flex mt-12 lg:mt-6 mb-40">
-                <div class="w-1/3 mt-6 hidden lg:flex">
-                    <div class="w-5/6">
-                        <h2 class="text-lg font-semibold">Visability settings</h2>
-                        <p class="text-base mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload a logo. Select the areas that your company is active in.</p>
-                    </div>
+        </div>
+        <div class="w-full flex mt-12 lg:mt-6 mb-40">
+            <div class="w-1/3 mt-6 hidden lg:flex">
+                <div class="w-5/6">
+                    <h2 class="text-lg font-semibold">Visability settings</h2>
+                    <p class="text-base mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload a logo. Select the areas that your company is active in.</p>
                 </div>
-                <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
-                    <div class="w-full flex bg-gray-300 lg:hidden">
-                            <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
-                                <h2 class="text-lg text-gray-900 font-semibold">Visability settings</h2>
-                                <p class="text-base mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload a logo. Select the areas that your company is active in.</p>
-                            </div>
+            </div>
+            <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
+                <div class="w-full flex bg-gray-300 lg:hidden">
+                        <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
+                            <h2 class="text-lg text-gray-900 font-semibold">Visability settings</h2>
+                            <p class="text-base mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload a logo. Select the areas that your company is active in.</p>
                         </div>
-                    <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-                        <div class="flex flex-wrap -mx-3">
-                            <div class="w-full px-3">
-                                <label class="tracking-wide text-gray-900 text-base font-bold">
-                                    About <p class="font-normal text-gray-700 inline">(Describe your company)</p>
-                                </label>
-                                <textarea class="appearance-none mt-2 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32" id="subject" type="description"></textarea>
-                            </div>
-                        </div>
-                        <div class="w-full">
-                            <label class="tracking-wide text-gray-800 text-base font-bold">
-                                Add locations to where your company is active within
+                    </div>
+                <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+                    <div class="flex flex-wrap -mx-3">
+                        <div class="w-full px-3">
+                            <label class="tracking-wide text-gray-900 text-base font-bold">
+                                About <p class="font-normal text-gray-700 inline">(Describe your company)</p>
                             </label>
+                            <textarea class="appearance-none mt-2 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32" id="subject" type="description"></textarea>
                         </div>
-                        <div class="-mx-3 md:flex mb-6">
-                            <div class="md:w-1/3 px-3 mb-6 md:mb-0">
-                                <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
-                            </div>
-                            <div class="w-full md:w-2/3 px-3 mt-3">
-                                <button class="py-2 px-4 shadow-md no-underline rounded-full bg-blue-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
-                                    Skåne
-                                </button>
-                                <button class="py-2 px-4 shadow-md no-underline rounded-full bg-gray-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
-                                    Lunds kommun
-                                </button>
-                                <button class="py-2 px-4 shadow-md no-underline rounded-full bg-green-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
-                                    Malmö
-                                </button>
-                            </div>
+                    </div>
+                    <div class="w-full">
+                        <label class="tracking-wide text-gray-800 text-base font-bold">
+                            Add locations to where your company is active within
+                        </label>
+                    </div>
+                    <div class="-mx-3 md:flex mb-6">
+                        <div class="md:w-1/3 px-3 mb-6 md:mb-0">
+                            <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
                         </div>
-                        <div class="flex flex-wrap -mx-3">
-                            <div class="w-full flex-wrap px-3 mb-3">
-                                <label class="tracking-wide text-gray-800 text-base font-bold">
-                                    Status <p class="font-normal text-gray-700 inline">(Use this if you are unable to accept more inquries at the moment)</p>
-                                </label>
-                                <span class="border rounded-full border-grey-400 flex items-center cursor-pointer w-12 bg-green-500 justify-end mt-2">
-                                    <span class="rounded-full border w-6 h-6 border-grey-400 shadow-inner bg-white shadow">
-                                    </span>
+                        <div class="w-full md:w-2/3 px-3 mt-3">
+                            <button class="py-2 px-4 shadow-md no-underline rounded-full bg-blue-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
+                                Skåne
+                            </button>
+                            <button class="py-2 px-4 shadow-md no-underline rounded-full bg-gray-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
+                                Lunds kommun
+                            </button>
+                            <button class="py-2 px-4 shadow-md no-underline rounded-full bg-green-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
+                                Malmö
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap -mx-3">
+                        <div class="w-full flex-wrap px-3 mb-3">
+                            <label class="tracking-wide text-gray-800 text-base font-bold">
+                                Status <p class="font-normal text-gray-700 inline">(Use this if you are unable to accept more inquries at the moment)</p>
+                            </label>
+                            <span class="border rounded-full border-grey-400 flex items-center cursor-pointer w-12 bg-green-500 justify-end mt-2">
+                                <span class="rounded-full border w-6 h-6 border-grey-400 shadow-inner bg-white shadow">
                                 </span>
-                                <p class="text-green-500">Your company is now visable on the map.</p>
-                                <span class="border rounded-full border-grey flex items-center cursor-pointer w-12 bg-red-500 justify-start">
-                                    <span class="rounded-full border w-6 h-6 border-grey shadow-inner bg-white shadow">
-                                    </span>
+                            </span>
+                            <p class="text-green-500">Your company is now visable on the map.</p>
+                            <span class="border rounded-full border-grey flex items-center cursor-pointer w-12 bg-red-500 justify-start">
+                                <span class="rounded-full border w-6 h-6 border-grey shadow-inner bg-white shadow">
                                 </span>
-                                <p class="text-red-500">You have hidden your company from the map.</p>
-                            </div>
+                            </span>
+                            <p class="text-red-500">You have hidden your company from the map.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="h-20 bg-white border-t border-gray-600 fixed bottom-0 inherit-width hidden lg:flex">
-        <div class="flex justify-end w-full">
-            <div class="mt-4 mr-4 xl:mr-8 w-48">
-                <button type="button" class="bg-gray-400 border-gray-400 hover:bg-gray-600 hover:border-gray-600 text-black font-semibold border rounded px-4 py-2 mr-2">Cancel</button>
-                <button type="button" class="bg-gray-900 border-gray-900 hover:bg-gray-600 hover:border-gray-600 text-white font-semibold border rounded px-6 py-2">Save</button>
-            </div>
-        </div>
-    </div>
-    <div class="h-16 bg-white border-t border-gray-400 fixed bottom-0 w-full flex lg:hidden">
-        <div class="w-full flex justify-end">
-            <div class="mt-4 mr-4 w-48">
-                <button type="button" class="bg-gray-400 border-gray-400 hover:bg-gray-600 hover:border-gray-600 text-black text-sm font-semibold border rounded px-4 py-1 mr-2">Cancel</button>
-                <button type="button" class="bg-gray-900 border-gray-900 hover:bg-gray-600 hover:border-gray-600 text-white text-sm font-semibold border rounded px-6 py-1">Save</button>
             </div>
         </div>
     </div>

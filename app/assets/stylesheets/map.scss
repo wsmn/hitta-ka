@@ -68,11 +68,6 @@ input[type="radio"] + label span {
   height: calc(100% - 5rem);
 }
 
-.sidemenu {
-  width: 22rem;
-  background-color: #223245;
-}
-
 .inherit-width {
   width:inherit;
 }
@@ -168,4 +163,10 @@ input[type="radio"] + label span {
 .animate-card:hover {
   margin-left: -12px;
   transition: all .2s ease-in-out;
+}
+
+/*Drop down menu*/
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

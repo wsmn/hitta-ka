@@ -9,7 +9,7 @@ sv:
       account: Konto
       sign_in: Logga in
       sign_out: Logga ut
-    sidemenu:
+    account_menu:
       home: Hem
       settings: Inställningar
     footer:

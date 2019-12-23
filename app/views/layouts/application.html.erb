@@ -17,8 +17,8 @@
       <%= render('header') %>
     </header>
     <div class="flex-grow relative" data-behaviour="vue">
-      <div class="w-full flex absolute h-full">
-        <%= render('application/sidemenu') %>
+      <div class="w-full flex-wrap absolute">
+        <%= render('application/account_menu') %>
         <%= yield(:title) %>
         <%= render('flashes') %>
         <%= yield %>
