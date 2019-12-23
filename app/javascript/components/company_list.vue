@@ -13,7 +13,7 @@
             ></i>
             <input
               type="text"
-              id="text"
+              id="search-field"
               placeholder="Län, kommun, stad"
               aria-label="text"
               v-model="searchValue"

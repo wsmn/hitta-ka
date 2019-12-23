@@ -9,7 +9,7 @@
 					</span>
 				</div>
 				<%= simple_form_for(:password, url: passwords_path) do |f| %>
-						<%= f.input(:email, input_html: { class: 'bg-gray-200 shadow-inner rounded autofocus: true' }, label_html: { class: 'text-gray-700 text-sm font-bold' },
+						<%= f.input(:email, input_html: { class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200 shadow-inner' }, label_html: { class: 'text-gray-700 text-sm font-bold' },
 						label: t('helpers.label.password.email')) %>
 						<div class="mt-6">
 							<%= f.button(:submit, class: "w-full bg-gray-800 hover:bg-gray-500 text-white text-sm h-10 font-semibold rounded") %>

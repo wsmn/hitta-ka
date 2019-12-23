@@ -36,7 +36,7 @@
                     <input type="radio" class="hidden" v-model="permit" value="not_needed"><p class="inline-block font-bold leading-none">Nej, inget bygglov behövs</p>
                     <p class="text-sm text-gray-600 font-medium">Behöver man inget bygglov för att utföra den förändring ni planerat?</p>
                 </label>
-                <label class="w-full relative block border-2 border-gray-400 hover:bg-blue-100 hover:border-blue-300 rounded p-3" :class="{'bg-blue-100 border-blue-500': permit == 'unknown'}">
+                <label class="w-full relative block border-2 border-gray-400 hover:bg-blue-100 hover:border-blue-300 rounded mt-2 p-3" :class="{'bg-blue-100 border-blue-500': permit == 'unknown'}">
                     <div class="absolute right-0 top-0 p-3" :class="{'hidden': permit != 'unknown'}">
                         <div class="rounded-full bg-blue-200 h-6 w-6 flex items-center justify-center inline">
                             <p class="text-base"><i class="fas fa-check text-blue-800 fa-sm"></i></p>
@@ -51,9 +51,9 @@
                     Info
                 </h2>
                 <p class="mt-2">
-                    Har du några mer funderingar och tankar så hänvisar vi till boverket hemsida.
+                    Har du några mer funderingar och tankar så hänvisar vi till boverkets hemsida.
                 </p>
-                <p class="mt-2">
+                <p class="">
                     <a
                     href="https://boverket.se"
                     class="text-blue-600 hover:text-blue-400 font-semibold"
