@@ -35,6 +35,7 @@ sv:
   passwords:
     create:
       description: Du får strax ett mail med instruktioner för att byta lösenord.
+      title: Byt lösenord
     edit:
       description: Ditt lösenord har återställts. Välj ett nytt lösenord nedan.
       title: Byt ditt lösenord

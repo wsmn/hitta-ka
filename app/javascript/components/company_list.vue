@@ -30,7 +30,9 @@
         </form>
       </div>
     </div>
-    <loading-progress :active="loading" />
+    <div class="hidden lg:block">
+      <loading-progress :active="loading" />
+    </div>
     <div v-if="companies.length" class="px-4 xl:px-8 companylist overflow-auto py-4 hidden lg:block">
       <div
         v-for="company in companies"

@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  def nav_active?(controllers)
-    controllers.include?(controller_name)
+  def nav_active?(actions)
+    name = "#{controller_name}##{action_name}"
+    actions.include?(name)
   end
 
-  def aside_item_class(controllers)
-    "is-active" if nav_active?(controllers)
-  end
-
-  def navbar_is_active(css, controllers)
-    css += " is-active" if nav_active?(controllers)
+  def header_active(target, base, extra)
+    css = base
+    if nav_active?(target)
+      css += " #{extra}"
+    end
     css
   end
 
