@@ -199,6 +199,9 @@ export default {
           this.map.flyTo({
             center: company.coordinates
           });
+        }
+
+        if (this.map != null) {
           this.map.resize();
         }
       }
