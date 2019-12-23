@@ -16,10 +16,10 @@ class Company < ApplicationRecord
 
   def to_json
     {
-      id: self.id,
-      name: self.name,
-      address: self.geocode_address,
-      coordinates: self.coordinates,
+      id: id,
+      name: name,
+      address: geocode_address,
+      coordinates: coordinates,
     }
   end
 

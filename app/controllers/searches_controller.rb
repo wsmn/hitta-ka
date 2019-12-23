@@ -14,9 +14,9 @@ class SearchesController < ApplicationController
 
   def company
     respond_to do |format|
-      format.html {
+      format.html do
         redirect_to(map_path(search: search_param))
-      }
+      end
       format.json {
         render(json: search_place.map(&:to_json))
       }
