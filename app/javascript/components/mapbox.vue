@@ -12,7 +12,7 @@ import mapboxgl from "mapbox-gl/dist/mapbox-gl";
 
 export default {
   name: "Mapbox",
-  props: ["accessToken", "companies", "company"],
+  props: ["accessToken", "companies", "company", "resize"],
   data: () => ({
     mapbox: null,
     map: null,
@@ -201,6 +201,15 @@ export default {
           });
           this.map.resize();
         }
+      }
+    },
+    resize: {
+      immediate: true,
+      handler: function(resize, old_value) {
+        if (this.map === null || this.map.resize === undefined) {
+          return
+        }
+        this.map.resize();
       }
     }
   }
