@@ -17,7 +17,7 @@ body {
 }
 
 .mapheight {
-  height: 55%;
+  height: 92vh;
 }
 
 ul li {
@@ -165,6 +165,19 @@ input[type="radio"] + label span {
 
 /*Drop down menu*/
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.drop-down {
+  visibility: hidden;
+  opacity: 0;
+  top: 100%;
+  transform: translateY(-0.5em);
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.drop-down-parent:focus .drop-down,
+.drop-down-parent:focus-within .drop-down,
+.drop-down-parent:hover .drop-down {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s;
 }

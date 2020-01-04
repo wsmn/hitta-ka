@@ -9,7 +9,6 @@
 <script>
 import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl";
-
 export default {
   name: "Mapbox",
   props: ["accessToken", "companies", "company", "resize"],
@@ -73,7 +72,6 @@ export default {
             ]
           }
         });
-
         this.map.addLayer({
           id: "cluster-count",
           type: "symbol",
@@ -85,7 +83,6 @@ export default {
             "text-size": 12
           }
         });
-
         this.map.addLayer({
           id: "unclustered-point",
           type: "circle",
@@ -98,37 +95,31 @@ export default {
             "circle-stroke-color": "#fff"
           }
         });
-
         this.map.on("click", "clusters", event => {
           const features = this.map.queryRenderedFeatures(event.point, {
             layers: ["clusters"]
           });
           const clusterId = features[0].properties.cluster_id;
-
           this.map
             .getSource("companies")
             .getClusterExpansionZoom(clusterId, (err, zoom) => {
               if (err) return;
-
               this.map.easeTo({
                 center: features[0].geometry.coordinates,
                 zoom: zoom
               });
             });
         });
-
         this.map.on("click", "unclustered-point", (event) => {
           const features = this.map.queryRenderedFeatures(event.point, {
             layers: ["unclustered-point"]
           });
           const companyId = features[0].properties.companyId;
           this.$emit('select', companyId);
-
           this.map.easeTo({
             center: features[0].geometry.coordinates
           });
         });
-
         this.fitBounds();
       });
     },
@@ -161,7 +152,6 @@ export default {
           name: company.name
         }
       }));
-
       return {
         type: "FeatureCollection",
         features: features
@@ -189,18 +179,15 @@ export default {
           this.fitBounds();
           return;
         }
-
         if (this.map.getSource == undefined) {
           return;
         }
-
         let source = this.map.getSource("companies");
         if (source) {
           this.map.flyTo({
             center: company.coordinates
           });
         }
-
         if (this.map != null) {
           this.map.resize();
         }
@@ -209,7 +196,7 @@ export default {
     resize: {
       immediate: true,
       handler: function(resize, old_value) {
-        if (this.map === null || this.map.resize === undefined) {
+        if (this.map === null || this.map.resize === undefined) {
           return
         }
         this.map.resize();

@@ -95,6 +95,5 @@ export default {
       return this.searchValue != "";
     }
   }
-
 };
 </script>

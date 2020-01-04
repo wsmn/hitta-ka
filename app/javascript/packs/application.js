@@ -1,5 +1,6 @@
 import "styles/application";
 
+import Company from "../components/company.vue";
 import CompanyList from "../components/company_list.vue";
 import CompanyMap from "../components/company_map.vue";
 import CompanySidebar from "../components/company_sidebar.vue";
@@ -17,6 +18,7 @@ import axios from "axios";
 
 Vue.use(TurbolinksAdapter);
 Vue.prototype.$http = axios;
+Vue.component("company", Company);
 Vue.component("company-list", CompanyList);
 Vue.component("company-map", CompanyMap);
 Vue.component("company-sidebar", CompanySidebar);
