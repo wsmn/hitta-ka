@@ -1,7 +1,13 @@
 <template>
   <div class="w-full mx-auto">
-    <div class="w-full flex justify-center md:h-16 lg:h-16 xl:h-24">
-      <div class="w-full md:px-10 lg:px-4 xl:px-8 mt-0 lg:-mt-4 xl:mt-4">
+    <div class="w-full flex justify-center">
+      <div class="w-full md:px-10 lg:px-4 xl:px-8 mt-0 lg:-mt-4 xl:mt-2">
+        <div class="mb-6">
+          <h1 class="text-3xl inline text-white font-thin">
+            Sök
+          </h1>
+          <h1 class="font-bold text-3xl text-white inline ml-1">Kontrollansvariga</h1>
+        </div>
         <form @submit.prevent="handleSearch">
           <div
             class="flex items-center w-full px-3 py-2 mx-auto bg-white shadow rounded-none md:rounded-sm"
@@ -28,6 +34,12 @@
             </button>
           </div>
         </form>
+        <div class="pt-8 pb-4">
+          <h2 class="font-bold text-white text-2xl inline">
+            Hela Sverige
+          </h2>
+          <p class="text-lg text-gray-500 inline ml-2">123 results</p>
+        </div>
       </div>
     </div>
     <div class="hidden lg:block">
@@ -37,8 +49,8 @@
       <div
         v-for="company in companies"
         :key="company.company_id"
-        class="bg-white hover:bg-blue-600 text-blue-900 hover:text-white rounded p-2 mb-6"
-        :class="{ 'bg-blue-400': company == currentCompany }"
+        class="bg-white hover:bg-blue-400 text-blue-900 hover:text-white rounded p-2 mb-6 shadow-lg animate-company"
+        :class="{ 'bg-blue-600': company == currentCompany }"
         @click="handleClick(company)"
         >
         <div class="flex items-center p-1">
@@ -54,7 +66,7 @@
     </div>
     <div v-else class="w-2/3 mx-auto companylist overflow-auto text-center">
       <div v-if="searchValue" class="mt-4">
-        <span class="text-base xl:text-lg text-white">
+        <span class="text-base xl:text-lg text-gray-900">
           Inga resultat, prova att söka på någonting annat!
         </span>
         <div class="w-2/3 xl:w-1/2 mx-auto mt-8">

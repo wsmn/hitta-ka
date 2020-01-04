@@ -63,7 +63,7 @@ input[type="radio"] + label span {
 }
 
 .companylist {
-  height: calc(100% - 5rem);
+  height: calc(100% - 15rem);
 }
 
 .inherit-width {
@@ -161,6 +161,19 @@ input[type="radio"] + label span {
 .animate-card:hover {
   margin-left: -12px;
   transition: all .2s ease-in-out;
+}
+
+.animate-company {
+  transition:all .1s ease-in-out;
+}
+
+.animate-company:hover {
+  margin-left: -12px;
+  transition: all .1s ease-in-out;
+}
+
+.company_list_background {
+  background-color: #C4DBF3;
 }
 
 /*Drop down menu*/

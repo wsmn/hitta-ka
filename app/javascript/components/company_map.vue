@@ -1,21 +1,11 @@
 <template>
   <div class="w-full flex h-full absolute">
     <div class="w-full flex flex-wrap">
-      <div class="w-full lg:w-1/3 xl:w-1/4 lg:max-w-md flex md:py-4 bg-gray-900">
-        <company-list
-          :companies="companies"
-          :currentCompany="currentCompany"
-          :initialSearch="searchValue"
-          :loading="loading"
-          @select="selectCompany"
-          @search="searchCompanies"
-        ></company-list>
-      </div>
-      <div class="w-full h-full lg:w-2/3 xl:w-3/4 xxl:w-4/5 relative md:px-10 lg:p-0 bg-gray-900 lg:bg-gray-200">
-        <div class="lg:p-0 xl:p-8 h-full">
-          <div class="flex flex-wrap inline-block h-full xl:h-auto">
+      <div class="w-full h-full lg:w-2/3 xl:w-full absolute md:px-10 lg:p-0 bg-gray-900 lg:bg-gray-200">
+        <div class="lg:p-0 h-full">
+          <div class="flex flex-wrap inline-block h-full xl:h-full">
             <div
-              class="w-full xl:w-2/3 xxl:w-3/4 bg-white min-h-1/2"
+              class="w-full xl:w-full min-h-1/2 h-full"
             >
               <mapbox
                 :accessToken="accessToken"
@@ -25,9 +15,24 @@
                 @select="selectCompany"
               ></mapbox>
             </div>
-            <company-sidebar @loaded="sidebarLoaded" :company="currentCompany"></company-sidebar>
           </div>
         </div>
+      </div>
+      <div class="w-1/4 z-20 max-w-md flex md:py-4 relative bg-gray-900 shadow-xl rounded-lg ml-6 mt-6 mb-6 border border-gray-400">
+        <company-list
+          :companies="companies"
+          :currentCompany="currentCompany"
+          :initialSearch="searchValue"
+          :loading="loading"
+          @select="selectCompany"
+          @search="searchCompanies"
+        ></company-list>
+      </div>
+      <div class="relative z-10 w-1/4 max-w-sm bg-white mt-6 mb-6 xl:rounded-r border-t border-r border-b border-gray-500 -ml-2">
+          <company-sidebar @loaded="sidebarLoaded" :company="currentCompany"></company-sidebar>
+      </div>
+      <div class="absolute bottom-0 right-0 m-8">
+        <enquiry-list></enquiry-list>
       </div>
     </div>
   </div>

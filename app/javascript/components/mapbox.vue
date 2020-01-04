@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full lg:border-t lg:border-l lg:border-b lg:border-gray-500 xl:rounded-l"
+    class="w-full"
     style="height:100%"
     id="map"
   ></div>
@@ -185,7 +185,8 @@ export default {
         let source = this.map.getSource("companies");
         if (source) {
           this.map.flyTo({
-            center: company.coordinates
+            center: company.coordinates,
+            offset: [220, -20]
           });
         }
         if (this.map != null) {
