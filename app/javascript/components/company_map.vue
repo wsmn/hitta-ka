@@ -18,19 +18,14 @@
           </div>
         </div>
       </div>
-      <div class="w-1/4 z-20 max-w-md flex md:py-4 relative bg-gray-900 shadow-xl rounded-lg ml-6 mt-6 mb-6 border border-gray-400">
-        <company-list
-          :companies="companies"
-          :currentCompany="currentCompany"
-          :initialSearch="searchValue"
-          :loading="loading"
-          @select="selectCompany"
-          @search="searchCompanies"
-        ></company-list>
-      </div>
-      <div class="relative z-10 w-1/4 max-w-sm bg-white mt-6 mb-6 xl:rounded-r border-t border-r border-b border-gray-500 -ml-2">
-          <company-sidebar @loaded="sidebarLoaded" :company="currentCompany"></company-sidebar>
-      </div>
+      <company-list
+        :companies="companies"
+        :currentCompany="currentCompany"
+        :initialSearch="searchValue"
+        :loading="loading"
+        @select="selectCompany"
+        @search="searchCompanies"
+      ></company-list>
       <div class="absolute bottom-0 right-0 m-8">
         <enquiry-list></enquiry-list>
       </div>
