@@ -9,7 +9,7 @@ body {
 }
 
 .bg_color_home {
-  background-color: #132B56;
+  background-color: #132b56;
 }
 
 .maxcontentwidth {
@@ -30,13 +30,13 @@ ul li {
 }
 
 .mapboxgl-popup-content {
-    overflow-y: scroll;
-    background-color: #000000;
+  overflow-y: scroll;
+  background-color: #000000;
 }
 
 .popupCustom .mapboxgl-popup-content {
-    background-color: ffffff;
-    padding: 30px;
+  background-color: ffffff;
+  padding: 30px;
 }
 
 .marker {
@@ -44,22 +44,21 @@ ul li {
   cursor: pointer;
   height: 56px;
   width: 56px;
-  background-image: url(asset_path('marker.png'));
+  background-image: url(asset_path("marker.png"));
   background-color: rgba(0, 0, 0, 0);
 }
 
 input[type="radio"]:checked + label span {
-  background-color: #3490DC; //bg-blue
+  background-color: #3490dc; //bg-blue
   box-shadow: 0px 0px 0px 2px white inset;
 }
 
-input[type="radio"]:checked + label{
-   color: #3490DC; //text-blue
+input[type="radio"]:checked + label {
+  color: #3490dc; //text-blue
 }
 
 input[type="radio"] + label span {
-  transition: background .2s,
-    transform .2s;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .companylist {
@@ -67,7 +66,7 @@ input[type="radio"] + label span {
 }
 
 .inherit-width {
-  width:inherit;
+  width: inherit;
 }
 
 .h-9 {
@@ -84,8 +83,9 @@ input[type="radio"] + label span {
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .collapsible:hover {
-  background-color: #BFE3F7;
+.active,
+.collapsible:hover {
+  background-color: #bfe3f7;
 }
 
 /* Style the collapsible content. Note: hidden by default */
@@ -94,8 +94,7 @@ input[type="radio"] + label span {
   display: none;
   overflow: hidden;
 
-  p
-  {
+  p {
     line-height: normal;
   }
 }
@@ -103,77 +102,79 @@ input[type="radio"] + label span {
 /* Mobile menu transition */
 
 .transition-opacity {
-  transition-property:opacity
+  transition-property: opacity;
 }
 
 .transition-transform {
-  transition-property:transform
+  transition-property: transform;
 }
 
 .-translate-x-full {
-  transform:translateX(-100%)
+  transform: translateX(-100%);
 }
 
 .translate-x-full {
-  transform:translateX(100%)
+  transform: translateX(100%);
 }
 
 .ease-in {
-  transition-timing-function:cubic-bezier(.4, 0, 1, 1)
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .ease-out {
-  transition-timing-function:cubic-bezier(0, 0, .2, 1)
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 .transition-slow {
-  transition-duration:.3s
+  transition-duration: 0.3s;
 }
 
 .transition-slower {
-  transition-duration:.5s
+  transition-duration: 0.5s;
 }
 
 .transition-slowest {
-  transition-duration:.7s
+  transition-duration: 0.7s;
 }
 
 .translate-x-0 {
-  transform:translateX(0)
+  transform: translateX(0);
 }
 
 .transition-medium {
-  transition-duration:.2s
+  transition-duration: 0.2s;
 }
 
 /* Stops the mobile nav menu flashing in link clicks and reloads */
 
-[v-cloak] { display: none; }
+[v-cloak] {
+  display: none;
+}
 
 *:focus {
   outline: none;
 }
 
 .animate-card {
-  transition:all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .animate-card:hover {
   margin-left: -12px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .animate-company {
-  transition:all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .animate-company:hover {
   margin-left: -12px;
-  transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .company_list_background {
-  background-color: #C4DBF3;
+  background-color: #c4dbf3;
 }
 
 /*Drop down menu*/
@@ -183,7 +184,8 @@ input[type="radio"] + label span {
   opacity: 0;
   top: 100%;
   transform: translateY(-0.5em);
-  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
+    z-index 0s linear 0.01s;
 }
 
 .drop-down-parent:focus .drop-down,

@@ -19,5 +19,6 @@
 <script>
 export default {
   name: "EnquiryList",
+  props: ["company"]
 };
 </script>
