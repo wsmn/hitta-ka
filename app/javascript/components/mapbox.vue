@@ -198,6 +198,7 @@ export default {
       handler: function(company, old_company) {
         if (company == null) {
           this.fitBounds();
+          this.popup.remove();
           return;
         }
         if (this.map.getSource == undefined) {
