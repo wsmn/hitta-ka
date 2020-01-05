@@ -1,6 +1,14 @@
 <template>
   <div class="w-full flex h-full absolute">
     <div class="w-full flex flex-wrap">
+      <company-list
+        :companies="companies"
+        :currentCompany="currentCompany"
+        :initialSearch="searchValue"
+        :loading="loading"
+        @select="selectCompany"
+        @search="searchCompanies"
+      ></company-list>
       <div class="w-full h-full lg:w-2/3 xl:w-full absolute md:px-10 lg:p-0 bg-gray-900 lg:bg-gray-200">
         <div class="lg:p-0 h-full">
           <div class="flex flex-wrap inline-block h-full xl:h-full">
@@ -18,14 +26,6 @@
           </div>
         </div>
       </div>
-      <company-list
-        :companies="companies"
-        :currentCompany="currentCompany"
-        :initialSearch="searchValue"
-        :loading="loading"
-        @select="selectCompany"
-        @search="searchCompanies"
-      ></company-list>
       <div class="absolute bottom-0 right-0 m-8">
         <enquiry-list></enquiry-list>
       </div>
