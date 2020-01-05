@@ -1,9 +1,9 @@
 import "styles/application";
 
-import Company from "../components/company.vue";
 import CompanyList from "../components/company_list.vue";
 import CompanyMap from "../components/company_map.vue";
 import CompanyInfo from "../components/company_info.vue";
+import CompanyPopup from "../components/company_popup.vue";
 import EnquiryList from "../components/enquiry_list.vue";
 import Mapbox from "../components/mapbox.vue";
 import Modal from "../components/modal.vue";
@@ -19,10 +19,10 @@ import axios from "axios";
 
 Vue.use(TurbolinksAdapter);
 Vue.prototype.$http = axios;
-Vue.component("company", Company);
 Vue.component("company-list", CompanyList);
 Vue.component("company-map", CompanyMap);
 Vue.component("company-info", CompanyInfo);
+Vue.component("company-popup", CompanyInfo);
 Vue.component("enquiry-list", EnquiryList);
 Vue.component("form-modal", FormModal);
 Vue.component("flash", Flash);

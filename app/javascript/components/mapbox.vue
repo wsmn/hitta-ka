@@ -9,6 +9,10 @@
 <script>
 import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl";
+import Vue from "vue/dist/vue.esm";
+import CompanyPopup from "./company_popup.vue";
+
+
 export default {
   name: "Mapbox",
   props: ["accessToken", "companies", "company", "resize"],
@@ -16,6 +20,7 @@ export default {
     mapbox: null,
     map: null,
     mapStyle: "mapbox://styles/wsmn/ck1jfxf161o851cq9tg7dbgce",
+    popup: null,
   }),
   mounted() {
     this.requireMap();
@@ -34,6 +39,10 @@ export default {
         center: [14.5, 63], // starting position
         zoom: 4,
         pitch: 0
+      });
+
+      this.popup = new mapboxgl.Popup({
+        closeOnClick: false
       });
     },
     addClusters() {
@@ -119,9 +128,21 @@ export default {
           this.map.easeTo({
             center: features[0].geometry.coordinates
           });
+          this.addPopup(features[0].properties, features[0].geometry.coordinates);
         });
         this.fitBounds();
       });
+    },
+    addPopup(properties, coordinates) {
+      const popup = new Vue({
+        ...CompanyPopup,
+        parent: this,
+        propsData: {company: properties},
+      }).$mount()
+      this.popup
+        .setLngLat(coordinates)
+        .setDOMContent(popup.$el)
+        .addTo(this.map);
     },
     fitBounds() {
       const bounds = new mapboxgl.LngLatBounds();
@@ -192,6 +213,7 @@ export default {
         if (this.map != null) {
           this.map.resize();
         }
+        this.addPopup({name: company.name}, company.coordinates)
       }
     },
     resize: {
