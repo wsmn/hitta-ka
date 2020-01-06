@@ -82,7 +82,7 @@
         <span v-if="loading" class="text-white">Laddar in företag.</span>
       </div>
     </div>
-    <company-info v-if="shouldExpand" @close="closeInfo" :company="currentCompany"></company-info>
+    <company-info :show="shouldExpand" @close="closeInfo" :company="currentCompany"></company-info>
   </div>
 </template>
 

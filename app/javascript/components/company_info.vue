@@ -1,6 +1,7 @@
 <template>
   <transition name="slide">
     <div
+      v-if="show"
       class="hidden xl:flex flex-grow-1 company-list z-10 -ml-1 bg-white rounded-r border border-gray-300"
     >
       <div class="w-full p-2 xl:p-6 pt-8 flex flex-col">
@@ -80,7 +81,7 @@
 <script>
 export default {
   name: "CompanyInfo",
-  props: ["company"],
+  props: ["company", "show"],
   data: () => ({}),
   methods: {
     close() {
