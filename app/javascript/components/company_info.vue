@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-grow-1 w-1/2 z-10 bg-white">
+  <div class="flex flex-grow-1 company-list z-10 -ml-1 mt-6 mb-6 bg-white rounded-r border border-gray-300">
     <div
       class="w-full p-4 xl:p-10 flex flex-col bg-white"
     >
