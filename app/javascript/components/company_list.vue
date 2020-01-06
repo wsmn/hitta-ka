@@ -83,11 +83,6 @@
           <span v-if="loading" class="text-white">Laddar in företag.</span>
         </div>
       </div>
-      <company-info
-        v-if="shouldExpand"
-        @close="closeInfo"
-        :company="currentCompany"
-      ></company-info>
     </div>
     <transition name="slide">
       <company-info v-if="shouldExpand" @close="closeInfo" :company="currentCompany"></company-info>
