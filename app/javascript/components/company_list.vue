@@ -1,13 +1,13 @@
 <template>
   <div
-    class="flex z-20 relative flex-row max-h-full py-6 pl-6"
+    class="flex z-20 relative flex-row h-32 lg:h-auto pt-6 lg:py-6 pl-6"
     :class="{
         '': !shouldExpand,
         'w-1/2': shouldExpand
       }"
   >
     <div
-      class="flex flex-col company-list z-20 flex py-2 px-6 md:py-4 max-h-full mb-auto w-auto relative bg-gray-900 shadow-xl rounded-lg border border-gray-400"
+      class="w-auto flex flex-col z-20 flex py-2 px-6 lg:py-6 relative bg-gray-900 shadow-xl rounded-lg border border-gray-400"
     >
       <div class="mt-0 lg:-mt-4 xl:mt-2">
         <h1 class="text-white text-md lg:text-3xl">
@@ -16,7 +16,7 @@
         </h1>
         <form @submit.prevent="handleSearch">
           <div
-            class="flex items-center w-full px-3 py-2 mx-auto mt-4 bg-white shadow rounded-none md:rounded-sm"
+            class="flex items-center w-full px-3 py-2 mx-auto mt-2 lg:mt-4 bg-white shadow rounded-none md:rounded-sm"
           >
             <i v-if="hasSearchValue" @click="resetSearch" class="fas fa-times-circle mr-3"></i>
             <input
@@ -35,7 +35,7 @@
           </div>
         </form>
       </div>
-      <div class="hidden lg:block pt-8 pb-4">
+      <div class="hidden lg:block company-list pt-8 pb-4">
         <h2 class="font-bold text-white text-2xl inline">Hela Sverige</h2>
         <p class="text-lg text-gray-500 inline ml-2">123 results</p>
       </div>

@@ -2,15 +2,15 @@
   <transition name="slide">
     <div
       v-if="show"
-      class="hidden xl:flex flex-grow-1 company-list z-10 -ml-1 bg-white rounded-r border border-gray-300"
+      class="hidden relative xl:flex company-info z-10 -ml-1 bg-white rounded-r border border-gray-300"
     >
-      <div class="w-full p-2 xl:p-6 pt-8 flex flex-col">
-        <button
-          class="absolute top-0 right-0 mt-8 mr-4 p-2 border border-gray-800 rounded bg-white hover:bg-gray-400 hover:border-gray-300 hover:text-white"
+            <button
+          class="absolute z-20 top-0 right-0 -mt-2 -mr-2 w-8 h-8 border border-gray-800 rounded bg-white hover:bg-gray-400 hover:border-gray-300 hover:text-white"
           @click="close"
         >
           X
         </button>
+      <div class="w-full relative p-2 xl:p-6 pt-8 flex flex-col">
         <div class="w-full flex mr-2">
           <div>
             <div
