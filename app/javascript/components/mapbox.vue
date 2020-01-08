@@ -19,7 +19,7 @@ export default {
   data: () => ({
     mapbox: null,
     map: null,
-    mapStyle: "mapbox://styles/wsmn/ck1jfxf161o851cq9tg7dbgce",
+    mapStyle: "mapbox://styles/wsmn/ck1jfxf161o851cq9tg7dbgce?optimize=true",
     popup: null,
   }),
   mounted() {

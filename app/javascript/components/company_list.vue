@@ -7,7 +7,7 @@
       }"
   >
     <div
-      class="w-auto flex flex-col z-20 flex py-2 px-6 lg:py-6 relative bg-gray-900 shadow-xl rounded-lg border border-gray-400"
+      class="w-auto flex flex-col z-20 h-auto flex py-2 px-6 lg:py-6 relative bg-gray-900 shadow-xl rounded-lg"
     >
       <div class="mt-0 lg:-mt-4 xl:mt-2">
         <h1 class="text-white text-md lg:text-3xl">
@@ -44,7 +44,7 @@
       </div>
       <div
         v-if="companies.length"
-        class="overflow-auto hidden lg:block"
+        class="overflow-y-scroll companylist hidden lg:block"
       >
         <div
           v-for="company in companies"
@@ -58,7 +58,7 @@
               class="bg-red-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4"
             >Logo</div>
             <div class="w-3/4">
-              <p class="font-semibold text-md">{{ company.name }}</p>
+              <p class="font-semibold text-base">{{ company.name }}</p>
               <p class="text-sm font-light font-sans">{{ company.address }}</p>
             </div>
           </div>

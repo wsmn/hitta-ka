@@ -16,10 +16,6 @@ body {
   max-width: 1920px;
 }
 
-.mapheight {
-  height: 92vh;
-}
-
 ul li {
   padding: 5px 0px;
 }
@@ -30,13 +26,13 @@ ul li {
 }
 
 .mapboxgl-popup-content {
-  overflow-y: scroll;
-  background-color: #000000;
+  padding: 0 !important;
+  border-radius: 50px !important;
+  width: 400px !important;
 }
 
-.popupCustom .mapboxgl-popup-content {
-  background-color: ffffff;
-  padding: 30px;
+.mapboxgl-popup-content-wrapper {
+  padding: 1%;
 }
 
 .marker {
@@ -62,7 +58,7 @@ input[type="radio"] + label span {
 }
 
 .companylist {
-  height: calc(100% - 15rem);
+  height: calc(100vh - 22rem);
 }
 
 .inherit-width {

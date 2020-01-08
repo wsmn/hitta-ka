@@ -22,7 +22,7 @@ Vue.prototype.$http = axios;
 Vue.component("company-list", CompanyList);
 Vue.component("company-map", CompanyMap);
 Vue.component("company-info", CompanyInfo);
-Vue.component("company-popup", CompanyInfo);
+Vue.component("company-popup", CompanyPopup);
 Vue.component("enquiry-list", EnquiryList);
 Vue.component("form-modal", FormModal);
 Vue.component("flash", Flash);
