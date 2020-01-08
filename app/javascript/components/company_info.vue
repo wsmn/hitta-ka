@@ -2,7 +2,7 @@
   <transition name="slide">
     <div
       v-if="show"
-      class="hidden relative lg:flex company-info z-10 -ml-1 bg-white rounded-r border border-gray-300"
+      class="hidden relative lg:flex company-info z-10 -ml-1 bg-white rounded-r border border-gray-300" id="width-of-sidebar"
     >
             <button
           class="absolute z-20 top-0 right-0 -mt-2 -mr-2 w-8 h-8 border border-gray-800 rounded bg-white hover:bg-gray-400 hover:border-gray-300 hover:text-white"

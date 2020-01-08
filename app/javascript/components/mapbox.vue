@@ -206,9 +206,14 @@ export default {
         }
         let source = this.map.getSource("companies");
         if (source) {
+          const element = document.getElementById("width-of-sidebar");
+            let offset = 200;
+            if (element) {
+              offset = element.offsetWidth;
+            }
           this.map.flyTo({
             center: company.coordinates,
-            offset: [220, -20]
+            offset: [offset, -20]
           });
         }
         if (this.map != null) {

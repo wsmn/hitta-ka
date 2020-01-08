@@ -25,6 +25,13 @@ ul li {
   display: true;
 }
 
+.mapboxgl-popup {
+  padding: 0 !important;
+  border-radius: 50px !important;
+  width: 400px !important;
+  max-width: 400px !important;
+}
+
 .mapboxgl-popup-content {
   padding: 0 !important;
   border-radius: 50px !important;
@@ -185,7 +192,7 @@ input[type="radio"] + label span {
   transition-delay: 0s, 0s, 0.3s;
 }
 
-.company-list {
+.company-list-width {
   width: 22vw;
 }
 

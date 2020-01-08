@@ -35,7 +35,7 @@
           </div>
         </form>
       </div>
-      <div class="hidden lg:block company-list pt-8 pb-4">
+      <div class="hidden lg:block company-list-width pt-8 pb-4">
         <h2 class="font-bold text-white text-2xl inline">Hela Sverige</h2>
         <p class="text-lg text-gray-500 inline ml-2">123 results</p>
       </div>
