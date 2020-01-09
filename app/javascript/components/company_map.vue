@@ -9,7 +9,7 @@
         @select="selectCompany"
         @search="searchCompanies"
       ></company-list>
-      <div class="w-full h-full absolute bg-gray-900 lg:bg-gray-200">
+      <div class="w-full h-full absolute bg-gray-900 lg:bg-gray-200 mt-16 md:mt-0">
         <div class="lg:p-0 h-full">
           <div class="flex flex-wrap inline-block h-full xl:h-full">
             <div
@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="absolute bottom-0 right-0 m-8">
+      <div class="absolute bottom-0 w-1/2 md:w-1/3 lg:w-1/5 xl:w-64 right-0 mb-1 md:mb-6 mr-1">
         <enquiry-list></enquiry-list>
       </div>
     </div>

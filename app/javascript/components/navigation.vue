@@ -50,9 +50,9 @@
         >
           <div
             v-show="isOpen"
-            class="z-10 fixed inset-y-0 right-0 max-w-xs w-full bg-white transition-transform overflow-y-auto"
+            class="z-50 fixed inset-y-0 right-0 max-w-xs w-full bg-white transition-transform overflow-y-auto"
           >
-            <div class="relative z-10 bg-white">
+            <div class="relative z-50 bg-white">
               <div :class="isOpen ? 'block' : 'hidden'" class="absolute top-0 right-0 p-4">
                 <button
                   ref="closeButton"

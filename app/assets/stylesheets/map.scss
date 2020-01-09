@@ -28,6 +28,9 @@ ul li {
 .mapboxgl-popup {
   padding: 0 !important;
   border-radius: 50px !important;
+  @media screen and (max-width:720px) {
+    width: 80vw !important;
+  }
   width: 400px !important;
   max-width: 400px !important;
 }
@@ -35,6 +38,9 @@ ul li {
 .mapboxgl-popup-content {
   padding: 0 !important;
   border-radius: 50px !important;
+  @media screen and (max-width:720px) {
+    width: 80vw !important;
+  }
   width: 400px !important;
 }
 

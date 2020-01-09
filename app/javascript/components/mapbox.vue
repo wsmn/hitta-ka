@@ -47,12 +47,12 @@ export default {
     },
     addClusters() {
       this.map.on("load", () => {
-        this.map.addControl(new mapboxgl.NavigationControl(), "top-right");
+        //this.map.addControl(new mapboxgl.NavigationControl(), "top-right");
         this.map.addSource("companies", {
           type: "geojson",
           data: this.companyGeojson,
           cluster: true,
-          clusterMaxZoom: 10,
+          clusterMaxZoom: 4,
           clusterRadius: 50
         });
         this.map.addLayer({
@@ -115,6 +115,7 @@ export default {
               if (err) return;
               this.map.easeTo({
                 center: features[0].geometry.coordinates,
+                offset: [offset, -20],
                 zoom: zoom
               });
             });
@@ -126,7 +127,8 @@ export default {
           const companyId = features[0].properties.companyId;
           this.$emit('select', companyId);
           this.map.easeTo({
-            center: features[0].geometry.coordinates
+            center: features[0].geometry.coordinates,
+            offset: [offset, -20]
           });
           this.addPopup(features[0].properties, features[0].geometry.coordinates);
         });
@@ -156,7 +158,7 @@ export default {
         bounds.extend([sweden[2], sweden[3]]);
       }
       if (this.map) {
-        this.map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+        this.map.fitBounds(bounds, { padding: 70, maxZoom: 8 });
       }
     },
   },
@@ -207,9 +209,9 @@ export default {
         let source = this.map.getSource("companies");
         if (source) {
           const element = document.getElementById("width-of-sidebar");
-            let offset = 200;
+            let offset = 0;
             if (element) {
-              offset = element.offsetWidth;
+              offset = ((element.offsetWidth) / 2);
             }
           this.map.flyTo({
             center: company.coordinates,

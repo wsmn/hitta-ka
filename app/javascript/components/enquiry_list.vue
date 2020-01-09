@@ -1,17 +1,20 @@
 <template>
-  <div class="rounded-lg w-64 bg-white shadow-md text-center mx-auto p-4">
-      <p class="font-semibold text-gray-900 text-xl text-center">Skicka förfrågan!</p>
-    <div class="flex items-center p-1 border-2 border-dashed border-gray-500 rounded mt-2 h-12 justify-center">
-        <p class="font-normal text-base text-center">Empty</p>
+  <div class="rounded-lg w-auto bg-gray-900 shadow-md text-center mx-auto p-2 md:p-3 text-white">
+    <div class="flex justify-between items-center">
+      <div>
+        <p class="font-semibold text-white text-sm md:text-lg text-left">Skicka förfrågan!</p>
+      </div>
+      <div class="pr-0">
+        <button
+            @click="open"
+            class="ml-1 px-1 w-full shadow-md no-underline rounded-full text-white border bg-blue-500 border-blue-500 text-xs md:text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none"
+          >
+            Skicka
+          </button>
+      </div>
     </div>
-    <div class="flex items-center p-1 border-2 border-dashed border-gray-500 rounded mt-2 h-12 justify-center">
-        <p class="font-normal text-base text-center">Empty</p>
-    </div>
-    <div class="flex items-center p-1 border-2 border-dashed border-gray-500 rounded mt-2 text-right h-12 justify-center">
-        <p class="text-center">Empty</p>
-    </div>
-    <div class="w-1/2 mx-auto px-2 mt-4">
-        <form-modal :company="company"></form-modal>
+    <div class="flex items-center p-1 border-2 border-dashed border-gray-500 rounded mt-2 h-10 justify-center">
+        <p class="font-normal text-sm md:text-base text-center">Lägg till företag +</p>
     </div>
   </div>
 </template>
