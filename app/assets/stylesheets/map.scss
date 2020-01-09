@@ -200,8 +200,12 @@ input[type="radio"] + label span {
 
 .company-list-width {
   width: 22vw;
+  min-width: 350px;
+  max-width: 400px;
 }
 
 .company-info {
   width: 22vw;
+  min-width: 350px;
+  max-width: 400px;
 }

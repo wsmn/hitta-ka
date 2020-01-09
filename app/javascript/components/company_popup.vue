@@ -15,13 +15,11 @@
         </div>
         <div class="flex">
           <button
-            @click="open"
             class="px-1 w-full shadow-md no-underline rounded-full text-green-500 border border-green-500 text-xs hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none"
           >
             Message
           </button>
           <button
-            @click="open"
             class="ml-2 px-1 w-full shadow-md no-underline rounded-full text-blue-500 border border-blue-500 text-xs hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none"
           >
             Förfrågan

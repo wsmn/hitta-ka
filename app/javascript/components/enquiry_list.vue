@@ -6,7 +6,6 @@
       </div>
       <div class="pr-0">
         <button
-            @click="open"
             class="ml-1 px-1 w-full shadow-md no-underline rounded-full text-white border bg-blue-500 border-blue-500 text-xs md:text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none"
           >
             Skicka

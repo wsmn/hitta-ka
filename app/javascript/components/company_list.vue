@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full md:w-auto flex z-20 relative flex-row h-16 md:h-32 lg:h-auto py-0 px-0 md:py-2 md:px-2 lg:py-6 lg:pl-6 lg:pr-0"
+    class="w-full md:w-auto flex z-20 relative flex-row h-16 md:h-32 lg:h-full py-0 px-0 md:py-2 md:px-2 lg:py-6 lg:pl-6 lg:pr-0"
     :class="{
         '': !shouldExpand,
         'w-1/2': shouldExpand
@@ -9,10 +9,10 @@
     <div
       class="w-full md:w-auto flex flex-col z-20 h-auto flex py-0 px-2 md:py-2 md:px-4 lg:px-6 lg:py-6 relative bg-gray-900 shadow-xl md:rounded-lg"
     >
-      <div class="mt-0 lg:-mt-4 xl:mt-2">
+      <div class="mt-0 lg:-mt-2 xl:mt-0">
         <h1 class="text-white text-md lg:text-3xl hidden md:block">
           <span class="inline font-thin">Sök</span>
-          <span class="inline font-bold">Kontrollansvarig</span>
+          <span class="inline font-bold">Kontrollansvariga</span>
         </h1>
         <form @submit.prevent="handleSearch">
           <div

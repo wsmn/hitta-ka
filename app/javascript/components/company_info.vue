@@ -10,7 +10,7 @@
         >
           X
         </button>
-      <div class="w-full relative p-2 xl:p-6 pt-8 flex flex-col">
+      <div class="w-full relative p-6 xl:pt-8 flex flex-col">
         <div class="w-full flex mr-2">
           <div>
             <div
