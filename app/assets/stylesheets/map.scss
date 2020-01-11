@@ -209,3 +209,22 @@ input[type="radio"] + label span {
   min-width: 350px;
   max-width: 400px;
 }
+
+.account-arrow {
+  position:relative;
+}
+
+.account-arrow:after {
+  content:'';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-top: none;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid white;
+}
