@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="w-full"
-    style="height:100%"
-    id="map"
-  ></div>
+  <div class="w-full" style="height:100%" id="map"></div>
 </template>
 
 <script>
@@ -12,7 +8,6 @@ import mapboxgl from "mapbox-gl/dist/mapbox-gl";
 import Vue from "vue/dist/vue.esm";
 import CompanyPopup from "./company_popup.vue";
 
-
 export default {
   name: "Mapbox",
   props: ["accessToken", "companies", "company", "resize"],
@@ -20,7 +15,7 @@ export default {
     mapbox: null,
     map: null,
     mapStyle: "mapbox://styles/wsmn/ck1jfxf161o851cq9tg7dbgce?optimize=true",
-    popup: null,
+    popup: null
   }),
   mounted() {
     this.requireMap();
@@ -115,22 +110,25 @@ export default {
               if (err) return;
               this.map.easeTo({
                 center: features[0].geometry.coordinates,
-                offset: [offset, -20],
+                offset: [this.mapboxOffset, -20],
                 zoom: zoom
               });
             });
         });
-        this.map.on("click", "unclustered-point", (event) => {
+        this.map.on("click", "unclustered-point", event => {
           const features = this.map.queryRenderedFeatures(event.point, {
             layers: ["unclustered-point"]
           });
           const companyId = features[0].properties.companyId;
-          this.$emit('select', companyId);
+          this.$emit("select", companyId);
           this.map.easeTo({
             center: features[0].geometry.coordinates,
-            offset: [offset, -20]
+            offset: [this.mapboxOffset, -20]
           });
-          this.addPopup(features[0].properties, features[0].geometry.coordinates);
+          this.addPopup(
+            features[0].properties,
+            features[0].geometry.coordinates
+          );
         });
         this.fitBounds();
       });
@@ -139,8 +137,8 @@ export default {
       const popup = new Vue({
         ...CompanyPopup,
         parent: this,
-        propsData: {company: properties},
-      }).$mount()
+        propsData: { company: properties }
+      }).$mount();
       this.popup
         .setLngLat(coordinates)
         .setDOMContent(popup.$el)
@@ -152,15 +150,15 @@ export default {
         bounds.extend(company.coordinates);
       });
       if (bounds.isEmpty()) {
-        console.log("No bounds!")
-        let sweden = [10.510684, 55.037336, 24.177166, 69.060151]
+        console.log("No bounds!");
+        let sweden = [10.510684, 55.037336, 24.177166, 69.060151];
         bounds.extend([sweden[0], sweden[1]]);
         bounds.extend([sweden[2], sweden[3]]);
       }
       if (this.map) {
         this.map.fitBounds(bounds, { padding: 70, maxZoom: 8 });
       }
-    },
+    }
   },
   computed: {
     companyGeojson() {
@@ -179,6 +177,14 @@ export default {
         type: "FeatureCollection",
         features: features
       };
+    },
+    mapboxOffset() {
+      const element = document.getElementById("width-of-sidebar");
+      let offset = 0;
+      if (element) {
+        offset = element.offsetWidth / 2;
+      }
+      return offset;
     }
   },
   watch: {
@@ -200,7 +206,9 @@ export default {
       handler: function(company, old_company) {
         if (company == null) {
           this.fitBounds();
-          this.popup.remove();
+          if (this.popup) {
+            this.popup.remove();
+          }
           return;
         }
         if (this.map.getSource == undefined) {
@@ -209,26 +217,22 @@ export default {
         let source = this.map.getSource("companies");
         if (source) {
           const element = document.getElementById("width-of-sidebar");
-            let offset = 0;
-            if (element) {
-              offset = ((element.offsetWidth) / 2);
-            }
           this.map.flyTo({
             center: company.coordinates,
-            offset: [offset, -20]
+            offset: [this.mapboxOffset, -20]
           });
         }
         if (this.map != null) {
           this.map.resize();
         }
-        this.addPopup({name: company.name}, company.coordinates)
+        this.addPopup({ name: company.name }, company.coordinates);
       }
     },
     resize: {
       immediate: true,
       handler: function(resize, old_value) {
         if (this.map === null || this.map.resize === undefined) {
-          return
+          return;
         }
         this.map.resize();
       }
