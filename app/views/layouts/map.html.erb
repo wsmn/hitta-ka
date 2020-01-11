@@ -18,6 +18,7 @@
         <%= render('header') %>
       </header>
       <div class="flex flex-grow relative bg-gray-900" data-behaviour="vue">
+        <portal-target name="modals"></portal-target>
         <%= yield %>
       </div>
     </body>

@@ -17,6 +17,7 @@
       <%= render('header') %>
     </header>
     <div class="flex-grow relative" data-behaviour="vue">
+      <portal-target name="modals"></portal-target>
       <div class="w-full flex-wrap absolute">
         <%= render('application/account_menu') %>
         <%= yield(:title) %>

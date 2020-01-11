@@ -1,13 +1,15 @@
 <template>
-  <transition name="modal">
-    <div class="modal-mask">
-      <div class="modal-wrapper">
-        <div @click="close" class="modal-body flex flex-wrap md:items-center">
-          <slot></slot>
+  <portal to="modals">
+    <transition name="modal">
+      <div class="modal-mask">
+        <div class="modal-wrapper">
+          <div @click="close" class="modal-body flex flex-wrap md:items-center">
+            <slot></slot>
+          </div>
         </div>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </portal>
 </template>
 
 <script>
