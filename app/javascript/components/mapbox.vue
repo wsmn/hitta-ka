@@ -211,7 +211,7 @@ export default {
           }
           return;
         }
-        if (this.map.getSource == undefined) {
+        if (this.map === null || this.map.getSource == undefined) {
           return;
         }
         let source = this.map.getSource("companies");
