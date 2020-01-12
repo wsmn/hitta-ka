@@ -18,6 +18,7 @@ class PresentationController < ApplicationController
   end
 
   def connect
+    render(layout: "connect")
   end
 
   def support

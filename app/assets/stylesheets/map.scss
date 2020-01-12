@@ -21,8 +21,12 @@ ul li {
 }
 
 .mapboxgl-popup-close-button {
-  width: 20px;
-  display: true;
+  width: 30px;
+  height: 28px;
+  font-size: 28px;
+  font-weight: semibold;
+  color: #718096 !important;
+  border-top-right-radius: 0.5rem !important;
 }
 
 .mapboxgl-popup {
@@ -227,4 +231,9 @@ input[type="radio"] + label span {
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
   border-bottom: 10px solid white;
+}
+
+.svgbackground {
+  background-image: image-url('svgbackgroundtest.svg');
+  background-size: cover;
 }

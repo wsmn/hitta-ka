@@ -49,8 +49,8 @@
         <div
           v-for="company in companies"
           :key="company.company_id"
-          class="bg-white hover:bg-blue-400 text-blue-900 hover:text-white rounded p-2 mb-6 shadow-lg animate-company"
-          :class="{ 'bg-blue-600': company == currentCompany }"
+          class="bg-white hover:bg-blue-400 text-blue-900 rounded p-2 mb-6 shadow-lg animate-company"
+          :class="{ 'bg-blue-400': company == currentCompany }"
           @click="handleClick(company)"
         >
           <div class="flex items-center p-1">
