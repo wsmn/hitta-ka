@@ -1,7 +1,7 @@
 <template>
   <div v-if="company">
     <div
-      class="w-full bg-gray-100 border border-gray-500 rounded-lg p-2 md:p-5"
+      class="w-full border border-gray-500 rounded-lg p-2 md:p-5"
     >
       <div class="flex items-center h-12 justify-between">
         <div class="flex-row flex">

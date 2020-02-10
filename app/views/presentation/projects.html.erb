@@ -1,17 +1,73 @@
-<div class="w-full overflow-y-auto lg:flex-grow px-4 lg:p-0 mt-4">
-    <div class="flex-grow container mx-auto sm:px-4 pt-2 md:pt-6">
+<div class="w-full overflow-y-auto lg:flex-grow px-4">
+    <div class="flex-grow mx-auto sm:px-4 pt-2 md:pt-6">
         <div class="w-full mb-4">
             <h1 class="text-3xl font-bold text-gray-800">Projects</h1>
         </div>
         <div class="flex justify-between">
             <div class="">
-                <h2 class="text-xl font-bold text-gray-700">Lastest projects</h2>
+                <h2 class="text-xl font-bold text-gray-700">All projects</h2>
             </div>
             <div class="">
                 <%= link_to(projects_path, class: 'bg-blue-200 border border-blue-200 hover:bg-blue-500 hover:border-blue-500 py-2 px-3 rounded text-blue-800 font-semibold') do %>
                 <%= icon('fas', 'plus', class: 'mr-1 text-blue-900') %>
                 <%= t('.new_project') %>
                 <% end %>
+            </div>
+        </div>
+        <div>
+            <div class="my-2 flex sm:flex-row flex-col">
+                <div class="flex flex-row mb-1 sm:mb-0">
+                    <div class="relative">
+                        <select
+                            class="appearance-none h-full rounded border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>20</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg
+                            class="ml-2 h-6 w-6 text-gray-500"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                            d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z"
+                            />
+                        </svg>
+                        </div>
+                    </div>
+                    <div class="relative ml-2">
+                        <select
+                            class="appearance-none h-full rounded border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
+                            <option>All</option>
+                            <option>Active</option>
+                            <option>Inactive</option>
+                            <option>Paused</option>
+                            <option>Archived</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg
+                            class="ml-2 h-6 w-6 text-gray-500"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                            d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z"
+                            />
+                        </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative w-64 lg:ml-2">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                        <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current text-gray-500">
+                            <path d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z"></path>
+                        </svg>
+                    </span>
+                    <input placeholder="Search" class="block pl-8 pr-4 py-2 w-full bg-white border border-gray-400 rounded text-sm placeholder-gray-500 text-white focus:bg-white focus:placeholder-gray-400 focus:text-gray-800 focus:outline-none">
+                </div>
             </div>
         </div>
         <div class="w-full bg-white border border-gray-400 rounded rounded shadow-md mb-6 mt-4">

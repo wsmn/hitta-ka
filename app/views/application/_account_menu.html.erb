@@ -1,64 +1,89 @@
-<div class="bg-blue-800">
-	<div class="container mx-auto px-1 -mt-1">
-	  	<div class="flex justify-between">
-			<div class="flex text-sm lg:text-base">
-				<div class="flex -mb-px mr-3 md:mr-8">
-					<%= link_to(account_path,
-							class: 'no-underline text-white md:text-blue-dark flex items-center py-4') do %>
-						<div class="w-6 lg:w-10 inline-block text-center">
-							<%= icon('fas', 'home', class: "text-white") %>
+<div class="bg-gray-900 border-r account-menu hidden lg:block">
+	<nav class="">
+		<div class="mt-8 px-6">
+			<p class="text-xs font-semibold text-gray-600 uppercase tracking-wide">
+				Main
+			</p>
+			<ul class="mt-1">
+				<li>
+					<%= link_to(account_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<span class="inline-flex">
+						<div class="w-10 inline-block text-center">
+							<%= icon('fas', 'home', class: " mt-1") %>
 						</div>
-						<div class="text-white inline">
+						<span class="font-light">
 							<%= t('.home') %>
-						</div>
+						</span>
+					</span>
 					<% end %>
-				</div>
-				<div class="flex -mb-px mr-3 md:mr-8">
-					<%= link_to(projects_path,
-						class: 'no-underline text-white md:text-blue-dark flex items-center py-4') do %>
-						<div class="w-6 lg:w-10 inline-block text-center">
-							<%= icon('fas', 'tasks', class: "text-white") %>
+				</li>
+				<li>
+					<%= link_to(projects_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<span class="inline-flex">
+						<div class="w-10 inline-block text-center">
+							<%= icon('fas', 'tasks', class: "mt-1") %>
 						</div>
-						<div class="text-white inline">
+						<span class="font-light">
 							<%= t('.projects') %>
-						</div>
+						</span>
+					</span>
 					<% end %>
-				</div>
-				<div class="flex -mb-px mr-3 md:mr-8">
-					<%= link_to(account_path,
-						class: 'no-underline text-white md:text-blue-dark flex items-center py-4') do %>
-						<div class="w-6 lg:w-10 inline-block text-center">
-							<%= icon('fas', 'users', class: "text-white") %>
+				</li>
+				<li>
+					<%= link_to(customers_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<span class="inline-flex">
+						<div class="w-10 inline-block text-center">
+							<%= icon('fas', 'users', class: "mt-1") %>
 						</div>
-						<div class="text-white inline">
+						<span class="font-light">
 							<%= t('.customers') %>
-						</div>
+						</span>
+					</span>
 					<% end %>
-				</div>
-				<div class="flex -mb-px md:mr-8">
-					<%= link_to(settings_path,
-						class: 'no-underline text-white md:text-blue-dark flex items-center py-4') do %>
-						<div class="w-6 lg:w-10 inline-block text-center">
-							<%= icon('fas', 'user-cog', class: "text-white") %>
+				</li>
+				<li>
+					<%= link_to(tasks_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<span class="inline-flex">
+						<div class="w-10 inline-block text-center">
+							<%= icon('fas', 'clock', class: "mt-1") %>
 						</div>
-						<div class="text-white inline">
+						<span class="font-light">
+							<%= t('.tasks') %>
+						</span>
+					</span>
+					<% end %>
+				</li>
+				<li>
+					<%= link_to(invoices_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<span class="inline-flex">
+						<div class="w-10 inline-block text-center">
+							<%= icon('fas', 'file-invoice', class: "mt-1") %>
+						</div>
+						<span class="font-light">
+							<%= t('.invoices') %>
+						</span>
+					</span>
+					<% end %>
+				</li>
+			</ul>
+			<p class="mt-2 text-xs font-semibold text-gray-600 uppercase tracking-wide">
+				Settings
+			</p>
+			<ul class="menu-list mt-2">
+				<li>
+					<%= link_to(settings_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<span class="inline-flex">
+						<div class="w-10 inline-block text-center">
+							<%= icon('fas', 'user-cog', class: "mt-1") %>
+						</div>
+						<span class="font-light">
 							<%= t('.settings') %>
-						</div>
+						</span>
+					</span>
 					<% end %>
-				</div>
-			</div>
-			<div class="-mb-px hidden lg:flex">
-				<%= link_to(sign_out_path,
-					class: 'no-underline text-white md:text-blue-dark flex items-center py-4') do %>
-					<div class="w-6 inline-block text-center">
-						<%= icon('fas', 'sign-out-alt', class: "text-white") %>
-					</div>
-					<div class="text-white underline inline">
-						<%= t('.log_out') %>
-					</div>
-				<% end %>
-			</div>
+				</li>
+			</ul>
+			<%= yield(:account_menu) %>
 		</div>
-		<%= yield(:account_menu) %>
-	</div>
+	</nav>
 </div>

@@ -1,5 +1,5 @@
-<div class="w-full overflow-y-auto lg:flex-grow p-4 lg:p-0 mt-4">
-	<div class="flex-grow container mx-auto sm:px-4 pt-6">
+<div class="w-full overflow-y-auto lg:flex-grow px-4">
+	<div class="flex-grow mx-auto sm:px-4 py-6">
 		<div class="w-full mb-8">
 			<h1 class="text-3xl font-bold text-gray-900">Home</h1>
 		</div>
@@ -177,10 +177,12 @@
 						</div>
 					</div>
 					<div class="px-6 py-3">
-						<div class="text-center text-gray">
-							<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
-								Visa alla projekt
-							</button>
+						<div class="text-center text-gray flex justify-center">
+							<div class="flex hover:border-gray-400 hover:text-gray-400 font-medium">
+								<%= link_to(projects_path, class: 'bg-blue-600 border-blue-600 border hover:bg-blue-500 hover:border-blue-500 py-2 px-3 rounded text-white') do %>
+									<%= t('.Alla projekt') %>
+								<% end %>
+							</div>
 						</div>
 					</div>
 				</div>

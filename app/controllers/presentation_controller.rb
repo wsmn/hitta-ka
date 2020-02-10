@@ -49,6 +49,30 @@ class PresentationController < ApplicationController
     render(layout: "application")
   end
 
+  def customers
+    render(layout: "application")
+  end
+
+  def customer
+    render(layout: "application")
+  end
+
+  def tasks
+    render(layout: "application")
+  end
+
+  def task
+    render(layout: "application")
+  end
+
+  def invoices
+    render(layout: "application")
+  end
+
+  def invoice
+    render(layout: "application")
+  end
+
   private
 
   def company_geojson(companies)

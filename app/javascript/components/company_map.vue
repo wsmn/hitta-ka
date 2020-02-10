@@ -9,7 +9,7 @@
         @select="selectCompany"
         @search="searchCompanies"
       ></company-list>
-      <div class="w-full h-full absolute bg-gray-900 lg:bg-gray-200 mt-16 md:mt-0">
+      <div class="w-full h-full absolute">
         <div class="lg:p-0 h-full">
           <div class="flex flex-wrap inline-block h-full xl:h-full">
             <div

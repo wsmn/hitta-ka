@@ -24,6 +24,15 @@ Rails.application.routes.draw do
   get(:projects, controller: :presentation, action: :projects)
   get(:project, controller: :presentation, action: :project)
 
+  get(:customers, controller: :presentation, action: :customers)
+  get(:customer, controller: :presentation, action: :customer)
+
+  get(:tasks, controller: :presentation, action: :tasks)
+  get(:task, controller: :presentation, action: :task)
+
+  get(:invoices, controller: :presentation, action: :invoices)
+  get(:invoice, controller: :presentation, action: :invoice)
+
   resource(:search, only: []) do
     post(:company)
     post(:project)

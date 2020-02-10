@@ -12,17 +12,19 @@
     <%= csp_meta_tag %>
     <%= render('application/favicon') %>
   </head>
-  <body class="flex flex-col h-full bg-gray-200">
+  <body class="flex flex-col h-screen bg-gray-200">
     <header>
       <%= render('header') %>
     </header>
-    <div class="flex-grow relative" data-behaviour="vue">
+    <div class="" data-behaviour="vue">
       <portal-target name="modals"></portal-target>
-      <div class="w-full flex-wrap absolute">
-        <%= render('application/account_menu') %>
-        <%= yield(:title) %>
-        <%= render('flashes') %>
-        <%= yield %>
+      <div class="flex-1 flex overflow-hidden">
+          <%= render('application/account_menu') %>
+        <div class="flex-1 flex">
+          <%= yield(:title) %>
+          <%= render('flashes') %>
+          <%= yield %>
+        </div>
       </div>
     </div>
   </body>

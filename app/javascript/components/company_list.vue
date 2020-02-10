@@ -7,7 +7,7 @@
       }"
   >
     <div
-      class="w-full md:w-auto flex flex-col z-20 h-auto flex py-0 px-2 md:py-2 md:px-4 lg:px-6 lg:py-6 relative bg-gray-900 shadow-xl md:rounded-lg"
+      class="w-full md:w-auto flex flex-col z-20 h-auto flex py-0 px-2 md:py-2 md:px-4 lg:px-6 lg:py-6 relative md:bg-gray-900 md:shadow-xl md:rounded-lg"
     >
       <div class="mt-0 lg:-mt-2 xl:mt-0">
         <h1 class="text-white text-md lg:text-3xl hidden md:block">
@@ -16,7 +16,7 @@
         </h1>
         <form @submit.prevent="handleSearch">
           <div
-            class="flex items-center w-full px-3 py-2 mx-auto mt-0 md:mt-4 bg-white shadow rounded-none md:rounded-sm"
+            class="flex items-center w-full px-3 py-2 mx-auto mt-2 md:mt-4 bg-white shadow rounded"
           >
             <i v-if="hasSearchValue" @click="resetSearch" class="fas fa-times-circle mr-3"></i>
             <input

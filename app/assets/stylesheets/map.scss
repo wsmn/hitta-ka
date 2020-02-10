@@ -31,7 +31,7 @@ ul li {
 
 .mapboxgl-popup {
   padding: 0 !important;
-  border-radius: 50px !important;
+  border-radius: 0.5rem !important;
   @media screen and (max-width:720px) {
     width: 80vw !important;
   }
@@ -41,7 +41,7 @@ ul li {
 
 .mapboxgl-popup-content {
   padding: 0 !important;
-  border-radius: 50px !important;
+  border-radius: 0.5rem !important;
   @media screen and (max-width:720px) {
     width: 80vw !important;
   }
@@ -236,4 +236,9 @@ input[type="radio"] + label span {
 .svgbackground {
   background-image: image-url('svgbackgroundtest.svg');
   background-size: cover;
+}
+
+.account-menu {
+  height: calc(100vh - 69px);
+  width: 20rem;
 }
