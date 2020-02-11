@@ -12,18 +12,20 @@
     <%= csp_meta_tag %>
     <%= render('application/favicon') %>
   </head>
-  <body class="flex flex-col h-screen bg-gray-200">
-    <header>
-      <%= render('header') %>
-    </header>
-    <div class="" data-behaviour="vue">
-      <portal-target name="modals"></portal-target>
-      <div class="flex-1 flex overflow-hidden">
-          <%= render('application/account_menu') %>
-        <div class="flex-1 flex">
-          <%= yield(:title) %>
-          <%= render('flashes') %>
-          <%= yield %>
+  <body class="antialiased bg-gray-200">
+    <div class="h-screen flex flex-col">
+      <header>
+        <%= render('header') %>
+      </header>
+      <div class="" data-behaviour="vue">
+        <portal-target name="modals"></portal-target>
+        <div class="flex-1 flex overflow-hidden">
+            <%= render('application/account_menu') %>
+          <div class="flex-1 flex">
+            <%= yield(:title) %>
+            <%= render('flashes') %>
+            <%= yield %>
+          </div>
         </div>
       </div>
     </div>

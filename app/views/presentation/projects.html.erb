@@ -8,7 +8,7 @@
                 <h2 class="text-xl font-bold text-gray-700">All projects</h2>
             </div>
             <div class="">
-                <%= link_to(projects_path, class: 'bg-blue-200 border border-blue-200 hover:bg-blue-500 hover:border-blue-500 py-2 px-3 rounded text-blue-800 font-semibold') do %>
+                <%= link_to(new_project_path, class: 'bg-blue-200 border border-blue-200 hover:bg-blue-500 hover:border-blue-500 py-2 px-3 rounded text-blue-800 font-semibold') do %>
                 <%= icon('fas', 'plus', class: 'mr-1 text-blue-900') %>
                 <%= t('.new_project') %>
                 <% end %>
@@ -363,6 +363,17 @@
                             <i class="fas fa-lg fa-edit"></i>
                         </span>
                     </div>
+                </div>
+            </div>
+            <div class="px-3 py-3 bg-white border-t flex flex-col xs:flex-row items-end justify-center">
+                <div class="px-2 py-2 align-middle inline-flex flex items-center">
+                    <span class="inline-flex text-base xs:text-sm text-gray-900 tracking-widest">
+                    1  2  3  4  5  6  7  8
+                    </span>
+                    <button
+                        class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-1 px-4 rounded ml-1">
+                        Next
+                    </button>
                 </div>
             </div>
         </div>
