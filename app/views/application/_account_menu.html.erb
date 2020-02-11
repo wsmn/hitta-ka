@@ -1,12 +1,12 @@
 <div class="bg-gray-900 bg-gray-100 border-r static account-menu hidden lg:block">
 	<nav class="">
-		<div class="mt-8 px-6">
-			<p class="text-xs font-semibold text-gray-600 uppercase tracking-wide">
+		<div class="">
+			<p class="text-xs font-semibold text-gray-600 uppercase tracking-wide ml-4">
 				Main
 			</p>
-			<ul class="mt-1">
+			<ul class="menu-list mt-1">
 				<li>
-					<%= link_to(account_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<%= link_to(account_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700 hover:border hover:border-blue-500') do %>
 					<span class="inline-flex">
 						<div class="w-10 inline-block text-center">
 							<%= icon('fas', 'home', class: " mt-1") %>
@@ -18,7 +18,7 @@
 					<% end %>
 				</li>
 				<li>
-					<%= link_to(projects_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<%= link_to(projects_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
 					<span class="inline-flex">
 						<div class="w-10 inline-block text-center">
 							<%= icon('fas', 'tasks', class: "mt-1") %>
@@ -28,29 +28,29 @@
 						</span>
 					</span>
 					<% end %>
-					<ul class="ml-8 mt-2 rounded-lg">
-						<li class="p-0">
-							<%= link_to(projects_path, class: 'px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<ul class="mt-2 bg-gray-800">
+						<li class="">
+							<%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
 							<span class="inline-flex">
-								<span class="font-light">-
+								<span class="font-light text-sm">
 									<%= t('.active_projects') %>
 								</span>
 							</span>
 							<% end %>
 						</li>
-						<li class="p-0">
-							<%= link_to(projects_path, class: 'px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+						<li class="">
+							<%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
 							<span class="inline-flex">
-								<span class="font-light">-
+								<span class="font-light text-sm">
 									<%= t('.paused_projects') %>
 								</span>
 							</span>
 							<% end %>
 						</li>
-						<li class="p-0">
-							<%= link_to(projects_path, class: 'px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+						<li class="">
+							<%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
 							<span class="inline-flex">
-								<span class="font-light">-
+								<span class="font-light text-sm">
 									<%= t('.archived_projects') %>
 								</span>
 							</span>
@@ -59,7 +59,7 @@
 					</ul>
 				</li>
 				<li>
-					<%= link_to(customers_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<%= link_to(customers_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
 					<span class="inline-flex">
 						<div class="w-10 inline-block text-center">
 							<%= icon('fas', 'users', class: "mt-1") %>
@@ -71,7 +71,7 @@
 					<% end %>
 				</li>
 				<li>
-					<%= link_to(tasks_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<%= link_to(tasks_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
 					<span class="inline-flex">
 						<div class="w-10 inline-block text-center">
 							<%= icon('fas', 'clock', class: "mt-1") %>
@@ -81,11 +81,11 @@
 						</span>
 					</span>
 					<% end %>
-					<ul class="ml-8 mt-2 rounded-lg">
-						<li class="p-0">
-							<%= link_to(projects_path, class: 'px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<ul class="ml-8 mt-2 bg-gray-800">
+						<li class="">
+							<%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
 							<span class="inline-flex">
-								<span class="font-light">-
+								<span class="font-light text-sm">
 									<%= t('.standard_tasks') %>
 								</span>
 							</span>
@@ -94,7 +94,7 @@
 					</ul>
 				</li>
 				<li>
-					<%= link_to(invoices_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<%= link_to(invoices_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
 					<span class="inline-flex">
 						<div class="w-10 inline-block text-center">
 							<%= icon('fas', 'file-invoice', class: "mt-1") %>
@@ -106,12 +106,12 @@
 					<% end %>
 				</li>
 			</ul>
-			<p class="mt-2 text-xs font-semibold text-gray-600 uppercase tracking-wide">
+			<p class="mt-2 text-xs font-semibold text-gray-600 uppercase tracking-wide ml-4">
 				Settings
 			</p>
 			<ul class="menu-list mt-2">
 				<li>
-					<%= link_to(settings_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+					<%= link_to(settings_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
 					<span class="inline-flex">
 						<div class="w-10 inline-block text-center">
 							<%= icon('fas', 'user-cog', class: "mt-1") %>

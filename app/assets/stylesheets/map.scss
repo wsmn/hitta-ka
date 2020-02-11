@@ -240,5 +240,33 @@ input[type="radio"] + label span {
 
 .account-menu {
   height: calc(100vh - 69px);
-  width: 20rem;
+  width: 17rem;
+}
+
+.menu-list {
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #ffffff;
+    height: 50px;
+    &:hover {
+      background-color: #4A5567;
+      border-left: 4px solid #188CFB;
+      color: #ffffff;
+    }
+  }
+
+  p {
+    border-radius: 3px;
+    display: block;
+    padding: .5em .75em;
+
+    &.is-active {
+      background-color: #132b56;
+      color: #ffffff;
+    }
+  }
 }
