@@ -28,6 +28,35 @@
 						</span>
 					</span>
 					<% end %>
+					<ul class="ml-8 mt-2 rounded-lg">
+						<li class="p-0">
+							<%= link_to(projects_path, class: 'px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+							<span class="inline-flex">
+								<span class="font-light">-
+									<%= t('.active_projects') %>
+								</span>
+							</span>
+							<% end %>
+						</li>
+						<li class="p-0">
+							<%= link_to(projects_path, class: 'px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+							<span class="inline-flex">
+								<span class="font-light">-
+									<%= t('.paused_projects') %>
+								</span>
+							</span>
+							<% end %>
+						</li>
+						<li class="p-0">
+							<%= link_to(projects_path, class: 'px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+							<span class="inline-flex">
+								<span class="font-light">-
+									<%= t('.archived_projects') %>
+								</span>
+							</span>
+							<% end %>
+						</li>
+					</ul>
 				</li>
 				<li>
 					<%= link_to(customers_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
@@ -52,6 +81,17 @@
 						</span>
 					</span>
 					<% end %>
+					<ul class="ml-8 mt-2 rounded-lg">
+						<li class="p-0">
+							<%= link_to(projects_path, class: 'px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
+							<span class="inline-flex">
+								<span class="font-light">-
+									<%= t('.standard_tasks') %>
+								</span>
+							</span>
+							<% end %>
+						</li>
+					</ul>
 				</li>
 				<li>
 					<%= link_to(invoices_path, class: '-mx-3 px-3 py-3 flex items-center text-white hover:bg-gray-700 rounded-lg') do %>
