@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
   get(:invoices, controller: :presentation, action: :invoices)
   get(:invoice, controller: :presentation, action: :invoice)
+  get(:new_invoice, controller: :presentation, action: :new_invoice)
 
   resource(:search, only: []) do
     post(:company)

@@ -77,6 +77,10 @@ class PresentationController < ApplicationController
     render(layout: "application")
   end
 
+  def new_invoice
+    render(layout: "application")
+  end
+
   private
 
   def company_geojson(companies)
