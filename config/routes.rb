@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   get(:customers, controller: :presentation, action: :customers)
   get(:customer, controller: :presentation, action: :customer)
+  get(:new_customer, controller: :presentation, action: :new_customer)
 
   get(:tasks, controller: :presentation, action: :tasks)
   get(:task, controller: :presentation, action: :task)

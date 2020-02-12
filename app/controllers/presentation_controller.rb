@@ -61,6 +61,10 @@ class PresentationController < ApplicationController
     render(layout: "application")
   end
 
+  def new_customer
+    render(layout: "application")
+  end
+
   def tasks
     render(layout: "application")
   end
