@@ -1,6 +1,11 @@
 #map {
 }
 /* Optional: Makes the sample page fill the window. */
+
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
 html,
 body {
   height: 100%;
@@ -238,8 +243,7 @@ input[type="radio"] + label span {
   background-size: cover;
 }
 
-.account-menu {
-  height: calc(100vh - 69px);
+.account-menu-width {
   width: 17rem;
 }
 
