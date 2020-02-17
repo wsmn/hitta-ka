@@ -124,48 +124,61 @@
                         </div>
                     </div>
                     <div class="mt-4 lg:hidden border-b border-gray-300">
-                        <div class="w-full flex">
-                            <div class="w-24 bg-gray-400 rounded-l p-2 flex items-center justify-center h-12">
-                                <span class="text-sm font-semibold text-blue-900">
-                                    Task
-                                </span>
+                        <div class="w-full flex flex-wrap mb-4">
+                            <div class="w-11/12 flex justify-between">
+                                <div>
+                                    <p class="text-sm font-semibold text-blue-900">
+                                        Slutbesiktning
+                                    </p>
+                                    <p class="text-xs text-blue-900">
+                                        3 x 990,00 kr
+                                    </p>
+                                    <p class="text-xs text-blue-900">
+                                        Description
+                                    </p>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-semibold text-blue-900">
+                                        2.970,00 kr
+                                    </span>
+                                </div>
                             </div>
-                            <div class="w-full flex border-r border-white">
-                                <input
-                                    class="text-base appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded-r py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12">
+                            <div class="w-1/12 flex items-center justify-center">
+                                <div class="flex text-blue-500 text-sm items-center justify-center ml-4">
+                                    <%= icon('fas', 'edit') %>
+                                </div>
                             </div>
-                        </div>
-                        <div class="w-full flex mt-4">
-                            <div class="w-24 bg-gray-400 rounded-l p-2 flex items-center justify-center h-12">
-                                <span class="text-sm font-semibold text-blue-900">
-                                    Discrip.
-                                </span>
+                            <div class="w-11/12 flex justify-between mt-4">
+                                <div>
+                                    <p class="text-sm font-semibold text-blue-900">
+                                        Slutbesiktning
+                                    </p>
+                                    <p class="text-xs text-blue-900">
+                                        3 x 990,00 kr
+                                    </p>
+                                    <p class="text-xs text-blue-900">
+                                        Description
+                                    </p>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-semibold text-blue-900">
+                                        2.970,00 kr
+                                    </span>
+                                </div>
                             </div>
-                            <div class="w-full flex border-r border-white">
-                                <textarea
-                                    class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded-r py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12"></textarea>
+                            <div class="w-1/12 flex items-center justify-center">
+                                <div class="flex text-blue-500 text-sm items-center justify-center ml-4">
+                                    <%= icon('fas', 'edit') %>
+                                </div>
                             </div>
-                        </div>
-                        <div class="w-1/2 flex mt-4">
-                            <div class="w-24 bg-gray-400 rounded-l p-2 flex items-center justify-center h-12 px-6">
-                                <span class="text-sm font-semibold text-blue-900">
-                                    Cost
-                                </span>
-                            </div>
-                            <div class="w-64 flex border-r border-white">
-                                <input
-                                    class="text-base appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded-r py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12">
-                            </div>
-                        </div>
-                        <div class="w-1/2 flex mt-4 mb-4">
-                            <div class="w-24 bg-gray-400 rounded-l p-2 flex items-center justify-center h-12">
-                                <span class="text-sm font-semibold text-blue-900">
-                                    Quantity
-                                </span>
-                            </div>
-                            <div class="w-64 flex border-r border-white">
-                                <input
-                                    class="text-base appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded-r py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12">
+                            <div class="w-full flex justify-end mt-4">
+                                <div class="">
+                                    <button
+                                        class="py-1 px-2 w-full shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none">
+                                           <%= icon('fas', 'plus', class: 'mr-1') %>
+                                        <%= t('.add_task') %>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -185,7 +198,8 @@
                                             Description
                                         </span>
                                     </div>
-                                    <div class="w-1/12 lg:w-1/6 xl:w-1/12 hidden lg:flex border-r border-white py-3 px-2">
+                                    <div
+                                        class="w-1/12 lg:w-1/6 xl:w-1/12 hidden lg:flex border-r border-white py-3 px-2">
                                         <span class="text-sm font-semibold text-blue-900">
                                             Cost
                                         </span>
@@ -246,13 +260,14 @@
                     <div class="flex justify-end mt-4">
                         <div class="w-1/2 lg:w-1/4 px-5 py-2 flex justify-end">
                             <div class="">
-                                <p class="">Subtotal</p><p class="">1.234,00 kr</p>
+                                <p class="">Subtotal</p>
+                                <p class="">1.234,00 kr</p>
                             </div>
                         </div>
                     </div>
                 </form>
                 <div class="w-full">
-                    <div class="w-full flex border-t border-gray-300 pt-4 px-4 mt-8">
+                    <div class="w-full flex border-t border-gray-300 pt-4 mt-8">
                         <div class="w-full flex justify-end items-center">
                             <div class="w-20 mr-2">
                                 <button class="w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300">
