@@ -2,7 +2,11 @@
     <div class="flex flex-wrap">
         <div class="flex-grow mx-auto pt-2 md:pt-6">
             <div class="w-full">
-                <h1 class="text-3xl font-bold text-gray-800">New Invoice -
+                <h1 class="text-2xl font-bold text-gray-500">
+                    <%= link_to(projects_path, class: 'font-semibold text-blue-500') do %>
+                    <%= t('.projects') %>
+                    <% end %>
+                    / New Invoice -
                     <%= icon('fas', 'file-invoice', class: "mt-1") %>
                 </h1>
             </div>

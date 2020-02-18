@@ -9,6 +9,10 @@ sv:
       account: Konto
       sign_in: Logga in
       sign_out: Logga ut
+      projects: Projekt
+      customers: Kunder
+      tasks: Uppgifter
+      invoices: Fakturor
     account_menu:
       home: Hem
       settings: Inställningar

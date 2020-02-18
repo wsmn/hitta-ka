@@ -90,6 +90,12 @@
                 <div v-if="signedIn" class="flex flex-col">
                   <div class="w-full mb-4">
                     <p class="block text-xs font-semibold text-green-600 uppercase tracking-wider">Konto</p>
+                                    <a
+                  v-for="accountLinks in accountLinkss"
+                  :key="accountLinks.name"
+                  :href="accountLinks.url"
+                  class="mt-4 text-sm font-medium block text-gray-900 hover:text-gray-600"
+                >{{ accountLinks.name }}</a>
                   </div>
                   <div class="flex flex-row">
                     <a :key="accountLink.name"
@@ -139,13 +145,20 @@ export default {
       isOpen: false
     };
   },
-  props: ["signedIn", "links", "signIn", "signOut", "accountLink", "connectLink", "authenticity"],
+  props: ["signedIn", "links", "signIn", "signOut", "accountLink", "accountLinks", "connectLink", "authenticity"],
   computed: {
     processedLinks: function() {
       if (typeof this.links == String) {
         return JSON.parse(this.links);
       } else {
         return this.links;
+      }
+    },
+    accountLinkss: function() {
+      if (typeof this.accountLinks == String) {
+        return JSON.parse(this.accountLinks);
+      } else {
+        return this.accountLinks;
       }
     }
   },

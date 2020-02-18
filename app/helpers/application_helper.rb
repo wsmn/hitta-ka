@@ -23,6 +23,15 @@ module ApplicationHelper
     ].to_json.html_safe
   end
 
+  def account_links
+    [
+      {name: I18n.t("application.header.projects"), url: projects_url},
+      {name: I18n.t("application.header.customers"), url: customers_url},
+      {name: I18n.t("application.header.tasks"), url: tasks_url},
+      {name: I18n.t("application.header.invoices"), url: invoices_url},
+    ].to_json.html_safe
+  end
+
   def account_link
     {
       name: I18n.t("application.header.account"), url: account_url,
