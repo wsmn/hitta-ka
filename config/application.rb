@@ -51,7 +51,7 @@ module Inspections
       g.routing_specs false
     end
 
-    config.exceptions_app = routes
+    # config.exceptions_app = routes
 
     config.x.app_url = ENV.fetch("APP_URL") { "apti.se" }
   end

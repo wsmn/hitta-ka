@@ -1,0 +1,14 @@
+<div class="w-full overflow-y-auto lg:flex-grow px-4">
+    <div class="flex-grow mx-auto sm:px-4 pt-2 md:pt-6">
+        <div class="w-full">
+            <h1 class="text-2xl font-bold text-gray-500">
+                <%= link_to(customers_path, class: 'font-semibold text-blue-500') do %>
+                    <%= t('.customers') %>
+                <% end %>
+                / New Customer -
+                <%= icon('fas', 'user-plus', class: "mt-1") %>
+            </h1>
+        </div>
+        <%= render('form', customer: @customer, organisations: @organisations) %>
+    </div>
+</div>
