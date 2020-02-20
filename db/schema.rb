@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_17_165919) do
+ActiveRecord::Schema.define(version: 2020_02_18_173915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -66,6 +66,38 @@ ActiveRecord::Schema.define(version: 2019_11_17_165919) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "customers", force: :cascade do |t|
+    t.bigint "organisation_id", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["organisation_id"], name: "index_customers_on_organisation_id"
+  end
+
+  create_table "organisation_users", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "organisation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["organisation_id"], name: "index_organisation_users_on_organisation_id"
+    t.index ["user_id", "organisation_id"], name: "index_organisation_users_on_user_id_and_organisation_id", unique: true
+    t.index ["user_id"], name: "index_organisation_users_on_user_id"
+  end
+
+  create_table "organisations", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_projects_on_customer_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -80,4 +112,8 @@ ActiveRecord::Schema.define(version: 2019_11_17_165919) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "customers", "organisations"
+  add_foreign_key "organisation_users", "organisations"
+  add_foreign_key "organisation_users", "users"
+  add_foreign_key "projects", "customers"
 end
