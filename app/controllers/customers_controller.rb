@@ -27,7 +27,6 @@ class CustomersController < ApplicationController
   def show
     @customer = current_user.customers.find(params[:id])
     @organisations = current_user.organisations
-    render(:edit)
   end
 
   def update

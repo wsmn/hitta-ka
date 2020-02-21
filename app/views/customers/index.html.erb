@@ -122,8 +122,8 @@
                     </div>
                 </div>
             <% else %>
-                <% @customers.each do |customer| %>
-                    <% if (customer.id % 2 == 1) %>
+                <% @customers.each_with_index do |customer, idx| %>
+                    <% if (idx % 2 == 0) %>
                     <div class="flex border-b bg-white">
                         <%= render("row", customer: customer) %>
                     </div>

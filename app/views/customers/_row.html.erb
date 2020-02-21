@@ -1,33 +1,30 @@
-<button class="w-full collapsible text-left hover:bg-blue-200">
-  <div class="w-full flex py-4">
-    <div class="w-20 md:w-24 flex justify-center items-center">
-      <div class="rounded-full h-9 w-9 md:h-10 md:w-10 bg-blue-500 inline-flex items-center justify-center text-white font-bold">
-        <%= customer.name.split.map(&:first).join %>
-      </div>
-    </div>
-    <div class="w-full flex items-center">
-      <div class="w-1/3 lg:w-1/4">
-        <p class="text-sm md:text-base"><%= customer.name%></p>
-        <p class="text-sm text-gray-700 opacity-75">Individual</p>
-      </div>
-      <div class="w-1/3 lg:w-1/4">
-        <p class="text-sm md:text-base">Villa NYC</p>
-      </div>
-      <div class="w-1/4 hidden lg:inline-block">
-        <p class="text-sm md:text-base">1</p>
-      </div>
-      <div class="w-1/3 lg:w-1/4 flex justify-center md:justify-start">
-        5.799,00 kr
-      </div>
-    </div>
-    <div class="w-16 hidden md:flex items-center">
-      <a href="project">
-        <span class="icon text-gray-600">
-          <%= link_to(edit_customer_path(customer)) do %>
-            <i class="fas fa-lg fa-plus"></i>
-          <% end %>
-        </span>
-      </a>
+<%= link_to(customer_path(customer), class: 'w-full text-left hover:bg-blue-200') do %>
+<div class="w-full flex py-4">
+  <div class="w-20 md:w-24 flex justify-center items-center">
+    <div
+      class="rounded-full h-9 w-9 md:h-10 md:w-10 bg-blue-500 inline-flex items-center justify-center text-white font-bold">
+      <%= customer.name.split.map(&:first).join %>
     </div>
   </div>
-</button>
+  <div class="w-full flex items-center">
+    <div class="w-1/3 lg:w-1/4">
+      <p class="text-sm md:text-base"><%= customer.name%></p>
+      <p class="text-sm text-gray-700 opacity-75">Individual</p>
+    </div>
+    <div class="w-1/3 lg:w-1/4">
+      <p class="text-sm md:text-base">Villa NYC</p>
+    </div>
+    <div class="w-1/4 hidden lg:inline-block">
+      <p class="text-sm md:text-base">1</p>
+    </div>
+    <div class="w-1/3 lg:w-1/4 flex justify-center md:justify-start">
+      5.799,00 kr
+    </div>
+  </div>
+  <div class="w-16 hidden md:flex items-center">
+    <span class="icon text-gray-600">
+      <i class="fas fa-lg fa-edit"></i>
+    </span>
+  </div>
+</div>
+<% end %>

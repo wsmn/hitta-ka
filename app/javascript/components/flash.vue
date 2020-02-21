@@ -6,7 +6,8 @@
       :class="divClasses"
       role="alert"
     >
-      <span class="block sm:inline">{{ text }}</span>
+      <i class="fas fa-check text-green-500 mr-1"></i>
+      <span class="inline">{{ text }}</span>
       <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
         <svg
           @click="close"
