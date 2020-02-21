@@ -23,10 +23,10 @@
       <portal-target name="modals"></portal-target>
       <div class="flex-1 flex overflow-hidden">
         <%= render('application/account_menu') %>
-        <div class="flex-1 flex">
+        <div class="flex-1 flex relative">
           <%= yield(:title) %>
-          <%= render('flashes') %>
           <%= yield %>
+          <%= render('flashes') %>
         </div>
       </div>
     </div>

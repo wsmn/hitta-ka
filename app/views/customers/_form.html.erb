@@ -1,12 +1,12 @@
 <% organisations ||= [] %>
-<%= form_with(model: customer, local: true, class: 'w-full xl:w-5/6 flex flex-col flex-wrap bg-gray-100 shadow-xl rounded-lg mt-4 p-5') do |form| %>
+<%= form_with(model: customer, local: true, class: 'w-full xl:w-5/6 flex flex-col flex-wrap bg-white border border-gray-300 shadow-xl rounded-lg lg:mt-3 p-4') do |form| %>
 <div class="w-full">
     <div class="flex flex-wrap -mx-2">
-        <div class="w-full lg:w-1/2 px-2">
-            <div class="border-l border-r border-b border-gray-400 bg-white rounded-lg">
-                <div class="h-12 bg-blue-500 px-3 py-2 rounded-t-lg">
-                    <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl">General</h1>
-                </div>
+        <div class="w-full lg:w-1/2 lg:px-2">
+            <div class="h-12 bg-gray-800 px-3 py-2 rounded-t">
+                <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl">General</h1>
+            </div>
+            <div class="border-l border-b border-r border-gray-400 bg-white shadow">
                 <div class="px-3 xl:px-6 py-3">
                     <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
                         <div class="w-full lg:w-56 pr-2">
@@ -24,17 +24,17 @@
                         </div>
                         <div class="w-full">
                             <%= form.text_field(:name, id: 'name', autofocus: true,
-                            class: 'shadow appearance-none border rounded w-full py-2 px-3') %>
+                                class: 'shadow appearance-none border rounded w-full py-2 px-3') %>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-full lg:w-1/2 px-2 mt-4 lg:mt-0">
-            <div class="border-l border-r border-b border-gray-400 bg-white rounded-lg">
-                <div class="h-12 bg-blue-500 px-3 py-2 rounded-t-lg">
-                    <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl">Contact</h1>
-                </div>
+        <div class="w-full lg:w-1/2 lg:px-2 mt-4 lg:mt-0">
+            <div class="h-12 bg-gray-800 px-3 py-2 rounded-t">
+                <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl">Contact information</h1>
+            </div>
+            <div class="border-l border-b border-r border-gray-400 bg-white shadow">
                 <div class="px-3 xl:px-6 py-3">
                     <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
                         <div class="w-full lg:w-56 pr-2">
@@ -90,11 +90,11 @@
         </div>
     </div>
     <div class="flex flex-wrap -mx-2 mt-4 lg:mt-8">
-        <div class="w-full lg:w-1/2 px-2">
-            <div class="border-l border-r border-b border-gray-400 bg-white rounded-lg">
-                <div class="h-12 bg-blue-500 px-3 py-2 rounded-t-lg">
+        <div class="w-full lg:w-1/2 lg:px-2">
+                <div class="h-12 bg-gray-800 px-3 py-2 rounded-t">
                     <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl">Address</h1>
                 </div>
+                <div class="border-l border-b border-r border-gray-400 bg-white shadow">
                 <div class="px-3 xl:px-6 py-3">
                     <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
                         <div class="w-full lg:w-56 pr-2">
@@ -143,11 +143,11 @@
                 </div>
             </div>
         </div>
-        <div class="w-full lg:w-1/2 px-2 mt-4 lg:mt-0">
-            <div class="border-l border-r border-b border-gray-400 bg-white rounded-lg">
-                <div class="h-12 bg-blue-500 px-3 py-2 rounded-t-lg">
+        <div class="w-full lg:w-1/2 lg:px-2 mt-4 lg:mt-0">
+                <div class="h-12 bg-gray-800 px-3 py-2 rounded-t">
                     <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl">Misc.</h1>
                 </div>
+                <div class="border-l border-b border-r border-gray-400 bg-white shadow">
                 <div class="px-3 xl:px-6 py-3">
                     <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
                         <div class="w-full lg:w-56 pr-2">
@@ -164,7 +164,7 @@
             </div>
         </div>
     </div>
-    <div class="w-full flex border-t border-gray-300 pt-4 px-4 mt-8">
+    <div class="w-full flex border-t border-gray-300 pt-3 -mb-1 px-4 mt-6">
         <div class="w-full flex justify-end items-center">
             <div class="w-20 mr-2">
                 <%= link_to("Cancel", customers_path, class: "w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300") %>
