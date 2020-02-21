@@ -71,7 +71,7 @@
                         </svg>
                     </span>
                     <input placeholder="Search"
-                        class="block pl-8 pr-4 py-2 w-full bg-white border border-gray-400 rounded text-sm placeholder-gray-500 text-white focus:bg-white focus:placeholder-gray-400 focus:text-gray-800 focus:outline-none">
+                        class="block pl-8 pr-4 py-2 w-full bg-white border border-gray-400 rounded text-sm placeholder-gray-500 text-white focus:bg-white focus:placeholder-gray-400 focus:text-gray-800 focus:outline-none focus:border-gray-500">
                 </div>
             </div>
         </div>
@@ -106,16 +106,41 @@
                     </div>
                 </div>
             </div>
-            <% @customers.each do |customer| %>
-                <%= render("row", customer: customer) %>
+            <% if (Customer.all.count < 1) %>
+                <div class="w-4/5 mx-auto text-center p-6 py-16">
+                    <div class="w-2/3 lg:w-1/3 mx-auto mt-4 mb-4">
+                        <%= image_tag('add_first_customer.svg', alt: 'Builders')%>
+                    </div>
+                    <p class="text-2xl text-gray-900 font-medium mb-4">No customers found!</p>
+                    <p class="text-gray max-w-xs mx-auto mb-6">To register your first customer, click the button below.</p>
+                    <div class="text-center text-gray flex justify-center mt-8">
+                        <div class="flex hover:border-gray-400 hover:text-gray-400 font-medium">
+                            <%= link_to(new_customer_path, class: 'bg-blue-600 border-blue-600 border hover:bg-blue-500 hover:border-blue-500 py-2 px-3 rounded text-white') do %>
+                                <%= t('.new_customer!') %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            <% else %>
+                <% @customers.each do |customer| %>
+                    <% if (customer.id % 2 == 1) %>
+                    <div class="flex border-b bg-white">
+                        <%= render("row", customer: customer) %>
+                    </div>
+                    <% else %>
+                    <div class="flex border-b bg-gray-200">
+                        <%= render("row", customer: customer) %>
+                    </div>
+                    <% end %>
+                <% end %>
             <% end %>
-            <div class="px-3 py-3 bg-white border-t flex flex-col xs:flex-row items-end justify-center">
-                <div class="px-2 py-2 align-middle inline-flex flex items-center">
-                    <span class="inline-flex text-base xs:text-sm text-gray-900 tracking-widest">
+            <div class="px-3 bg-white border-t flex flex-col xs:flex-row items-end justify-center">
+                <div class="px-2 align-middle inline-flex flex items-center">
+                    <span class="inline-flex tracking-widest font-semibold py-4 text-blue-900">
                         1 2 3 4 5 6 7 8
                     </span>
                     <button
-                        class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-1 px-4 rounded ml-1">
+                        class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-1 px-4 rounded ml-2">
                         Next
                     </button>
                 </div>
