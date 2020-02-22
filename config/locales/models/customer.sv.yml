@@ -11,7 +11,8 @@ sv:
 
     attributes:
       customer:
-        name: Namn
+        name: Företagsnamn
         phone: Telefon
         address: Adress
         email: Email
+        organisation: Organisation
