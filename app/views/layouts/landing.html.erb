@@ -13,16 +13,16 @@
     <%= csp_meta_tag %>
     <%= render('application/favicon') %>
   </head>
-    <body class="flex flex-col">
-      <header>
-        <%= render('header') %>
-      </header>
-      <div class="flex-grow bg-gray-900" data-behaviour="vue">
-        <%= render('flashes') %>
-        <%= yield %>
-      </div>
-      <footer>
-        <%= render('footer') %>
-      </footer>
-    </body>
+  <body class="flex flex-col">
+    <header>
+      <%= render('header') %>
+    </header>
+    <div class="flex-grow bg-gray-900" data-behaviour="vue">
+      <%= render('flashes') %>
+      <%= yield %>
+    </div>
+    <footer>
+      <%= render('footer') %>
+    </footer>
+  </body>
 </html>

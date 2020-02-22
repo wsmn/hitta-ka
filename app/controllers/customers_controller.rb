@@ -41,10 +41,11 @@ class CustomersController < ApplicationController
   def destroy
     customer = current_user.customers.find(params[:id])
     customer.destroy!
-    redirect_to(customers_path, notice: t('.success'))
+    redirect_to(customers_path, notice: t(".success"))
   end
 
   private
+
   def customer_params
     params.require(:customer).permit(:name, :organisation_id)
   end

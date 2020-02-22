@@ -1,129 +1,129 @@
 <div class="z-30 inset-y-0 left-0 w-64 bg-gray-900 border-r overflow-y-auto static hidden lg:block">
-	<nav class="">
-		<div class="">
-			<p class="text-xs font-semibold text-gray-600 uppercase tracking-wide ml-4">
-				Main
-			</p>
-			<ul class="menu-list mt-1">
-				<li>
-					<%= link_to(account_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700 hover:border hover:border-blue-500') do %>
-					<span class="inline-flex">
-						<div class="w-10 inline-block text-center">
-							<%= icon('fas', 'home', class: " mt-1") %>
-						</div>
-						<span class="font-light">
-							<%= t('.home') %>
-						</span>
-					</span>
-					<% end %>
-				</li>
-				<li>
-					<%= link_to(projects_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
-					<span class="inline-flex">
-						<div class="w-10 inline-block text-center">
-							<%= icon('fas', 'tasks', class: "mt-1") %>
-						</div>
-						<span class="font-light">
-							<%= t('.projects') %>
-						</span>
-					</span>
-					<% end %>
-					<ul class="mt-2 bg-gray-800">
-						<li class="">
-							<%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
-							<span class="inline-flex">
-								<span class="font-light text-sm">
-									<%= t('.active_projects') %>
-								</span>
-							</span>
-							<% end %>
-						</li>
-						<li class="">
-							<%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
-							<span class="inline-flex">
-								<span class="font-light text-sm">
-									<%= t('.paused_projects') %>
-								</span>
-							</span>
-							<% end %>
-						</li>
-						<li class="">
-							<%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
-							<span class="inline-flex">
-								<span class="font-light text-sm">
-									<%= t('.archived_projects') %>
-								</span>
-							</span>
-							<% end %>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<%= link_to(customers_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
-					<span class="inline-flex">
-						<div class="w-10 inline-block text-center">
-							<%= icon('fas', 'users', class: "mt-1") %>
-						</div>
-						<span class="font-light">
-							<%= t('.customers') %>
-						</span>
-					</span>
-					<% end %>
-				</li>
-				<li>
-					<%= link_to(tasks_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
-					<span class="inline-flex">
-						<div class="w-10 inline-block text-center">
-							<%= icon('fas', 'clock', class: "mt-1") %>
-						</div>
-						<span class="font-light">
-							<%= t('.tasks') %>
-						</span>
-					</span>
-					<% end %>
-					<ul class="ml-8 mt-2 bg-gray-800">
-						<li class="">
-							<%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
-							<span class="inline-flex">
-								<span class="font-light text-sm">
-									<%= t('.standard_tasks') %>
-								</span>
-							</span>
-							<% end %>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<%= link_to(invoices_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
-					<span class="inline-flex">
-						<div class="w-10 inline-block text-center">
-							<%= icon('fas', 'file-invoice', class: "mt-1") %>
-						</div>
-						<span class="font-light">
-							<%= t('.invoices') %>
-						</span>
-					</span>
-					<% end %>
-				</li>
-			</ul>
-			<p class="mt-2 text-xs font-semibold text-gray-600 uppercase tracking-wide ml-4">
-				Settings
-			</p>
-			<ul class="menu-list mt-2">
-				<li>
-					<%= link_to(settings_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
-					<span class="inline-flex">
-						<div class="w-10 inline-block text-center">
-							<%= icon('fas', 'user-cog', class: "mt-1") %>
-						</div>
-						<span class="font-light">
-							<%= t('.settings') %>
-						</span>
-					</span>
-					<% end %>
-				</li>
-			</ul>
-			<%= yield(:account_menu) %>
-		</div>
-	</nav>
+  <nav class="">
+    <div class="">
+      <p class="text-xs font-semibold text-gray-600 uppercase tracking-wide ml-4">
+        Main
+      </p>
+      <ul class="menu-list mt-1">
+        <li>
+          <%= link_to(account_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700 hover:border hover:border-blue-500') do %>
+            <span class="inline-flex">
+              <div class="w-10 inline-block text-center">
+                <%= icon('fas', 'home', class: " mt-1") %>
+              </div>
+              <span class="font-light">
+                <%= t('.home') %>
+              </span>
+            </span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(projects_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
+            <span class="inline-flex">
+              <div class="w-10 inline-block text-center">
+                <%= icon('fas', 'tasks', class: "mt-1") %>
+              </div>
+              <span class="font-light">
+                <%= t('.projects') %>
+              </span>
+            </span>
+          <% end %>
+          <ul class="mt-2 bg-gray-800">
+            <li class="">
+              <%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
+                <span class="inline-flex">
+                  <span class="font-light text-sm">
+                    <%= t('.active_projects') %>
+                  </span>
+                </span>
+              <% end %>
+            </li>
+            <li class="">
+              <%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
+                <span class="inline-flex">
+                  <span class="font-light text-sm">
+                    <%= t('.paused_projects') %>
+                  </span>
+                </span>
+              <% end %>
+            </li>
+            <li class="">
+              <%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
+                <span class="inline-flex">
+                  <span class="font-light text-sm">
+                    <%= t('.archived_projects') %>
+                  </span>
+                </span>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <%= link_to(customers_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
+            <span class="inline-flex">
+              <div class="w-10 inline-block text-center">
+                <%= icon('fas', 'users', class: "mt-1") %>
+              </div>
+              <span class="font-light">
+                <%= t('.customers') %>
+              </span>
+            </span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(tasks_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
+            <span class="inline-flex">
+              <div class="w-10 inline-block text-center">
+                <%= icon('fas', 'clock', class: "mt-1") %>
+              </div>
+              <span class="font-light">
+                <%= t('.tasks') %>
+              </span>
+            </span>
+          <% end %>
+          <ul class="ml-8 mt-2 bg-gray-800">
+            <li class="">
+              <%= link_to(projects_path, class: 'px-12 py-3 flex items-center text-white hover:bg-gray-700') do %>
+                <span class="inline-flex">
+                  <span class="font-light text-sm">
+                    <%= t('.standard_tasks') %>
+                  </span>
+                </span>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <%= link_to(invoices_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
+            <span class="inline-flex">
+              <div class="w-10 inline-block text-center">
+                <%= icon('fas', 'file-invoice', class: "mt-1") %>
+              </div>
+              <span class="font-light">
+                <%= t('.invoices') %>
+              </span>
+            </span>
+          <% end %>
+        </li>
+      </ul>
+      <p class="mt-2 text-xs font-semibold text-gray-600 uppercase tracking-wide ml-4">
+        Settings
+      </p>
+      <ul class="menu-list mt-2">
+        <li>
+          <%= link_to(settings_path, class: 'px-2 py-3 flex items-center text-white hover:bg-gray-700') do %>
+            <span class="inline-flex">
+              <div class="w-10 inline-block text-center">
+                <%= icon('fas', 'user-cog', class: "mt-1") %>
+              </div>
+              <span class="font-light">
+                <%= t('.settings') %>
+              </span>
+            </span>
+          <% end %>
+        </li>
+      </ul>
+      <%= yield(:account_menu) %>
+    </div>
+  </nav>
 </div>

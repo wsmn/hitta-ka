@@ -1,90 +1,88 @@
 <div class="container mx-auto h-screen bg-grey-200">
-	<div class="w-full mx-auto mt-8 md:mt-16 xl:mt-24">
-		<div class="max-w-2xl mx-auto text-center">
-            <h1 class="text-2xl sm:text-3xl md:text-5xl font-sans font-medium text-blue-900">
-                Beskriv ert projekt så noggrant som möjligt!
-            </h1>
-		</div>
-		<div class="w-full mx-auto">
-			<div class="max-w-xl mx-auto mt-8 md:mt-16">
-				<div class="w-11/12 mx-auto mb-32">
-					<form class="bg-white shadow-xl rounded px-8 pt-6 pb-8">
-						<div class="mb-4">
-							<label class="text-gray-800 text-lg font-medium" for="name">
-								<%= t('.name') %>
-							</label>
-							<input class="shadow mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Vad heter du?">
-						</div>
-						<div class="mb-6">
-							<label class="text-gray-800 text-lg font-medium" for="email">
-								<%= t('.email') %>
-							</label>
-							<input class="shadow mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="name@email.com">
-						</div>
-						<div class="mb-6">
-							<label class="text-gray-800 text-lg font-medium" for="email">
-								<%= t('.project_type') %>
-							</label>
-                            <div class="control is-expanded">
-								<div class="select is-fullwidth">
-									<select name="projectType">
-										<option>---</option>
-										<option value="Nyproduktion">Nyproduktion</option>
-										<option value="Renovering">Renovering</option>
-										<option value="Utbyggnad">Utbyggnad</option>
-                                        <option value="Industri">Industri</option>
-										<option value="Annat">Annat</option>
-									</select>
-								</div>
-							</div>						</div>
-						<div class="mb-6">
-							<label class="text-gray-800 text-lg font-medium" for="email">
-								<%= t('.describe_what_we_can_improve') %>
-							</label>
-							<textarea class="h-32 shadow appearance-none block w-full bg-white text-grey-darker border border-grey-lighter rounded py-4 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey mt-2" id="subject" type="message" placeholder="Förklara hur man hittar problemet..."></textarea>
-						</div>
-						<!--
-						<div class="mb-6 bg-gray-200">
-							<input type="radio" name="radio" class="hidden"/>
-							<label for="radio1" class="flex items-center cursor-pointer text-xl">
-							 	<span class="w-4 h-4 bg-white inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
-								 Nyproduktion
-							</label>
-						</div>
--->
-						<div class="mb-6">
-							<div class="px-2">
-								<div class="flex items-center -mx-2">
-								  	<div class="w-1/2 mr-2 bg-gray-200 hover:bg-blue-600 hover:text-white h-12 text-center focus:bg-blue-600">
-										<div class="mt-2 ml-3">
-											<input id="radio1" type="radio" name="radio" class="hidden"/>
-											<label for="radio1" class="flex items-center cursor-pointer text-lg">
-							 					<span class="w-4 h-4 bg-white inline-block mr-3 rounded-full border border-grey flex-no-shrink"></span>
-												 Nyproduktion
-											</label>
-										</div>
-									</div>
-									<div class="w-1/2 mr-2 bg-gray-200 hover:bg-blue-600 hover:text-white text-center">
-										<div class="mt-2 ml-3">
-											<input id="radio2" type="radio" name="radio" class="hidden"/>
-											<label for="radio2" class="flex items-center cursor-pointer text-lg">
-													<span class="w-4 h-4 bg-white inline-block mr-3 rounded-full border border-grey flex-no-shrink"></span>
-													Renovering
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="flex items-center justify-center">
-							<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-full rounded focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" type="button">
-								<%= t('.send') %>
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="w-full mx-auto mt-8 md:mt-16 xl:mt-24">
+    <div class="max-w-2xl mx-auto text-center">
+      <h1 class="text-2xl sm:text-3xl md:text-5xl font-sans font-medium text-blue-900">
+        Beskriv ert projekt så noggrant som möjligt!
+      </h1>
+    </div>
+    <div class="w-full mx-auto">
+      <div class="max-w-xl mx-auto mt-8 md:mt-16">
+        <div class="w-11/12 mx-auto mb-32">
+          <form class="bg-white shadow-xl rounded px-8 pt-6 pb-8">
+            <div class="mb-4">
+              <label class="text-gray-800 text-lg font-medium" for="name">
+                <%= t('.name') %>
+              </label>
+              <input class="shadow mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Vad heter du?">
+            </div>
+            <div class="mb-6">
+              <label class="text-gray-800 text-lg font-medium" for="email">
+                <%= t('.email') %>
+              </label>
+              <input class="shadow mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="name@email.com">
+            </div>
+            <div class="mb-6">
+              <label class="text-gray-800 text-lg font-medium" for="email">
+                <%= t('.project_type') %>
+              </label>
+              <div class="control is-expanded">
+                <div class="select is-fullwidth">
+                  <select name="projectType">
+                    <option>---</option>
+                    <option value="Nyproduktion">Nyproduktion</option>
+                    <option value="Renovering">Renovering</option>
+                    <option value="Utbyggnad">Utbyggnad</option>
+                    <option value="Industri">Industri</option>
+                    <option value="Annat">Annat</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label class="text-gray-800 text-lg font-medium" for="email">
+                <%= t('.describe_what_we_can_improve') %>
+              </label>
+              <textarea class="h-32 shadow appearance-none block w-full bg-white text-grey-darker border border-grey-lighter rounded py-4 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey mt-2" id="subject" type="message" placeholder="Förklara hur man hittar problemet..."></textarea>
+            </div>
+            <!-- <div class="mb-6 bg-gray-200">
+              <input type="radio" name="radio" class="hidden"/>
+              <label for="radio1" class="flex items-center cursor-pointer text-xl">
+                 <span class="w-4 h-4 bg-white inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
+                 Nyproduktion
+              </label>
+            </div> -->
+            <div class="mb-6">
+              <div class="px-2">
+                <div class="flex items-center -mx-2">
+                  <div class="w-1/2 mr-2 bg-gray-200 hover:bg-blue-600 hover:text-white h-12 text-center focus:bg-blue-600">
+                    <div class="mt-2 ml-3">
+                      <input id="radio1" type="radio" name="radio" class="hidden"/>
+                      <label for="radio1" class="flex items-center cursor-pointer text-lg">
+                        <span class="w-4 h-4 bg-white inline-block mr-3 rounded-full border border-grey flex-no-shrink"></span>
+                        Nyproduktion
+                      </label>
+                    </div>
+                  </div>
+                  <div class="w-1/2 mr-2 bg-gray-200 hover:bg-blue-600 hover:text-white text-center">
+                    <div class="mt-2 ml-3">
+                      <input id="radio2" type="radio" name="radio" class="hidden"/>
+                      <label for="radio2" class="flex items-center cursor-pointer text-lg">
+                        <span class="w-4 h-4 bg-white inline-block mr-3 rounded-full border border-grey flex-no-shrink"></span>
+                        Renovering
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-center">
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-full rounded focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" type="button">
+                <%= t('.send') %>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
-  <title>Apti - Hitta Kontrollansvariga nära dig!</title>
-  <%= stylesheet_link_tag('application', media: 'all', 'data-turbolinks-track': 'reload') %>
-  <%= javascript_include_tag('application', 'data-turbolinks-track': 'reload') %>
-  <%= stylesheet_pack_tag('application', media: 'all') %>
-  <%= javascript_pack_tag('application') %>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <%= render('application/favicon') %>
-</head>
-
-<body class="antialiased bg-gray-200">
-  <div class="" data-behaviour="vue">
-    <div class="h-screen flex flex-col">
-      <header>
-        <%= render('header') %>
-      </header>
-      <portal-target name="modals"></portal-target>
-      <div class="flex-1 flex overflow-hidden">
-        <%= render('application/account_menu') %>
-        <div class="flex-1 flex relative">
-          <%= yield(:title) %>
-          <%= yield %>
-          <%= render('flashes') %>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
+    <title>Apti - Hitta Kontrollansvariga nära dig!</title>
+    <%= stylesheet_link_tag('application', media: 'all', 'data-turbolinks-track': 'reload') %>
+    <%= javascript_include_tag('application', 'data-turbolinks-track': 'reload') %>
+    <%= stylesheet_pack_tag('application', media: 'all') %>
+    <%= javascript_pack_tag('application') %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= render('application/favicon') %>
+  </head>
+  <body class="antialiased bg-gray-200">
+    <div class="" data-behaviour="vue">
+      <div class="h-screen flex flex-col">
+        <header>
+          <%= render('header') %>
+        </header>
+        <portal-target name="modals"></portal-target>
+        <div class="flex-1 flex overflow-hidden">
+          <%= render('application/account_menu') %>
+          <div class="flex-1 flex relative">
+            <%= yield(:title) %>
+            <%= yield %>
+            <%= render('flashes') %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

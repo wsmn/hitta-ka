@@ -11,9 +11,9 @@
         <%= simple_form_for(:password_reset, url: user_password_path(@user, token: @user.confirmation_token), method: :put) do |f| %>
           <%= f.input(:password, input_html: { autofocus: true },
                                  label: t('helpers.label.password_reset.password')) %>
-            <div class="mt-6">
-              <%= f.button(:submit, class: "w-full bg-gray-800 hover:bg-gray-500 text-white text-sm h-10 font-semibold rounded") %>
-            </div>
+          <div class="mt-6">
+            <%= f.button(:submit, class: "w-full bg-gray-800 hover:bg-gray-500 text-white text-sm h-10 font-semibold rounded") %>
+          </div>
         <% end %>
       </div>
     </div>
