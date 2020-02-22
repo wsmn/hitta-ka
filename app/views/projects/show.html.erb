@@ -2,31 +2,40 @@
   <div class="flex-grow mx-auto sm:px-4 pt-6">
     <div class="w-full mb-4 inline-flex justify-between">
       <div class="">
-        <h1 class="text-2xl font-bold text-gray-800">Project title - Project ID -<span
-                        class="text-green-500 font-semibold rounded-full h-6 px-4">Aktivt</span>
+        <h1 class="text-2xl font-bold text-gray-800">
+          <%= @project.title %> - <%= @project.id %>
+          <span class="text-green-500 font-semibold rounded-full h-6 px-4">Aktivt</span>
         </h1>
         <h2 class="text-lg font-bold text-gray-600">Project type (Villa)</h2>
       </div>
       <div class="relative flex items-start mt-2">
-        <%= link_to(project_path, class: 'bg-gray-500 border-l border-t border-b border-gray-800 hover:bg-gray-800 hover:border-gray-800 py-2 px-3 rounded-l text-gray-900 hover:text-gray-500 font-semibold') do %>
+        <%= link_to(edit_project_path(@project),
+                    class: 'bg-gray-500 border-l border-t border-b border-gray-800
+                            hover:bg-gray-800 hover:border-gray-800 py-2 px-3 rounded-l
+                            text-gray-900 hover:text-gray-500 font-semibold') do %>
           <%= t('.edit_project') %>
         <% end %>
         <div class="drop-down-parent bg-gray-800 border border-gray-800 rounded-r py-2 flex justify-end">
           <svg class="h-6 w-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-            <path
-                            d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" />
+            <path d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" />
             </svg>
             <div class="drop-down absolute z-10 -mt-3">
               <div class="shadow-lg bg-gray-800 rounded px-4 py-4 flex-wrap justify-center">
                 <div class="flex justify-center">
-                  <%= link_to(project_path, class: "text-center bg-blue-100 hover:bg-blue-200 border border-gray-400 py-1 px-2 rounded") do %>
+                  <%= link_to(edit_project_path(@project),
+                              class: "text-center bg-blue-100 hover:bg-blue-200
+                                      border border-gray-400 py-1 px-2 rounded") do %>
                     <%= t('archive_project') %>
                   <% end %>
                 </div>
                 <div class="mt-2 flex justify-center">
-                  <%= link_to(project_path, class: "w-32 text-center bg-red-600 hover:bg-red-500 border border-red-600 hover:border-red-500 py-1 px-2 rounded text-white") do %>
-                    <%= t('delete_project') %>
-                  <% end %>
+                  <%= button_to(t('.delete_project'),
+                                project_path(@project),
+                                method: :delete,
+                                class: "w-32 text-center bg-red-600 hover:bg-red-500
+                                        border border-red-600 hover:border-red-500
+                                        py-1 px-2 rounded text-white",
+                                data: { confirm: t('.confirm_delete')}) %>
                 </div>
               </div>
             </div>
@@ -62,35 +71,8 @@
               </div>
             </div>
           </div>
-          <div class="w-1/4 bg-white shadow-xl rounded-lg border border-gray-400">
-            <div class="px-4 pt-3 pb-4 border-b rounded-t-lg border-gray-300 bg-gray-100">
-              <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
-                Kund
-              </div>
-              <div class="flex items-center pt-2">
-                <div
-                                class="rounded-full h-10 w-10 bg-green-500 inline-flex items-center justify-center mr-3">
-                  <span class="icon text-white">
-                    KK
-                  </span>
-                </div>
-                <div>
-                  <p class="font-bold text-gray-900">Kund Kundsson</p>
-                  <p class="text-sm text-gray-700">070-123 11 11</p>
-                </div>
-              </div>
-            </div>
-            <div class="flex">
-              <div class="w-3/4 p-4">
-                <p class="uppercase tracking-wide text-sm font-bold text-gray-700">Lägenheter • 2019-01-01
-                </p>
-                <p class="text-3xl text-gray-900 mt-1">Örnen 29</p>
-                <p class="text-gray-700">Örnvägen 94a, Helsingborg</p>
-              </div>
-              <div class="w-1/4 justify-end flex p-4">
-                <span class="bg-green-200 text-green-800 font-semibold rounded-full h-6 px-4">Aktivt</span>
-              </div>
-            </div>
+          <div class="w-1/4">
+            <%= render(@project.customer) %>
           </div>
         </div>
         <div class="w-full sm:w-1/2 lg:w-1/3 py-6 px-3">
@@ -152,7 +134,7 @@
         </div>
         <div class="w-1/2 h-64 border-l border-gray-500">
           <div class="ml-3 mt-8">
-            <p>2019-09-09</p>
+            <p><%= l(@project.created_at, format: "%Y-%m-%d") %></p>
           </div>
         </div>
       </div>

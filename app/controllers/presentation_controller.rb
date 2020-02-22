@@ -41,30 +41,6 @@ class PresentationController < ApplicationController
     render(layout: "application")
   end
 
-  def projects
-    render(layout: "application")
-  end
-
-  def project
-    render(layout: "application")
-  end
-
-  def new_project
-    render(layout: "application")
-  end
-
-  def customers
-    render(layout: "application")
-  end
-
-  def customer
-    render(layout: "application")
-  end
-
-  def new_customer
-    render(layout: "application")
-  end
-
   def tasks
     render(layout: "application")
   end

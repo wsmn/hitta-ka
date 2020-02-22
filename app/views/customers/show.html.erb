@@ -45,61 +45,8 @@
               </div>
             </div>
           </div>
-          <div class="w-1/4 bg-white shadow-xl rounded-lg border border-gray-400">
-            <div class="p-6 rounded-t-lg bg-gray-200">
-              <div class="w-full flex justify-between">
-                <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
-                  Customer
-                </div>
-                <div class="w-1/4 justify-end flex items-center -m-2">
-                  <span class="text-xs uppercase font-bold tracking-wide bg-green-200 text-green-800 rounded-full h-5 px-4 flex items-center">
-                    Aktiv
-                  </span>
-                </div>
-              </div>
-              <div class="flex items-center pt-2">
-                <div
-                                    class="rounded-full h-12 w-12 bg-green-500 inline-flex items-center justify-center mr-3">
-                  <span class="icon text-white">
-                    KK
-                  </span>
-                </div>
-                <div>
-                  <p class="text-lg font-bold text-gray-900">Kund Kundsson</p>
-                  <p class="text-base text-gray-700">070-123 11 11</p>
-                </div>
-              </div>
-            </div>
-            <div class="flex border-gray-300 border-t border-b">
-              <div class="w-3/4 p-6">
-                <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
-                  Address
-                </div>
-                <p class="text-3xl text-gray-900">Street 123</p>
-                <p class="text-xl text-gray-700">Zip code, City</p>
-              </div>
-            </div>
-            <div class="p-6 rounded-b-lg text-base text-blue-600">
-              <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
-                Webb
-              </div>
-              <div class="flex items-center mt-2">
-                <div class="w-5 inline-block text-center text-lg">
-                  <i class="far fa-envelope fa-2xl"></i>
-                </div>
-                <div class="text-center inline ml-2">
-                  email@email.com
-                </div>
-              </div>
-              <div class="flex items-center mt-1">
-                <div class="w-5 inline-block text-center text-lg">
-                  <i class="fas fa-at fa-2xl"></i>
-                </div>
-                <div class="text-center inline ml-2">
-                  www.website.com
-                </div>
-              </div>
-            </div>
+          <div class="w-1/4">
+            <%= render(@customer) %>
           </div>
         </div>
       </div>

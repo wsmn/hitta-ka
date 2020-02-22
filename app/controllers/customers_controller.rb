@@ -13,7 +13,7 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     if current_user.organisations.where(id: @customer.organisation_id).count == 1 && @customer.save
-      redirect_to(edit_customer_path(@customer), notice: t(".success"))
+      redirect_to(customer_path(@customer), notice: t(".success"))
     else
       render(:new, status: :unprocessable_entity)
     end
