@@ -33,8 +33,9 @@ group :development, :test do
 end
 
 group :development do
+  gem "htmlbeautifier", require: false
   gem "rails_real_favicon"
-  gem "standardrb"
+  gem "standardrb", require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

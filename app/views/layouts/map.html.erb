@@ -13,13 +13,13 @@
     <%= csp_meta_tag %>
     <%= render('application/favicon') %>
   </head>
-    <body class="flex flex-col">
-      <header data-behaviour="vue">
-        <%= render('header') %>
-      </header>
-      <div class="flex flex-grow relative" data-behaviour="vue">
-        <portal-target name="modals"></portal-target>
-        <%= yield %>
-      </div>
-    </body>
+  <body class="flex flex-col">
+    <header data-behaviour="vue">
+      <%= render('header') %>
+    </header>
+    <div class="flex flex-grow relative" data-behaviour="vue">
+      <portal-target name="modals"></portal-target>
+      <%= yield %>
+    </div>
+  </body>
 </html>

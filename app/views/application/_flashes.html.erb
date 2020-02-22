@@ -1,9 +1,9 @@
 <% if flash.any? %>
-<div class="w-full absolute">
+  <div class="w-full absolute">
     <div class="w-1/2 mx-auto">
-    <% flash.each do |type, value| %>
-      <flash text="<%= value %>" type="<%= type %>"></flash>
-    <% end %>
-  </div>
+      <% flash.each do |type, value| %>
+        <flash text="<%= value %>" type="<%= type %>"></flash>
+      <% end %>
+    </div>
   </div>
 <% end %>

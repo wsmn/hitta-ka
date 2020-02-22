@@ -1,326 +1,326 @@
 <div class="w-full overflow-y-auto lg:flex-grow px-8">
-    <div class="flex flex-wrap">
-        <div class="flex-grow mx-auto pt-2 md:pt-6">
-            <div class="w-full">
-                <h1 class="text-2xl font-bold text-gray-500">
-                    <%= link_to(projects_path, class: 'font-semibold text-blue-500') do %>
-                    <%= t('.projects') %>
-                    <% end %>
-                    / New Invoice -
-                    <%= icon('fas', 'file-invoice', class: "mt-1") %>
-                </h1>
-            </div>
-            <div class="flex flex-wrap bg-white shadow-xl rounded-lg mt-4 p-5 lg:p-3 xl:p-5">
-                <form class="w-full">
-                    <div class="flex flex-wrap -mx-2 border-b border-gray-300 lg:border-none">
-                        <div class="w-full lg:w-1/3 px-2">
-                            <div class="w-full lg:w-5/6 xl:w-4/5">
-                                <div class="flex flex-wrap">
-                                    <div class="">
-                                        <div class="pr-2">
-                                            <h2 class="text-sm lg:text-base text-gray-800 font-semibold mb-1 mt-2">
-                                                Project
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="w-full flex flex-wrap">
-                                        <div class="w-full relative">
-                                            <input
+  <div class="flex flex-wrap">
+    <div class="flex-grow mx-auto pt-2 md:pt-6">
+      <div class="w-full">
+        <h1 class="text-2xl font-bold text-gray-500">
+          <%= link_to(projects_path, class: 'font-semibold text-blue-500') do %>
+            <%= t('.projects') %>
+          <% end %>
+          / New Invoice -
+          <%= icon('fas', 'file-invoice', class: "mt-1") %>
+        </h1>
+      </div>
+      <div class="flex flex-wrap bg-white shadow-xl rounded-lg mt-4 p-5 lg:p-3 xl:p-5">
+        <form class="w-full">
+          <div class="flex flex-wrap -mx-2 border-b border-gray-300 lg:border-none">
+            <div class="w-full lg:w-1/3 px-2">
+              <div class="w-full lg:w-5/6 xl:w-4/5">
+                <div class="flex flex-wrap">
+                  <div class="">
+                    <div class="pr-2">
+                      <h2 class="text-sm lg:text-base text-gray-800 font-semibold mb-1 mt-2">
+                        Project
+                      </h2>
+                    </div>
+                  </div>
+                  <div class="w-full flex flex-wrap">
+                    <div class="w-full relative">
+                      <input
                                                 class="text-sm appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                                            <div
+                        <div
                                                 class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-800">
-                                                <svg class="ml-2 h-6 w-6 text-gray-600" fill="currentColor"
+                          <svg class="ml-2 h-6 w-6 text-gray-600" fill="currentColor"
                                                     viewBox="0 0 24 24">
-                                                    <path
+                            <path
                                                         d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h2 class="text-sm lg:text-base text-blue-500 mb-1 lg:mb-0 mt-1">
-                                                Add new project
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap lg:mt-4">
-                                    <div class="">
-                                        <div class="pr-2">
-                                            <h2 class="text-sm lg:text-base text-gray-800 font-semibold mb-1 mt-2">
-                                                Customer
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="w-full flex flex-wrap">
-                                        <div class="w-full relative">
-                                            <input
-                                                class="text-sm appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                                            <div
-                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-800">
-                                                <svg class="ml-2 h-6 w-6 text-gray-600" fill="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path
-                                                        d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h2 class="text-sm lg:text-base text-blue-500 mb-1 lg:mb-0 mt-1">
-                                                Add new customer
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </svg>
+                          </div>
                         </div>
-                        <div class="w-full lg:w-1/3 px-2">
-                            <div class="w-full lg:w-5/6 xl:w-4/5">
-                                <div class="flex flex-wrap">
-                                    <div class="">
-                                        <div class="pr-2">
-                                            <h2 class="text-sm lg:text-base text-gray-800 font-semibold mb-1 mt-2">
-                                                Invoice date
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="w-full flex flex-wrap">
-                                        <div class="w-full relative">
-                                            <input
+                        <div>
+                          <h2 class="text-sm lg:text-base text-blue-500 mb-1 lg:mb-0 mt-1">
+                            Add new project
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap lg:mt-4">
+                      <div class="">
+                        <div class="pr-2">
+                          <h2 class="text-sm lg:text-base text-gray-800 font-semibold mb-1 mt-2">
+                            Customer
+                          </h2>
+                        </div>
+                      </div>
+                      <div class="w-full flex flex-wrap">
+                        <div class="w-full relative">
+                          <input
                                                 class="text-sm appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap">
-                                    <div class="">
-                                        <div class="pr-2">
-                                            <h2 class="text-sm lg:text-base text-gray-800 font-semibold mb-1 mt-2">
-                                                Due date
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="w-full flex flex-wrap">
-                                        <div class="w-full relative">
-                                            <input
-                                                class="text-sm appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                                        </div>
-                                    </div>
-                                </div>
+                            <div
+                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-800">
+                              <svg class="ml-2 h-6 w-6 text-gray-600" fill="currentColor"
+                                                    viewBox="0 0 24 24">
+                                <path
+                                                        d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" />
+                                </svg>
+                              </div>
                             </div>
+                            <div>
+                              <h2 class="text-sm lg:text-base text-blue-500 mb-1 lg:mb-0 mt-1">
+                                Add new customer
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full lg:w-1/3 px-2">
+                      <div class="w-full lg:w-5/6 xl:w-4/5">
+                        <div class="flex flex-wrap">
+                          <div class="">
+                            <div class="pr-2">
+                              <h2 class="text-sm lg:text-base text-gray-800 font-semibold mb-1 mt-2">
+                                Invoice date
+                              </h2>
+                            </div>
+                          </div>
+                          <div class="w-full flex flex-wrap">
+                            <div class="w-full relative">
+                              <input
+                                                class="text-sm appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flex flex-wrap">
+                            <div class="">
+                              <div class="pr-2">
+                                <h2 class="text-sm lg:text-base text-gray-800 font-semibold mb-1 mt-2">
+                                  Due date
+                                </h2>
+                              </div>
+                            </div>
+                            <div class="w-full flex flex-wrap">
+                              <div class="w-full relative">
+                                <input
+                                                class="text-sm appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <div class="w-full lg:w-1/3 px-2 mb-4 lg:mb-0">
-                            <div class="w-full lg:w-5/6 xl:w-4/5">
-                                <div class="flex flex-wrap">
-                                    <div class="">
-                                        <div class="pr-2">
-                                            <h2 class="text-sm lg:text-base text-gray-800 font-semibold mb-1 mt-2">
-                                                Invoice no.
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="w-full flex flex-wrap">
-                                        <div class="w-full relative">
-                                            <input placeholder="123456"
+                          <div class="w-full lg:w-5/6 xl:w-4/5">
+                            <div class="flex flex-wrap">
+                              <div class="">
+                                <div class="pr-2">
+                                  <h2 class="text-sm lg:text-base text-gray-800 font-semibold mb-1 mt-2">
+                                    Invoice no.
+                                  </h2>
+                                </div>
+                              </div>
+                              <div class="w-full flex flex-wrap">
+                                <div class="w-full relative">
+                                  <input placeholder="123456"
                                                 class="text-sm appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                                        </div>
-                                    </div>
                                 </div>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                    </div>
-                    <div class="mt-4 lg:hidden border-b border-gray-300">
+                      </div>
+                      <div class="mt-4 lg:hidden border-b border-gray-300">
                         <div class="w-full flex flex-wrap mb-4">
-                            <div class="w-11/12 flex justify-between">
-                                <div>
-                                    <p class="text-sm font-semibold text-blue-900">
-                                        Slutbesiktning
-                                    </p>
-                                    <p class="text-xs text-blue-900">
-                                        3 x 990,00 kr
-                                    </p>
-                                    <p class="text-xs text-blue-900">
-                                        Description
-                                    </p>
-                                </div>
-                                <div>
-                                    <span class="text-sm font-semibold text-blue-900">
-                                        2.970,00 kr
-                                    </span>
-                                </div>
+                          <div class="w-11/12 flex justify-between">
+                            <div>
+                              <p class="text-sm font-semibold text-blue-900">
+                                Slutbesiktning
+                              </p>
+                              <p class="text-xs text-blue-900">
+                                3 x 990,00 kr
+                              </p>
+                              <p class="text-xs text-blue-900">
+                                Description
+                              </p>
                             </div>
-                            <div class="w-1/12 flex items-center justify-center">
-                                <div class="flex text-blue-500 text-sm items-center justify-center ml-4">
-                                    <%= icon('fas', 'edit') %>
-                                </div>
+                            <div>
+                              <span class="text-sm font-semibold text-blue-900">
+                                2.970,00 kr
+                              </span>
                             </div>
-                            <div class="w-11/12 flex justify-between mt-4">
-                                <div>
-                                    <p class="text-sm font-semibold text-blue-900">
-                                        Slutbesiktning
-                                    </p>
-                                    <p class="text-xs text-blue-900">
-                                        3 x 990,00 kr
-                                    </p>
-                                    <p class="text-xs text-blue-900">
-                                        Description
-                                    </p>
-                                </div>
-                                <div>
-                                    <span class="text-sm font-semibold text-blue-900">
-                                        2.970,00 kr
-                                    </span>
-                                </div>
+                          </div>
+                          <div class="w-1/12 flex items-center justify-center">
+                            <div class="flex text-blue-500 text-sm items-center justify-center ml-4">
+                              <%= icon('fas', 'edit') %>
                             </div>
-                            <div class="w-1/12 flex items-center justify-center">
-                                <div class="flex text-blue-500 text-sm items-center justify-center ml-4">
-                                    <%= icon('fas', 'edit') %>
-                                </div>
+                          </div>
+                          <div class="w-11/12 flex justify-between mt-4">
+                            <div>
+                              <p class="text-sm font-semibold text-blue-900">
+                                Slutbesiktning
+                              </p>
+                              <p class="text-xs text-blue-900">
+                                3 x 990,00 kr
+                              </p>
+                              <p class="text-xs text-blue-900">
+                                Description
+                              </p>
                             </div>
-                            <div class="w-full flex justify-end mt-4">
-                                <div class="">
-                                    <button
+                            <div>
+                              <span class="text-sm font-semibold text-blue-900">
+                                2.970,00 kr
+                              </span>
+                            </div>
+                          </div>
+                          <div class="w-1/12 flex items-center justify-center">
+                            <div class="flex text-blue-500 text-sm items-center justify-center ml-4">
+                              <%= icon('fas', 'edit') %>
+                            </div>
+                          </div>
+                          <div class="w-full flex justify-end mt-4">
+                            <div class="">
+                              <button
                                         class="py-1 px-2 w-full shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none">
-                                           <%= icon('fas', 'plus', class: 'mr-1') %>
-                                        <%= t('.add_task') %>
-                                    </button>
-                                </div>
+                                <%= icon('fas', 'plus', class: 'mr-1') %>
+                                <%= t('.add_task') %>
+                              </button>
                             </div>
+                          </div>
                         </div>
-                    </div>
-                    <div class="border-b border-gray-300 hidden lg:block">
+                      </div>
+                      <div class="border-b border-gray-300 hidden lg:block">
                         <div class="border bg-gray-500 rounded-t mt-12">
-                            <div class="w-full flex">
-                                <div class="w-10 flex inline-block justify-center border-r border-white">
-                                </div>
-                                <div class="w-full flex">
-                                    <div class="w-1/3 lg:w-1/4 flex border-r border-white py-3 px-2">
-                                        <span class="text-sm font-semibold text-blue-900">
-                                            Task
-                                        </span>
-                                    </div>
-                                    <div class="w-1/3 xl:w-5/12 flex border-r border-white py-3 px-2">
-                                        <span class="text-sm font-semibold text-blue-900">
-                                            Description
-                                        </span>
-                                    </div>
-                                    <div
-                                        class="w-1/12 lg:w-1/6 xl:w-1/12 hidden lg:flex border-r border-white py-3 px-2">
-                                        <span class="text-sm font-semibold text-blue-900">
-                                            Cost
-                                        </span>
-                                    </div>
-                                    <div class="w-1/12 hidden lg:flex border-r border-white py-3 px-2">
-                                        <span class="text-sm font-semibold text-blue-900 xl:hidden">
-                                            Qty.
-                                        </span>
-                                        <span class="text-sm font-semibold text-blue-900 hidden xl:flex">
-                                            Quantity
-                                        </span>
-                                    </div>
-                                    <div class="flex justify-center md:justify-start py-3 px-2">
-                                        <span class="text-sm font-semibold text-blue-900">
-                                            Total
-                                        </span>
-                                    </div>
-                                </div>
+                          <div class="w-full flex">
+                            <div class="w-10 flex inline-block justify-center border-r border-white">
                             </div>
+                            <div class="w-full flex">
+                              <div class="w-1/3 lg:w-1/4 flex border-r border-white py-3 px-2">
+                                <span class="text-sm font-semibold text-blue-900">
+                                  Task
+                                </span>
+                              </div>
+                              <div class="w-1/3 xl:w-5/12 flex border-r border-white py-3 px-2">
+                                <span class="text-sm font-semibold text-blue-900">
+                                  Description
+                                </span>
+                              </div>
+                              <div
+                                        class="w-1/12 lg:w-1/6 xl:w-1/12 hidden lg:flex border-r border-white py-3 px-2">
+                                <span class="text-sm font-semibold text-blue-900">
+                                  Cost
+                                </span>
+                              </div>
+                              <div class="w-1/12 hidden lg:flex border-r border-white py-3 px-2">
+                                <span class="text-sm font-semibold text-blue-900 xl:hidden">
+                                  Qty.
+                                </span>
+                                <span class="text-sm font-semibold text-blue-900 hidden xl:flex">
+                                  Quantity
+                                </span>
+                              </div>
+                              <div class="flex justify-center md:justify-start py-3 px-2">
+                                <span class="text-sm font-semibold text-blue-900">
+                                  Total
+                                </span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <div class="w-full flex items-start">
-                            <div class="w-10 flex inline-block justify-center items-center py-3">
-                                <div class="h-12 flex items-center">
-                                    <%= icon('fas', 'plus', class: "text-blue-500") %>
-                                </div>
+                          <div class="w-10 flex inline-block justify-center items-center py-3">
+                            <div class="h-12 flex items-center">
+                              <%= icon('fas', 'plus', class: "text-blue-500") %>
                             </div>
-                            <div class="w-full flex items-start">
-                                <div class="w-1/3 lg:w-1/4 flex border-r border-white py-3 px-1 xl:px-2">
-                                    <input
+                          </div>
+                          <div class="w-full flex items-start">
+                            <div class="w-1/3 lg:w-1/4 flex border-r border-white py-3 px-1 xl:px-2">
+                              <input
                                         class="text-base appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12">
-                                </div>
-                                <div class="w-1/3 xl:w-5/12 flex border-r border-white py-3 px-1 xl:px-2">
-                                    <textarea
+                              </div>
+                              <div class="w-1/3 xl:w-5/12 flex border-r border-white py-3 px-1 xl:px-2">
+                                <textarea
                                         class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12"></textarea>
-                                </div>
-                                <div class="w-1/12 lg:w-1/6 xl:w-1/12 border-r border-white py-3 px-1 xl:px-2">
-                                    <input placeholder="990 kr"
+                              </div>
+                              <div class="w-1/12 lg:w-1/6 xl:w-1/12 border-r border-white py-3 px-1 xl:px-2">
+                                <input placeholder="990 kr"
                                         class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12">
-                                </div>
-                                <div class="w-1/12 hidden lg:flex border-r border-white py-3 px-1 xl:px-2">
-                                    <input
+                              </div>
+                              <div class="w-1/12 hidden lg:flex border-r border-white py-3 px-1 xl:px-2">
+                                <input
                                         class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-1 xl:px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12">
                                 </div>
                                 <div class="w-1/3 lg:w-1/6 flex items-center justify-end py-3 pl-2">
-                                    <div class="h-12 flex items-center">
-                                        <span class="text-sm xl:text-base">
-                                            9.999,00 kr
-                                        </span>
-                                        <div
+                                  <div class="h-12 flex items-center">
+                                    <span class="text-sm xl:text-base">
+                                      9.999,00 kr
+                                    </span>
+                                    <div
                                             class="rounded-full bg-red-700 w-4 h-4 flex items-center justify-center ml-4">
-                                            <%= icon('fas', 'minus', class: "text-white text-xs") %>
-                                        </div>
+                                      <%= icon('fas', 'minus', class: "text-white text-xs") %>
                                     </div>
+                                  </div>
                                 </div>
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-end mt-4">
-                        <div class="w-1/2 lg:w-1/4 px-5 py-2 flex justify-end">
-                            <div class="">
+                          </div>
+                          <div class="flex justify-end mt-4">
+                            <div class="w-1/2 lg:w-1/4 px-5 py-2 flex justify-end">
+                              <div class="">
                                 <p class="">Subtotal</p>
                                 <p class="">1.234,00 kr</p>
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                </form>
-                <div class="w-full">
-                    <div class="w-full flex border-t border-gray-300 pt-4 mt-8">
-                        <div class="w-full flex justify-end items-center">
-                            <div class="w-20 mr-2">
+                          </div>
+                        </form>
+                        <div class="w-full">
+                          <div class="w-full flex border-t border-gray-300 pt-4 mt-8">
+                            <div class="w-full flex justify-end items-center">
+                              <div class="w-20 mr-2">
                                 <button class="w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300">
-                                    Cancel
+                                  Cancel
                                 </button>
-                            </div>
-                            <div class="w-20">
+                              </div>
+                              <div class="w-20">
                                 <button
                                     class="py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none">
-                                    Save
+                                  Save
                                 </button>
+                              </div>
                             </div>
+                          </div>
                         </div>
+                      </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="w-full flex flex-wrap justify-center items-center py-8">
-            <div class="mr-2">
-                <button
+                    <div class="w-full flex flex-wrap justify-center items-center py-8">
+                      <div class="mr-2">
+                        <button
                     class="py-2 px-2 w-full shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none">
-                    Download <%= icon('fas', 'download', class: "ml-2") %>
-                </button>
-            </div>
-            <div class="w-24 mr-2">
-                <button
+                          Download <%= icon('fas', 'download', class: "ml-2") %>
+                        </button>
+                      </div>
+                      <div class="w-24 mr-2">
+                        <button
                     class="py-2 px-2 w-full shadow-md no-underline rounded bg-green-500 text-white font-bold text-sm hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
-                    Sent <%= icon('fas', 'check', class: "ml-2") %>
-                </button>
-            </div>
-            <div class="">
-                <button
+                          Sent <%= icon('fas', 'check', class: "ml-2") %>
+                        </button>
+                      </div>
+                      <div class="">
+                        <button
                     class="py-2 px-2 w-full shadow-md no-underline rounded bg-gray-600 text-white font-bold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none">
-                    <div class="pointer-events-none flex items-center justify-center text-white inline-block">More
-                        <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path
+                          <div class="pointer-events-none flex items-center justify-center text-white inline-block">More
+                            <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path
                                 d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" />
-                        </svg>
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                        <div class="w-full text-center">
+                          (Kommer fram när man trycker på save)
+                        </div>
+                      </div>
+                      <div class="w-full flex bg-white shadow-xl rounded-lg p-5 h-64 justify-center">
+                        <p class="text-3xl text-blue-800">
+                          AREA FOR PDF PREVIEW
+                        </p>
+                      </div>
                     </div>
-                </button>
-            </div>
-            <div class="w-full text-center">
-                (Kommer fram när man trycker på save)
-            </div>
-        </div>
-        <div class="w-full flex bg-white shadow-xl rounded-lg p-5 h-64 justify-center">
-            <p class="text-3xl text-blue-800">
-                AREA FOR PDF PREVIEW
-            </p>
-        </div>
-    </div>
-</div>
+                  </div>
