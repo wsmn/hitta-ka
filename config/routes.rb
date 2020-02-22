@@ -21,11 +21,8 @@ Rails.application.routes.draw do
   get(:account, controller: :presentation, action: :account)
   get(:settings, controller: :presentation, action: :settings)
 
-  resources(:customers, controller: :customers)
-
-  get(:projects, controller: :presentation, action: :projects)
-  get(:project, controller: :presentation, action: :project)
-  get(:new_project, controller: :presentation, action: :new_project)
+  resources(:customers)
+  resources(:projects)
 
   get(:tasks, controller: :presentation, action: :tasks)
   get(:task, controller: :presentation, action: :task)

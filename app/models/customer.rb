@@ -1,7 +1,12 @@
 class Customer < ApplicationRecord
   belongs_to(:organisation)
+  has_many(:projects)
 
   validates(:name, presence: true)
+
+  def to_s
+    "(##{id}) #{name}"
+  end
 
   def initials
     initials = ""

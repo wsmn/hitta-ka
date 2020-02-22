@@ -1,0 +1,17 @@
+<div class="w-full overflow-y-auto lg:flex-grow px-4">
+  <div class="flex-grow mx-auto sm:px-4 pt-2 md:pt-6">
+    <div class="w-full">
+      <h1 class="text-2xl font-bold text-gray-500">
+        <%= link_to(projects_path, class: 'font-semibold text-blue-500') do %>
+          <%= t('.projects') %>
+        <% end %>
+        / New Project -
+        <%= icon('fas', 'tasks', class: "mt-1") %>
+      </h1>
+    </div>
+    <div class="flex flex-wrap bg-white shadow-xl rounded-lg mt-4 p-5">
+      <%= render('form', project: @project, customers: @customers) %>
+      <%= render('form_structure', project: @project) %>
+    </div>
+  </div>
+</div>

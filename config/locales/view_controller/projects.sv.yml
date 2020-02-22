@@ -11,7 +11,7 @@ sv:
 
     new:
       title: Nytt projekt
-    
+
     form:
       customer: Kund
       new_customer: Ny kund
@@ -39,7 +39,11 @@ sv:
       success: Projektet raderades!
 
     edit:
-      title: Redigera projekt
+      title: "Redigera projekt - %{project}"
+      delete: Radera projekt
+      danger_zone: Farozon
+      delete_confirm: Vill du verkligen radera projektet? Tar även bort all kopplad data och kan ej ångras.
+      delete_project: När projektet raders tas all kopplad data till projektet bort. Detta går inte att ångra.
 
     update:
       success: Projektet uppdaterades
