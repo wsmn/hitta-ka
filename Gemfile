@@ -34,7 +34,6 @@ end
 
 group :development do
   gem "rails_real_favicon"
-  gem "foreman"
   gem "standardrb"
 end
 

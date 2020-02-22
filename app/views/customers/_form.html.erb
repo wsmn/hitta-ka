@@ -1,185 +1,49 @@
 <% organisations ||= [] %>
-<%= form_with(model: customer, local: true, class: 'w-full xl:w-5/6 flex flex-col flex-wrap bg-white border border-gray-300 shadow-xl rounded-lg lg:mt-3 p-4') do |form| %>
-<div class="w-full">
-    <div class="flex flex-wrap -mx-2">
-        <div class="w-full lg:w-1/2 lg:px-2">
-            <div class="h-12 bg-gray-800 px-3 py-2 rounded-t">
-                <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl">General</h1>
-            </div>
-            <div class="border-l border-b border-r border-gray-400 bg-white shadow">
-                <div class="p-3 xl:p-6">
-                    <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
-                        <div class="w-full lg:w-56 pr-2">
-                            <%= form.label(:organisation, class: 'form-label text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0') %>
-                        </div>
-                        <div class="w-full">
-                            <%= form.select(:organisation_id, organisations.collect { |org| [org.to_s, org.id] }, {}, id: 'organisation', class: 'form-select mt-1 block w-full h-10 bg-white shadow-none') %>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap xl:flex-no-wrap mb-1 items-center">
-                        <div class="w-full lg:w-56">
-                            <div class="pr-2">
-                                <%= form.label(:company_name, class: 'form-label text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0') %>
-                            </div>
-                        </div>
-                        <div class="w-full">
-                            <%= form.text_field(:name, id: 'name', autofocus: true,
-                                class: 'shadow appearance-none border rounded w-full py-2 px-3') %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="w-full lg:w-1/2 lg:px-2 mt-4 lg:mt-0">
-            <div class="h-12 bg-gray-800 px-3 py-2 rounded-t">
-                <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl">Contact information</h1>
-            </div>
-            <div class="border-l border-b border-r border-gray-400 bg-white shadow">
-                <div class="p-3 xl:p-6">
-                    <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
-                        <div class="w-full lg:w-56 pr-2">
-                            <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-                                First name
-                            </h2>
-                        </div>
-                        <div class="w-full">
-                            <input
-                                class="text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
-                        <div class="w-full lg:w-56 pr-2">
-                            <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-                                Last name
-                            </h2>
-                        </div>
-                        <div class="w-full">
-                            <input
-                                class="text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
-                        <div class="w-full lg:w-56">
-                            <div class="pr-2">
-                                <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-                                    Email
-                                </h2>
-                            </div>
-                        </div>
-                        <div class="w-full">
-                            <input
-                                class="text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
-                        <div class="w-full lg:w-56 pr-2">
-                            <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-                                Phone number
-                            </h2>
-                        </div>
-                        <div class="w-full">
-                            <input
-                                class="text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                        </div>
-                    </div>
-                    <div class="w-full flex justify-end">
-                        <p class="text-green-500 font-medium">+ Add another contact</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<%= form_with(model: customer, local: true, class: 'w-full xl:w-5/6 flex flex-wrap bg-white border border-gray-300 shadow-xl rounded-lg lg:mt-3 p-4') do |form| %>
+  <div class="w-full lg:w-1/2 lg:px-2">
+    <div class="h-12 bg-gray-800 px-3 py-2 rounded-t">
+      <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl"><%= t(".general") %></h1>
     </div>
-    <div class="flex flex-wrap -mx-2 mt-4 lg:mt-4">
-        <div class="w-full lg:w-1/2 lg:px-2">
-                <div class="h-12 bg-gray-800 px-3 py-2 rounded-t">
-                    <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl">Address</h1>
-                </div>
-                <div class="border-l border-b border-r border-gray-400 bg-white shadow">
-                <div class="p-3 xl:p-6">
-                    <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
-                        <div class="w-full lg:w-56 pr-2">
-                            <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-                                Street
-                            </h2>
-                        </div>
-                        <div class="w-full">
-                            <input
-                                class="text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
-                        <div class="w-full lg:w-56 pr-2">
-                            <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-                                City
-                            </h2>
-                        </div>
-                        <div class="w-full">
-                            <input
-                                class="text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
-                        <div class="w-full lg:w-56 pr-2">
-                            <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-                                State
-                            </h2>
-                        </div>
-                        <div class="w-full">
-                            <input
-                                class="text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap xl:flex-no-wrap mb-1 items-center">
-                        <div class="w-full lg:w-56 pr-2">
-                            <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-                                Zip code
-                            </h2>
-                        </div>
-                        <div class="w-full">
-                            <input
-                                class="text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="border-l border-b border-r border-gray-400 bg-white shadow p-3 xl:px-6">
+      <div class="flex flex-wrap xl:flex-no-wrap mb-1 items-center">
+        <div class="w-full lg:w-56 pr-2">
+          <%= form.label(:name, class: 'form-label text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0') %>
         </div>
-        <div class="w-full lg:w-1/2 lg:px-2 mt-4 lg:mt-0">
-                <div class="h-12 bg-gray-800 px-3 py-2 rounded-t">
-                    <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl">Misc.</h1>
-                </div>
-                <div class="border-l border-b border-r border-gray-400 bg-white shadow">
-                <div class="p-3 xl:p-6">
-                    <div class="flex flex-wrap xl:flex-no-wrap mb-1 items-center">
-                        <div class="w-full lg:w-56 pr-2">
-                            <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-                                Default rate
-                            </h2>
-                        </div>
-                        <div class="w-full">
-                            <input placeholder="990.00"
-                                class="text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="w-full">
+          <%= form.text_field(
+            :name, id: 'name', autofocus: true,
+            class: 'shadow appearance-none border rounded w-full py-2 px-3'
+          ) %>
         </div>
+      </div>
     </div>
-    <div class="w-full flex border-t border-gray-300 pt-3 -mb-1 mt-6">
-        <div class="w-full flex justify-between items-center">
-            <div class="w-30">
-                <div class="w-30 py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-red-200 text-red-700 font-bold text-sm hover:text-red-200 hover:bg-red-700 focus:outline-none active:shadow-none">
-                    Delete
-                </div>
-            </div>
-            <div class="flex items-center">
-            <div class="w-20 mr-2">
-                <%= link_to("Cancel", customers_path, class: "w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300") %>
-            </div>
-            <div class="w-30">
-                <%= form.submit(class: 'py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none') %>
-            </div>
-        </div>
-        </div>
+    <div class="h-12 bg-gray-800 px-3 py-2 rounded-t mt-4">
+      <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl"><%= t('.belongs_to') %></h1>
     </div>
-</div>
+    <div class="border-l border-b border-r border-gray-400 bg-white shadow">
+      <div class="px-3 xl:px-6 py-3">
+        <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
+          <div class="w-full lg:w-56 pr-2">
+            <%= form.label(:organisation, class: 'form-label text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0') %>
+          </div>
+          <div class="w-full">
+            <%= form.select(:organisation_id, organisations.collect { |org| [org.to_s, org.id] }, {}, id: 'organisation', class: 'form-select mt-1 block w-full h-10 bg-white shadow-none') %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render('form_contact') %>
+  <%= render('form_address') %>
+  <%= render('form_misc') %>
+  <div class="w-full flex border-t border-gray-300 pt-3 -mb-1 px-4 mt-6">
+    <div class="w-full flex justify-end items-center">
+      <div class="w-20 mr-2">
+        <%= link_to("Cancel", customers_path, class: "w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300") %>
+      </div>
+      <div class="w-30">
+        <%= form.submit(class: 'py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none') %>
+      </div>
+    </div>
+  </div>
 <% end %>
