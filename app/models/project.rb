@@ -12,4 +12,8 @@ class Project < ApplicationRecord
   def kind
     KINDS[id % KINDS.length]
   end
+
+  def to_s
+    title
+  end
 end

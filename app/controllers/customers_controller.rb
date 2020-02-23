@@ -2,7 +2,7 @@ class CustomersController < ApplicationController
   before_action(:require_login)
 
   def index
-    @customers = current_user.customers
+    @customers = current_user.customers.includes(:projects)
   end
 
   def new
