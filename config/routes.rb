@@ -18,8 +18,8 @@ Rails.application.routes.draw do
                     path: "sign-out")
   get(:sign_up, controller: "clearance/users", action: :new, path: "sign-up")
 
-  get(:account, controller: :presentation, action: :account)
-  get(:settings, controller: :presentation, action: :settings)
+  get(:account, controller: :accounts, action: :show)
+  get(:settings, controller: :accounts, action: :settings)
 
   resources(:customers)
   resources(:projects)

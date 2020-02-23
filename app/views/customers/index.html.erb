@@ -108,15 +108,7 @@
         <%= render('empty') %>
       <% else %>
         <% @customers.each_with_index do |customer, idx| %>
-          <% if (idx % 2 == 0) %>
-            <div class="flex border-b bg-white">
-              <%= render("row", customer: customer) %>
-            </div>
-          <% else %>
-            <div class="flex border-b bg-gray-200">
-              <%= render("row", customer: customer) %>
-            </div>
-          <% end %>
+            <%= render("row", customer: customer, odd: idx % 2 == 0) %>
         <% end %>
       <% end %>
       <div class="px-3 bg-white border-t flex flex-col xs:flex-row items-end justify-center">
