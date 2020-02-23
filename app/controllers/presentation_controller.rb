@@ -28,11 +28,12 @@ class PresentationController < ApplicationController
   end
 
   def account
-    @customers = []
+    @customers = current_user.customers
+    @projects = current_user.projects.includes(:customer).limit(5)
     @counts = {
       active: 8,
-      completed: 5,
-      total: 4,
+      archived: 5,
+      total: current_user.projects.count,
     }
     render(layout: "application")
   end
