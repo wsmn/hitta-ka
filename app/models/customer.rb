@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord
   belongs_to(:organisation)
-  has_many(:projects)
+  has_many(:projects, dependent: :destroy)
 
   validates(:name, presence: true)
 
