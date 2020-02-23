@@ -16,6 +16,7 @@ sv:
     account_menu:
       home: Hem
       settings: Inställningar
+      customers: Kunder
     footer:
       get_started: Börja här
       connect: Anslut företag

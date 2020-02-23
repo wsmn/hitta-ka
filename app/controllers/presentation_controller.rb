@@ -2,7 +2,6 @@
 
 # Controller for landing page
 class PresentationController < ApplicationController
-  before_action(:require_login, only: :account)
   layout("landing")
 
   def index
@@ -25,20 +24,6 @@ class PresentationController < ApplicationController
   end
 
   def form
-  end
-
-  def account
-    @customers = []
-    @counts = {
-      active: 8,
-      completed: 5,
-      total: 4,
-    }
-    render(layout: "application")
-  end
-
-  def settings
-    render(layout: "application")
   end
 
   def tasks

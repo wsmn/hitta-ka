@@ -41,3 +41,8 @@ sv:
       delete_confirm: Vill du verkligen radera kunden? Går ej att ångra.
       delete_customer: Genom att radera en kund försvinner alla projekt kopplade till kunden, det går ej att ångra.
       danger_zone: Farozonen
+
+    empty:
+      no_customers_found: Hittade inga inlagda kunder!
+      register_first_customer: Klicka på knappen nedan för att registrera en första kund.
+      new_customer: Lägg till kund

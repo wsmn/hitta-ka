@@ -1,0 +1,33 @@
+<div class="col-span-2 lg:col-span-1 mb-6 lg:mb-0 flex flex-col">
+  <div class="h-full flex-grow flex flex-col bg-white border-t border-b sm:rounded sm:border shadow overflow-hidden">
+    <div class="border-b">
+      <div class="flex justify-between px-6 -mb-px">
+        <h3 class="text-blue-600 py-4 font-normal text-lg">Invoices</h3>
+        <div class="flex">
+          <button type="button" class="appearance-none py-4 text-blue-700 border-b border-blue-700 mr-3">
+            Upcoming
+          </button>
+          <button type="button" class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700">
+            Past due
+          </button>
+        </div>
+      </div>
+    </div>
+    <% if rand(100) % 2 == 0 %>
+      <% (0..5).each do |row| %>
+        <%= render("invoices/status_row", odd: row % 2 == 0) %>
+      <% end %>
+      <div class="px-6 py-3">
+        <div class="text-center text-gray flex justify-center">
+          <div class="flex hover:border-gray-400 hover:text-gray-400 font-medium">
+            <%= link_to(invoices_path, class: 'bg-blue-600 border-blue-600 border hover:bg-blue-500 hover:border-blue-500 py-2 px-3 rounded text-white') do %>
+              <%= t(".all_invoices") %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <%= render("invoices/empty") %>
+    <% end %>
+  </div>
+</div>

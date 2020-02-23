@@ -1,0 +1,19 @@
+<% odd ||= false %>
+<% date ||= Time.zone.now - rand(-100..100).days %>
+<div class="flex-grow flex px-6 py-2 text-gray-900 border-b -mx-4 <%= odd ? "bg-gray-300" : "bg-white" %>">
+  <div class="w-1/4 px-4 flex flex-wrap items-center justify-start">
+    <div class="">
+      <p class="text-sm md:text-base">Projektet Gåsen</p>
+      <p class="text-sm text-blue-500 opacity-75 -mt-1">Kund Kundsson</p>
+    </div>
+  </div>
+  <div class="w-1/4 flex items-center justify-center">
+    <p class="text-md text-blue-500">#12345678</p>
+  </div>
+  <div class="w-1/4 flex items-center justify-center">
+    <p class="text-md"><%= rand(5000..12000) %> SEK</p>
+  </div>
+  <div class="w-1/4 flex items-center justify-center">
+    <p class="text-md <%= date < Time.zone.now ? "text-red-500" : "text-green-500"%>"><%= l(date, format: "%Y-%m-%d") %></p>
+  </div>
+</div>
