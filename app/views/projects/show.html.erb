@@ -1,3 +1,7 @@
+<% content_for(:sidebar) do %>
+  <%= render('application/account_menu', current: :projects) %>
+<% end %>
+
 <div class="w-full lg:calcwidth overflow-y-auto lg:flex-grow px-4">
   <div class="flex-grow mx-auto sm:px-4 pt-6">
     <div class="w-full mb-4 inline-flex justify-between">

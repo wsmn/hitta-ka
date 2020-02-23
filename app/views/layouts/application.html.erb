@@ -20,7 +20,7 @@
         </header>
         <portal-target name="modals"></portal-target>
         <div class="flex-1 flex overflow-hidden">
-          <%= render('application/account_menu') %>
+          <%= yield(:sidebar) %>
           <div class="flex-1 flex relative">
             <%= yield(:title) %>
             <%= yield %>
