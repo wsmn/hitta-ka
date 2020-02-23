@@ -18,4 +18,8 @@ class Customer < ApplicationRecord
     end
     initials
   end
+
+  def latest_project
+    projects.order(created_at: :desc).first
+  end
 end
