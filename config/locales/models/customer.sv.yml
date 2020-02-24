@@ -11,8 +11,13 @@ sv:
 
     attributes:
       customer:
-        name: Företagsnamn
-        phone: Telefon
         address: Adress
+        city: Ort
         email: Email
+        name: Namn
         organisation: Organisation
+        phone: Telefon
+        state: Län
+        street: Adress
+        zip_code: Postnummer
+        web: Webbplats
