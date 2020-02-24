@@ -5,48 +5,34 @@
   <div class="border-l border-b border-r border-gray-400 bg-white shadow p-3 xl:px-6">
     <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
       <div class="w-full lg:w-56 pr-2">
-        <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-          Street
-        </h2>
+        <%= form.label(:street, class: "text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0") %>
       </div>
       <div class="w-full">
-        <input class="text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+        <%= form.text_field(:street, id: "street", class: "text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500") %>
       </div>
     </div>
     <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
       <div class="w-full lg:w-56 pr-2">
-        <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-          City
-        </h2>
+        <%= form.label(:city, class: "text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0") %>
       </div>
       <div class="w-full">
-        <input class="text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+        <%= form.text_field(:city, id: "city", class: "text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500") %>
       </div>
     </div>
     <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
       <div class="w-full lg:w-56 pr-2">
-        <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-          State
-        </h2>
+        <%= form.label(:state, class: "text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0") %>
       </div>
       <div class="w-full">
-        <input class="text-sm appearance-none block w-full shadow
-                        text-gray-700 border border-gray-300 rounded
-                        py-3 px-4 leading-tight focus:outline-none
-                        focus:bg-white focus:border-gray-500">
+        <%= form.text_field(:state, id: "state", class: "text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500") %>
       </div>
     </div>
     <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
       <div class="w-full lg:w-56 pr-2">
-        <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-          Zip code
-        </h2>
+        <%= form.label(:zip_code, class: "text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0") %>
       </div>
       <div class="w-full">
-        <input class="text-sm appearance-none block w-full shadow
-                        text-gray-700 border border-gray-300 rounded
-                        py-3 px-4 leading-tight focus:outline-none
-                        focus:bg-white focus:border-gray-500">
+        <%= form.text_field(:zip_code, id: "zip_code", class: "text-sm appearance-none block w-full shadow text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500") %>
       </div>
     </div>
   </div>
