@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
+      <div class="flex flex-wrap xl:flex-no-wrap mb-1 items-center">
         <div class="w-full lg:w-56 pr-2">
           <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
             Customer
@@ -49,8 +49,13 @@
                                       shadow text-gray-700 border border-gray-300
                                       rounded py-3 px-4 leading-tight focus:outline-none
                                       focus:bg-white focus:border-gray-500') %>
-
         </div>
+      </div>
+      <div class="w-full flex justify-end mb-2">
+        <%= link_to(new_customer_path,
+                    class: 'text-blue-500 font-medium') do %>
+        <%= t('.+_add_new_customer') %>
+        <% end %>
       </div>
       <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
         <div class="w-full lg:w-56 pr-2">
