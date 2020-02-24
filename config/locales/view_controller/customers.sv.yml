@@ -17,6 +17,8 @@ sv:
       active_projects: Aktiva Projekt
       completed_projects: Avslutade Projekt
       paused_projects: Pausade Projekt
+      delete_customer: Radera kund
+      delete_confirm: Vill du verkligen radera kunden? När du raderar en kund tas även alla projekt och fakturer bort. Går ej att ångra.
 
     new:
       title: Ny kund

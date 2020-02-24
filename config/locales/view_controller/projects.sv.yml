@@ -8,6 +8,8 @@ sv:
 
     show:
       title: "Projekt | %{project}"
+      delete_project: Radera projekt
+      delete_confirm: Vill du verkligen radera projektet? Tar även bort all kopplad data och kan ej ångras.
 
     new:
       title: Nytt projekt
