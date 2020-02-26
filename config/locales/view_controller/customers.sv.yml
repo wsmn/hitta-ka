@@ -1,19 +1,19 @@
 sv:
   customers:
-    index:
+    heading:
       title: Kunder
       new_customer: Ny kund
+
+    search_field:
       search: Sök
       all: Alla
       active: Aktiva
       archived: Arkiverade
+
+    table:
       name: Namn
       latest_project: Senaste projektet
       active_projects: Aktiva projekt
-
-    customer_header:
-      title: Kunder
-      new_customer: Ny kund
 
     create:
       success: Kund skapades
@@ -25,10 +25,15 @@ sv:
       project_id: "Kundnr: %{id}"
 
     show:
-      title: Kund
       active_projects: Aktiva Projekt
       completed_projects: Avslutade Projekt
       paused_projects: Pausade Projekt
+      delete_customer: Radera kund
+      delete_confirm: Vill du verkligen radera kunden? När du raderar en kund tas även alla projekt och fakturer bort. Går ej att ångra.
+
+    show_heading:
+      customers: Kunder
+      edit_customer: Ändra kund
       delete_customer: Radera kund
       delete_confirm: Vill du verkligen radera kunden? När du raderar en kund tas även alla projekt och fakturer bort. Går ej att ångra.
 

@@ -3,19 +3,21 @@ sv:
     create:
       success: Projektet skapades
 
-    index:
-      name: Namn
-      customer: Kund
-      address: Adress
-      status: Status
+    heading:
+      title: Projekt
+      new_project: Nytt projekt
+
+    search_field:
       all: Alla
       active: Aktiva
       archived: Arkiverade
       search: Sök
 
-    project_header:
-      title: Projekt
-      new_project: Nytt projekt
+    table:
+      name: Namn
+      customer: Kund
+      address: Adress
+      status: Status
 
     show:
       title: "Projekt | %{project}"
