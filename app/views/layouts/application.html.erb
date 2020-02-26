@@ -21,10 +21,10 @@
         <portal-target name="modals"></portal-target>
         <div class="flex-1 flex overflow-hidden">
           <%= yield(:sidebar) %>
-          <div class="flex-1 flex relative">
+          <div class="flex-1 flex w-full relative">
+            <%= render('flashes') %>
             <%= yield(:title) %>
             <%= yield %>
-            <%= render('flashes') %>
           </div>
         </div>
       </div>

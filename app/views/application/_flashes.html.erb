@@ -1,9 +1,7 @@
 <% if flash.any? %>
-  <div class="w-full absolute">
-    <div class="w-1/2 mx-auto">
+  <div class="w-1/2 mx-auto left-0 right-0 absolute mt-1">
       <% flash.each do |type, value| %>
         <flash text="<%= value %>" type="<%= type %>"></flash>
       <% end %>
-    </div>
   </div>
 <% end %>

@@ -4,7 +4,18 @@ sv:
       success: Projektet skapades
 
     index:
+      name: Namn
+      customer: Kund
+      address: Adress
+      status: Status
+      all: Alla
+      active: Aktiva
+      archived: Arkiverade
+      search: Sök
+
+    project_header:
       title: Projekt
+      new_project: Nytt projekt
 
     show:
       title: "Projekt | %{project}"

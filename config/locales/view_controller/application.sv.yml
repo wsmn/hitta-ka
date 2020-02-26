@@ -15,8 +15,10 @@ sv:
       invoices: Fakturor
     account_menu:
       home: Hem
-      settings: Inställningar
+      projects: Projekt
       customers: Kunder
+      invoices: Fakturor
+      settings: Inställningar
     footer:
       get_started: Börja här
       connect: Anslut företag

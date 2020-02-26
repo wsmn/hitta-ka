@@ -2,6 +2,18 @@ sv:
   customers:
     index:
       title: Kunder
+      new_customer: Ny kund
+      search: Sök
+      all: Alla
+      active: Aktiva
+      archived: Arkiverade
+      name: Namn
+      latest_project: Senaste projektet
+      active_projects: Aktiva projekt
+
+    customer_header:
+      title: Kunder
+      new_customer: Ny kund
 
     create:
       success: Kund skapades

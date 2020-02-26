@@ -1,5 +1,5 @@
 <% odd ||= false %>
-<div class="flex border-b <%= odd ? "bg-white" : "bg-gray-200" %>">
+<div class="flex border-b border-gray-400 <%= odd ? "bg-white" : "bg-gray-200" %>">
   <%= link_to(project_path(project), class: 'w-full text-left hover:bg-blue-200') do %>
     <div class="w-full flex py-4">
       <div class="w-20 md:w-24 flex justify-center items-center">
