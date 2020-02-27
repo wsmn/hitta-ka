@@ -1,4 +1,5 @@
 import "styles/application";
+import "alpinejs";
 
 import axios from "axios";
 import Vue from "vue/dist/vue.esm";
