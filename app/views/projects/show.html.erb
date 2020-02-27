@@ -7,7 +7,7 @@
       <div class="">
         <h2 class="text-sm lg:text-base font-medium text-gray-500">
           <%= link_to(projects_path, class: '') do %>
-          <%= t('.projects') %>
+            <%= t('.projects') %>
           <% end %> /
           <span class="text-gray-800"><%= @project.title %></span>
         </h2>
@@ -21,7 +21,7 @@
                     class: 'bg-gray-500 border-l border-t border-b border-gray-800
                             hover:bg-gray-800 hover:border-gray-800 py-2 px-3 rounded-l
                             text-gray-900 hover:text-gray-500 font-semibold') do %>
-        <%= t('.edit_project') %>
+          <%= t('.edit_project') %>
         <% end %>
         <div class="drop-down-parent bg-gray-800 border border-gray-800 rounded-r py-2 flex justify-end">
           <svg class="h-6 w-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
@@ -33,7 +33,7 @@
                 <%= link_to(edit_project_path(@project),
                               class: "text-center bg-blue-100 hover:bg-blue-200
                                       border border-gray-400 py-1 px-2 rounded") do %>
-                <%= t('archive_project') %>
+                  <%= t('archive_project') %>
                 <% end %>
               </div>
               <div class="mt-2 flex justify-center">
