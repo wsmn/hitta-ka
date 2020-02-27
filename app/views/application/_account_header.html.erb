@@ -1,4 +1,4 @@
-<div id="nav" data-behaviour="vue">
+<div id="nav">
   <nav class="flex flex-shrink-0">
     <div class="flex-shrink-0 px-6 bg-gray-900 account-menu-width hidden lg:flex items-center">
       <div class="hidden lg:block mt-4">
@@ -37,8 +37,8 @@
               class="block pl-8 pr-4 py-2 w-full bg-white border border-gray-500 rounded text-sm placeholder-gray-500 text-white focus:bg-white focus:placeholder-gray-400 focus:text-gray-800 focus:outline-none focus:border-gray-500">
           </div>
         </div>
-        <div class="flex justify-end">
-          <button class="flex items-center text-gray-900">
+        <div class="flex justify-end" x-data="{ open: false }">
+          <button class="flex items-center text-gray-900" @click="open = true">
             <div class="h-8 w-8 rounded-full bg-red-600 flex items-center justify-center text-white font-bold">
               <%= current_user.initials %>
             </div>
@@ -51,6 +51,9 @@
                 clip-rule="evenodd" />
             </svg>
           </button>
+          <div x-show="open" @click.away="open = false">
+            Woop
+          </div>
         </div>
       </div>
     </div>
