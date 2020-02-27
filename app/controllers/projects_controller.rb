@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if current_user.customers.where(id: @project.customer_id).count == 1 && @project.save
-      redirect_to(project_path(@project), notice: t('.success'))
+      redirect_to(project_path(@project), notice: t(".success"))
     else
       render(:new, status: :unprocessable_entity)
     end
@@ -41,12 +41,12 @@ class ProjectsController < ApplicationController
   def destroy
     project = current_user.projects.find(params[:id])
     project.destroy!
-    redirect_to(projects_path, notice: t('.success'))
+    redirect_to(projects_path, notice: t(".success"))
   end
 
   private
 
   def project_params
-    params.require(:project).permit(:customer_id, :title)
+    params.require(:project).permit(:customer_id, :title, :status)
   end
 end
