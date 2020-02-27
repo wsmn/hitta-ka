@@ -1,51 +1,51 @@
 <div class="px-8 pb-4">
-    <div class="w-full border border-gray-500 rounded shadow-md mb-6">
-      <div class="border-b border-gray-400 bg-gray-200 rounded-t">
+  <div class="w-full border border-gray-500 rounded shadow-md mb-6">
+    <div class="border-b border-gray-400 bg-gray-200 rounded-t">
+      <div class="w-full flex">
+        <div class="w-20 md:w-24 flex inline-block justify-center">
+        </div>
         <div class="w-full flex">
-          <div class="w-20 md:w-24 flex inline-block justify-center">
+          <div class="w-1/3 lg:w-1/4 flex">
+            <span class="uppercase text-sm font-semibold py-4 text-blue-900">
+              <%= t('.name') %>
+            </span>
           </div>
-          <div class="w-full flex">
-            <div class="w-1/3 lg:w-1/4 flex">
-              <span class="uppercase text-sm font-semibold py-4 text-blue-900">
-                <%= t('.name') %>
-              </span>
-            </div>
-            <div class="w-1/3 lg:w-1/4 flex">
-              <span class="uppercase text-sm font-semibold py-4 text-blue-900">
-                <%= t('.customer') %>
-              </span>
-            </div>
-            <div class="w-1/4 hidden lg:flex">
-              <span class="uppercase text-sm font-semibold py-4 text-blue-900">
-                <%= t('.address') %>
-              </span>
-            </div>
-            <div class="w-1/3 lg:w-1/4 flex justify-center md:justify-start">
-              <span class="uppercase text-sm font-semibold py-4 text-blue-900">
-                <%= t('.status') %>
-              </span>
-            </div>
+          <div class="w-1/3 lg:w-1/4 flex">
+            <span class="uppercase text-sm font-semibold py-4 text-blue-900">
+              <%= t('.customer') %>
+            </span>
           </div>
-          <div class="w-16 hidden md:flex items-center">
+          <div class="w-1/4 hidden lg:flex">
+            <span class="uppercase text-sm font-semibold py-4 text-blue-900">
+              <%= t('.address') %>
+            </span>
+          </div>
+          <div class="w-1/3 lg:w-1/4 flex justify-center md:justify-start">
+            <span class="uppercase text-sm font-semibold py-4 text-blue-900">
+              <%= t('.status') %>
+            </span>
           </div>
         </div>
-      </div>
-      <% if @projects.empty? %>
-      <%= render('projects/empty') %>
-      <% else %>
-      <% @projects.each_with_index do |project, idx| %>
-      <%= render("row", project: project, odd: idx % 2 == 0) %>
-      <% end %>
-      <% end %>
-      <div class="px-3 bg-white rounded-b border-t flex flex-col xs:flex-row items-end justify-center">
-        <div class="px-2 align-middle inline-flex flex items-center">
-          <span class="inline-flex tracking-widest font-semibold py-4 text-blue-900">
-            1 2 3 4 5 6 7 8
-          </span>
-          <button class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-1 px-4 rounded ml-2">
-            Next
-          </button>
+        <div class="w-16 hidden md:flex items-center">
         </div>
       </div>
     </div>
+    <% if @projects.empty? %>
+      <%= render('projects/empty') %>
+    <% else %>
+      <% @projects.each_with_index do |project, idx| %>
+        <%= render("row", project: project, odd: idx % 2 == 0) %>
+      <% end %>
+    <% end %>
+    <div class="px-3 bg-white rounded-b border-t flex flex-col xs:flex-row items-end justify-center">
+      <div class="px-2 align-middle inline-flex flex items-center">
+        <span class="inline-flex tracking-widest font-semibold py-4 text-blue-900">
+          1 2 3 4 5 6 7 8
+        </span>
+        <button class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-1 px-4 rounded ml-2">
+          Next
+        </button>
+      </div>
+    </div>
   </div>
+</div>
