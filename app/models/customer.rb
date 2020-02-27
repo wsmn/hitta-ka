@@ -11,14 +11,7 @@ class Customer < ApplicationRecord
   end
 
   def initials
-    initials = ""
-    if name
-      initials = (name.split - ["AB"]).map(&:first).join.strip
-    end
-    if initials == ""
-      initials = "?"
-    end
-    initials
+    Customer.initials(name)
   end
 
   def latest_project
