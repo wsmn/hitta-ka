@@ -1,0 +1,57 @@
+<div id="nav" data-behaviour="vue">
+  <nav class="flex flex-shrink-0">
+    <div class="flex-shrink-0 px-6 bg-gray-900 account-menu-width hidden lg:flex items-center">
+      <div class="hidden lg:block mt-4">
+        <%= link_to(root_path) do %>
+        <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 5.5rem", class: "") %>
+        <% end %>
+      </div>
+    </div>
+    <div class="flex flex-1 bg-gray-900 lg:bg-white items-center justify-between bg-white py-4 lg:py-2 px-2 lg:px-6 border-b border-gray-500">
+      <div class="lg:hidden">
+        <%= link_to(root_path) do %>
+        <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 3.5rem", class: "") %>
+        <% end %>
+      </div>
+      <navigation
+      :signed-in="<%= signed_in? %>"
+      :links='<%= header_links %>'
+      :account-link='<%= account_link %>'
+      :account-links='<%= account_links %>'
+      :connect-link='<%= connect_link %>'
+      :sign-in='<%= sign_in_link %>'
+      :sign-out='<%= sign_out_link %>'
+      :authenticity='"<%= form_authenticity_token %>"'
+    ></navigation>
+      <div class="w-full grid grid-cols-3 gap-4 items-center hidden lg:grid">
+        <div></div>
+        <div class="flex justify-center">
+          <div class="relative w-full">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+              <svg class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </span>
+            <input placeholder="Search for projects, customers etc."
+              class="block pl-8 pr-4 py-2 w-full bg-white border border-gray-500 rounded text-sm placeholder-gray-500 text-white focus:bg-white focus:placeholder-gray-400 focus:text-gray-800 focus:outline-none focus:border-gray-500">
+          </div>
+        </div>
+        <div class="flex justify-end">
+          <button class="flex items-center text-gray-900">
+            <div class="h-8 w-8 rounded-full bg-red-600 flex items-center justify-center text-white font-bold">
+              AW</div>
+            <span class="hidden lg:inline ml-3 mr-2 text-sm font-semibold">
+              <%= current_user.name %>
+            </span>
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

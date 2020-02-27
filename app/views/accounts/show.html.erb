@@ -1,29 +1,12 @@
 <% content_for(:sidebar) do %>
 <%= render('application/account_menu', current: :account) %>
 <% end %>
-<div class="w-full overflow-y-auto lg:flex-grow">
-  <div class="flex-grow mx-auto">
-    <div class="w-full flex justify-between bg-white border-b border-gray-400 px-8 py-6 h-32">
-      <div class="">
-        <h1 class="text-3xl font-bold text-gray-800"><%= current_user.name %></h1>
-        <h2 class="text-xl font-medium text-gray-600 -mt-1"><%= t(".title") %></h2>
-      </div>
-      <div class="flex items-start mt-2">
-        <%= link_to(new_project_path, class: 'bg-blue-600 border-blue-600 border hover:bg-blue-500 hover:border-blue-500 py-2 px-3 rounded text-white font-medium flex items-center') do %>
-        <svg class="h-5 w-5 font-bold text-gray-100 inline-block mr-2" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <%= t('.new_project') %>
-        <% end %>
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 w-full overflow-y-auto px-8 py-6">
-      <%= render("stats") %>
-      <%= render("projects", projects: @projects) %>
-      <%= render("tasks") %>
-      <%= render("invoices") %>
-    </div>
+<div class="flex-grow">
+  <%= render("show_heading") %>
+  <div class="grid grid-cols-2 gap-4 overflow-y-auto px-8 py-6">
+    <%= render("stats") %>
+    <%= render("projects", projects: @projects) %>
+    <%= render("tasks") %>
+    <%= render("invoices") %>
   </div>
 </div>
