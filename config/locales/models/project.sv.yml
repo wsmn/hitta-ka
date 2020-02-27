@@ -2,10 +2,12 @@ sv:
   models:
     project:
       status:
+        upcoming: Nytt
         active: Aktivt
         paused: Pausat
         completed: Färdigt
         cancelled: Avbrutet
+        archived: Arkiverad
 
   activerecord:
     models:

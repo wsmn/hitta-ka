@@ -18,14 +18,16 @@ module ProjectHelper
 
   def project_status_class(status)
     case status
-    when "pending"
+    when "upcoming"
       "bg-blue-400 text-white"
     when "active"
       "bg-green-400 text-gray-900"
     when "archived"
-      "bg-gray-400"
+      "bg-gray-400 text-white"
     when "paused"
       "bg-yellow-400"
+    when "cancelled"
+      "bg-red-400 text-white"
     end
   end
 end
