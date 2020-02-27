@@ -4,4 +4,15 @@ class ApplicationRecord < ActiveRecord::Base
   def self.searchable_language
     "swedish"
   end
+
+  def self.initials(text)
+    initials = ""
+    if text
+      initials = (text.split - ["AB"]).map(&:first).join.strip
+    end
+    if initials == ""
+      initials = "?"
+    end
+    initials
+  end
 end

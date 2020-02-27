@@ -9,9 +9,9 @@ module ApplicationHelper
   def sidebar_link(active, path, icon: nil, text: "", icon_class: "w-10 inline-block text-center", link_class: "px-2 py-3 flex items-center text-white hover:bg-gray-700")
     content = []
     if icon
-      content << content_tag(:div, class: icon_class) do
+      content << content_tag(:div, class: icon_class) {
         icon("fas", icon, class: "mt-1")
-      end
+      }
     end
     content << content_tag(:span, text, class: "font-light")
     link_to(path, class: link_class) do

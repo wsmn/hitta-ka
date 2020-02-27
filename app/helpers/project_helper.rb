@@ -10,27 +10,22 @@ module ProjectHelper
     t("models.project.status.#{key}")
   end
 
-  def project_title(status = nil)
-    content = [Project.model_name.human, project_tag(status)]
-    content_tag(:h1, safe_join(content), class: "text-4xl font-bold text-blue-900")
-  end
-
-  def project_tag(status, size: "medium", pos: "is-pulled-right")
-    return if status.nil?
-    cls = "tag #{project_status_class(status)} is-#{size} #{pos}"
-    content_tag(:span, project_status(status), class: cls)
+  def project_tag(status)
+    status_class = "text-sm md:text-base inline-flex font-semibold rounded-full h-6 px-3 md:px-4 justify-center items-center"
+    status_class += " #{project_status_class(status)}"
+    content_tag(:span, project_status(status), class: status_class)
   end
 
   def project_status_class(status)
     case status
+    when "pending"
+      "bg-blue-400 text-white"
     when "active"
-      "is-info"
+      "bg-green-400 text-gray-900"
+    when "archived"
+      "bg-gray-400"
     when "paused"
-      "is-warning"
-    when "completed"
-      "is-success"
-    when "cancelled"
-      "is-danger"
+      "bg-yellow-400"
     end
   end
 end

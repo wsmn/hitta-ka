@@ -14,10 +14,7 @@
         </div>
         <div class="w-full flex">
           <div class="w-1/2 pr-2">
-            <h2 class="tracking-wide leading-none text-gray-700 text-sm
-                      font-semibold mb-1 lg:mb-2">
-              Title
-            </h2>
+            <%= form.label(:title, class: "tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2") %>
             <%= form.text_field(:title, id: 'title', autofocus: true,
                                 class: "text-sm appearance-none block w-full
                                         shadow text-gray-700 border border-gray-300
@@ -25,10 +22,7 @@
                                         focus:bg-white focus:border-gray-500") %>
           </div>
           <div class="w-1/2 pl-2">
-            <h2 class="tracking-wide leading-none text-gray-700
-                        text-sm font-semibold mb-1 lg:mb-2">
-              ID
-            </h2>
+            <%= form.label(:id, class: "tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2") %>
             <input class="text-sm appearance-none block w-full
                         shadow text-gray-700 border border-gray-300
                         rounded py-3 px-4 leading-tight focus:outline-none
@@ -38,9 +32,7 @@
       </div>
       <div class="flex flex-wrap xl:flex-no-wrap mb-1 items-center">
         <div class="w-full lg:w-56 pr-2">
-          <h2 class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0">
-            Customer
-          </h2>
+          <%= form.label(:customer, class: "text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0") %>
         </div>
         <div class="w-full">
           <%= form.select(:customer_id, customers.collect { |customer| [customer.to_s, customer.id] },
@@ -52,10 +44,24 @@
         </div>
       </div>
       <div class="w-full flex justify-end mb-2">
-        <%= link_to(new_customer_path,
-                    class: 'text-blue-500 font-medium') do %>
+        <%= link_to(new_customer_path, class: 'text-blue-500 font-medium') do %>
         <%= t('.+_add_new_customer') %>
         <% end %>
+      </div>
+      <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
+        <div class="w-full lg:w-56 pr-2">
+          <%= form.label(:status, class: "text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0") %>
+        </div>
+        <div class="w-full">
+          <div class="relative">
+            <%= form.select(:status, project_statuses,
+                                {}, id: 'status',
+                                class: 'text-sm appearance-none block w-full
+                                        shadow text-gray-700 border border-gray-300
+                                        rounded py-3 px-4 leading-tight focus:outline-none
+                                        focus:bg-white focus:border-gray-500') %>
+          </div>
+        </div>
       </div>
       <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
         <div class="w-full lg:w-56 pr-2">
