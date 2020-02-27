@@ -2,7 +2,7 @@
   <div class="text-sm lg:text-sm font-medium text-white">
     <div class="flex items-center">
       <%= link_to(customers_path, class: 'text-gray-500') do %>
-      <%= t('.customers') %>
+        <%= t('.customers') %>
       <% end %> <svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
         <path fill-rule="evenodd"
           d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
@@ -23,7 +23,7 @@
         class: 'w-24 md:w-32 bg-green-600 border-l border-t border-b border-green-600
                 hover:bg-green-500 hover:border-green-500 py-2 px-3 rounded-l
                 text-white text-xs md:text-sm font-semibold h-8 md:h-10 flex items-center justify-center') do %>
-        <%= t('.new_task') %>
+          <%= t('.new_task') %>
         <% end %>
         <div @click="open = !open" class="bg-green-800 hover:bg-green-900 border border-green-800 hover:border-green-900 rounded-r h-8 md:h-10 flex justify-end items-center">
           <svg class="h-8 w-5 mx-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
@@ -34,10 +34,10 @@
           <div x-show="open" class="absolute mt-16 w-32 rounded">
             <div class="rounded bg-white border border-gray-400">
               <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
-              <%= t('.invoice') %>
+                <%= t('.invoice') %>
               <% end %>
               <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-b') do %>
-              <%= t('.more') %>
+                <%= t('.more') %>
               <% end %>
             </div>
           </div>
@@ -50,7 +50,7 @@
         class: 'mt-2 md:mt-0 md:ml-2 w-24 md:w-32 bg-blue-600 border-l border-t border-b border-blue-600
                         hover:bg-blue-500 hover:border-blue-500 py-2 rounded-l
                         text-white text-xs md:text-sm font-semibold h-8 md:h-10 flex items-center justify-center') do %>
-        <%= t('.edit_customer') %>
+          <%= t('.edit_customer') %>
         <% end %>
         <div @click="open = !open" class="bg-blue-800 hover:bg-blue-900 border border-blue-800 hover:border-blue-900 rounded-r h-8 md:h-10 flex justify-end items-center mt-2 md:mt-0">
           <svg class="h-8 w-5 mx-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
@@ -61,7 +61,7 @@
           <div x-show="open" class="absolute mt-16 w-32 rounded">
             <div class="rounded bg-white border border-gray-400">
               <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
-              <%= t('.archive') %>
+                <%= t('.archive') %>
               <% end %>
               <%= link_to(t('.delete'),
               customer_path(@customer),
