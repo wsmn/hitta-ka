@@ -1,0 +1,10 @@
+sv:
+  accounts:
+    show:
+      title: Hem
+    show_heading:
+      title: Hem
+      new_project: Nytt projekt
+      new_customer: Ny kund
+    settings:
+      title: Inställningar

@@ -1,12 +1,15 @@
 <% content_for(:sidebar) do %>
-  <%= render('application/account_menu', current: :account) %>
+<%= render('application/account_menu', current: :account) %>
 <% end %>
-<div class="flex-grow">
+
+<% content_for(:header_title) do %>
+<h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
+<% end %>
+
+<div class="grid grid-cols-2 gap-6 p-8">
   <%= render("show_heading") %>
-  <div class="grid grid-cols-2 gap-4 overflow-y-auto px-8 py-6">
-    <%= render("stats") %>
-    <%= render("projects", projects: @projects) %>
-    <%= render("tasks") %>
-    <%= render("invoices") %>
-  </div>
+  <%= render("stats") %>
+  <%= render("projects", projects: @projects) %>
+  <%= render("tasks") %>
+  <%= render("invoices") %>
 </div>

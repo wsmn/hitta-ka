@@ -1,7 +1,7 @@
 sv:
   projects:
     index:
-      title: Projects
+      title: Projekt
 
     create:
       success: Projektet skapades
@@ -23,7 +23,12 @@ sv:
       status: Status
 
     show:
-      title: "Projekt | %{project}"
+      title: Projekt
+
+    show_heading:
+      new_task: New task
+      edit_project: Redigera projekt
+      delete: Radera projekt
       delete_project: Radera projekt
       delete_confirm: Vill du verkligen radera projektet? Tar även bort all kopplad data och kan ej ångras.
 
@@ -57,7 +62,8 @@ sv:
       success: Projektet raderades!
 
     edit:
-      title: "Redigera projekt - %{project}"
+      title: Redigera projekt
+      edit_project: Redigera projekt
       delete: Radera projekt
       danger_zone: Farozon
       delete_confirm: Vill du verkligen radera projektet? Tar även bort all kopplad data och kan ej ångras.

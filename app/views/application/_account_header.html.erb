@@ -1,5 +1,5 @@
 <div id="nav">
-  <nav class="flex flex-shrink-0">
+  <nav class="flex flex-shrink-0 h-16">
     <div class="flex-shrink-0 px-6 bg-gray-900 account-menu-width hidden lg:flex items-center">
       <div class="hidden lg:block">
         <%= link_to(root_path) do %>
@@ -16,7 +16,7 @@
       </div>
       <%= render('application/mobile_menu') %>
       <div class="w-full grid grid-cols-3 gap-4 items-center hidden lg:grid">
-        <div>
+        <div class="">
           <%= yield(:header_title) %>
         </div>
         <div class="flex justify-center">

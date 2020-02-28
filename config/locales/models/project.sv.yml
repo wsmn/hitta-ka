@@ -7,7 +7,7 @@ sv:
         paused: Pausat
         completed: Färdigt
         cancelled: Avbrutet
-        archived: Arkiverad
+        archived: Arkiverat
 
   activerecord:
     models:

@@ -1,10 +1,10 @@
 sv:
   customers:
-    heading:
+    index:
       title: Kunder
-      new_customer: Ny kund
 
     search_field:
+      new_customer: Ny kund
       search: Sök
       all: Alla
       active: Aktiva
@@ -25,6 +25,7 @@ sv:
       project_id: "Kundnr: %{id}"
 
     show:
+      title: Kund
       active_projects: Aktiva Projekt
       completed_projects: Avslutade Projekt
       paused_projects: Pausade Projekt
@@ -33,7 +34,7 @@ sv:
 
     show_heading:
       customers: Kunder
-      edit_customer: Ändra kund
+      edit_customer: Redigera kund
       delete_customer: Radera kund
       delete_confirm: Vill du verkligen radera kunden? När du raderar en kund tas även alla projekt och fakturer bort. Går ej att ångra.
 
