@@ -1,22 +1,26 @@
 <div id="nav">
   <nav class="flex flex-shrink-0">
     <div class="flex-shrink-0 px-6 bg-gray-900 account-menu-width hidden lg:flex items-center">
-      <div class="hidden lg:block mt-4">
+      <div class="hidden lg:block">
         <%= link_to(root_path) do %>
-          <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 5.5rem", class: "") %>
+        <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 5.5rem", class: "") %>
         <% end %>
       </div>
     </div>
     <div
-      class="flex flex-1 bg-gray-900 lg:bg-white items-center justify-between bg-white py-4 lg:py-2 px-2 lg:px-6 border-b border-gray-500">
+      class="flex flex-1 bg-gray-900 lg:bg-gray-400 items-center justify-between bg-white py-4 lg:py-3 px-2 lg:px-8 border-b border-gray-500 shadow-md">
       <div class="lg:hidden">
         <%= link_to(root_path) do %>
-          <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 3.5rem", class: "") %>
+        <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 3.5rem", class: "") %>
         <% end %>
       </div>
       <%= render('application/mobile_menu') %>
       <div class="w-full grid grid-cols-3 gap-4 items-center hidden lg:grid">
-        <div></div>
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900">
+
+          </h1>
+        </div>
         <div class="flex justify-center">
           <div class="relative w-full">
             <span class="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -45,16 +49,23 @@
               </svg>
             </button>
           </div>
-          <div x-show="open" class="absolute mt-10 w-40 rounded">
-            <div class="rounded bg-white border border-gray-400">
-              <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
-                <%= t('.all_projects') %>
+          <div x-show="open" class="absolute mt-10 rounded">
+            <div class="rounded bg-white border border-gray-500">
+              <%= link_to(settings_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t flex items-center') do %>
+              <svg class="h-4 w-4 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <%= t('.settings') %>
               <% end %>
-              <%= link_to(settings_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100') do %>
-                <%= t('.settings') %>
-              <% end %>
-              <%= link_to(sign_out_path, method: 'delete', class: "block px-4 py-2 text-sm text-white bg-red-600 hover:text-white hover:bg-red-400 rounded-b") do %>
-                <%= t('application.header.sign_out') %>
+              <%= link_to(sign_out_path, method: 'delete', class: "block px-4 py-2 text-sm text-white bg-red-600 hover:text-white hover:bg-red-400 rounded-b flex items-center") do %>
+              <svg class="h-4 w-4 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              <%= t('application.header.sign_out') %>
               <% end %>
             </div>
           </div>

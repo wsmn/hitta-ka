@@ -1,8 +1,7 @@
 <% content_for(:sidebar) do %>
   <%= render('application/account_menu', current: :projects) %>
 <% end %>
-<div class="flex-grow">
-  <%= render("heading") %>
+<div class="flex-grow p-8">
   <%= render("search_field") %>
   <%= render("table") %>
 </div>
