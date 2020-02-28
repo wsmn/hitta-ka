@@ -17,9 +17,7 @@
       <%= render('application/mobile_menu') %>
       <div class="w-full grid grid-cols-3 gap-4 items-center hidden lg:grid">
         <div>
-          <h1 class="text-3xl font-bold text-gray-900">
-
-          </h1>
+          <%= yield(:header_title) %>
         </div>
         <div class="flex justify-center">
           <div class="relative w-full">
