@@ -11,7 +11,7 @@
         <% end %>
       </div>
       <%= simple_form_for(:session, url: session_path) do |form| %>
-        <%= form.input(:email, as: 'email', input_html: { autofocus: true }, input_html: { class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline shadow-inner bg-gray-200' }, label_html: { class: 'text-gray-700 text-sm font-bold' }) %>
+        <%= form.input(:email, as: 'email', input_html: { autofocus: true, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline shadow-inner bg-gray-200' }, label_html: { class: 'text-gray-700 text-sm font-bold' }) %>
         <div class="mt-2">
           <%= form.input(:password, input_html: { autofocus: true }, input_html: { class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200 shadow-inner' }, label_html: { class: 'text-gray-700 text-sm font-bold' }) %>
         </div>

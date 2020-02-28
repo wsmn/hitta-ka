@@ -1,16 +1,20 @@
 <% content_for(:sidebar) do %>
   <%= render('application/account_menu', current: :projects) %>
 <% end %>
+
+<% content_for(:header_title) do %>
+  <h2 class="text-sm lg:text-base font-medium text-gray-500">
+    <%= link_to(projects_path, class: '') do %>
+      <%= t('.projects') %>
+    <% end %> /
+    <span class="text-gray-800"><%= @project.title %></span>
+  </h2>
+<% end %>
+
 <div class="w-full overflow-y-auto lg:flex-grow pb-4 sm:px-4 sm:py-2 lg:px-8 lg:py-6">
   <div class="flex-grow mx-auto">
     <div class="w-full px-2 pt-2 pb-1 lg:p-0 inline-flex justify-between">
       <div class="">
-        <h2 class="text-sm lg:text-base font-medium text-gray-500">
-          <%= link_to(projects_path, class: '') do %>
-            <%= t('.projects') %>
-          <% end %> /
-          <span class="text-gray-800"><%= @project.title %></span>
-        </h2>
         <h1 class="text-3xl font-bold text-gray-800 lg:mt-1">
           <%= @project.title %> - <%= @project.id %>
           <span class="text-green-500 font-semibold rounded-full h-6 px-4">Aktivt</span>
