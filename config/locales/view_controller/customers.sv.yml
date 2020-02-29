@@ -2,6 +2,9 @@ sv:
   customers:
     index:
       title: Kunder
+    heading:
+      title: Kunder
+      new_customer: Ny kund
     search_field:
       new_customer: Ny kund
       search: Sök

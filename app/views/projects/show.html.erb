@@ -1,49 +1,49 @@
 <% content_for(:sidebar) do %>
-  <%= render('application/account_menu', current: :projects) %>
+<%= render('application/account_menu', current: :projects) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
+<h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
 <% end %>
 <div class="w-full overflow-y-auto lg:flex-grow">
   <%= render('show_heading') %>
-  <div class="bg-white p-8">
-    <div class="flex flex-wrap items-center">
-      <div class="w-full flex">
-        <div class="w-3/4 flex rounded shadow-xl border border-gray-400 bg-white mr-4 p-4">
-          <div class="px-2">
-            <div class="flex -mx-2">
-              <div class="w-1/3 px-2">
-                <h1 class="text-xl font-bold text-gray-800">Details</h1>
-                <p class="text-sm">Here is your discription of the project. You wrote this when
-                  creating
-                  a new project.</p>
-                <h1 class="text-xl font-bold text-gray-800">Project address</h1>
-                <p class="text-sm">Here is your discription of the project. You wrote this when
-                  creating
-                  a new project.</p>
-                <h1 class="text-xl font-bold text-gray-800">Details</h1>
-                <p class="text-sm">Here is your discription of the project. You wrote this when
-                  creating
-                  a new project.</p>
-              </div>
-              <div class="w-1/3 px-2">
-                <h1 class="text-xl font-bold text-gray-800">Details</h1>
-                <p class="text-sm">Here is your discription of the project. You wrote this when
-                  creating
-                  a new project.</p>
-              </div>
-              <div class="w-1/3 px-2">
-                <h1 class="text-xl font-bold text-gray-800">Summary</h1>
-                <h2 class="text-gray-800 font-bold">Tasks: <span class="text-black font-normal">27</span></h2>
-                <h2 class="text-gray-800 font-bold">Hours: <span class="text-black font-normal">108
-                    h</span></h2>
-              </div>
+  <div class="bg-white p-4 pb-8 md:p-8">
+    <div class="flex flex-wrap -mx-2">
+      <div class="w-full xl:w-3/4 px-2">
+        <div class="bg-white rounded border border-gray-500 shadow-md">
+          <div class="flex flex-wrap">
+            <div class="w-1/2 lg:w-1/3 p-6">
+              <span class="flex items-center">
+                <h1 class="text-xl font-bold text-gray-900"><%= t('.address') %></h1>
+                <svg class="h-6 w-6 text-gray-900 ml-1 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </span>
+              <p class="text-base">Street 5, 123 12, City, Sweden</p>
+              <h1 class="text-xl font-bold text-gray-800 mt-6">Description</h1>
+              <p class="text-base">Here is your discription of the project. You wrote this when
+                creating
+                a new project.</p>
+              <h1 class="text-xl font-bold text-gray-800 mt-6">Type</h1>
+              <p class="text-base">House</p>
+            </div>
+            <div class="w-1/2 lg:w-1/3 p-6">
+              <h1 class="text-xl font-bold text-gray-800">Summary</h1>
+              <h2 class="text-gray-800 font-bold">Tasks: <span class="text-black font-normal">27</span></h2>
+              <h2 class="text-gray-800 font-bold">Hours: <span class="text-black font-normal">108 h</span></h2>
+            </div>
+            <div class="w-full lg:w-1/3 border-t lg:border-t-0 lg:border-l p-6">
+              Lägg till mapbox här!
             </div>
           </div>
         </div>
-        <div class="w-1/4">
-          <%= render(@project.customer) %>
-        </div>
+      </div>
+      <div class="w-1/2 xl:hidden">
+      </div>
+      <div class="w-full sm:w-1/2 xl:w-1/4 px-2 mt-4 xl:mt-0">
+        <%= render(@project.customer) %>
       </div>
     </div>
   </div>
@@ -58,7 +58,8 @@
           </button>
         </div>
         <div class="w-1/3 px-1 flex">
-          <button :class="{ 'active bg-gray-300 -mb-px border-gray-500 py-2': tab === 'timeline' }" @click="tab = 'timeline'"
+          <button :class="{ 'active bg-gray-300 -mb-px border-gray-500 py-2': tab === 'timeline' }"
+            @click="tab = 'timeline'"
             class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
             <%= t('.timeline') %>
           </button>
