@@ -2,7 +2,7 @@
   <%= render('application/account_menu', current: :customers) %>
 <% end %>
 <% content_for(:header_title) do %>
-<h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
+  <h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
 <% end %>
 <div class="w-full overflow-y-auto lg:flex-grow">
   <div class="flex-grow mx-auto">
@@ -24,7 +24,7 @@
       </h1>
     </div>
     <div class="lg:px-8">
-    <%= render('form', customer: @customer, organisations: @organisations) %>
-  </div>
+      <%= render('form', customer: @customer, organisations: @organisations) %>
+    </div>
   </div>
 </div>
