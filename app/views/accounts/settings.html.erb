@@ -7,10 +7,11 @@
 <div class="w-full overflow-y-auto lg:flex-grow p-4 lg:p-8">
   <h1 class="text-3xl font-bold text-gray-900 lg:hidden"><%= t('.title') %></h1>
   <h1 class="text-lg font-semibold text-gray-600 mb-4">Here you can change your settings.</h1>
-  <div x-data="{ tab: 'account' }" class="w-full lg:w-7/12 flex flex-wrap bg-white rounded-lg border border-gray-500">
-    <div class="w-full lg:w-1/4 flex justify-between lg:block lg:border-r border-gray-400 p-6 lg:p-8">
+  <div x-data="{ tab: 'account' }" class="w-full xl:w-5/6 flex flex-wrap bg-white rounded-lg border border-gray-500">
+    <div
+      class="w-full lg:w-1/4 flex justify-between border-b lg:border-b-0 lg:block lg:border-r border-gray-400 p-6 lg:p-8">
       <button :class="{ 'active text-blue-500': tab === 'account' }" @click="tab = 'account'"
-        class="flex items-center text-gray-900 font-medium text-sm lg:text-base">
+        class="flex items-center text-gray-900 font-medium">
         <span class="inline-flex flex items-center">
           <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -22,7 +23,7 @@
         </span>
       </button>
       <button :class="{ 'active text-blue-500': tab === 'company' }" @click="tab = 'company'"
-        class="lg:mt-8 flex items-center justify-between text-gray-900 font-medium text-sm lg:text-base">
+        class="lg:mt-8 flex items-center justify-between text-gray-900 font-medium">
         <span class="inline-flex flex items-center">
           <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -34,7 +35,7 @@
         </span>
       </button>
       <button :class="{ 'active text-blue-500': tab === 'localization' }" @click="tab = 'localization'"
-        class="lg:mt-8 flex items-center justify-between text-gray-900 font-medium text-sm lg:text-base">
+        class="lg:mt-8 flex items-center justify-between text-gray-900 font-medium">
         <span class="inline-flex flex items-center">
           <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -45,27 +46,15 @@
           </span>
         </span>
       </button>
-      <button :class="{ 'active text-blue-500': tab === 'password' }" @click="tab = 'password'"
-        class="lg:mt-8 flex items-center justify-between text-gray-900 font-medium text-sm lg:text-base">
-        <span class="inline-flex flex items-center">
-          <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-          </svg>
-          <span class="ml-1 lg:ml-3">
-            <%= t('.password') %>
-          </span>
-        </span>
-      </button>
     </div>
     <div class="w-full lg:w-3/4">
-      <div x-show="tab === 'account'" class="flex-grow px-12 py-8">
+      <div x-show="tab === 'account'" class="flex-grow p-6 lg:px-12 lg:py-8">
         <%= render('account_settings') %>
       </div>
-      <div x-show="tab === 'company'" class="flex-grow px-12 py-8">
+      <div x-show="tab === 'company'" class="flex-grow p-6 lg:px-12 lg:py-8">
         <%= render('company_settings') %>
       </div>
-      <div x-show="tab === 'localization'" class="flex-grow px-4 lg:px-8 bg-gray-300">
+      <div x-show="tab === 'localization'" class="flex-grow p-6 lg:px-12 lg:py-8">
         <%= render('localization_settings') %>
       </div>
       <div class="w-full flex pb-8 px-8">
@@ -80,221 +69,4 @@
       </div>
     </div>
   </div>
-<!--
-  <div class="flex-grow max-w-6xl">
-    <div class="w-full mb-12 lg:hidden">
-      <h1 class="text-3xl font-bold text-gray-800">Account settings</h1>
-    </div>
-    <div class="w-full flex">
-      <div class="w-1/3 mt-6 hidden lg:flex">
-        <div class="w-5/6">
-          <h2 class="text-lg font-semibold">User details</h2>
-          <p class="text-ba mt-4 text-gray-700">Set your login preferences, help us personalize your experience and make
-            big account settings here.</p>
-        </div>
-      </div>
-      <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
-        <div class="w-full flex bg-gray-300 lg:hidden">
-          <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
-            <h2 class="text-lg text-gray-900 font-semibold">Basic information</h2>
-            <p class="text-ba mt-4 text-gray-700">Set your login preferences, help us personalize your experience and
-              make big account settings here.</p>
-          </div>
-        </div>
-        <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-          <div class="-mx-3 md:flex mb-6">
-            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-              <label class="tracking-wide text-gray-800 text-base font-semibold">
-                First Name
-              </label>
-              <input
-                class="h-10 appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
-                id="grid-first-name" type="text">
-            </div>
-            <div class="w-full md:w-1/2 px-3">
-              <label class="tracking-wide text-gray-800 text-base font-semibold">
-                Last Name
-              </label>
-              <input
-                class="h-10 appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2"
-                id="grid-last-name" type="text">
-            </div>
-          </div>
-          <div class="flex flex-wrap -mx-3">
-            <div class="w-full px-3">
-              <label class="tracking-wide text-gray-800 text-base font-semibold">
-                Email Adress
-              </label>
-              <input
-                class="h-10 appearance-none mt-1 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
-                type="email">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="w-full flex mt-12 lg:mt-6">
-      <div class="w-1/3 mt-6 hidden lg:flex">
-        <div class="w-5/6">
-          <h2 class="text-lg font-semibold">Company settings</h2>
-          <p class="text-ba mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload
-            a logo. Select the areas that your company is active in.</p>
-        </div>
-      </div>
-      <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
-        <div class="w-full flex bg-gray-300 lg:hidden">
-          <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
-            <h2 class="text-lg text-gray-900 font-semibold">Company settings</h2>
-            <p class="text-ba mt-4 text-gray-700">Here you can create your company profile. Describe your business,
-              upload a logo. Select the areas that your company is active in.</p>
-          </div>
-        </div>
-        <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-          <div class="flex flex-wrap -mx-3">
-            <div class="w-full px-3">
-              <label class="tracking-wide text-gray-900 text-base font-semibold">
-                Company name
-              </label>
-              <input
-                class="appearance-none mt-1 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                type="company_name">
-            </div>
-          </div>
-          <div class="-mx-3 md:flex mb-6">
-            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-              <label class="tracking-wide text-gray-800 text-base font-semibold">
-                Address
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
-                id="grid-first-name" type="text">
-            </div>
-            <div class="w-full md:w-1/2 px-3">
-              <label class="tracking-wide text-gray-800 text-base font-semibold">
-                City
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2"
-                id="grid-last-name" type="text">
-            </div>
-          </div>
-          <div class="-mx-3 md:flex mb-6">
-            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-              <label class="tracking-wide text-gray-800 text-base font-semibold">
-                Zip-code
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
-                id="grid-first-name" type="text">
-            </div>
-            <div class="w-full md:w-1/2 px-3">
-              <label class="tracking-wide text-gray-800 text-base font-semibold">
-                Country
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2"
-                id="grid-last-name" type="text">
-            </div>
-          </div>
-          <div class="flex flex-wrap -mx-3">
-            <div class="w-full flex-wrap px-3 mb-3">
-              <label class="tracking-wide text-gray-800 text-base font-semibold">
-                Logotype
-              </label>
-              <div class="flex mt-2">
-                <div class="rounded-full h-16 w-16 bg-blue-400 flex mr-3 items-center justify-center">
-                  <p class="text-white font-bold text-xs">Logo</p>
-                </div>
-                <div class="mt-5 ml-4">
-                  <label
-                    class="items-center px-4 py-2 bg-white text-blue-500 rounded-lg uppercase border border-blue-500 cursor-pointer hover:bg-blue-700 hover:border-blue-700 hover:text-white">
-                    <span class="text-sm">Change</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="w-full flex mt-12 lg:mt-6 mb-40">
-      <div class="w-1/3 mt-6 hidden lg:flex">
-        <div class="w-5/6">
-          <h2 class="text-lg font-semibold">Visability settings</h2>
-          <p class="text-base mt-4 text-gray-700">Here you can create your company profile. Describe your business,
-            upload a logo. Select the areas that your company is active in.</p>
-        </div>
-      </div>
-      <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
-        <div class="w-full flex bg-gray-300 lg:hidden">
-          <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
-            <h2 class="text-lg text-gray-900 font-semibold">Visability settings</h2>
-            <p class="text-base mt-4 text-gray-700">Here you can create your company profile. Describe your business,
-              upload a logo. Select the areas that your company is active in.</p>
-          </div>
-        </div>
-        <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-          <div class="flex flex-wrap -mx-3">
-            <div class="w-full px-3">
-              <label class="tracking-wide text-gray-900 text-base font-semibold">
-                About
-                <p class="font-normal text-gray-700 inline">(Describe your company)</p>
-              </label>
-              <textarea
-                class="appearance-none mt-2 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32"
-                id="subject" type="description"></textarea>
-            </div>
-          </div>
-          <div class="w-full">
-            <label class="tracking-wide text-gray-800 text-base font-semibold">
-              Add locations to where your company is active within
-            </label>
-          </div>
-          <div class="-mx-3 md:flex mb-6">
-            <div class="md:w-1/3 px-3 mb-6 md:mb-0">
-              <input
-                class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
-                id="grid-first-name" type="text">
-            </div>
-            <div class="w-full md:w-2/3 px-3 mt-3">
-              <button
-                class="py-2 px-4 shadow-md no-underline rounded-full bg-blue-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
-                Skåne
-              </button>
-              <button
-                class="py-2 px-4 shadow-md no-underline rounded-full bg-gray-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
-                Lunds kommun
-              </button>
-              <button
-                class="py-2 px-4 shadow-md no-underline rounded-full bg-green-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
-                Malmö
-              </button>
-            </div>
-          </div>
-          <div class="flex flex-wrap -mx-3">
-            <div class="w-full flex-wrap px-3 mb-3">
-              <label class="tracking-wide text-gray-800 text-base font-semibold">
-                Status
-                <p class="font-normal text-gray-700 inline">(Use this if you are unable to accept more inquries at the
-                  moment)</p>
-              </label>
-              <span
-                class="border rounded-full border-grey-400 flex items-center cursor-pointer w-12 bg-green-500 justify-end mt-2">
-                <span class="rounded-full border w-6 h-6 border-grey-400 shadow-inner bg-white shadow">
-                </span>
-              </span>
-              <p class="text-green-500">Your company is now visable on the map.</p>
-              <span
-                class="border rounded-full border-grey flex items-center cursor-pointer w-12 bg-red-500 justify-start">
-                <span class="rounded-full border w-6 h-6 border-grey shadow-inner bg-white shadow">
-                </span>
-              </span>
-              <p class="text-red-500">You have hidden your company from the map.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  -->
 </div>
