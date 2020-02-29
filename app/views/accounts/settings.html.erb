@@ -1,26 +1,104 @@
 <% content_for(:sidebar) do %>
-  <%= render('application/account_menu', current: :settings) %>
+<%= render('application/account_menu', current: :settings) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
+<h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
 <% end %>
-<div class="w-full overflow-y-auto lg:flex-grow px-4">
-  <div class="flex-grow sm:px-4 pt-2 md:pt-6 max-w-6xl">
+<div class="w-full overflow-y-auto lg:flex-grow p-4 lg:p-8">
+  <h1 class="text-3xl font-bold text-gray-900 lg:hidden"><%= t('.title') %></h1>
+  <h1 class="text-lg font-semibold text-gray-600 mb-4">Here you can change your settings.</h1>
+  <div x-data="{ tab: 'account' }" class="w-full lg:w-7/12 flex flex-wrap bg-white rounded-lg border border-gray-500">
+    <div class="w-full lg:w-1/4 flex justify-between lg:block lg:border-r border-gray-400 p-6 lg:p-8">
+      <button :class="{ 'active text-blue-500': tab === 'account' }" @click="tab = 'account'"
+        class="flex items-center text-gray-900 font-medium text-sm lg:text-base">
+        <span class="inline-flex flex items-center">
+          <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+          <span class="ml-1 lg:ml-3">
+            <%= t('.account') %>
+          </span>
+        </span>
+      </button>
+      <button :class="{ 'active text-blue-500': tab === 'company' }" @click="tab = 'company'"
+        class="lg:mt-8 flex items-center justify-between text-gray-900 font-medium text-sm lg:text-base">
+        <span class="inline-flex flex items-center">
+          <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span class="ml-1 lg:ml-3">
+            <%= t('.company') %>
+          </span>
+        </span>
+      </button>
+      <button :class="{ 'active text-blue-500': tab === 'localization' }" @click="tab = 'localization'"
+        class="lg:mt-8 flex items-center justify-between text-gray-900 font-medium text-sm lg:text-base">
+        <span class="inline-flex flex items-center">
+          <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="ml-1 lg:ml-3">
+            <%= t('.localization') %>
+          </span>
+        </span>
+      </button>
+      <button :class="{ 'active text-blue-500': tab === 'password' }" @click="tab = 'password'"
+        class="lg:mt-8 flex items-center justify-between text-gray-900 font-medium text-sm lg:text-base">
+        <span class="inline-flex flex items-center">
+          <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+          <span class="ml-1 lg:ml-3">
+            <%= t('.password') %>
+          </span>
+        </span>
+      </button>
+    </div>
+    <div class="w-full lg:w-3/4">
+      <div x-show="tab === 'account'" class="flex-grow px-12 py-8">
+        <%= render('account_settings') %>
+      </div>
+      <div x-show="tab === 'company'" class="flex-grow px-12 py-8">
+        <%= render('company_settings') %>
+      </div>
+      <div x-show="tab === 'localization'" class="flex-grow px-4 lg:px-8 bg-gray-300">
+        <%= render('localization_settings') %>
+      </div>
+      <div class="w-full flex pb-8 px-8">
+        <div class="w-full flex justify-end items-center">
+          <div class="w-20 mr-2">
+            <%= link_to(t('.cancel'), settings_path, class: "w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300") %>
+          </div>
+          <div class="w-30">
+            <%= link_to(t('.save'), settings_path, class: "py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--
+  <div class="flex-grow max-w-6xl">
     <div class="w-full mb-12 lg:hidden">
       <h1 class="text-3xl font-bold text-gray-800">Account settings</h1>
     </div>
     <div class="w-full flex">
       <div class="w-1/3 mt-6 hidden lg:flex">
         <div class="w-5/6">
-          <h2 class="text-lg font-semibold">Basic information</h2>
-          <p class="text-ba mt-4 text-gray-700">Set your login preferences, help us personalize your experience and make big account settings here.</p>
+          <h2 class="text-lg font-semibold">User details</h2>
+          <p class="text-ba mt-4 text-gray-700">Set your login preferences, help us personalize your experience and make
+            big account settings here.</p>
         </div>
       </div>
       <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
         <div class="w-full flex bg-gray-300 lg:hidden">
           <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
             <h2 class="text-lg text-gray-900 font-semibold">Basic information</h2>
-            <p class="text-ba mt-4 text-gray-700">Set your login preferences, help us personalize your experience and make big account settings here.</p>
+            <p class="text-ba mt-4 text-gray-700">Set your login preferences, help us personalize your experience and
+              make big account settings here.</p>
           </div>
         </div>
         <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
@@ -29,13 +107,17 @@
               <label class="tracking-wide text-gray-800 text-base font-semibold">
                 First Name
               </label>
-              <input class="h-10 appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
+              <input
+                class="h-10 appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
+                id="grid-first-name" type="text">
             </div>
             <div class="w-full md:w-1/2 px-3">
               <label class="tracking-wide text-gray-800 text-base font-semibold">
                 Last Name
               </label>
-              <input class="h-10 appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2" id="grid-last-name" type="text">
+              <input
+                class="h-10 appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2"
+                id="grid-last-name" type="text">
             </div>
           </div>
           <div class="flex flex-wrap -mx-3">
@@ -43,7 +125,9 @@
               <label class="tracking-wide text-gray-800 text-base font-semibold">
                 Email Adress
               </label>
-              <input class="h-10 appearance-none mt-1 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" type="email">
+              <input
+                class="h-10 appearance-none mt-1 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
+                type="email">
             </div>
           </div>
         </div>
@@ -53,14 +137,16 @@
       <div class="w-1/3 mt-6 hidden lg:flex">
         <div class="w-5/6">
           <h2 class="text-lg font-semibold">Company settings</h2>
-          <p class="text-ba mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload a logo. Select the areas that your company is active in.</p>
+          <p class="text-ba mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload
+            a logo. Select the areas that your company is active in.</p>
         </div>
       </div>
       <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
         <div class="w-full flex bg-gray-300 lg:hidden">
           <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
             <h2 class="text-lg text-gray-900 font-semibold">Company settings</h2>
-            <p class="text-ba mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload a logo. Select the areas that your company is active in.</p>
+            <p class="text-ba mt-4 text-gray-700">Here you can create your company profile. Describe your business,
+              upload a logo. Select the areas that your company is active in.</p>
           </div>
         </div>
         <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
@@ -69,7 +155,9 @@
               <label class="tracking-wide text-gray-900 text-base font-semibold">
                 Company name
               </label>
-              <input class="appearance-none mt-1 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="company_name">
+              <input
+                class="appearance-none mt-1 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                type="company_name">
             </div>
           </div>
           <div class="-mx-3 md:flex mb-6">
@@ -77,13 +165,17 @@
               <label class="tracking-wide text-gray-800 text-base font-semibold">
                 Address
               </label>
-              <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
+              <input
+                class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
+                id="grid-first-name" type="text">
             </div>
             <div class="w-full md:w-1/2 px-3">
               <label class="tracking-wide text-gray-800 text-base font-semibold">
                 City
               </label>
-              <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2" id="grid-last-name" type="text">
+              <input
+                class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2"
+                id="grid-last-name" type="text">
             </div>
           </div>
           <div class="-mx-3 md:flex mb-6">
@@ -91,13 +183,17 @@
               <label class="tracking-wide text-gray-800 text-base font-semibold">
                 Zip-code
               </label>
-              <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
+              <input
+                class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
+                id="grid-first-name" type="text">
             </div>
             <div class="w-full md:w-1/2 px-3">
               <label class="tracking-wide text-gray-800 text-base font-semibold">
                 Country
               </label>
-              <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2" id="grid-last-name" type="text">
+              <input
+                class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2"
+                id="grid-last-name" type="text">
             </div>
           </div>
           <div class="flex flex-wrap -mx-3">
@@ -110,7 +206,8 @@
                   <p class="text-white font-bold text-xs">Logo</p>
                 </div>
                 <div class="mt-5 ml-4">
-                  <label class="items-center px-4 py-2 bg-white text-blue-500 rounded-lg uppercase border border-blue-500 cursor-pointer hover:bg-blue-700 hover:border-blue-700 hover:text-white">
+                  <label
+                    class="items-center px-4 py-2 bg-white text-blue-500 rounded-lg uppercase border border-blue-500 cursor-pointer hover:bg-blue-700 hover:border-blue-700 hover:text-white">
                     <span class="text-sm">Change</span>
                   </label>
                 </div>
@@ -124,14 +221,16 @@
       <div class="w-1/3 mt-6 hidden lg:flex">
         <div class="w-5/6">
           <h2 class="text-lg font-semibold">Visability settings</h2>
-          <p class="text-base mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload a logo. Select the areas that your company is active in.</p>
+          <p class="text-base mt-4 text-gray-700">Here you can create your company profile. Describe your business,
+            upload a logo. Select the areas that your company is active in.</p>
         </div>
       </div>
       <div class="w-full lg:w-2/3 bg-white shadow-md rounded">
         <div class="w-full flex bg-gray-300 lg:hidden">
           <div class="w-full px-8 pt-4 pb-4 rounded-t border border-gray-400">
             <h2 class="text-lg text-gray-900 font-semibold">Visability settings</h2>
-            <p class="text-base mt-4 text-gray-700">Here you can create your company profile. Describe your business, upload a logo. Select the areas that your company is active in.</p>
+            <p class="text-base mt-4 text-gray-700">Here you can create your company profile. Describe your business,
+              upload a logo. Select the areas that your company is active in.</p>
           </div>
         </div>
         <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
@@ -141,7 +240,9 @@
                 About
                 <p class="font-normal text-gray-700 inline">(Describe your company)</p>
               </label>
-              <textarea class="appearance-none mt-2 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32" id="subject" type="description"></textarea>
+              <textarea
+                class="appearance-none mt-2 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32"
+                id="subject" type="description"></textarea>
             </div>
           </div>
           <div class="w-full">
@@ -151,16 +252,21 @@
           </div>
           <div class="-mx-3 md:flex mb-6">
             <div class="md:w-1/3 px-3 mb-6 md:mb-0">
-              <input class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
+              <input
+                class="appearance-none block w-full bg-gray-100 text-gray-800 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2"
+                id="grid-first-name" type="text">
             </div>
             <div class="w-full md:w-2/3 px-3 mt-3">
-              <button class="py-2 px-4 shadow-md no-underline rounded-full bg-blue-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
+              <button
+                class="py-2 px-4 shadow-md no-underline rounded-full bg-blue-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
                 Skåne
               </button>
-              <button class="py-2 px-4 shadow-md no-underline rounded-full bg-gray-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
+              <button
+                class="py-2 px-4 shadow-md no-underline rounded-full bg-gray-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
                 Lunds kommun
               </button>
-              <button class="py-2 px-4 shadow-md no-underline rounded-full bg-green-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
+              <button
+                class="py-2 px-4 shadow-md no-underline rounded-full bg-green-700 text-white font-semibold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none mr-2">
                 Malmö
               </button>
             </div>
@@ -169,14 +275,17 @@
             <div class="w-full flex-wrap px-3 mb-3">
               <label class="tracking-wide text-gray-800 text-base font-semibold">
                 Status
-                <p class="font-normal text-gray-700 inline">(Use this if you are unable to accept more inquries at the moment)</p>
+                <p class="font-normal text-gray-700 inline">(Use this if you are unable to accept more inquries at the
+                  moment)</p>
               </label>
-              <span class="border rounded-full border-grey-400 flex items-center cursor-pointer w-12 bg-green-500 justify-end mt-2">
+              <span
+                class="border rounded-full border-grey-400 flex items-center cursor-pointer w-12 bg-green-500 justify-end mt-2">
                 <span class="rounded-full border w-6 h-6 border-grey-400 shadow-inner bg-white shadow">
                 </span>
               </span>
               <p class="text-green-500">Your company is now visable on the map.</p>
-              <span class="border rounded-full border-grey flex items-center cursor-pointer w-12 bg-red-500 justify-start">
+              <span
+                class="border rounded-full border-grey flex items-center cursor-pointer w-12 bg-red-500 justify-start">
                 <span class="rounded-full border w-6 h-6 border-grey shadow-inner bg-white shadow">
                 </span>
               </span>
@@ -187,4 +296,5 @@
       </div>
     </div>
   </div>
+  -->
 </div>

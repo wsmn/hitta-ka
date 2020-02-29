@@ -1,17 +1,30 @@
 <% content_for(:sidebar) do %>
   <%= render('application/account_menu', current: :customers) %>
 <% end %>
-<div class="w-full overflow-y-auto lg:flex-grow pb-4 sm:px-4 sm:py-2 lg:px-8 lg:py-6">
+<% content_for(:header_title) do %>
+<h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
+<% end %>
+<div class="w-full overflow-y-auto lg:flex-grow">
   <div class="flex-grow mx-auto">
-    <div class="w-full px-2 pt-2 pb-1 lg:p-0">
-      <h2 class="text-sm lg:text-base font-medium text-gray-500">
-        <%= link_to(customers_path, class: '') do %>
+    <div class="text-sm lg:text-sm font-medium text-gray-900 px-6 lg:px-8 py-5">
+      <div class="flex items-center">
+        <%= link_to(customers_path, class: 'text-gray-500') do %>
           <%= t('.customers') %>
-        <% end %> /
-        <span class="text-gray-800">New customer</span>
-      </h2>
-      <h1 class="text-3xl font-bold text-gray-800 lg:mt-1">New customer</h1>
+        <% end %> <svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clip-rule="evenodd" />
+        </svg>
+        <span class="">
+          <%= t('.title') %>
+        </span>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold md:font-bold mt-2 lg:mt-1 lg:hidden">
+        <%= t('.title') %>
+      </h1>
     </div>
+    <div class="lg:px-8">
     <%= render('form', customer: @customer, organisations: @organisations) %>
+  </div>
   </div>
 </div>

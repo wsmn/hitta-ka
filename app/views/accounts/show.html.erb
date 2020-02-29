@@ -6,7 +6,7 @@
 <h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
 <% end %>
 
-<div class="grid grid-cols-2 gap-6 p-8">
+<div class="w-full grid grid-cols-2 gap-6 p-8">
   <%= render("show_heading") %>
   <%= render("stats") %>
   <%= render("projects", projects: @projects) %>
