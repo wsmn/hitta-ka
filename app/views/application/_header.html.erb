@@ -1,4 +1,4 @@
-<div id="nav" class="bg-gray-900" data-behaviour="vue">
+<div id="nav" class="bg-gray-900">
   <div class="lg:px-8">
     <nav class="relative w-full flex justify-between py-4 lg:py-3">
       <div class="ml-3 lg:ml-1 flex items-center">
@@ -14,16 +14,7 @@
         </div>
       </div>
       <div class="flex items-center lg:pl-5">
-        <navigation
-          :signed-in="<%= signed_in? %>"
-          :links='<%= header_links %>'
-          :account-link='<%= account_link %>'
-          :account-links='<%= account_links %>'
-          :connect-link='<%= connect_link %>'
-          :sign-in='<%= sign_in_link %>'
-          :sign-out='<%= sign_out_link %>'
-          :authenticity='"<%= form_authenticity_token %>"'
-        ></navigation>
+        <%= render("application/mobile_menu") %>
         <div class="hidden lg:block lg:flex lg:bg-transparent text-gray-100 text-sm font-medium tracking-wider items-center">
           <div class="flex items-center py-3">
             <%= link_to(t('application.header.home'), root_url, class: header_active("presentation#index", "hover:text-blue-500", "text-blue-500")) %>
