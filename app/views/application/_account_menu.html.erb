@@ -61,26 +61,6 @@
         </span>
       </span>
     <% end %>
-    <%= link_to(tasks_path, class: header_active("presentation#tasks", "mt-2 -mx-3 px-3 py-2 flex items-center justify-between text-gray-200 hover:text-white font-medium hover:bg-gray-700 rounded-lg", "bg-gray-700 rounded-lg")) do %>
-      <span class="inline-flex flex items-center">
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <span class="ml-3">
-          <%= t('.tasks') %>
-        </span>
-      </span>
-    <% end %>
-    <% if current == :tasks %>
-      <%= sidebar_link(current == :tasks, tasks_path, link_class: "mt-1 px-12 py-2 flex items-center text-white font-medium hover:bg-gray-700 rounded-lg") do %>
-        <span class="inline-flex">
-          <span class="font-light text-sm">
-            <%= t('.standard_tasks') %>
-          </span>
-        </span>
-      <% end %>
-    <% end %>
     <%= link_to(invoices_path, class: header_active("presentation#invoices", "mt-2 -mx-3 px-3 py-2 flex items-center justify-between text-gray-200 hover:text-white font-medium hover:bg-gray-700 rounded-lg", "bg-gray-700 rounded-lg")) do %>
       <span class="inline-flex flex items-center">
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

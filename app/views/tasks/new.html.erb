@@ -8,8 +8,8 @@
   <div class="flex-grow mx-auto">
     <div class="text-sm lg:text-sm font-medium text-gray-900">
       <div class="flex items-center">
-        <%= link_to(projects_path, class: 'text-gray-500') do %>
-          <%= t('.projects') %>
+        <%= link_to(project_path(@project), class: 'text-gray-500') do %>
+          <%= @project %>
         <% end %>
         <svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd"
@@ -21,6 +21,6 @@
         </span>
       </div>
     </div>
-    <%= render('form', project: @project, customers: @customers) %>
+    <%= render('form', project: @project, task: @task) %>
   </div>
 </div>

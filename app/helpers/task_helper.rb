@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-# View helper for projects
-module ProjectHelper
-  def project_statuses
-    Project.statuses.keys.map { |k| [project_status(k), k] }
+# View helper for tasks
+module TaskHelper
+  def task_statuses
+    Task.statuses.keys.map { |k| [task_status(k), k] }
   end
 
-  def project_status(key)
-    t("model.project.status.#{key}")
+  def task_status(key)
+    t("model.task.status.#{key}")
   end
 
-  def project_tag(status)
+  def task_tag(status)
     status_class = "text-sm md:text-base inline-flex font-semibold rounded-full h-6 px-3 md:px-4 justify-center items-center"
-    status_class += " #{project_status_class(status)}"
-    content_tag(:span, project_status(status), class: status_class)
+    status_class += " #{task_status_class(status)}"
+    content_tag(:span, task_status(status), class: status_class)
   end
 
-  def project_status_class(status)
+  def task_status_class(status)
     case status
     when "upcoming"
       "bg-blue-400 text-white"

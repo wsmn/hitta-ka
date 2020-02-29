@@ -1,0 +1,44 @@
+<%= form_with(model: [project, task], local: true, class: "w-full xl:w-5/6 bg-white border border-gray-400 shadow-xl rounded-lg lg:mt-3 p-4") do |form| %>
+  <div class="flex flex-wrap mb-6">
+    <%= form.label(:title, class: "tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2") %>
+    <%= form.text_field(:title, id: 'title', autofocus: true,
+                        class: "text-sm appearance-none block w-full
+                                shadow text-gray-700 border border-gray-300
+                                rounded py-3 px-4 leading-tight focus:outline-none
+                                focus:bg-white focus:border-gray-500") %>
+  </div>
+  <div class="flex flex-wrap mb-6">
+    <%= form.label(:description, class: "tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2") %>
+    <%= form.text_area(:description, id: 'description', autofocus: true,
+                        class: "text-sm appearance-none block w-full
+                                shadow text-gray-700 border border-gray-300
+                                rounded py-3 px-4 leading-tight focus:outline-none
+                                focus:bg-white focus:border-gray-500") %>
+  </div>
+  <div class="flex flex-wrap mb-6">
+    <%= form.label(:status, class: "tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2") %>
+    <%= form.select(:status, task_statuses, {},
+                    id: 'status',
+                    class: 'text-sm appearance-none block w-full
+                            shadow text-gray-700 border border-gray-300
+                            rounded py-3 px-4 leading-tight focus:outline-none
+                            focus:bg-white focus:border-gray-500') %>
+  </div>
+  <div class="flex flex-wrap mb-6">
+    <%= form.label(:hours, class: "tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2") %>
+    <%= form.number_field(:hours, step: 0.25, id: 'hours',
+                         class: "text-sm appearance-none block w-full
+                                 shadow text-gray-700 border border-gray-300
+                                 rounded py-3 px-4 leading-tight focus:outline-none
+                                 focus:bg-white focus:border-gray-500") %>
+  </div>
+  <div class="w-full flex border-t border-gray-300 pt-3 -mb-1 px-4 py-2 mt-2">
+    <div class="w-full flex justify-end items-center">
+      <div class="w-30">
+        <%= form.submit(class: "py-2 px-2 w-full uppercase shadow-md no-underline
+                                rounded bg-blue-600 text-white font-bold text-sm
+                                hover:text-white hover:bg-blue-400 focus:outline-none
+                                active:shadow-none") %> </div>
+    </div>
+  </div>
+<% end %>

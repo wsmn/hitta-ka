@@ -1,0 +1,21 @@
+sv:
+  tasks:
+    empty:
+      new_task: Logga tid
+      create_project_task: Börja logga tid för projektet genom att trycka på knappen.
+      no_logged_tasks: Du har inte börjat logga tid ännu!
+    show:
+      danger_zone: Farozonen
+      delete_task: Radera tidslogg
+      delete: Radera
+    new:
+      title: Ny tidslogg
+
+    create:
+      success: Tidslogg skapades
+
+    update:
+      success: Tidslogg uppdaterades
+
+    destroy:
+      success: Tidslogg raderades

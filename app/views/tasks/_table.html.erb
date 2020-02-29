@@ -1,0 +1,41 @@
+<% project ||= nil %>
+<% tasks ||= []%>
+<div class="w-full bg-white border border-gray-500 rounded rounded shadow-md">
+  <div class="border-b border-gray-400 bg-gray-200 rounded-t">
+    <div class="w-full flex py-3 border-b border-gray-400">
+      <div class="w-20 md:w-24 flex inline-block justify-center">
+      </div>
+      <div class="w-full flex">
+        <div class="w-1/3 lg:w-1/4 flex">
+          <span class="uppercase text-sm font-semibold text-blue-900">
+            <%= Task.human_attribute_name(:title) %>
+          </span>
+        </div>
+        <div class="w-1/3 lg:w-1/4 flex">
+          <span class="uppercase text-sm font-semibold text-blue-900">
+            <%= Task.human_attribute_name(:status) %>
+          </span>
+        </div>
+        <div class="w-1/4 hidden lg:flex">
+          <span class="uppercase text-sm font-semibold text-blue-900">
+            <%= Task.human_attribute_name(:hours) %>
+          </span>
+        </div>
+        <div class="w-1/3 lg:w-1/4 flex justify-center md:justify-start">
+          <span class="uppercase text-sm font-semibold text-blue-900">
+            <%= Task.human_attribute_name(:updated_at) %>
+          </span>
+        </div>
+      </div>
+      <div class="w-16 hidden md:flex items-center">
+      </div>
+    </div>
+    <% if tasks.empty? %>
+      <%= render("tasks/empty", project: project) %>
+    <% else %>
+      <% tasks.each do |task| %>
+        <%= render("tasks/table_row", task: task) %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

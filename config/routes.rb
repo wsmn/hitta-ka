@@ -22,14 +22,11 @@ Rails.application.routes.draw do
   get(:settings, controller: :accounts, action: :settings)
 
   resources(:customers)
-  resources(:projects)
+  resources(:projects) do
+    resources(:tasks, only: %i[show new create update destroy])
+  end
 
-  get(:tasks, controller: :presentation, action: :tasks)
-  get(:task, controller: :presentation, action: :task)
-
-  get(:invoices, controller: :presentation, action: :invoices)
-  get(:invoice, controller: :presentation, action: :invoice)
-  get(:new_invoice, controller: :presentation, action: :new_invoice)
+  resources(:invoices, only: %i[index show new])
 
   resource(:search, only: []) do
     post(:company)

@@ -26,32 +26,4 @@ class PresentationController < ApplicationController
   def form
   end
 
-  def tasks
-    render(layout: "application")
-  end
-
-  def task
-    render(layout: "application")
-  end
-
-  def invoices
-    render(layout: "application")
-  end
-
-  def invoice
-    render(layout: "application")
-  end
-
-  def new_invoice
-    render(layout: "application")
-  end
-
-  private
-
-  def company_geojson(companies)
-    {
-      type: "FeatureCollection",
-      features: companies.map(&:to_feature),
-    }
-  end
 end

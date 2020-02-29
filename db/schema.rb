@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_041615) do
+ActiveRecord::Schema.define(version: 2020_02_29_172247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -101,6 +101,17 @@ ActiveRecord::Schema.define(version: 2020_02_27_041615) do
     t.index ["customer_id"], name: "index_projects_on_customer_id"
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.string "title", null: false
+    t.text "description", default: "", null: false
+    t.integer "status", default: 0, null: false
+    t.float "hours", default: 0.0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_tasks_on_project_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -119,4 +130,5 @@ ActiveRecord::Schema.define(version: 2020_02_27_041615) do
   add_foreign_key "organisation_users", "organisations"
   add_foreign_key "organisation_users", "users"
   add_foreign_key "projects", "customers"
+  add_foreign_key "tasks", "projects"
 end

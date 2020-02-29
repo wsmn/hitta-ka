@@ -1,0 +1,23 @@
+sv:
+  model:
+    task:
+      status:
+        upcoming: Framtida
+        active: Aktiv
+        done: Färdig
+        skipped: Skippad
+
+  activerecord:
+    models:
+      task:
+        one: Tidslogg
+        other: Tidsloggar
+
+    attributes:
+      task:
+        description: Beskrivning
+        hours: Timmar
+        project: Projekt
+        status: Status
+        title: Titel
+        updated_at: Uppdaterad
