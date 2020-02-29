@@ -19,7 +19,7 @@
   <div class="flex flex-col md:flex-row">
     <div @click.away="open = false" class="flex justify-center" x-data="{ open: false }">
       <div class="flex items-start justify-end">
-        <%= link_to(new_project_path,
+        <%= link_to(new_project_task_path(@project),
         class: 'w-24 md:w-32 bg-green-600 border-l border-t border-b border-green-600
                 hover:bg-green-500 hover:border-green-500 py-2 px-3 rounded-l
                 text-white text-xs md:text-sm font-semibold h-8 md:h-10 flex items-center justify-center') do %>
