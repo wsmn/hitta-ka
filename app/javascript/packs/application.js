@@ -11,13 +11,11 @@ import CompanyList from "../components/company_list.vue";
 import CompanyMap from "../components/company_map.vue";
 import CompanyPopup from "../components/company_popup.vue";
 import EnquiryList from "../components/enquiry_list.vue";
-import Flash from "../components/flash.vue";
 import FormModal from "../components/form_modal.vue";
 import LoadingProgress from "../components/loading_progress.vue";
 import Mapbox from "../components/mapbox.vue";
 import MessageModal from "../components/message_modal.vue";
 import Modal from "../components/modal.vue";
-import Navigation from "../components/navigation.vue";
 import Questionnaire from "../components/questionnaire.vue";
 
 Vue.prototype.$http = axios;
@@ -29,13 +27,11 @@ Vue.component("company-list", CompanyList);
 Vue.component("company-map", CompanyMap);
 Vue.component("company-popup", CompanyPopup);
 Vue.component("enquiry-list", EnquiryList);
-Vue.component("flash", Flash);
 Vue.component("form-modal", FormModal);
 Vue.component("loading-progress", LoadingProgress);
 Vue.component("mapbox", Mapbox);
 Vue.component("message-modal", MessageModal);
 Vue.component("modal", Modal);
-Vue.component("navigation", Navigation);
 Vue.component("questionnaire", Questionnaire);
 
 document.addEventListener("turbolinks:load", () => {

@@ -1,4 +1,4 @@
-<div x-data="{ open: false }">
+<div class="z-50" x-data="{ open: false }">
   <div class="flex-shrink-0 pr-4 lg:hidden">
     <button
         @click="open = true"
@@ -11,80 +11,77 @@
       </svg>
     </button>
   </div>
-  <div x-cloak>
-    <div x-show="open" class="lg:hidden"
-        x-transition:enter="ease-out transition-medium"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        x-transition:leave="ease-out transition-medium"
-        x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0">
-      <div class="z-10 fixed inset-0 transition-opacity">
-        <div @click="open = false" class="absolute inset-0 bg-black opacity-50" tabindex="-1"></div>
-      </div>
-      <!-- Off-canvas menu -->
-      <div x-show="open"
-        x-transition:enter="ease-out transition-slow"
-        x-transition:enter-start="translate-x-full"
-        x-transition:enter-end="translate-x-0"
-        x-transition:leave="ease-in transition-medium"
-        x-transition:leave-start="translate-x-0"
-        x-transition:leave-end="translate-x-full"
-        class="z-50 fixed inset-y-0 right-0 max-w-xs w-full bg-white border-l border-gray-400 transition-transform overflow-y-auto">
-        <div class="relative z-50 bg-white">
-          <div :class="{ 'block': open, 'hidden': !open }" class="absolute top-0 right-0 p-4">
-            <button @click="open = false"
-              type="button"
-              class="text-gray-600 focus:outline-none focus:text-gray-900"
-              aria-label="Close">
-              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.2929 19.7071C18.6834 20.0976 19.3166 20.0976 19.7071 19.7071C20.0976 19.3166 20.0976 18.6834 19.7071 18.2929L13.4142 12L19.7071 5.70711C20.0976 5.31658 20.0976 4.68342 19.7071 4.29289C19.3166 3.90237 18.6834 3.90237 18.2929 4.29289L12 10.5858L5.70711 4.29289C5.31658 3.90237 4.68342 3.90237 4.29289 4.29289C3.90237 4.68342 3.90237 5.31658 4.29289 5.70711L10.5858 12L4.29289 18.2929C3.90237 18.6834 3.90237 19.3166 4.29289 19.7071C4.68342 20.0976 5.31658 20.0976 5.70711 19.7071L12 13.4142L18.2929 19.7071Z" />
-              </svg>
-            </button>
-          </div>
-          <div class="px-4 pt-4 pb-6">
-            <%= link_to(root_path) do %>
-              <%= image_tag('apti_logo.svg', alt: t('.home'), style: "width: 3.75rem") %>
+  <div x-show="open"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0"
+       x-transition:enter-end="opacity-100"
+       x-transition:leave="transition ease-in duration-300"
+       x-transition:leave-start="opacity-100"
+       x-transition:leave-end="opacity-0">
+    <div class="z-20 fixed inset-0">
+      <div @click="open = false" class="absolute inset-0 bg-black opacity-50" tabindex="-1"></div>
+    </div>
+    <!-- Off-canvas menu -->
+    <div x-show="open" x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="transform translate-x-full"
+         x-transition:enter-end="transform translate-x-0"
+         x-transition:leave="transition ease-in duration-300"
+         x-transition:leave-start="transform translate-x-0"
+         x-transition:leave-end="transform translate-x-full"
+         class="z-50 fixed inset-y-0 right-0 max-w-xs w-full bg-white border-l border-gray-400 overflow-y-auto">
+      <div class="relative z-50 bg-white">
+        <div class="absolute top-0 right-0 p-4">
+          <button @click="open = false"
+            type="button"
+            class="text-gray-600 focus:outline-none focus:text-gray-900"
+            aria-label="Close">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.2929 19.7071C18.6834 20.0976 19.3166 20.0976 19.7071 19.7071C20.0976 19.3166 20.0976 18.6834 19.7071 18.2929L13.4142 12L19.7071 5.70711C20.0976 5.31658 20.0976 4.68342 19.7071 4.29289C19.3166 3.90237 18.6834 3.90237 18.2929 4.29289L12 10.5858L5.70711 4.29289C5.31658 3.90237 4.68342 3.90237 4.29289 4.29289C3.90237 4.68342 3.90237 5.31658 4.29289 5.70711L10.5858 12L4.29289 18.2929C3.90237 18.6834 3.90237 19.3166 4.29289 19.7071C4.68342 20.0976 5.31658 20.0976 5.70711 19.7071L12 13.4142L18.2929 19.7071Z" />
+            </svg>
+          </button>
+        </div>
+        <div class="px-4 pt-4 pb-6">
+          <%= link_to(root_path) do %>
+            <%= image_tag('apti_logo.svg', alt: t('.home'), style: "width: 3.75rem") %>
+          <% end %>
+          <p class="mt-8 block text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            <%= t('.links') %>
+          </p>
+          <%= link_to(t('.home'), root_path, class: "mt-4 block font-medium text-gray-900 hover:text-gray-600")%>
+          <%= link_to(t('.map'), map_path, class: "mt-4 block font-medium text-gray-900 hover:text-gray-600")%>
+          <%= link_to(t('.kontrollansvarig'), kontrollansvarig_path, class: "mt-4 block font-medium text-gray-900 hover:text-gray-600")%>
+          <%= link_to(t('.about'), about_path, class: "mt-4 block font-medium text-gray-900 hover:text-gray-600")%>
+        </div>
+        <div class="border-t-2 border-gray-200 px-4 pt-6">
+          <div class="flex flex-col">
+            <% if current_user %>
+              <div class="w-full mb-4">
+                <p class="block text-xs font-semibold text-green-600 uppercase tracking-wider">
+                  <%= t('.account') %>
+                </p>
+                <%= link_to(t('.projects'), projects_path, class: "mt-4 text-sm font-medium block text-gray-900 hover:text-gray-600") %>
+                <%= link_to(t('.customers'), customers_path, class: "mt-4 text-sm font-medium block text-gray-900 hover:text-gray-600") %>
+                <%= link_to(t('.tasks'), tasks_path, class: "mt-4 text-sm font-medium block text-gray-900 hover:text-gray-600") %>
+                <%= link_to(t('.invoices'), invoices_path, class: "mt-4 text-sm font-medium block text-gray-900 hover:text-gray-600") %>
+              </div>
+              <div class="flex flex-row">
+                <%= link_to(account_path, class: "bg-blue-100 hover:bg-blue-200 border border-gray-400 py-2 px-3 rounded mr-3") do %>
+                  <i class="fas fa-user mr-1 text-black"></i>
+                  <%= t('.account') %>
+                <% end %>
+                <%= link_to(sign_out_path, class: "text-gray-900 hover:text-gray-600 border border-gray-400 py-2 px-3 rounded mr-3", method: :delete) do %>
+                  <i class="fas fa-sign-out-alt mr-1 text-black"></i>
+                  <%= t('.sign_out') %>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="flex flex-row">
+                <%= link_to(sign_in_path, class: "bg-blue-100 hover:bg-blue-200 border border-gray-400 py-2 px-3 rounded mr-3") do %>
+                  <i class="fas fa-user mr-1 text-black"></i>
+                  <%= t('.sign_in') %>
+                <% end %>
+              </div>
             <% end %>
-            <p class="mt-8 block text-xs font-semibold text-gray-600 uppercase tracking-wider">
-              <%= t('.links') %>
-            </p>
-            <%= link_to(t('.home'), root_path, class: "mt-4 block font-medium text-gray-900 hover:text-gray-600")%>
-            <%= link_to(t('.map'), map_path, class: "mt-4 block font-medium text-gray-900 hover:text-gray-600")%>
-            <%= link_to(t('.kontrollansvarig'), kontrollansvarig_path, class: "mt-4 block font-medium text-gray-900 hover:text-gray-600")%>
-            <%= link_to(t('.about'), about_path, class: "mt-4 block font-medium text-gray-900 hover:text-gray-600")%>
-          </div>
-          <div class="border-t-2 border-gray-200 px-4 pt-6">
-            <div class="flex flex-col">
-              <% if current_user %>
-                <div class="w-full mb-4">
-                  <p class="block text-xs font-semibold text-green-600 uppercase tracking-wider">
-                    <%= t('.account') %>
-                  </p>
-                  <%= link_to(t('.projects'), projects_path, class: "mt-4 text-sm font-medium block text-gray-900 hover:text-gray-600") %>
-                  <%= link_to(t('.customers'), customers_path, class: "mt-4 text-sm font-medium block text-gray-900 hover:text-gray-600") %>
-                  <%= link_to(t('.tasks'), tasks_path, class: "mt-4 text-sm font-medium block text-gray-900 hover:text-gray-600") %>
-                  <%= link_to(t('.invoices'), invoices_path, class: "mt-4 text-sm font-medium block text-gray-900 hover:text-gray-600") %>
-                </div>
-                <div class="flex flex-row">
-                  <%= link_to(account_path, class: "bg-blue-100 hover:bg-blue-200 border border-gray-400 py-2 px-3 rounded mr-3") do %>
-                    <i class="fas fa-user mr-1 text-black"></i>
-                    <%= t('.account') %>
-                  <% end %>
-                  <%= button_to(sign_out_path, class: "text-gray-900 hover:text-gray-600 border border-gray-400 py-2 px-3 rounded mr-3", method: :delete) do %>
-                    <i class="fas fa-sign-out-alt mr-1 text-black"></i>
-                    <%= t('.sign_out') %>
-                  <% end %>
-                </div>
-              <% else %>
-                <div class="flex flex-row">
-                  <%= link_to(sign_in_path, class: "bg-blue-100 hover:bg-blue-200 border border-gray-400 py-2 px-3 rounded mr-3") do %>
-                    <i class="fas fa-user mr-1 text-black"></i>
-                    <%= t('.sign_in') %>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
           </div>
         </div>
       </div>
