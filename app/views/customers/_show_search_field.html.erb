@@ -34,10 +34,10 @@
       <div class="relative ml-2 hidden">
         <select
             class="appearance-none h-full rounded border block appearance-none w-full bg-white border-gray-500 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-600">
-          <option>Type</option>
-          <option>Houses</option>
-          <option>Industry</option>
-          <option>Apartments</option>
+          <option><%= t('.type') %></option>
+          <option><%= t('.houses') %></option>
+          <option><%= t('.industry') %></option>
+          <option><%= t('.apartments') %></option>
         </select>
         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
           <svg class="mr-1 h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
@@ -55,7 +55,7 @@
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </span>
-      <input placeholder="Search"
+      <input placeholder="<%= t('.search') %>"
           class="block pl-8 pr-4 py-2 w-full bg-white border border-gray-500 rounded text-sm placeholder-gray-500 text-white focus:bg-white focus:placeholder-gray-400 focus:text-gray-800 focus:outline-none focus:border-gray-600">
     </div>
   </div>

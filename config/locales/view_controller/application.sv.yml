@@ -19,6 +19,18 @@ sv:
       customers: Kunder
       invoices: Fakturor
       settings: Inställningar
+    mobile_menu:
+      links: Länkar
+      home: Hem
+      map: Karta
+      about: Om
+      account: Konto
+      projects: Projekt
+      customers: Kunder
+      tasks: Tasks
+      invoices: Fakturor
+      account: Konto
+      sign_out: Logga ut
     footer:
       get_started: Börja här
       connect: Anslut företag

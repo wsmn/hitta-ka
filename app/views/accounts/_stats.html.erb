@@ -2,34 +2,34 @@
   <div class="border-b px-6">
     <div class="flex justify-between -mb-px">
       <div class="lg:hidden text-blue-600 py-4 text-lg">
-        Statistics
+        <%= t('.statistics') %>
       </div>
       <div class="hidden lg:flex">
         <button type="button" class="appearance-none py-4 text-blue-600 border-b border-blue-700 mr-6">
-          Projects
+          <%= t('.projects') %>
         </button>
         <button type="button" class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-6">
-          Time logs
+          <%= t('.time_logs') %>
         </button>
         <button type="button" class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-6">
-          Invoices
+          <%= t('.invoices') %>
         </button>
       </div>
       <div class="flex text-sm">
         <button type="button" class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3">
-          1 D
+          <%= t('.1_D') %>
         </button>
         <button type="button" class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3">
-          1 W
+          <%= t('.1_W') %>
         </button>
         <button type="button" class="appearance-none py-4 text-blue-700 border-b border-blue-700 mr-3">
-          1 M
+          <%= t('.1_M') %>
         </button>
         <button type="button" class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3">
-          1 Y
+          <%= t('.1_Y') %>
         </button>
         <button type="button" class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700">
-          Total
+          <%= t('.total') %>
         </button>
       </div>
     </div>
@@ -46,9 +46,9 @@
     <div class="flex-grow py-6">
       <div class="relative">
         <select class="block appearance-none w-full bg-white border border-gray-200 px-4 py-2 pr-8 rounded" id="grid-state">
-          <option>Projects</option>
-          <option>Time logs</option>
-          <option>Invoices</option>
+          <option><%= t('.projects') %></option>
+          <option><%= t('.time_logs') %></option>
+          <option><%= t('.invoices') %></option>
         </select>
         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
           <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -63,7 +63,7 @@
           <span class="text-5xl"><%= @counts[:active] %></span>
         </div>
         <div class="text-sm uppercase text-gray tracking-wide">
-          Active
+          <%= t('.active') %>
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@
           <span class="text-5xl"><%= @counts[:archived] %></span>
         </div>
         <div class="text-sm uppercase text-gray tracking-wide">
-          Archived
+          <%= t('.archived') %>
         </div>
       </div>
     </div>
@@ -83,7 +83,7 @@
           <span class="text-5xl"><%= @counts[:total] %></span>
         </div>
         <div class="text-sm uppercase text-gray tracking-wide">
-          Total
+          <%= t('.total') %>
         </div>
       </div>
     </div>

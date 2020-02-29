@@ -3,6 +3,9 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = current_user.projects.includes(:customer)
+    if params[:status]
+      @projects = @projects.where(status: params[:status])
+    end
   end
 
   def new

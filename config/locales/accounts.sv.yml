@@ -2,9 +2,53 @@ sv:
   accounts:
     show:
       title: Hem
+    stats:
+      projects: Projekt
+      time_logs: Tidsloggar
+      invoices: Fakturor
+      1_D: 1 D
+      1_W: 1 V
+      1_M: 1 M
+      1_Y: 1 År
+      active: Aktiva
+      archived: Arkiverade
+      total: Totalt
+    projects:
+      recent_projects: Senaste projekten
+      active: Aktiva
+      archived: Arkiverade
+      all_projects: Alla projekt
     show_heading:
       title: Hem
       new_project: Nytt projekt
       new_customer: Ny kund
     settings:
       title: Inställningar
+      account: Konto
+      company: Företag
+      cancel: Avbryt
+      save: Spara
+    account_settings:
+      account_settings: Kontoinställningar
+      first_name: Förnamn
+      last_name: Efternamn
+      email: E-mail
+      change_password: Ändra lösenord
+      current_password: Nuvarande lösenord
+      new_password: Nytt lösenord
+      confirm_password: Upprepa lösenord
+    company_settings:
+      company_settings: Företagsinställningar
+      name: Namn
+      vat_number: Moms.nr
+      email: E-mail
+      website: Hemsida
+      phone: Telefon
+      address: Adress
+      street_&_nr: Väg & vägnr.
+      city: Stad
+      zip_code: Post.nr
+      country: Land
+      logotype: Logotyp
+      logo: Logo
+      upload: Ladda upp

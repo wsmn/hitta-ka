@@ -54,20 +54,20 @@
           <button button :class="{ 'active bg-gray-300 -mb-px border-gray-500 py-2': tab === 'tasks' }"
             @click="tab = 'tasks'"
             class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
-            Tasks
+            <%= t('.tasks') %>
           </button>
         </div>
         <div class="w-1/3 px-1 flex">
           <button :class="{ 'active bg-gray-300 -mb-px border-gray-500 py-2': tab === 'timeline' }" @click="tab = 'timeline'"
             class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
-            Timeline
+            <%= t('.timeline') %>
           </button>
         </div>
         <div class="w-1/3 px-1 flex">
           <button :class="{ 'active bg-gray-300 -mb-px border-gray-500 py-2': tab === 'invoices' }"
             @click="tab = 'invoices'"
             class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
-            Invoices
+            <%= t('.invoices') %>
           </button>
         </div>
       </div>
@@ -81,13 +81,13 @@
     <div x-show="tab === 'timeline'" class="flex-grow px-4 lg:px-8 bg-gray-300">
       <div class="w-2/3 flex flex-wrap bg-white rounded shadow-md p-4">
         <div class="w-full text-center mb-8">
-          <h2 class="text-xl mt-4">Timeline</h2>
-          <p class="text-gray-500">Your project timeline</p>
+          <h2 class="text-xl mt-4"><%= t('.timeline') %></h2>
+          <p class="text-gray-500"><%= t('.your_project_timeline') %></p>
         </div>
         <div class="w-1/2 h-64 pr-4 relative">
           <div class="bg-gray-200 h-24 rounded p-4">
             <p class="text-xl font-semibold text-teal-500">
-              Projektstart
+              <%= t('.project_start') %>
             </p>
           </div>
           <div class="absolute right-0 top-0 mt-10 -mr-3">

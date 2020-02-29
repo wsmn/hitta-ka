@@ -2,11 +2,11 @@
   <div class="p-4 rounded-t-lg bg-gray-200">
     <div class="w-full flex justify-between">
       <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
-        Customer
+        <%= t('.customer') %>
       </div>
       <div class="w-1/4 justify-end flex items-center -m-2">
         <span class="text-xs uppercase font-bold tracking-wide bg-green-200 text-green-800 rounded-full h-5 px-4 flex items-center">
-          Aktiv
+          <%= t('.active') %>
         </span>
       </div>
     </div>
@@ -26,7 +26,7 @@
   <div class="flex border-gray-300 border-t border-b">
     <div class="w-3/4 p-4">
       <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
-        Address
+        <%= t('.address') %>
       </div>
       <% if customer.street %>
         <p class="text-3xl text-gray-900"><%= customer.street %></p>
@@ -42,7 +42,7 @@
   </div>
   <div class="p-4 rounded-b-lg text-base text-blue-600">
     <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
-      Webb
+      <%= t('.web') %>
     </div>
     <div class="flex items-center mt-2">
       <% if customer.email %>

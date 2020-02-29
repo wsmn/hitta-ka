@@ -2,39 +2,42 @@ sv:
   projects:
     index:
       title: Projekt
-
     create:
       success: Projektet skapades
-
     heading:
       title: Projekt
       new_project: Nytt projekt
-
     search_field:
       all: Alla
       active: Aktiva
       archived: Arkiverade
       search: Sök
-
+      new_project: Nytt projekt
     table:
       name: Namn
       customer: Kund
       address: Adress
       status: Status
-
     show:
       title: Projekt
-
+      tasks: Uppgifter
+      timeline: Tidslinje
+      invoices: Fakturor
     show_heading:
+      projects: Projekt
       new_task: New task
       edit_project: Redigera projekt
       delete: Radera projekt
       delete_project: Radera projekt
       delete_confirm: Vill du verkligen radera projektet? Tar även bort all kopplad data och kan ej ångras.
-
+    show_search_field:
+      all: Alla
+      active: Aktiva
+      archived: Arkiverade
+      search: Sök
+      new_project: Nytt projekt
     new:
       title: Nytt projekt
-
     form:
       customer: Kund
       new_customer: Ny kund
@@ -45,7 +48,6 @@ sv:
       type: Typ
       description: Beskrivning
       cancel: Avbryt
-
     project_panel:
       all_inspections: Alla besiktningar
       new_inspection: Ny besiktning
@@ -53,14 +55,11 @@ sv:
       edit_project: Redigera projekt
       new_image: Ladda upp bild
       all_images: Alla bilder
-
     panel:
       all_projects: Alla projekt
       new: Nytt projekt
-
     destroy:
       success: Projektet raderades!
-
     edit:
       title: Redigera projekt
       edit_project: Redigera projekt
@@ -68,12 +67,9 @@ sv:
       danger_zone: Farozon
       delete_confirm: Vill du verkligen radera projektet? Tar även bort all kopplad data och kan ej ångras.
       delete_project: När projektet raders tas all kopplad data till projektet bort. Detta går inte att ångra.
-
     update:
       success: Projektet uppdaterades
-
     filter:
       unfiltered: Ofiltrerat
-
     images:
       title: Bilder

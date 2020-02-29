@@ -3,13 +3,13 @@
   <div class="h-full flex flex-col bg-white border-t border-b sm:rounded sm:border shadow">
     <div class="w-full border-b">
       <div class="flex justify-between px-6 -mb-px">
-        <h3 class="text-blue-700 py-4 font-normal text-lg">Recent projects</h3>
+        <h3 class="text-blue-700 py-4 font-normal text-lg"><%= t('.recent_projects') %></h3>
         <div class="flex">
           <button type="button" class="appearance-none py-4 text-blue-700 border-b border-blue-700 mr-3">
-            Active
+            <%= t('.active') %>
           </button>
           <button type="button" class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700">
-            Archived
+            <%= t('.archived') %>
           </button>
         </div>
       </div>
