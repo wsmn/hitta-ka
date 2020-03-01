@@ -6,28 +6,42 @@ module ApplicationHelper
     actions.include?(name)
   end
 
-  def sidebar_link(active, path, icon: nil, text: "", icon_class: "w-10 inline-block text-center", link_class: "px-2 py-3 flex items-center text-white hover:bg-gray-700")
-    content = []
-    if icon
-      content << content_tag(:div, class: icon_class) {
-        icon("fas", icon, class: "mt-1")
-      }
-    end
-    content << content_tag(:span, text, class: "font-light")
-    link_to(path, class: link_class) do
-      if block_given?
-        yield
-      else
-        content.join.html_safe
-      end
-    end
-  end
-
   def header_active(target, base, extra)
     css = base
     if nav_active?(target)
       css += " #{extra}"
     end
     css
+  end
+
+  def sidebar_sublink(url, css: "mt-1 px-12 py-2 flex items-center text-white font-medium hover:bg-gray-700 rounded-lg")
+    link_to(url, class: css) do
+      yield
+    end
+  end
+
+  def sidebar_link(action, url, css: "mt-2 -mx-3 px-3 py-2 flex items-center justify-between text-gray-200 hover:text-white font-medium hover:bg-gray-700 rounded-lg", active_css: "bg-gray-700 rounded-lg")
+    if sidebar_active?(action)
+      css = "#{css} #{active_css}"
+    end
+    link_to(url, class: css) do
+      yield
+    end
+  end
+
+  def sidebar_active?(action)
+    unless action.is_a?(Array)
+      action = [action]
+    end
+
+    case action.length
+    when 1
+      return controller_name.to_s == action[0].to_s
+    when 2
+      return (controller_name.to_s == action[0].to_s &&
+              action_name.to_s == action[1].to_s)
+    else
+      return false
+    end
   end
 end

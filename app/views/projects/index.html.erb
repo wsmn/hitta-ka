@@ -2,10 +2,15 @@
   <%= render('application/account_menu', current: :projects) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
+  <h1 class="text-3xl font-bold text-gray-900">
+    <%= t('.title') %>
+    <% if params[:status].present? %>
+      - <%= t("model.project.status.#{params[:status]}") %>
+    <% end %>
+  </h1>
 <% end %>
 <div class="flex-grow lg:p-8">
   <%= render("heading") %>
   <%= render("search_field") %>
-  <%= render("table") %>
+  <%= render("table", filtered: params[:status].present?) %>
 </div>
