@@ -25,5 +25,4 @@ class PresentationController < ApplicationController
 
   def form
   end
-
 end

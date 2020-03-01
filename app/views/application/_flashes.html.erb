@@ -5,9 +5,9 @@
         <div x-show="!close"
              class="rounded relative border px-4 py-4 mt-2 flex items-center"
              :class="{'bg-red-100 border-red-400 text-red-700': type == 'alert', 'bg-blue-100 border-blue-400 text-blue-700': type == 'notice'}">
-             <svg class="h-6 w-6 text-green-500 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+          <svg class="h-6 w-6 text-green-500 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
           <span class="inline ml-3"><%= value %></span>
           <span class="absolute right-0 px-4">
             <svg @click="close = true"
