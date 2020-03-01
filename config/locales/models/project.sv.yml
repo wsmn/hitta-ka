@@ -2,12 +2,13 @@ sv:
   model:
     project:
       status:
-        upcoming: Nytt
         active: Aktivt
-        paused: Pausat
-        completed: Färdigt
-        cancelled: Avbrutet
+        all: Alla
         archived: Arkiverat
+        cancelled: Avbrutet
+        completed: Färdigt
+        paused: Pausat
+        upcoming: Nytt
 
   activerecord:
     models:
@@ -15,8 +16,8 @@ sv:
 
     attributes:
       project:
-        customer_id: Kund
         customer: Kund
+        customer_id: Kund
         description: Beskrivning
         status: Status
         title: Titel

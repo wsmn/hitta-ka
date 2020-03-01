@@ -15,7 +15,7 @@ sv:
       tasks: Uppgifter
 
     account_menu:
-      active_projects: Aktiva projekt
+      all_projects: Alla projekt
       archived_projects: Arkiverade projekt
       customers: Kunder
       home: Hem

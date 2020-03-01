@@ -26,7 +26,10 @@ class CustomersController < ApplicationController
 
   def show
     @customer = current_user.customers.includes(:tasks).find(params[:id])
-    @organisations = current_user.organisations
+    @projects = @customer.projects
+    if params[:status]
+      @projects = @projects.where(status: params[:status])
+    end
   end
 
   def update
