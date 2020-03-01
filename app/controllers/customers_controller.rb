@@ -25,7 +25,7 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @customer = current_user.customers.find(params[:id])
+    @customer = current_user.customers.includes(:tasks).find(params[:id])
     @organisations = current_user.organisations
   end
 
