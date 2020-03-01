@@ -1,45 +1,50 @@
 sv:
   application:
     header:
-      home: Hem
-      map: Karta
       about: Om oss
-      contact: Kontakt
-      connect: Anslut företag
       account: Konto
+      connect: Anslut företag
+      contact: Kontakt
+      customers: Kunder
+      home: Hem
+      invoices: Fakturor
+      map: Karta
+      projects: Projekt
       sign_in: Logga in
       sign_out: Logga ut
-      projects: Projekt
-      customers: Kunder
       tasks: Uppgifter
-      invoices: Fakturor
+
     account_menu:
-      home: Hem
-      projects: Projekt
+      active_projects: Aktiva projekt
+      archived_projects: Arkiverade projekt
       customers: Kunder
-      invoices: Fakturor
-      settings: Inställningar
-    mobile_menu:
-      links: Länkar
       home: Hem
-      map: Karta
+      invoices: Fakturor
+      paused_projects: Pausade projekt
+      projects: Projekt
+      settings: Inställningar
+
+    mobile_menu:
       about: Om
       account: Konto
-      projects: Projekt
       customers: Kunder
-      tasks: Tasks
+      home: Hem
       invoices: Fakturor
-      account: Konto
-      sign_out: Logga ut
-    footer:
-      get_started: Börja här
-      connect: Anslut företag
+      links: Länkar
       map: Karta
-      sign_in: Logga in
+      projects: Projekt
+      sign_out: Logga ut
+      tasks: Tasks
+
+    footer:
+      KA: KA
       about: Om
       about_us: Om oss
-      KA: KA
+      connect: Anslut företag
       contact: Kontakt
+      get_started: Börja här
+      map: Karta
+      sign_in: Logga in
+      suggestions: Förslag?
       support: Support
       website_errors: Fel på hemsidan?
-      suggestions: Förslag?

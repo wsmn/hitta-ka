@@ -1,3 +1,4 @@
+<% filtered ||= false %>
 <div class="px-4 pb-4 lg:px-0">
   <div class="w-full border border-gray-500 rounded shadow-md mb-6">
     <div class="border-b border-gray-400 bg-gray-200 rounded-t">
@@ -31,7 +32,7 @@
       </div>
     </div>
     <% if @projects.empty? %>
-      <%= render('projects/empty') %>
+      <%= render('projects/empty', filtered: filtered) %>
     <% else %>
       <% @projects.each_with_index do |project, idx| %>
         <%= render("row", project: project, odd: idx % 2 == 0) %>

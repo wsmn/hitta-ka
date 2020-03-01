@@ -73,3 +73,7 @@ sv:
       unfiltered: Ofiltrerat
     images:
       title: Bilder
+    empty:
+      no_projects_found: Hittade inga projekt!
+      to_register_first: Tryck på knappen nedan för att registrera ett nytt.
+      new_project: Nytt projekt
