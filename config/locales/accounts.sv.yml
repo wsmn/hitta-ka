@@ -40,14 +40,14 @@ sv:
     company_settings:
       company_settings: Företagsinställningar
       name: Namn
-      vat_number: Moms.nr
+      vat_number: Momsnr.
       email: E-mail
       website: Hemsida
       phone: Telefon
       address: Adress
       street_&_nr: Väg & vägnr.
       city: Stad
-      zip_code: Post.nr
+      zip_code: Postnummer
       country: Land
       logotype: Logotyp
       logo: Logo
