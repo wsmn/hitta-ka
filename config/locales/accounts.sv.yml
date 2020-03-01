@@ -24,6 +24,7 @@ sv:
       new_customer: Ny kund
     settings:
       title: Inställningar
+      upload: Ladda upp
       account: Konto
       company: Företag
       cancel: Avbryt
