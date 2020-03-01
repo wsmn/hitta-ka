@@ -18,4 +18,8 @@ class Project < ApplicationRecord
   def to_s
     title
   end
+
+  def hours
+    tasks.select("SUM(hours) as hours").to_a.first.try(:hours) || 0
+  end
 end

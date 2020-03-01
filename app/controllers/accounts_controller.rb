@@ -5,8 +5,8 @@ class AccountsController < ApplicationController
     @customers = current_user.customers
     @projects = current_user.projects.includes(:customer).limit(5)
     @counts = {
-      active: 8,
-      archived: 5,
+      active: @projects.active.count,
+      archived: @projects.archived.count,
       total: current_user.projects.count,
     }
   end
