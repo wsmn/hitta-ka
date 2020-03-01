@@ -14,9 +14,14 @@ sv:
       search: Sök
       new_project: Nytt projekt
     table:
-      name: Namn
-      customer: Kund
+      active: Aktiva
       address: Adress
+      all: Alla
+      archived: Arkiverade
+      customer: Kund
+      name: Namn
+      new_project: Nytt projekt
+      search: Sök
       status: Status
     show:
       title: Projekt
@@ -48,16 +53,6 @@ sv:
       type: Typ
       description: Beskrivning
       cancel: Avbryt
-    project_panel:
-      all_inspections: Alla besiktningar
-      new_inspection: Ny besiktning
-      show_project: Visa projektet
-      edit_project: Redigera projekt
-      new_image: Ladda upp bild
-      all_images: Alla bilder
-    panel:
-      all_projects: Alla projekt
-      new: Nytt projekt
     destroy:
       success: Projektet raderades!
     edit:

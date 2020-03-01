@@ -12,7 +12,7 @@
         </span>
       </span>
     <% end %>
-    <%= sidebar_link(:projects, projects_url) do %>
+    <%= sidebar_link(:projects, projects_url(status: :active)) do %>
       <span class="inline-flex flex items-center">
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -24,14 +24,14 @@
       </span>
       <span
       class="inline-block w-9 text-center py-1 leading-none text-xs font-semibold text-gray-700 bg-gray-300 rounded-full">
-        25
+        <%= current_user.projects.active.count %>
       </span>
     <% end %>
     <% if sidebar_active?(:projects) %>
-      <%= sidebar_sublink(projects_path(status: :active)) do %>
+      <%= sidebar_sublink(projects_path) do %>
         <span class="inline-flex">
           <span class="font-light text-sm">
-            <%= t('.active_projects') %>
+            <%= t('.all_projects') %>
           </span>
         </span>
       <% end %>

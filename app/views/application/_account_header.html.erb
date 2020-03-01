@@ -34,7 +34,7 @@
         <div @click.away="open = false" class="flex justify-end" x-data="{ open: false }">
           <div>
             <button @click="open = !open" class="flex items-center text-gray-900" @click="open = true">
-              <div class="h-8 w-8 rounded-full bg-red-600 flex items-center justify-center text-white font-bold">
+              <div class="h-8 w-8 rounded-full bg-red-600 flex items-center justify-center text-white font-bold uppercase">
                 <%= current_user.initials %>
               </div>
               <span class="hidden lg:inline ml-2 mr-2 text-sm font-semibold">
