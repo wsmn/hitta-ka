@@ -1,8 +1,8 @@
 <% content_for(:sidebar) do %>
-<%= render('application/account_menu', current: :projects) %>
+  <%= render('application/account_menu', current: :projects) %>
 <% end %>
 <% content_for(:header_title) do %>
-<h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
+  <h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
 <% end %>
 <div class="w-full overflow-y-auto lg:flex-grow">
   <%= render('show_heading') %>
