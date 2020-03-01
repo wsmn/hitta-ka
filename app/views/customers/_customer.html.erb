@@ -43,28 +43,30 @@
     </div>
   </div>
   <div class="p-4 rounded-b-lg text-base text-blue-600">
-    <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
-      <%= t('.web') %>
-    </div>
-    <div class="flex items-center mt-2">
-      <% if customer.email.present? %>
-        <div class="w-5 inline-block text-center text-lg">
-          <i class="far fa-envelope fa-2xl"></i>
-        </div>
-        <div class="text-center inline ml-2">
-          <%= link_to(customer.email, "mailto:#{customer.email}") %>
-        </div>
-      <% end %>
-    </div>
-    <div class="flex items-center mt-1">
-      <% if customer.web %>
-        <div class="w-5 inline-block text-center text-lg">
-          <i class="fas fa-at fa-2xl"></i>
-        </div>
-        <div class="text-center inline ml-2">
-          <%= link_to(customer.web, customer.web, target: '_blank') %>
-        </div>
-      <% end %>
-    </div>
+    <% if customer.email.present? || customer.web.present? %>
+      <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
+        <%= t('.web') %>
+      </div>
+      <div class="flex items-center mt-2">
+        <% if customer.email.present? %>
+          <div class="w-5 inline-block text-center text-lg">
+            <i class="far fa-envelope fa-2xl"></i>
+          </div>
+          <div class="text-center inline ml-2">
+            <%= link_to(customer.email, "mailto:#{customer.email}") %>
+          </div>
+        <% end %>
+      </div>
+      <div class="flex items-center mt-1">
+        <% if customer.web.present? %>
+          <div class="w-5 inline-block text-center text-lg">
+            <i class="fas fa-at fa-2xl"></i>
+          </div>
+          <div class="text-center inline ml-2">
+            <%= link_to(customer.web, customer.web, target: '_blank') %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
