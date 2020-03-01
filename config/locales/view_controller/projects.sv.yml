@@ -62,6 +62,7 @@ sv:
       success: Projektet raderades!
     edit:
       title: Redigera projekt
+      projects: Projekt
       edit_project: Redigera projekt
       delete: Radera projekt
       danger_zone: Farozon
