@@ -1,26 +1,24 @@
 <% content_for(:sidebar) do %>
-  <%= render('application/account_menu', current: :projects) %>
+<%= render('application/account_menu', current: :projects) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
+<h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
 <% end %>
-<div class="w-full overflow-y-auto lg:flex-grow pb-4 sm:px-4 sm:py-2 lg:px-8 lg:py-6">
-  <div class="flex-grow mx-auto">
-    <div class="text-sm lg:text-sm font-medium text-gray-900">
-      <div class="flex items-center">
-        <%= link_to(projects_path, class: 'text-gray-500') do %>
-          <%= t('.projects') %>
-        <% end %>
-        <svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd"
-            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-            clip-rule="evenodd" />
-        </svg>
-        <span class="">
-          <%= t('.title') %>
-        </span>
-      </div>
+<div class="w-full pb-4 px-2 py-2 lg:px-8 lg:py-6">
+  <div class="text-sm lg:text-sm font-medium text-gray-900 pb-2">
+    <div class="flex items-center">
+      <%= link_to(projects_path, class: 'text-gray-500') do %>
+      <%= t('.projects') %>
+      <% end %>
+      <svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd"
+          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+          clip-rule="evenodd" />
+      </svg>
+      <span class="">
+        <%= t('.title') %>
+      </span>
     </div>
-    <%= render('form', project: @project, customers: @customers) %>
   </div>
+  <%= render('form', project: @project, customers: @customers) %>
 </div>

@@ -1,16 +1,16 @@
 <% content_for(:sidebar) do %>
-  <%= render('application/account_menu', current: :settings) %>
+<%= render('application/account_menu', current: :settings) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
+<h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
 <% end %>
 <div class="w-full p-4 lg:p-8">
   <h1 class="text-3xl font-bold text-gray-900 lg:hidden"><%= t('.title') %></h1>
   <div class="flex flex-wrap pt-4 lg:pt-0 pb-16 lg:-mx-4">
     <div class="w-1/4 hidden xl:flex lg:px-4">
-      <div class="w-full  justify-center">
+      <div class="w-full justify-center">
         <div class="bg-white border border-gray-500 rounded-md">
-          <div class="border-b p-10">
+          <div class="border-b px-2 py-10">
             <div class="w-full flex justify-center mb-2">
               <div class="rounded-full h-32 w-32 bg-green-500 inline-flex items-center justify-center relative">
                 <span class="text-white font-bold text-3xl">
@@ -73,63 +73,65 @@
         </div>
       </div>
     </div>
-    <div x-data="{ tab: 'account' }" class="w-full xl:w-3/4 flex flex-wrap bg-white rounded-lg border border-gray-500">
-      <div class="w-full flex border-b border-gray-400">
-        <button :class="{ 'active text-blue-500 border-b-2 border-blue-500 -mb-px': tab === 'account' }"
-          @click="tab = 'account'" class="flex items-center justify-center text-gray-900 font-medium p-6 lg:p-8 mx-4">
-          <span class="inline-flex flex items-center text-lg">
-            <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-            <span class="ml-1">
-              <%= t('.account') %>
+    <div class="w-full xl:w-3/4 lg:px-4">
+      <div x-data="{ tab: 'account' }" class="flex flex-wrap bg-white rounded-lg border border-gray-500">
+        <div class="w-full flex border-b border-gray-400 justify-center sm:justify-start">
+          <button :class="{ 'active text-blue-500 border-b-2 border-blue-500 -mb-px': tab === 'account' }"
+            @click="tab = 'account'" class="flex items-center justify-center text-gray-900 font-medium w-32 py-5 lg:py-6 lg:px-8 mx-4">
+            <span class="inline-flex flex items-center text-lg">
+              <svg class="h-5 w-5 lg:h-6 lg:w-6 -ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <span class="ml-1">
+                <%= t('.account') %>
+              </span>
             </span>
-          </span>
-        </button>
-        <button :class="{ 'active text-blue-500 border-b-2 border-blue-500 -mb-px': tab === 'company' }"
-          @click="tab = 'company'" class="flex items-center justify-center text-gray-900 font-medium p-6 lg:p-8 mx-4">
-          <span class="inline-flex flex items-center text-lg">
-            <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <span class="ml-1 lg:ml-2">
-              <%= t('.company') %>
+          </button>
+          <button :class="{ 'active text-blue-500 border-b-2 border-blue-500 -mb-px': tab === 'company' }"
+            @click="tab = 'company'" class="flex items-center justify-center text-gray-900 font-medium w-32 py-5 lg:py-6 lg:px-8 mx-4">
+            <span class="inline-flex flex items-center text-lg">
+              <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span class="ml-1 lg:ml-2">
+                <%= t('.company') %>
+              </span>
             </span>
-          </span>
-        </button>
-        <button :class="{ 'active text-blue-500 border-b-2 border-blue-500 -mb-px': tab === 'localization' }"
-          @click="tab = 'localization'"
-          class="flex items-center justify-center text-gray-900 font-medium p-6 lg:p-8 mx-4 hidden">
-          <span class="inline-flex flex items-center">
-            <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="ml-1 lg:ml-2">
-              <%= t('.localization') %>
+          </button>
+          <button :class="{ 'active text-blue-500 border-b-2 border-blue-500 -mb-px': tab === 'localization' }"
+            @click="tab = 'localization'"
+            class="flex items-center justify-center text-gray-900 font-medium p-6 px-8 mx-4 hidden">
+            <span class="inline-flex flex items-center">
+              <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="ml-1 lg:ml-2">
+                <%= t('.localization') %>
+              </span>
             </span>
-          </span>
-        </button>
-      </div>
-      <div class="w-full">
-        <div x-show="tab === 'account'" class="flex-grow p-6 lg:px-12 lg:py-8">
-          <%= render('account_settings') %>
+          </button>
         </div>
-        <div x-show="tab === 'company'" class="flex-grow p-6 lg:px-12 lg:py-8">
-          <%= render('company_settings') %>
-        </div>
-        <div x-show="tab === 'localization'" class="flex-grow p-6 lg:px-12 lg:py-8">
-          <%= render('localization_settings') %>
-        </div>
-        <div class="w-full flex py-6 px-8 border-t border-gray-400">
-          <div class="w-full flex justify-end items-center">
-            <div class="w-20 mr-2">
-              <%= link_to(t('.cancel'), settings_path, class: "w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300") %>
-            </div>
-            <div class="w-30">
-              <%= link_to(t('.save'), settings_path, class: "py-2 px-2 w-full uppercase no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none") %>
+        <div class="w-full">
+          <div x-show="tab === 'account'" class="flex-grow p-6 lg:px-12 lg:py-8">
+            <%= render('account_settings') %>
+          </div>
+          <div x-show="tab === 'company'" class="flex-grow p-6 lg:px-12 lg:py-8">
+            <%= render('company_settings') %>
+          </div>
+          <div x-show="tab === 'localization'" class="flex-grow p-6 lg:px-12 lg:py-8">
+            <%= render('localization_settings') %>
+          </div>
+          <div class="w-full flex py-6 px-8 border-t border-gray-400">
+            <div class="w-full flex justify-end items-center">
+              <div class="w-20 mr-2">
+                <%= link_to(t('.cancel'), settings_path, class: "w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300") %>
+              </div>
+              <div class="w-30">
+                <%= link_to(t('.save'), settings_path, class: "py-2 px-2 w-full uppercase no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none") %>
+              </div>
             </div>
           </div>
         </div>
