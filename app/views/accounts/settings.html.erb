@@ -77,7 +77,7 @@
       <div x-data="{ tab: 'account' }" class="flex flex-wrap bg-white rounded-lg border border-gray-500">
         <div class="w-full flex border-b border-gray-400 justify-center sm:justify-start">
           <button :class="{ 'active text-blue-500 border-b-2 border-blue-500 -mb-px': tab === 'account' }"
-            @click="tab = 'account'" class="flex items-center justify-center text-gray-900 font-medium w-32 py-5 lg:py-6 lg:px-8 mx-4">
+            @click="tab = 'account'" class="flex items-center justify-center text-gray-900 font-medium w-32 py-5 lg:px-8 mx-4">
             <span class="inline-flex flex items-center text-lg">
               <svg class="h-5 w-5 lg:h-6 lg:w-6 -ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -89,7 +89,7 @@
             </span>
           </button>
           <button :class="{ 'active text-blue-500 border-b-2 border-blue-500 -mb-px': tab === 'company' }"
-            @click="tab = 'company'" class="flex items-center justify-center text-gray-900 font-medium w-32 py-5 lg:py-6 lg:px-8 mx-4">
+            @click="tab = 'company'" class="flex items-center justify-center text-gray-900 font-medium w-32 py-5 lg:px-8 mx-4">
             <span class="inline-flex flex items-center text-lg">
               <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -114,14 +114,15 @@
             </span>
           </button>
         </div>
+        <%= form_with(local: true, class: "w-full") do |form| %>
         <div class="w-full">
-          <div x-show="tab === 'account'" class="flex-grow p-6 lg:px-12 lg:py-8">
-            <%= render('account_settings') %>
+          <div x-show="tab === 'account'" class="flex-grow p-6 lg:px-8 lg:py-4">
+            <%= render('account_settings', form: form) %>
           </div>
-          <div x-show="tab === 'company'" class="flex-grow p-6 lg:px-12 lg:py-8">
-            <%= render('company_settings') %>
+          <div x-show="tab === 'company'" class="flex-grow p-6 lg:px-8 lg:py-4">
+            <%= render('company_settings', form: form) %>
           </div>
-          <div x-show="tab === 'localization'" class="flex-grow p-6 lg:px-12 lg:py-8">
+          <div x-show="tab === 'localization'" class="flex-grow p-6 lg:px-8 lg:py-4">
             <%= render('localization_settings') %>
           </div>
           <div class="w-full flex py-6 px-8 border-t border-gray-400">
@@ -135,6 +136,7 @@
             </div>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
