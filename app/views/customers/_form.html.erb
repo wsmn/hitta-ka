@@ -1,49 +1,114 @@
 <% organisations ||= [] %>
-<%= form_with(model: customer, local: true, class: 'w-full xl:w-5/6 flex flex-wrap bg-white border border-gray-400 rounded-lg p-2') do |form| %>
-  <div class="w-full lg:w-1/2 lg:p-2">
-    <div class="h-12 bg-gray-800 px-3 py-2 rounded-t">
-      <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl"><%= t(".general") %></h1>
-    </div>
-    <div class="border-l border-b border-r border-gray-400 bg-white p-3 xl:px-6">
-      <div class="flex flex-wrap xl:flex-no-wrap mb-1 items-center">
-        <div class="w-full lg:w-56 pr-2">
-          <%= form.label(:name, class: 'form-label text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0') %>
-        </div>
-        <div class="w-full">
-          <%= form.text_field(
-            :name, id: 'name', autofocus: true,
-            class: 'appearance-none border rounded w-full py-2 px-3'
-          ) %>
-        </div>
+<%= form_with(model: customer, local: true, class: 'w-full pb-16') do |form| %>
+<div class="flex flex-wrap -mx-2">
+  <div class="w-full xl:w-2/3 px-2">
+    <div class="flex flex-wrap bg-white rounded-md border border-gray-600">
+      <div class="w-full h-12 bg-gray-800 px-3 py-2 rounded-t flex items-center">
+        <h1 class="text-white font-semibold font-semibold text-xl xl:text-2xl"><%= t('.new_customer') %></h1>
       </div>
-    </div>
-    <div class="h-12 bg-gray-800 px-3 py-2 rounded-t mt-4">
-      <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl"><%= t('.belongs_to') %></h1>
-    </div>
-    <div class="border-l border-b border-r border-gray-400 bg-white">
-      <div class="px-3 xl:px-6 py-3">
-        <div class="flex flex-wrap xl:flex-no-wrap mb-6 items-center">
-          <div class="w-full lg:w-56 pr-2">
-            <%= form.label(:organisation, class: 'form-label text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0') %>
+      <div class="w-full mt-2 px-4 py-2 lg:px-8 lg:py-4">
+        <div class="flex flex-wrap -mx-3">
+          <div class="w-full">
+            <div class="flex flex-wrap mb-6">
+              <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <%= form.label(:name, class: "tracking-wide leading-none text-gray-700 font-semibold mb-1 lg:mb-2") %>
+                <%= form.text_field(:name, id: 'name', autofocus: true, placeholder: 'Name',
+                          class: "appearance-none block w-full
+                                  text-gray-900 border border-gray-500
+                                  rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline
+                                  focus:border-blue-600 mt-2") %>
+              </div>
+              <div class="w-full md:w-1/2 px-3">
+                <div class="relative">
+                  <%= form.label(:organisation, class: 'form-label text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0') %>
+                  <%= form.select(:organisation_id, organisations.collect { |org| [org.to_s, org.id] }, {}, id: 'organisation',
+          class: 'appearance-none bg-white block w-full
+          text-gray-900 border border-gray-500
+          rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline
+          focus:border-blue-600 mt-2 bg-gray-100') %>
+                  <div class="mt-8 pointer-events-none absolute inset-y-0 right-0
+                              flex items-center px-2 text-gray-700">
+                    <svg class="ml-2 h-6 w-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4
+                                0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="w-full">
-            <%= form.select(:organisation_id, organisations.collect { |org| [org.to_s, org.id] }, {}, id: 'organisation', class: 'form-select mt-1 block w-full h-10 bg-white shadow-none') %>
+            <div class="flex flex-wrap mb-2">
+              <div class="w-1/2 px-3 mb-6">
+                <%= form.label(:phone, class: "tracking-wide leading-none text-gray-700 font-semibold mb-1 lg:mb-2") %>
+                <div class="flex">
+                  <div
+                    class="w-12 mt-2 bg-gray-100 rounded-l border-t border-l border-b border-gray-500 flex items-center justify-center">
+                    <span class="text-gray-700">
+                      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M16 3h5m0 0v5m0-5l-6 6M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z" />
+                      </svg>
+                    </span>
+                  </div>
+                  <%= form.text_field(:phone, id: 'phone',
+                          class: " appearance-none block w-full
+                          text-gray-900 border border-gray-500
+                          rounded-r py-2 px-3 leading-tight focus:outline-none focus:shadow-outline
+                          focus:border-blue-600 mt-2") %>
+                </div>
+              </div>
+              <div class="w-1/2 px-3 mb-6 md:mb-0">
+                <%= form.label(:email, class: "tracking-wide leading-none text-gray-700 font-semibold mb-1 lg:mb-2") %>
+                <div class="flex">
+                  <div
+                    class="w-12 mt-2 bg-gray-100 rounded-l border-t border-l border-b border-gray-500 flex items-center justify-center">
+                    <span class="text-gray-700">
+                      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </span>
+                  </div>
+                  <%= form.text_field(:email, id: 'email',
+                          class: " appearance-none block w-full
+                          text-gray-900 border border-gray-500
+                          rounded-r py-2 px-3 leading-tight focus:outline-none focus:shadow-outline
+                          focus:border-blue-600 mt-2") %>
+                </div>
+              </div>
+              <div class="w-1/2 md:w-1/3 px-3">
+                <div class="flex justify-between mt-1 mb-1 lg:mb-2">
+                  <%= form.label(:task_rate, class: "tracking-wide leading-none text-gray-700 font-semibold") %>
+                  <svg class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <%= form.text_field(:title, id: 'title', placeholder: '990,00',
+                          class: "appearance-none block w-full
+                                  text-gray-900 border border-gray-500
+                                  rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline
+                                  focus:border-blue-600 mt-2") %>
+              </div>
+            </div>
           </div>
+          <%= render('form_address', form: form) %>
+        </div>
+      </div>
+      <div class="w-full flex border-t border-gray-400 p-4 mt-2">
+        <div class="w-full flex justify-end items-center">
+          <div class="w-20 mr-2">
+            <%= link_to(t('.cancel'), projects_path, class: "w-full text-red-500 uppercase font-bold text-sm hover:text-red-300") %>
+          </div>
+          <div class="w-30">
+            <%= form.submit(class: "py-2 px-2 w-full uppercase no-underline
+                                      rounded bg-green-500 text-white font-bold text-sm
+                                      hover:text-white hover:bg-green-400 focus:outline-none
+                                      ") %> </div>
         </div>
       </div>
     </div>
   </div>
-  <%= render('form_contact', form: form) %>
-  <%= render('form_address', form: form) %>
-  <%= render('form_misc') %>
-  <div class="w-full flex border-t border-gray-300 pt-3 -mb-1 px-4 py-2 mt-6">
-    <div class="w-full flex justify-end items-center">
-      <div class="w-20 mr-2">
-        <%= link_to(t('.cancel'), customers_path, class: "w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300") %>
-      </div>
-      <div class="w-30">
-        <%= form.submit(class: 'py-2 px-2 w-full uppercase no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none') %>
-      </div>
-    </div>
-  </div>
+</div>
 <% end %>

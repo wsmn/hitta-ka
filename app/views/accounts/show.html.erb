@@ -4,12 +4,10 @@
 <% content_for(:header_title) do %>
 <h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
 <% end %>
-<div class="">
-  <div class="grid grid-cols-2 gap-6 px-2 lg:px-8 lg:pt-8 pb-16">
+  <div class="w-full grid grid-cols-2 gap-6 px-2 lg:px-8 lg:pt-8 pb-16">
     <%= render("show_heading") %>
     <%= render("stats") %>
     <%= render("projects", projects: @projects) %>
     <%= render("tasks") %>
     <%= render("invoices") %>
-  </div>
 </div>
