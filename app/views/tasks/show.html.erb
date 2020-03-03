@@ -4,9 +4,9 @@
 <% content_for(:header_title) do %>
   <h1 class="text-3xl font-bold text-gray-900"><%= @project %></h1>
 <% end %>
-<div class="w-full overflow-y-auto lg:flex-grow pb-4 sm:px-4 sm:py-2 lg:px-8 lg:py-6">
+<div class="w-full pb-4 px-2 py-2 lg:px-8 lg:py-6">
   <div class="flex-grow mx-auto">
-    <div class="text-sm lg:text-sm font-medium text-gray-900">
+    <div class="text-sm lg:text-sm font-medium text-gray-900 pb-2">
       <div class="flex items-center">
         <%= link_to(project_path(@project), class: 'text-gray-500') do %>
           <%= @project %>
@@ -22,11 +22,11 @@
       </div>
     </div>
     <%= render('form', project: @project, task: @task) %>
-    <div class="w-full lg:w-5/6 flex flex-col flex-wrap bg-white border border-gray-300 shadow-xl rounded-lg lg:mt-3 p-4">
+    <div class="w-full lg:w-2/3 flex flex-col flex-wrap bg-white border border-gray-500 rounded-md lg:mt-3">
       <div class="h-12 bg-red-500 px-3 py-2 rounded-t">
         <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl"><%= t('.danger_zone') %></h1>
       </div>
-      <div class="w-full flex pt-3 -mb-1 px-4 mt-6">
+      <div class="w-full flex pt-3 -mb-1 p-6">
         <div class="flex flex-col">
           <p><%= t('.delete_task') %></p>
           <div class="w-48 mt-6">
