@@ -46,7 +46,7 @@
     </div>
     <div @click.away="open = false" class="flex justify-end" x-data="{ open: false }">
       <div class="flex items-start justify-end">
-        <%= link_to(edit_project_path(@project),
+        <%= link_to(edit_customer_project_path(@project.customer, @project),
         class: 'mt-2 md:mt-0 md:ml-2 w-24 md:w-32 bg-blue-600 border-l border-t border-b border-blue-600
                         hover:bg-blue-500 hover:border-blue-500 py-2 rounded-l
                         text-white text-xs md:text-sm font-semibold h-8 md:h-10 flex items-center justify-center') do %>
@@ -63,11 +63,10 @@
               <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
                 <%= t('.archive') %>
               <% end %>
-              <%= link_to(t('.delete'),
-              project_path(@project),
-              method: :delete,
-              class: "block px-4 py-2 text-sm text-white bg-red-600 hover:text-white hover:bg-red-400 rounded-b",
-              data: { confirm: t('.delete_confirm')}) %>
+              <%= link_to(t('.delete'), customer_project_path(@project.customer, @project),
+                          method: :delete,
+                          class: "block px-4 py-2 text-sm text-white bg-red-600 hover:text-white hover:bg-red-400 rounded-b",
+                          data: { confirm: t('.delete_confirm')}) %>
             </div>
           </div>
         </div>

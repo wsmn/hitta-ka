@@ -8,7 +8,7 @@
   <div class="flex-grow mx-auto">
     <div class="text-sm lg:text-sm font-medium text-gray-900 pb-2">
       <div class="flex items-center">
-        <%= link_to(project_path(@project), class: 'text-gray-500') do %>
+        <%= link_to(customer_project_path(@project.customer, @project), class: 'text-gray-500') do %>
           <%= @project %>
         <% end %>
         <svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
