@@ -62,7 +62,7 @@ sv:
       phone: Telefon
       zip_code: Post nr
     form_address:
-      address: Adress
+      address: Faktureringsadress
     form_contact:
       contact_information: Kontaktinformation
     form_misc:
