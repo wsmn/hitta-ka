@@ -3,6 +3,7 @@ sv:
     show:
       title: Hem
     stats:
+      statistics: Statistik
       projects: Projekt
       time_logs: Tidsloggar
       invoices: Fakturor
