@@ -21,7 +21,7 @@ module ProjectHelper
     when "upcoming"
       "bg-blue-400 text-white"
     when "active"
-      "bg-green-400 text-gray-900"
+      "bg-green-300 text-green-800"
     when "completed"
       "bg-green-800 text-white"
     when "archived"

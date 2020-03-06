@@ -1,4 +1,7 @@
 <div x-show="upload_modal" class="overflow-y-auto bg-gray-900" style="background-color: rgba(0,0,0,0.5)"
+    x-transition:enter="transition ease-out duration-300" x-transition:enter-start="transform opacity-0 scale-100"
+    x-transition:enter-end="transform opacity-100 scale-100"
+    class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
     :class="{ 'absolute inset-0 z-50 flex items-center justify-center': upload_modal }">
     <div x-show="upload_modal" @click.away="upload_modal = false"
         class="bg-white rounded-md xl:w-1/3 opacity-100 flex items-center justify-center p-8 relative">
@@ -11,11 +14,11 @@
                 </svg>
             </div>
             <div class="mt-2 text-gray-700">
-                <span class="text-blue-500 font-medium">Upload your logo</span> or drag and <p>drop it in the box.</p><p class="font-light text-sm mt-1">PNG, JPG up to 2 MB</p>
+                <span class="text-blue-500 font-medium">Upload your logo</span> or drag and <p>drop it in the box.</p>
+                <p class="font-light text-sm mt-1">PNG, JPG up to 2 MB</p>
             </div>
         </div>
-        <div
-            class="absolute top-0 right-0 bg-red-600 w-8 h-8 rounded-full text-white font-bold flex items-center justify-center -mt-4 -mr-4 cursor-pointer"
+        <div class="absolute top-0 right-0 bg-red-600 w-8 h-8 rounded-full text-white font-bold flex items-center justify-center -mt-4 -mr-4 cursor-pointer"
             @click="upload_modal = false">
             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
