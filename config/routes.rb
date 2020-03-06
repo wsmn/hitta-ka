@@ -21,8 +21,11 @@ Rails.application.routes.draw do
   get(:account, controller: :accounts, action: :show)
   get(:settings, controller: :accounts, action: :settings)
 
-  resources(:customers)
-  resources(:projects) do
+  resources(:customers) do
+    resources(:projects, only: %i[new create update destroy edit show], controller: :customer_projects)
+  end
+
+  resources(:projects, only: %i[index create new]) do
     resources(:tasks, only: %i[show new create update destroy])
   end
 

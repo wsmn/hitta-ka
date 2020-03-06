@@ -13,7 +13,7 @@ class TasksController < ApplicationController
     @project = Project.find(params[:project_id])
     @task = @project.tasks.build(task_params)
     if @task.save
-      redirect_to(project_path(@project), notice: t(".success"))
+      redirect_to(customer_project_path(@project.customer, @project), notice: t(".success"))
     else
       render(:show, status: :unprocessable_entity)
     end
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
     @project = Project.find(params[:project_id])
     @task = @project.tasks.find(params[:id])
     if @task.update(task_params)
-      redirect_to(project_path(@project), notice: t(".success"))
+      redirect_to(customer_project_path(@project.customer, @project), notice: t(".success"))
     else
       render(:show, status: :unprocessable_entity)
     end
@@ -33,7 +33,7 @@ class TasksController < ApplicationController
     project = Project.find(params[:project_id])
     task = project.tasks.find(params[:id])
     task.destroy!
-    redirect_to(project_path(project), notice: t(".success"))
+    redirect_to(customer_project_path(project.customer, project), notice: t(".success"))
   end
 
   private
