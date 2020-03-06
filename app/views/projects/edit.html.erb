@@ -26,18 +26,20 @@
   </div>
   <h1 class="text-3xl font-bold text-gray-800 lg:mt-1"><%= @project.title %></h1>
   <%= render('form', project: @project, customers: @customers) %>
-  <div class="w-full flex flex-col flex-wrap bg-white border border-gray-300 shadow-xl rounded-lg lg:mt-3 p-4">
-    <div class="h-12 bg-red-500 px-3 py-2 rounded-t">
-      <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl"><%= t('.danger_zone') %></h1>
-    </div>
-    <div class="w-full flex pt-3 -mb-1 px-4 mt-6">
-      <div class="flex flex-col">
-        <p><%= t('.delete_project') %></p>
-        <div class="w-48 mt-6">
-          <%= button_to(t('.delete'), project_path(@project),
+  <div class="pb-16">
+    <div class="w-full flex flex-col flex-wrap bg-white rounded-md lg:mt-3">
+      <div class="h-12 bg-red-500 px-3 py-2 rounded-t">
+        <h1 class="text-white font-semibold font-semibold text-lg xl:text-xl"><%= t('.danger_zone') %></h1>
+      </div>
+      <div class="w-full flex p-4 border-l border-b border-r border-gray-600">
+        <div class="flex flex-col">
+          <p><%= t('.delete_project') %></p>
+          <div class="w-48 mt-6">
+            <%= button_to(t('.delete'), project_path(@project),
               method: :delete,
               class: "py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-red-600 text-white font-bold text-sm hover:text-white hover:bg-red-400 focus:outline-none active:shadow-none",
               data: { confirm: t(".delete_confirm") }) %>
+          </div>
         </div>
       </div>
     </div>
