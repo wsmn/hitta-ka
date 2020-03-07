@@ -9,6 +9,7 @@ def system!(*args)
   system(*args) || abort("\n== Command #{args} failed ==")
 end
 
+
 chdir APP_ROOT do
   # This script is a way to update your development environment automatically.
   # Add necessary update steps to this file.
@@ -28,4 +29,7 @@ chdir APP_ROOT do
 
   puts "\n== Restarting application server =="
   system! 'bin/rails restart'
+
+  puts '== Set githooks directory to .githooks =='
+  system!('git config core.hooksPath .githooks')
 end

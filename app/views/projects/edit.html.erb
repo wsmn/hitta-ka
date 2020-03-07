@@ -1,20 +1,20 @@
 <% content_for(:sidebar) do %>
-<%= render('application/account_menu', current: :projects) %>
+  <%= render('application/account_menu', current: :projects) %>
 <% end %>
 <% content_for(:header_title) do %>
-<h1 class="text-3xl font-bold text-gray-900"><%= t('.title')%></h1>
+  <h1 class="text-3xl font-bold text-gray-900"><%= t('.title')%></h1>
 <% end %>
-<div x-data="{ confirm_delete_modal: false }" class="w-full pb-4 sm:px-4 sm:py-2 lg:px-8 lg:py-2">
+<div class="w-full pb-4 sm:px-4 sm:py-2 lg:px-8 lg:py-2">
   <div class="w-full flex items-center">
     <%= link_to(projects_path, class: 'text-gray-500') do %>
-    <%= t('.projects') %>
+      <%= t('.projects') %>
     <% end %><svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd"
         d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
         clip-rule="evenodd" />
     </svg>
     <%= link_to(customer_project_path(@project.customer, @project), class: 'text-gray-500') do %>
-    <%= @project.title %>
+      <%= @project.title %>
     <% end %> <svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd"
         d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
@@ -33,20 +33,11 @@
       </div>
       <div class="w-full flex p-4 border-l border-b border-r border-gray-600">
         <div class="flex flex-col">
-          <p><%= t('.delete_project') %></p>
-          <div class="flex">
-            <div @click="confirm_delete_modal = true"
-              class="rounded bg-red-200 text-red-700 py-2 px-3 font-bold cursor-pointer transition ease-out duration-700 transform hover:scale-110 mr-4 mt-6">
-              Delete
-            </div>
-            <%= render('confirm_delete_modal') %>
-            <div class="w-48 mt-6">
-              <%= button_to(t('.delete'), customer_project_path(@project.customer, @project),
-              method: :delete,
-              class: "py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-red-600 text-white font-bold text-sm hover:text-white hover:bg-red-400 focus:outline-none active:shadow-none",
-              data: { confirm: t(".delete_confirm") }) %>
-            </div>
-          </div>
+          <p><%= t('.delete_description') %></p>
+          <%= render('application/delete_button',
+                     path: customer_project_path(@project.customer, @project),
+                     title: t('.delete'),
+                     confirmation: t('.delete_confirm'))%>
         </div>
       </div>
     </div>

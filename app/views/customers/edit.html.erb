@@ -36,12 +36,10 @@
       <div class="w-full flex pt-3 -mb-1 px-4 mt-6">
         <div class="flex flex-col">
           <p><%= t('.delete_customer') %></p>
-          <div class="w-32 mt-6">
-            <%= button_to(t('.delete'), customer_path(@customer),
-                method: :delete,
-                class: "py-2 px-2 w-full uppercase no-underline rounded bg-red-600 text-white font-bold text-sm hover:text-white hover:bg-red-400 focus:outline-none active:shadow-none",
-                data: { confirm: t(".delete_confirm") }) %>
-          </div>
+          <%= render('application/delete_button',
+                     path: customer_path(@customer),
+                     title: t('.delete'),
+                     confirmation: t('.delete_confirm'))%>
         </div>
       </div>
     </div>

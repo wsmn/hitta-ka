@@ -50,3 +50,7 @@ sv:
       suggestions: Förslag?
       support: Support
       website_errors: Fel på hemsidan?
+
+    delete_button:
+      delete: Radera
+      cancel: Avbryt
