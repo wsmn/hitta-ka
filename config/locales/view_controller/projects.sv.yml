@@ -30,7 +30,7 @@ sv:
       invoices: Fakturor
     show_heading:
       projects: Projekt
-      new_task: New task
+      time_log: Tidslogg
       edit_project: Redigera projekt
       delete: Radera projekt
       delete_project: Radera projekt

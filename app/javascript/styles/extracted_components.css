@@ -1,20 +1,29 @@
 .btn {
-  @apply font-bold;
+  @apply font-semibold;
   @apply px-3;
   @apply py-2;
   @apply rounded;
   @apply text-white;
   @apply text-sm;
   @apply uppercase;
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
 }
 
 .btn-blue {
   @apply bg-blue-600;
 }
 .btn-blue:hover {
-  @apply bg-blue-400;
+  @apply bg-blue-500;
 }
 
+.btn-green {
+  @apply bg-green-600;
+}
+.btn-green:hover {
+  @apply bg-green-500;
+}
 
 .form-input {
   @apply w-full;
