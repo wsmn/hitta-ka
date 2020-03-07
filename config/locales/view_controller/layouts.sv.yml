@@ -1,0 +1,4 @@
+sv:
+  layouts:
+    application:
+      confirm_unsaved: Dina ändringar på sidan kanske inte har sparats, är du säker på att du vill fortsätta?
