@@ -65,8 +65,6 @@ sv:
       address: Faktureringsadress
     form_contact:
       contact_information: Kontaktinformation
-    form_misc:
-      misc: Diverse
     destroy:
       success: Kund raderades!
     edit:

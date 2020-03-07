@@ -1,0 +1,44 @@
+.btn {
+  @apply font-bold;
+  @apply px-3;
+  @apply py-2;
+  @apply rounded;
+  @apply text-white;
+  @apply text-sm;
+  @apply uppercase;
+}
+
+.btn-blue {
+  @apply bg-blue-600;
+}
+.btn-blue:hover {
+  @apply bg-blue-400;
+}
+
+
+.form-input {
+  @apply w-full;
+  @apply block;
+  @apply appearance-none;
+  @apply text-gray-900;
+  @apply border;
+  @apply border-gray-500;
+  @apply rounded;
+  @apply px-3;
+  @apply py-2;
+  @apply leading-tight;
+}
+
+.form-input:focus {
+  @apply outline-none;
+  @apply shadow-outline;
+  @apply border-blue-500;
+}
+
+.form-label {
+  @apply tracking-wide;
+  @apply leading-none;
+  @apply text-gray-700;
+  @apply font-semibold;
+  @apply mb-1;
+}
