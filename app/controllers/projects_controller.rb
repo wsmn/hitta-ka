@@ -16,7 +16,6 @@ class ProjectsController < ApplicationController
 
   def create
     @customers = current_user.customers
-    puts(project_params)
     @project = Project.new(project_params)
     if @customers.where(id: @project.customer_id).count == 1 && @project.save
       redirect_to(customer_project_path(@project.customer, @project), notice: t(".success"))

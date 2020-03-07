@@ -1,6 +1,6 @@
 <% customers ||= [] %>
 <% customer ||= nil %>
-<%= form_with(model: [customer, project], local: true, class: "w-full max-w-screen-xl pb-16") do |form| %>
+<%= form_with(model: [customer, project], local: true, class: "w-full max-w-screen-xl pb-16", html: { role: 'check-modified' }) do |form| %>
 <div class="flex flex-wrap -mx-2">
   <div class="w-full xl:w-2/3 px-2">
     <div class="flex flex-wrap bg-white rounded-md border border-gray-600">

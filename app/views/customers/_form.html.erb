@@ -1,5 +1,5 @@
 <% organisations ||= [] %>
-<%= form_with(model: customer, local: true, class: 'w-full pb-16') do |form| %>
+<%= form_with(model: customer, local: true, class: 'w-full pb-16', html: { role: 'check-modified' }) do |form| %>
 <div class="flex flex-wrap -mx-2">
   <div class="w-full xl:w-2/3 max-w-4xl px-2">
     <div class="flex flex-wrap bg-white rounded-md border border-gray-600">
@@ -52,7 +52,7 @@
                     </span>
                   </div>
                   <%= form.text_field(:phone, id: 'phone',
-                          class: " appearance-none block w-full
+                          class: "appearance-none block w-full
                           text-gray-900 border border-gray-500
                           rounded-l-none rounded-r py-2 px-3 leading-tight focus:outline-none focus:shadow-outline
                           focus:border-blue-600 mt-2") %>
@@ -71,7 +71,7 @@
                     </span>
                   </div>
                   <%= form.text_field(:email, id: 'email',
-                          class: " appearance-none block w-full
+                          class: "appearance-none block w-full
                           text-gray-900 border border-gray-500
                           rounded-l-none rounded-r py-2 px-3 leading-tight focus:outline-none focus:shadow-outline
                           focus:border-blue-600 mt-2") %>
