@@ -4,7 +4,7 @@
 <% content_for(:header_title) do %>
   <h1 class="text-3xl font-bold text-gray-900"><%= t('.title')%></h1>
 <% end %>
-<div x-data="{ confirm_delete_modal: false }" class="w-full pb-4 sm:px-4 sm:py-2 lg:px-8 lg:py-2">
+<div class="w-full pb-4 sm:px-4 sm:py-2 lg:px-8 lg:py-2">
   <div class="w-full flex items-center">
     <%= link_to(projects_path, class: 'text-gray-500') do %>
       <%= t('.projects') %>
@@ -33,20 +33,11 @@
       </div>
       <div class="w-full flex p-4 border-l border-b border-r border-gray-600">
         <div class="flex flex-col">
-          <p><%= t('.delete_project') %></p>
-          <div class="flex">
-            <div @click="confirm_delete_modal = true"
-              class="rounded bg-red-200 text-red-700 py-2 px-3 font-bold cursor-pointer transition ease-out duration-700 transform hover:scale-110 mr-4 mt-6">
-              Delete
-            </div>
-            <%= render('confirm_delete_modal') %>
-            <div class="w-48 mt-6">
-              <%= button_to(t('.delete'), customer_project_path(@project.customer, @project),
-              method: :delete,
-              class: "py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-red-600 text-white font-bold text-sm hover:text-white hover:bg-red-400 focus:outline-none active:shadow-none",
-              data: { confirm: t(".delete_confirm") }) %>
-            </div>
-          </div>
+          <p><%= t('.delete_description') %></p>
+          <%= render('application/delete_button',
+                     path: customer_project_path(@project.customer, @project),
+                     title: t('.delete'),
+                     confirmation: t('.delete_confirm'))%>
         </div>
       </div>
     </div>
