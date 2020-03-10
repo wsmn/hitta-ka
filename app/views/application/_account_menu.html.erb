@@ -1,7 +1,7 @@
 <% current ||= nil %>
 <div class="z-30 inset-y-0 left-0 w-48 xl:w-64 bg-gray-900 border-r border-gray-700 overflow-y-auto hidden lg:block">
   <nav class="px-6">
-    <%= sidebar_link(:accounts, account_url) do %>
+    <%= sidebar_link([:accounts, :show], account_url) do %>
       <span class="inline-flex flex items-center">
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -85,7 +85,7 @@
     <p class="mt-4 text-xs font-semibold text-gray-600 uppercase tracking-wide ml-4">
       <%= t('.settings') %>
     </p>
-    <%= sidebar_link([:account, :settings], settings_path) do %>
+    <%= sidebar_link([:accounts, :settings], settings_path) do %>
       <span class="inline-flex flex items-center">
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
