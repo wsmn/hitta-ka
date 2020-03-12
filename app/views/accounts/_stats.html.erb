@@ -6,36 +6,36 @@
       </div>
       <div class="hidden lg:flex">
         <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'projects' }" @click="tab = 'projects'"
-          class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-6">
+          class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-6 focus:outline-none">
           <%= t('.projects') %>
         </button>
         <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'time_logs' }" @click="tab = 'time_logs'"
-          class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-6">
+          class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-6 focus:outline-none">
           <%= t('.time_logs') %>
         </button>
         <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'invoices' }" @click="tab = 'invoices'"
-          class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-6">
+          class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-6 focus:outline-none">
           <%= t('.invoices') %>
         </button>
       </div>
       <div class="flex text-sm">
         <button type="button"
-          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3">
+          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3 focus:outline-none">
           <%= t('.1_D') %>
         </button>
         <button type="button"
-          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3">
+          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3 focus:outline-none">
           <%= t('.1_W') %>
         </button>
-        <button type="button" class="appearance-none py-4 text-blue-700 border-b border-blue-700 mr-3">
+        <button type="button" class="appearance-none py-4 text-blue-700 border-b border-blue-700 mr-3 focus:outline-none">
           <%= t('.1_M') %>
         </button>
         <button type="button"
-          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3">
+          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3 focus:outline-none">
           <%= t('.1_Y') %>
         </button>
         <button type="button"
-          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700">
+          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 focus:outline-none">
           <%= t('.total') %>
         </button>
       </div>

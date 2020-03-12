@@ -11,7 +11,7 @@ module ProjectHelper
   end
 
   def project_tag(status)
-    status_class = "text-sm md:text-base inline-flex font-semibold rounded-full h-6 px-3 md:px-4 justify-center items-center"
+    status_class = "border text-xs lg:text-sm font-light uppercase tracking-wide inline-flex font-semibold rounded-md h-6 px-1 lg:px-3 justify-center items-center"
     status_class += " #{project_status_class(status)}"
     content_tag(:span, project_status(status), class: status_class)
   end
@@ -19,13 +19,13 @@ module ProjectHelper
   def project_status_class(status)
     case status
     when "upcoming"
-      "bg-blue-400 text-white"
+      "bg-blue-400 border-blue-800 text-white"
     when "active"
-      "bg-green-300 text-green-800"
+      "bg-green-200 border-green-800 text-green-800"
     when "completed"
       "bg-green-800 text-white"
     when "archived"
-      "bg-gray-400 text-white"
+      "bg-gray-400 border-gray-800 text-gray-800"
     when "paused"
       "bg-yellow-400"
     when "cancelled"
@@ -36,7 +36,7 @@ module ProjectHelper
   def project_status_button(status, current, object: :projects)
     current ||= :all
     object ||= :projects
-    css = "border py-2 px-3 rounded mr-2"
+    css = "border py-1 px-3 rounded mr-2"
     css = if status == current.to_sym
       "#{css} bg-blue-600 border-blue-600 hover:bg-blue-500 hover:border-blue-500 text-white"
     else

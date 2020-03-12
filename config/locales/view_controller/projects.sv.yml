@@ -63,7 +63,6 @@ sv:
       danger_zone: Farozon
       delete_description: När projektet raders tas all kopplad data till projektet bort. Detta går inte att ångra.
       delete_confirm: Vill du verkligen radera projektet? Tar även bort all kopplad data och kan ej ångras.
-
     update:
       success: Projektet uppdaterades
     filter:

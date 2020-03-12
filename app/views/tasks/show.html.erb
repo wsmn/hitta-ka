@@ -2,7 +2,7 @@
   <%= render('application/account_menu', current: :projects) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <h1 class="text-3xl font-bold text-gray-900"><%= @project %></h1>
+  <%= @project %>
 <% end %>
 <div class="w-full pb-4 px-2 py-2 lg:px-8 lg:py-6">
   <div class="flex-grow mx-auto">

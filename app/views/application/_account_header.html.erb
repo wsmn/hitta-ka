@@ -1,5 +1,5 @@
 <div id="nav">
-  <nav class="flex flex-shrink-0 h-16">
+  <nav class="flex flex-shrink-0">
     <div class="flex-shrink-0 px-6 bg-gray-900 w-56 xl:w-64 border-r border-gray-700 hidden lg:flex items-center">
       <div class="hidden lg:block">
         <%= link_to(root_path) do %>
@@ -17,7 +17,7 @@
       <%= render('application/mobile_menu') %>
       <div class="w-full grid grid-cols-3 gap-4 items-center hidden lg:grid">
         <div class="">
-          <%= yield(:header_title) %>
+          <h1 class="text-2xl font-bold text-gray-900"><%= yield(:header_title) %></h1>
         </div>
         <div class="flex justify-center">
           <div class="relative w-full">
@@ -33,7 +33,7 @@
         </div>
         <div @click.away="open = false" class="flex justify-end relative" x-data="{ open: false }">
           <div>
-            <button @click="open = !open" class="flex items-center text-gray-900" @click="open = true">
+            <button @click="open = !open" class="flex items-center text-gray-900 focus:outline-none" @click="open = true">
               <div
                 class="h-8 w-8 rounded-full bg-indigo-700 flex items-center justify-center text-white text-sm font-bold uppercase">
                 <%= current_user.initials %>

@@ -2,7 +2,7 @@
   <%= render('application/account_menu', current: :customers) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
+  <%= t('.title') %>
 <% end %>
 <div class="w-full bg-gray-300">
   <%= render('show_heading') %>

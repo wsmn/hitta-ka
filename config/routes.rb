@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   resources(:invoices, only: %i[index show new])
 
+  resources(:services, only: %i[index show new])
+
   resource(:search, only: []) do
     post(:company)
     post(:project)

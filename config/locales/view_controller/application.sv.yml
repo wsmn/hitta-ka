@@ -22,6 +22,7 @@ sv:
       invoices: Fakturor
       paused_projects: Pausade projekt
       projects: Projekt
+      services: Tjänster
       settings: Inställningar
 
     mobile_menu:
