@@ -15,7 +15,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to(customer_project_path(@project.customer, @project), notice: t(".success"))
     else
-      render(:show, status: :unprocessable_entity)
+      render(:new, status: :unprocessable_entity)
     end
   end
 

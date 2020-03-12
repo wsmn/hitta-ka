@@ -1,6 +1,6 @@
 <div id="nav">
   <nav class="flex flex-shrink-0 h-16">
-    <div class="flex-shrink-0 px-6 bg-gray-900 account-menu-width hidden lg:flex items-center">
+    <div class="flex-shrink-0 px-6 bg-gray-900 w-56 xl:w-64 border-r border-gray-700 hidden lg:flex items-center">
       <div class="hidden lg:block">
         <%= link_to(root_path) do %>
           <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 5.5rem", class: "") %>
@@ -8,7 +8,7 @@
       </div>
     </div>
     <div
-      class="flex flex-1 bg-gray-900 lg:bg-gray-400 items-center justify-between bg-white py-4 lg:py-3 px-2 lg:px-8 border-b border-gray-600">
+      class="flex flex-1 bg-gray-900 lg:bg-gray-400 items-center justify-between bg-white py-4 lg:py-3 px-2 lg:px-6 border-b border-gray-600">
       <div class="lg:hidden">
         <%= link_to(root_path) do %>
           <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 3.5rem", class: "") %>
@@ -35,7 +35,7 @@
           <div>
             <button @click="open = !open" class="flex items-center text-gray-900" @click="open = true">
               <div
-                class="h-8 w-8 rounded-full bg-red-600 flex items-center justify-center text-white font-bold uppercase">
+                class="h-8 w-8 rounded-full bg-indigo-700 flex items-center justify-center text-white text-sm font-bold uppercase">
                 <%= current_user.initials %>
               </div>
               <span class="hidden lg:inline ml-2 mr-2 text-sm font-semibold">

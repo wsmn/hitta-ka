@@ -9,7 +9,7 @@
     <% end %>
   </h1>
 <% end %>
-<div class="w-full lg:p-8">
+<div class="w-full lg:p-6">
   <%= render("heading") %>
   <%= render("search_field") %>
   <%= render("table", projects: @projects, filtered: params[:status].present?) %>

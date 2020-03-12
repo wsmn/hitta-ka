@@ -6,7 +6,7 @@
 <% end %>
 <div class="w-full bg-gray-300">
   <%= render('show_heading') %>
-  <div class="bg-white p-4 pb-8 md:p-8">
+  <div class="bg-white p-4 pb-8 md:p-6">
     <div class="flex flex-wrap -mx-2">
       <div class="w-full xl:w-2/3 px-2">
         <div class="bg-white rounded border border-gray-500">
@@ -81,7 +81,7 @@
     </div>
   </div>
   <div x-data="{ tab: 'projects' }">
-    <div class="flex border-b border-gray-500 bg-white px-4 md:px-8 text-center">
+    <div class="flex border-b border-gray-500 bg-white px-4 md:px-6 text-center">
       <div class="w-full lg:w-2/5 xl:w-1/4 flex -mx-1">
         <div class="w-1/3 px-1 flex">
           <button :class="{ 'active bg-gray-300 -mb-px border-gray-500 py-2': tab === 'projects' }"
@@ -105,13 +105,13 @@
         </div>
       </div>
     </div>
-    <div x-show="tab === 'projects'" class="flex-grow px-4 lg:px-8 bg-gray-300">
+    <div x-show="tab === 'projects'" class="flex-grow px-4 lg:px-6 bg-gray-300">
       <%= render("projects/table", customer: @customer, projects: @projects) %>
     </div>
-    <div x-show="tab === 'tasks'" class="flex-grow px-4 lg:px-8 bg-gray-300">
+    <div x-show="tab === 'tasks'" class="flex-grow px-4 lg:px-6 bg-gray-300">
       <%= render('show_search_field') %>
     </div>
-    <div x-show="tab === 'invoices'" class="flex-grow px-4 lg:px-8 bg-gray-300">
+    <div x-show="tab === 'invoices'" class="flex-grow px-4 lg:px-6 bg-gray-300">
       <%= render('show_search_field') %>
     </div>
   </div>

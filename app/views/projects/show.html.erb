@@ -1,85 +1,145 @@
 <% content_for(:sidebar) do %>
-  <%= render('application/account_menu', current: :projects) %>
+<%= render('application/account_menu', current: :projects) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
+<h1 class="text-3xl font-bold text-gray-900"><%= t('.title') %></h1>
 <% end %>
-<div class="w-full">
+<div class="w-full bg-gray-100">
   <%= render('show_heading') %>
-  <div class="bg-white p-4 pb-8 md:p-8">
-    <div class="flex flex-wrap -mx-2">
-      <div class="w-full xl:w-3/4 px-2">
-        <div class="bg-white rounded border border-gray-500">
+  <div class="bg-white p-4 pb-8 lg:p-6">
+    <div class="flex -mx-2">
+      <div class="flex-grow px-2">
+        <div class="border border-gray-500 rounded-md">
           <div class="flex flex-wrap">
-            <div class="w-1/2 lg:w-1/3 p-6">
-              <h1 class="text-xl font-bold text-gray-800">Description</h1>
-              <p class="text-base">Here is your discription of the project. You wrote this when
-                creating
-                a new project.</p>
-              <span class="flex items-center mt-6">
-                <h1 class="text-xl font-bold text-gray-900"><%= t('.address') %></h1>
-                <svg class="h-6 w-6 text-gray-900 ml-1 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </span>
-              <p class="text-base">Street 5, 123 12, City, Sweden</p>
-              <h1 class="text-xl font-bold text-gray-800 mt-6">Type</h1>
-              <p class="text-base">House</p>
+            <div class="w-full lg:w-4/5 flex flex-wrap p-6 xl:border-r border-gray-300">
+              <div class="w-full md:w-1/2 lg:w-full xl:w-3/5">
+                <div class="flex items-center leading-none relative">
+                  <h1 class="text-3xl font-bold text-gray-900"><%= @project.title %> - #<%= @project.id %></h1>
+                  <span
+                    class="ml-5 text-xs uppercase font-bold tracking-wide bg-green-200 border border-green-700 text-green-800 rounded-md h-6 px-4 flex items-center mt-1">
+                    <%= @project.status %>
+                  </span>
+                </div>
+                <span class="text-gray-600"><%= @project.customer %></span>
+                <div class="w-4/5 mt-5">
+                  <h1 class="text-xl font-semibold text-gray-900">Details</h1>
+                  <p class="text-gray-800 mt-1">Here is your discription of the project. You wrote this when
+                    creating
+                    a new project.</p>
+                  <span class="flex items-center mt-6">
+                    <h1 class="text-xl font-semibold text-gray-900"><%= t('.project_address') %></h1>
+                    <svg class="h-5 w-5 text-gray-900 ml-1 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </span>
+                  <p class="text-gray-800 mt-1">Street 5, 123 12,</p>
+                  <p class="text-gray-800">City, Sweden</p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 lg:w-full xl:w-2/5 md:px-6 lg:px-0 xl:px-0 mt-8 md:mt-0 lg:mt-8 xl:mt-0">
+                <div class="w-full flex">
+                  <div class="w-1/2 bg-green-100 border border-green-800 rounded-md p-4">
+                    <div class="flex items-center justify-between relative leading-none">
+                      <div class="text-xs uppercase font-bold text-green-800 tracking-wide">
+                        <%= t('.timelogs') %>
+                      </div>
+                      <div class="-mt-1">
+                        <svg class="h-5 w-5 text-green-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="text-2xl font-semibold text-green-800 mt-3">
+                      5 st
+                    </div>
+                  </div>
+                  <div class="w-1/2 bg-blue-100 border border-blue-800 rounded-md p-4 ml-4">
+                    <div class="flex items-center justify-between relative leading-none">
+                      <div class="text-xs uppercase font-bold text-blue-800 tracking-wide">
+                        <%= t('.hours') %>
+                      </div>
+                      <div class="-mt-1">
+                        <svg class="h-5 w-5 text-blue-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="text-2xl font-semibold text-blue-800 mt-3">
+                      32 h
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full bg-purple-100 border border-purple-800 rounded-md p-4 mt-4">
+                  <div class="flex items-center justify-between relative leading-none">
+                    <div class="text-xs uppercase font-bold text-purple-800 tracking-wide">
+                      <%= t('.invoices') %>
+                    </div>
+                    <div class="">
+                      <svg class="h-6 w-6 text-purple-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <div>
+                    <p class="text-xl font-semibold text-purple-800 mt-2">
+                      5 sent <span class="text-green-800 text-sm">(32.000,00 kr)</span>
+                    </p>
+                    <p class="text-xl font-semibold text-purple-800 mt-2">
+                      1 unpayed (999,00 kr)
+                    </p>
+                  </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="w-1/2 lg:w-1/3 p-6">
-              <h1 class="text-xl font-bold text-gray-800">Summary</h1>
-              <h2 class="text-gray-800 font-bold">Tasks: <span class="text-black font-normal"><%= @project.tasks.count %></span></h2>
-              <h2 class="text-gray-800 font-bold">Hours: <span class="text-black font-normal"><%= @project.hours%> h</span></h2>
-            </div>
-            <div class="w-full lg:w-1/3 border-t lg:border-t-0 lg:border-l p-6">
-              Lägg till mapbox här!
+            <div class="w-full xl:w-1/5 border-t xl:border-t-0 xl:border-l p-6">
+              Lägg till mapbox här?
             </div>
           </div>
         </div>
       </div>
-      <div class="w-1/2 xl:hidden">
-      </div>
-      <div class="w-full sm:w-1/2 xl:w-1/4 px-2 mt-4 xl:mt-0">
+      <div class="hidden lg:block lg:w-1/2 xl:w-1/3 max-w-xs px-2 mt-0">
         <%= render(@project.customer) %>
       </div>
     </div>
   </div>
   <div x-data="{ tab: 'tasks' }">
-    <div class="flex border-b border-gray-600 bg-white px-4 md:px-8 text-center">
+    <div class="flex border-b border-gray-500 bg-white px-4 lg:px-6 text-center">
       <div class="w-full lg:w-2/5 xl:w-1/4 flex -mx-1">
         <div class="w-1/3 px-1 flex">
-          <button button :class="{ 'active bg-gray-200 -mb-px border-gray-600 py-2': tab === 'tasks' }"
-            @click="tab = 'tasks'"
+          <button button :class="{ 'bg-gray-100 -mb-px border-gray-500 py-2': tab === 'tasks' }" @click="tab = 'tasks'"
             class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
             <%= t('.tasks') %>
           </button>
         </div>
         <div class="w-1/3 px-1 flex">
-          <button :class="{ 'active bg-gray-200 -mb-px border-gray-600 py-2': tab === 'timeline' }"
-            @click="tab = 'timeline'"
+          <button :class="{ 'bg-gray-200 -mb-px border-gray-500 py-2': tab === 'timeline' }" @click="tab = 'timeline'"
             class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
             <%= t('.timeline') %>
           </button>
         </div>
         <div class="w-1/3 px-1 flex">
-          <button :class="{ 'active bg-gray-200 -mb-px border-gray-600 py-2': tab === 'invoices' }"
-            @click="tab = 'invoices'"
+          <button :class="{ 'bg-gray-200 -mb-px border-gray-500 py-2': tab === 'invoices' }" @click="tab = 'invoices'"
             class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
             <%= t('.invoices') %>
           </button>
         </div>
       </div>
     </div>
-    <div x-show="tab === 'tasks'" class="flex-grow px-4 lg:px-8 bg-gray-200">
+    <div x-show="tab === 'tasks'" class="flex-grow px-4 lg:px-6 bg-gray-100">
       <%= render('show_search_field') %>
       <div class="flex pb-4">
         <%= render('tasks/table', project: @project, tasks: @project.tasks) %>
       </div>
     </div>
-    <div x-show="tab === 'timeline'" class="flex-grow px-4 lg:px-8 bg-gray-200">
+    <div x-show="tab === 'timeline'" class="flex-grow px-4 lg:px-6 bg-gray-100">
       <div class="w-2/3 flex flex-wrap bg-white rounded p-4">
         <div class="w-full text-center mb-8">
           <h2 class="text-xl mt-4"><%= t('.timeline') %></h2>
@@ -105,7 +165,7 @@
         </div>
       </div>
     </div>
-    <div x-show="tab === 'invoices'" class="flex-grow px-4 lg:px-8 bg-gray-200">
+    <div x-show="tab === 'invoices'" class="flex-grow px-4 lg:px-6 bg-gray-100">
       <%= render('show_search_field') %>
     </div>
   </div>

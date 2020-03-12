@@ -1,14 +1,5 @@
 .btn {
-  @apply font-semibold;
-  @apply px-3;
-  @apply py-2;
-  @apply rounded;
-  @apply text-white;
-  @apply text-sm;
-  @apply uppercase;
-  @apply flex;
-  @apply justify-center;
-  @apply items-center;
+  @apply font-semibold px-3 py-2 rounded text-white text-sm uppercase flex justify-center items-center;
 }
 
 .btn-blue {
@@ -26,28 +17,13 @@
 }
 
 .form-input {
-  @apply w-full;
-  @apply block;
-  @apply appearance-none;
-  @apply text-gray-900;
-  @apply border;
-  @apply border-gray-500;
-  @apply rounded;
-  @apply px-3;
-  @apply py-2;
-  @apply leading-tight;
+  @apply w-full block appearance-none bg-gray-100 text-gray-900 border border-gray-500 rounded px-3 py-2 leading-tight;
 }
 
 .form-input:focus {
-  @apply outline-none;
-  @apply shadow-outline;
-  @apply border-blue-500;
+  @apply outline-none shadow-outline bg-white border-blue-500;
 }
 
 .form-label {
-  @apply tracking-wide;
-  @apply leading-none;
-  @apply text-gray-700;
-  @apply font-semibold;
-  @apply mb-1;
+  @apply tracking-wide leading-none text-gray-700 font-semibold;
 }
