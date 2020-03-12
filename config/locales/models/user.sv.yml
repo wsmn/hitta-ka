@@ -1,0 +1,19 @@
+sv:
+  model:
+    user:
+      none: "nope"
+
+  activerecord:
+    models:
+      user:
+        one: Användare
+        other: Användare
+
+    attributes:
+      user:
+        name: Namn
+        password: Lösenord
+        current_password: Nuvarande lösenord
+        new_password: Nytt lösenord
+        initials: Initialer
+        role: Roll

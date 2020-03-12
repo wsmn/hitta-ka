@@ -5,8 +5,11 @@
         <div x-show="!close"
              class="rounded relative border px-4 py-4 mt-2 flex items-center"
              :class="{'bg-red-100 border-red-400 text-red-700': type == 'alert', 'bg-blue-100 border-blue-400 text-blue-700': type == 'notice'}">
-          <svg class="h-6 w-6 text-green-500 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg x-show="type === 'notice'" class="text-green-500 h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <svg x-show="type === 'alert'" class="text-red-500 h-6 w-6 inline-block" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
+            <path d="M10 14L12 12M12 12L14 10M12 12L10 10M12 12L14 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <span class="inline ml-3"><%= value %></span>
           <span class="absolute right-0 px-4">

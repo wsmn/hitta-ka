@@ -28,7 +28,7 @@
               <%= render('upload_logo_modal') %>
             </div>
             <div class="mx-auto text-center">
-              <p class="text-2xl font-medium text-gray-900">Current organisation</p>
+              <p class="text-2xl font-medium text-gray-900"><%= @organisation %></p>
               <p class="text-lg text-gray-600"><%= current_user.name %></p>
             </div>
           </div>
@@ -125,29 +125,17 @@
             </span>
           </button>
         </div>
-        <%= form_with(local: true, class: "w-full") do |form| %>
-          <div class="w-full">
-            <div x-show="tab === 'account'" class="flex-grow p-6 lg:px-8 lg:py-4">
-              <%= render('account_settings', form: form) %>
-            </div>
-            <div x-show="tab === 'company'" class="flex-grow p-6 lg:px-8 lg:py-4">
-              <%= render('company_settings', form: form) %>
-            </div>
-            <div x-show="tab === 'localization'" class="flex-grow p-6 lg:px-8 lg:py-4">
-              <%= render('localization_settings') %>
-            </div>
-            <div class="w-full flex py-3 px-8 border-t border-gray-400">
-              <div class="w-full flex justify-end items-center">
-                <div class="">
-                  <%= link_to(t('.cancel'), settings_path, class: "w-full px-3 text-blue-600 uppercase font-bold text-sm hover:text-blue-300") %>
-                </div>
-                <div class="ml-2">
-                  <%= link_to(t('.save'), settings_path, class: "btn btn-blue") %>
-                </div>
-              </div>
-            </div>
+        <div class="w-full">
+          <div x-show="tab === 'account'" class="flex-grow p-6 lg:px-8 lg:py-4">
+            <%= render('account_settings') %>
           </div>
-        <% end %>
+          <div x-show="tab === 'company'" class="flex-grow p-6 lg:px-8 lg:py-4">
+            <%= render('company_settings') %>
+          </div>
+          <div x-show="tab === 'localization'" class="flex-grow p-6 lg:px-8 lg:py-4">
+            <%= render('localization_settings') %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
