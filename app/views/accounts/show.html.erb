@@ -1,8 +1,8 @@
 <% content_for(:sidebar) do %>
-  <%= render('application/account_menu', current: :account) %>
+<%= render('application/account_menu', current: :account) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <%= t('.title') %>
+<%= t('.title') %>
 <% end %>
 <div class="w-full grid grid-cols-2 gap-6 p-2 sm:p-4 lg:p-6">
   <%= render("show_heading") %>

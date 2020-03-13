@@ -1,8 +1,8 @@
 <% content_for(:sidebar) do %>
-<%= render('application/account_menu', current: :projects) %>
+  <%= render('application/account_menu', current: :projects) %>
 <% end %>
 <% content_for(:header_title) do %>
-<%= t('.title') %>
+  <%= t('.title') %>
 <% end %>
 <div class="w-full bg-gray-100">
   <div class="p-4 pb-8 lg:p-6">
@@ -29,7 +29,7 @@
                           <%= link_to(new_project_task_path(@project),
                           class: 'btn btn-green normal-case rounded-l rounded-r-none
                                   text-white text-sm h-10 mt-2 md:mt-0') do %>
-                          <%= t('.time_log') %>
+                            <%= t('.time_log') %>
                           <% end %>
                           <div @click="open = !open"
                             class="bg-green-800 hover:bg-green-900 h-10 rounded-r flex justify-end items-center mt-2 md:mt-0">
@@ -41,10 +41,10 @@
                             <div x-show="open" class="absolute mt-16 w-32 rounded">
                               <div class="rounded bg-white border border-gray-400">
                                 <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
-                                <%= t('.invoice') %>
+                                  <%= t('.invoice') %>
                                 <% end %>
                                 <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-b') do %>
-                                <%= t('.more') %>
+                                  <%= t('.more') %>
                                 <% end %>
                               </div>
                             </div>
@@ -56,7 +56,7 @@
                           <%= link_to(edit_customer_project_path(@project.customer, @project),
                           class: 'btn btn-blue normal-case rounded-l rounded-r-none
                           text-white text-sm h-10 md:ml-2') do %>
-                          <%= t('.edit_project') %>
+                            <%= t('.edit_project') %>
                           <% end %>
                           <div @click="open = !open"
                             class="bg-blue-800 hover:bg-blue-900 h-10 rounded-r flex justify-end items-center">
@@ -70,7 +70,7 @@
                             <div x-show="open" class="absolute mt-16 w-32 rounded">
                               <div class="rounded bg-white border border-gray-400">
                                 <%= link_to(projects_path, class: 'block px-2 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
-                                <%= t('.archive') %>
+                                  <%= t('.archive') %>
                                 <% end %>
                                 <%= link_to(t('.delete'), customer_project_path(@project.customer, @project),
                                             method: :delete,
@@ -169,7 +169,7 @@
                     <%= link_to(new_project_task_path(@project),
                     class: 'btn btn-green normal-case rounded-l rounded-r-none
                             text-white text-sm h-10 mt-2 md:mt-0') do %>
-                    <%= t('.time_log') %>
+                      <%= t('.time_log') %>
                     <% end %>
                     <div @click="open = !open"
                       class="bg-green-800 hover:bg-green-900 h-10 rounded-r flex justify-end items-center mt-2 md:mt-0">
@@ -181,10 +181,10 @@
                       <div x-show="open" class="absolute mt-16 w-32 rounded">
                         <div class="rounded bg-white border border-gray-400">
                           <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
-                          <%= t('.invoice') %>
+                            <%= t('.invoice') %>
                           <% end %>
                           <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-b') do %>
-                          <%= t('.more') %>
+                            <%= t('.more') %>
                           <% end %>
                         </div>
                       </div>
@@ -196,7 +196,7 @@
                     <%= link_to(edit_customer_project_path(@project.customer, @project),
                     class: 'btn btn-blue normal-case rounded-l rounded-r-none
                     text-white text-sm h-10 md:ml-2') do %>
-                    <%= t('.edit_project') %>
+                      <%= t('.edit_project') %>
                     <% end %>
                     <div @click="open = !open"
                       class="bg-blue-800 hover:bg-blue-900 h-10 rounded-r flex justify-end items-center">
@@ -210,7 +210,7 @@
                       <div x-show="open" class="absolute mt-16 w-32 rounded">
                         <div class="rounded bg-white border border-gray-400">
                           <%= link_to(projects_path, class: 'block px-2 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
-                          <%= t('.archive') %>
+                            <%= t('.archive') %>
                           <% end %>
                           <%= link_to(t('.delete'), customer_project_path(@project.customer, @project),
                                       method: :delete,

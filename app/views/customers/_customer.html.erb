@@ -1,61 +1,60 @@
 <div class="w-full bg-white rounded-lg border border-gray-500">
   <div class="rounded-t-lg bg-blue-600">
     <%= link_to(customer_path(customer)) do %>
-    <div class="p-3">
-      <div class="w-full">
-        <div class="text-xs uppercase font-bold text-white tracking-wide">
-          <%= t('.customer') %>
+      <div class="p-3">
+        <div class="w-full">
+          <div class="text-xs uppercase font-bold text-white tracking-wide">
+            <%= t('.customer') %>
+          </div>
+        </div>
+        <div class="flex items-center py-2 ml-2">
+          <div class="rounded-full h-12 w-12 bg-green-500 inline-flex items-center justify-center mr-3">
+            <span class="icon text-lg text-white font-semibold uppercase">
+              <%= customer.initials %>
+            </span>
+          </div>
+          <div class="text-white">
+            <p class="text-base xl:text-lg font-bold"><%= customer.name %></p>
+            <p class="text-sm xl:text-base"><%= customer.phone %></p>
+          </div>
         </div>
       </div>
-      <div class="flex items-center py-2 ml-2">
-        <div class="rounded-full h-12 w-12 bg-green-500 inline-flex items-center justify-center mr-3">
-          <span class="icon text-lg text-white font-semibold uppercase">
-            <%= customer.initials %>
-          </span>
-        </div>
-        <div class="text-white">
-          <p class="text-base xl:text-lg font-bold"><%= customer.name %></p>
-          <p class="text-sm xl:text-base"><%= customer.phone %></p>
-        </div>
-      </div>
-    </div>
     <% end %>
   </div>
   <% if customer.address.present? %>
-  <div class="flex border-gray-300 border-t border-b">
-    <div class="p-3">
-      <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
-        <%= t('.address') %>
+    <div class="flex border-gray-300 border-t border-b">
+      <div class="p-3">
+        <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
+          <%= t('.address') %>
+        </div>
+        <div class="py-2 ml-2">
+          <% if customer.street.present? %>
+            <p class="text-xl xl:text-2xl text-gray-900"><%= customer.street %></p>
+          <% end %>
+          <% if customer.zip_code.present? && customer.city.present? %>
+            <p class="text-base xl:text-lg text-gray-700"><%= customer.zip_code %>, <%= customer.city %></p>
+          <% elsif customer.zip_code.present? %>
+            <p class="text-lg text-gray-700"><%= customer.zip_code %></p>
+          <% elsif customer.city.present? %>
+            <p class="text-lg text-gray-700"><%= customer.city %></p>
+          <% end %>
+        </div>
       </div>
-      <div class="py-2 ml-2">
-        <% if customer.street.present? %>
-        <p class="text-xl xl:text-2xl text-gray-900"><%= customer.street %></p>
-        <% end %>
-        <% if customer.zip_code.present? && customer.city.present? %>
-        <p class="text-base xl:text-lg text-gray-700"><%= customer.zip_code %>, <%= customer.city %></p>
-        <% elsif customer.zip_code.present? %>
-        <p class="text-lg text-gray-700"><%= customer.zip_code %></p>
-        <% elsif customer.city.present? %>
-        <p class="text-lg text-gray-700"><%= customer.city %></p>
-        <% end %>
-      </div>
-
     </div>
-  </div>
   <% end %>
   <div class="p-3 rounded-b-lg text-base text-blue-600">
     <% if customer.email.present? %>
-    <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
-      <%= t('.mail') %>
-    </div>
-    <div class="flex items-center py-2 ml-2">
-      <div class="w-5 inline-block text-center text-lg">
-        <i class="far fa-envelope fa-2xl"></i>
+      <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
+        <%= t('.mail') %>
       </div>
-      <div class="text-center inline ml-2 truncate">
-        <%= link_to(customer.email, "mailto:#{customer.email}") %>
+      <div class="flex items-center py-2 ml-2">
+        <div class="w-5 inline-block text-center text-lg">
+          <i class="far fa-envelope fa-2xl"></i>
+        </div>
+        <div class="text-center inline ml-2 truncate">
+          <%= link_to(customer.email, "mailto:#{customer.email}") %>
+        </div>
       </div>
-    </div>
     <% end %>
   </div>
 </div>

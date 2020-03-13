@@ -1,6 +1,6 @@
-<div x-data="{ tab: 'projects' }" class="col-span-2 bg-white border border-gray-500 sm:rounded mb-1">
+<div x-data="{ tab: 'projects' }" class="col-span-2 xl:col-span-1 bg-white border border-gray-500 sm:rounded">
   <div class="border-b px-6">
-    <div class="flex justify-between -mb-px">
+    <div class="flex -mb-px">
       <div class="lg:hidden text-blue-600 py-4 text-lg">
         <%= t('.statistics') %>
       </div>
@@ -16,27 +16,6 @@
         <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'invoices' }" @click="tab = 'invoices'"
           class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-6 focus:outline-none">
           <%= t('.invoices') %>
-        </button>
-      </div>
-      <div class="flex text-sm">
-        <button type="button"
-          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3 focus:outline-none">
-          <%= t('.1_D') %>
-        </button>
-        <button type="button"
-          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3 focus:outline-none">
-          <%= t('.1_W') %>
-        </button>
-        <button type="button" class="appearance-none py-4 text-blue-700 border-b border-blue-700 mr-3 focus:outline-none">
-          <%= t('.1_M') %>
-        </button>
-        <button type="button"
-          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3 focus:outline-none">
-          <%= t('.1_Y') %>
-        </button>
-        <button type="button"
-          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 focus:outline-none">
-          <%= t('.total') %>
         </button>
       </div>
     </div>

@@ -1,9 +1,9 @@
 <div id="nav">
   <nav class="flex flex-shrink-0 h-16">
-    <div class="flex-shrink-0 px-6 bg-gray-900 w-56 xl:w-64 border-r border-gray-600 hidden lg:flex items-center">
+    <div class="flex-shrink-0 px-6 bg-gray-900 w-56 xl:w-64 border-r border-gray-700 hidden lg:flex items-center">
       <div class="hidden lg:block">
         <%= link_to(root_path) do %>
-          <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 4.5rem", class: "") %>
+          <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 4rem", class: "") %>
         <% end %>
       </div>
     </div>
@@ -49,7 +49,7 @@
               </svg>
             </button>
           </div>
-          <div x-show="open" class="absolute origin-top-right right-0 z-50 mt-12 rounded"
+          <div x-show="open" class="absolute origin-top-right right-0 z-50 mt-16 rounded"
             x-transition:enter="transition ease-out duration-100"
             x-transition:enter-start="transform opacity-0 scale-95"
             x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
