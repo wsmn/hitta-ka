@@ -14,6 +14,8 @@ sv:
       search: Sök
       new_project: Nytt projekt
     table:
+      title: Projekt
+      all_projects: Alla projekt
       active: Aktiva
       address: Adress
       all: Alla

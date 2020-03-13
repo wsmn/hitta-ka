@@ -4,8 +4,8 @@
 <% content_for(:header_title) do %>
   <%= t('.title')%>
 <% end %>
-<div class="w-full pb-4 sm:px-4 sm:py-2 lg:px-8 lg:py-2">
-  <div class="w-full flex items-center">
+<div class="w-full overflow-y-auto pb-4 px-4 py-2 lg:px-6 lg:py-4">
+  <div class="w-full flex items-center mb-4">
     <%= link_to(projects_path, class: 'text-gray-500') do %>
       <%= t('.projects') %>
     <% end %><svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
@@ -24,7 +24,6 @@
       <%= t('.edit_project') %>
     </span>
   </div>
-  <h1 class="text-3xl font-bold text-gray-800 lg:mt-1"><%= @project.title %></h1>
   <%= render('form', project: @project, customer: @customer, customers: @customers) %>
   <div class="pb-16">
     <div class="w-full flex flex-col flex-wrap bg-white rounded-md lg:mt-3">

@@ -1,9 +1,9 @@
-<div class="w-full flex justify-between bg-white border-b-2 border-blue-500 p-4 lg:hidden">
-  <div class="mb-1">
+<div class="w-full flex justify-between bg-white border-b-2 border-green-500 px-4 py-2 lg:hidden">
+  <div class="mb-1 leading-tight">
     <h1 class="text-3xl font-bold text-gray-800"><%= t('.title') %></h1>
-    <h2 class="text-xl font-medium text-blue-600 -mt-1">All Customers</h2>
+    <h2 class="text-xl font-medium text-green-600">All Customers</h2>
   </div>
-  <div class="flex items-start">
+  <div class="flex items-start mt-1">
     <%= link_to(new_customer_path, class: 'btn btn-green normal-case text-base') do %>
       <%= t('.new_customer') %>
     <% end %>

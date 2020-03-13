@@ -7,11 +7,11 @@
         <h3 class="text-blue-700 py-4 font-normal text-lg"><%= t('.recent_projects') %></h3>
         <div class="flex">
           <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'active' }" @click="tab = 'active'"
-            class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-3">
+            class="appearance-none py-4 text-gray-700 hover:text-blue-400 focus:outline-none mr-3">
             <%= t('.active') %>
           </button>
           <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'archived' }" @click="tab = 'archived'"
-            class="appearance-none py-4 text-gray-700 hover:text-blue-400">
+            class="appearance-none py-4 text-gray-700 hover:text-blue-400 focus:outline-none">
             <%= t('.archived') %>
           </button>
         </div>

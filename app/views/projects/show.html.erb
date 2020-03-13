@@ -1,27 +1,90 @@
 <% content_for(:sidebar) do %>
-  <%= render('application/account_menu', current: :projects) %>
+<%= render('application/account_menu', current: :projects) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <%= t('.title') %>
+<%= t('.title') %>
 <% end %>
 <div class="w-full bg-gray-100">
-  <%= render('show_heading') %>
-  <div class="bg-white p-4 pb-8 lg:p-6">
+  <div class="p-4 pb-8 lg:p-6">
     <div class="flex -mx-2">
       <div class="flex-grow px-2">
-        <div class="border border-gray-500 rounded-md">
+        <div class="bg-white border border-gray-500 rounded-lg p-6">
           <div class="flex flex-wrap">
-            <div class="w-full lg:w-4/5 flex flex-wrap p-6 xl:border-r border-gray-300">
+            <div class="w-full lg:w-3/4 flex flex-wrap">
               <div class="w-full md:w-1/2 lg:w-full xl:w-3/5">
-                <div class="flex items-center leading-none relative">
-                  <h1 class="text-3xl font-bold text-gray-900"><%= @project.title %> - #<%= @project.id %></h1>
-                  <span
-                    class="ml-5 text-xs uppercase font-bold tracking-wide bg-green-200 border border-green-700 text-green-800 rounded-md h-6 px-4 flex items-center mt-1">
-                    <%= @project.status %>
-                  </span>
+                <div class="flex">
+                  <div class="w-3/5">
+                    <div class="flex items-center leading-none -mt-1">
+                      <h1 class="text-3xl lg:text-4xl font-bold text-gray-900"><%= @project.title %> - #<%= @project.id %></h1>
+                    </div>
+                    <div class="mt-1">
+                      <span class="text-lg text-gray-600"><%= @project.customer %></span>
+                      <span class="ml-3"><%= project_tag(@project.status) %></span>
+                    </div>
+                  </div>
+                  <div class="w-2/5 inline-block lg:hidden">
+                    <div class="flex flex-col-reverse md:flex-row justify-end mb-2">
+                      <div @click.away="open = false" class="flex justify-end" x-data="{ open: false }">
+                        <div class="flex items-start justify-end">
+                          <%= link_to(new_project_task_path(@project),
+                          class: 'btn btn-green normal-case rounded-l rounded-r-none
+                                  text-white text-sm h-10 mt-2 md:mt-0') do %>
+                          <%= t('.time_log') %>
+                          <% end %>
+                          <div @click="open = !open"
+                            class="bg-green-800 hover:bg-green-900 h-10 rounded-r flex justify-end items-center mt-2 md:mt-0">
+                            <svg class="h-8 w-5 mx-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                            </svg>
+                            <div x-show="open" class="absolute mt-16 w-32 rounded">
+                              <div class="rounded bg-white border border-gray-400">
+                                <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
+                                <%= t('.invoice') %>
+                                <% end %>
+                                <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-b') do %>
+                                <%= t('.more') %>
+                                <% end %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div @click.away="open = false" class="flex justify-end" x-data="{ open: false }">
+                        <div class="flex items-start justify-end">
+                          <%= link_to(edit_customer_project_path(@project.customer, @project),
+                          class: 'btn btn-blue normal-case rounded-l rounded-r-none
+                          text-white text-sm h-10 md:ml-2') do %>
+                          <%= t('.edit_project') %>
+                          <% end %>
+                          <div @click="open = !open"
+                            class="bg-blue-800 hover:bg-blue-900 h-10 rounded-r flex justify-end items-center">
+                            <div class="py-2">
+                              <svg class="h-5 w-5 mx-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                  clip-rule="evenodd" />
+                              </svg>
+                            </div>
+                            <div x-show="open" class="absolute mt-16 w-32 rounded">
+                              <div class="rounded bg-white border border-gray-400">
+                                <%= link_to(projects_path, class: 'block px-2 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
+                                <%= t('.archive') %>
+                                <% end %>
+                                <%= link_to(t('.delete'), customer_project_path(@project.customer, @project),
+                                            method: :delete,
+                                            class: "block px-2 py-2 text-sm text-white bg-red-600 hover:text-white hover:bg-red-400 rounded-b",
+                                            data: { confirm: t('.delete_confirm')}) %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <span class="text-gray-600"><%= @project.customer %></span>
-                <div class="w-4/5 mt-5">
+                <div class="w-4/5 -mt-5 md:mt-5">
                   <h1 class="text-xl font-semibold text-gray-900">Details</h1>
                   <p class="text-gray-800 mt-1">Here is your discription of the project. You wrote this when
                     creating
@@ -54,7 +117,7 @@
                       </div>
                     </div>
                     <div class="text-2xl font-semibold text-green-800 mt-3">
-                      5 st
+                      <%= @project.tasks.count %> st
                     </div>
                   </div>
                   <div class="w-1/2 bg-blue-100 border border-blue-800 rounded-md p-4 ml-4">
@@ -70,7 +133,7 @@
                       </div>
                     </div>
                     <div class="text-2xl font-semibold text-blue-800 mt-3">
-                      32 h
+                      <%= @project.hours %> h
                     </div>
                   </div>
                 </div>
@@ -81,7 +144,8 @@
                     </div>
                     <div class="">
                       <svg class="h-5 w-5 text-purple-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                       </svg>
                     </div>
                   </div>
@@ -98,13 +162,71 @@
                 </div>
               </div>
             </div>
-            <div class="w-full xl:w-1/5 border-t xl:border-t-0 xl:border-l p-6">
-              Lägg till mapbox här?
+            <div class="w-1/4">
+              <div class="hidden lg:flex flex-col-reverse md:flex-row justify-end mb-2">
+                <div @click.away="open = false" class="flex justify-end" x-data="{ open: false }">
+                  <div class="flex items-start justify-end">
+                    <%= link_to(new_project_task_path(@project),
+                    class: 'btn btn-green normal-case rounded-l rounded-r-none
+                            text-white text-sm h-10 mt-2 md:mt-0') do %>
+                    <%= t('.time_log') %>
+                    <% end %>
+                    <div @click="open = !open"
+                      class="bg-green-800 hover:bg-green-900 h-10 rounded-r flex justify-end items-center mt-2 md:mt-0">
+                      <svg class="h-8 w-5 mx-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd" />
+                      </svg>
+                      <div x-show="open" class="absolute mt-16 w-32 rounded">
+                        <div class="rounded bg-white border border-gray-400">
+                          <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
+                          <%= t('.invoice') %>
+                          <% end %>
+                          <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-b') do %>
+                          <%= t('.more') %>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div @click.away="open = false" class="flex justify-end" x-data="{ open: false }">
+                  <div class="flex items-start justify-end">
+                    <%= link_to(edit_customer_project_path(@project.customer, @project),
+                    class: 'btn btn-blue normal-case rounded-l rounded-r-none
+                    text-white text-sm h-10 md:ml-2') do %>
+                    <%= t('.edit_project') %>
+                    <% end %>
+                    <div @click="open = !open"
+                      class="bg-blue-800 hover:bg-blue-900 h-10 rounded-r flex justify-end items-center">
+                      <div class="py-2">
+                        <svg class="h-5 w-5 mx-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <div x-show="open" class="absolute mt-16 w-32 rounded">
+                        <div class="rounded bg-white border border-gray-400">
+                          <%= link_to(projects_path, class: 'block px-2 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
+                          <%= t('.archive') %>
+                          <% end %>
+                          <%= link_to(t('.delete'), customer_project_path(@project.customer, @project),
+                                      method: :delete,
+                                      class: "block px-2 py-2 text-sm text-white bg-red-600 hover:text-white hover:bg-red-400 rounded-b",
+                                      data: { confirm: t('.delete_confirm')}) %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="hidden lg:block lg:w-1/2 xl:w-1/3 max-w-xs px-2 mt-0">
+      <div class="hidden lg:block lg:w-1/2 xl:w-1/4 max-w-xs px-2 mt-0">
         <%= render(@project.customer) %>
       </div>
     </div>

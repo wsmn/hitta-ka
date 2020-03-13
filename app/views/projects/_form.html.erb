@@ -1,13 +1,13 @@
 <% customers ||= [] %>
 <% customer ||= nil %>
-<%= form_with(model: [customer, project], local: true, class: "w-full max-w-screen-xl pb-16", html: { role: 'check-modified' }) do |form| %>
+<%= form_with(model: [customer, project], local: true, class: "w-full max-w-screen-xl pb-8", html: { role: 'check-modified' }) do |form| %>
   <div class="flex flex-wrap -mx-2">
     <div class="w-full xl:w-2/3 px-2">
       <div class="flex flex-wrap bg-white rounded-md border border-gray-600">
         <div class="w-full h-12 bg-gray-800 px-3 py-2 rounded-t flex items-center">
           <h1 class="text-white font-semibold font-semibold text-xl xl:text-2xl">
             <% if project.persisted? %>
-              <%= t('.edit_project') %>
+              <%= t('.edit_project') %> - <%= @project.title %>
             <% else %>
               <%= t('.new_project') %>
             <% end %>

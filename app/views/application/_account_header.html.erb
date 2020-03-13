@@ -1,14 +1,14 @@
 <div id="nav">
-  <nav class="flex flex-shrink-0">
-    <div class="flex-shrink-0 px-6 bg-gray-900 w-56 xl:w-64 border-r border-gray-700 hidden lg:flex items-center">
+  <nav class="flex flex-shrink-0 h-16">
+    <div class="flex-shrink-0 px-6 bg-gray-900 w-56 xl:w-64 border-r border-gray-600 hidden lg:flex items-center">
       <div class="hidden lg:block">
         <%= link_to(root_path) do %>
-          <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 5.5rem", class: "") %>
+          <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 4.5rem", class: "") %>
         <% end %>
       </div>
     </div>
     <div
-      class="flex flex-1 bg-gray-900 lg:bg-gray-400 items-center justify-between bg-white py-4 lg:py-3 px-2 lg:px-6 border-b border-gray-600">
+      class="flex flex-1 bg-gray-900 lg:bg-gray-900 items-center justify-between bg-white px-2 lg:px-6 border-b border-gray-600">
       <div class="lg:hidden">
         <%= link_to(root_path) do %>
           <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 3.5rem", class: "") %>
@@ -17,38 +17,39 @@
       <%= render('application/mobile_menu') %>
       <div class="w-full grid grid-cols-3 gap-4 items-center hidden lg:grid">
         <div class="">
-          <h1 class="text-2xl font-bold text-gray-900"><%= yield(:header_title) %></h1>
+          <h1 class="text-2xl font-bold text-white"><%= yield(:header_title) %></h1>
         </div>
         <div class="flex justify-center">
           <div class="relative w-full">
             <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-              <svg class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </span>
             <input placeholder="Search for projects, customers etc."
-              class="block pl-8 pr-4 py-2 w-full bg-white border border-gray-500 rounded text-sm placeholder-gray-500 text-white focus:bg-white focus:placeholder-gray-400 focus:text-gray-800 focus:outline-none focus:border-gray-500">
+              class="block pl-8 pr-4 py-2 w-full bg-gray-700 rounded text-sm placeholder-white text-white focus:bg-white focus:placeholder-gray-600 focus:text-gray-900 focus:outline-none focus:border-gray-500">
           </div>
         </div>
-        <div @click.away="open = false" class="flex justify-end relative" x-data="{ open: false }">
+        <div @click.away="open = false" class="flex justify-end relative items-center" x-data="{ open: false }">
           <div>
-            <button @click="open = !open" class="flex items-center text-gray-900 focus:outline-none" @click="open = true">
+            <button @click="open = !open" class="flex items-center text-white focus:outline-none" @click="open = true">
               <div
-                class="h-8 w-8 rounded-full bg-indigo-700 flex items-center justify-center text-white text-sm font-bold uppercase">
+                class="h-10 w-10 rounded bg-indigo-700 flex items-center justify-center text-white font-bold uppercase">
                 <%= current_user.initials %>
               </div>
               <span class="hidden lg:inline ml-2 mr-2 text-sm font-semibold">
                 <%= current_user.name %>
+                <p class="text-xs text-gray-400 flex justify-start"><%= t('.current_org') %></p>
               </span>
-              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <svg class="h-5 w-5 -mt-4" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                   clip-rule="evenodd" />
               </svg>
             </button>
           </div>
-          <div x-show="open" class="absolute origin-top-right right-0 z-50 mt-10 rounded"
+          <div x-show="open" class="absolute origin-top-right right-0 z-50 mt-12 rounded"
             x-transition:enter="transition ease-out duration-100"
             x-transition:enter-start="transform opacity-0 scale-95"
             x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"

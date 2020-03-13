@@ -4,9 +4,9 @@
 <% content_for(:header_title) do %>
   <%= t('.title') %>
 <% end %>
-<div class="w-full pb-4 px-2 py-2 lg:px-8 lg:py-6">
+<div class="w-full pb-4 px-2 py-2 lg:p-6">
   <div class="text-sm lg:text-sm font-medium text-gray-900 pb-2">
-    <div class="flex items-center">
+    <div class="flex items-center leading-none">
       <% if @customer.present? %>
         <%= link_to(@customer, customer_path(@customer), class: 'text-gray-500') %>
         <%= render("application/icons/arrow") %>

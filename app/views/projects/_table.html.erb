@@ -7,11 +7,13 @@
       <h2 class="text-gray-900 text-2xl xl:text-3xl font-semibold leading-none">
         <% if params[:status].present? %>
         <%= t("model.project.status.#{params[:status]}") %>
+        <span class="lowercase"><%= t('.title') %></span>
+        <% else %>
+        <%= t('.all_projects') %>
         <% end %>
-        <%= t('.project') %>
       </h2>
     </div>
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap items-center">
       <div class="flex flex-row mb-1 sm:mb-0">
         <div class="relative">
           <select class="form-input text-sm bg-white pr-8">
