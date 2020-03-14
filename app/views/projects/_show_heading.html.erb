@@ -1,7 +1,19 @@
-<div class="w-full inline-flex justify-between p-4 lg:px-6 lg:py-4 bg-gray-900 border-b-8 border-blue-500">
-  <div class="text-sm lg:text-sm font-medium text-white">
-    <h1 class="text-2xl md:text-2xl font-extrabold md:font-bold">
-      <%= @project.title %>
+<div class="w-full inline-flex justify-between items-start p-4 lg:px-6 lg:py-4 bg-gray-900 border-b-8 border-blue-500">
+  <div class="text-sm font-medium text-white">
+    <div class="flex items-center">
+      <%= link_to(projects_path, class: 'text-gray-500') do %>
+        <%= t('.projects') %>
+      <% end %> <svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd"
+          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+          clip-rule="evenodd" />
+      </svg>
+      <span class="">
+        <%= @project.title %>
+      </span>
+    </div>
+    <h1 class="flex flex-wrap items-center text-3xl font-extrabold md:font-bold mt-3 lg:mt-1">
+      <%= @project.title %> - <div class="flex items-center">#<%= @project.id %> <span class="ml-2 -mt-2"><%= project_tag(@project.status) %></span></div>
     </h1>
   </div>
   <div class="flex flex-col-reverse md:flex-row">
@@ -9,12 +21,11 @@
       <div class="flex items-start justify-end">
         <%= link_to(new_project_task_path(@project),
         class: 'btn btn-green normal-case rounded-l rounded-r-none
-                text-white text-sm h-10 mt-2 md:mt-0') do %>
+                text-white text-sm md:text-base mt-3 md:mt-0 h-8 md:h-auto') do %>
           <%= t('.time_log') %>
         <% end %>
-        <div @click="open = !open"
-          class="bg-green-800 hover:bg-green-900 h-10 rounded-r flex justify-end items-center mt-2 md:mt-0">
-          <svg class="h-8 w-5 mx-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+        <div @click="open = !open" class="bg-green-800 hover:bg-green-900 border border-green-800 hover:border-green-900 rounded-r h-8 md:h-10 flex justify-end items-center mt-3 md:mt-0">
+          <svg class="h-5 w-5 mx-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"
               d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
               clip-rule="evenodd" />
@@ -36,18 +47,15 @@
       <div class="flex items-start justify-end">
         <%= link_to(edit_customer_project_path(@project.customer, @project),
         class: 'btn btn-blue normal-case rounded-l rounded-r-none
-        text-white text-sm h-10 md:ml-2') do %>
+        text-white text-sm md:text-base md:ml-4 h-8 md:h-auto') do %>
           <%= t('.edit_project') %>
         <% end %>
-        <div @click="open = !open"
-          class="bg-blue-800 hover:bg-blue-900 h-10 rounded-r flex justify-end items-center">
-          <div class="py-2">
-            <svg class="h-5 w-5 mx-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd"
+        <div @click="open = !open" class="bg-blue-800 hover:bg-blue-900 border border-blue-800 hover:border-blue-900 rounded-r h-8 md:h-10 flex justify-end items-center">
+          <svg class="h-8 w-5 mx-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
               d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
               clip-rule="evenodd" />
-            </svg>
-          </div>
+          </svg>
           <div x-show="open" class="absolute mt-16 w-32 rounded">
             <div class="rounded bg-white border border-gray-400">
               <%= link_to(projects_path, class: 'block px-2 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>

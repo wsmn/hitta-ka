@@ -1,122 +1,122 @@
 <div x-data="{ tab: 'projects' }" class="col-span-2 xl:col-span-1 flex items-start">
   <div class="w-full bg-white border border-gray-500 sm:rounded">
-  <div class="border-b px-6">
-    <div class="flex justify-between -mb-px">
-      <div class="text-blue-600 py-4 text-lg">
-        <%= t('.statistics') %>
-      </div>
-      <div class="hidden md:flex">
-        <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'projects' }" @click="tab = 'projects'"
+    <div class="border-b px-6">
+      <div class="flex justify-between -mb-px">
+        <div class="text-blue-600 py-4 text-lg">
+          <%= t('.statistics') %>
+        </div>
+        <div class="hidden md:flex">
+          <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'projects' }" @click="tab = 'projects'"
           class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-6 focus:outline-none">
-          <%= t('.projects') %>
-        </button>
-        <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'time_logs' }" @click="tab = 'time_logs'"
+            <%= t('.projects') %>
+          </button>
+          <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'time_logs' }" @click="tab = 'time_logs'"
           class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-6 focus:outline-none">
-          <%= t('.time_logs') %>
-        </button>
-        <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'invoices' }" @click="tab = 'invoices'"
+            <%= t('.time_logs') %>
+          </button>
+          <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'invoices' }" @click="tab = 'invoices'"
           class="appearance-none py-4 text-gray-700 hover:text-blue-400 focus:outline-none">
-          <%= t('.invoices') %>
-        </button>
+            <%= t('.invoices') %>
+          </button>
+        </div>
+      </div>
+    </div>
+    <%= render("stats_mobile") %>
+    <div x-show="tab === 'projects'" class="hidden md:flex">
+      <div class="w-1/3 text-center py-8">
+        <div class="border-r">
+          <div class="text-gray-900 mb-2">
+            <span class="text-5xl"><%= @counts[:active] %></span>
+          </div>
+          <div class="text-sm uppercase text-gray tracking-wide">
+            <%= t('.active') %>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/3 text-center py-8">
+        <div class="border-r">
+          <div class="text-gray-900 mb-2">
+            <span class="text-5xl"><%= @counts[:archived] %></span>
+          </div>
+          <div class="text-sm uppercase text-gray tracking-wide">
+            <%= t('.archived') %>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/3 text-center py-8">
+        <div>
+          <div class="text-gray-900 mb-2">
+            <span class="text-5xl"><%= @counts[:total] %></span>
+          </div>
+          <div class="text-sm uppercase text-gray tracking-wide">
+            <%= t('.total') %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div x-show="tab === 'time_logs'" class="hidden md:flex">
+      <div class="w-1/3 text-center py-8">
+        <div class="border-r">
+          <div class="text-gray-900 mb-2">
+            <span class="text-5xl">57</span>
+          </div>
+          <div class="text-sm uppercase text-gray tracking-wide">
+            <%= t('.created') %>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/3 text-center py-8">
+        <div class="border-r">
+          <div class="text-gray-900 mb-2">
+            <span class="text-5xl">125</span>
+          </div>
+          <div class="text-sm uppercase text-gray tracking-wide">
+            <%= t('.hours') %>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/3 text-center py-8">
+        <div>
+          <div class="text-gray-900 mb-2">
+            <span class="text-5xl"><%= @counts[:total] %></span>
+          </div>
+          <div class="text-sm uppercase text-gray tracking-wide">
+            <%= t('.total') %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div x-show="tab === 'invoices'" class="hidden md:flex">
+      <div class="w-1/3 text-center py-8">
+        <div class="border-r">
+          <div class="text-gray-900 mb-2">
+            <span class="text-5xl">17</span>
+          </div>
+          <div class="text-sm uppercase text-gray tracking-wide">
+            <%= t('.sent') %>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/3 text-center py-8">
+        <div class="border-r">
+          <div class="text-gray-900 mb-2">
+            <span class="text-4xl">32.000,00 kr (3)</span>
+          </div>
+          <div class="text-sm uppercase text-gray tracking-wide">
+            <%= t('.unpaid') %>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/3 text-center py-8">
+        <div>
+          <div class="text-gray-900 mb-2">
+            <span class="text-4xl">112.000,00 kr</span>
+          </div>
+          <div class="text-sm uppercase text-gray tracking-wide">
+            <%= t('.total_income') %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <%= render("stats_mobile") %>
-  <div x-show="tab === 'projects'" class="hidden md:flex">
-    <div class="w-1/3 text-center py-8">
-      <div class="border-r">
-        <div class="text-gray-900 mb-2">
-          <span class="text-5xl"><%= @counts[:active] %></span>
-        </div>
-        <div class="text-sm uppercase text-gray tracking-wide">
-          <%= t('.active') %>
-        </div>
-      </div>
-    </div>
-    <div class="w-1/3 text-center py-8">
-      <div class="border-r">
-        <div class="text-gray-900 mb-2">
-          <span class="text-5xl"><%= @counts[:archived] %></span>
-        </div>
-        <div class="text-sm uppercase text-gray tracking-wide">
-          <%= t('.archived') %>
-        </div>
-      </div>
-    </div>
-    <div class="w-1/3 text-center py-8">
-      <div>
-        <div class="text-gray-900 mb-2">
-          <span class="text-5xl"><%= @counts[:total] %></span>
-        </div>
-        <div class="text-sm uppercase text-gray tracking-wide">
-          <%= t('.total') %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div x-show="tab === 'time_logs'" class="hidden md:flex">
-    <div class="w-1/3 text-center py-8">
-      <div class="border-r">
-        <div class="text-gray-900 mb-2">
-          <span class="text-5xl">57</span>
-        </div>
-        <div class="text-sm uppercase text-gray tracking-wide">
-          <%= t('.created') %>
-        </div>
-      </div>
-    </div>
-    <div class="w-1/3 text-center py-8">
-      <div class="border-r">
-        <div class="text-gray-900 mb-2">
-          <span class="text-5xl">125</span>
-        </div>
-        <div class="text-sm uppercase text-gray tracking-wide">
-          <%= t('.hours') %>
-        </div>
-      </div>
-    </div>
-    <div class="w-1/3 text-center py-8">
-      <div>
-        <div class="text-gray-900 mb-2">
-          <span class="text-5xl"><%= @counts[:total] %></span>
-        </div>
-        <div class="text-sm uppercase text-gray tracking-wide">
-          <%= t('.total') %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div x-show="tab === 'invoices'" class="hidden md:flex">
-    <div class="w-1/3 text-center py-8">
-      <div class="border-r">
-        <div class="text-gray-900 mb-2">
-          <span class="text-5xl">17</span>
-        </div>
-        <div class="text-sm uppercase text-gray tracking-wide">
-          <%= t('.sent') %>
-        </div>
-      </div>
-    </div>
-    <div class="w-1/3 text-center py-8">
-      <div class="border-r">
-        <div class="text-gray-900 mb-2">
-          <span class="text-4xl">32.000,00 kr (3)</span>
-        </div>
-        <div class="text-sm uppercase text-gray tracking-wide">
-          <%= t('.unpaid') %>
-        </div>
-      </div>
-    </div>
-    <div class="w-1/3 text-center py-8">
-      <div>
-        <div class="text-gray-900 mb-2">
-          <span class="text-4xl">112.000,00 kr</span>
-        </div>
-        <div class="text-sm uppercase text-gray tracking-wide">
-          <%= t('.total_income') %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
