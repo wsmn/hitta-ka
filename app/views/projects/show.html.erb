@@ -1,8 +1,8 @@
 <% content_for(:sidebar) do %>
-<%= render('application/account_menu', current: :projects) %>
+  <%= render('application/account_menu', current: :projects) %>
 <% end %>
 <% content_for(:header_title) do %>
-<%= t('.title') %>
+  <%= t('.title') %>
 <% end %>
 <div class="w-full bg-white">
   <%= render('show_heading') %>
@@ -91,7 +91,6 @@
             </div>
           </div>
         </div>
-
       </div>
       <div class="hidden lg:block lg:w-1/2 xl:w-1/4 max-w-xs px-2 mt-0">
         <%= render(@project.customer) %>
