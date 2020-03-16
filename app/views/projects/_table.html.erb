@@ -25,13 +25,27 @@
 </div>
 <div class="px-4 pb-4 lg:px-0 mt-4 lg:mt-2">
   <%= render('search_field') %>
-  <div class="bg-white border border-gray-300 shadow-md">
-    <div class="w-full h-16 border-b border-gray-400 px-4 flex items-center">
-      <%= project_status_button(:active, params[:status], object: customer) %>
-      <%= project_status_button(:archived, params[:status], object: customer) %>
-      <%= project_status_button(:all, params[:status], object: customer) %>
+  <div class="bg-white border border-gray-400 shadow-md">
+    <div class="w-full flex justify-between items-center h-16 border-b border-gray-400 px-4">
+      <div class="flex">
+        <%= project_status_button(:active, params[:status], object: customer) %>
+        <%= project_status_button(:archived, params[:status], object: customer) %>
+        <%= project_status_button(:all, params[:status], object: customer) %>
+      </div>
+      <div>
+        <div class="relative flex text-gray-600">
+          <select class="form-input text-sm bg-white pr-8 text-gray-900">
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
+            <%= render('application/icons/arrow_down') %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="w-full mb-6">
+    <div class="w-full">
       <div class="border-b-2 bg-gray-200 rounded-t">
         <div class="w-full flex py-4">
           <div class="w-20 md:w-24 flex inline-block justify-center">

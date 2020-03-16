@@ -4,7 +4,7 @@
 <% content_for(:header_title) do %>
   <%= t('.title') %>
 <% end %>
-<div class="w-full lg:p-6">
+<div class="w-full lg:p-3 xl:p-6">
   <%= render("heading") %>
   <%= render("table", projects: @projects, filtered: params[:status].present?) %>
 </div>

@@ -21,7 +21,7 @@
           <%= t('application.header.night_mode') %>
         </div>
         <div x-data="{ night_mode: false }">
-          <button @click="night_mode = !night_mode" @click="night_mode = true" class="rounded-full bg-gray-400 w-10 h-5 flex items-center" :class="{'bg-indigo-500': night_mode}">
+          <button @click="night_mode = !night_mode" @click="night_mode = true" class="rounded-full bg-gray-400 w-10 h-5 flex items-center focus:outline-none" :class="{'bg-indigo-500': night_mode}">
             <div class="rounded-full h-3 w-3 bg-white m-1" :class="{'ml-6': night_mode}">
             </div>
           </button>

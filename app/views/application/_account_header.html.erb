@@ -8,7 +8,7 @@
       </div>
     </div>
     <div
-      class="flex flex-1 bg-gray-900 lg:bg-gray-900 items-center justify-between bg-white px-2 lg:px-6 border-b border-gray-700">
+      class="flex flex-1 bg-gray-900 lg:bg-gray-900 items-center justify-between bg-white px-2 lg:px-3 xl:px-6 border-b border-gray-700">
       <div class="lg:hidden">
         <%= link_to(root_path) do %>
           <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 3.5rem", class: "") %>
@@ -40,7 +40,7 @@
               </div>
               <span class="hidden lg:inline ml-2 mr-2 text-sm font-semibold">
                 <%= current_user.name %>
-                <p class="text-xs text-gray-400 flex justify-start"><%= @organisation %></p>
+                <p class="text-xs text-gray-400 flex justify-start"><%= current_user.organisations.first %></p>
               </span>
               <svg class="h-5 w-5 -mt-4 transform" viewBox="0 0 20 20" fill="currentColor" :class="{'rotate-180': open}">
                 <path fill-rule="evenodd"
