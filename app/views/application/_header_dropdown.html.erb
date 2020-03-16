@@ -1,4 +1,4 @@
-<div x-show="open" x-show="night_mode" class="absolute mt-2 rounded"
+<div x-show="open" x-show="night_mode" class="absolute z-50 mt-2 rounded"
   x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95"
   x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
   x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
@@ -42,11 +42,11 @@
       </div>
     <% end %>
     <%= link_to(sign_out_path, method: 'delete', class: "block px-2 py-3 text-sm text-gray-800 hover:bg-red-100 hover:text-red-700 rounded flex items-center -mx-2 mt-1") do %>
-    <svg class="h-4 w-4 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      <svg class="h-4 w-4 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
         d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-    </svg>
-    <%= t('application.header.sign_out') %>
+      </svg>
+      <%= t('application.header.sign_out') %>
     <% end %>
   </div>
 </div>
