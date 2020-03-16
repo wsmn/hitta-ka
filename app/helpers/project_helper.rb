@@ -36,11 +36,11 @@ module ProjectHelper
   def project_status_button(status, current, object: :projects)
     current ||= :all
     object ||= :projects
-    css = "border py-1 px-3 rounded mr-2"
+    css = "w-20 h-16 px-3 mr-2 -mb-px flex justify-center items-center"
     css = if status == current.to_sym
-      "#{css} bg-blue-600 border-blue-600 hover:bg-blue-500 hover:border-blue-500 text-white"
+      "#{css} border-b-2 border-blue-600 text-blue-600 font-semibold"
     else
-      "#{css} bg-gray-600 border-gray-600 hover:bg-gray-500 hover:border-gray-500 text-gray"
+      "#{css} text-gray-700 hover:font-semibold hover:text-blue-500"
     end
     if status == :all
       path = polymorphic_path(object)

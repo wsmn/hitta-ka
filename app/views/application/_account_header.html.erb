@@ -40,7 +40,7 @@
               </div>
               <span class="hidden lg:inline ml-2 mr-2 text-sm font-semibold">
                 <%= current_user.name %>
-                <p class="text-xs text-gray-400 flex justify-start"><%= t('.current_org') %></p>
+                <p class="text-xs text-gray-400 flex justify-start"><%= @organisation %></p>
               </span>
               <svg class="h-5 w-5 -mt-4 transform" viewBox="0 0 20 20" fill="currentColor" :class="{'rotate-180': open}">
                 <path fill-rule="evenodd"
