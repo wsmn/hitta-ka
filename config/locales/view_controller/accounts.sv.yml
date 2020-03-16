@@ -32,13 +32,14 @@ sv:
       save: Spara
     account_settings:
       account_settings: Kontoinställningar
+      change_password: Ändra lösenord
+      confirm_password: Upprepa lösenord
+      current_password: Nuvarande lösenord
+      email: E-mail
       first_name: Förnamn
       last_name: Efternamn
-      email: E-mail
-      change_password: Ändra lösenord
-      current_password: Nuvarande lösenord
       new_password: Nytt lösenord
-      confirm_password: Upprepa lösenord
+      save: Spara
     company_settings:
       company_settings: Företagsinställningar
       name: Namn
@@ -54,3 +55,8 @@ sv:
       logotype: Logotyp
       logo: Logo
       upload: Ladda upp
+    update:
+      invalid_password: Det nya lösenorder är inte giltligt
+      password_updated: Lösenordet uppdaterades
+      user_updated: Uppgifter uppdaterades
+      wrong_current_password: Felaktigt lösenord

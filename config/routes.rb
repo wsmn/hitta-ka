@@ -18,8 +18,9 @@ Rails.application.routes.draw do
                     path: "sign-out")
   get(:sign_up, controller: "clearance/users", action: :new, path: "sign-up")
 
-  get(:account, controller: :accounts, action: :show)
-  get(:settings, controller: :accounts, action: :settings)
+  resource(:account, only: %i[show update]) do
+    get(:settings, controller: :accounts, action: :settings)
+  end
 
   resources(:customers) do
     resources(:projects, only: %i[new create update destroy edit show], controller: :customer_projects)

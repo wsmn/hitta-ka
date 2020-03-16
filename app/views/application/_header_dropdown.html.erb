@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <%= link_to(settings_path, class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded flex items-center justify-between -mx-2 mt-1') do %>
+    <%= link_to(settings_account_path, class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded flex items-center justify-between -mx-2 mt-1') do %>
       <div class="flex items-center">
         <svg class="h-4 w-4 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -42,11 +42,11 @@
       </div>
     <% end %>
     <%= link_to(sign_out_path, method: 'delete', class: "block px-2 py-3 text-sm text-gray-800 hover:bg-red-100 hover:text-red-700 rounded flex items-center -mx-2 mt-1") do %>
-    <svg class="h-4 w-4 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      <svg class="h-4 w-4 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
         d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-    </svg>
-    <%= t('application.header.sign_out') %>
+      </svg>
+      <%= t('application.header.sign_out') %>
     <% end %>
   </div>
 </div>
