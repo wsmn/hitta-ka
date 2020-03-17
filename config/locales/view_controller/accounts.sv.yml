@@ -1,5 +1,36 @@
 sv:
   accounts:
+    account_settings:
+      account_settings: Kontoinställningar
+      change_password: Ändra lösenord
+      confirm_password: Upprepa lösenord
+      current_password: Nuvarande lösenord
+      email: E-mail
+      first_name: Förnamn
+      last_name: Efternamn
+      new_password: Nytt lösenord
+      save: Spara
+    company_settings:
+      company_settings: Företagsinställningar
+      name: Namn
+      vat_number: Momsnr.
+      email: E-mail
+      website: Hemsida
+      phone: Telefon
+      address: Adress
+      street_&_nr: Väg & vägnr.
+      city: Stad
+      zip_code: Postnummer
+      country: Land
+      logotype: Logotyp
+      logo: Logo
+      upload: Ladda upp
+    invoices:
+      all_invoices: Alla fakturor
+      invoices: Fakturor
+      paid: Betalade
+      past_due: Försenade
+      upcoming: Kommande
     show:
       title: Hem
     stats:
@@ -30,31 +61,6 @@ sv:
       company: Företag
       cancel: Avbryt
       save: Spara
-    account_settings:
-      account_settings: Kontoinställningar
-      change_password: Ändra lösenord
-      confirm_password: Upprepa lösenord
-      current_password: Nuvarande lösenord
-      email: E-mail
-      first_name: Förnamn
-      last_name: Efternamn
-      new_password: Nytt lösenord
-      save: Spara
-    company_settings:
-      company_settings: Företagsinställningar
-      name: Namn
-      vat_number: Momsnr.
-      email: E-mail
-      website: Hemsida
-      phone: Telefon
-      address: Adress
-      street_&_nr: Väg & vägnr.
-      city: Stad
-      zip_code: Postnummer
-      country: Land
-      logotype: Logotyp
-      logo: Logo
-      upload: Ladda upp
     update:
       invalid_password: Det nya lösenorder är inte giltligt
       password_updated: Lösenordet uppdaterades

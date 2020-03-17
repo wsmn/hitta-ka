@@ -1,67 +1,44 @@
-<div class="flex items-center justify-between p-4 lg:px-0 lg:pt-0 lg:pb-6">
-  <div class="flex sm:flex-row flex-col">
-    <div class="flex flex-row mb-1 sm:mb-0">
-      <div class="relative">
-        <select
-          class="appearance-none h-full rounded border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-          <option>5</option>
-          <option>10</option>
-          <option>20</option>
-        </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-          <svg class="mr-1 h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clip-rule="evenodd" />
-          </svg>
-        </div>
+<div class="flex mb-4 shadow-md border border-gray-400 bg-white items-center lg:pr-4">
+  <div x-data="{ sort_by: false }" @click.away="sort_by = false" class="border-r border-gray-300 py-3 px-2 sm:px-4">
+    <button @click="sort_by = !sort_by" @click="open = true" :class="{'text-blue-600': sort_by}"
+      class="btn normal-case py-2 px-0 text-gray-900 hover:text-blue-600 flex items-center focus:outline-none">
+      <div class="mr-1">
+        <%= render('application/icons/filter') %>
       </div>
-      <div class="relative ml-2">
-        <select
-          class="appearance-none h-full rounded border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
-          <option><%= t('.all') %></option>
-          <option><%= t('.active') %></option>
-          <option><%= t('.archived') %></option>
-        </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-          <svg class="mr-1 h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clip-rule="evenodd" />
-          </svg>
-        </div>
+      <span class="text-sm mr-1">
+        <%= t('.sort_by_name') %>
+      </span>
+      <div class="transform" :class="{'rotate-180': sort_by}">
+        <%= render('application/icons/arrow_down') %>
       </div>
-      <div class="relative ml-2 hidden">
-        <select
-          class="appearance-none h-full rounded border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
-          <option>Type</option>
-          <option>Houses</option>
-          <option>Industry</option>
-          <option>Apartments</option>
-        </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-          <svg class="mr-1 h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clip-rule="evenodd" />
-          </svg>
-        </div>
+    </button>
+    <%= render('projects/sort_by') %>
+  </div>
+  <div x-data="{ date_filter: false }" @click.away="date_filter = false" class="border-r border-gray-300 py-3 px-4">
+    <button @click="date_filter = !date_filter" @click="open = true" :class="{'text-blue-600': date_filter}"
+      class="btn normal-case py-2 px-0 text-gray-900 hover:text-blue-600 flex items-center focus:outline-none">
+      <div class="mr-1">
+        <%= render('application/icons/calendar') %>
       </div>
-    </div>
-    <div class="relative w-64 sm:ml-2">
-      <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+      <span class="text-sm mr-1">
+        <%= t('.date') %>
+      </span>
+      <div class="transform" :class="{'rotate-180': date_filter}">
+        <%= render('application/icons/arrow_down') %>
+      </div>
+    </button>
+    <%= render('projects/date_filter') %>
+  </div>
+  <div class="px-4">
+    <div class="relative w-48 xl:w-64">
+      <span class="absolute inset-y-0 left-0 pl-2 flex items-center">
         <svg class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </span>
       <input placeholder="<%= t('.search') %>"
-        class="block pl-8 pr-4 py-2 w-full bg-white border border-gray-400 rounded text-sm placeholder-gray-500 text-white focus:bg-white focus:placeholder-gray-400 focus:text-gray-800 focus:outline-none focus:border-gray-500">
+        class="form-input block pl-8 pr-4 py-2 w-full bg-white border border-gray-400 rounded text-sm">
     </div>
-  </div>
-  <div class="flex items-start hidden lg:flex">
-    <%= link_to(new_customer_path, class: 'btn btn-green normal-case text-base') do %>
-      <%= t('.new_customer') %>
-    <% end %>
   </div>
 </div>

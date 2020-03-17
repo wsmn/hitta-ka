@@ -12,6 +12,7 @@ sv:
       active: Aktiva
       archived: Arkiverade
     table:
+      title: Kunder
       name: Namn
       latest_project: Senaste projektet
       active_projects: Aktiva projekt

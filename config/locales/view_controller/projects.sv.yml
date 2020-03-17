@@ -25,6 +25,8 @@ sv:
       new_project: Nytt projekt
       search: Sök
       status: Status
+      time_logs: Tidsloggar
+      created: Skapat
     show:
       title: Projekt
       tasks: Uppgifter

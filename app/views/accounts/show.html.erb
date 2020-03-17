@@ -4,7 +4,7 @@
 <% content_for(:header_title) do %>
   <%= t('.title') %>
 <% end %>
-<div class="w-full flex-grow grid grid-cols-2 gap-4 p-2 sm:p-4 lg:p-6">
+<div class="w-full flex-grow grid grid-cols-2 gap-4 p-2 sm:p-3 xl:p-6">
   <%= render("welcome_card") %>
   <%= render("projects", projects: @projects) %>
   <%= render("tasks") %>
