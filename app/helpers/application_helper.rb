@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  include Pagy::Frontend
   def nav_active?(actions)
     name = "#{controller_name}##{action_name}"
     actions.include?(name)

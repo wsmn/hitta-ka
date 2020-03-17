@@ -13,6 +13,7 @@ gem "clearance" # Authentication
 gem "font-awesome-sass"
 gem "geocoder"
 gem "mini_magick"
+gem "pagy"
 gem "pg"
 gem "puma", "> 4.3.2"
 gem "rack-attack"

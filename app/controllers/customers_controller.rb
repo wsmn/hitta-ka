@@ -1,8 +1,9 @@
 class CustomersController < ApplicationController
+  include Pagy::Backend
   before_action(:require_login)
 
   def index
-    @customers = current_user.customers.includes(:projects)
+    @pagy, @customers = pagy(current_user.customers.includes(:projects))
   end
 
   def new
