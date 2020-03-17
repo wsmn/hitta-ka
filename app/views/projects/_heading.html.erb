@@ -9,3 +9,23 @@
     <% end %>
   </div>
 </div>
+<div class="w-full lg:mb-2 flex justify-start lg:justify-between items-center">
+  <div class="hidden lg:flex">
+    <h2 class="text-gray-900 text-2xl xl:text-3xl font-semibold leading-none">
+      <% if params[:status].present? %>
+        <%= t("model.project.status.#{params[:status]}") %>
+        <span class="lowercase"><%= t('.title') %></span>
+      <% else %>
+        <%= t('.all_projects') %>
+      <% end %>
+    </h2>
+  </div>
+  <div class="flex items-start hidden lg:flex ml-2">
+    <%= link_to(new_project_path, class: 'btn btn-blue py-2 normal-case text-base') do %>
+      <svg class="h-4 w-4 text-white -ml-1 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4" />
+      </svg>
+      <%= t('.new_project') %>
+    <% end %>
+  </div>
+</div>
