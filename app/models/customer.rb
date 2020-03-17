@@ -5,7 +5,7 @@ class Customer < ApplicationRecord
 
   validates(:name, presence: true)
   store_accessor(:address, :street, :city, :state, :zip_code)
-  store_accessor(:contact_information, :email, :phone, :web)
+  store_accessor(:contact_information, :email, :phone)
 
   def to_s
     "(##{id}) #{name}"
