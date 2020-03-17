@@ -27,7 +27,7 @@
               <div x-data="{open: false}" class="drop-down-parent h-10 rounded flex items-center justify-center">
                 <% if signed_in? %>
                   <div class="bg-gray-700 h-10 flex items-center px-2 rounded">
-                    <button @click="open = !open" class="w-full md:w-auto md:flex text-right">
+                    <a @click="open = !open" class="w-full md:w-auto md:flex text-right">
                       <div>
                         <%= image_tag('profile_pic.svg', class:"inline-block h-6 w-6 border border-blue-600 rounded-full")%>
                       </div>
@@ -39,7 +39,7 @@
                           </svg>
                         </div>
                       </div>
-                    </button>
+                    </a>
                   </div>
                   <div x-show="open" @click.away="open = false" class="drop-down absolute z-10">
                     <div class="bg-white rounded px-6 py-4 mt-6 flex-wrap justify-center account-arrow">
