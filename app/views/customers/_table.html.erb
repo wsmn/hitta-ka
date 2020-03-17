@@ -1,45 +1,16 @@
-<div class="flex">
-  <div class="w-full lg:mb-2 flex justify-start lg:justify-between items-center">
-    <div class="hidden lg:flex">
-      <h2 class="text-gray-900 text-2xl xl:text-3xl font-semibold leading-none">
-        <%= t('.title') %>
-      </h2>
-    </div>
-    <div class="flex items-start hidden lg:flex ml-2">
-      <%= link_to(new_customer_path, class: 'btn btn-green py-2 normal-case text-base') do %>
-        <svg class="h-4 w-4 text-white -ml-1 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4" />
-        </svg>
-        <%= t('.new_customer') %>
-      <% end %>
-    </div>
-  </div>
-</div>
 <div class="px-4 pb-4 lg:px-0 mt-4 lg:mt-2">
   <%= render('search_field') %>
   <div class="bg-white border border-gray-400 shadow-md">
     <div class="w-full flex justify-between items-center h-16 border-b border-gray-400 px-4">
       <div class="flex">
         <div class="w-20 h-16 px-3 mr-2 -mb-px flex justify-center items-center border-b-2 border-green-600 text-green-600 font-semibold">
-          Aktiva
+          <%= t('.active') %>
         </div>
         <div class="w-20 h-16 px-3 mr-2 -mb-px flex justify-center items-center text-gray-700 hover:font-semibold hover:text-green-500">
-          Arkiverade
+          <%= t('.archived') %>
         </div>
         <div class="w-20 h-16 px-3 mr-2 -mb-px flex justify-center items-center text-gray-700 hover:font-semibold hover:text-green-500">
-          Alla
-        </div>
-      </div>
-      <div>
-        <div class="relative flex text-gray-600">
-          <select class="form-input text-sm bg-white pr-8 text-gray-900">
-            <option>5</option>
-            <option>10</option>
-            <option>20</option>
-          </select>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
-            <%= render('application/icons/arrow_down') %>
-          </div>
+          <%= t('.all') %>
         </div>
       </div>
     </div>
@@ -80,20 +51,15 @@
         </div>
       </div>
       <% if (@customers.empty?) %>
-      <%= render('empty') %>
-    <% else %>
-      <% @customers.each_with_index do |customer, idx| %>
-        <%= render("row", customer: customer, odd: idx % 2 == 0) %>
+        <%= render('empty') %>
+      <% else %>
+        <% @customers.each_with_index do |customer, idx| %>
+          <%= render("row", customer: customer, odd: idx % 2 == 0) %>
+        <% end %>
       <% end %>
-    <% end %>
       <div class="px-3 bg-white flex flex-col xs:flex-row items-end justify-center">
-        <div class="px-2 align-middle inline-flex flex items-center">
-          <span class="inline-flex tracking-widest font-semibold py-4 text-blue-900">
-            1 2 3 4 5 6 7 8
-          </span>
-          <button class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-1 px-4 rounded ml-2">
-            Next
-          </button>
+        <div class="px-2 align-middle inline-flex flex items-center py-4">
+          <%= render partial: 'pagy/nav', locals: {pagy: @pagy} %>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  include Pagy::Backend
   before_action(:require_login)
 
   # Without customer_id
@@ -7,6 +8,8 @@ class ProjectsController < ApplicationController
     if params[:status]
       @projects = @projects.where(status: params[:status])
     end
+
+    @pagy, @projects = pagy(@projects)
   end
 
   def new
