@@ -8,7 +8,7 @@
 <% link = pagy_link_proc(pagy) -%>
 <nav aria-label="pager" class="pagy_nav pagination" role="navigation">
   <% if pagy.prev -%>
-    <%== link.call(pagy.prev, t('.prev'), 'aria-label="next" class="text-sm bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg ml-2"') %>
+    <%== link.call(pagy.prev, t('.prev'), 'aria-label="next" class="text-sm bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-1 rounded-lg ml-2"') %>
   <% end -%>
   <% pagy.series.each do |item| # series example: [1, :gap, 7, 8, "9", 10, 11, :gap, 36] -%>
   <% if item.is_a?(Integer) -%>

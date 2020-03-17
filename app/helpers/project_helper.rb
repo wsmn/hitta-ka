@@ -38,9 +38,9 @@ module ProjectHelper
     object ||= :projects
     css = "w-20 h-16 px-3 mr-2 -mb-px flex justify-center items-center"
     css = if status == current.to_sym
-      "#{css} border-b-2 border-blue-600 text-blue-600 font-semibold"
+      "#{css} border-b-2 border-blue-600 text-blue-600 font-medium"
     else
-      "#{css} text-gray-700 hover:font-semibold hover:text-blue-500"
+      "#{css} text-gray-800 hover:text-blue-500"
     end
     if status == :all
       path = polymorphic_path(object)

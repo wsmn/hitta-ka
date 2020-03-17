@@ -13,6 +13,23 @@ sv:
       archived: Arkiverade
       search: Sök
       new_project: Nytt projekt
+      sort_by: Sortera på
+      name: Namn
+      date: Datum
+    sort_by:
+      name: Namn
+      date: Datum
+      status: Status
+      latest: Senaste
+      customer_name: Kundnamn
+      project_name: Projektnamn
+    date_filter:
+      from: Från
+      to: Till
+      today: Idag
+      last_week: Senaste veckan
+      last_month: Senaste månaden
+      last_year: Senaste året
     table:
       title: Projekt
       all_projects: Alla projekt

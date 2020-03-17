@@ -2,12 +2,12 @@
   <div class="flex mb-4 shadow-md border border-gray-400 bg-white items-center lg:pr-4">
     <div x-data="{ sort_by: false }" @click.away="sort_by = false" class="border-r border-gray-300 py-3 px-2 sm:px-4">
       <button @click="sort_by = !sort_by" @click="open = true" :class="{'text-green-600': sort_by}"
-        class="btn normal-case py-2 px-0 text-gray-900 hover:text-green-600 flex items-center focus:outline-none">
+        class="btn normal-case py-2 px-0 text-gray-800 hover:text-green-600 flex items-center focus:outline-none">
         <div class="mr-1">
           <%= render('application/icons/filter') %>
         </div>
         <span class="text-sm mr-1">
-          <%= t('.sort_by_name') %>
+          <%= t('.sort_by') %>: <%= t('.name') %>
         </span>
         <div class="transform" :class="{'rotate-180': sort_by}">
           <%= render('application/icons/arrow_down') %>

@@ -4,12 +4,17 @@ sv:
       all_customers: Alla kunder
       new_customer: Ny kund
       title: Kunder
-    search_field:
+    heading:
+      title: Kunder
       new_customer: Ny kund
+    search_field:
       search: Sök
-      all: Alla
-      active: Aktiva
-      archived: Arkiverade
+      sort_by: Sortera på
+      name: Namn
+    sort_by:
+      latest: Senaste
+      customer_name: Kundnamn
+      project_name: Projektnamn
     table:
       title: Kunder
       name: Namn
