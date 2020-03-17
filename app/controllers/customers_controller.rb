@@ -31,6 +31,8 @@ class CustomersController < ApplicationController
     if params[:status]
       @projects = @projects.where(status: params[:status])
     end
+
+    @pagy, @projects = pagy(@projects)
   end
 
   def update
