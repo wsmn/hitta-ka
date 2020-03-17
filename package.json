@@ -8,6 +8,7 @@
     "axios": "^0.19.0",
     "core-js": "^3",
     "esm": "^3.1.0",
+    "flatpickr": "^4.6.3",
     "lodash.template": "^4.5.0",
     "mapbox-gl": "^1.1.0",
     "moment": "^2.24.0",

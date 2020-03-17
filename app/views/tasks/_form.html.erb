@@ -52,7 +52,7 @@
                       </svg>
                     </div>
                     <%= form.date_field(:date, step: 0.25, id: 'date',
-                          class: "form-input rounded-l-none mt-2") %>
+                          class: "form-input rounded-l-none mt-2 date-picker") %>
                   </div>
                 </div>
               </div>
@@ -80,7 +80,7 @@
         <div class="w-full flex border-t border-gray-400 p-4 mt-2">
           <div class="w-full flex justify-end items-center">
             <div class="w-20 mr-2">
-              <%= link_to(t('.cancel'), projects_path, class: "w-full text-red-500 uppercase font-bold text-sm hover:text-red-300") %>
+              <%= link_to(t('.cancel'), customer_project_path(project.customer, project), class: "w-full text-red-500 uppercase font-bold text-sm hover:text-red-300") %>
             </div>
             <div class="w-30">
               <%= form.submit(class: "py-2 px-2 w-full uppercase no-underline

@@ -2,10 +2,12 @@ import "styles/application";
 import "alpinejs";
 import "forms";
 
+
 import axios from "axios";
 import Vue from "vue/dist/vue.esm";
 import PortalVue  from "portal-vue";
 import TurbolinksAdapter from "vue-turbolinks";
+import flatpickr from "flatpickr";
 
 import CompanyInfo from "../components/company_info.vue";
 import CompanyList from "../components/company_list.vue";
@@ -42,4 +44,11 @@ document.addEventListener("turbolinks:load", () => {
       el: el,
     });
   }
+});
+
+document.addEventListener('turbolinks:load', () => {
+  flatpickr('.date-picker', {
+  });
+});
+document.addEventListener('turbolinks:before-cache', () => {
 });

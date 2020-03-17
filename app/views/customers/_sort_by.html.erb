@@ -1,0 +1,25 @@
+<div x-show="sort_by" class="absolute z-50 mt-2 rounded" x-transition:enter="transition ease-out duration-100"
+  x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
+  x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
+  x-transition:leave-end="transform opacity-0 scale-95">
+  <div class="rounded bg-white border border-gray-400 w-40 p-3">
+    <div class="w-full flex flex-wrap items-center">
+      <button
+        class="w-full btn normal-case border border-gray-300 text-center flex items-center justify-center bg-green-500 text-white hover:border-transparent py-1">
+        <span class="">Latest</span>
+      </button>
+      <button
+      class="w-full btn normal-case border border-gray-300 mt-4 text-center flex items-center justify-center text-gray-900 hover:bg-green-500 hover:text-white hover:border-transparent py-1">
+        <span class="">Customer name</span>
+      </button>
+      <button
+        class="w-full btn normal-case border border-gray-300 mt-4 text-center flex items-center justify-center text-gray-900 hover:bg-green-500 hover:text-white hover:border-transparent py-1">
+        <span class="">Project name</span>
+      </button>
+      <button
+        class="w-full btn normal-case border border-gray-300 mt-4 text-center flex items-center justify-center text-gray-900 hover:bg-green-500 hover:text-white hover:border-transparent py-1">
+        <span class="">Unpaid</span>
+      </button>
+    </div>
+  </div>
+</div>
