@@ -3,6 +3,7 @@
   x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
   x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
   <div class="rounded bg-white border border-gray-500 w-48 p-3">
+    <%= link_to(account_path) do %>
     <div class="w-full flex">
       <div class="h-10 w-10 rounded bg-indigo-700 flex items-center justify-center text-white font-bold uppercase">
         <%= current_user.initials %>
@@ -12,6 +13,7 @@
         <p class="text-xs text-gray-700 flex justify-start"><%= current_user.organisations.first %></p>
       </span>
     </div>
+    <% end %>
     <div class="border-b border-gray-300 py-2">
       <div class="block py-2 text-sm text-gray-800 flex items-center justify-between mt-2">
         <div class="flex items-center">
