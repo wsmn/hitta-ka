@@ -1,8 +1,8 @@
 <% content_for(:sidebar) do %>
-<%= render('application/account_menu', current: :settings) %>
+  <%= render('application/account_menu', current: :settings) %>
 <% end %>
 <% content_for(:header_title) do %>
-<%= t('.title') %>
+  <%= t('.title') %>
 <% end %>
 <div x-data="{ upload_modal: false }" class="w-full overflow-y-auto p-2 sm:p-3 xl:p-6">
   <h1 class="text-3xl font-bold text-gray-900 lg:hidden"><%= t('.title') %></h1>
