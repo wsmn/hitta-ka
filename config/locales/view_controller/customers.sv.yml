@@ -32,7 +32,7 @@ sv:
       mail: Email
     show:
       title: Kund
-      delete_confirm: Vill du verkligen radera kunden? När du raderar en kund tas även alla projekt och fakturer bort. Går ej att ångra.
+      delete_confirm: Vill du verkligen radera kunden? När du raderar en kund tas även alla projekt och fakturor bort. Går ej att ångra.
       projects: Projekt
       tasks: Uppgifter
       invoices: Fakturor
@@ -43,7 +43,7 @@ sv:
       edit_customer: Redigera kund
       archive: Arkivera
       delete_customer: Radera kund
-      delete_confirm: Vill du verkligen radera kunden? När du raderar en kund tas även alla projekt och fakturer bort. Går ej att ångra.
+      delete_confirm: Vill du verkligen radera kunden? När du raderar en kund tas även alla projekt och fakturor bort. Går ej att ångra.
       projects: Projekt
     show_search_field:
       all: Alla

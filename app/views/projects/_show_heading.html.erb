@@ -1,4 +1,4 @@
-<div class="w-full inline-flex justify-between items-start p-4 lg:px-6 lg:py-4 bg-gray-900 border-b-8 border-blue-500">
+<div class="w-full inline-flex justify-between items-start p-3 xl:px-6 xl:py-4 bg-gray-900 border-b-8 border-blue-500">
   <div class="text-sm font-medium text-white">
     <div class="flex items-center">
       <%= link_to(projects_path, class: 'text-gray-500') do %>
@@ -13,7 +13,7 @@
       </span>
     </div>
     <h1 class="flex flex-wrap items-center text-3xl font-extrabold md:font-bold mt-3 lg:mt-1">
-      <%= @project.title %> - 
+      <%= @project.title %> -
       <div class="flex items-center">#<%= @project.id %> <span class="ml-2 -mt-2"><%= project_tag(@project.status) %></span></div>
     </h1>
   </div>
