@@ -13,4 +13,9 @@ module RequestMacro
     post(session_path, params: attributes)
     follow_redirect!
   end
+
+  def user_organisation
+    organisation_user = create(:organisation_user)
+    [organisation_user.user, organisation_user.organisation]
+  end
 end
