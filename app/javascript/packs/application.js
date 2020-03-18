@@ -8,6 +8,7 @@ import Vue from "vue/dist/vue.esm";
 import PortalVue  from "portal-vue";
 import TurbolinksAdapter from "vue-turbolinks";
 import flatpickr from "flatpickr";
+require("flatpickr/dist/flatpickr.css")
 
 import CompanyInfo from "../components/company_info.vue";
 import CompanyList from "../components/company_list.vue";
