@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :project do
-    customer { nil }
-    title { "MyString" }
+    customer
+    title
+    status { Project.statuses.keys.sample }
   end
 end
