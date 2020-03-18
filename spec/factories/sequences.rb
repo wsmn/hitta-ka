@@ -7,6 +7,7 @@ FactoryBot.define do
   sequence(:description) { |n| "A long description #{n}" }
   sequence(:address) { |n| "#{road} #{n}, #{zipcode}" }
   sequence(:email) { |n| "person#{n}@example.com" }
+  sequence(:invoice_nbr) { |n| "%05d" % n }
   sequence(:image_file) { |_| Rack::Test::UploadedFile.new(File.open("spec/support/image.jpg")) }
   sequence(:pdf_file) { |_| Rack::Test::UploadedFile.new(File.open("spec/support/file.pdf")) }
 
