@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_29_172247) do
+ActiveRecord::Schema.define(version: 2020_03_18_143319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -76,6 +76,17 @@ ActiveRecord::Schema.define(version: 2020_02_29_172247) do
     t.index ["organisation_id"], name: "index_customers_on_organisation_id"
   end
 
+  create_table "invoices", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.date "invoice_date", default: -> { "CURRENT_DATE" }, null: false
+    t.date "due_date"
+    t.string "invoice_nbr"
+    t.integer "status", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_invoices_on_customer_id"
+  end
+
   create_table "organisation_users", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "organisation_id", null: false
@@ -109,6 +120,8 @@ ActiveRecord::Schema.define(version: 2020_02_29_172247) do
     t.float "hours", default: 0.0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "invoice_id"
+    t.index ["invoice_id"], name: "index_tasks_on_invoice_id"
     t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 
@@ -127,8 +140,10 @@ ActiveRecord::Schema.define(version: 2020_02_29_172247) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "customers", "organisations"
+  add_foreign_key "invoices", "customers"
   add_foreign_key "organisation_users", "organisations"
   add_foreign_key "organisation_users", "users"
   add_foreign_key "projects", "customers"
+  add_foreign_key "tasks", "invoices"
   add_foreign_key "tasks", "projects"
 end
