@@ -27,12 +27,8 @@ class CustomersController < ApplicationController
 
   def show
     @customer = current_user.customers.includes(:tasks).find(params[:id])
-    @projects = @customer.projects
-    if params[:status]
-      @projects = @projects.where(status: params[:status])
-    end
-
-    @pagy, @projects = pagy(@projects)
+    @projects = @customer.projects.limit(5)
+    @invoices = @customer.invoices.limit(5)
   end
 
   def update
