@@ -1,6 +1,6 @@
 <% customers ||= [] %>
 <% customer ||= nil %>
-<%= form_with(local: true, class: "w-full", html: { role: 'check-modified' }) do |form| %>
+<%= form_with(model: [customer, invoice], local: true, class: "w-full", html: { role: 'check-modified' }) do |form| %>
   <div class="flex-grow h-12 bg-gray-800 px-3 py-2 rounded-t flex items-center -m-px">
     <h1 class="text-white font-semibold font-semibold text-xl xl:text-2xl">
       New Invoice -

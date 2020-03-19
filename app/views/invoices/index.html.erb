@@ -1,5 +1,5 @@
 <% content_for(:sidebar) do %>
-  <%= render('application/account_menu', current: :projects) %>
+  <%= render('application/account_menu', current: :invoices) %>
 <% end %>
 <% content_for(:header_title) do %>
   <%= t('.title') %>
@@ -7,5 +7,5 @@
 <div class="w-full lg:p-3 xl:p-6">
   <%= render("heading") %>
   <%= render('search_field') %>
-  <%= render('table')%>
+  <%= render("invoices/table", invoices: @invoices, customer: @customer, pagy: @pagy) %>
 </div>

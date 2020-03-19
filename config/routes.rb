@@ -25,15 +25,14 @@ Rails.application.routes.draw do
   resources(:customers) do
     scope(module: :customers) do
       resources(:projects, only: %i[new create update destroy edit show])
+      resources(:invoices, only: %i[new show create])
     end
   end
 
   resources(:projects, only: %i[index create new]) do
     resources(:tasks, only: %i[show new create update destroy])
   end
-
-  resources(:invoices, only: %i[index show new])
-
+  resources(:invoices, only: %i[index create new])
   resources(:services, only: %i[index show new])
 
   resource(:search, only: []) do

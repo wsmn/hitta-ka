@@ -2,6 +2,7 @@ class Customer < ApplicationRecord
   belongs_to(:organisation)
   has_many(:projects, dependent: :destroy)
   has_many(:tasks, through: :projects)
+  has_many(:invoices)
 
   validates(:name, presence: true)
   store_accessor(:address, :street, :city, :state, :zip_code)
