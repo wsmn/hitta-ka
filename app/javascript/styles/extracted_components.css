@@ -16,6 +16,13 @@
   @apply bg-green-500;
 }
 
+.btn-orange {
+  @apply bg-orange-600;
+}
+.btn-orange:hover {
+  @apply bg-orange-500;
+}
+
 .form-input {
   @apply w-full block appearance-none bg-gray-100 text-gray-900 border border-gray-500 rounded px-3 py-2 leading-tight;
 }
