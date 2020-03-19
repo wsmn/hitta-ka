@@ -2,7 +2,6 @@ class ProjectsController < ApplicationController
   include Pagy::Backend
   before_action(:require_login)
 
-  # Without customer_id
   def index
     @projects = current_user.projects.includes(:customer)
     if params[:status]
