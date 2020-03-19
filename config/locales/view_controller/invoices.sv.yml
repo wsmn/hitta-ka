@@ -1,0 +1,45 @@
+sv:
+  invoices:
+    index:
+      title: Fakturor
+    search_field:
+      all: Alla
+      active: Aktiva
+      archived: Arkiverade
+      search: Sök
+      new_project: Nytt projekt
+      sort_by: Sortera på
+      name: Namn
+      date: Datum
+    heading:
+      title: Fakturor
+    sort_by:
+      name: Namn
+      date: Datum
+      status: Status
+      latest: Senaste
+      customer_name: Kundnamn
+      project_name: Projektnamn
+    date_filter:
+      from: Från
+      to: Till
+      today: Idag
+      last_week: Senaste veckan
+      last_month: Senaste månaden
+      last_year: Senaste året
+    table:
+      active: Aktiva
+      address: Adress
+      all: Alla
+      archived: Arkiverade
+      customer: Kund
+      name: Namn
+      new_project: Nytt projekt
+      search: Sök
+      status: Status
+      time_logs: Tidsloggar
+      created: Skapat
+      project: Projekt
+      invoice_no: Faktura nr.
+      amount: Summa
+      due_date: Förfallodag
