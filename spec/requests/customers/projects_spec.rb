@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "rails_helper"
-RSpec.describe("Customer projects", type: :request) do
+RSpec.describe("Customers::Projects", type: :request) do
   describe("GET /customers/:id/projects/new") do
     it("renders properly") do
       user, org = user_organisation

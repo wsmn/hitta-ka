@@ -32,7 +32,7 @@
           </svg>
           <div x-show="open" class="absolute mt-16 w-32 rounded">
             <div class="rounded bg-white border border-gray-400">
-              <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
+              <%= link_to(new_customer_invoice_path(@customer), class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-t') do %>
                 <%= t('.invoice') %>
               <% end %>
               <%= link_to(projects_path, class: 'block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 rounded-b') do %>
