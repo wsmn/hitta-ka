@@ -8,6 +8,9 @@
 .btn-blue:hover {
   @apply bg-blue-500;
 }
+.btn-blue:active {
+  @apply bg-blue-400;
+}
 
 .btn-green {
   @apply bg-green-600;
@@ -15,12 +18,18 @@
 .btn-green:hover {
   @apply bg-green-500;
 }
+.btn-green:active {
+  @apply bg-green-400;
+}
 
 .btn-orange {
   @apply bg-orange-600;
 }
 .btn-orange:hover {
   @apply bg-orange-500;
+}
+.btn-orange:active {
+  @apply bg-orange-400;
 }
 
 .form-input {

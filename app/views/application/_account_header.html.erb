@@ -21,11 +21,8 @@
         </div>
         <div class="flex justify-center">
           <div class="relative w-full">
-            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-              <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-2 text-white">
+              <%= render('application/icons/search') %>
             </span>
             <input placeholder="Search for projects, customers etc."
               class="block pl-8 pr-4 py-2 w-full bg-gray-700 rounded text-sm placeholder-white text-white focus:bg-white focus:placeholder-gray-600 focus:text-gray-900 focus:outline-none focus:border-gray-500">
@@ -42,11 +39,9 @@
                 <%= current_user.name %>
                 <p class="text-xs text-gray-400 flex justify-start"><%= current_user.organisations.first %></p>
               </span>
-              <svg class="h-5 w-5 -mt-4 transform" viewBox="0 0 20 20" fill="currentColor" :class="{'rotate-180': open}">
-                <path fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd" />
-              </svg>
+              <div class="transform -mt-4" :class="{'rotate-180': open}">
+                <%= render('application/icons/arrow_down') %>
+              </div>
             </button>
             <%= render('header_dropdown') %>
           </div>

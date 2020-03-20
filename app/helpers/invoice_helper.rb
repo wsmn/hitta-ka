@@ -30,9 +30,9 @@ module InvoiceHelper
     object ||= :invoices
     css = "w-20 h-16 px-3 mr-2 -mb-px flex justify-center items-center"
     css = if status == current.to_sym
-      "#{css} border-b-2 border-blue-600 text-blue-600 font-medium"
+      "#{css} border-b-2 border-orange-600 text-orange-600 font-medium"
     else
-      "#{css} text-gray-800 hover:text-blue-500"
+      "#{css} text-gray-800 hover:text-orange-500"
     end
     if status == :all
       path = polymorphic_path(object)

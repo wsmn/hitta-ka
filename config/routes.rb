@@ -32,7 +32,9 @@ Rails.application.routes.draw do
   resources(:projects, only: %i[index create new]) do
     resources(:tasks, only: %i[show new create update destroy])
   end
-  resources(:invoices, only: %i[index create new])
+  resources(:invoices, only: %i[index create new]) do
+    resources(:tasks, only: %i[show new create update destroy])
+  end
   resources(:services, only: %i[index show new])
 
   resource(:search, only: []) do

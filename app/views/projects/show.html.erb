@@ -1,8 +1,8 @@
 <% content_for(:sidebar) do %>
-  <%= render('application/account_menu', current: :projects) %>
+<%= render('application/account_menu', current: :projects) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <%= t('.title') %>
+<%= t('.title') %>
 <% end %>
 <div class="w-full bg-white">
   <%= render('show_heading') %>
@@ -13,7 +13,7 @@
           <div class="w-full xl:w-full flex flex-wrap">
             <div class="w-full xl:w-3/5 flex-wrap lg:pr-6">
               <div class="flex flex-wrap">
-                <div class="w-1/2 md:w-2/3 lg:pr-8">
+                <div class="w-1/2 md:w-3/5 lg:pr-8">
                   <h1 class="text-xl font-semibold text-gray-900">Description</h1>
                   <p class="text-gray-800 mt-2">Here is your discription of the project. You wrote this when
                     creating
@@ -43,25 +43,27 @@
                 <div class="w-1/2 md:hidden">
                   <%= render(@project.customer) %>
                 </div>
-                <div class="w-full md:w-1/3 mt-4 lg:mt-0">
-                  <div class="flex-wrap bg-gray-100 border border-gray-500 rounded">
-                    <div class="w-full p-4 border-b border-gray-500">
-                      <div class="flex items-center justify-between relative leading-none">
-                        <div class="text-xs uppercase font-bold text-green-800 tracking-wide">
-                          <%= t('.timelogs') %>
-                        </div>
-                        <div class="-mt-1">
-                          <svg class="h-5 w-5 text-green-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="w-full md:w-2/5 mt-4 lg:mt-0">
+                  <div class="flex-wrap">
+                    <div class="w-full flex p-4 bg-white border border-gray-500 rounded shadow-md">
+                      <div class="">
+                        <div class="h-10 w-10 bg-green-500 flex items-center justify-center rounded">
+                          <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                               d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </div>
                       </div>
-                      <div class="text-lg font-semibold text-green-800 mt-3">
-                        <%= @project.tasks.count %> st - <%= @project.hours %> h
+                      <div class="flex-grow flex-wrap ml-4">
+                        <div class="">
+                          <p class="text-xs uppercase font-bold text-green-800 tracking-wide"><%= t('.timelogs') %></p>
+                        </div>
+                        <div class="text-xl text-gray-900 font-medium -mt-1">
+                          <%= @project.tasks.count %> st - <%= @project.hours %> h
+                        </div>
                       </div>
                     </div>
-                    <div class="w-full p-4">
+                    <div class="w-full p-4 mt-4 bg-white border border-gray-500 rounded shadow-md">
                       <div class="flex items-center justify-between relative leading-none">
                         <div class="text-xs uppercase font-bold text-purple-800 tracking-wide">
                           <%= t('.invoices') %>
