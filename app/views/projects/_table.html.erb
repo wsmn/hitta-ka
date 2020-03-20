@@ -1,15 +1,18 @@
 <% filtered ||= false %>
 <% projects ||= [] %>
 <% customer ||= nil %>
+<% show_filters = true if show_filters.nil? %>
 <div class="px-2 pb-4 lg:px-0 mt-4 lg:mt-2">
   <div class="bg-white border border-gray-400 shadow-md">
-    <div class="w-full flex justify-between items-center h-16 border-b border-gray-400 px-4">
-      <div class="flex">
-        <%= project_status_button(:active, params[:status], object: customer) %>
-        <%= project_status_button(:archived, params[:status], object: customer) %>
-        <%= project_status_button(:all, params[:status], object: customer) %>
+    <% if show_filters %>
+      <div class="w-full flex justify-between items-center h-16 border-b border-gray-400 px-4">
+        <div class="flex">
+          <%= project_status_button(:active, params[:status], object: customer) %>
+          <%= project_status_button(:archived, params[:status], object: customer) %>
+          <%= project_status_button(:all, params[:status], object: customer) %>
+        </div>
       </div>
-    </div>
+    <% end %>
     <div class="w-full">
       <div class="border-b-2 bg-gray-200">
         <div class="w-full flex py-4">
@@ -55,7 +58,7 @@
       <% end %>
       <div class="px-3 bg-white flex flex-col xs:flex-row items-end justify-center">
         <div class="px-2 align-middle inline-flex flex items-center py-4">
-          <%= render partial: 'pagy/nav', locals: {pagy: @pagy} %>
+          <%= render("pagy/nav", pagy: @pagy) if @pagy.present? %>
         </div>
       </div>
     </div>

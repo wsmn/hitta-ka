@@ -100,13 +100,13 @@
       </div>
     </div>
     <div x-show="tab === 'projects'" class="flex-grow px-4 lg:p-6 bg-gray-300">
-      <%= render("projects/table", customer: @customer, projects: @projects) %>
+      <%= render("projects/table", customer: @customer, projects: @projects, show_filters: false) %>
     </div>
     <div x-show="tab === 'tasks'" class="flex-grow px-4 lg:px-6 bg-gray-300">
       <%= render('show_search_field') %>
     </div>
     <div x-show="tab === 'invoices'" class="flex-grow px-4 lg:px-6 bg-gray-300">
-      <%= render('show_search_field') %>
+      <%= render("invoices/table", customer: @customer, invoices: @invoices, show_filters: false) %>
     </div>
   </div>
 </div>
