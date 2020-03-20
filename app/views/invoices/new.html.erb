@@ -11,37 +11,5 @@
         <%= render('form', customers: @customers, customer: @customer, invoice: @invoice) %>
       </div>
     </div>
-    <div class="w-full flex flex-wrap justify-center items-center py-8">
-      <div class="mr-2">
-        <button
-          class="py-2 px-2 w-full shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none">
-          Download <%= icon('fas', 'download', class: "ml-2") %>
-        </button>
-      </div>
-      <div class="w-24 mr-2">
-        <button
-          class="py-2 px-2 w-full shadow-md no-underline rounded bg-green-500 text-white font-bold text-sm hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
-          Sent <%= icon('fas', 'check', class: "ml-2") %>
-        </button>
-      </div>
-      <div class="">
-        <button
-          class="py-2 px-2 w-full shadow-md no-underline rounded bg-gray-600 text-white font-bold text-sm hover:text-white hover:bg-gray-500 focus:outline-none active:shadow-none">
-          <div class="pointer-events-none flex items-center justify-center text-white inline-block">More
-            <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" />
-            </svg>
-          </div>
-        </button>
-      </div>
-      <div class="w-full text-center">
-        (Kommer fram när man trycker på save)
-      </div>
-    </div>
-    <div class="w-full flex bg-white border border-gray-400 rounded-lg p-5 h-64 justify-center">
-      <p class="text-3xl text-blue-800">
-        AREA FOR PDF PREVIEW
-      </p>
-    </div>
   </div>
 </div>

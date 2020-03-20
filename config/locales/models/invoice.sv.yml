@@ -1,0 +1,7 @@
+sv:
+  model:
+    invoice:
+      status:
+        all: Alla
+        paid: Betald
+        unpaid: Obetald

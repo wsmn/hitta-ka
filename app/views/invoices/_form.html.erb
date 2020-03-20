@@ -1,10 +1,14 @@
 <% customers ||= [] %>
 <% customer ||= nil %>
 <%= form_with(model: [customer, invoice], local: true, class: "w-full", html: { role: 'check-modified' }) do |form| %>
-  <div class="flex-grow h-12 bg-gray-800 px-3 py-2 rounded-t flex items-center -m-px">
+  <div class="flex-grow h-12 bg-orange-600 px-3 py-2 rounded-t flex items-center -m-px">
     <h1 class="text-white font-semibold font-semibold text-xl xl:text-2xl">
-      New Invoice -
-      <%= icon('fas', 'file-invoice', class: "mt-1") %>
+      <% if invoice.persisted? %>
+        <%= t('.edit_invoice') %> - #<%= @invoice.invoice_nbr %>
+      <% else %>
+        <%= t('.new_invoice') %> -
+        <%= icon('fas', 'file-invoice', class: "mt-1") %>
+      <% end %>
     </h1>
   </div>
   <div class="w-full p-5 lg:p-3 xl:p-5">
@@ -16,13 +20,13 @@
               <%= form.label(:customer, class: "form-label lg:mb-2") %>
               <% if customer.present? %>
                 <%= form.select(:customer_id, customers.collect { |customer| [customer.to_s, customer.id] },
-                              {}, id: 'organisation',
-                              disabled: true,
-                              class: 'form-input mt-2 bg-gray-400') %>
+                                {}, id: 'organisation',
+                                disabled: true,
+                                class: 'form-input mt-2 bg-gray-400') %>
               <% else %>
                 <%= form.select(:customer_id, customers.collect { |customer| [customer.to_s, customer.id] },
-                              {}, id: 'organisation',
-                              class: 'form-input mt-2') %>
+                                {}, id: 'organisation',
+                                class: 'form-input mt-2') %>
               <% end %>
               <div class="mt-8 pointer-events-none absolute inset-y-0 right-0
                     flex items-center px-2 text-gray-700">
@@ -42,14 +46,12 @@
           </div>
         </div>
       </div>
-      <div class="w-full lg:w-1/3 px-2 -mt-1 lg:mt-0">
+      <div class="w-full lg:w-1/3 px-2 mt-6 lg:mt-0">
         <div class="w-full lg:w-5/6 xl:w-4/5">
-          <div class="flex flex-wrap">
-            <div class="w-full">
-              <%= form.label(:invoice_date, class: "form-label lg:mb-2") %>
-              <%= form.text_field(:invoice_date, id: 'invoice_date', placeholder: '2020-02-02',
+          <div class="w-full">
+            <%= form.label(:invoice_date, class: "form-label lg:mb-2") %>
+            <%= form.text_field(:invoice_date, id: 'invoice_date', placeholder: '2020-02-02',
                     class: "form-input mt-2 date-picker") %>
-            </div>
           </div>
           <div class="flex flex-wrap mt-6 lg:mt-4">
             <div class="w-full">
@@ -62,11 +64,22 @@
       </div>
       <div class="w-full lg:w-1/3 px-2 mb-6 lg:mb-0 mt-6 lg:mt-0">
         <div class="w-full lg:w-5/6 xl:w-4/5">
-          <div class="flex flex-wrap">
-            <div class="w-full">
-              <%= form.label(:invoice_nbr, class: "form-label lg:mb-2") %>
-              <%= form.text_field(:invoice_nbr, id: 'invoice_nbr', placeholder: '#00001',
+          <div class="w-full">
+            <%= form.label(:invoice_nbr, class: "form-label lg:mb-2") %>
+            <%= form.text_field(:invoice_nbr, id: 'invoice_nbr', placeholder: '#00001',
                     class: "form-input mt-2") %>
+          </div>
+          <div class="relative mt-4">
+            <%= form.label(:status, class: "form-label lg:mb-2") %>
+            <%= form.select(:status, invoice_statuses,
+                          {}, id: 'status',
+                          class: 'form-input mt-2') %>
+            <div class="mt-8 pointer-events-none absolute inset-y-0 right-0
+                        flex items-center px-2 text-gray-700">
+              <svg class="ml-2 h-6 w-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4
+                          0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" />
+              </svg>
             </div>
           </div>
         </div>
@@ -132,7 +145,7 @@
       </div>
     </div>
     <div class="border-b border-gray-300 hidden lg:block">
-      <div class="border bg-gray-500 rounded-t mt-12">
+      <div class="border bg-gray-400 rounded-t mt-12">
         <div class="w-full flex">
           <div class="w-10 flex inline-block justify-center border-r border-white">
           </div>
@@ -168,63 +181,29 @@
           </div>
         </div>
       </div>
-      <div class="w-full flex items-start">
-        <div class="w-10 flex inline-block justify-center items-center py-3">
-          <div class="h-12 flex items-center">
-            <%= icon('fas', 'plus', class: "text-blue-500") %>
-          </div>
-        </div>
-        <div class="w-full flex items-start">
-          <div class="w-1/3 lg:w-1/4 flex border-r border-white py-3 px-1 xl:px-2">
-            <input
-            class="text-base appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12">
-            </div>
-            <div class="w-1/3 xl:w-5/12 flex border-r border-white py-3 px-1 xl:px-2">
-              <textarea
-            class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12"></textarea>
-            </div>
-            <div class="w-1/12 lg:w-1/6 xl:w-1/12 border-r border-white py-3 px-1 xl:px-2">
-              <input placeholder="990 kr"
-            class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12">
-            </div>
-            <div class="w-1/12 hidden lg:flex border-r border-white py-3 px-1 xl:px-2">
-              <input
-            class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-1 xl:px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-12">
-              </div>
-              <div class="w-1/3 lg:w-1/6 flex items-center justify-end py-3 pl-2">
-                <div class="h-12 flex items-center">
-                  <span class="text-sm xl:text-base">
-                    9.999,00 kr
-                  </span>
-                  <div class="rounded-full bg-red-700 w-4 h-4 flex items-center justify-center ml-4">
-                    <%= icon('fas', 'minus', class: "text-white text-xs") %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flex justify-end mt-4">
-          <div class="w-1/2 lg:w-1/4 px-5 py-2 flex justify-end">
-            <div class="">
-              <p class="">Subtotal</p>
-              <p class="">1.234,00 kr</p>
-            </div>
-          </div>
+      <%= render('task_row', form: form) %>
+    </div>
+    <div class="flex justify-end mt-4">
+      <div class="w-1/2 lg:w-1/4 px-5 py-2 flex justify-end">
+        <div class="">
+          <p class="">Subtotal</p>
+          <p class="">1.234,00 kr</p>
         </div>
       </div>
-      <div class="w-full p-3">
-        <div class="w-full flex border-t border-gray-300 pt-4 mt-8">
-          <div class="w-full flex justify-end items-center">
-            <div class="w-20 mr-2">
-              <button class="w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300">
-                Cancel
-              </button>
-            </div>
-            <div class="">
-              <%= form.submit(class: "btn btn-blue transition ease-out duration-700 transform hover:scale-110") %>
-            </div>
+    </div>
+  </div>
+  <div class="w-full p-3">
+    <div class="w-full flex border-t border-gray-300 pt-4 mt-8">
+      <div class="w-full flex justify-end items-center">
+        <div class="w-20 mr-2">
+          <div class="w-20 mr-2">
+            <%= link_to(t('.cancel'), invoices_path, class: "w-full text-red-500 uppercase font-bold text-sm hover:text-red-300") %>
           </div>
         </div>
+        <div class="">
+          <%= form.submit(class: "btn btn-orange transition ease-out duration-700 transform hover:scale-105") %>
+        </div>
       </div>
-    <% end %>
+    </div>
+  </div>
+<% end %>

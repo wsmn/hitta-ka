@@ -22,9 +22,9 @@
   </div>
   <div class="flex items-start hidden lg:flex ml-2">
     <%= link_to(new_invoice_path, class: 'btn btn-orange py-2 normal-case text-base') do %>
-      <svg class="h-4 w-4 text-white -ml-1 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4" />
-      </svg>
+      <div class="-ml-1 mr-1">
+        <%= render('application/icons/plus') %>
+      </div>
       <%= t('.new_invoice') %>
     <% end %>
   </div>

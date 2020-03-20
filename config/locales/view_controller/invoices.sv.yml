@@ -2,6 +2,8 @@ sv:
   invoices:
     index:
       title: Fakturor
+    create:
+      success: Faktura skapades
     search_field:
       all: Alla
       active: Aktiva
@@ -13,6 +15,9 @@ sv:
       date: Datum
     heading:
       title: Fakturor
+      paid: Betalade
+      unpaid: Obetalda
+      new_invoice: Ny faktura
     sort_by:
       name: Namn
       date: Datum
