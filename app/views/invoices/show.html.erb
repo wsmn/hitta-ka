@@ -1,10 +1,10 @@
 <% content_for(:sidebar) do %>
-  <%= render('application/account_menu', current: :invoices) %>
+<%= render('application/account_menu', current: :invoices) %>
 <% end %>
 <% content_for(:header_title) do %>
-  <%= t('.title') %>
+<%= t('.title') %>
 <% end %>
-<div class="w-full overflow-y-auto lg:flex-grow p-2 lg:p-4 xl:p-6">
+<div x-data="{ add_tasks: false }" class="w-full overflow-y-auto lg:flex-grow p-2 lg:p-4 xl:p-6">
   <div class="flex flex-wrap">
     <div class="flex-grow mx-auto">
       <div class="w-full flex flex-wrap bg-white border border-gray-500 rounded-md">
@@ -12,6 +12,12 @@
       </div>
     </div>
     <div class="w-full flex flex-wrap justify-center items-center py-8">
+      <div class="mr-2">
+        <button @click="add_tasks = true" class="btn btn-orange">
+          Add tasks <%= icon('fas', 'plus', class: "ml-2") %>
+        </button>
+        <%= render('form_tasks') %>
+      </div>
       <div class="mr-2">
         <button
           class="py-2 px-2 w-full shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none">
@@ -35,9 +41,9 @@
         </button>
       </div>
     </div>
-    <div class="w-full flex bg-white border border-gray-400 rounded-lg p-5 h-64 justify-center">
+    <div class="w-full flex bg-white border border-gray-400 rounded-lg p-5 justify-center">
       <p class="text-3xl text-blue-800">
-        AREA FOR PDF PREVIEW
+
       </p>
     </div>
   </div>

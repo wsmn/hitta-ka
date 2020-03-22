@@ -9,16 +9,16 @@
     <div class="flex items-center leading-none">
       <% if @customer.present? %>
         <%= link_to(@customer, customer_path(@customer), class: 'text-gray-500') %>
-        <%= render("application/icons/arrow_down") %>
+        <%= render("application/icons/arrow_right") %>
         <span class="text-gray-500">
           <%= t('.projects') %>
         </span>
-        <%= render("application/icons/arrow_down") %>
+        <%= render("application/icons/arrow_right") %>
       <% else %>
         <%= link_to(projects_path, class: 'text-gray-500') do %>
           <%= t('.projects') %>
         <% end %>
-        <%= render("application/icons/arrow_down") %>
+        <%= render("application/icons/arrow_right") %>
       <% end %>
       <span class="">
         <%= t('.title') %>

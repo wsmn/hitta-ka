@@ -19,7 +19,7 @@ class InvoicesController < ApplicationController
     @customers = current_user.customers
     @invoice = Invoice.new(invoice_params)
     if @customers.where(id: @invoice.customer_id).count == 1 && @invoice.save
-      redirect_to(invoices_path, notice: t(".success"))
+      redirect_to(customer_invoice_path(@invoice.customer, @invoice), notice: t(".success"))
     else
       render(:new, status: :unprocessable_entity)
     end
@@ -28,6 +28,6 @@ class InvoicesController < ApplicationController
   private
 
   def invoice_params
-    params.require(:invoice).permit(:customer_id, :invoice_date, :due_date, :invoice_nbr)
+    params.require(:invoice).permit(:customer_id, :invoice_date, :due_date, :invoice_nbr, :status)
   end
 end
