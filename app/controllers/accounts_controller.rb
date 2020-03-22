@@ -4,9 +4,10 @@ class AccountsController < ApplicationController
   def show
     @customers = current_user.customers
     @projects = current_user.projects.includes(:customer).limit(5)
+    @invoices = current_user.invoices.includes(:customer).limit(5)
     @counts = {
-      active: @projects.active.count,
-      archived: @projects.archived.count,
+      active: current_user.projects.active.count,
+      archived: current_user.projects.archived.count,
       total: current_user.projects.count,
     }
   end
