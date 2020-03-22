@@ -39,8 +39,8 @@
     </div>
     <div x-show="tab === 'archived'" class="">
       <% projects.each do |project| %>
-      <%= render('projects/status_row', project: project) %>
-    <% end %>
+        <%= render('projects/status_row', project: project) %>
+      <% end %>
     </div>
   </div>
 </div>
