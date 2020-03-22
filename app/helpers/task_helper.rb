@@ -20,14 +20,10 @@ module TaskHelper
     case status
     when "upcoming"
       "bg-blue-400 text-white"
-    when "active"
+    when "done"
       "bg-green-400 text-gray-900"
-    when "archived"
-      "bg-gray-400 text-white"
-    when "paused"
-      "bg-yellow-400"
-    when "cancelled"
-      "bg-red-400 text-white"
+    when "skipped"
+      "bg-yellow-400 text-white"
     end
   end
 end

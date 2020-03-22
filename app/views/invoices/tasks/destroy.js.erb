@@ -1,0 +1,10 @@
+var invoice_tasks = document.querySelector("#invoice-tasks");
+invoice_tasks.innerHTML = "<%= escape_javascript(render("invoices/tasks", invoice: @invoice, tasks: @invoice.tasks)) %>";
+console.log(invoice_tasks);
+
+var form_tasks = document.querySelector("#form-tasks");
+form_tasks.innerHTML = "";
+form_tasks.innerHTML = "<%=  escape_javascript(render('invoices/form_tasks', invoice: @invoice, tasks: @new_tasks)) %>";
+console.log(form_tasks);
+
+console.log("Destroy complete!");

@@ -1,6 +1,6 @@
 class Invoice < ApplicationRecord
   belongs_to(:customer, required: true)
-  has_many(:tasks)
+  has_many(:tasks, dependent: :nullify)
   has_many(:projects, through: :tasks)
 
   enum(status: {unpaid: 0, paid: 10})

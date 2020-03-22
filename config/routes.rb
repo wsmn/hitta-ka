@@ -33,7 +33,9 @@ Rails.application.routes.draw do
     resources(:tasks, only: %i[show new create update destroy])
   end
   resources(:invoices, only: %i[index create new]) do
-    resources(:tasks, only: %i[show new create update destroy])
+    scope(module: :invoices) do
+      resources(:tasks, only: %i[update destroy])
+    end
   end
   resources(:services, only: %i[index show new])
 

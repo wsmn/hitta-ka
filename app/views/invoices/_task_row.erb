@@ -1,0 +1,18 @@
+<div id="<%= dom_id(task) %>-added" class="w-full flex items-start border-b border-blue-700 p-2">
+  <div class="w-1/3 lg:w-1/4 flex border-r border-white px-1 xl:px-2">
+    <%= task.title %>
+  </div>
+  <div class="w-1/3 xl:w-5/12 flex border-r border-white px-1 xl:px-2">
+    <%= l(task.created_at.to_date) %>
+  </div>
+  <div class="w-1/12 lg:w-1/6 xl:w-1/12 border-r border-white px-1 xl:px-2">
+    <%= task.hours %>
+  </div>
+  <div class="w-1/3 lg:w-1/6 flex items-center px-2">
+    <div class="flex items-center">
+      <%= link_to(invoice_task_path(invoice, task), method: :delete, class: 'text-red-700 text-xs', remote: true) do %>
+        <%= icon('fas', 'times') %> <%= t('.remove') %>
+      <% end %>
+    </div>
+  </div>
+</div>
