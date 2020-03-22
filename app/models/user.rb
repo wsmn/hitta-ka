@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many(:customers, through: :organisations)
   has_many(:invoices, through: :customers)
   has_many(:projects, through: :customers)
+  has_many(:tasks, through: :projects)
 
   include Clearance::User
   enum(role: {user: 0, admin: 1})
