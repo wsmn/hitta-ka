@@ -1,8 +1,8 @@
 <% content_for(:sidebar) do %>
-<%= render('application/account_menu', current: :invoices) %>
+  <%= render('application/account_menu', current: :invoices) %>
 <% end %>
 <% content_for(:header_title) do %>
-<%= t('.title') %>
+  <%= t('.title') %>
 <% end %>
 <div class="w-full overflow-y-auto lg:flex-grow p-2 lg:p-4 xl:p-6">
   <div class="flex flex-wrap">
@@ -17,9 +17,9 @@
               <div>
                 <p class="text-orange-700 text-xs">Invoice date</p>
                 <% if @invoice.invoice_date.present? %>
-                <p class="text-gray-700 text-sm"><%= @invoice.invoice_date %></p>
+                  <p class="text-gray-700 text-sm"><%= @invoice.invoice_date %></p>
                 <% else %>
-                <p class="text-gray-700 text-sm">N.A</p>
+                  <p class="text-gray-700 text-sm">N.A</p>
                 <% end %>
               </div>
             </div>
@@ -27,9 +27,9 @@
               <div>
                 <p class="text-orange-700 text-xs">Due date</p>
                 <% if @invoice.due_date.present? %>
-                <p class="text-gray-700 text-sm"><%= @invoice.due_date %></p>
+                  <p class="text-gray-700 text-sm"><%= @invoice.due_date %></p>
                 <% else %>
-                <p class="text-gray-700 text-sm">N.A</p>
+                  <p class="text-gray-700 text-sm">N.A</p>
                 <% end %>
               </div>
             </div>
@@ -96,7 +96,6 @@
       <p class="text-2xl text-blue-900 font-semibold">Preview down below</p>
     </div>
     <div class="w-full flex bg-white border border-gray-400 rounded-lg p-5 justify-center">
-
     </div>
   </div>
 </div>
