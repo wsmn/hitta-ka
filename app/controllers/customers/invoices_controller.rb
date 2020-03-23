@@ -26,6 +26,11 @@ module Customers
       end
     end
 
+    def edit
+      @customer, @customers = find_customer
+      @invoice = @customer.invoices.find(params[:id])
+    end
+
     def update
       @customer, @customers = find_customer
       @invoice = @customer.invoices.find(params[:id])
