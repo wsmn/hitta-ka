@@ -6,88 +6,15 @@
 <% end %>
 <div class="w-full overflow-y-auto lg:flex-grow p-2 lg:p-4 xl:p-6">
   <div class="flex flex-wrap">
-    <div class="flex flex-wrap flex-grow mx-auto -mx-3">
-      <div class="w-full lg:w-1/4 px-3">
-        <div class="border border-gray-400 bg-white rounded">
-          <div class="h-20 bg-orange-600 p-8 flex items-center justify-center rounded-t -m-px">
-            <p class="text-xl text-white font-medium">Invoice #<%= @invoice.invoice_nbr %></p>
-          </div>
-          <div class="h-16 py-4 border-b w-full flex items-center justify-center">
-            <div class="w-1/2 flex justify-center">
-              <div>
-                <p class="text-orange-700 text-xs">Invoice date</p>
-                <% if @invoice.invoice_date.present? %>
-                  <p class="text-gray-700 text-sm"><%= @invoice.invoice_date %></p>
-                <% else %>
-                  <p class="text-gray-700 text-sm">N.A</p>
-                <% end %>
-              </div>
-            </div>
-            <div class="w-1/2 flex justify-center">
-              <div>
-                <p class="text-orange-700 text-xs">Due date</p>
-                <% if @invoice.due_date.present? %>
-                  <p class="text-gray-700 text-sm"><%= @invoice.due_date %></p>
-                <% else %>
-                  <p class="text-gray-700 text-sm">N.A</p>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="py-4 px-4 border-b w-full text-gray-700 text-sm">
-            <div class="flex">
-              <div class="w-20">
-                Customer:
-              </div>
-              <div class="text-blue-500">
-                <%= @invoice.customer %>
-              </div>
-            </div>
-            <div class="flex mt-4">
-              <div class="w-20">
-                Address:
-              </div>
-              <div class="text-blue-500">
-                Street 123, Zip code
-                <p>County, Country</p>
-              </div>
-            </div>
-          </div>
-          <div class="py-4 px-4 border-b w-full text-gray-700 text-sm">
-            <div class="flex">
-              <div class="w-20">
-                Notes:
-              </div>
-              <div class="">
-                Lorem ipsum.Lorem ipsum.Lorem
-              </div>
-            </div>
-          </div>
-          <div class="py-4 px-4 border-b w-full text-gray-700 text-sm">
-            <div class="flex">
-              <div class="w-20">
-                Comment:
-              </div>
-              <div class="">
-                Project3
-              </div>
-            </div>
-          </div>
-          <div class="w-full flex justify-end items-center p-4">
-            <%= link_to(edit_customer_invoice_path(@invoice.customer, @invoice),
-            class: 'btn btn-orange normal-case transition ease-out duration-700 transform hover:scale-105') do %>
-              <%= t('.edit_invoice') %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <div class="w-full lg:w-3/4 px-3">
-        <div class="flex-grow bg-white border border-gray-300 shadow-md rounded-md">
+    <div class="flex flex-wrap flex-grow lg:-mx-2 xl:-mx-3">
+      <%= render('invoice_card') %>
+      <div class="w-full lg:w-2/3 xl:flex-grow lg:px-2 xl:px-3">
+        <div class="flex-grow bg-white border border-gray-300 shadow-md rounded-md mt-4 lg:mt-0">
           <div id="invoice-tasks" class="flex-grow">
             <%= render('tasks', invoice: @invoice, tasks: @invoice.tasks) %>
           </div>
         </div>
-        <div class="flex-grow bg-white border border-gray-300 shadow-md rounded-md mt-8">
+        <div class="flex-grow bg-white border border-gray-300 shadow-md rounded-md mt-6">
           <%= render('process_invoice') %>
         </div>
       </div>
