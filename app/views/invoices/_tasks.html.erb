@@ -81,7 +81,7 @@
   </div>
   <div class="px-10 py-4">
     <% tasks.each do |task| %>
-    <%= render("invoices/task_row", invoice: invoice, task: task) %>
+      <%= render("invoices/task_row", invoice: invoice, task: task) %>
     <% end %>
   </div>
   <div class="py-6 border-t border-gray-300 flex items-center justify-between px-10">
