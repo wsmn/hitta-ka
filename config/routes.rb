@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources(:customers) do
     scope(module: :customers) do
       resources(:projects, only: %i[new create update destroy edit show])
-      resources(:invoices, only: %i[new show create update destroy])
+      resources(:invoices, only: %i[new show create update edit destroy])
     end
   end
 

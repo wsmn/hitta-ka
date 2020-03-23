@@ -1,8 +1,8 @@
 <% customers ||= [] %>
 <% customer ||= nil %>
 <%= form_with(model: [customer, invoice], local: true, class: "w-full", html: { role: 'check-modified' }) do |form| %>
-  <div class="flex-grow h-12 bg-orange-600 px-3 py-2 rounded-t flex items-center -m-px">
-    <h1 class="text-white font-semibold font-semibold text-xl xl:text-2xl">
+  <div class="flex-grow h-16 bg-orange-600 p-8 flex items-center rounded-t -m-px">
+    <h1 class="text-xl text-white font-medium">
       <% if invoice.persisted? %>
         <%= t('.edit_invoice') %> - #<%= @invoice.invoice_nbr %>
       <% else %>

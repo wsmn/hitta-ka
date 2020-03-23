@@ -1,0 +1,83 @@
+<div class="flex-grow px-3 py-4 lg:px-10 lg:pt-6 lg:pb-12">
+  <div class="">
+    <h2 class="text-2xl font-medium text-gray-700">Details</h2>
+  </div>
+  <div class="mt-8 flex flex-grow items-center justify-between">
+    <div class="flex">
+      <div class="rounded-full h-10 w-10 lg:h-12 lg:w-12 bg-blue-500 flex items-center text-white justify-center">
+        <svg class="h-4 w-4 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <div class="ml-2 md:ml-4">
+        <h3 class="text-base lg:text-xl font-medium text-gray-700">Email invoice</h2>
+          <p class="text-xs lg:text-base text-gray-600 leading-none">Email your invoice to your customer.</p>
+      </div>
+    </div>
+    <div class="ml-1">
+      <button
+      class="w-20 md:w-24 px-2 py-2 text-xs md:text-sm btn btn-blue normal-case">
+      Send <%= icon('fas', 'envelope-open', class: "ml-2") %>
+    </button>
+    </div>
+  </div>
+  <div class="mt-10 flex flex-grow items-center justify-between">
+    <div class="flex">
+      <div class="rounded-full h-10 w-10 lg:h-12 lg:w-12 bg-yellow-500 flex items-center justify-center">
+        <svg class="h-4 w-4 lg:h-6 lg:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <div class="ml-2 md:ml-4">
+        <h3 class="text-base lg:text-xl font-medium text-gray-700">Mark as sent</h2>
+          <p class="text-xs lg:text-base text-gray-600 leading-none">Click here to mark the invoice as sent.</p>
+      </div>
+    </div>
+    <div class="ml-1">
+      <button
+        class="w-20 md:w-24 btn normal-case text-xs md:text-sm bg-yellow-500">
+        Sent <%= icon('fas', 'check', class: "ml-2") %>
+      </button>
+    </div>
+  </div>
+  <div class="mt-10 flex flex-grow items-center justify-between">
+    <div class="flex">
+      <div class="rounded-full h-10 w-10 lg:h-12 lg:w-12 bg-green-500 flex items-center justify-center">
+        <svg class="h-4 w-4 lg:h-6 lg:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <div class="ml-2 md:ml-4">
+        <h3 class="text-base lg:text-xl font-medium text-gray-700">Mark as paid</h2>
+          <p class="text-xs lg:text-base text-gray-600 leading-none">Click here to mark the invoice as sent.</p>
+      </div>
+    </div>
+    <div class="ml-1">
+      <button
+        class="w-20 md:w-24 py-2 px-2 no-underline rounded bg-green-500 text-white font-bold text-xs md:text-sm hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
+        Paid <%= icon('fas', 'dollar-sign', class: "ml-2") %>
+      </button>
+    </div>
+  </div>
+  <div class="mt-10 flex flex-grow items-center justify-between">
+    <div class="flex">
+      <div class="rounded-full h-10 w-10 lg:h-12 lg:w-12 bg-gray-500 flex items-center justify-center">
+        <svg class="h-4 w-4 lg:h-6 lg:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+      </div>
+      <div class="ml-4">
+        <h3 class="text-base lg:text-xl font-medium text-gray-700">Download</h2>
+          <p class="text-xs lg:text-base text-gray-600 leading-none">Use this option to download your invoice as a pdf.</p>
+      </div>
+    </div>
+    <div class="ml-1">
+      <button
+        class="w-20 lg:w-24 py-2 text-xs md:text-sm px-1 shadow-md no-underline rounded bg-gray-500 text-white font-bold hover:text-white hover:bg-gray-400 focus:outline-none active:shadow-none">
+        Down. <%= icon('fas', 'download', class: "ml-1") %>
+      </button>
+    </div>
+  </div>
+</div>

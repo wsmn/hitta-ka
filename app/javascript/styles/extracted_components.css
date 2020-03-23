@@ -32,6 +32,13 @@
   @apply bg-orange-400;
 }
 
+.btn-bounce {
+  @apply transform duration-700 ease-out transition;
+}
+.btn-bounce:hover {
+  @apply scale-110;
+}
+
 .form-input {
   @apply w-full block appearance-none bg-gray-100 text-gray-900 border border-gray-500 rounded px-3 py-2 leading-tight;
 }
