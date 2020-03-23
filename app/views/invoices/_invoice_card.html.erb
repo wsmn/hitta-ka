@@ -1,0 +1,74 @@
+<div class="w-full lg:w-1/3 lg:max-w-md lg:px-2 xl:px-3">
+  <div class="border border-gray-400 shadow-md bg-white rounded text-xs xl:text-sm">
+    <div class="h-20 bg-orange-600 p-8 flex items-center justify-center rounded-t -m-px">
+      <p class="text-xl text-white font-medium">Invoice #<%= @invoice.invoice_nbr %></p>
+    </div>
+    <div class="py-5 border-b w-full flex items-center justify-center">
+      <div class="w-1/2 flex justify-center">
+        <div>
+          <p class="text-orange-700">Invoice date</p>
+          <% if @invoice.invoice_date.present? %>
+            <p class="text-gray-700 text-sm xl:text-base"><%= @invoice.invoice_date %></p>
+          <% else %>
+            <p class="text-gray-700 text-sm xl:text-base">N.A</p>
+          <% end %>
+        </div>
+      </div>
+      <div class="w-1/2 flex justify-center">
+        <div>
+          <p class="text-orange-700">Due date</p>
+          <% if @invoice.due_date.present? %>
+            <p class="text-gray-700 text-sm xl:text-base"><%= @invoice.due_date %></p>
+          <% else %>
+            <p class="text-gray-700 text-sm xl:text-base">N.A</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="py-5 px-4 border-b w-full text-gray-700">
+      <div class="flex">
+        <div class="w-20 xl:w-24">
+          Customer:
+        </div>
+        <div class="text-blue-500 text-sm xl:text-base">
+          <%= @invoice.customer %>
+        </div>
+      </div>
+      <div class="flex mt-4">
+        <div class="w-20 xl:w-24">
+          Address:
+        </div>
+        <div class="text-blue-500 text-sm xl:text-base">
+          Street 123, Zip code
+          <p>County, Country</p>
+        </div>
+      </div>
+    </div>
+    <div class="py-4 px-4 border-b flex-grow text-gray-700">
+      <div class="flex">
+        <div class="w-20 xl:w-24">
+          Notes:
+        </div>
+        <div class="flex-grow text-sm xl:text-base">
+          Lorem ipsum. Lorem ipsum. Lorem ipsum.
+        </div>
+      </div>
+    </div>
+    <div class="py-4 px-4 border-b w-full text-gray-700">
+      <div class="flex">
+        <div class="w-20 xl:w-24">
+          Comment:
+        </div>
+        <div class="text-sm xl:text-base">
+          Project3
+        </div>
+      </div>
+    </div>
+    <div class="w-full flex justify-end items-center p-4">
+      <%= link_to(edit_customer_invoice_path(@invoice.customer, @invoice),
+      class: 'btn btn-orange normal-case transition ease-out duration-700 transform hover:scale-105') do %>
+        <%= t('.edit_invoice') %>
+      <% end %>
+    </div>
+  </div>
+</div>

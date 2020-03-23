@@ -1,19 +1,19 @@
 <div id="<%= dom_id(task) %>-added" class="flex-grow flex items-start py-4 text-gray-700 font-medium">
   <div class="w-1/3 lg:w-1/3 border-r border-white">
     <p class="text-lg"><%= task.title %></p>
-    <p class="text-sm text-gray-600">Project</p>
+    <p class="text-sm text-gray-600">Project name</p>
   </div>
   <div class="w-1/3 xl:w-1/5 flex border-r border-white">
     <%= l(task.created_at.to_date) %>
   </div>
   <div class="w-1/3 xl:w-1/5 flex border-r border-white">
-    Cost
+    999,00 kr
   </div>
   <div class="w-1/12 lg:w-1/6 xl:w-1/6 border-r border-white">
     <%= task.hours %>
   </div>
   <div class="w-1/12 lg:w-1/6 xl:w-1/12 border-r border-white">
-    Cost x hours
+    <%= total = task.hours * 999 %>
   </div>
   <div class="w-4 flex items-center px-2">
     <div class="flex items-center">
