@@ -9,6 +9,12 @@
     <div class="flex-grow mx-auto">
       <div class="w-full flex flex-wrap bg-white border border-gray-500 rounded-md">
         <%= render('form', customers: @customers, customer: @customer, invoice: @invoice) %>
+        <div class="flex flex-col -mt-12 pb-4 pl-3">
+          <%= render('application/delete_button',
+                     path: customer_invoice_path(@invoice.customer, @invoice),
+                     title: t('.delete'),
+                     confirmation: t('.delete_confirm'))%>
+        </div>
       </div>
     </div>
   </div>

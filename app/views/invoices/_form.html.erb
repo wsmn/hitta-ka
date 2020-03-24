@@ -96,22 +96,14 @@
   </div>
   <div class="w-full p-3">
     <div class="w-full flex border-t border-gray-300 pt-4 mt-8">
-      <div class="w-full flex justify-between items-center">
-        <div class="flex flex-col">
-          <%= render('application/delete_button',
-                     path: customer_invoice_path(@invoice.customer, @invoice),
-                     title: t('.delete'),
-                     confirmation: t('.delete_confirm'))%>
-        </div>
-        <div class="flex items-center">
+      <div class="w-full flex justify-end items-center">
+        <div class="w-20 mr-2">
           <div class="w-20 mr-2">
-            <div class="w-20 mr-2">
-              <%= link_to(t('.cancel'), invoices_path, class: "w-full text-red-500 uppercase font-bold text-sm hover:text-red-300") %>
-            </div>
+            <%= link_to(t('.cancel'), invoices_path, class: "w-full text-red-500 uppercase font-bold text-sm hover:text-red-300") %>
           </div>
-          <div class="">
-            <%= form.submit(class: "btn btn-orange transition ease-out duration-700 transform hover:scale-105") %>
-          </div>
+        </div>
+        <div class="">
+          <%= form.submit(class: "btn btn-orange transition ease-out duration-700 transform hover:scale-105") %>
         </div>
       </div>
     </div>
