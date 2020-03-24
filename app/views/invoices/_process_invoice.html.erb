@@ -80,4 +80,23 @@
       </button>
     </div>
   </div>
+  <div class="mt-10 flex flex-grow items-center justify-between">
+    <div class="flex">
+      <div class="rounded-full h-10 w-10 lg:h-12 lg:w-12 bg-red-500 flex items-center justify-center text-white">
+        <%= render('application/icons/trash') %>
+      </div>
+      <div class="ml-4">
+        <h3 class="text-base lg:text-lg xl:text-xl font-medium text-gray-700">Delete</h2>
+        <p class="text-xs lg:text-sm xl:text-base text-gray-600 leading-none">Do you want to delete the invoice?</p>
+      </div>
+    </div>
+    <div class="ml-1">
+      <div class="flex flex-col">
+        <%= render('application/delete_button',
+                   path: customer_invoice_path(@invoice.customer, @invoice),
+                   title: t('.delete'),
+                   confirmation: t('.delete_confirm'))%>
+      </div>
+    </div>
+  </div>
 </div>

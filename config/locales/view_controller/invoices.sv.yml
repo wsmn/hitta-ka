@@ -48,3 +48,7 @@ sv:
       invoice_no: Faktura nr.
       amount: Summa
       due_date: Förfallodag
+    show:
+      delete: Radera faktura
+      delete_description: När fakturan raderaas tas all kopplad data till fakturan bort. Detta går inte att ångra.
+      delete_confirm: Vill du verkligen radera fakturan? Tar även bort all kopplad data och kan ej ångras.

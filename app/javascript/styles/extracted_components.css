@@ -32,6 +32,16 @@
   @apply bg-orange-400;
 }
 
+.btn-red {
+  @apply bg-red-600;
+}
+.btn-red:hover {
+  @apply bg-red-500;
+}
+.btn-red:active {
+  @apply bg-red-400;
+}
+
 .btn-bounce {
   @apply transform duration-700 ease-out transition;
 }
