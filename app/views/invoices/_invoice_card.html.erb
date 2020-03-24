@@ -1,6 +1,15 @@
 <div class="w-full lg:w-1/3 lg:max-w-md lg:px-2 xl:px-3">
   <div class="border border-gray-400 shadow-md bg-white rounded text-xs xl:text-sm">
-    <div class="h-20 bg-orange-600 p-8 flex items-center justify-center rounded-t -m-px">
+    <div class="h-20 bg-orange-600 p-8 flex items-center justify-center rounded-t -m-px relative">
+      <% if @invoice.status == "paid" %>
+      <div class="ribbon_green absolute left-0 top-0 mt-3 w-24 h-8 bg-green-600 text-white font-bold flex justify-center items-center">
+        Paid
+      </div>
+      <% elsif @invoice.past_due? %>
+      <div class="ribbon_red absolute left-0 top-0 mt-3 w-24 h-8 bg-red-600 text-white font-semibold flex flex-col text-xs justify-center items-center">
+        <p class="">Past due</p>
+      </div>
+      <% end %>
       <p class="text-xl text-white font-medium">Invoice #<%= @invoice.invoice_nbr %></p>
     </div>
     <div class="py-5 border-b w-full flex items-center justify-center">

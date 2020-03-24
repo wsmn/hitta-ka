@@ -251,3 +251,41 @@ input[type="radio"] + label span {
     }
   }
 }
+
+.ribbon_green {
+  $ribbon_height: 10px;
+  $ribbon_width: 10px;
+  $green_color: #38a169;
+  $ribbon_color: $green_color - 100;
+  margin-left: -$ribbon_width;
+  padding: 0 $ribbon_width;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    border-bottom: $ribbon_height solid transparent;
+  }
+  &:before{
+    left: 0;
+    border-right: $ribbon_width solid $ribbon_color;
+  }
+}
+
+.ribbon_red {
+  $ribbon_height: 10px;
+  $ribbon_width: 10px;
+  $green_color: #e53e3e;
+  $ribbon_color: $green_color - 100;
+  margin-left: -$ribbon_width;
+  padding: 0 $ribbon_width;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    border-bottom: $ribbon_height solid transparent;
+  }
+  &:before{
+    left: 0;
+    border-right: $ribbon_width solid $ribbon_color;
+  }
+}

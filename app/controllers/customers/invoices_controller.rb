@@ -55,7 +55,7 @@ module Customers
     end
 
     def invoice_params
-      params.require(:invoice).permit(:invoice_date, :due_date, :invoice_nbr)
+      params.require(:invoice).permit(:invoice_date, :due_date, :invoice_nbr, :status)
     end
   end
 end
