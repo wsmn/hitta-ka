@@ -1,12 +1,19 @@
 <div class="w-full lg:w-1/3 lg:max-w-md lg:px-2 xl:px-3">
-  <div class="border border-gray-400 shadow-md bg-white rounded text-xs xl:text-sm">
+  <div class="border border-orange-400 shadow-md bg-white rounded text-xs xl:text-sm">
     <div class="h-20 bg-orange-600 p-8 flex items-center justify-center rounded-t -m-px relative">
       <% if @invoice.status == "paid" %>
-        <div class="ribbon_green absolute left-0 top-0 mt-3 w-24 h-8 bg-green-600 text-white font-bold flex justify-center items-center">
+        <div
+        class="ribbon_green absolute left-0 top-0 mt-3 w-24 h-8 bg-green-600 text-white font-bold flex justify-center items-center rounded-r-sm">
           Paid
         </div>
-      <% elsif @invoice.past_due? %>
-        <div class="ribbon_red absolute left-0 top-0 mt-3 w-24 h-8 bg-red-600 text-white font-semibold flex flex-col text-xs justify-center items-center">
+      <% elsif @invoice.status == "unpaid" && !@invoice.past_due? %>
+        <div
+        class="ribbon_yellow absolute left-0 top-0 mt-3 w-24 h-8 bg-yellow-600 text-white font-semibold flex justify-center items-center rounded-r-sm">
+          <p class="">Unpaid</p>
+        </div>
+      <% elsif @invoice.status == "unpaid" && @invoice.past_due? %>
+        <div
+        class="ribbon_red absolute left-0 top-0 mt-3 w-24 h-8 bg-red-600 text-white font-semibold flex justify-center items-center rounded-r-sm">
           <p class="">Past due</p>
         </div>
       <% end %>
@@ -73,7 +80,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full flex justify-end items-center p-4">
+    <div class="w-full flex justify-start items-center p-4">
       <%= link_to(edit_customer_invoice_path(@invoice.customer, @invoice),
       class: 'btn btn-orange normal-case transition ease-out duration-700 transform hover:scale-105') do %>
         <%= t('.edit_invoice') %>

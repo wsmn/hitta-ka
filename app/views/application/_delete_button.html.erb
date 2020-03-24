@@ -3,8 +3,10 @@
 <% path ||= nil %>
 <div class="flex" x-data="{openModal: false}">
   <div @click="openModal = true"
-    class="rounded bg-red-200 text-red-700 py-2 px-3 font-bold cursor-pointer transition ease-out duration-700 transform hover:scale-110 mr-4 mt-6">
-    <%= t('.delete' )%>
+    class="rounded flex items-center btn btn-red cursor-pointer btn-bounce normal-case">
+    <%= t('.delete' )%> <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+    </svg>
   </div>
   <div x-show="openModal" class="overflow-y-auto bg-gray-900" style="background-color: rgba(0,0,0,0.5)"
     x-transition:enter="transition ease-out duration-300" x-transition:enter-start="transform opacity-0 scale-100"
@@ -38,7 +40,7 @@
         </div>
         <%= button_to(t('.delete'), path,
                         method: :delete,
-                        class: "btn bg-red-600 ml-6 cursor-pointer transition ease-out duration-700 transform hover:scale-110") %>
+                        class: "btn btn-red btn-bounce ml-6") %>
       </div>
     </div>
   </div>
