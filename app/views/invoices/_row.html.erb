@@ -18,7 +18,11 @@
           <p class="text-md"><%= l(invoice.invoice_date) if invoice.invoice_date.present? %></p>
         </div>
         <div class="w-1/5 lg:w-1/6 flex justify-center md:justify-start">
-          <p class="text-md"><%= invoice.amount %> SEK</p>
+          <p class="text-md">
+            <% if (invoice.amount > 0) %>
+              <%= number_to_currency(invoice.amount) %>
+            <% end %>
+          </p>
         </div>
         <div class="w-1/5 lg:w-1/6 flex justify-center md:justify-start">
           <p class="text-md <%= invoice.past_due? ? 'text-red-500' : 'text-green-500'%> "><%= invoice.due_date %></p>
