@@ -9,14 +9,8 @@
     <div class="flex flex-wrap flex-grow lg:-mx-2 xl:-mx-3">
       <%= render('invoice_card') %>
       <div class="w-full lg:w-2/3 xl:flex-grow lg:px-2 xl:px-3">
-        <div class="flex-grow bg-white border border-gray-300 shadow-md rounded-md mt-4 lg:mt-0">
-          <div id="invoice-tasks" class="flex-grow">
-            <%= render('tasks', invoice: @invoice, tasks: @invoice.tasks) %>
-          </div>
-        </div>
-        <div class="flex-grow bg-white border border-gray-300 shadow-md rounded-md mt-6">
-          <%= render('process_invoice') %>
-        </div>
+        <%= render('tasks', invoice: @invoice, tasks: @invoice.tasks) %>
+        <%= render('process_invoice') %>
       </div>
     </div>
     <div class="w-full flex flex-wrap justify-center items-center py-8">

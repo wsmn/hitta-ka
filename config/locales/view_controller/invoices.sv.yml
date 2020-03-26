@@ -49,6 +49,10 @@ sv:
       amount: Summa
       due_date: Förfallodag
     process_invoice:
+      send: Skicka
+      sent: Skickat
+      paid: Betalad
+      download: Ladda ner
       delete: Radera faktura
       delete_description: När fakturan raderas tas all kopplad data till fakturan bort. Detta går inte att ångra.
       delete_confirm: Vill du verkligen radera fakturan? Tar även bort all kopplad data och kan ej ångras.
@@ -58,3 +62,18 @@ sv:
       delete_confirm: Vill du verkligen radera fakturan? Tar även bort all kopplad data och kan ej ångras.
     update:
       success: Fakturan uppdaterades
+    invoice_card:
+      paid: Betald
+      unpaid: Obetald
+      past_due: Försenad
+      invoice_date: Datum
+      due_date: Förfallodag
+      customer: Kund
+      address: Adress
+      edit_invoice: Redigera
+    tasks:
+      total_amount: Belopp
+    task_row:
+      delete: Ta bort
+    show:
+      title: Faktura

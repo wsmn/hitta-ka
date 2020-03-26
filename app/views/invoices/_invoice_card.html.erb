@@ -4,17 +4,17 @@
       <% if @invoice.status == "paid" %>
         <div
         class="ribbon_green absolute left-0 top-0 mt-3 w-24 h-8 bg-green-600 text-white font-bold flex justify-center items-center rounded-r-sm">
-          Paid
+          <%= t('.paid') %>
         </div>
       <% elsif @invoice.status == "unpaid" && !@invoice.past_due? %>
         <div
         class="ribbon_yellow absolute left-0 top-0 mt-3 w-24 h-8 bg-yellow-600 text-white font-semibold flex justify-center items-center rounded-r-sm">
-          <p class="">Unpaid</p>
+          <%= t('.unpaid') %>
         </div>
       <% elsif @invoice.status == "unpaid" && @invoice.past_due? %>
         <div
         class="ribbon_red absolute left-0 top-0 mt-3 w-24 h-8 bg-red-600 text-white font-semibold flex justify-center items-center rounded-r-sm">
-          <p class="">Past due</p>
+          <%= t('.past_due') %>
         </div>
       <% end %>
       <p class="text-xl text-white font-medium">Invoice #<%= @invoice.invoice_nbr %></p>
@@ -22,7 +22,7 @@
     <div class="py-5 border-b w-full flex items-center justify-center">
       <div class="w-1/2 flex justify-center">
         <div>
-          <p class="text-orange-700">Invoice date</p>
+          <p class="text-orange-700"><%= t('.invoice_date') %></p>
           <% if @invoice.invoice_date.present? %>
             <p class="text-gray-700 text-sm xl:text-base"><%= @invoice.invoice_date %></p>
           <% else %>
@@ -32,7 +32,7 @@
       </div>
       <div class="w-1/2 flex justify-center">
         <div>
-          <p class="text-orange-700">Due date</p>
+          <p class="text-orange-700"><%= t('.due_date') %></p>
           <% if @invoice.due_date.present? %>
             <p class="text-gray-700 text-sm xl:text-base"><%= @invoice.due_date %></p>
           <% else %>
@@ -44,17 +44,17 @@
     <div class="py-5 px-4 border-b w-full text-gray-700">
       <div class="flex">
         <div class="w-20 xl:w-24">
-          Customer:
+          <%= t('.customer') %>:
         </div>
         <div class="text-blue-500 text-sm xl:text-base">
-          <%= @invoice.customer %>
+          <%= link_to(@invoice.customer.name, customer_path(@invoice.customer)) %>
         </div>
       </div>
       <div class="flex mt-4">
         <div class="w-20 xl:w-24">
-          Address:
+          <%= t('.address') %>:
         </div>
-        <div class="text-blue-500 text-sm xl:text-base">
+        <div class="text-sm xl:text-base">
           Street 123, Zip code
           <p>County, Country</p>
         </div>
@@ -63,7 +63,7 @@
     <div class="py-4 px-4 border-b flex-grow text-gray-700">
       <div class="flex">
         <div class="w-20 xl:w-24">
-          Notes:
+          <%= t('.notes') %>:
         </div>
         <div class="flex-grow text-sm xl:text-base">
           Lorem ipsum. Lorem ipsum. Lorem ipsum.
@@ -73,7 +73,7 @@
     <div class="py-4 px-4 border-b w-full text-gray-700">
       <div class="flex">
         <div class="w-20 xl:w-24">
-          Comment:
+          <%= t('.Comment') %>:
         </div>
         <div class="text-sm xl:text-base">
           Project3

@@ -1,5 +1,5 @@
 .btn {
-  @apply font-semibold px-3 py-2 rounded text-white text-sm uppercase flex justify-center items-center;
+  @apply font-semibold px-3 py-2 rounded text-white text-sm flex justify-center items-center;
 }
 
 .btn-blue {
