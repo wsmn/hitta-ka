@@ -48,6 +48,10 @@ sv:
       invoice_no: Faktura nr.
       amount: Summa
       due_date: Förfallodag
+    edit_dropdown:
+      edit_invoice: Redigera faktura
+      archive: Arkivera
+      delete: Radera faktura
     process_invoice:
       send: Skicka
       sent: Skickat

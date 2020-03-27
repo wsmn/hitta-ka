@@ -4,7 +4,7 @@
 <% content_for(:header_title) do %>
   <%= t('.title') %>
 <% end %>
-<div class="w-full bg-gray-300">
+<div class="w-full bg-gray-200">
   <%= render('show_heading') %>
   <div class="bg-white p-2 md:p-4 lg:p-6 pb-8">
     <div class="flex flex-wrap -mx-2 max-w-screen-xl">
@@ -78,20 +78,20 @@
     <div class="flex border-b border-gray-500 bg-white px-4 md:px-6 text-center">
       <div class="w-full lg:w-2/5 xl:w-1/4 flex -mx-1">
         <div class="w-1/3 px-1 flex">
-          <button :class="{ 'active bg-gray-300 -mb-px border-gray-500 py-2': tab === 'projects' }"
+          <button :class="{ 'active bg-gray-200 -mb-px border-gray-500 py-2': tab === 'projects' }"
             @click="tab = 'projects'"
             class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
             <%= t('.projects') %>
           </button>
         </div>
         <div class="w-1/3 px-1 flex">
-          <button :class="{ 'active bg-gray-300 -mb-px border-gray-500 py-2': tab === 'tasks' }" @click="tab = 'tasks'"
+          <button :class="{ 'active bg-gray-200 -mb-px border-gray-500 py-2': tab === 'tasks' }" @click="tab = 'tasks'"
             class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
             <%= t('.tasks') %>
           </button>
         </div>
         <div class="w-1/3 px-1 flex">
-          <button :class="{ 'active bg-gray-300 -mb-px border-gray-500 py-2': tab === 'invoices' }"
+          <button :class="{ 'active bg-gray-200 -mb-px border-gray-500 py-2': tab === 'invoices' }"
             @click="tab = 'invoices'"
             class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
             <%= t('.invoices') %>
@@ -99,13 +99,13 @@
         </div>
       </div>
     </div>
-    <div x-show="tab === 'projects'" class="flex-grow px-4 lg:p-6 bg-gray-300">
+    <div x-show="tab === 'projects'" class="flex-grow bg-gray-200 -mt-px">
       <%= render("projects/table", customer: @customer, projects: @projects, show_filters: false) %>
     </div>
-    <div x-show="tab === 'tasks'" class="flex-grow px-4 lg:px-6 bg-gray-300">
+    <div x-show="tab === 'tasks'" class="flex-grow px-4 lg:px-6 bg-gray-200">
       <%= render('show_search_field') %>
     </div>
-    <div x-show="tab === 'invoices'" class="flex-grow px-4 lg:px-6 bg-gray-300">
+    <div x-show="tab === 'invoices'" class="flex-grow bg-gray-200 -mt-px">
       <%= render("invoices/table", customer: @customer, invoices: @invoices, show_filters: false) %>
     </div>
   </div>
