@@ -22,6 +22,7 @@ sv:
       active_projects: Aktiva projekt
     edit_dropdown:
       edit_customer: Redigera kund
+      new_project: Nytt projekt
       archive: Arkivera
       delete: Radera kund
     create:
