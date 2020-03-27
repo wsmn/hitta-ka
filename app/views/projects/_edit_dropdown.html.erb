@@ -3,7 +3,7 @@
   x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
   x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
   <div class="rounded bg-white border border-gray-500 w-48 px-3">
-    <%= link_to(edit_customer_project_path(project.customer, project), class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded flex items-center justify-between -mx-3') do %>
+    <%= link_to(edit_customer_project_path(project.customer, project), class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-blue-100 hover:text-blue-800 rounded flex items-center justify-between -mx-3') do %>
       <div class="flex items-center">
         <span class="inline-block mr-2">
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -16,7 +16,7 @@
         <%= render("application/icons/arrow_right") %>
       </div>
     <% end %>
-    <%= link_to(settings_account_path, class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded flex items-center justify-between -mx-3') do %>
+    <%= link_to(settings_account_path, class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-blue-100 hover:text-blue-800 rounded flex items-center justify-between -mx-3') do %>
       <div class="flex items-center">
         <span class="inline-block mr-2">
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -26,7 +26,7 @@
         <%= t('.archive') %>
       </div>
     <% end %>
-    <%= link_to(customer_project_path(project.customer, project), method: 'delete', class: "block px-2 py-3 text-sm text-gray-900 font-medium bg-gray-400 hover:bg-red-200 hover:text-red-700 rounded-b flex items-center -mx-3", data: { confirm: t('.delete_confirm')}) do %>
+    <%= link_to(customer_project_path(project.customer, project), method: 'delete', class: "block px-2 py-3 text-sm text-white font-medium bg-red-600 hover:bg-red-200 hover:text-red-700 rounded-b flex items-center -mx-3", data: { confirm: t('.delete_confirm')}) do %>
       <span class="inline-block mr-2">
         <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
