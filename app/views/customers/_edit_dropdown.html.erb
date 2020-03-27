@@ -1,0 +1,38 @@
+<div x-show="edit_dropdown" class="origin-top-right absolute z-50 right-0 mt-24 w-56 rounded-md shadow-lg"
+  x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95"
+  x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+  x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
+  <div class="rounded bg-white border border-gray-500 w-48 px-3">
+    <%= link_to(edit_customer_path(customer), class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded flex items-center justify-between -mx-3') do %>
+      <div class="flex items-center">
+        <span class="inline-block mr-2">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+        </span>
+        <%= t('.edit_customer') %>
+      </div>
+      <div class="flex justify-end inline-block mt-px text-gray-500">
+        <%= render("application/icons/arrow_right") %>
+      </div>
+    <% end %>
+    <%= link_to(settings_account_path, class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded flex items-center justify-between -mx-3') do %>
+      <div class="flex items-center">
+        <span class="inline-block mr-2">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+          </svg>
+        </span>
+        <%= t('.archive') %>
+      </div>
+    <% end %>
+    <%= link_to(customer_path(customer), method: 'delete', class: "block px-2 py-3 text-sm text-gray-900 font-medium bg-gray-400 hover:bg-red-200 hover:text-red-700 rounded-b flex items-center -mx-3", data: { confirm: t('.delete_confirm')}) do %>
+      <span class="inline-block mr-2">
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+        </svg>
+      </span>
+      <%= t('.delete') %>
+    <% end %>
+  </div>
+</div>

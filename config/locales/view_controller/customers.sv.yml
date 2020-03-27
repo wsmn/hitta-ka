@@ -20,6 +20,10 @@ sv:
       name: Namn
       latest_project: Senaste projektet
       active_projects: Aktiva projekt
+    edit_dropdown:
+      edit_customer: Redigera kund
+      archive: Arkivera
+      delete: Radera kund
     create:
       success: Kund skapades
     update:

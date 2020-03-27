@@ -44,6 +44,10 @@ sv:
       status: Status
       time_logs: Tidsloggar
       created: Skapat
+    edit_dropdown:
+      edit_project: Redigera kund
+      archive: Arkivera
+      delete: Radera projekt
     show:
       title: Projekt
       tasks: Uppgifter

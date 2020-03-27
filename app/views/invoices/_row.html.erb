@@ -1,41 +1,45 @@
 <div class="flex border-b">
-  <%= link_to(customer_invoice_path(invoice.customer, invoice), class: 'w-full text-left hover:bg-orange-300') do %>
-    <div class="w-full flex py-4">
-      <div class="w-20 md:w-24 flex justify-center items-center">
-        <div class="rounded-full h-9 w-9 md:h-10 md:w-10 bg-orange-600 inline-flex
+  <%= link_to(customer_invoice_path(invoice.customer, invoice), class: 'flex-grow flex py-3 text-left hover:bg-orange-300') do %>
+    <div class="w-20 md:w-24 flex justify-center items-center">
+      <div class="rounded-full h-9 w-9 md:h-10 md:w-10 bg-orange-600 inline-flex
                   items-center justify-center text-white font-bold">
-          <i class="fas fa-lg fa-file-invoice"></i>
-        </div>
+        <i class="fas fa-lg fa-file-invoice"></i>
       </div>
-      <div class="w-full flex items-center">
-        <div class="w-1/5 lg:w-1/6">
-          <p class="text-sm md:text-base"><%= invoice.customer %></p>
-        </div>
-        <div class="w-1/5 lg:w-1/6">
-          <p class="text-md text-blue-500">#<%= invoice.invoice_nbr %></p>
-        </div>
-        <div class="w-1/6 hidden lg:inline-block">
-          <p class="text-md"><%= l(invoice.invoice_date) if invoice.invoice_date.present? %></p>
-        </div>
-        <div class="w-1/5 lg:w-1/6 flex justify-center md:justify-start">
-          <p class="text-md">
-            <% if (invoice.amount > 0) %>
-              <%= number_to_currency(invoice.amount) %>
-            <% end %>
-          </p>
-        </div>
-        <div class="w-1/5 lg:w-1/6 flex justify-center md:justify-start">
-          <p class="text-md <%= invoice.past_due? ? 'text-red-500' : 'text-green-500'%> "><%= invoice.due_date %></p>
-        </div>
-        <div class="w-1/5 lg:w-1/6 flex justify-center md:justify-start">
-          <%= invoice_tag(invoice.status) %>
-        </div>
+    </div>
+    <div class="w-full flex items-center">
+      <div class="w-1/5 lg:w-1/6">
+        <p class="text-sm md:text-base"><%= invoice.customer %></p>
       </div>
-      <div class="w-16 hidden md:flex items-center">
-        <span class="icon text-gray-600">
-          <i class="fas fa-lg fa-edit"></i>
-        </span>
+      <div class="w-1/5 lg:w-1/6">
+        <p class="text-md text-blue-500">#<%= invoice.invoice_nbr %></p>
+      </div>
+      <div class="w-1/6 hidden lg:inline-block">
+        <p class="text-md"><%= l(invoice.invoice_date) if invoice.invoice_date.present? %></p>
+      </div>
+      <div class="w-1/5 lg:w-1/6 flex justify-center md:justify-start">
+        <p class="text-md">
+          <% if (invoice.amount > 0) %>
+            <%= number_to_currency(invoice.amount) %>
+          <% end %>
+        </p>
+      </div>
+      <div class="w-1/5 lg:w-1/6 flex justify-center md:justify-start">
+        <p class="text-md <%= invoice.past_due? ? 'text-red-500' : 'text-green-500'%> "><%= invoice.due_date %></p>
+      </div>
+      <div class="w-1/5 lg:w-1/6 flex justify-center md:justify-start">
+        <%= invoice_tag(invoice.status) %>
       </div>
     </div>
   <% end %>
+  <div class="hidden md:flex items-center relative inline-block" @click.away="edit_dropdown = false"
+    x-data="{ edit_dropdown: false }">
+    <div class="cursor-pointer h-16 w-16 -ml-20 flex items-center justify-center"
+      @click="edit_dropdown = !edit_dropdown" @click="edit_dropdown = true">
+      <svg class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+      </svg>
+    </div>
+    <%= render('invoices/edit_dropdown', invoice: invoice) %>
+  </div>
 </div>
