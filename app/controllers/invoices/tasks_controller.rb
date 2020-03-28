@@ -5,15 +5,23 @@ module Invoices
     def update
       @task = current_user.tasks.where(invoice: nil).find(params[:id])
       @invoice = current_user.invoices.includes(:tasks).find(params[:invoice_id])
-      @new_tasks = @invoice.customer.tasks.where(invoice: nil).group_by(&:project)
-      @status = @task.update(invoice: @invoice)
+      if @task.update(invoice: @invoice)
+        @invoice.reload
+        @new_tasks = @invoice.customer.tasks.includes(:project).where(invoice: nil).group_by(&:project)
+      else
+        @new_tasks = {}
+      end
     end
 
     def destroy
       @invoice = current_user.invoices.includes(:tasks).find(params[:invoice_id])
       @task = @invoice.tasks.find(params[:id])
-      @new_tasks = @invoice.customer.tasks.where(invoice: nil).group_by(&:project)
-      @status = @task.update(invoice: nil)
+      if @task.update(invoice: nil)
+        @invoice.reload
+        @new_tasks = @invoice.customer.tasks.includes(:project).where(invoice: nil).group_by(&:project)
+      else
+        @new_tasks = {}
+      end
     end
   end
 end
