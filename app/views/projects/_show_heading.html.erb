@@ -1,4 +1,4 @@
-<div class="w-full inline-flex justify-between items-start p-3 xl:px-6 xl:py-4 bg-gray-900 border-b-8 border-blue-500">
+<div class="flex-grow inline-flex justify-between items-start p-3 xl:px-6 xl:py-4 bg-gray-900 border-b-8 border-blue-500">
   <div class="text-sm font-medium text-white">
     <div class="flex items-center">
       <%= link_to(projects_path, class: 'text-gray-500') do %>
@@ -47,7 +47,7 @@
         <%= link_to(edit_customer_project_path(@project.customer, @project),
         class: 'btn btn-blue normal-case rounded-l rounded-r-none
         text-white text-sm md:text-base md:ml-4 h-8 md:h-auto') do %>
-          <%= t('.edit_project') %>
+          <%= t('.edit') %>
         <% end %>
         <div @click="open = !open" class="bg-blue-800 hover:bg-blue-900 border border-blue-800 hover:border-blue-900 rounded-r h-8 md:h-10 flex justify-end items-center">
           <div class="text-gray-500 w-5 md:w-6 flex items-center justify-center">

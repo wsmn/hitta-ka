@@ -3,7 +3,7 @@
   x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
   x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
   <div class="rounded bg-white border border-gray-500 w-48 px-3">
-    <%= link_to(edit_customer_invoice_path(invoice.customer, invoice), class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-orange-100 hover:text-orange-800 rounded flex items-center justify-between -mx-3') do %>
+    <%= link_to(edit_customer_invoice_path(invoice.customer, invoice), class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-orange-200 hover:text-orange-800 rounded flex items-center justify-between -mx-3') do %>
       <div class="flex items-center">
         <span class="inline-block mr-2">
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -16,7 +16,7 @@
         <%= render("application/icons/arrow_right") %>
       </div>
     <% end %>
-    <%= link_to(settings_account_path, class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-orange-100 hover:text-orange-800 rounded flex items-center justify-between -mx-3') do %>
+    <%= link_to(settings_account_path, class: 'block px-2 py-3 text-sm text-gray-800 hover:bg-orange-200 hover:text-orange-800 rounded flex items-center justify-between -mx-3') do %>
       <div class="flex items-center">
         <span class="inline-block mr-2">
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

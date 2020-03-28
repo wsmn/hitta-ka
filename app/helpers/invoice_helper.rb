@@ -11,7 +11,7 @@ module InvoiceHelper
   end
 
   def invoice_tag(status)
-    status_class = "text-sm md:text-base inline-flex font-semibold rounded-full h-6 px-3 md:px-4 justify-center items-center"
+    status_class = "text-sm xl:text-base inline-flex font-semibold rounded-full h-6 px-3 md:px-4 justify-center items-center"
     status_class += " #{invoice_status_class(status)}"
     content_tag(:span, invoice_status(status), class: status_class)
   end
@@ -22,6 +22,24 @@ module InvoiceHelper
       "bg-yellow-200 text-yellow-800"
     when "paid"
       "bg-green-200 text-green-800"
+    end
+  end
+
+  def invoice_status_mobile(key)
+  end
+
+  def invoice_tag_mobile(status)
+    status_class = "rounded-full h-3 w-3"
+    status_class += " #{invoice_status_mobile_class(status)}"
+    content_tag(:span, invoice_status_mobile(status), class: status_class)
+  end
+
+  def invoice_status_mobile_class(status)
+    case status
+    when "unpaid"
+      "bg-yellow-500"
+    when "paid"
+      "bg-green-400"
     end
   end
 

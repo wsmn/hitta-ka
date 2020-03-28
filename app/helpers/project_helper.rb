@@ -33,6 +33,32 @@ module ProjectHelper
     end
   end
 
+  def project_status_mobile(key)
+  end
+
+  def project_tag_mobile(status)
+    status_class = "rounded-full h-3 w-3"
+    status_class += " #{project_status_mobile_class(status)}"
+    content_tag(:span, project_status_mobile(status), class: status_class)
+  end
+
+  def project_status_mobile_class(status)
+    case status
+    when "upcoming"
+      "bg-blue-500"
+    when "active"
+      "bg-green-500"
+    when "completed"
+      "bg-green-800"
+    when "archived"
+      "bg-gray-500"
+    when "paused"
+      "bg-yellow-400"
+    when "cancelled"
+      "bg-red-400"
+    end
+  end
+
   def project_status_button(status, current, object: :projects)
     current ||= :all
     object ||= :projects
