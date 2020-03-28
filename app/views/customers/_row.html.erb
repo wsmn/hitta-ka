@@ -1,26 +1,34 @@
 <div class="flex border-b border-gray-400">
-  <%= link_to(customer_path(customer), class: 'flex-grow flex py-3 text-left hover:bg-green-200') do %>
-    <div class="pl-3 pr-5 md:px-4 xl:px-6 flex justify-center items-center">
+  <%= link_to(customer_path(customer), class: 'flex-grow flex py-3 hover:bg-green-200') do %>
+    <div class="px-2 sm:px-4 xl:px-6 flex justify-center items-center">
       <div class="rounded-full h-8 w-8 md:h-10 md:w-10 bg-green-600 inline-flex
-                    items-center justify-center text-white font-bold text-sm lg:text-base">
+                      items-center justify-center text-white font-bold text-xs md:text-sm lg:text-base">
         <%= customer.initials %>
       </div>
     </div>
-    <div class="w-full flex items-center">
-      <div class="w-1/3 lg:w-1/5 pr-4">
-        <p class="text-sm md:text-base"><%= customer.name%></p>
-        <p class="text-sm text-gray-700 opacity-75">Individual</p>
+    <div class="flex-grow flex items-center text-xs sm:text-sm xl:text-base">
+      <div class="w-1/3 lg:w-1/5 pr-2 md:pr-4">
+        <p class=""><%= customer.name%></p>
+        <p class="text-xs md:text-sm text-gray-700 opacity-75">Individual</p>
       </div>
-      <div class="w-3/5 lg:w-1/5">
-        <p class="text-sm md:text-base"><%= customer.latest_project %></p>
+      <div class="w-1/3 lg:w-1/5 break-all pr-2 md:pr-4">
+        <p class=""><%= customer.latest_project %></p>
       </div>
       <div class="w-1/5 hidden lg:inline-block">
-        <p class="text-sm md:text-base"><%= customer.projects.count %></p>
+        <p class=""><%= customer.projects.count %></p>
       </div>
-      <div class="w-1/3 lg:w-1/5 hidden lg:flex justify-center md:justify-start">
+      <div class="w-1/3 lg:w-1/5 flex">
         5.799,00 kr
       </div>
-      <div class="w-1/5 lg:w-1/5 flex">
+      <div class="w-1/6 lg:w-1/6 hidden lg:flex items-center">
+        <div class="pl-4 md:pl-5 flex items-center">
+          <div class="rounded-full h-3 w-3 bg-blue-500">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-1/6 lg:w-1/6 flex lg:hidden items-center">
+      <div class="pl-4 md:pl-5 flex items-center">
         <div class="rounded-full h-3 w-3 bg-blue-500">
         </div>
       </div>
