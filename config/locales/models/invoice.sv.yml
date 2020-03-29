@@ -1,6 +1,7 @@
 sv:
   model:
     invoice:
+      total: "Total:"
       status:
         all: Alla
         paid: Betald

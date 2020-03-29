@@ -2,6 +2,14 @@
 
 # View helper for projects
 module InvoiceHelper
+  def invoice_amount(amount)
+    label = content_tag(:span, t("model.invoice.total"))
+    amount = content_tag(:span, number_to_currency(amount), class: "text-green-500 text-lg ml-1")
+    content_tag(:span, class: "text-gray-800 font-medium") do
+      label.concat(amount)
+    end
+  end
+
   def invoice_statuses
     Invoice.statuses.keys.map { |k| [invoice_status(k), k] }
   end
@@ -25,13 +33,10 @@ module InvoiceHelper
     end
   end
 
-  def invoice_status_mobile(key)
-  end
-
   def invoice_tag_mobile(status)
     status_class = "rounded-full h-3 w-3"
     status_class += " #{invoice_status_mobile_class(status)}"
-    content_tag(:span, invoice_status_mobile(status), class: status_class)
+    content_tag(:span, nil, class: status_class)
   end
 
   def invoice_status_mobile_class(status)

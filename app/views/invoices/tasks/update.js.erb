@@ -1,3 +1,8 @@
-var invoice_tasks = document.querySelector("#invoice-tasks");
-invoice_tasks.innerHTML = "";
-invoice_tasks.innerHTML = "<%= escape_javascript(render("invoices/tasks", invoice: @invoice, tasks: @invoice.tasks)) %>";
+var modal_project_tasks = document.querySelector("#modal-project-tasks");
+modal_project_tasks.innerHTML = "<%= escape_javascript(render("invoices/tasks/modal_project_tasks", tasks: @new_tasks, invoice: @invoice)) %>";
+
+var tasks_table = document.querySelector("#tasks-table");
+tasks_table.innerHTML = "<%= escape_javascript(render("invoices/tasks/table", invoice: @invoice, tasks: @invoice.tasks)) %>"
+
+var amount = document.querySelector("#invoice-amount");
+amount.innerHTML = "<%= escape_javascript(invoice_amount(@invoice.amount)) %>";

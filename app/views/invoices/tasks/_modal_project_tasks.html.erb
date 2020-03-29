@@ -1,0 +1,20 @@
+<% tasks ||= {} %>
+<% invoice ||= nil %>
+<% if tasks.any? %>
+  <% tasks.each do |project, tasks| %>
+    <div class="border-b">
+      <div class="flex p-4 border-b border-gray-400 bg-gray-200">
+        <div class="text-xl font-bold text-gray-900 flex items-center">
+          <%= project %>
+        </div>
+      </div>
+      <div>
+        <% tasks.each do |task| %>
+          <%= render("invoices/tasks/modal_row", invoice: invoice, task: task) %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <%= render("tasks/empty") %>
+<% end %>
