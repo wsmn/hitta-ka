@@ -1,0 +1,8 @@
+<% customers ||= [] %>
+<% if (customers.empty?) %>
+  <%= render('customers/empty') %>
+<% else %>
+  <% customers.each_with_index do |customer, idx| %>
+    <%= render("customers/row", customer: customer, odd: idx % 2 == 0) %>
+  <% end %>
+<% end %>

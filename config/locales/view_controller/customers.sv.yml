@@ -11,7 +11,6 @@ sv:
       search: Sök
       sort_by: Sortera på
       name: Namn
-    sort_by:
       latest: Senaste
       customer_name: Kundnamn
       project_name: Projektnamn

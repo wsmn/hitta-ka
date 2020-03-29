@@ -1,31 +1,23 @@
 <div class="flex-grow px-2 pt-2 lg:px-0">
   <div class="flex mb-4 shadow-md border border-gray-400 bg-white items-center lg:pr-4">
-    <div x-data="{ sort_by: false }" @click.away="sort_by = false" class="border-r border-gray-300 py-3 px-2 sm:px-4">
-      <button @click="sort_by = !sort_by" @click="open = true" :class="{'text-green-600': sort_by}"
-        class="btn normal-case py-2 px-0 text-gray-800 hover:text-green-600 flex items-center focus:outline-none">
-        <div class="mr-1">
-          <%= render('application/icons/filter') %>
-        </div>
-        <span class="text-sm mr-1">
-          <%= t('.sort_by') %>: <%= t('.name') %>
-        </span>
-        <div class="transform" :class="{'rotate-180': sort_by}">
+    <%= form_with(url: [:customer, :search], class: "px-4 py-2 flex") do |form| %>
+      <div class="relative w-48">
+        <%= form.select(:order_by, [[t(".latest"), :created_at], [t(".name"), :name]], {}, id: "order_by", class: "form-input bg-gray-100 h-9", onchange: "Rails.fire(this.form, 'submit')") %>
+        <div class="pointer-events-none absolute inset-y-0 right-0
+                  flex items-center px-2 text-gray-700">
           <%= render('application/icons/arrow_down') %>
         </div>
-      </button>
-      <%= render('sort_by') %>
-    </div>
-    <div class="px-4">
-      <div class="relative w-48 md:w-64">
+      </div>
+      <div class="relative w-48 md:w-64 h-9 ml-2">
         <span class="absolute inset-y-0 left-0 pl-2 flex items-center">
           <svg class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </span>
-        <input placeholder="<%= t('.search') %>"
-          class="form-input block pl-8 pr-4 py-2 w-full bg-white border border-gray-400 rounded text-sm">
+        <%= form.hidden_field(:order, value: params[:order_by]) %>
+        <%= form.text_field(:search, class: "form-input block pl-8 pr-4 py-2 w-full bg-white border border-gray-400 rounded text-sm", placeholder: t(".search")) %>
       </div>
-    </div>
+    <% end%>
   </div>
 </div>
