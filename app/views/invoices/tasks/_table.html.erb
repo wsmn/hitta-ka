@@ -1,0 +1,14 @@
+<% if tasks.any? %>
+  <% tasks.each do |task| %>
+    <%= render("invoices/tasks/row", invoice: invoice, task: task) %>
+  <% end %>
+<% else %>
+  <div class="text-center p-6 bg-white rounded">
+    <div class="w-24 mx-auto mt-4 mb-4">
+      <%= image_tag('no_timelogs.svg', alt: 'Builders')%>
+    </div>
+    <p class="text-2xl text-gray-900 font-medium mb-4"><%= t('.add_tasks_now') %></p>
+    <p class="text-gray max-w-xs mx-auto mb-6"><%= t('.use_the_button_down_below_to_add_tasks_to_your_invoice') %>
+    </p>
+  </div>
+<% end %>

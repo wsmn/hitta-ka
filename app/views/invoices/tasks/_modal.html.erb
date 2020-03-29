@@ -1,0 +1,48 @@
+<div x-data="{ add_tasks: false }" data-turbolinks-permanent>
+  <button @click="add_tasks = true" class="btn btn-orange">
+    <%= t(".add_tasks") %>
+  </button>
+  <div id="invoice-tasks" x-show="add_tasks" class="overflow-y-auto bg-gray-900 px-8" style="background-color: rgba(0,0,0,0.3)"
+    x-transition:enter="transition ease-out duration-300" x-transition:enter-start="transform opacity-0 scale-100"
+    x-transition:enter-end="transform opacity-100 scale-100"
+    class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
+    :class="{ 'absolute inset-0 z-50 flex items-center justify-center': add_tasks }">
+    <div x-show="add_tasks" @click.away="add_tasks = false"
+      class="bg-white rounded-md w-full border border-gray-500 xl:w-1/2 opacity-100 items-center justify-center relative max-w-2xl">
+      <div class="flex-grow bg-whtie border-b border-gray-400 p-5 rounded-t flex items-center">
+        <div class="w-3/4 md:w-4/5 lg:w-5/6">
+          <p class="font-bold text-base lg:text-2xl text-gray-800">
+            <%= t(".add_tasks_to_your_invoice") %>
+          </p>
+          <p class="font-bold leading-tight text-base lg:text-lg text-blue-500">
+            <%= invoice.customer.name %> - #<%= invoice.invoice_nbr %>
+          </p>
+        </div>
+        <div class="w-1/4 md:w-1/5 lg:w-1/6 flex items-center"><%= image_tag('no_invoices.svg', alt: 'Builders')%>
+        </div>
+      </div>
+      <div id="modal-project-tasks">
+        <%= render("invoices/tasks/modal_project_tasks", tasks: tasks, invoice: invoice) %>
+      </div>
+      <div
+        class="absolute top-0 right-0 bg-gray-900 hover:bg-gray-700 md:hover:bg-red-400 md:bg-red-600 w-5 h-5 md:w-8 md:h-8 rounded md:rounded-full text-white font-bold flex items-center justify-center mt-2 mr-2 md:-mt-4 md:-mr-4 cursor-pointer"
+        @click="add_tasks = false">
+        <svg class="h-3 w-3 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <div class="w-full flex py-5 px-5">
+        <div class="w-full flex justify-end items-center">
+          <div class="w-20 mr-2">
+            <button
+              @click="add_tasks = false"
+              class="w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300"
+            >
+              <%= t(".close") %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

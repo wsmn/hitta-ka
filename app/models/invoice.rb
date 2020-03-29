@@ -10,7 +10,9 @@ class Invoice < ApplicationRecord
   end
 
   def amount
-    hours * 999
+    result = 0
+    tasks.each { |task| result += task.cost }
+    result
   end
 
   def past_due?
