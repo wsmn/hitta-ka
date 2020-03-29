@@ -1,15 +1,26 @@
 # frozen_string_literal: true
 
 class SearchesController < ApplicationController
+  include Pagy::Backend
   before_action(:require_login, except: [:company])
 
   def project
-    @projects = Project.includes(:customer)
-      .text_search(search_param)
+    @projects = Project.includes(:customer).text_search(search_param)
   end
 
   def customer
-    @customers = Customer.text_search(search_param)
+    search = params.fetch(:search)
+    customers = if search.present?
+      Customer.basic_search(search)
+    else
+      Customer.all
+    end
+    order = params.fetch(:order_by)
+    if order.present?
+      customers = customers.order(order)
+    end
+
+    @pagy, @customers = pagy(customers)
   end
 
   def company

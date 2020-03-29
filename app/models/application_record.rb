@@ -13,6 +13,6 @@ class ApplicationRecord < ActiveRecord::Base
     if initials == ""
       initials = "?"
     end
-    initials
+    initials.upcase
   end
 end

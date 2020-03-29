@@ -1,10 +1,11 @@
-var resultTag = document.getElementsByClassName('search-results')[0];
-<% if @customers.any? %>
-  if (resultTag != null) {
-    resultTag.innerHTML = "<%= j render('/customers/table', customers: @customers, headline: 'Sökresultat') %><hr/>"
+var customerTable = document.querySelector("#customers-table");
+if (customerTable != null) {
+  customerTable.innerHTML = "<%= escape_javascript(render('/customers/table', customers: @customers, pagy: @pagy, search: true)) %>";
+  if (Alpine != undefined) {
+    Alpine.discoverUninitializedComponents(el => {
+      Alpine.initializeComponent(el);
+    }, customerTable);
   }
-<% else %>
-  if (resultTag != null) {
-    resultTag.innerHTML = "Inga resultat.<hr>"
-  }
-<% end %>
+} else {
+  console.log("Could not find the tag");
+}
