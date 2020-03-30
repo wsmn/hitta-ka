@@ -19,7 +19,7 @@
         <div class="">
           <h1 class="text-2xl font-bold text-white"><%= yield(:header_title) %></h1>
         </div>
-        <div class="flex justify-center">
+        <div class="flex items-center justify-center">
           <div class="relative w-full">
             <span class="absolute inset-y-0 left-0 flex items-center pl-2 text-white">
               <%= render('application/icons/search') %>
@@ -27,12 +27,21 @@
             <input placeholder="Search for projects, customers etc."
               class="block pl-8 pr-4 py-2 w-full bg-gray-700 rounded text-sm placeholder-white text-white focus:bg-white focus:placeholder-gray-600 focus:text-gray-900 focus:outline-none focus:border-gray-500">
           </div>
+          <div @click.away="header_new_dropdown = false" x-data="{ header_new_dropdown: false }" class="ml-5">
+            <div class="relative">
+              <div @click="header_new_dropdown = !header_new_dropdown" @click="header_new_dropdown = true"
+                class="rounded-full bg-white h-8 w-8 cursor-pointer flex justify-center items-center btn-bounce">
+                <%= render('application/icons/plus') %>
+              </div>
+              <%= render('header_new_dropdown') %>
+            </div>
+          </div>
         </div>
         <div class="flex justify-end items-center">
           <div @click.away="open = false" class="relative inline-block" x-data="{ open: false }">
             <button @click="open = !open" class="flex items-center text-white focus:outline-none" @click="open = true">
               <div
-              class="h-10 w-10 rounded bg-indigo-700 flex items-center justify-center text-white font-bold uppercase">
+                class="h-10 w-10 rounded bg-indigo-700 flex items-center justify-center text-white font-bold uppercase">
                 <%= current_user.initials %>
               </div>
               <span class="hidden lg:inline ml-2 mr-2 text-sm font-semibold">
