@@ -23,6 +23,8 @@ gem "textacular", "~> 5.2"
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 gem "webpacker"
+gem "wicked_pdf"
+gem "wkhtmltopdf-binary"
 
 group :development, :test do
   gem "bullet"

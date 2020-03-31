@@ -21,6 +21,7 @@
       <p class="text-2xl text-blue-900 font-semibold">Preview down below</p>
     </div>
     <div class="w-full flex bg-white border border-gray-400 rounded-lg p-5 justify-center">
+      <%= link_to 'Create PDF document', customer_invoice_path(@invoice.customer, :format => :pdf) %>
     </div>
   </div>
 </div>

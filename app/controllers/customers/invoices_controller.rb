@@ -11,6 +11,26 @@ module Customers
       @invoice = @customer.invoices.includes(:tasks).find(params[:id])
       @new_tasks = @customer.tasks.where(invoice: nil).group_by(&:project)
       @task = @customer.tasks.build
+      respond_to do |format|
+        format.html
+        format.pdf do
+          render pdf: "file_name",
+                 template: "invoices/pdf.html.erb",
+                 header: {
+                   html: {
+                     template: "invoices/_pdf_header.html.erb",
+                     layout: "pdf",
+                   },
+                 },
+                 footer: {
+                   html: {
+                     template: "invoices/_pdf_footer.html.erb",
+                     layout: "pdf",
+                   },
+                 },
+                 layout: "pdf"
+        end
+      end
     end
 
     def new
