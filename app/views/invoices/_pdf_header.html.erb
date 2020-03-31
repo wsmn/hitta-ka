@@ -1,0 +1,24 @@
+<div class="clearfix">
+  <div class="float-left w-2/3">
+    <h1 class="text-5xl font-black leading-none">Company Logo</h1>
+  </div>
+  <div class="float-left w-1/3 pr-10">
+    <h1 class="text-orange-600 text-4xl font-bold text-right"><%= t('invoices.pdf.invoice') %></h1>
+    <div class="mt-4 clearfix w-56 float-right">
+      <div class="float-left w-1/2">
+        <span class="text-left"><%= t('invoices.pdf.invoice_number') %>:</span>
+      </div>
+      <div class="float-left w-1/2 text-right">
+        <span class="text-right font-medium">#<%= @invoice.invoice_nbr %></span>
+      </div>
+    </div>
+    <div class="mt-1 clearfix w-56 float-right">
+      <div class="float-left w-1/2">
+        <span class="text-left"><%= t('invoices.pdf.invoice_date') %>:</span>
+      </div>
+      <div class="float-left w-1/2 text-right">
+        <span class="text-right"><%= @invoice.invoice_date %></span>
+      </div>
+    </div>
+  </div>
+</div>

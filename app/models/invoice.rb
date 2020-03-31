@@ -15,6 +15,18 @@ class Invoice < ApplicationRecord
     result
   end
 
+  def tax
+    result = 0
+    result = amount * 0.25
+    result
+  end
+
+  def total
+    result = 0
+    result = tax + amount
+    result
+  end
+
   def past_due?
     if due_date.nil?
       false

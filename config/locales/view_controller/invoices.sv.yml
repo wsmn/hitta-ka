@@ -81,3 +81,22 @@ sv:
       delete: Ta bort
     show:
       title: Faktura
+    pdf:
+      invoice: Faktura
+      invoice_number: Fakturanummer
+      invoice_date: Fakturadatum
+      payment_terms: Betalningsvillkor
+      days: dagar
+      due_date: Förfallodatum
+      our_reference: Vår referens
+      your_reference: Er referens
+      task: Specifikation
+      hours: Timmar
+      cost: á-pris
+      linetotal: Summa
+      subtotal: Summa
+      tax: Moms
+      total: Att betala
+      address: Adress
+      phone: Telefon
+      email_and_web: E-post och webb

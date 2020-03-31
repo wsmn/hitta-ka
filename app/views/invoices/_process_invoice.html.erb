@@ -87,10 +87,8 @@
           </div>
         </div>
         <div class="ml-1">
-          <button
-            class="w-20 lg:w-24 py-2 text-xs md:text-sm px-1 shadow-md no-underline rounded bg-gray-500 text-white font-bold hover:text-white hover:bg-gray-400 focus:outline-none active:shadow-none">
-            <%= t('.download') %>
-          </button>
+          <%= link_to(t('.download'), customer_invoice_path(@invoice.customer, :format => :pdf),
+          class: "px-3 py-2 text-xs md:text-sm shadow-md no-underline rounded bg-gray-500 text-white font-bold hover:text-white hover:bg-gray-400 focus:outline-none active:shadow-none") %>
         </div>
       </div>
     </div>

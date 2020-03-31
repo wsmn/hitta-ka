@@ -1,0 +1,28 @@
+<div class="w-full clearfix border-t-2 border-orange-600 h-32 pt-4">
+  <div class="w-3/5 float-left">
+    <div class="w-1/3 float-left">
+      <p class="font-bold"><%= t('invoices.pdf.address') %>:</p>
+      <p><%= current_user.organisations.first %></p>
+      <p>Streetname 5</p>
+      <p>12323, Citycity</p>
+    </div>
+    <div class="w-1/3 float-left">
+      <p class="font-bold"><%= t('invoices.pdf.phone') %>:</p>
+      <p>First number</p>
+      <p>Second number?</p>
+    </div>
+    <div class="w-1/3 float-left">
+      <p class="font-bold"><%= t('invoices.pdf.email_and_web') %>:</p>
+      <p><%= current_user.email %></p>
+      <p>User website</p>
+    </div>
+  </div>
+  <div class="w-2/5 float-left">
+    <div class="w-1/3 float-left">
+      <p class="font-bold"><%= t('vat_number') %>:</p>
+      <p>SE000000000000001</p>
+      <p class="font-bold mt-2"><%= t('bank_giro') %>:</p>
+      <p>1234-1234</p>
+    </div>
+  </div>
+</div>
