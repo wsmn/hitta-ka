@@ -1,5 +1,5 @@
-<div class="w-full lg:w-1/3 lg:max-w-md lg:px-2 xl:px-3">
-  <div class="border border-orange-400 shadow-md bg-white rounded text-xs xl:text-sm">
+<div class="">
+  <div class="border border-orange-400 bg-white rounded text-xs xl:text-sm">
     <div class="h-20 bg-orange-600 p-8 flex items-center justify-center rounded-t -m-px relative">
       <% if @invoice.status == "paid" %>
         <div
@@ -80,11 +80,16 @@
         </div>
       </div>
     </div>
-    <div class="w-full flex justify-start items-center p-4">
-      <%= link_to(edit_customer_invoice_path(@invoice.customer, @invoice),
+    <div class="w-full flex justify-between items-center p-4">
+      <div>
+        <%= link_to(edit_customer_invoice_path(@invoice.customer, @invoice),
       class: 'btn btn-orange normal-case transition ease-out duration-700 transform hover:scale-105') do %>
-        <%= t('.edit_invoice') %>
-      <% end %>
+          <%= t('.edit_invoice') %>
+        <% end %>
+      </div>
+      <div>
+        <%= render('invoices/pdf_preview_modal') %>
+      </div>
     </div>
   </div>
 </div>

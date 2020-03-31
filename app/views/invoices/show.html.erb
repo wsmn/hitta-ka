@@ -9,19 +9,13 @@
     <div class="flex flex-wrap flex-grow lg:-mx-2 xl:-mx-3">
       <%= render('invoice_card') %>
       <div class="w-full lg:w-2/3 xl:flex-grow lg:px-2 xl:px-3">
-        <div class="flex-grow bg-white border border-gray-400 shadow-md rounded-md mt-4 lg:mt-0">
+        <div class="flex-grow bg-white border border-gray-400 rounded-md mt-4 lg:mt-0">
           <div class="flex-grow">
             <%= render('invoices/tasks/listing', invoice: @invoice, tasks: @invoice.tasks, new_tasks: @new_tasks ) %>
           </div>
         </div>
         <%= render('process_invoice') %>
       </div>
-    </div>
-    <div class="w-full flex flex-wrap justify-center items-center py-8">
-      <p class="text-2xl text-blue-900 font-semibold">Preview down below</p>
-    </div>
-    <div class="w-full flex bg-white border border-gray-400 rounded-lg p-5 justify-center">
-      <%= link_to 'Create PDF document', customer_invoice_path(@invoice.customer, :format => :pdf) %>
     </div>
   </div>
 </div>

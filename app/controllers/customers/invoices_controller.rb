@@ -14,8 +14,8 @@ module Customers
       respond_to do |format|
         format.html
         format.pdf do
-          render pdf: "file_name",
-                 template: "invoices/pdf.html.erb",
+          render pdf: "#{t("invoices.pdf.invoice")}_#{@invoice.invoice_nbr}",
+                 template: "invoices/_pdf.html.erb",
                  header: {
                    html: {
                      template: "invoices/_pdf_header.html.erb",
