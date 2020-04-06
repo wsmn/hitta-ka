@@ -1,5 +1,5 @@
 <div class="flex-grow px-2 pt-2 lg:px-0">
-  <div class="flex mb-4 shadow-md border border-gray-400 bg-white items-center lg:pr-4">
+  <div class="flex mb-4 shadow-md border border-gray-300 bg-white items-center lg:pr-4">
     <%= form_with(url: [:customer, :search], class: "px-4 py-2 flex") do |form| %>
       <div class="relative w-48">
         <%= form.select(:order_by, [[t(".latest"), :created_at], [t(".name"), :name]], {}, id: "order_by", class: "form-input bg-gray-100 h-9", onchange: "Rails.fire(this.form, 'submit')") %>

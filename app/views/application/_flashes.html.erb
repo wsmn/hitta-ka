@@ -1,35 +1,51 @@
 <% if flash.any? %>
-  <div class="z-50 w-full md:w-3/4 lg:w-1/2 mx-auto left-0 right-0 absolute mt-4 px-4">
+  <div
+  class="fixed inset-0 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-end sm:justify-end z-50">
     <% flash.each do |type, value| %>
-      <div x-data="{close: false, type: '<%= type %>'}">
-        <div x-show="!close; setTimeout(() => close = true, 3000)" x-transition:leave="ease-in duration-200"
-          x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-          x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-          class="rounded relative border px-4 py-4 mt-2 flex items-center"
-          :class="{'bg-red-100 border-red-400 text-red-700': type == 'alert', 'bg-blue-100 border-blue-400 text-blue-700': type == 'notice'}">
-          <svg x-show="type === 'notice'" class="text-green-500 h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24"
-        stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <svg x-show="type === 'alert'" class="text-red-500 h-6 w-6 inline-block" width="24" height="24"
-        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-            <path
-          d="M10 14L12 12M12 12L14 10M12 12L10 10M12 12L14 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <span class="inline ml-3"><%= value %></span>
-            <span class="absolute right-0 px-4">
-              <svg @click="close = true" role="button" class="fill-current h-6 w-6 cursor-pointer"
-          :class="{'text-red-500': type == 'alert', 'text-blue-500': type == 'notice'}"
-          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <title><%= t('.close') %></title>
-                <path
-            d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+      <div x-data="{close: false, type: '<%= type %>'}" x-show="!close; setTimeout(() => close = true, 8000)"
+        x-transition:enter="transform ease-out duration-300 transition"
+        x-transition:enter-start="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
+        x-transition:enter-end="translate-y-0 opacity-100 sm:translate-x-0"
+        x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0" class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto border"
+        :class="{'bg-red-100 border-red-400 text-red-700': type == 'alert', 'bg-blue-100 border-blue-600 text-blue-700': type == 'notice'}">
+        <div class="rounded-lg shadow-xs overflow-hidden">
+          <div class="p-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <svg x-show="type === 'notice'" class="text-green-500 h-6 w-6 mt-1" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-              </span>
+                <svg x-show="type === 'alert'" class="text-red-500 h-6 w-6 mt-1" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="ml-3 w-0 flex-1 pt-0.5">
+                <p class="text-base leading-5 font-medium text-gray-900">
+                  <%= value %>
+                </p>
+                <p class="mt-1 text-sm leading-5 text-gray-500">
+                  <%= t('.this_cannot_be_reverted') %>
+                </p>
+              </div>
+              <div class="ml-4 flex-shrink-0 flex">
+                <button @click="close = true"
+              class="inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:text-gray-500 btn-bounce">
+                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
-        <% end %>
+        </div>
       </div>
     <% end %>
+  </div>
+<% end %>
