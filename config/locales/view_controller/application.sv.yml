@@ -16,6 +16,9 @@ sv:
       sign_out: Logga ut
       tasks: Uppgifter
 
+    flashes:
+      this_cannot_be_reverted: Detta går inte att ångra.
+
     account_menu:
       all_projects: Alla projekt
       archived_projects: Arkiverade projekt

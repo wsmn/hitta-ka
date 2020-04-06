@@ -5,5 +5,7 @@ module.exports = {
   theme: {},
   variants: {},
   corePlugins: {},
-  plugins: []
+  plugins: [
+    require('@tailwindcss/ui'),
+  ]
 };

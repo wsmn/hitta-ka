@@ -3,33 +3,33 @@
 }
 
 .btn-blue {
-  @apply bg-blue-600;
-}
-.btn-blue:hover {
   @apply bg-blue-500;
 }
-.btn-blue:active {
+.btn-blue:hover {
   @apply bg-blue-400;
+}
+.btn-blue:active {
+  @apply bg-blue-300;
 }
 
 .btn-green {
-  @apply bg-green-600;
-}
-.btn-green:hover {
   @apply bg-green-500;
 }
-.btn-green:active {
+.btn-green:hover {
   @apply bg-green-400;
+}
+.btn-green:active {
+  @apply bg-green-300;
 }
 
 .btn-orange {
-  @apply bg-orange-600;
-}
-.btn-orange:hover {
   @apply bg-orange-500;
 }
-.btn-orange:active {
+.btn-orange:hover {
   @apply bg-orange-400;
+}
+.btn-orange:active {
+  @apply bg-orange-300;
 }
 
 .btn-red {
@@ -46,11 +46,11 @@
   @apply transform duration-700 ease-out transition;
 }
 .btn-bounce:hover {
-  @apply scale-110;
+  @apply scale-105;
 }
 
 .form-input {
-  @apply w-full block appearance-none bg-gray-100 text-gray-900 border border-gray-500 rounded px-3 py-2 leading-tight;
+  @apply w-full block appearance-none bg-cool-gray-50 text-gray-900 border border-gray-400 rounded px-3 py-2 leading-tight;
 }
 
 .form-input:focus {
