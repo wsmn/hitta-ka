@@ -88,3 +88,10 @@ sv:
       no_customers_found: Hittade inga inlagda kunder!
       register_first_customer: Klicka på knappen nedan för att registrera en första kund.
       new_customer: Lägg till kund
+    edit_dropdown:
+      edit: Redigera
+      new_time_log: Ny tidslogg
+      new_invoice: Ny faktura
+      archive: Arkivera
+      delete: Radera kund
+      delete_confirm: Vill du verkligen radera kunden? Tar även bort all kopplad data och kan ej ångras.
