@@ -24,7 +24,10 @@ gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 gem "webpacker"
 gem "wicked_pdf"
-gem "wkhtmltopdf-binary"
+
+group :production do
+  gem "wkhtmltopdf-heroku", "2.12.5.0"
+end
 
 group :development, :test do
   gem "bullet"
@@ -33,6 +36,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "rspec-rails"
   gem "selenium-webdriver"
+  gem "wkhtmltopdf-binary"
 end
 
 group :development do
