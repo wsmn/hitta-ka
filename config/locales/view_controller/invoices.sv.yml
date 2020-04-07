@@ -100,3 +100,10 @@ sv:
       address: Adress
       phone: Telefon
       email_and_web: E-post och webb
+    edit_dropdown:
+      edit: Redigera
+      new_time_log: Ny tidslogg
+      new_invoice: Ny faktura
+      archive: Arkivera
+      delete: Radera fakturan
+      delete_confirm: Vill du verkligen radera fakturan? Tar även bort all kopplad data och kan ej ångras.

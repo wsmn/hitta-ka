@@ -55,8 +55,11 @@ sv:
       invoices: Fakturor
     show_heading:
       projects: Projekt
-      time_log: Tidslogg
-      edit_project: Redigera projekt
+      edit: Redigera
+      new_time_log: Ny tidslogg
+      new_invoice: Ny faktura
+      archive: Arkivera
+      delete: Radera projekt
       delete: Radera projekt
       delete_project: Radera projekt
       delete_confirm: Vill du verkligen radera projektet? Tar även bort all kopplad data och kan ej ångras.
@@ -98,3 +101,10 @@ sv:
       no_projects_found: Hittade inga projekt!
       to_register_first: Tryck på knappen nedan för att registrera ett nytt.
       new_project: Nytt projekt
+    edit_dropdown:
+      edit: Redigera
+      new_time_log: Ny tidslogg
+      new_invoice: Ny faktura
+      archive: Arkivera
+      delete: Radera projekt
+      delete_confirm: Vill du verkligen radera projektet? Tar även bort all kopplad data och kan ej ångras.
