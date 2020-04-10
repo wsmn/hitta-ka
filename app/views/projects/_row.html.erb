@@ -20,7 +20,7 @@
         <p class="text-gray-700 opacity-75"><%= project.hours %> h</p>
       </div>
       <div class="w-1/5 hidden lg:flex">
-        <p class="break-words">2020-02-02</p>
+        <p class="break-words"><%= l(project.created_at, format: "%Y-%m-%d") %></p>
       </div>
       <div class="w-1/3 lg:w-1/5 hidden lg:flex">
         <%= project_tag(project.status) %>

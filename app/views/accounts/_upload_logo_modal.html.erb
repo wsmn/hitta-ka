@@ -1,16 +1,29 @@
-<div x-show="upload_modal" class="overflow-y-auto bg-gray-900" style="background-color: rgba(0,0,0,0.5)"
-    x-transition:enter="transition ease-out duration-300" x-transition:enter-start="transform opacity-0 scale-100"
-    x-transition:enter-end="transform opacity-100 scale-100"
-    class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
-    :class="{ 'absolute inset-0 z-50 flex items-center justify-center': upload_modal }">
-  <div x-show="upload_modal" @click.away="upload_modal = false"
-        class="bg-white rounded-md xl:w-1/3 opacity-100 flex items-center justify-center p-8 relative max-w-xl">
+<div x-show="upload_modal"
+  class="z-50 fixed bottom-0 inset-x-0 px-4 pb-4 sm:inset-0 sm:flex sm:items-center sm:justify-center">
+  <div x-show="upload_modal" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200"
+    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 transition-opacity">
+    <div class="absolute inset-0 bg-gray-900 opacity-75"></div>
+  </div>
+  <div x-show="upload_modal" x-transition:enter="ease-out duration-300"
+    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200"
+    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+    class="relative bg-white rounded-lg px-4 pt-5 pb-4 shadow-xl transform transition-all sm:max-w-lg sm:w-full sm:p-4">
     <div
-            class="border-dashed border-2 border-gray-500 rounded-md w-full flex-col flex items-center justify-center text-center p-6">
+        class="absolute top-0 right-0 bg-red-600 w-8 h-8 rounded-full text-white font-bold flex items-center justify-center -mt-4 -mr-4 cursor-pointer"
+        @click="upload_modal = false">
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+    <div
+      class="border-dashed border-2 border-gray-500 rounded-md w-full flex-col flex items-center justify-center text-center p-6">
       <div class="">
         <svg class="h-16 w-16 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
       </div>
       <div class="mt-2 text-gray-700">
@@ -18,12 +31,6 @@
         <p>drop it in the box.</p>
         <p class="font-light text-sm mt-1">PNG, JPG up to 2 MB</p>
       </div>
-    </div>
-    <div class="absolute top-0 right-0 bg-red-600 w-8 h-8 rounded-full text-white font-bold flex items-center justify-center -mt-4 -mr-4 cursor-pointer"
-            @click="upload_modal = false">
-      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
-      </svg>
     </div>
   </div>
 </div>
