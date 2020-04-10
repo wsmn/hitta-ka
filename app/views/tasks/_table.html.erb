@@ -1,39 +1,41 @@
 <% project ||= nil %>
 <% tasks ||= []%>
 <div class="flex flex-col">
-  <div class="-my-2 py-2">
+  <div class="-my-2 pt-2 pb-6">
     <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-md border">
       <table class="min-w-full">
-        <thead>
-          <tr>
-            <th
-              class="px-3 lg:px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-              <%= Task.human_attribute_name(:title) %>
-            </th>
-            <th
-              class="px-3 lg:px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-              <%= Task.human_attribute_name(:status) %>
-            </th>
-            <th
-              class="px-3 lg:px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-              <%= Task.human_attribute_name(:hours) %>
-            </th>
-            <th
-              class="px-3 lg:px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider hidden sm:block">
-              <%= Task.human_attribute_name(:updated_at) %>
-            </th>
-            <th class="px-3 lg:px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
-          </tr>
-        </thead>
-        <tbody class="bg-white">
-          <% if tasks.empty? %>
+        <% if tasks.empty? %>
+          <tbody class="bg-white">
             <%= render("tasks/empty", project: project) %>
-          <% else %>
+          </tbody>
+        <% else %>
+          <thead>
+            <tr>
+              <th
+              class="px-3 lg:px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                <%= Task.human_attribute_name(:title) %>
+              </th>
+              <th
+              class="px-3 lg:px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                <%= Task.human_attribute_name(:status) %>
+              </th>
+              <th
+              class="px-3 lg:px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                <%= Task.human_attribute_name(:hours) %>
+              </th>
+              <th
+              class="px-3 lg:px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider hidden sm:block">
+                <%= Task.human_attribute_name(:updated_at) %>
+              </th>
+              <th class="px-3 lg:px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
             <% tasks.each do |task| %>
               <%= render("tasks/table_row", task: task) %>
             <% end %>
-          <% end %>
-        </tbody>
+          </tbody>
+        <% end %>
       </table>
     </div>
   </div>
