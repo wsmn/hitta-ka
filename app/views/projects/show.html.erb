@@ -4,160 +4,123 @@
 <% content_for(:header_title) do %>
   <%= t('.title') %>
 <% end %>
-<div class="w-full bg-white">
-  <%= render('show_heading') %>
-  <div class="p-3 xl:p-6 pb-8">
-    <div class="flex -mx-2">
-      <div class="flex-grow w-2/3  px-2">
-        <div class="flex flex-wrap">
-          <div class="w-full xl:w-full flex flex-wrap">
-            <div class="w-full xl:w-3/5 flex-wrap lg:pr-6">
-              <div class="flex flex-wrap">
-                <div class="w-1/2 md:w-3/5 lg:pr-8">
-                  <h1 class="text-xl font-semibold text-gray-900">Description</h1>
-                  <p class="text-gray-800 mt-2">Here is your discription of the project. You wrote this when
-                    creating
-                    a new project.</p>
-                  <div class="flex mt-12">
-                    <div class="w-1/2 text-gray-800">
-                      <span class="flex items-center">
-                        <h1 class="text-xl font-semibold text-gray-900"><%= t('.address') %></h1>
-                        <svg class="h-5 w-5 text-gray-800 ml-1 mb-1 -mt-1" fill="none" viewBox="0 0 24 24"
-                          stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                      </span>
-                      <p class="mt-1">Street 5, 123 12,</p>
-                      <p class="">City, Sweden</p>
-                    </div>
-                    <div class="w-1/2 text-gray-800">
-                      <h1 class="text-xl font-semibold text-gray-900">Misc.</h1>
-                      <p class="mt-1">Created: </p>
-                      2020-20-20
-                    </div>
-                  </div>
-                </div>
-                <div class="w-1/2 md:hidden">
-                  <%= render(@project.customer) %>
-                </div>
-                <div class="w-full md:w-2/5 mt-4 lg:mt-0">
-                  <div class="flex-wrap">
-                    <div class="w-full flex p-4 bg-white border border-gray-500 rounded shadow-md">
-                      <div class="">
-                        <div class="h-10 w-10 bg-green-500 flex items-center justify-center rounded">
-                          <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
-                      <div class="flex-grow flex-wrap ml-4">
-                        <div class="">
-                          <p class="text-xs uppercase font-bold text-green-800 tracking-wide"><%= t('.timelogs') %></p>
-                        </div>
-                        <div class="text-xl text-gray-900 font-medium -mt-1">
-                          <%= @project.tasks.count %> st - <%= @project.hours %> h
-                        </div>
-                      </div>
-                    </div>
-                    <div class="w-full p-4 mt-4 bg-white border border-gray-500 rounded shadow-md">
-                      <div class="flex items-center justify-between relative leading-none">
-                        <div class="text-xs uppercase font-bold text-purple-800 tracking-wide">
-                          <%= t('.invoices') %>
-                        </div>
-                        <div class="">
-                          <svg class="h-5 w-5 text-purple-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                          </svg>
-                        </div>
-                      </div>
-                      <div class="flex items-center">
-                        <div>
-                          <p class="text-lg font-semibold text-purple-800 mt-2">
-                            5 sent <span class="text-purple-800 text-sm">(32.000,00 kr)</span>
-                          </p>
-                          <p class="text-lg font-semibold text-purple-800 mt-2">
-                            1 unpaid <span class="text-purple-800 text-sm">(999,00 kr)</span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+<div class="flex flex-grow bg-gray-100">
+  <div x-data="{ tab: 'tasks' }" class="flex flex-grow flex-col bg-white">
+    <%= render('show_heading') %>
+    <div class="px-4 py-5 sm:px-6">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-2/3 xl:w-3/4">
+          <dl class="grid grid-cols-4">
+            <div class="grid col-span-2">
+              <div class="grid sm:grid-cols-3 sm:gap-4 sm:border-b sm:border-gray-200 sm:pb-5">
+                <dt class="text-sm leading-5 font-medium text-gray-500 sm:col-span-1">
+                  <%= t('.customer') %>
+                </dt>
+                <dd class="mt-1 text-sm leading-5 text-blue-600 sm:mt-0 sm:col-span-2">
+                  <%= link_to(customer_path(@customer)) do %><%= @customer.name %><% end %>
+                </dd>
+              </div>
+              <div class="mt-8 sm:grid sm:mt-5 sm:grid-cols-3 sm:gap-4">
+                <dt class="text-sm leading-5 font-medium text-gray-500 sm:col-span-1">
+                  Address
+                </dt>
+                <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                  <span class="flex">
+                    Street 5, 123 12, City <svg class="w-5 h-5 ml-1 text-red-700 -mt-0.5" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </span>
+                </dd>
+              </div>
+              <div class="mt-8 sm:grid sm:mt-5 sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                <dt class="text-sm leading-5 font-medium text-gray-500 sm:col-span-1">
+                  Invoiced
+                </dt>
+                <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                  12 345,00 kr
+                </dd>
+              </div>
+              <div class="mt-8 sm:grid sm:mt-5 sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                <dt class="text-sm leading-5 font-medium text-gray-500 sm:col-span-1">
+                  Timelogs
+                </dt>
+                <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                  <%= @project.tasks.count %> st - <%= @project.hours %> h
+                </dd>
               </div>
             </div>
-            <div class="w-full xl:w-2/5 mt-4 lg:mt-8 xl:mt-0">
-              <%= image_tag('map_project_placeholder.png', alt: "Home", style:"width: 100%", class: "border border-blue-400 rounded") %>
+            <div class="col-span-2 hidden sm:block pl-4 xl:px-4">
+              <%= image_tag('map_project_placeholder.png', alt: 'Map', class: 'object-cover w-full h-56')%>
             </div>
-          </div>
+            <div class="grid col-span-4">
+              <div class="mt-8 sm:grid sm:mt-5 sm:grid-cols-6 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                <dt class="text-sm leading-5 font-medium text-gray-500">
+                  About
+                </dt>
+                <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-5">
+                  Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat.
+                  Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident.
+                  Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
+                </dd>
+              </div>
+              <div class="mt-8 sm:grid sm:mt-5 sm:grid-cols-6 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                <dt class="text-sm leading-5 font-medium text-gray-500">
+                  Documents
+                </dt>
+                <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-5">
+                  <ul class="border border-gray-200 rounded-md">
+                    <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm leading-5">
+                      <div class="w-0 flex-1 flex items-center">
+                        <svg class="flex-shrink-0 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd"
+                            d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        <span class="ml-2 flex-1 w-0 truncate">
+                          resume_back_end_developer.pdf
+                        </span>
+                      </div>
+                      <div class="ml-4 flex-shrink-0">
+                        <a href="#"
+                          class="font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out">
+                          Download
+                        </a>
+                      </div>
+                    </li>
+                    <li
+                      class="border-t border-gray-200 pl-3 pr-4 py-3 flex items-center justify-between text-sm leading-5">
+                      <div class="w-0 flex-1 flex items-center">
+                        <svg class="flex-shrink-0 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd"
+                            d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        <span class="ml-2 flex-1 w-0 truncate">
+                          coverletter_back_end_developer.pdf
+                        </span>
+                      </div>
+                      <div class="ml-4 flex-shrink-0">
+                        <a href="#"
+                          class="font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out">
+                          Download
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </dd>
+              </div>
+            </div>
+          </dl>
+        </div>
+        <div class="w-full lg:w-1/3 xl:w-1/4 -mt-2 hidden lg:block">
+          <div class="flex-grow flex justify-end"><%= render(@project.customer) %></div>
         </div>
       </div>
-      <div class="hidden md:block md:w-1/3 xl:w-1/3 max-w-xs px-2 mt-0">
-        <%= render(@project.customer) %>
-      </div>
     </div>
-  </div>
-  <div x-data="{ tab: 'tasks' }">
-    <div class="flex border-b border-gray-500 bg-white px-4 lg:px-6 text-center">
-      <div class="w-full lg:w-2/5 xl:w-1/4 flex -mx-1">
-        <div class="w-1/3 px-1 flex">
-          <button button :class="{ 'bg-gray-100 -mb-px border-gray-500 py-2': tab === 'tasks' }" @click="tab = 'tasks'"
-            class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
-            <%= t('.tasks') %>
-          </button>
-        </div>
-        <div class="w-1/3 px-1 flex">
-          <button :class="{ 'bg-gray-200 -mb-px border-gray-500 py-2': tab === 'timeline' }" @click="tab = 'timeline'"
-            class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
-            <%= t('.timeline') %>
-          </button>
-        </div>
-        <div class="w-1/3 px-1 flex">
-          <button :class="{ 'bg-gray-200 -mb-px border-gray-500 py-2': tab === 'invoices' }" @click="tab = 'invoices'"
-            class="w-full bg-gray-100 border-l border-t border-r border-gray-400 rounded-t py-1 text-blue-800 font-semibold flex items-center justify-center">
-            <%= t('.invoices') %>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div x-show="tab === 'tasks'" class="flex-grow px-4 lg:px-6 bg-gray-100">
-      <%= render('show_search_field') %>
-      <div class="flex pb-4">
-        <%= render('tasks/table', project: @project, tasks: @project.tasks) %>
-      </div>
-    </div>
-    <div x-show="tab === 'timeline'" class="flex-grow px-4 lg:px-6 bg-gray-100">
-      <div class="w-2/3 flex flex-wrap bg-white rounded p-4">
-        <div class="w-full text-center mb-8">
-          <h2 class="text-xl mt-4"><%= t('.timeline') %></h2>
-          <p class="text-gray-500"><%= t('.your_project_timeline') %></p>
-        </div>
-        <div class="w-1/2 h-64 pr-4 relative">
-          <div class="bg-gray-200 h-24 rounded p-4">
-            <p class="text-xl font-semibold text-teal-500">
-              <%= t('.project_start') %>
-            </p>
-          </div>
-          <div class="absolute right-0 top-0 mt-10 -mr-3">
-            <svg class="fill-current text-teal-500 w-6 ml-1" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M0 10C0 4.48 4.48 0 10 0s10 4.48 10 10-4.48 10-10 10S0 15.52 0 10zm2 0c0 4.41 3.59 8 8 8s8-3.59 8-8-3.59-8-8-8-8 3.59-8 8zm8-4.5c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zM9 10c0 .55.45 1 1 1s1-.45 1-1-.45-1-1-1-1 .45-1 1z" />
-            </svg>
-          </div>
-        </div>
-        <div class="w-1/2 h-64 border-l border-gray-500">
-          <div class="ml-3 mt-8">
-            <p><%= l(@project.created_at, format: "%Y-%m-%d") %></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div x-show="tab === 'invoices'" class="flex-grow px-4 lg:px-6 bg-gray-100">
-      <%= render('show_search_field') %>
-    </div>
+    <%= render('show_tabs') %>
   </div>
 </div>

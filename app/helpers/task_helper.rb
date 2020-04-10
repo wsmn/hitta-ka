@@ -11,7 +11,7 @@ module TaskHelper
   end
 
   def task_tag(status)
-    status_class = "text-sm md:text-base inline-flex font-semibold rounded-full h-6 px-3 md:px-4 justify-center items-center"
+    status_class = "inline-flex items-center px-3 py-0.5 rounded text-xs md:text-sm font-medium leading-4"
     status_class += " #{task_status_class(status)}"
     content_tag(:span, task_status(status), class: status_class)
   end
@@ -21,7 +21,7 @@ module TaskHelper
     when "upcoming"
       "bg-blue-400 text-white"
     when "done"
-      "bg-green-400 text-gray-900"
+      "bg-green-400 text-white"
     when "skipped"
       "bg-yellow-400 text-white"
     end
