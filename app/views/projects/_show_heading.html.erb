@@ -8,75 +8,72 @@
     </p>
   </div>
   <div>
-    <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false"
-      class="relative inline-flex text-left">
+    <div class="inline-flex relative text-left" @click.away="open = false"
+      x-data="{ open: false }">
       <%= link_to(edit_customer_project_path(@project.customer, @project), class: 'relative inline-flex items-center px-2 py-1.5 sm:px-4 sm:py-2 rounded-l border border-indigo-700 bg-indigo-700 text-sm sm:text-base leading-5 font-medium text-white hover:bg-indigo-600 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-indigo-500 transition ease-in-out duration-150') do %>
         <%= t('.edit') %>
       <% end %>
-      <div x-data="{ open: false }" class="-ml-px relative block">
-        <button @click="open = !open" @click.away="open = false" type="button"
-          class="relative inline-flex items-center px-1 py-1.5 sm:px-2 sm:py-2 rounded-r border border-indigo-900 bg-indigo-900 text-sm leading-5 font-medium text-white hover:bg-indigo-800 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-indigo-700 transition ease-in-out duration-150">
-          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clip-rule="evenodd" />
-          </svg>
-        </button>
-        <div x-show="open" x-transition:enter="transition ease-out duration-100"
-          x-transition:enter-start="transform opacity-0 scale-95"
-          x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
-          x-transition:leave-start="transform opacity-100 scale-100"
-          x-transition:leave-end="transform opacity-0 scale-95"
-          class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
-          <div class="rounded-md bg-white shadow-xs">
-            <div class="">
-              <%= link_to(new_project_task_path(@project), class: 'group flex items-center px-4 py-3 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900') do %>
-                <div class="flex items-center">
-                  <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
-                  viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                    clip-rule="evenodd" />
-                  </svg>
-                  <%= t('.new_time_log') %>
-                </div>
-              <% end %>
-            </div>
-            <div class="border-t border-gray-100"></div>
-            <div class="">
-              <%= link_to(new_customer_invoice_path(@project.customer), class: 'group flex items-center px-4 py-3 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900') do %>
-                <div class="flex items-center">
-                  <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
-                  viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                    d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z"
-                    clip-rule="evenodd" />
-                  </svg>
-                  <%= t('.new_invoice') %>
-                </div>
-              <% end %>
-            </div>
-            <div class="border-t border-gray-100"></div>
-            <div class="">
-              <a href="#"
-                class="group flex items-center px-4 py-3 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+      <div class="relative inline-flex items-center px-1 py-1.5 sm:px-2 sm:py-2 rounded-r border border-indigo-900 bg-indigo-900 text-sm leading-5 font-medium text-white hover:bg-indigo-800 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-indigo-700 transition ease-in-out duration-150"
+        @click="open = !open" @click="open = true">
+        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div x-show="open" x-transition:enter="transition ease-out duration-100"
+        x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
+        x-transition:leave-end="transform opacity-0 scale-95"
+        class="origin-top-right absolute right-0 mt-12 w-48 rounded-md shadow-lg">
+        <div class="rounded-md bg-white shadow-xs">
+          <div class="">
+            <%= link_to(new_project_task_path(@project), class: 'group flex items-center px-4 py-3 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900') do %>
+              <div class="flex items-center">
                 <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
-                  fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+                viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd"
-                    d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
-                    clip-rule="evenodd" />
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                  clip-rule="evenodd" />
                 </svg>
-                <%= t('.archive') %>
-              </a>
-            </div>
-            <div class="border-t border-gray-100"></div>
-            <div class="">
-              <%= render('application/delete_button_dropdown',
+                <%= t('.new_time_log') %>
+              </div>
+            <% end %>
+          </div>
+          <div class="border-t border-gray-100"></div>
+          <div class="">
+            <%= link_to(new_customer_invoice_path(@project.customer), class: 'group flex items-center px-4 py-3 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900') do %>
+              <div class="flex items-center">
+                <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
+                viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                  d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z"
+                  clip-rule="evenodd" />
+                </svg>
+                <%= t('.new_invoice') %>
+              </div>
+            <% end %>
+          </div>
+          <div class="border-t border-gray-100"></div>
+          <div class="">
+            <a href="#"
+              class="group flex items-center px-4 py-3 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+              <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
+                fill="currentColor" viewBox="0 0 20 20">
+                <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+                <path fill-rule="evenodd"
+                  d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
+                  clip-rule="evenodd" />
+              </svg>
+              <%= t('.archive') %>
+            </a>
+          </div>
+          <div class="border-t border-gray-100"></div>
+          <div class="">
+            <%= render('application/delete_button_dropdown',
             path: customer_project_path(@project.customer, @project),
             title: t('.delete'),
             confirmation: t('.delete_confirm'))%>
-            </div>
           </div>
         </div>
       </div>
