@@ -1,121 +1,192 @@
-<div x-data="{ tab: 'projects' }" class="col-span-2 xl:col-span-1 flex items-start">
-  <div class="w-full bg-white border border-gray-400 sm:rounded">
-    <div class="border-b px-6">
-      <div class="flex justify-between -mb-px">
-        <div class="text-blue-600 py-4 text-lg">
-          <%= t('.statistics') %>
-        </div>
-        <div class="hidden md:flex">
-          <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'projects' }" @click="tab = 'projects'"
-          class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-6 focus:outline-none">
-            <%= t('.projects') %>
-          </button>
-          <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'time_logs' }" @click="tab = 'time_logs'"
-          class="appearance-none py-4 text-gray-700 hover:text-blue-400 mr-6 focus:outline-none">
-            <%= t('.time_logs') %>
-          </button>
-          <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'invoices' }" @click="tab = 'invoices'"
-          class="appearance-none py-4 text-gray-700 hover:text-blue-400 focus:outline-none">
-            <%= t('.invoices') %>
-          </button>
-        </div>
-      </div>
-    </div>
-    <%= render("stats_mobile") %>
-    <div x-show="tab === 'projects'" class="hidden md:flex">
-      <div class="w-1/3 text-center py-8">
-        <div class="border-r">
-          <div class="text-gray-900 mb-2">
-            <span class="text-5xl"><%= @counts[:active] %></span>
+<nav class="-mb-px flex sm:justify-end">
+  <button button
+    :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'projects' }"
+    @click="tab = 'projects'"
+    class="whitespace-no-wrap pb-2 border-b-2 border-transparent font-medium text-base leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+    <%= t('.projects') %>
+  </button>
+  <button button
+    :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'timelogs' }"
+    @click="tab = 'timelogs'"
+    class="whitespace-no-wrap ml-8 pb-2 px-1 border-b-2 border-transparent font-medium text-base leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+    <%= t('.timelogs') %>
+  </button>
+  <button button
+    :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'invoice' }"
+    @click="tab = 'invoice'"
+    class="whitespace-no-wrap ml-8 pb-2 px-1 border-b-2 border-transparent font-medium text-base leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+    <%= t('.invoices') %>
+  </button>
+</nav>
+<div x-show="tab === 'projects'" class="">
+  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-3">
+    <div class="bg-white overflow-hidden shadow rounded-lg border">
+      <div class="px-4 py-5 sm:p-6">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
           </div>
-          <div class="text-sm uppercase text-gray tracking-wide">
-            <%= t('.active') %>
-          </div>
-        </div>
-      </div>
-      <div class="w-1/3 text-center py-8">
-        <div class="border-r">
-          <div class="text-gray-900 mb-2">
-            <span class="text-5xl"><%= @counts[:archived] %></span>
-          </div>
-          <div class="text-sm uppercase text-gray tracking-wide">
-            <%= t('.archived') %>
-          </div>
-        </div>
-      </div>
-      <div class="w-1/3 text-center py-8">
-        <div>
-          <div class="text-gray-900 mb-2">
-            <span class="text-5xl"><%= @counts[:total] %></span>
-          </div>
-          <div class="text-sm uppercase text-gray tracking-wide">
-            <%= t('.total') %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div x-show="tab === 'time_logs'" class="hidden md:flex">
-      <div class="w-1/3 text-center py-8">
-        <div class="border-r">
-          <div class="text-gray-900 mb-2">
-            <span class="text-5xl">57</span>
-          </div>
-          <div class="text-sm uppercase text-gray tracking-wide">
-            <%= t('.created') %>
-          </div>
-        </div>
-      </div>
-      <div class="w-1/3 text-center py-8">
-        <div class="border-r">
-          <div class="text-gray-900 mb-2">
-            <span class="text-5xl">125</span>
-          </div>
-          <div class="text-sm uppercase text-gray tracking-wide">
-            <%= t('.hours') %>
-          </div>
-        </div>
-      </div>
-      <div class="w-1/3 text-center py-8">
-        <div>
-          <div class="text-gray-900 mb-2">
-            <span class="text-5xl"><%= @counts[:total] %></span>
-          </div>
-          <div class="text-sm uppercase text-gray tracking-wide">
-            <%= t('.total') %>
+          <div class="ml-5 w-0 flex-1">
+            <dl>
+              <dt class="text-sm leading-5 font-medium text-gray-500 truncate">
+                Active
+              </dt>
+              <dd class="flex items-baseline">
+                <div class="text-2xl leading-8 font-semibold text-gray-900">
+                  <%= @counts[:active] %>
+                </div>
+                <div class="ml-2 flex items-baseline text-sm leading-5 font-semibold text-green-600">
+                  <svg class="self-center flex-shrink-0 h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span class="sr-only">
+                    Increased by
+                  </span>
+                  122
+                </div>
+              </dd>
+            </dl>
           </div>
         </div>
       </div>
     </div>
-    <div x-show="tab === 'invoices'" class="hidden md:flex">
-      <div class="w-1/3 text-center py-8">
-        <div class="border-r">
-          <div class="text-gray-900 mb-2">
-            <span class="text-5xl">17</span>
+    <div class="bg-white overflow-hidden shadow rounded-lg border">
+      <div class="px-4 py-5 sm:p-6">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 bg-gray-500 rounded-md p-3">
+            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
+            </svg>
           </div>
-          <div class="text-sm uppercase text-gray tracking-wide">
-            <%= t('.sent') %>
+          <div class="ml-5 w-0 flex-1">
+            <dl>
+              <dt class="text-sm leading-5 font-medium text-gray-500 truncate">
+                Archived
+              </dt>
+              <dd class="flex items-baseline">
+                <div class="text-2xl leading-8 font-semibold text-gray-900">
+                  <%= @counts[:archived] %>
+                </div>
+                <div class="ml-2 flex items-baseline text-sm leading-5 font-semibold text-green-600">
+                  <svg class="self-center flex-shrink-0 h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span class="sr-only">
+                    Increased by
+                  </span>
+                  5.4%
+                </div>
+              </dd>
+            </dl>
           </div>
         </div>
       </div>
-      <div class="w-1/3 text-center py-8">
-        <div class="border-r">
-          <div class="text-gray-900 mb-2">
-            <span class="text-4xl">32.000,00 kr (3)</span>
+    </div>
+    <div class="bg-white overflow-hidden shadow rounded-lg border">
+      <div class="px-4 py-5 sm:p-6">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 bg-blue-500 rounded-md p-3">
+            <svg class="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+            </svg>
           </div>
-          <div class="text-sm uppercase text-gray tracking-wide">
-            <%= t('.unpaid') %>
+          <div class="ml-5 w-0 flex-1">
+            <dl>
+              <dt class="text-sm leading-5 font-medium text-gray-500 truncate">
+                Total
+              </dt>
+              <dd class="flex items-baseline">
+                <div class="text-2xl leading-8 font-semibold text-gray-900">
+                  <%= @counts[:total] %>
+                </div>
+                <div class="ml-2 flex items-baseline text-sm leading-5 font-semibold text-red-600">
+                  <svg class="self-center flex-shrink-0 h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span class="sr-only">
+                    Decreased by
+                  </span>
+                  3.2%
+                </div>
+              </dd>
+            </dl>
           </div>
         </div>
       </div>
-      <div class="w-1/3 text-center py-8">
-        <div>
-          <div class="text-gray-900 mb-2">
-            <span class="text-4xl">112.000,00 kr</span>
-          </div>
-          <div class="text-sm uppercase text-gray tracking-wide">
-            <%= t('.total_income') %>
-          </div>
-        </div>
+    </div>
+  </div>
+</div>
+<div x-show="tab === 'time_logs'" class="hidden md:flex">
+  <div class="w-1/3 text-center py-8">
+    <div class="border-r">
+      <div class="text-gray-900 mb-2">
+        <span class="text-5xl">57</span>
+      </div>
+      <div class="text-sm uppercase text-gray tracking-wide">
+        <%= t('.created') %>
+      </div>
+    </div>
+  </div>
+  <div class="w-1/3 text-center py-8">
+    <div class="border-r">
+      <div class="text-gray-900 mb-2">
+        <span class="text-5xl">125</span>
+      </div>
+      <div class="text-sm uppercase text-gray tracking-wide">
+        <%= t('.hours') %>
+      </div>
+    </div>
+  </div>
+  <div class="w-1/3 text-center py-8">
+    <div>
+      <div class="text-gray-900 mb-2">
+        <span class="text-5xl"><%= @counts[:total] %></span>
+      </div>
+      <div class="text-sm uppercase text-gray tracking-wide">
+        <%= t('.total') %>
+      </div>
+    </div>
+  </div>
+</div>
+<div x-show="tab === 'invoices'" class="hidden md:flex">
+  <div class="w-1/3 text-center py-8">
+    <div class="border-r">
+      <div class="text-gray-900 mb-2">
+        <span class="text-5xl">17</span>
+      </div>
+      <div class="text-sm uppercase text-gray tracking-wide">
+        <%= t('.sent') %>
+      </div>
+    </div>
+  </div>
+  <div class="w-1/3 text-center py-8">
+    <div class="border-r">
+      <div class="text-gray-900 mb-2">
+        <span class="text-4xl">32.000,00 kr (3)</span>
+      </div>
+      <div class="text-sm uppercase text-gray tracking-wide">
+        <%= t('.unpaid') %>
+      </div>
+    </div>
+  </div>
+  <div class="w-1/3 text-center py-8">
+    <div>
+      <div class="text-gray-900 mb-2">
+        <span class="text-4xl">112.000,00 kr</span>
+      </div>
+      <div class="text-sm uppercase text-gray tracking-wide">
+        <%= t('.total_income') %>
       </div>
     </div>
   </div>
