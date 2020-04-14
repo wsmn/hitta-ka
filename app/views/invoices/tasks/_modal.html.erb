@@ -2,9 +2,9 @@
   <button @click="add_tasks = true" class="btn btn-orange">
     <%= t(".add_tasks") %>
   </button>
-  <div id="invoice-tasks" x-show="add_tasks" class="overflow-y-auto bg-gray-900 px-8" style="background-color: rgba(0,0,0,0.3)"
-    x-transition:enter="transition ease-out duration-300" x-transition:enter-start="transform opacity-0 scale-100"
-    x-transition:enter-end="transform opacity-100 scale-100"
+  <div id="invoice-tasks" x-show="add_tasks" class="overflow-y-auto bg-gray-900 px-8"
+    style="background-color: rgba(0,0,0,0.3)" x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="transform opacity-0 scale-100" x-transition:enter-end="transform opacity-100 scale-100"
     class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
     :class="{ 'absolute inset-0 z-50 flex items-center justify-center': add_tasks }">
     <div x-show="add_tasks" @click.away="add_tasks = false"
@@ -18,7 +18,7 @@
             <%= invoice.customer.name %> - #<%= invoice.invoice_nbr %>
           </p>
         </div>
-        <div class="w-1/4 md:w-1/5 lg:w-1/6 flex items-center"><%= image_tag('no_invoices.svg', alt: 'Builders')%>
+        <div class="w-1/4 md:w-1/5 lg:w-1/6 flex items-center"><%= image_tag('no_invoices.svg', alt: 'No invoices')%>
         </div>
       </div>
       <div id="modal-project-tasks">
@@ -34,10 +34,8 @@
       <div class="w-full flex py-5 px-5">
         <div class="w-full flex justify-end items-center">
           <div class="w-20 mr-2">
-            <button
-              @click="add_tasks = false"
-              class="w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300"
-            >
+            <button @click="add_tasks = false"
+              class="w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300">
               <%= t(".close") %>
             </button>
           </div>

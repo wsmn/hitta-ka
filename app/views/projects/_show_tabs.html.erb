@@ -35,6 +35,7 @@
             <%= t('.new_task') %>
           <% end %>
         </span>
+        <%= render('projects/tasks/new_task_modal', project: @project, task: @task) %>
       </div>
       <%= render('tasks/table', project: @project, tasks: @project.tasks) %>
     </div>
