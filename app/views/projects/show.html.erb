@@ -4,9 +4,9 @@
 <% content_for(:header_title) do %>
   <%= t('.title') %>
 <% end %>
-<div x-data="{ tab: 'tasks' }" class="flex flex-col flex-grow bg-white">
+<div x-data="{ tab: 'tasks' }" class="flex flex-col flex-grow bg-white overflow-y-auto">
   <%= render('show_heading') %>
-  <div class="px-4 py-5 sm:px-6">
+  <div class="px-4 sm:px-6 py-5">
     <div class="flex flex-wrap justify-between -mx-2">
       <div class="w-full lg:w-2/3 xl:w-3/4 max-w-7xl px-2">
         <dl class="grid grid-cols-4">
