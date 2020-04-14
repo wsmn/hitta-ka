@@ -21,9 +21,7 @@ class TasksController < ApplicationController
         end
       end
       format.js do
-        if @task.save
-          redirect_to(customer_project_path(@project.customer, @project), notice: t(".success")
-       end
+        @success = @task.save
       end
     end
   end
