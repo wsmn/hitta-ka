@@ -1,9 +1,16 @@
-<%= form_with(model: [project, task], local: true, class: "w-full xl:max-w-3xl pb-8") do |form| %>
+<% local = true if local.nil? %>
+<%= form_with(model: [project, task], local: local, class: "w-full xl:max-w-3xl pb-8") do |form| %>
   <div class="flex flex-wrap -mx-2">
     <div class="w-full lg:w-2/3 px-2">
       <div class="flex flex-wrap bg-white rounded-md border border-gray-600">
         <div class="w-full h-12 bg-gray-800 px-3 py-2 rounded-t flex items-center">
-          <h1 class="text-white font-semibold font-semibold text-xl xl:text-2xl"><%= t('.new_task') %></h1>
+          <h1 class="text-white font-semibold font-semibold text-xl xl:text-2xl">
+            <% if task.persisted? %>
+              <%= t('.update_task') %>
+            <% else %>
+              <%= t('.new_task') %>
+            <% end %>
+          </h1>
         </div>
         <div class="w-full mt-2 px-4 py-2 lg:px-8 lg:py-4">
           <div class="flex flex-wrap -mx-3">
