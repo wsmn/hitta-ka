@@ -220,10 +220,6 @@ input[type="radio"] + label span {
   background-size: cover;
 }
 
-.account-menu-width {
-  width: 18rem;
-}
-
 .menu-list {
   ul, li {
     margin: 0;
@@ -312,4 +308,8 @@ input[type="radio"] + label span {
 .a4 {
   width: 210mm;
   height: 310mm;
+}
+
+.menu_height {
+  height: 3.5rem;
 }
