@@ -34,7 +34,18 @@
           <%= t('.new_task') %>
         <% end %>
       </span>
-      <%= render('projects/tasks/new_task_modal', project: @project, task: @task) %>
+      <div x-data="{ openModal: false }" class="flex">
+        <div @click="openModal = true"
+          class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
+          <svg class="-ml-0.5 mr-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+              clip-rule="evenodd" />
+          </svg>
+          <%= t('.modal') %>
+        </div>
+        <%= render('projects/tasks/new_task_modal', project: @project, task: @task) %>
+      </div>
     </div>
     <div class="pb-32">
       <%= render('tasks/table', project: @project, tasks: @project.tasks) %>
