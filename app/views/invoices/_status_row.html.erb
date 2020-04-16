@@ -1,22 +1,33 @@
-<% odd ||= false %>
-<% date ||= Time.zone.now - rand(-100..100).days %>
-<%= link_to(customer_invoice_path(invoice.customer, invoice)) do %>
-  <div class="flex-grow flex px-6 py-2 text-gray-900 border-b -mx-4 <%= odd ? "bg-gray-300" : "bg-white" %>">
-    <div class="w-1/4 px-4 flex flex-wrap items-center justify-start">
-      <div class="">
-        <p class="text-sm md:text-base"><%= invoice.customer %></p>
+<%= link_to(customer_invoice_path(invoice.customer, invoice), class: "flex w-full px-3 xl:px-6 py-4 text-gray-900 items-center border-b border-gray-200") do %>
+  <div class="w-1/2 xl:w-2/5 flex items-center break-all">
+    <div class="flex items-center">
+      <div class="flex-shrink-0 h-10 w-10">
+        <div class="rounded-full h-8 w-8 sm:h-10 sm:w-10 bg-orange-500 inline-flex items-center justify-center">
+          <span class="icon text-white">
+            <i class="fas fa-lg fa-file-invoice hidden sm:inline-block"></i>
+            <i class="fas fa-sm fa-file-invoice sm:hidden"></i>
+          </span>
+        </div>
+      </div>
+      <div class="ml-2 sm:ml-4">
+        <div class="text-base leading-5 text-gray-800">
+          <%= invoice.customer %>
+        </div>
+        <div class="text-xs sm:text-sm leading-5 text-gray-500">#<%= invoice.invoice_nbr %></div>
       </div>
     </div>
-    <div class="w-1/4 flex items-center justify-center">
-      <p class="text-md text-blue-500"><%= invoice.invoice_nbr %></p>
-    </div>
-    <div class="w-1/4 flex items-center justify-center">
-      <p class="text-md"><%= invoice.amount %> SEK</p>
-    </div>
-    <div class="w-1/4 flex items-center justify-center">
-      <p class="text-md <%= invoice.past_due? ? "text-red-500" : "text-green-500"%>">
-        <%= l(invoice.due_date, format: "%Y-%m-%d") if invoice.due_date.present? %>
-      </p>
+  </div>
+  <div class="flex w-1/3 hidden md:flex justify-center">
+    <p class=""><%= l(invoice.invoice_date) if invoice.invoice_date.present? %></p>
+  </div>
+  <div class="flex w-1/5 justify-center">
+    <p class="text-md <%= invoice.past_due? ? "text-red-500" : "text-green-500"%>">
+      <%= l(invoice.due_date, format: "%Y-%m-%d") if invoice.due_date.present? %>
+    </p>
+  </div>
+  <div class="w-1/4 xl:w-1/6 px-2 md:px-4">
+    <div class="text-right text-gray">
+      <%= invoice.amount %> SEK
     </div>
   </div>
 <% end %>

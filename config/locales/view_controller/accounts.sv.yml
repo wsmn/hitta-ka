@@ -27,7 +27,7 @@ sv:
       upload: Ladda upp
     invoices:
       all_invoices: Alla fakturor
-      invoices: Fakturor
+      recent_invoices: Senaste fakturorna
       paid: Betalade
       past_due: Försenade
       upcoming: Kommande
