@@ -5,8 +5,8 @@
   <%= t('.title') %>
 <% end %>
 <div class="w-full">
-  <div class="flex-grow grid grid-cols-2 gap-4 p-2 sm:p-3 xl:p-6">
-    <div class="col-span-2 grid grid-cols-8">
+  <div class="flex-grow grid grid-cols-5 gap-4 p-2 sm:p-3 xl:p-6">
+    <div class="col-span-5 grid grid-cols-8">
       <div x-data="{ tab: 'week' }" class="col-span-8">
         <div class="flex justify-between">
           <div>
@@ -33,6 +33,12 @@
                   class="whitespace-no-wrap ml-8 pb-2 px-1 border-b-2 border-transparent font-medium text-base leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
                   <%= t('.year') %>
                 </button>
+                <button button
+                :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'total' }"
+                @click="tab = 'total'"
+                class="whitespace-no-wrap ml-8 pb-2 px-1 border-b-2 border-transparent font-medium text-base leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+                  <%= t('.total') %>
+                </button>
               </nav>
             </div>
           </div>
@@ -42,8 +48,8 @@
                 <%= link_to(new_project_path, class: 'inline-flex items-center px-2.5 py-2 sm:px-3 sm:py-2 border border-transparent text-sm leading-4 font-medium rounded text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition ease-in-out duration-150') do %>
                   <svg class="-ml-0.5 mr-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
-                  d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
-                  clip-rule="evenodd" />
+                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                    clip-rule="evenodd" />
                   </svg>
                   <%= t('.project') %>
                 <% end %>
@@ -52,8 +58,8 @@
                 <%= link_to(new_customer_path, class: 'inline-flex items-center px-2.5 py-2 sm:px-3 sm:py-2 border border-transparent text-sm leading-4 font-medium rounded text-white bg-green-500 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition ease-in-out duration-150 ml-2 mb-2') do %>
                   <svg class="-ml-0.5 mr-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
-                  d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
-                  clip-rule="evenodd" />
+                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                    clip-rule="evenodd" />
                   </svg>
                   <%= t('.customer') %>
                 <% end %>
@@ -64,8 +70,10 @@
         <%= render("stats") %>
       </div>
     </div>
-    <%= render("projects", projects: @projects) %>
+    <div class="col-span-5 md:col-span-3">
+      <%= render("projects", projects: @projects) %>
+      <%= render("invoices", invoices: @invoices) %>
+    </div>
     <%= render("tasks") %>
-    <%= render("invoices", invoices: @invoices) %>
   </div>
 </div>

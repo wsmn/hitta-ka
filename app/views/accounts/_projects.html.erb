@@ -1,46 +1,44 @@
 <% filtered ||= false %>
 <% projects ||= [] %>
-<div class="col-span-2 xl:col-span-1">
-  <div x-data="{ tab: 'active' }" class="flex flex-col bg-white sm:rounded border shadow">
-    <div class="flex-grow border-b">
-      <div class="flex justify-between px-3 xl:px-6 -mb-px">
-        <h3 class="text-blue-700 py-4 font-normal text-base sm:text-lg"><%= t('.recent_projects') %></h3>
-        <div class="flex">
-          <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'active' }" @click="tab = 'active'"
-            class="appearance-none py-4 text-gray-700 hover:text-blue-400 focus:outline-none mr-3">
-            <%= t('.active') %>
-          </button>
-          <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'archived' }" @click="tab = 'archived'"
-            class="appearance-none py-4 text-gray-700 hover:text-blue-400 focus:outline-none">
-            <%= t('.archived') %>
-          </button>
-        </div>
+<div x-data="{ tab: 'active' }" class="flex flex-col bg-white sm:rounded border shadow">
+  <div class="flex-grow border-b">
+    <div class="flex justify-between px-3 xl:px-6 -mb-px">
+      <h3 class="text-blue-700 py-4 font-normal text-base sm:text-lg"><%= t('.recent_projects') %></h3>
+      <div class="flex">
+        <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'active' }" @click="tab = 'active'"
+          class="appearance-none py-4 text-gray-700 hover:text-blue-400 focus:outline-none mr-3">
+          <%= t('.active') %>
+        </button>
+        <button :class="{ 'text-blue-500 border-b border-blue-500': tab === 'archived' }" @click="tab = 'archived'"
+          class="appearance-none py-4 text-gray-700 hover:text-blue-400 focus:outline-none">
+          <%= t('.archived') %>
+        </button>
       </div>
     </div>
-    <div x-show="tab === 'active'" class="">
-      <% if projects.empty? %>
-        <%= render('projects/empty') %>
-      <% else %>
-        <div class="flex flex-wrap items-start">
-          <% projects.each do |project| %>
-            <%= render('projects/status_row', project: project) %>
-          <% end %>
-        </div>
-        <div class="px-6 py-3">
-          <div class="text-center text-gray flex justify-center">
-            <div class="flex">
-              <%= link_to(projects_path, class: 'inline-flex items-center px-2.5 py-2 sm:px-3 sm:py-2 border border-transparent text-sm leading-4 font-medium rounded text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition ease-in-out duration-150') do %>
-                <%= t('.all_projects') %>
-              <% end %>
-            </div>
+  </div>
+  <div x-show="tab === 'active'" class="">
+    <% if projects.empty? %>
+      <%= render('projects/empty') %>
+    <% else %>
+      <div class="flex flex-wrap items-start">
+        <% projects.each do |project| %>
+          <%= render('projects/status_row', project: project) %>
+        <% end %>
+      </div>
+      <div class="px-6 py-3">
+        <div class="text-center text-gray flex justify-center">
+          <div class="flex">
+            <%= link_to(projects_path, class: 'inline-flex items-center px-2.5 py-2 sm:px-3 sm:py-2 border border-transparent text-sm leading-4 font-medium rounded text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition ease-in-out duration-150') do %>
+              <%= t('.all_projects') %>
+            <% end %>
           </div>
         </div>
-      <% end %>
-    </div>
-    <div x-show="tab === 'archived'" class="">
-      <% projects.each do |project| %>
-        <%= render('projects/status_row', project: project) %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
+  <div x-show="tab === 'archived'" class="">
+    <% projects.each do |project| %>
+      <%= render('projects/status_row', project: project) %>
+    <% end %>
   </div>
 </div>
