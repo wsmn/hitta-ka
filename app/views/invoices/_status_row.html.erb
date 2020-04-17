@@ -20,7 +20,7 @@
   <div class="flex w-1/3 hidden md:flex justify-center">
     <p class=""><%= l(invoice.invoice_date) if invoice.invoice_date.present? %></p>
   </div>
-  <div class="flex w-1/5 justify-center">
+  <div class="flex w-1/3 justify-center">
     <p class="text-md <%= invoice.past_due? ? "text-red-500" : "text-green-500"%>">
       <%= l(invoice.due_date, format: "%Y-%m-%d") if invoice.due_date.present? %>
     </p>
