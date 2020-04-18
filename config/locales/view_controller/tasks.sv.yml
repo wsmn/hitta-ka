@@ -19,3 +19,5 @@ sv:
 
     destroy:
       success: Tidslogg raderades
+    form:
+      delete: Radera

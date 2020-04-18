@@ -1,0 +1,3 @@
+var task_modal_form = document.querySelector("#tasks-modal-form");
+
+task_modal_form.innerHTML = "<%= escape_javascript(render("tasks/form", project: @project, task: @task, local: false)) %>";

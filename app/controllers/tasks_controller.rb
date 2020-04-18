@@ -12,10 +12,19 @@ class TasksController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @task = @project.tasks.build(task_params)
-    if @task.save
-      redirect_to(customer_project_path(@project.customer, @project), notice: t(".success"))
-    else
-      render(:new, status: :unprocessable_entity)
+    respond_to do |format|
+      format.html do
+        if @task.save
+          redirect_to(customer_project_path(@project.customer, @project), notice: t(".success"))
+        else
+          render(:new, status: :unprocessable_entity)
+        end
+      end
+      format.js do
+        if @task.save
+          redirect_to(customer_project_path(@project.customer, @project), notice: t(".success"))
+        end
+      end
     end
   end
 

@@ -25,7 +25,7 @@
     <div class="flex justify-between mb-4 pt-4">
       <h2 class="text-gray-900 text-2xl font-semibold">Tasks</h2>
       <span class="inline-flex rounded-md shadow-sm">
-        <%= link_to(new_project_task_path(@project), class: 'inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150') do %>
+        <%= link_to(new_project_task_path(project), class: 'inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150') do %>
           <svg class="-ml-0.5 mr-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"
             d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
@@ -34,10 +34,20 @@
           <%= t('.new_task') %>
         <% end %>
       </span>
-      <%= render('projects/tasks/new_task_modal', project: @project, task: @task) %>
+      <%= render('projects/tasks/modal_form', project: project) do %>
+        <div @click="openModal = true"
+          class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
+          <svg class="-ml-0.5 mr-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+              clip-rule="evenodd" />
+          </svg>
+          <%= t('.modal') %>
+        </div>
+      <% end %>
     </div>
     <div class="pb-32">
-      <%= render('tasks/table', project: @project, tasks: @project.tasks) %>
+      <%= render('tasks/table', project: project, tasks: project.tasks) %>
     </div>
   </div>
 </div>
@@ -46,7 +56,7 @@
     <div class="flex justify-between mb-4 pt-4">
       <h2 class="text-gray-900 text-2xl font-semibold">Invoices</h2>
       <span class="inline-flex rounded-md shadow-sm">
-        <%= link_to(new_customer_invoice_path(@project.customer), class: 'inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-orange-600 hover:bg-orange-500 focus:outline-none focus:border-orange-700 focus:shadow-outline-indigo active:bg-orange-700 transition ease-in-out duration-150') do %>
+        <%= link_to(new_customer_invoice_path(project.customer), class: 'inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-orange-600 hover:bg-orange-500 focus:outline-none focus:border-orange-700 focus:shadow-outline-indigo active:bg-orange-700 transition ease-in-out duration-150') do %>
           <svg class="-ml-0.5 mr-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"
             d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"
@@ -57,7 +67,7 @@
       </span>
     </div>
     <div class="pb-32">
-      <%= render("invoices/table", customer: @customer, invoices: @invoices, show_filters: false) %>
+      <%= render("invoices/table", customer: project.customer, invoices: invoices, show_filters: false) %>
     </div>
   </div>
 </div>
@@ -86,7 +96,7 @@
       </div>
       <div class="w-1/2 h-64 border-l border-gray-500">
         <div class="ml-3 mt-8">
-          <p><%= l(@project.created_at, format: "%Y-%m-%d") %></p>
+          <p><%= l(project.created_at, format: "%Y-%m-%d") %></p>
         </div>
       </div>
     </div>
