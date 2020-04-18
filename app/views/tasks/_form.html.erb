@@ -93,19 +93,17 @@
       </div>
     </div>
   </div>
-  <div class="flex items-end justify-between flex-grow px-4 py-4 mt-3 border-t sm:mt-4 sm:px-6">
-    <div class="flex-grow">
-      <% if task.persisted? %>
-        <%= button_to(t('.delete'), project_task_path(task.project, task),
-          method: :delete,
-          class: "inline-flex justify-center rounded-md border border-transparent px-2.5 py-1.5 sm:px-4 sm:py-2 bg-red-500 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-600 focus:shadow-outline-red sm:text-sm sm:leading-5 btn-bounce") %>
-      <% end %>
-    </div>
-    <div class="flex justify-between">
-      <%= yield %>
-      <span class="flex ml-4 rounded-md shadow-sm">
-        <%= form.submit(class: "inline-flex justify-center w-full rounded-md border border-transparent px-2.5 py-1.5 sm:px-4 sm:py-2 bg-green-500 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-600 focus:shadow-outline-green sm:text-sm sm:leading-5 btn-bounce") %></span>
-    </div>
+  <div class="flex items-end justify-end flex-grow px-4 py-4 mt-3 border-t sm:mt-4 sm:px-6">
+    <%= yield %>
+    <span class="flex ml-4 rounded-md shadow-sm">
+      <%= form.submit(class: "inline-flex justify-center w-full rounded-md border border-transparent px-2.5 py-1.5 sm:px-4 sm:py-2 bg-green-500 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-600 focus:shadow-outline-green sm:text-sm sm:leading-5 btn-bounce") %></span>
   </div>
 </div>
+<% end %>
+<% if task.persisted? %>
+  <div class="pl-4 pb-4 sm:pl-6 -mt-14">
+    <%= button_to(t('.delete'), project_task_path(task.project, task),
+      method: :delete,
+      class: "inline-flex justify-center rounded-md border border-transparent px-2.5 py-1.5 sm:px-4 sm:py-2 bg-red-500 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-600 focus:shadow-outline-red sm:text-sm sm:leading-5 btn-bounce") %>
+  </div>
 <% end %>
