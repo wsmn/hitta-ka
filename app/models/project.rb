@@ -23,4 +23,14 @@ class Project < ApplicationRecord
   def hours
     tasks.select("SUM(hours) as hours").to_a.first.try(:hours) || 0
   end
+
+  def invoiced_tasks
+    tasks.where.not(invoice: nil)
+  end
+
+  def invoiced_total
+    total = 0
+    invoiced_tasks.each { |task| total += task.cost }
+    total
+  end
 end
