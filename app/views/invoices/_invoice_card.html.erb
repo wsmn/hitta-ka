@@ -1,51 +1,51 @@
-<div class="border border-orange-400 bg-white rounded text-xs xl:text-sm">
-  <div class="h-20 bg-orange-600 p-8 flex items-center justify-center rounded-t -m-px relative">
+<div class="text-xs bg-white border border-orange-400 rounded xl:text-sm">
+  <div class="relative flex items-center justify-center h-20 p-8 -m-px bg-orange-600 rounded-t">
     <% if @invoice.status == "paid" %>
       <div
-      class="ribbon_green absolute left-0 top-0 mt-3 w-24 h-8 bg-green-600 text-white font-bold flex justify-center items-center rounded-r-sm">
+      class="absolute top-0 left-0 flex items-center justify-center w-24 h-8 mt-3 font-bold text-white bg-green-600 rounded-r-sm ribbon_green">
         <%= t('.paid') %>
       </div>
     <% elsif @invoice.status == "unpaid" && !@invoice.past_due? %>
       <div
-      class="ribbon_yellow absolute left-0 top-0 mt-3 w-24 h-8 bg-yellow-600 text-white font-semibold flex justify-center items-center rounded-r-sm">
+      class="absolute top-0 left-0 flex items-center justify-center w-24 h-8 mt-3 font-semibold text-white bg-yellow-600 rounded-r-sm ribbon_yellow">
         <%= t('.unpaid') %>
       </div>
     <% elsif @invoice.status == "unpaid" && @invoice.past_due? %>
       <div
-      class="ribbon_red absolute left-0 top-0 mt-3 w-24 h-8 bg-red-600 text-white font-semibold flex justify-center items-center rounded-r-sm">
+      class="absolute top-0 left-0 flex items-center justify-center w-24 h-8 mt-3 font-semibold text-white bg-red-600 rounded-r-sm ribbon_red">
         <%= t('.past_due') %>
       </div>
     <% end %>
-    <p class="text-xl text-white font-medium">Invoice #<%= @invoice.invoice_nbr %></p>
+    <p class="text-xl font-medium text-white">Invoice #<%= @invoice.invoice_nbr %></p>
   </div>
-  <div class="py-5 border-b w-full flex items-center justify-center">
-    <div class="w-1/2 flex justify-center">
+  <div class="flex items-center justify-center w-full py-5 border-b">
+    <div class="flex justify-center w-1/2">
       <div>
         <p class="text-orange-700"><%= t('.invoice_date') %></p>
         <% if @invoice.invoice_date.present? %>
-          <p class="text-gray-700 text-sm xl:text-base"><%= @invoice.invoice_date %></p>
+          <p class="text-sm text-gray-700 xl:text-base"><%= @invoice.invoice_date %></p>
         <% else %>
-          <p class="text-gray-700 text-sm xl:text-base">N.A</p>
+          <p class="text-sm text-gray-700 xl:text-base">N.A</p>
         <% end %>
       </div>
     </div>
-    <div class="w-1/2 flex justify-center">
+    <div class="flex justify-center w-1/2">
       <div>
         <p class="text-orange-700"><%= t('.due_date') %></p>
         <% if @invoice.due_date.present? %>
-          <p class="text-gray-700 text-sm xl:text-base"><%= @invoice.due_date %></p>
+          <p class="text-sm text-gray-700 xl:text-base"><%= @invoice.due_date %></p>
         <% else %>
-          <p class="text-gray-700 text-sm xl:text-base">N.A</p>
+          <p class="text-sm text-gray-700 xl:text-base">N.A</p>
         <% end %>
       </div>
     </div>
   </div>
-  <div class="py-5 px-4 border-b w-full text-gray-700">
+  <div class="w-full px-4 py-5 text-gray-700 border-b">
     <div class="flex">
       <div class="w-20 xl:w-24">
         <%= t('.customer') %>:
       </div>
-      <div class="text-blue-500 text-sm xl:text-base">
+      <div class="text-sm text-blue-500 xl:text-base">
         <%= link_to(@invoice.customer.name, customer_path(@invoice.customer)) %>
       </div>
     </div>
@@ -59,7 +59,7 @@
       </div>
     </div>
   </div>
-  <div class="py-4 px-4 border-b flex-grow text-gray-700">
+  <div class="flex-grow px-4 py-4 text-gray-700 border-b">
     <div class="flex">
       <div class="w-20 xl:w-24">
         <%= t('.notes') %>:
@@ -69,7 +69,7 @@
       </div>
     </div>
   </div>
-  <div class="py-4 px-4 border-b w-full text-gray-700">
+  <div class="w-full px-4 py-4 text-gray-700 border-b">
     <div class="flex">
       <div class="w-20 xl:w-24">
         <%= t('.Comment') %>:
@@ -79,7 +79,7 @@
       </div>
     </div>
   </div>
-  <div class="w-full flex justify-between items-center p-4">
+  <div class="flex items-center justify-between w-full p-4">
     <div>
       <%= link_to(edit_customer_invoice_path(@invoice.customer, @invoice),
       class: 'btn btn-orange normal-case transition ease-out duration-700 transform hover:scale-105') do %>

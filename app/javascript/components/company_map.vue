@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full flex h-full absolute">
-    <div class="w-full flex flex-wrap">
+  <div class="absolute flex w-full h-full">
+    <div class="flex flex-wrap w-full">
       <company-list
         :companies="companies"
         :currentCompany="currentCompany"
@@ -9,11 +9,11 @@
         @select="selectCompany"
         @search="searchCompanies"
       ></company-list>
-      <div class="w-full h-full absolute">
-        <div class="lg:p-0 h-full">
+      <div class="absolute w-full h-full">
+        <div class="h-full lg:p-0">
           <div class="flex flex-wrap inline-block h-full xl:h-full">
             <div
-              class="w-full xl:w-full min-h-1/2 h-full"
+              class="w-full h-full xl:w-full min-h-1/2"
             >
               <mapbox
                 :accessToken="accessToken"
@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="absolute bottom-0 w-1/2 md:w-1/3 lg:w-1/5 xl:w-64 right-0 mb-1 md:mb-6 mr-1">
+      <div class="absolute bottom-0 right-0 w-1/2 mb-1 mr-1 md:w-1/3 lg:w-1/5 xl:w-64 md:mb-6">
         <enquiry-list></enquiry-list>
       </div>
     </div>

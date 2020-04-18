@@ -4,8 +4,8 @@
 <% content_for(:header_title) do %>
   <%= t('.title') %>
 <% end %>
-<div class="w-full pb-4 px-2 py-2 lg:p-6">
-  <div class="text-sm lg:text-sm font-medium text-gray-900 pb-2">
+<div class="w-full px-2 py-2 pb-4 lg:p-6">
+  <div class="pb-2 text-sm font-medium text-gray-900 lg:text-sm">
     <div class="flex items-center leading-none">
       <% if @customer.present? %>
         <%= link_to(@customer, customer_path(@customer), class: 'text-gray-500') %>

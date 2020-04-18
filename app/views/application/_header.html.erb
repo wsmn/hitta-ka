@@ -1,20 +1,20 @@
 <div id="nav">
-  <nav class="flex flex-grow justify-between bg-gray-800 py-4 lg:py-2">
-    <div class="flex-shrink-0 px-6 w-48 xl:w-64 hidden lg:flex items-center">
+  <nav class="flex justify-between flex-grow py-4 bg-gray-800 lg:py-2">
+    <div class="items-center flex-shrink-0 hidden w-48 px-6 xl:w-64 lg:flex">
       <div class="hidden lg:block">
         <%= link_to(root_path) do %>
           <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 4rem", class: "") %>
         <% end %>
       </div>
     </div>
-    <div class="flex flex-1 items-center justify-between px-2 lg:px-3 xl:px-6 ">
+    <div class="flex items-center justify-between flex-1 px-2 lg:px-3 xl:px-6 ">
       <div class="lg:hidden">
         <%= link_to(root_path) do %>
           <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 3.5rem", class: "") %>
         <% end %>
       </div>
       <%= render('application/mobile_menu') %>
-      <div class="hidden lg:flex justify-end items-center">
+      <div class="items-center justify-end hidden lg:flex">
         <%= link_to(t('application.header.home'), root_url, class: header_active("presentation#index", "hover:ml-4 px-3 py-2 rounded-md text-sm font-medium text-white hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700", "text-gray-300 bg-gray-900 hover:text-gray-300 hover:bg-gray-900")) %>
         <%= link_to(t('application.header.map'), map_url, class: header_active("map#index", "ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700", "bg-gray-900")) %>
         <%= link_to(t('application.header.about'), about_url, class: header_active("presentation#about", "mx-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700", "bg-gray-900")) %>
@@ -22,14 +22,14 @@
           <div @click.away="open = false" class="relative inline-block" x-data="{ open: false }">
             <button @click="open = !open" class="flex items-center text-white focus:outline-none" @click="open = true">
               <div
-              class="h-10 w-10 rounded bg-indigo-700 flex items-center justify-center text-white font-bold uppercase">
+              class="flex items-center justify-center w-10 h-10 font-bold text-white uppercase bg-indigo-700 rounded">
                 <%= current_user.initials %>
               </div>
-              <span class="hidden lg:inline ml-2 mr-2 text-sm font-semibold">
+              <span class="hidden ml-2 mr-2 text-sm font-semibold lg:inline">
                 <%= current_user.name %>
-                <p class="text-xs text-gray-400 flex justify-start"><%= current_user.organisations.first %></p>
+                <p class="flex justify-start text-xs text-gray-400"><%= current_user.organisations.first %></p>
               </span>
-              <div class="transform -mt-4" :class="{'rotate-180': open}">
+              <div class="-mt-4 transform" :class="{'rotate-180': open}">
                 <%= render('application/icons/arrow_down') %>
               </div>
             </button>

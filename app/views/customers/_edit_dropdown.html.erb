@@ -2,12 +2,12 @@
   x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
   x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
   x-transition:leave-end="transform opacity-0 scale-95"
-  class="z-50 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
-  <div class="rounded-md bg-white border shadow-xs">
+  class="absolute right-0 z-50 w-48 mt-2 shadow-lg origin-top-right rounded-md">
+  <div class="bg-white border rounded-md shadow-xs">
     <div class="py-1">
       <%= link_to(edit_customer_path(customer), class: 'group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900') do %>
         <div class="flex items-center">
-          <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500" fill="currentColor"
+          <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500" fill="currentColor"
           viewBox="0 0 20 20">
             <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
             <path fill-rule="evenodd"
@@ -22,7 +22,7 @@
     <div class="py-1">
       <%= link_to(new_customer_project_path(customer), class: 'group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900') do %>
         <div class="flex items-center">
-          <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500" viewBox="0 0 20 20"
+          <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500" viewBox="0 0 20 20"
           fill="currentColor">
             <path fill-rule="evenodd"
             d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
@@ -34,7 +34,7 @@
     <% end %>
     <%= link_to(new_customer_invoice_path(customer), class: 'group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900') do %>
       <div class="flex items-center">
-        <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500" viewBox="0 0 20 20"
+        <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500" viewBox="0 0 20 20"
           fill="currentColor">
           <path fill-rule="evenodd"
             d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z"
@@ -47,8 +47,8 @@
   <div class="border-t border-gray-100"></div>
   <div class="py-1">
     <a href="#"
-        class="group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-      <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500" fill="currentColor"
+        class="flex items-center px-4 py-2 text-sm text-gray-700 group leading-5 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+      <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500" fill="currentColor"
           viewBox="0 0 20 20">
         <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
         <path fill-rule="evenodd"

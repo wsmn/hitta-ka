@@ -8,22 +8,22 @@
 <% link = pagy_link_proc(pagy) -%>
 <nav aria-label="pager" class="pagy_nav pagination" role="navigation">
   <% if pagy.prev -%>
-    <%== link.call(pagy.prev, t('.prev'), 'aria-label="next" class="text-sm bg-gray-300 hover:bg-gray-700 hover:text-white text-gray-700 font-semibold py-1 px-2 rounded ml-2"') %>
+    <%== link.call(pagy.prev, t('.prev'), 'aria-label="next" class="px-2 py-1 ml-2 text-sm font-semibold text-gray-700 bg-gray-300 rounded hover:bg-gray-700 hover:text-white"') %>
   <% end -%>
   <% pagy.series.each do |item| # series example: [1, :gap, 7, 8, "9", 10, 11, :gap, 36] -%>
   <% if item.is_a?(Integer) -%>
-    <%== link.call(item, item, 'class="page h-6 w-5 leading-none text-sm text-gray-700 font-semibold inline-flex items-center justify-center uppercase"') %>
+    <%== link.call(item, item, 'class="inline-flex items-center justify-center w-5 h-6 text-sm font-semibold leading-none text-gray-700 uppercase page"') %>
   <% elsif item.is_a?(String) -%>
-    <div class="h-6 w-6 leading-none text-sm bg-gray-700 inline-flex items-center justify-center text-white font-bold uppercase ml-1">
+    <div class="inline-flex items-center justify-center w-6 h-6 ml-1 text-sm font-bold leading-none text-white uppercase bg-gray-700">
       <%= item %>
     </div>
   <% elsif item == :gap -%>
-    <span class="page gap font-semibold ml-1">
+    <span class="ml-1 font-semibold page gap">
       <%== pagy_t('pagy.nav.gap') %>
     </span>
   <% end -%>
 <% end -%>
 <% if pagy.next -%>
-  <%== link.call(pagy.next, t('.next'), 'aria-label="next" class="text-sm bg-gray-300 hover:bg-gray-700 hover:text-white text-gray-700 font-semibold py-1 px-2 rounded ml-2"') %>
+  <%== link.call(pagy.next, t('.next'), 'aria-label="next" class="px-2 py-1 ml-2 text-sm font-semibold text-gray-700 bg-gray-300 rounded hover:bg-gray-700 hover:text-white"') %>
 <% end -%>
 </nav>

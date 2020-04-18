@@ -13,14 +13,14 @@
     <%= render('application/favicon') %>
   </head>
   <body class="antialiased" data-confirm-unsaved="<%= t('.confirm_unsaved') %>">
-    <div class="h-full flex flex-col bg-cool-gray-50">
+    <div class="flex flex-col h-full bg-cool-gray-50">
       <header>
         <%= render('account_header') %>
       </header>
       <portal-target name="modals"></portal-target>
-      <div class="flex-1 flex lg:overflow-hidden">
+      <div class="flex flex-1 lg:overflow-hidden">
         <%= yield(:sidebar) %>
-        <main class="flex-1 flex lg:overflow-y-auto">
+        <main class="flex flex-1 lg:overflow-y-auto">
           <%= render('flashes') %>
           <%= yield(:title) %>
           <%= yield %>

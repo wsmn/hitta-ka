@@ -1,24 +1,24 @@
 <template>
   <div
-    class="w-full md:w-auto flex z-20 relative flex-row h-16 md:h-32 lg:h-full py-0 px-0 md:py-2 md:px-2 lg:py-6 lg:pl-6 lg:pr-0"
+    class="relative z-20 flex flex-row w-full h-16 px-0 py-0 md:w-auto md:h-32 lg:h-full md:py-2 md:px-2 lg:py-6 lg:pl-6 lg:pr-0"
     :class="{
         '': !shouldExpand,
         'w-1/2': shouldExpand
       }"
   >
     <div
-      class="w-full md:w-auto flex flex-col z-20 h-auto flex py-0 px-2 md:py-2 md:px-4 lg:px-6 lg:py-6 relative md:bg-gray-900 md:shadow-xl md:rounded-lg"
+      class="relative z-20 flex flex-col w-full h-auto px-2 py-0 md:w-auto md:py-2 md:px-4 lg:px-6 lg:py-6 md:bg-gray-900 md:shadow-xl md:rounded-lg"
     >
       <div class="mt-0 lg:-mt-2 xl:mt-0">
-        <h1 class="text-white text-md lg:text-3xl hidden md:block">
+        <h1 class="hidden text-white text-md lg:text-3xl md:block">
           <span class="inline font-thin">Sök</span>
           <span class="inline font-bold">Kontrollansvariga</span>
         </h1>
         <form @submit.prevent="handleSearch">
           <div
-            class="flex items-center w-full px-3 py-2 mx-auto mt-2 md:mt-4 bg-white shadow rounded"
+            class="flex items-center w-full px-3 py-2 mx-auto mt-2 bg-white rounded shadow md:mt-4"
           >
-            <i v-if="hasSearchValue" @click="resetSearch" class="fas fa-times-circle mr-3"></i>
+            <i v-if="hasSearchValue" @click="resetSearch" class="mr-3 fas fa-times-circle"></i>
             <input
               type="text"
               id="search-field"
@@ -30,52 +30,52 @@
             <button
               type="submit"
               name="commit"
-              class="py-2 px-2 w-16 uppercase shadow-md no-underline rounded bg-blue-600 text-white font-bold text-xs hover:text-white hover:bg-blue-500 focus:outline-none active:shadow-none"
+              class="w-16 px-2 py-2 text-xs font-bold text-white no-underline uppercase bg-blue-600 rounded shadow-md hover:text-white hover:bg-blue-500 focus:outline-none active:shadow-none"
             >Sök</button>
           </div>
         </form>
       </div>
-      <div class="hidden lg:block company-list-width pt-8 pb-4" id="width-of-sidebar">
-        <h2 class="font-bold text-white text-2xl inline">Hela Sverige</h2>
-        <p class="text-lg text-gray-500 inline ml-2">123 results</p>
+      <div class="hidden pt-8 pb-4 lg:block company-list-width" id="width-of-sidebar">
+        <h2 class="inline text-2xl font-bold text-white">Hela Sverige</h2>
+        <p class="inline ml-2 text-lg text-gray-500">123 results</p>
       </div>
       <div class="hidden lg:block">
         <loading-progress :active="loading" />
       </div>
       <div
         v-if="companies.length"
-        class="overflow-y-scroll companylist hidden lg:block"
+        class="hidden overflow-y-scroll companylist lg:block"
       >
         <div
           v-for="company in companies"
           :key="company.company_id"
-          class="bg-white hover:bg-blue-400 text-blue-900 rounded p-2 mb-6 shadow-lg animate-company"
+          class="p-2 mb-6 text-blue-900 bg-white rounded shadow-lg hover:bg-blue-400 animate-company"
           :class="{ 'bg-blue-400': company == currentCompany }"
           @click="handleClick(company)"
         >
           <div class="flex items-center p-1">
             <div
-              class="bg-red-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4"
+              class="flex items-center justify-center w-12 h-12 mr-4 text-sm font-bold text-white bg-red-400 rounded-full xl:h-16 xl:w-16 xl:text-base"
             >Logo</div>
             <div class="w-3/4">
-              <p class="font-semibold text-base">{{ company.name }}</p>
-              <p class="text-sm font-light font-sans">{{ company.address }}</p>
+              <p class="text-base font-semibold">{{ company.name }}</p>
+              <p class="font-sans text-sm font-light">{{ company.address }}</p>
             </div>
           </div>
           <div v-if="company == currentCompany" class="justify-center">
             <button
               @click="readMore"
-              class="py-2 w-full shadow-md no-underline rounded bg-blue-700 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-blue-500 focus:outline-none active:shadow-none"
+              class="w-full py-2 text-sm font-semibold text-white no-underline bg-blue-700 rounded shadow-md xxl:text-base hover:text-white hover:bg-blue-500 focus:outline-none active:shadow-none"
             >Läs mer</button>
           </div>
         </div>
       </div>
-      <div v-else class="w-2/3 mx-auto companylist overflow-auto text-center">
+      <div v-else class="w-2/3 mx-auto overflow-auto text-center companylist">
         <div v-if="searchValue" class="mt-4">
           <span
-            class="text-base xl:text-lg text-gray-900"
+            class="text-base text-gray-900 xl:text-lg"
           >Inga resultat, prova att söka på någonting annat!</span>
-          <div class="w-2/3 xl:w-1/2 mx-auto mt-8">
+          <div class="w-2/3 mx-auto mt-8 xl:w-1/2">
             <img v-bind:src="require('images/company_empty.svg')" />
           </div>
         </div>

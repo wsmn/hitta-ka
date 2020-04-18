@@ -2,18 +2,18 @@
   x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
   x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
   x-transition:leave-end="transform opacity-0 scale-95">
-  <div class="rounded bg-white border border-gray-400 w-40 p-3">
-    <div class="w-full flex flex-wrap items-center">
+  <div class="w-40 p-3 bg-white border border-gray-400 rounded">
+    <div class="flex flex-wrap items-center w-full">
       <button
-        class="w-full btn normal-case border border-gray-300 text-center flex items-center justify-center bg-blue-500 text-white hover:border-transparent py-1">
+        class="flex items-center justify-center w-full py-1 text-center text-white normal-case bg-blue-500 border border-gray-300 btn hover:border-transparent">
         <span class=""><%= t('.name') %></span>
       </button>
       <button
-        class="w-full btn normal-case border border-gray-300 mt-4 text-center flex items-center justify-center text-gray-900 hover:bg-blue-500 hover:text-white hover:border-transparent py-1">
+        class="flex items-center justify-center w-full py-1 mt-4 text-center text-gray-900 normal-case border border-gray-300 btn hover:bg-blue-500 hover:text-white hover:border-transparent">
         <span class=""><%= t('.date') %></span>
       </button>
       <button
-        class="w-full btn normal-case border border-gray-300 mt-4 text-center flex items-center justify-center text-gray-900 hover:bg-blue-500 hover:text-white hover:border-transparent py-1">
+        class="flex items-center justify-center w-full py-1 mt-4 text-center text-gray-900 normal-case border border-gray-300 btn hover:bg-blue-500 hover:text-white hover:border-transparent">
         <span class=""><%= t('.status') %></span>
       </button>
     </div>

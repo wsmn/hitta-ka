@@ -1,34 +1,34 @@
 <div x-show="confirm_delete_modal" class="overflow-y-auto bg-gray-900" style="background-color: rgba(0,0,0,0.5)"
     x-transition:enter="transition ease-out duration-300" x-transition:enter-start="transform opacity-0 scale-100"
     x-transition:enter-end="transform opacity-100 scale-100"
-    class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
+    class="absolute right-0 w-56 mt-2 shadow-lg origin-top-right rounded-md"
     :class="{ 'absolute inset-0 z-50 flex items-center justify-center': confirm_delete_modal }">
   <div x-show="confirm_delete_modal" @click.away="confirm_delete_modal = false"
-        class="bg-gray-100 rounded-md w-3/4 lg:w-1/3 opacity-100 flex flex-col items-center pt-8 px-8 pb-4 relative">
+        class="relative flex flex-col items-center w-3/4 px-8 pt-8 pb-4 bg-gray-100 opacity-100 rounded-md lg:w-1/3">
     <div @click="confirm_delete_modal = false"
-            class="absolute top-0 right-0 bg-red-600 w-8 h-8 rounded-full text-white font-bold flex items-center justify-center -mt-4 -mr-4 cursor-pointer">
-      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            class="absolute top-0 right-0 flex items-center justify-center w-8 h-8 -mt-4 -mr-4 font-bold text-white bg-red-600 rounded-full cursor-pointer">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </div>
     <div class="flex">
       <div class="">
-        <svg class="h-16 w-16 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg class="w-16 h-16 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
         </svg>
       </div>
       <div class="ml-4 text-gray-700">
-        <h1 class="text-gray-900 font-semibold text-xl">Delete project</h1>
+        <h1 class="text-xl font-semibold text-gray-900">Delete project</h1>
         <span class="">Vill du verkligen radera projektet? Tar även bort all kopplad data och kan ej
           ångras.</span>
       </div>
     </div>
-    <div class="w-full flex items-center justify-end mt-4">
-      <div @click="confirm_delete_modal = false" class="btn bg-white border border-gray-400 text-gray-900 cursor-pointer hover:text-gray-500">
+    <div class="flex items-center justify-end w-full mt-4">
+      <div @click="confirm_delete_modal = false" class="text-gray-900 bg-white border border-gray-400 cursor-pointer btn hover:text-gray-500">
         cancel
       </div>
-      <div class="btn bg-red-600 ml-6 cursor-pointer transition ease-out duration-700 transform hover:scale-110">
+      <div class="ml-6 bg-red-600 cursor-pointer btn transition ease-out duration-700 transform hover:scale-110">
         delete
       </div>
     </div>

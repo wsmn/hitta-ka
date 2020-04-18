@@ -1,4 +1,4 @@
-<div class="w-full flex justify-between bg-white border-b-2 border-orange-500 px-4 py-2 lg:hidden">
+<div class="flex justify-between w-full px-4 py-2 bg-white border-b-2 border-orange-500 lg:hidden">
   <div class="mb-1 leading-tight">
     <h1 class="text-3xl font-bold text-gray-800"><%= t('.title') %></h1>
     <h2 class="text-xl font-medium text-ornage-600">All invoices</h2>
@@ -9,9 +9,9 @@
     <% end %>
   </div>
 </div>
-<div class="w-full lg:mb-2 flex justify-start lg:justify-between items-center">
+<div class="flex items-center justify-start w-full lg:mb-2 lg:justify-between">
   <div class="hidden lg:flex">
-    <h2 class="text-gray-900 text-2xl xl:text-3xl font-semibold leading-none">
+    <h2 class="text-2xl font-semibold leading-none text-gray-900 xl:text-3xl">
       <% if params[:status].present? %>
         <%= t("model.project.status.#{params[:status]}") %>
         <span class="lowercase"><%= t('.title') %></span>
@@ -20,9 +20,9 @@
       <% end %>
     </h2>
   </div>
-  <div class="flex items-start hidden lg:flex ml-2">
+  <div class="flex items-start hidden ml-2 lg:flex">
     <%= link_to(new_invoice_path, class: 'btn btn-orange btn-bounce py-2 normal-case text-base') do %>
-      <div class="-ml-1 mr-1">
+      <div class="mr-1 -ml-1">
         <%= render('application/icons/plus') %>
       </div>
       <%= t('.new_invoice') %>

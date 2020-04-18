@@ -2,52 +2,52 @@
   <div>
     <button
       @click="open"
-      class="py-2 w-full shadow-md no-underline rounded bg-green-500 text-white font-semibold text-sm xxl:text-base hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none"
+      class="w-full py-2 text-sm font-semibold text-white no-underline bg-green-500 rounded shadow-md xxl:text-base hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none"
     >
       Meddelande
     </button>
     <modal v-if="showModal" name="message-modal" @close="close">
-      <div class="w-full lg:w-1/2 xl:w-1/3 mx-auto p-4 lg:p-0">
+      <div class="w-full p-4 mx-auto lg:w-1/2 xl:w-1/3 lg:p-0">
         <form
-          class="w-full mx-auto bg-white shadow-xl rounded-lg mt-8 max-w-2xl"
+          class="w-full max-w-2xl mx-auto mt-8 bg-white rounded-lg shadow-xl"
           @submit="checkForm" @click.stop
         >
-          <div class="w-full flex border-b border-gray-400 p-5 items-center">
+          <div class="flex items-center w-full p-5 border-b border-gray-400">
             <div class="w-3/4 md:w-4/5 lg:w-5/6">
-              <p class="font-bold text-base lg:text-lg text-gray-800">
+              <p class="text-base font-bold text-gray-800 lg:text-lg">
                 Skicka meddelande till
               </p>
               <p
-                class="font-bold leading-tight text-base lg:text-lg text-blue-500"
+                class="text-base font-bold leading-tight text-blue-500 lg:text-lg"
               >
                 {{ company.name }}
               </p>
             </div>
-            <div class="w-1/4 md:w-1/5 lg:w-1/6 flex items-center">
+            <div class="flex items-center w-1/4 md:w-1/5 lg:w-1/6">
               <img v-bind:src="require('images/message_map.svg')" />
             </div>
           </div>
-          <div class="p-5 flex flex-col">
-            <div class="flex flex-wrap mb-6 items-center">
+          <div class="flex flex-col p-5">
+            <div class="flex flex-wrap items-center mb-6">
               <div class="hidden lg:w-1/3 lg:block">
                 <div class="pr-2">
                   <h2
-                    class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0 mt-4"
+                    class="mt-4 mb-1 text-sm font-semibold text-gray-700 lg:text-base lg:mb-0"
                   >
                     Namn
                   </h2>
                 </div>
               </div>
-              <div class="w-full lg:w-2/3 flex flex-wrap">
+              <div class="flex flex-wrap w-full lg:w-2/3">
                 <div class="w-1/2 pr-2">
                   <h2
-                    class="tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2"
+                    class="mb-1 text-sm font-semibold leading-none tracking-wide text-gray-700 lg:mb-2"
                   >
                     Förnamn
                   </h2>
                   <input
                     :class="{ 'border-red-500 border-4': errors.length }"
-                    class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    class="block w-full px-4 py-3 text-sm leading-tight text-gray-700 bg-gray-200 border border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="name"
                     v-model="name"
                     name="name"
@@ -55,31 +55,31 @@
                   />
                   <p
                     v-if="errors.length"
-                    class="text-red-500 text-xs -mt-5 italic"
+                    class="-mt-5 text-xs italic text-red-500"
                   >
                     Var god fyll i namn.
                   </p>
                 </div>
                 <div class="w-1/2 pl-2">
                   <h2
-                    class="tracking-wide leading-none text-gray-700 text-sm font-semibold mb-1 lg:mb-2"
+                    class="mb-1 text-sm font-semibold leading-none tracking-wide text-gray-700 lg:mb-2"
                   >
                     Efternamn
                   </h2>
                   <input
                     :class="{ 'border-red-500': errors.length }"
-                    class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    class="block w-full px-4 py-3 text-sm leading-tight text-gray-700 bg-gray-200 border border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="lastname"
                     type="text"
                   />
                 </div>
               </div>
             </div>
-            <div class="flex flex-wrap mb-6 items-center">
+            <div class="flex flex-wrap items-center mb-6">
               <div class="w-full lg:w-1/3">
                 <div class="pr-2">
                   <h2
-                    class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0"
+                    class="mb-1 text-sm font-semibold text-gray-700 lg:text-base lg:mb-0"
                   >
                     Telefonnummer
                   </h2>
@@ -88,7 +88,7 @@
               <div class="w-full lg:w-2/3">
                 <div class="w-full">
                   <input
-                    class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    class="block w-full px-4 py-3 text-sm leading-tight text-gray-700 bg-gray-200 border border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="phone"
                     v-model="phone"
                     type="phone"
@@ -97,11 +97,11 @@
                 </div>
               </div>
             </div>
-            <div class="flex flex-wrap mb-6 items-center">
+            <div class="flex flex-wrap items-center mb-6">
               <div class="w-full lg:w-1/3">
                 <div class="pr-2">
                   <h2
-                    class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0"
+                    class="mb-1 text-sm font-semibold text-gray-700 lg:text-base lg:mb-0"
                   >
                     Email
                   </h2>
@@ -111,7 +111,7 @@
                 <div class="w-full">
                   <input
                     :class="{ 'border-red-500': errors.length }"
-                    class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    class="block w-full px-4 py-3 text-sm leading-tight text-gray-700 bg-gray-200 border border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="email"
                     v-model="email"
                     type="email"
@@ -120,11 +120,11 @@
                 </div>
               </div>
             </div>
-            <div class="flex flex-wrap mb-6 items-center">
+            <div class="flex flex-wrap items-center mb-6">
               <div class="w-full lg:w-1/3">
                 <div class="pr-2">
                   <h2
-                    class="text-sm lg:text-base text-gray-700 font-semibold mb-1 lg:mb-0"
+                    class="mb-1 text-sm font-semibold text-gray-700 lg:text-base lg:mb-0"
                   >
                     Ämne
                   </h2>
@@ -133,7 +133,7 @@
               <div class="w-full lg:w-2/3">
                 <div class="w-full">
                   <input
-                    class="text-sm appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    class="block w-full px-4 py-3 text-sm leading-tight text-gray-700 bg-gray-200 border border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-email-adress"
                     type="text"
                   />
@@ -143,11 +143,11 @@
             <div class="flex flex-wrap">
               <div class="w-full lg:w-1/3">
                 <div class="pr-1">
-                  <h2 class="text-sm lg:text-base text-gray-700 font-semibold">
+                  <h2 class="text-sm font-semibold text-gray-700 lg:text-base">
                     Meddelande
                   </h2>
                   <p
-                    class="text-xs lg:text-sm font-semibold lg:mt-1 text-gray-500 mb-1 lg:mb-0"
+                    class="mb-1 text-xs font-semibold text-gray-500 lg:text-sm lg:mt-1 lg:mb-0"
                   >
                     Här skriver du ditt meddelande till företaget. Max 1000 ord.
                   </p>
@@ -156,7 +156,7 @@
               <div class="w-full lg:w-2/3">
                 <div class="w-full">
                   <textarea
-                    class="text-sm appearance-none resize-none block w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-24"
+                    class="block w-full h-24 px-4 py-3 text-sm leading-tight text-gray-700 bg-gray-200 border border-gray-300 rounded appearance-none resize-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="subject"
                     type="description"
                   >
@@ -165,12 +165,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full flex border-t border-gray-300 py-5 px-5">
-            <div class="w-full flex justify-end items-center">
+          <div class="flex w-full px-5 py-5 border-t border-gray-300">
+            <div class="flex items-center justify-end w-full">
               <div class="w-20 mr-2">
                 <button
                   @click="close"
-                  class="w-full text-blue-600 uppercase font-bold text-sm hover:text-blue-300"
+                  class="w-full text-sm font-bold text-blue-600 uppercase hover:text-blue-300"
                 >
                   Avbryt
                 </button>
@@ -179,7 +179,7 @@
                 <button
                   type="submit"
                   value="Submit"
-                  class="py-2 px-2 w-full uppercase shadow-md no-underline rounded bg-blue-600 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none"
+                  class="w-full px-2 py-2 text-sm font-bold text-white no-underline uppercase bg-blue-600 rounded shadow-md hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none"
                 >
                   Skicka
                 </button>

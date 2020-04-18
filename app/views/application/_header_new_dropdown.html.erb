@@ -2,12 +2,12 @@
   x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95"
   x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
   x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
-  <div class="rounded bg-white border border-gray-500 w-56 px-3 py-2">
+  <div class="w-56 px-3 py-2 bg-white border border-gray-500 rounded">
     <p class="text-xl font-semibold text-gray-900">Add new:</p>
     <%= link_to(new_project_path, class: 'block p-2 text-base text-gray-800 hover:bg-blue-200 hover:text-blue-800 rounded flex items-center justify-between -mx-2 mt-1') do %>
       <div class="flex items-center">
-        <div class="bg-blue-500 h-8 w-8 rounded flex items-center justify-center text-white mr-3">
-          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="flex items-center justify-center w-8 h-8 mr-3 text-white bg-blue-500 rounded">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
             d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
           </svg>
@@ -20,7 +20,7 @@
     <% end %>
     <%= link_to(new_customer_path, class: 'block p-2 text-base text-gray-800 hover:bg-green-200 hover:text-green-700 rounded flex items-center justify-between -mx-2 mt-1') do %>
       <div class="flex items-center">
-        <div class="bg-green-500 h-8 w-8 rounded flex items-center justify-center text-white mr-3">
+        <div class="flex items-center justify-center w-8 h-8 mr-3 text-white bg-green-500 rounded">
           <%= render('application/icons/customer_new') %>
         </div>
         <%= t('.customer') %>
@@ -31,7 +31,7 @@
     <% end %>
     <%= link_to(new_invoice_path, class: 'block p-2 text-base text-gray-800 hover:bg-orange-200 hover:text-orange-700 rounded flex items-center justify-between -mx-2 mt-1') do %>
       <div class="flex items-center">
-        <div class="bg-orange-500 h-8 w-8 rounded flex items-center justify-center text-white mr-3">
+        <div class="flex items-center justify-center w-8 h-8 mr-3 text-white bg-orange-500 rounded">
           <%= render('application/icons/document_add') %>
         </div>
         <%= t('.invoice') %>

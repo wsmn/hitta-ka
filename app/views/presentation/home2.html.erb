@@ -1,76 +1,76 @@
-<div class="w-full flex h-auto absolute">
-  <div class="w-full flex flex-wrap mt-4">
-    <div class="w-full mx-auto p-4 lg:p-0">
-      <div class="w-full flex flex-wrap">
-        <div class="w-full mx-auto p-4 lg:p-0">
+<div class="absolute flex w-full h-auto">
+  <div class="flex flex-wrap w-full mt-4">
+    <div class="w-full p-4 mx-auto lg:p-0">
+      <div class="flex flex-wrap w-full">
+        <div class="w-full p-4 mx-auto lg:p-0">
           <!--Send message to company modal-->
-          <div class="w-full lg:w-1/2 xl:w-2/3 flex flex-wrap mx-auto bg-gray-300 shadow-xl rounded-lg border border-gray-400">
+          <div class="flex flex-wrap w-full mx-auto bg-gray-300 border border-gray-400 rounded-lg shadow-xl lg:w-1/2 xl:w-2/3">
             <div class="w-3/4 p-8">
-              <div class="px-4 flex flex-col">
+              <div class="flex flex-col px-4">
                 <div class="-mx-3 md:flex">
-                  <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label class="tracking-wide text-gray-800 text-base font-bold">
+                  <div class="px-3 mb-6 md:w-1/2 md:mb-0">
+                    <label class="text-base font-bold tracking-wide text-gray-800">
                       Projektstart
                     </label>
-                    <input class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
+                    <input class="block w-full px-4 py-3 mt-2 leading-tight text-gray-700 bg-white border border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" type="text">
                   </div>
-                  <div class="w-full md:w-1/2 px-3">
-                    <label class="tracking-wide text-gray-800 text-base font-bold">
+                  <div class="w-full px-3 md:w-1/2">
+                    <label class="text-base font-bold tracking-wide text-gray-800">
                       Välj projekttyp:
                     </label>
                     <div class="relative">
-                      <select class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white mt-2">
+                      <select class="block w-full px-4 py-3 pr-8 mt-2 leading-tight text-gray-700 bg-white border border-gray-400 rounded appearance-none focus:outline-none focus:bg-white">
                         <option selected="selected"></option>
                         <option>Nybyggnation</option>
                         <option>Tillbyggnad</option>
                         <option>Renovering</option>
                         <option>Annat</option>
                       </select>
-                      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                      <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+                        <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="w-full px-4">
-                <label class="tracking-wide text-gray-900 text-base font-bold">
+                <label class="text-base font-bold tracking-wide text-gray-900">
                   Beskriv projektet 
-                  <p class="font-normal text-gray-700 inline">(Tips!)</p>
+                  <p class="inline font-normal text-gray-700">(Tips!)</p>
                 </label>
-                <textarea class="appearance-none mt-2 block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32" id="subject" type="description"></textarea>
+                <textarea class="block w-full h-32 px-4 py-3 mt-2 mb-3 leading-tight text-gray-700 bg-white border border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="subject" type="description"></textarea>
               </div>
               <div class="mt-4 mb-4">
-                <label class="tracking-wide text-blue-600 text-base font-bold ml-4">
+                <label class="ml-4 text-base font-bold tracking-wide text-blue-600">
                   Välj hustyp:
                 </label>
                 <div class="flex flex-wrap mt-4">
-                  <div class="w-1/4 mx-auto px-4 text-center">
-                    <div class="text-gray-700 text-center bg-white rounded shadow-md hover:shadow-xl p-6">
+                  <div class="w-1/4 px-4 mx-auto text-center">
+                    <div class="p-6 text-center text-gray-700 bg-white rounded shadow-md hover:shadow-xl">
                       <div class="items-center justify-center mx-auto font-bold">
                         <%= icon('fas', 'home', class: 'font-bold text-blue-500 text-3xl') %>
                         <h3 class="mt-2">Hus</h3>
                       </div>
                     </div>
                   </div>
-                  <div class="w-1/4 mx-auto px-4 mt-32 lg:mt-0">
-                    <div class="text-gray-700 text-center bg-white rounded shadow-md hover:shadow-xl p-6">
+                  <div class="w-1/4 px-4 mx-auto mt-32 lg:mt-0">
+                    <div class="p-6 text-center text-gray-700 bg-white rounded shadow-md hover:shadow-xl">
                       <div class="items-center justify-center mx-auto font-bold">
                         <%= icon('fas', 'city', class: 'font-bold text-blue-500 text-3xl') %>
                         <h3 class="mt-2">Lägenhet</h3>
                       </div>
                     </div>
                   </div>
-                  <div class="w-1/4 mx-auto px-4 mt-32 lg:mt-0">
-                    <div class="text-gray-700 text-center bg-white rounded shadow-md hover:shadow-xl p-6">
+                  <div class="w-1/4 px-4 mx-auto mt-32 lg:mt-0">
+                    <div class="p-6 text-center text-gray-700 bg-white rounded shadow-md hover:shadow-xl">
                       <div class="items-center justify-center mx-auto font-bold">
                         <%= icon('fas', 'hotel', class: 'font-bold text-blue-500 text-3xl') %>
                         <h3 class="mt-2">Radhus</h3>
                       </div>
                     </div>
                   </div>
-                  <div class="w-1/4 mx-auto px-4 mt-32 lg:mt-0">
-                    <div class="text-gray-700 text-center bg-white rounded shadow-md hover:shadow-xl p-6">
+                  <div class="w-1/4 px-4 mx-auto mt-32 lg:mt-0">
+                    <div class="p-6 text-center text-gray-700 bg-white rounded shadow-md hover:shadow-xl">
                       <div class="items-center justify-center mx-auto font-bold">
                         <%= icon('fas', 'campground', class: 'font-bold text-blue-500 text-3xl') %>
                         <h3 class="mt-2">Fritidshus</h3>
@@ -79,32 +79,32 @@
                   </div>
                 </div>
                 <div class="flex flex-wrap mt-6">
-                  <div class="w-1/4 mx-auto px-4 text-center">
-                    <div class="text-gray-700 text-center bg-white rounded shadow-md hover:shadow-xl p-6">
+                  <div class="w-1/4 px-4 mx-auto text-center">
+                    <div class="p-6 text-center text-gray-700 bg-white rounded shadow-md hover:shadow-xl">
                       <div class="items-center justify-center mx-auto font-bold">
                         <%= icon('fas', 'industry', class: 'font-bold text-blue-500 text-3xl') %>
                         <h3 class="mt-2">Industri</h3>
                       </div>
                     </div>
                   </div>
-                  <div class="w-1/4 mx-auto px-4 mt-32 lg:mt-0">
-                    <div class="text-gray-700 text-center bg-white rounded shadow-md hover:shadow-xl p-6">
+                  <div class="w-1/4 px-4 mx-auto mt-32 lg:mt-0">
+                    <div class="p-6 text-center text-gray-700 bg-white rounded shadow-md hover:shadow-xl">
                       <div class="items-center justify-center mx-auto font-bold">
                         <%= icon('fas', 'building', class: 'font-bold text-blue-500 text-3xl') %>
                         <h3 class="mt-2">Kontor</h3>
                       </div>
                     </div>
                   </div>
-                  <div class="w-1/4 mx-auto px-4 mt-32 lg:mt-0">
-                    <div class="text-gray-700 text-center bg-white rounded shadow-md hover:shadow-xl p-6">
+                  <div class="w-1/4 px-4 mx-auto mt-32 lg:mt-0">
+                    <div class="p-6 text-center text-gray-700 bg-white rounded shadow-md hover:shadow-xl">
                       <div class="items-center justify-center mx-auto font-bold">
                         <%= icon('fas', 'utensils', class: 'font-bold text-blue-500 text-3xl') %>
                         <h3 class="mt-2">Restaurang</h3>
                       </div>
                     </div>
                   </div>
-                  <div class="w-1/4 mx-auto px-4 mt-32 lg:mt-0">
-                    <div class="text-gray-700 text-center bg-white rounded shadow-md hover:shadow-xl p-6">
+                  <div class="w-1/4 px-4 mx-auto mt-32 lg:mt-0">
+                    <div class="p-6 text-center text-gray-700 bg-white rounded shadow-md hover:shadow-xl">
                       <div class="items-center justify-center mx-auto font-bold">
                         <%= icon('fas', 'question-circle', class: 'font-bold text-blue-500 text-3xl') %>
                         <h3 class="mt-2">Annat</h3>
@@ -114,35 +114,35 @@
                 </div>
               </div>
             </div>
-            <div class="w-1/4 bg-gray-100 p-8 flex flex-col border-l border-gray-400 rounded-r-lg">
-              <div class="w-full flex">
-                <div class="border-2 border-blue-500 rounded-full h-12 w-12 flex items-center justify-center text-blue-500 text-xl font-bold">
+            <div class="flex flex-col w-1/4 p-8 bg-gray-100 border-l border-gray-400 rounded-r-lg">
+              <div class="flex w-full">
+                <div class="flex items-center justify-center w-12 h-12 text-xl font-bold text-blue-500 border-2 border-blue-500 rounded-full">
                   1
                 </div>
-                <p class="text-blue-500 font-bold mt-3 ml-4">Describe your project</p>
+                <p class="mt-3 ml-4 font-bold text-blue-500">Describe your project</p>
               </div>
-              <div class="w-full flex mt-4">
-                <div class="border-2 border-gray-500 rounded-full h-12 w-12 flex items-center justify-center text-gray-500 text-xl font-semibold">
+              <div class="flex w-full mt-4">
+                <div class="flex items-center justify-center w-12 h-12 text-xl font-semibold text-gray-500 border-2 border-gray-500 rounded-full">
                   2
                 </div>
-                <p class="text-gray-500 font-bold mt-3 ml-4">Upload files</p>
+                <p class="mt-3 ml-4 font-bold text-gray-500">Upload files</p>
               </div>
-              <div class="w-full flex mt-4">
-                <div class="border-2 border-gray-500 rounded-full h-12 w-12 flex items-center justify-center text-gray-500 text-xl font-semibold">
+              <div class="flex w-full mt-4">
+                <div class="flex items-center justify-center w-12 h-12 text-xl font-semibold text-gray-500 border-2 border-gray-500 rounded-full">
                   3
                 </div>
-                <p class="text-gray-500 font-bold mt-3 ml-4">Contact information</p>
+                <p class="mt-3 ml-4 font-bold text-gray-500">Contact information</p>
               </div>
-              <div class="w-full flex mt-4">
-                <div class="border-2 border-gray-500 rounded-full h-12 w-12 flex items-center justify-center text-gray-500 text-xl font-semibold">
+              <div class="flex w-full mt-4">
+                <div class="flex items-center justify-center w-12 h-12 text-xl font-semibold text-gray-500 border-2 border-gray-500 rounded-full">
                   4
                 </div>
-                <p class="text-gray-500 font-bold mt-3 ml-4">Confirm your request</p>
+                <p class="mt-3 ml-4 font-bold text-gray-500">Confirm your request</p>
               </div>
               <div class="flex flex-grow">
               </div>
               <button
-							class="py-2 mt-24 w-full shadow-md no-underline rounded bg-blue-500 text-white font-bold text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none"
+							class="w-full py-2 mt-24 text-sm font-bold text-white no-underline bg-blue-500 rounded shadow-md hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none"
 							>
                 Next
               </button>

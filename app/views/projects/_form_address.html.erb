@@ -1,5 +1,5 @@
 <div class="w-full mb-4">
-  <span class="text-2xl font-medium mr-2 ml-3">
+  <span class="ml-3 mr-2 text-2xl font-medium">
     Address
   </span>
 </div>
@@ -29,8 +29,8 @@
         <%= form.label(:country, class: "form-label lg:mb-2") %>
         <%= form.select(:country, options_for_select([['Sweden', 1]]), {},
                         class: 'form-input mt-2') %>
-        <div class="mt-8 pointer-events-none absolute inset-y-0 right-0
-                          flex items-center px-2 text-gray-700">
+        <div class="absolute inset-y-0 flex items-center px-2 mt-8 text-gray-700 pointer-events-none right-0
+ ">
           <%= render('application/icons/arrow_down') %>
         </div>
       </div>

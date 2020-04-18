@@ -1,20 +1,20 @@
-<div class="w-full bg-white rounded-lg border border-gray-300 max-w-xs">
-  <div class="rounded-t-lg bg-blue-500 -m-px">
+<div class="w-full max-w-xs bg-white border border-gray-300 rounded-lg">
+  <div class="-m-px bg-blue-500 rounded-t-lg">
     <%= link_to(customer_path(customer)) do %>
       <div class="p-2 sm:p-3">
         <div class="w-full">
-          <div class="text-xs uppercase font-bold text-white tracking-wide">
+          <div class="text-xs font-bold tracking-wide text-white uppercase">
             <%= t('.customer') %>
           </div>
         </div>
         <div class="flex items-center py-1 sm:py-2 sm:ml-2">
-          <div class="rounded-full h-10 w-10 sm:h-12 sm:w-12 bg-green-500 inline-flex items-center justify-center mr-3">
-            <span class="icon text-base sm:text-lg text-white font-semibold uppercase">
+          <div class="inline-flex items-center justify-center w-10 h-10 mr-3 bg-green-500 rounded-full sm:h-12 sm:w-12">
+            <span class="text-base font-semibold text-white uppercase icon sm:text-lg">
               <%= customer.initials %>
             </span>
           </div>
           <div class="text-white">
-            <p class="text-sm sm:text-base xl:text-lg font-bold"><%= customer.name %></p>
+            <p class="text-sm font-bold sm:text-base xl:text-lg"><%= customer.name %></p>
             <p class="text-xs sm:text-sm xl:text-base"><%= customer.phone %></p>
           </div>
         </div>
@@ -22,36 +22,36 @@
     <% end %>
   </div>
   <% if customer.address.present? %>
-    <div class="flex border-gray-300 border-b">
+    <div class="flex border-b border-gray-300">
       <div class="p-2 sm:p-3">
-        <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
+        <div class="text-xs font-bold tracking-wide text-gray-600 uppercase">
           <%= t('.address') %>
         </div>
         <div class="py-1 sm:py-2 sm:ml-2">
           <% if customer.street.present? %>
-            <p class="text-base sm:text-xl xl:text-2xl text-gray-900"><%= customer.street %></p>
+            <p class="text-base text-gray-900 sm:text-xl xl:text-2xl"><%= customer.street %></p>
           <% end %>
           <% if customer.zip_code.present? && customer.city.present? %>
-            <p class="text-sm sm:text-lg xl:text-lg text-gray-700"><%= customer.zip_code %>, <%= customer.city %></p>
+            <p class="text-sm text-gray-700 sm:text-lg xl:text-lg"><%= customer.zip_code %>, <%= customer.city %></p>
           <% elsif customer.zip_code.present? %>
-            <p class="text-sm sm:text-lg xl:text-lg text-gray-700"><%= customer.zip_code %></p>
+            <p class="text-sm text-gray-700 sm:text-lg xl:text-lg"><%= customer.zip_code %></p>
           <% elsif customer.city.present? %>
-            <p class="text-sm sm:text-lg xl:text-lg text-gray-700"><%= customer.city %></p>
+            <p class="text-sm text-gray-700 sm:text-lg xl:text-lg"><%= customer.city %></p>
           <% end %>
         </div>
       </div>
     </div>
   <% end %>
-  <div class="p-2 sm:p-3 rounded-b-lg text-base text-blue-600">
+  <div class="p-2 text-base text-blue-600 rounded-b-lg sm:p-3">
     <% if customer.email.present? %>
-      <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">
+      <div class="text-xs font-bold tracking-wide text-gray-600 uppercase">
         <%= t('.mail') %>
       </div>
       <div class="flex items-center py-1 sm:py-2 sm:ml-2">
-        <div class="w-5 inline-block text-center text-lg">
+        <div class="inline-block w-5 text-lg text-center">
           <i class="far fa-envelope fa-2xl"></i>
         </div>
-        <div class="text-sm sm:text-base text-center inline ml-2 truncate">
+        <div class="inline ml-2 text-sm text-center truncate sm:text-base">
           <%= link_to(customer.email, "mailto:#{customer.email}") %>
         </div>
       </div>

@@ -1,67 +1,67 @@
-<div class="w-full flex flex-wrap">
-  <div class="w-full mx-auto p-4 lg:p-0">
+<div class="flex flex-wrap w-full">
+  <div class="w-full p-4 mx-auto lg:p-0">
     <!--Send message to company modal-->
-    <div class="w-full lg:w-1/2 xl:w-1/3 mx-auto bg-white shadow-xl rounded mt-8">
-      <div class="w-full flex border-b border-gray-400 p-8 items-center">
+    <div class="w-full mx-auto mt-8 bg-white rounded shadow-xl lg:w-1/2 xl:w-1/3">
+      <div class="flex items-center w-full p-8 border-b border-gray-400">
         <div class="w-3/4">
-          <p class="font-bold text-2xl text-gray-800">
+          <p class="text-2xl font-bold text-gray-800">
             Send message to
           </p>
-          <p class="font-bold text-2xl text-blue-500">
+          <p class="text-2xl font-bold text-blue-500">
             Cömpany AB
           </p>
         </div>
-        <div class="w-1/4 flex items-center">
+        <div class="flex items-center w-1/4">
           <%= image_tag('message_map.svg', alt: 'Message')%>
         </div>
       </div>
-      <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-        <div class="-mx-3 md:flex mb-6">
-          <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-            <label class="tracking-wide text-gray-800 text-base font-bold">
+      <div class="flex flex-col px-8 pt-6 pb-8 my-2 mb-4">
+        <div class="mb-6 -mx-3 md:flex">
+          <div class="px-3 mb-6 md:w-1/2 md:mb-0">
+            <label class="text-base font-bold tracking-wide text-gray-800">
               First Name
             </label>
-            <input class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-first-name" type="text">
+            <input class="block w-full px-4 py-3 mt-2 leading-tight text-gray-700 bg-gray-100 border border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" type="text">
           </div>
-          <div class="w-full md:w-1/2 px-3">
-            <label class="tracking-wide text-gray-800 text-base font-bold">
+          <div class="w-full px-3 md:w-1/2">
+            <label class="text-base font-bold tracking-wide text-gray-800">
               Last Name
             </label>
-            <input class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2" id="grid-last-name" type="text">
+            <input class="block w-full px-4 py-3 mt-2 leading-tight text-gray-700 bg-gray-100 border border-gray-400 rounded appearance-none focus:outline-none focus:bg-white" id="grid-last-name" type="text">
           </div>
         </div>
-        <div class="-mx-3 md:flex mb-6">
-          <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-            <label class="tracking-wide text-gray-800 text-base font-bold">
+        <div class="mb-6 -mx-3 md:flex">
+          <div class="px-3 mb-6 md:w-1/2 md:mb-0">
+            <label class="text-base font-bold tracking-wide text-gray-800">
               Email
             </label>
-            <input class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-2" id="grid-email-adress" type="text">
+            <input class="block w-full px-4 py-3 mt-2 leading-tight text-gray-700 bg-gray-100 border border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-email-adress" type="text">
           </div>
-          <div class="w-full md:w-1/2 px-3">
-            <label class="tracking-wide text-gray-800 text-base font-bold">
+          <div class="w-full px-3 md:w-1/2">
+            <label class="text-base font-bold tracking-wide text-gray-800">
               Phone 
-              <p class="font-normal text-gray-600 inline">(optional)</p>
+              <p class="inline font-normal text-gray-600">(optional)</p>
             </label>
-            <input class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white mt-2" id="grid-phone-number" type="text">
+            <input class="block w-full px-4 py-3 mt-2 leading-tight text-gray-700 bg-gray-100 border border-gray-400 rounded appearance-none focus:outline-none focus:bg-white" id="grid-phone-number" type="text">
           </div>
         </div>
         <div class="flex flex-wrap -mx-3">
           <div class="w-full px-3">
-            <label class="tracking-wide text-gray-900 text-base font-bold">
+            <label class="text-base font-bold tracking-wide text-gray-900">
               Message 
-              <p class="font-normal text-gray-600 inline">(Max 1000 words)</p>
+              <p class="inline font-normal text-gray-600">(Max 1000 words)</p>
             </label>
-            <textarea class="appearance-none mt-2 block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32" id="subject" type="description"></textarea>
+            <textarea class="block w-full h-32 px-4 py-3 mt-2 mb-3 leading-tight text-gray-700 bg-gray-100 border border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="subject" type="description"></textarea>
           </div>
         </div>
-        <div class="w-full flex justify-end mt-6">
+        <div class="flex justify-end w-full mt-6">
           <div class="w-1/4 mr-4">
-            <button class="py-2 w-full shadow-md no-underline rounded-lg bg-red-500 text-white font-bold text-sm hover:text-white hover:bg-red-400 focus:outline-none active:shadow-none">
+            <button class="w-full py-2 text-sm font-bold text-white no-underline bg-red-500 rounded-lg shadow-md hover:text-white hover:bg-red-400 focus:outline-none active:shadow-none">
               Cancel
             </button>
           </div>
           <div class="w-1/4">
-            <button class="py-2 w-full shadow-md no-underline rounded-lg bg-green-500 text-white font-bold text-sm hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
+            <button class="w-full py-2 text-sm font-bold text-white no-underline bg-green-500 rounded-lg shadow-md hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
               Send
             </button>
           </div>
@@ -70,33 +70,33 @@
     </div>
     <!--Send message to company modal end-->
     <!--Success message when sent-->
-    <div class="w-full lg:w-1/2 xl:w-1/4 mx-auto bg-white shadow-xl rounded mt-8">
-      <div class="w-full flex flex-wrap items-center p-8">
+    <div class="w-full mx-auto mt-8 bg-white rounded shadow-xl lg:w-1/2 xl:w-1/4">
+      <div class="flex flex-wrap items-center w-full p-8">
         <div class="mx-auto">
-          <div class="rounded-full h-24 w-24 bg-green-500 inline-flex items-center justify-center">
-            <span class="icon text-white">
+          <div class="inline-flex items-center justify-center w-24 h-24 bg-green-500 rounded-full">
+            <span class="text-white icon">
               <i class="fas fa-2x fa-check"></i>
             </span>
           </div>
         </div>
-        <div class="w-full text-center mt-4">
-          <p class="font-semibold text-3xl text-gray-800">
+        <div class="w-full mt-4 text-center">
+          <p class="text-3xl font-semibold text-gray-800">
             Success!
           </p>
-          <p class="text-gray-800 inline">
+          <p class="inline text-gray-800">
             Your message was sent to
-            <p class="text-blue-500 font-semibold inline">
+            <p class="inline font-semibold text-blue-500">
               Company AB
-              <p class="text-gray-800 inline">.</p>
+              <p class="inline text-gray-800">.</p>
             </p>
           </p>
-          <p class=" text-gray-800 inline">
+          <p class="inline text-gray-800 ">
             Check your inbox for a confirmation and copy of your message.
           </p>
         </div>
-        <div class="w-full flex justify-center mt-6">
+        <div class="flex justify-center w-full mt-6">
           <div class="w-1/2">
-            <button class="py-2 w-full shadow-md no-underline rounded-lg bg-green-500 text-white font-semibold text-sm hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
+            <button class="w-full py-2 text-sm font-semibold text-white no-underline bg-green-500 rounded-lg shadow-md hover:text-white hover:bg-green-400 focus:outline-none active:shadow-none">
               Ok
             </button>
           </div>

@@ -1,19 +1,19 @@
-<div class="container sm:mx-auto xl:mx-auto px-6 md:px-16 lg:px-4 mb-12 md:mb-20 lg:mb-20 xl:mb-24 md:mt-10 lg:mt-0 xl:mt-8">
+<div class="container px-6 mb-12 sm:mx-auto xl:mx-auto md:px-16 lg:px-4 md:mb-20 lg:mb-20 xl:mb-24 md:mt-10 lg:mt-0 xl:mt-8">
   <div class="flex flex-wrap items-center">
-    <div class="w-full lg:w-1/2 mx-auto mt-2 md:mt-4 mb-4">
-      <div class="w-full xl:w-5/6 mx-auto xl:mx-0">
-        <div class="w-full xl:w-full mx-auto xl:mx-0">
-          <h1 class="text-3xl md:text-4xl xl:text-5xl font-sans font-thin text-gray-100 text-left font-sans">
+    <div class="w-full mx-auto mt-2 mb-4 lg:w-1/2 md:mt-4">
+      <div class="w-full mx-auto xl:w-5/6 xl:mx-0">
+        <div class="w-full mx-auto xl:w-full xl:mx-0">
+          <h1 class="font-sans text-3xl font-thin text-left text-gray-100 md:text-4xl xl:text-5xl">
             Hitta <span class="font-bold">Kontrollansvariga</span> nära dig. <span class="font-semibold">Idag</span>.
           </h1>
-          <h2 class="text-white text-left mt-4">
+          <h2 class="mt-4 text-left text-white">
             Behöver du en certifierad kontrollansvarig till ditt nästa projekt? Sök nedan eller använd kartan för att hitta företag med rätt kompetens nära dig!
           </h2>
           <div class="mt-4">
             <span class="text-green-500">
               <%= icon('fas', 'check', class: 'font-bold') %>
             </span>
-            <span class="text-white font-bold ml-3">
+            <span class="ml-3 font-bold text-white">
               Certifierade
               <span class="font-normal">
                 kontrollansvariga.
@@ -24,7 +24,7 @@
             <span class="text-green-500">
               <%= icon('fas', 'check', class: 'font-bold') %>
             </span>
-            <span class="text-white ml-3">
+            <span class="ml-3 text-white">
               Kontakta företag
               <span class="font-bold">
                 kostnadsfritt.
@@ -35,7 +35,7 @@
             <span class="text-green-500">
               <%= icon('fas', 'check', class: 'font-bold') %>
             </span>
-            <span class="text-white font-bold ml-3">
+            <span class="ml-3 font-bold text-white">
               Välj själv
               <span class="font-normal">
                 vilket företag du vill kontakta.
@@ -44,9 +44,9 @@
           </div>
         </div>
       </div>
-      <div class="w-full xl:w-4/5 mx-auto xl:mx-0 mt-12 xl:mt-12">
+      <div class="w-full mx-auto mt-12 xl:w-4/5 xl:mx-0 xl:mt-12">
         <%= form_with(scope: :search, url: company_search_path) do |form| %>
-          <div class="flex items-center justify-between w-full mx-auto bg-white shadow rounded">
+          <div class="flex items-center justify-between w-full mx-auto bg-white rounded shadow">
             <%= form.text_field(:text, id: 'text', placeholder: t('.search_placeholder'),
                                           aria: { label: 'text' }, local: false,
                                           class: 'appearance-none rounded-l rounded-r-none p-3 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white w-4/5 focus:outline-none') %>
@@ -56,7 +56,7 @@
         <% end %>
       </div>
     </div>
-    <div class="w-3/4 md:w-1/2 mx-auto mt-2">
+    <div class="w-3/4 mx-auto mt-2 md:w-1/2">
       <div class="max-w-2xl mx-auto mt-8">
         <%= image_tag('home_house_white.svg', alt: 'Builders')%>
       </div>
@@ -65,14 +65,14 @@
 </div>
 <div class="bg-gray-100">
   <div class="container mx-auto">
-    <div class="w-full flex flex-wrap p-10 lg:p-24">
-      <div class="w-full lg:w-1/2 flex flex-wrap justify-center lg:justify-start">
+    <div class="flex flex-wrap w-full p-10 lg:p-24">
+      <div class="flex flex-wrap justify-center w-full lg:w-1/2 lg:justify-start">
         <div class="">
-          <h3 class="w-full lg:w-4/5 text-gray-800 text-center lg:text-left text-2xl font-extrabold">
+          <h3 class="w-full text-2xl font-extrabold text-center text-gray-800 lg:w-4/5 lg:text-left">
             Välj vem du vill kontakta
           </h3>
-          <div class="w-full md:w-4/5 lg:w-full mx-auto lg:mx-0 mt-4">
-            <p class="text-gray-600 text-center lg:text-left">
+          <div class="w-full mx-auto mt-4 md:w-4/5 lg:w-full lg:mx-0">
+            <p class="text-center text-gray-600 lg:text-left">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Dolor sed viverra ipsum nunc aliquet bibendum enim.
             </p>
@@ -81,8 +81,8 @@
                 <%= icon('fas', 'user-check', class: 'font-bold text-blue-500 text-2xl') %>
               </div>
               <div class="ml-4">
-                <p class="leading-none font-semibold">Certifierade kontrollansvariga</p>
-                <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="font-semibold leading-none">Certifierade kontrollansvariga</p>
+                <p class="mt-2 text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
             </div>
             <div class="flex mt-8">
@@ -90,8 +90,8 @@
                 <%= icon('fas', 'file-alt', class: 'font-bold text-blue-500 text-2xl') %>
               </div>
               <div class="ml-4">
-                <p class="leading-none font-semibold">Standardiserade formulär</p>
-                <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="font-semibold leading-none">Standardiserade formulär</p>
+                <p class="mt-2 text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
             </div>
             <div class="flex mt-8">
@@ -99,56 +99,56 @@
                 <%= icon('fas', 'map-marked-alt', class: 'font-bold text-blue-500 text-2xl') %>
               </div>
               <div class="ml-4">
-                <p class="leading-none font-semibold">Interaktiv karta</p>
-                <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="font-semibold leading-none">Interaktiv karta</p>
+                <p class="mt-2 text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="w-full md:w-4/5 lg:w-1/2 flex items-center mx-auto px-4 py-8 lg:py-0 mt-8 lg:mt-4 lg:pl-16 xl:pl-32 max-w-sm lg:max-w-lg">
+      <div class="flex items-center w-full max-w-sm px-4 py-8 mx-auto mt-8 md:w-4/5 lg:w-1/2 lg:py-0 lg:mt-4 lg:pl-16 xl:pl-32 lg:max-w-lg">
         <div class="flex flex-wrap">
-          <div class="w-full bg-white hover:bg-blue-600 text-blue-900 hover:text-white shadow-xl rounded p-2 mb-4 animate-card">
+          <div class="w-full p-2 mb-4 text-blue-900 bg-white rounded shadow-xl hover:bg-blue-600 hover:text-white animate-card">
             <div class="flex items-center">
-              <div class="bg-red-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4">
+              <div class="flex items-center justify-center w-12 h-12 mr-4 text-sm font-bold text-white bg-red-400 rounded-full xl:h-16 xl:w-16 xl:text-base">
                 Logo
               </div>
               <div class="w-3/4">
                 <p class="font-semibold text-md">Företag A</p>
-                <p class="text-sm font-light font-sans">Company address</p>
+                <p class="font-sans text-sm font-light">Company address</p>
               </div>
             </div>
           </div>
-          <div class="w-full bg-white hover:bg-blue-600 text-blue-900 hover:text-white shadow-lg rounded p-2 mb-4 animate-card">
+          <div class="w-full p-2 mb-4 text-blue-900 bg-white rounded shadow-lg hover:bg-blue-600 hover:text-white animate-card">
             <div class="flex items-center">
-              <div class="bg-green-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4">
+              <div class="flex items-center justify-center w-12 h-12 mr-4 text-sm font-bold text-white bg-green-400 rounded-full xl:h-16 xl:w-16 xl:text-base">
                 Logo
               </div>
               <div class="w-3/4">
                 <p class="font-semibold text-md">Företag B</p>
-                <p class="text-sm font-light font-sans">Company address</p>
+                <p class="font-sans text-sm font-light">Company address</p>
               </div>
             </div>
           </div>
-          <div class="w-full bg-white hover:bg-blue-600 text-blue-900 hover:text-white shadow-lg rounded p-2 mb-4 animate-card">
+          <div class="w-full p-2 mb-4 text-blue-900 bg-white rounded shadow-lg hover:bg-blue-600 hover:text-white animate-card">
             <div class="flex items-center">
-              <div class="bg-blue-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4">
+              <div class="flex items-center justify-center w-12 h-12 mr-4 text-sm font-bold text-white bg-blue-400 rounded-full xl:h-16 xl:w-16 xl:text-base">
                 Logo
               </div>
               <div class="w-3/4">
                 <p class="font-semibold text-md">Företag C</p>
-                <p class="text-sm font-light font-sans">Company address</p>
+                <p class="font-sans text-sm font-light">Company address</p>
               </div>
             </div>
           </div>
-          <div class="w-full bg-white hover:bg-blue-600 text-blue-900 hover:text-white shadow-lg rounded p-2 mb-4 animate-card">
+          <div class="w-full p-2 mb-4 text-blue-900 bg-white rounded shadow-lg hover:bg-blue-600 hover:text-white animate-card">
             <div class="flex items-center">
-              <div class="bg-yellow-400 rounded-full h-12 w-12 xl:h-16 xl:w-16 flex items-center justify-center text-white text-sm xl:text-base font-bold mr-4">
+              <div class="flex items-center justify-center w-12 h-12 mr-4 text-sm font-bold text-white bg-yellow-400 rounded-full xl:h-16 xl:w-16 xl:text-base">
                 Logo
               </div>
               <div class="w-3/4">
                 <p class="font-semibold text-md">Företag D</p>
-                <p class="text-sm font-light font-sans">Company address</p>
+                <p class="font-sans text-sm font-light">Company address</p>
               </div>
             </div>
           </div>
@@ -159,18 +159,18 @@
 </div>
 <div class="bg-gray-100">
   <div class="container mx-auto">
-    <div class="flex flex-col-reverse lg:flex-row -mb-24 lg:-mb-16 xl:-mb-20 p-10 lg:p-0">
-      <div class="w-full lg:w-3/5 mt-12 lg:mt-0">
+    <div class="flex flex-col-reverse p-10 -mb-24 lg:flex-row lg:-mb-16 xl:-mb-20 lg:p-0">
+      <div class="w-full mt-12 lg:w-3/5 lg:mt-0">
         <%= image_tag('map_screenshot.png', alt: 'Map page')%>
       </div>
-      <div class="w-full lg:w-2/5 text-center lg:text-left mt-4 lg:mt-8 xl:mt-16 lg:pl-24 xl:pl-32">
-        <h2 class="text-gray-500 text-xl font-bold">
+      <div class="w-full mt-4 text-center lg:w-2/5 lg:text-left lg:mt-8 xl:mt-16 lg:pl-24 xl:pl-32">
+        <h2 class="text-xl font-bold text-gray-500">
           Karta
         </h2>
-        <h3 class="text-gray-800 text-2xl font-bold">
+        <h3 class="text-2xl font-bold text-gray-800">
           Sök efter företag
         </h3>
-        <p class="w-full md:w-2/3 lg:w-11/12 mx-auto lg:mx-0 text-gray-800 text-center lg:text-left mt-6">
+        <p class="w-full mx-auto mt-6 text-center text-gray-800 md:w-2/3 lg:w-11/12 lg:mx-0 lg:text-left">
           Använd kartan föra att hitta kontrollansvariga nära dig. Sök på län, kommun eller stad. Kontakta företagen direkt från kartsidan.
           Du kan själv välja om du vill skicka din förfrågan till flera företag samtidigt.
         </p>
@@ -180,60 +180,60 @@
 </div>
 <div class="bg-blue-500">
   <div class="p-24 lg:p-32">
-    <h1 class="text-white text-2xl lg:text-3xl font-bold text-center">
+    <h1 class="text-2xl font-bold text-center text-white lg:text-3xl">
       Sök företag / Kontakta / Skicka förfrågan
     </h1>
   </div>
 </div>
 <div class="bg-gray-100">
-  <div class="container mx-auto pt-32 md:pt-48">
+  <div class="container pt-32 mx-auto md:pt-48">
     <div class="flex flex-wrap">
-      <div class="w-full md:w-4/5 lg:w-1/3 mx-auto px-8 text-center">
-        <div class="text-gray-700 text-center bg-white rounded shadow-lg px-12 py-20">
-          <div class="rounded-full bg-red-400 h-32 w-32 flex items-center justify-center mx-auto text-white text-xl font-bold -mt-32">
+      <div class="w-full px-8 mx-auto text-center md:w-4/5 lg:w-1/3">
+        <div class="px-12 py-20 text-center text-gray-700 bg-white rounded shadow-lg">
+          <div class="flex items-center justify-center w-32 h-32 mx-auto -mt-32 text-xl font-bold text-white bg-red-400 rounded-full">
             <%= image_tag('KA_person.svg', alt: 'Builders', class: 'rounded-full border border-gray-300 h-32 w-32')%>
           </div>
-          <h2 class="text-gray-500 text-xl font-semibold mt-8">
+          <h2 class="mt-8 text-xl font-semibold text-gray-500">
             Karta
           </h2>
-          <h3 class="text-gray-800 text-2xl font-bold">
+          <h3 class="text-2xl font-bold text-gray-800">
             Sök efter företag
           </h3>
-          <p class="text-gray-800 mt-6">
+          <p class="mt-6 text-gray-800">
             Använd kartan föra att hitta kontrollansvariga nära dig. Sök på län, kommun eller stad. Kontakta företagen direkt från kartsidan.
             Du kan själv välja om du vill skicka din förfrågan till flera företag samtidigt.
           </p>
         </div>
       </div>
-      <div class="w-full md:w-4/5 lg:w-1/3 mx-auto px-8 mt-32 lg:mt-0">
-        <div class="text-gray-700 text-center bg-white rounded shadow-lg px-12 py-20">
-          <div class="rounded-full h-32 w-32 flex items-center justify-center mx-auto text-white text-xl font-bold -mt-32">
+      <div class="w-full px-8 mx-auto mt-32 md:w-4/5 lg:w-1/3 lg:mt-0">
+        <div class="px-12 py-20 text-center text-gray-700 bg-white rounded shadow-lg">
+          <div class="flex items-center justify-center w-32 h-32 mx-auto -mt-32 text-xl font-bold text-white rounded-full">
             <%= image_tag('profile_pic.svg', alt: 'Builders', class: 'rounded-full border border-gray-300 h-32 w-32')%>
           </div>
-          <h2 class="text-gray-500 text-xl font-semibold mt-8">
+          <h2 class="mt-8 text-xl font-semibold text-gray-500">
             Karta
           </h2>
-          <h3 class="text-gray-800 text-2xl font-bold">
+          <h3 class="text-2xl font-bold text-gray-800">
             Sök efter företag
           </h3>
-          <p class="text-gray-800 mt-6">
+          <p class="mt-6 text-gray-800">
             Använd kartan föra att hitta kontrollansvariga nära dig. Sök på län, kommun eller stad. Kontakta företagen direkt från kartsidan.
             Du kan själv välja om du vill skicka din förfrågan till flera företag samtidigt.
           </p>
         </div>
       </div>
-      <div class="w-full md:w-4/5 lg:w-1/3 mx-auto px-8 mt-32 lg:mt-0">
-        <div class="text-gray-700 text-center bg-white rounded shadow-lg px-12 py-20">
-          <div class="rounded-full bg-green-400 h-32 w-32 flex items-center justify-center mx-auto text-white text-xl font-bold -mt-32">
+      <div class="w-full px-8 mx-auto mt-32 md:w-4/5 lg:w-1/3 lg:mt-0">
+        <div class="px-12 py-20 text-center text-gray-700 bg-white rounded shadow-lg">
+          <div class="flex items-center justify-center w-32 h-32 mx-auto -mt-32 text-xl font-bold text-white bg-green-400 rounded-full">
             <%= image_tag('how_map_home.svg', alt: 'Builders', class: 'rounded-full border border-gray-300 h-32 w-32')%>
           </div>
-          <h2 class="text-gray-500 text-xl font-semibold mt-8">
+          <h2 class="mt-8 text-xl font-semibold text-gray-500">
             Karta
           </h2>
-          <h3 class="text-gray-800 text-2xl font-bold">
+          <h3 class="text-2xl font-bold text-gray-800">
             Sök efter företag
           </h3>
-          <p class="text-gray-800 mt-6">
+          <p class="mt-6 text-gray-800">
             Använd kartan föra att hitta kontrollansvariga nära dig. Sök på län, kommun eller stad. Kontakta företagen direkt från kartsidan.
             Du kan själv välja om du vill skicka din förfrågan till flera företag samtidigt.
           </p>
@@ -244,15 +244,15 @@
 </div>
 <div class="bg-gray-100">
   <div class="container mx-auto">
-    <div class="w-full sm:w-4/5 md:w-full mx-auto flex flex-col items-center p-6 md:p-10">
-      <div class="w-full lg:w-1/3 text-center mx-auto mt-24">
+    <div class="flex flex-col items-center w-full p-6 mx-auto sm:w-4/5 md:w-full md:p-10">
+      <div class="w-full mx-auto mt-24 text-center lg:w-1/3">
         <p class="text-3xl text-blue-900">
           Frequently asked questions and answers.
         </p>
       </div>
-      <div class="w-full md:w-3/5 xl:w-2/5 flex mx-auto mt-16">
+      <div class="flex w-full mx-auto mt-16 md:w-3/5 xl:w-2/5">
         <div class="">
-          <div class="bg-indigo-400 rounded h-6 w-6 flex items-center justify-center text-white font-bold">
+          <div class="flex items-center justify-center w-6 h-6 font-bold text-white bg-indigo-400 rounded">
             <%= icon('fas', 'plus', class: 'font-bold') %>
           </div>
         </div>
@@ -262,9 +262,9 @@
           </p>
         </div>
       </div>
-      <div class="w-full md:w-3/5 xl:w-2/5 flex mx-auto mt-12">
+      <div class="flex w-full mx-auto mt-12 md:w-3/5 xl:w-2/5">
         <div class="">
-          <div class="bg-indigo-400 rounded h-6 w-6 flex items-center justify-center text-white font-bold">
+          <div class="flex items-center justify-center w-6 h-6 font-bold text-white bg-indigo-400 rounded">
             <%= icon('fas', 'plus', class: 'font-bold') %>
           </div>
         </div>
@@ -274,9 +274,9 @@
           </p>
         </div>
       </div>
-      <div class="w-full md:w-3/5 xl:w-2/5 flex mx-auto mt-12">
+      <div class="flex w-full mx-auto mt-12 md:w-3/5 xl:w-2/5">
         <div class="">
-          <div class="bg-indigo-400 rounded h-6 w-6 flex items-center justify-center text-white font-bold">
+          <div class="flex items-center justify-center w-6 h-6 font-bold text-white bg-indigo-400 rounded">
             <%= icon('fas', 'plus', class: 'font-bold') %>
           </div>
         </div>
@@ -286,9 +286,9 @@
           </p>
         </div>
       </div>
-      <div class="w-full md:w-3/5 xl:w-2/5 flex mx-auto mt-12 mb-32">
+      <div class="flex w-full mx-auto mt-12 mb-32 md:w-3/5 xl:w-2/5">
         <div class="">
-          <div class="bg-indigo-400 rounded h-6 w-6 flex items-center justify-center text-white font-bold">
+          <div class="flex items-center justify-center w-6 h-6 font-bold text-white bg-indigo-400 rounded">
             <%= icon('fas', 'plus', class: 'font-bold') %>
           </div>
         </div>
@@ -307,28 +307,28 @@
   </div>
 </div>
 <div class="bg-gray-900">
-  <div class="container mx-auto py-12">
-    <div class="w-full md:w-1/2 flex flex-wrap mx-auto justify-center p-8">
+  <div class="container py-12 mx-auto">
+    <div class="flex flex-wrap justify-center w-full p-8 mx-auto md:w-1/2">
       <div class="w-full text-center">
         <div class="w-full">
-          <p class="font-bold text-3xl text-white text-center">
+          <p class="text-3xl font-bold text-center text-white">
             Anslut ditt företag idag!
           </p>
           <div class="w-full">
-            <p class="text-xl text-white text-center mt-4">
+            <p class="mt-4 text-xl text-center text-white">
               Vill du att ditt företag ska visas på kartan? Kontakta oss idag.
             </p>
           </div>
         </div>
       </div>
-      <div class="w-full items-center flex justify-center mt-8">
-        <div class="flex hover:border-gray-400 hover:text-gray-400 font-medium">
+      <div class="flex items-center justify-center w-full mt-8">
+        <div class="flex font-medium hover:border-gray-400 hover:text-gray-400">
           <%= link_to(connect_path, class: 'bg-blue-600 border-blue-600 border hover:bg-blue-500 hover:border-blue-500 py-3 px-3 rounded text-white') do %>
             <%= t('.connect') %>
             <%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>
           <% end %>
         </div>
-        <div class="flex ml-4 hover:border-gray-400 hover:text-gray-400 font-medium">
+        <div class="flex ml-4 font-medium hover:border-gray-400 hover:text-gray-400">
           <%= link_to(contact_path, class: 'border border-white hover:border-gray-500 hover:text-gray-500 py-3 px-3 rounded text-white') do %>
             <%= t('.contact_us') %>
             <%= icon('fas', 'caret-right', class: 'ml-2 font-bold') %>

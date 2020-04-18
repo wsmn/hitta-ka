@@ -1,17 +1,17 @@
-<div class="w-full xl:w-4/5 -mx-3 mt-8">
-  <div class="w-full mb-3 mt-4">
-    <span class="text-gray-800 text-2xl font-medium mr-2 ml-3">
+<div class="w-full mt-8 -mx-3 xl:w-4/5">
+  <div class="w-full mt-4 mb-3">
+    <span class="ml-3 mr-2 text-2xl font-medium text-gray-800">
       <%= t('.address') %>
     </span>
   </div>
   <div class="w-full mb-6">
     <div class="flex flex-wrap mb-2">
-      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
         <%= form.label(:street, class: "form-label lg:mb-2") %>
         <%= form.text_field(:street, id: "street",
                   class: "form-input mt-2") %>
       </div>
-      <div class="w-full md:w-1/2 px-3">
+      <div class="w-full px-3 md:w-1/2">
         <%= form.label(:zip_code, class: "form-label lg:mb-2") %>
         <%= form.text_field(:zip_code, id: 'zip_code',
                   class: "form-input mt-2") %>
@@ -20,20 +20,20 @@
   </div>
   <div class="w-full">
     <div class="flex flex-wrap mb-2">
-      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
         <%= form.label(:city, class: "form-label lg:mb-2") %>
         <%= form.text_field(:city, id: 'city',
                   class: "form-input mt-2") %>
       </div>
-      <div class="w-full md:w-1/2 px-3 mb-6">
+      <div class="w-full px-3 mb-6 md:w-1/2">
         <div class="relative">
           <%= form.label(:country, class: "form-label lg:mb-2") %>
           <%= form.select(:country, options_for_select([['Sweden', 1]]),
 {},
 class: 'form-input mt-2') %>
-          <div class="mt-8 pointer-events-none absolute inset-y-0 right-0
-                          flex items-center px-2 text-gray-700">
-            <svg class="ml-2 h-6 w-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+          <div class="absolute inset-y-0 flex items-center px-2 mt-8 text-gray-700 pointer-events-none right-0
+ ">
+            <svg class="w-6 h-6 ml-2 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
               <path d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4
                             0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" />
             </svg>

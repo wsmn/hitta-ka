@@ -1,15 +1,15 @@
 <div class="flex">
-  <div class="my-4 flex sm:flex-row flex-col">
+  <div class="flex flex-col my-4 sm:flex-row">
     <div class="flex flex-row mb-1 sm:mb-0">
       <div class="relative">
         <select
-            class="appearance-none h-full rounded border block appearance-none w-full bg-white border-gray-500 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-600">
+            class="block w-full h-full px-4 py-2 pr-8 leading-tight text-gray-700 bg-white border border-gray-500 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-600">
           <option>5</option>
           <option>10</option>
           <option>20</option>
         </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-          <svg class="mr-1 h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+        <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+          <svg class="w-5 h-5 mr-1 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"
                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                 clip-rule="evenodd" />
@@ -18,29 +18,29 @@
       </div>
       <div class="relative ml-2">
         <select
-            class="appearance-none h-full rounded border block appearance-none w-full bg-white border-gray-500 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-600">
+            class="block w-full h-full px-4 py-2 pr-8 leading-tight text-gray-700 bg-white border border-gray-500 rounded appearance-none focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-600">
           <option><%= t('.active') %></option>
           <option><%= t('.archived') %></option>
           <option><%= t('.all') %></option>
         </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-          <svg class="mr-1 h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+        <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+          <svg class="w-5 h-5 mr-1 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"
                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                 clip-rule="evenodd" />
           </svg>
         </div>
       </div>
-      <div class="relative ml-2 hidden">
+      <div class="relative hidden ml-2">
         <select
-            class="appearance-none h-full rounded border block appearance-none w-full bg-white border-gray-500 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-600">
+            class="block w-full h-full px-4 py-2 pr-8 leading-tight text-gray-700 bg-white border border-gray-500 rounded appearance-none focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-600">
           <option>Type</option>
           <option>Houses</option>
           <option>Industry</option>
           <option>Apartments</option>
         </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-          <svg class="mr-1 h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+        <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+          <svg class="w-5 h-5 mr-1 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"
                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                 clip-rule="evenodd" />
@@ -50,13 +50,13 @@
     </div>
     <div class="relative w-64 sm:ml-2">
       <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-        <svg class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </span>
       <input placeholder="<%= t('.search') %>"
-          class="block pl-8 pr-4 py-2 w-full bg-white border border-gray-500 rounded text-sm placeholder-gray-500 text-white focus:bg-white focus:placeholder-gray-400 focus:text-gray-800 focus:outline-none focus:border-gray-600">
+          class="block w-full py-2 pl-8 pr-4 text-sm text-white placeholder-gray-500 bg-white border border-gray-500 rounded focus:bg-white focus:placeholder-gray-400 focus:text-gray-800 focus:outline-none focus:border-gray-600">
     </div>
   </div>
 </div>

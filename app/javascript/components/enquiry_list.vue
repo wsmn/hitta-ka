@@ -1,19 +1,19 @@
 <template>
-  <div class="rounded-lg w-auto bg-gray-900 shadow-md text-center mx-auto p-2 md:p-3 text-white">
-    <div class="flex justify-between items-center">
+  <div class="w-auto p-2 mx-auto text-center text-white bg-gray-900 rounded-lg shadow-md md:p-3">
+    <div class="flex items-center justify-between">
       <div>
-        <p class="font-semibold text-white text-sm md:text-lg text-left">Skicka förfrågan!</p>
+        <p class="text-sm font-semibold text-left text-white md:text-lg">Skicka förfrågan!</p>
       </div>
       <div class="pr-0">
         <button
-            class="ml-1 px-1 w-full shadow-md no-underline rounded-full text-white border bg-blue-500 border-blue-500 text-xs md:text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none"
+            class="w-full px-1 ml-1 text-xs text-white no-underline bg-blue-500 border border-blue-500 rounded-full shadow-md md:text-sm hover:text-white hover:bg-blue-400 focus:outline-none active:shadow-none"
           >
             Skicka
           </button>
       </div>
     </div>
-    <div class="flex items-center p-1 border-2 border-dashed border-gray-500 rounded mt-2 h-10 justify-center">
-        <p class="font-normal text-sm md:text-base text-center">Lägg till företag +</p>
+    <div class="flex items-center justify-center h-10 p-1 mt-2 border-2 border-gray-500 border-dashed rounded">
+        <p class="text-sm font-normal text-center md:text-base">Lägg till företag +</p>
     </div>
   </div>
 </template>

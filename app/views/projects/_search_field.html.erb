@@ -1,13 +1,13 @@
 <div class="flex-grow px-2 pt-2 lg:px-0">
-  <div class="flex flex-wrap-reverse md:flex-row mb-4 shadow-md border border-gray-300 bg-white items-center lg:pr-4">
-    <div class="w-full md:w-auto flex">
-      <div x-data="{ sort_by: false }" @click.away="sort_by = false" class="w-1/2 md:w-auto justify-center lg:border-r border-gray-300 py-3 px-2 sm:px-4">
+  <div class="flex flex-wrap-reverse items-center mb-4 bg-white border border-gray-300 shadow-md md:flex-row lg:pr-4">
+    <div class="flex w-full md:w-auto">
+      <div x-data="{ sort_by: false }" @click.away="sort_by = false" class="justify-center w-1/2 px-2 py-3 border-gray-300 md:w-auto lg:border-r sm:px-4">
         <button @click="sort_by = !sort_by" @click="open = true" :class="{'text-blue-600': sort_by}"
-          class="btn normal-case py-2 px-0 text-gray-800 hover:text-blue-600 flex items-center focus:outline-none">
+          class="flex items-center px-0 py-2 text-gray-800 normal-case btn hover:text-blue-600 focus:outline-none">
           <div class="mr-1">
             <%= render('application/icons/filter') %>
           </div>
-          <span class="text-sm mr-1">
+          <span class="mr-1 text-sm">
             <%= t('.sort_by') %>: <%= t('.name') %>
           </span>
           <div class="transform" :class="{'rotate-180': sort_by}">
@@ -16,13 +16,13 @@
         </button>
         <%= render('sort_by') %>
       </div>
-      <div x-data="{ date_filter: false }" @click.away="date_filter = false" class="w-1/2 md:w-auto justify-center lg:border-r border-gray-300 py-3 px-4">
+      <div x-data="{ date_filter: false }" @click.away="date_filter = false" class="justify-center w-1/2 px-4 py-3 border-gray-300 md:w-auto lg:border-r">
         <button @click="date_filter = !date_filter" @click="open = true" :class="{'text-blue-600': date_filter}"
-          class="btn normal-case py-2 px-0 text-gray-800 hover:text-blue-600 flex items-center focus:outline-none">
+          class="flex items-center px-0 py-2 text-gray-800 normal-case btn hover:text-blue-600 focus:outline-none">
           <div class="mr-1">
             <%= render('application/icons/calendar') %>
           </div>
-          <span class="text-sm mr-1">
+          <span class="mr-1 text-sm">
             <%= t('.date') %>
           </span>
           <div class="transform" :class="{'rotate-180': date_filter}">
@@ -35,14 +35,14 @@
     <div class="w-full md:w-auto">
       <div class="px-4 pt-4 md:pt-0">
         <div class="relative w-full md:w-64">
-          <span class="absolute inset-y-0 left-0 pl-2 flex items-center">
-            <svg class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+            <svg class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </span>
           <input placeholder="<%= t('.search') %>"
-            class="form-input block pl-8 pr-4 py-2 w-full bg-white border border-gray-400 rounded text-sm">
+            class="block w-full py-2 pl-8 pr-4 text-sm bg-white border border-gray-400 rounded form-input">
         </div>
       </div>
     </div>

@@ -1,37 +1,37 @@
 <div class="container mx-auto bg-grey-200">
   <div class="w-full mx-auto mt-8 md:mt-16 xl:mt-24">
     <div class="w-full mx-auto text-center">
-      <h1 class="text-xl sm:text-3xl md:text-4xl font-sans font-medium text-gray-200">
+      <h1 class="font-sans text-xl font-medium text-gray-200 sm:text-3xl md:text-4xl">
         <%= t('.please describe what you need help with')%>
       </h1>
-      <p class="font-bold text-sm text-blue-500 mt-4">
+      <p class="mt-4 text-sm font-bold text-blue-500">
         <%= t('.support')%>
       </p>
     </div>
     <div class="w-full mx-auto">
       <div class="max-w-xl mx-auto mt-8 md:mt-16">
         <div class="w-11/12 mx-auto mb-32">
-          <form class="bg-white shadow-xl rounded px-8 pt-6 pb-8">
+          <form class="px-8 pt-6 pb-8 bg-white rounded shadow-xl">
             <div class="mb-4">
-              <label class="text-gray-800 text-lg font-medium" for="name">
+              <label class="text-lg font-medium text-gray-800" for="name">
                 <%= t('.name')%>
               </label>
-              <input class="shadow mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Vad heter du?">
+              <input class="w-full px-3 py-2 mt-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Vad heter du?">
             </div>
             <div class="mb-6">
-              <label class="text-gray-800 text-lg font-medium" for="email">
+              <label class="text-lg font-medium text-gray-800" for="email">
                 <%= t('.email')%>
               </label>
-              <input class="shadow mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="name@email.com">
+              <input class="w-full px-3 py-2 mt-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="name@email.com">
             </div>
             <div class="mb-6">
-              <label class="text-gray-800 text-lg font-medium" for="email">
+              <label class="text-lg font-medium text-gray-800" for="email">
                 <%= t('.please describe what you need help with')%>
               </label>
-              <textarea class="h-32 shadow appearance-none block w-full bg-white text-grey-darker border border-grey-lighter rounded py-4 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey mt-2" id="subject" type="message" placeholder="Beskriv problemet så noga du kan..."></textarea>
+              <textarea class="block w-full h-32 px-4 py-4 mt-2 mb-3 leading-tight bg-white border rounded shadow appearance-none text-grey-darker border-grey-lighter focus:outline-none focus:bg-white focus:border-grey" id="subject" type="message" placeholder="Beskriv problemet så noga du kan..."></textarea>
             </div>
             <div class="flex items-center justify-center">
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-full rounded focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" type="button">
+              <button class="w-full py-2 font-bold text-white bg-blue-500 rounded opacity-50 cursor-not-allowed hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button">
                 <%= t('.send')%>
               </button>
             </div>

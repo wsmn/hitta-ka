@@ -1,16 +1,16 @@
 <div class="flex-grow px-2 pt-2 lg:px-0">
-  <div class="flex mb-4 shadow-md border border-gray-300 bg-white items-center lg:pr-4">
+  <div class="flex items-center mb-4 bg-white border border-gray-300 shadow-md lg:pr-4">
     <%= form_with(url: [:customer, :search], class: "px-4 py-2 flex") do |form| %>
       <div class="relative w-48">
         <%= form.select(:order_by, [[t(".latest"), :created_at], [t(".name"), :name]], {}, id: "order_by", class: "form-input bg-gray-100 h-9", onchange: "Rails.fire(this.form, 'submit')") %>
-        <div class="pointer-events-none absolute inset-y-0 right-0
-                  flex items-center px-2 text-gray-700">
+        <div class="absolute inset-y-0 flex items-center px-2 text-gray-700 pointer-events-none right-0
+ ">
           <%= render('application/icons/arrow_down') %>
         </div>
       </div>
-      <div class="relative w-48 md:w-64 h-9 ml-2">
-        <span class="absolute inset-y-0 left-0 pl-2 flex items-center">
-          <svg class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div class="relative w-48 ml-2 md:w-64 h-9">
+        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+          <svg class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>

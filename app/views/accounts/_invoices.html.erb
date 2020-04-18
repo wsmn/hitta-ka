@@ -1,17 +1,17 @@
-<div class="flex flex-col bg-white border sm:rounded shadow mt-4">
+<div class="flex flex-col mt-4 bg-white border shadow sm:rounded">
   <div class="flex-grow border-b">
-    <div class="flex justify-between px-3 xl:px-6 -mb-px">
-      <h3 class="text-blue-700 py-4 font-normal text-base sm:text-lg"><%= t(".recent_invoices") %></h3>
+    <div class="flex justify-between px-3 -mb-px xl:px-6">
+      <h3 class="py-4 text-base font-normal text-blue-700 sm:text-lg"><%= t(".recent_invoices") %></h3>
       <div class="flex">
-        <button type="button" class="appearance-none py-4 text-blue-700 border-b border-blue-700 mr-3">
+        <button type="button" class="py-4 mr-3 text-blue-700 border-b border-blue-700 appearance-none">
           <%= t(".paid") %>
         </button>
         <button type="button"
-          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700 mr-3">
+          class="py-4 mr-3 text-gray-700 border-b border-transparent appearance-none hover:border-gray-700">
           <%= t(".upcoming") %>
         </button>
         <button type="button"
-          class="appearance-none py-4 text-gray-700 border-b border-transparent hover:border-gray-700">
+          class="py-4 text-gray-700 border-b border-transparent appearance-none hover:border-gray-700">
           <%= t(".past_due") %>
         </button>
       </div>
@@ -22,8 +22,8 @@
       <%= render("invoices/status_row", invoice: invoice, odd: idx % 2 == 0) %>
     <% end %>
     <div class="px-6 py-3">
-      <div class="text-center text-gray flex justify-center">
-        <div class="flex hover:border-gray-400 hover:text-gray-400 font-medium">
+      <div class="flex justify-center text-center text-gray">
+        <div class="flex font-medium hover:border-gray-400 hover:text-gray-400">
           <%= link_to(invoices_path, class: 'inline-flex items-center px-2.5 py-2 sm:px-3 sm:py-2 border border-transparent text-sm leading-4 font-medium rounded text-white bg-orange-500 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition ease-in-out duration-150') do %>
             <%= t('.all_invoices') %>
           <% end %>

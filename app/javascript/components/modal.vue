@@ -3,7 +3,7 @@
     <transition name="modal">
       <div class="modal-mask">
         <div class="modal-wrapper">
-          <div @click="close" class="modal-body flex flex-wrap md:items-center">
+          <div @click="close" class="flex flex-wrap modal-body md:items-center">
             <slot></slot>
           </div>
         </div>

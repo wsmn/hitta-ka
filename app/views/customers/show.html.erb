@@ -8,23 +8,23 @@
   <%= render('show_heading') %>
   <div class="sm:p-4">
     <div class="flex flex-wrap sm:-mx-2">
-      <div class="w-full lg:w-full xl:w-2/3 max-w-6xl sm:px-2">
-        <div class="bg-white sm:border border-gray-300 sm:shadow overflow-hidden sm:rounded-lg">
-          <div class="px-4 py-5 border-b border-gray-200 sm:px-6 hidden sm:block">
-            <h3 class="text-lg leading-6 font-medium text-gray-900">
+      <div class="w-full max-w-6xl lg:w-full xl:w-2/3 sm:px-2">
+        <div class="overflow-hidden bg-white border-gray-300 sm:border sm:shadow sm:rounded-lg">
+          <div class="hidden px-4 py-5 border-b border-gray-200 sm:px-6 sm:block">
+            <h3 class="text-lg font-medium text-gray-900 leading-6">
               Customer information
             </h3>
-            <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
+            <p class="max-w-2xl mt-1 text-sm text-gray-500 leading-5">
               Contact and address details.
             </p>
           </div>
           <div class="px-4 py-5 sm:px-6">
             <dl class="grid grid-cols-1 col-gap-4 row-gap-8 sm:grid-cols-2">
               <div class="sm:col-span-1">
-                <dt class="text-sm leading-5 font-medium text-gray-500">
+                <dt class="text-sm font-medium text-gray-500 leading-5">
                   <%= t('.billing_address') %>
                 </dt>
-                <dd class="mt-1 text-sm leading-5 text-gray-900">
+                <dd class="mt-1 text-sm text-gray-900 leading-5">
                   <% if @customer.street.present? | @customer.zip_code.present? | @customer.city.present? %>
                     <% if @customer.street %>
                       <%= @customer.street %>
@@ -43,10 +43,10 @@
                 </dd>
               </div>
               <div class="sm:col-span-1">
-                <dt class="text-sm leading-5 font-medium text-gray-500">
+                <dt class="text-sm font-medium text-gray-500 leading-5">
                   <%= t('.phone') %>
                 </dt>
-                <dd class="mt-1 text-sm leading-5 text-gray-900">
+                <dd class="mt-1 text-sm text-gray-900 leading-5">
                   <% if @customer.phone.present? %>
                     <%= @customer.phone %>
                   <% else %>
@@ -55,10 +55,10 @@
                 </dd>
               </div>
               <div class="sm:col-span-1">
-                <dt class="text-sm leading-5 font-medium text-gray-500">
+                <dt class="text-sm font-medium text-gray-500 leading-5">
                   <%= t('.email') %>
                 </dt>
-                <dd class="mt-1 text-sm leading-5 text-blue-500">
+                <dd class="mt-1 text-sm text-blue-500 leading-5">
                   <% if @customer.email.present? %>
                     <%= link_to(@customer.email, "mailto:#{@customer.email}") %>
                   <% else %>
@@ -67,18 +67,18 @@
                 </dd>
               </div>
               <div class="sm:col-span-1">
-                <dt class="text-sm leading-5 font-medium text-gray-500">
+                <dt class="text-sm font-medium text-gray-500 leading-5">
                   <%= t('.custom_task_rate') %>
                 </dt>
-                <dd class="mt-1 text-sm leading-5 text-gray-900">
+                <dd class="mt-1 text-sm text-gray-900 leading-5">
                   999,00 SEK
                 </dd>
               </div>
               <div class="sm:col-span-2">
-                <dt class="text-sm leading-5 font-medium text-gray-500">
+                <dt class="text-sm font-medium text-gray-500 leading-5">
                   About
                 </dt>
-                <dd class="mt-1 text-sm leading-5 text-gray-900">
+                <dd class="mt-1 text-sm text-gray-900 leading-5">
                   Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat.
                   Excepteur
                   qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure
@@ -87,23 +87,23 @@
                 </dd>
               </div>
               <div class="sm:col-span-2">
-                <dt class="text-sm leading-5 font-medium text-gray-500">
+                <dt class="text-sm font-medium text-gray-500 leading-5">
                   <%= t('.download') %>
                 </dt>
-                <dd class="mt-1 text-sm leading-5 text-gray-900">
+                <dd class="mt-1 text-sm text-gray-900 leading-5">
                   <ul class="border border-gray-200 rounded-md">
-                    <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm leading-5">
-                      <div class="w-0 flex-1 flex items-center">
-                        <svg class="flex-shrink-0 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                    <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm leading-5">
+                      <div class="flex items-center flex-1 w-0">
+                        <svg class="flex-shrink-0 w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                           <path fill-rule="evenodd"
                             d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
                             clip-rule="evenodd" />
                         </svg>
-                        <span class="ml-2 flex-1 w-0 truncate">
+                        <span class="flex-1 w-0 ml-2 truncate">
                           customer_information.pdf
                         </span>
                       </div>
-                      <div class="ml-4 flex-shrink-0">
+                      <div class="flex-shrink-0 ml-4">
                         <a href="#"
                           class="font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out">
                           Download
@@ -117,75 +117,75 @@
           </div>
         </div>
       </div>
-      <div class="w-full xl:w-1/3 xl:max-w-lg mt-4 xl:mt-0 block sm:px-2">
-        <div class="flex-grow flex">
-          <div class="flex-grow bg-white sm:border border-gray-300 sm:shadow overflow-hidden sm:rounded-lg">
-            <div class="px-4 py-5 border-b border-gray-200 sm:px-6 hidden lg:block">
-              <h3 class="text-lg leading-6 font-medium text-gray-900">
+      <div class="block w-full mt-4 xl:w-1/3 xl:max-w-lg xl:mt-0 sm:px-2">
+        <div class="flex flex-grow">
+          <div class="flex-grow overflow-hidden bg-white border-gray-300 sm:border sm:shadow sm:rounded-lg">
+            <div class="hidden px-4 py-5 border-b border-gray-200 sm:px-6 lg:block">
+              <h3 class="text-lg font-medium text-gray-900 leading-6">
                 Summary
               </h3>
-              <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
+              <p class="max-w-2xl mt-1 text-sm text-gray-500 leading-5">
                 Hours, projects and invoicing overview.
               </p>
             </div>
             <div>
               <dl>
-                <div class="bg-gray-100 px-4 py-5 grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm leading-5 font-medium text-gray-500">
+                <div class="px-4 py-5 bg-gray-100 grid grid-cols-3 gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500 leading-5">
                     Time logged
                   </dt>
-                  <dd class="text-sm leading-5 text-gray-900 mt-0 col-span-2">
+                  <dd class="mt-0 text-sm text-gray-900 leading-5 col-span-2">
                     125 h
                   </dd>
                 </div>
-                <div class="bg-white px-4 py-5 grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm leading-5 font-medium text-gray-500">
+                <div class="px-4 py-5 bg-white grid grid-cols-3 gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500 leading-5">
                     Invoiced
                   </dt>
-                  <dd class="text-sm leading-5 text-gray-900 mt-0 col-span-2">
-                    1 234,00 SEK <span class="text-red-600 text-xs">(1 111,00 SEK)</span>
+                  <dd class="mt-0 text-sm text-gray-900 leading-5 col-span-2">
+                    1 234,00 SEK <span class="text-xs text-red-600">(1 111,00 SEK)</span>
                   </dd>
                 </div>
-                <div class="bg-gray-100 px-4 py-5 grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm leading-5 font-medium text-gray-500">
+                <div class="px-4 py-5 bg-gray-100 grid grid-cols-3 gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500 leading-5">
                     Paid to date
                   </dt>
-                  <dd class="text-sm leading-5 text-gray-900 col-span-2">
+                  <dd class="text-sm text-gray-900 leading-5 col-span-2">
                     111,00 SEK
                   </dd>
                 </div>
-                <div class="bg-white px-4 py-5 grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm leading-5 font-medium text-gray-500">
+                <div class="px-4 py-5 bg-white grid grid-cols-3 gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500 leading-5">
                     Active projects
                   </dt>
-                  <dd class="text-sm leading-5 text-gray-900 col-span-2">
+                  <dd class="text-sm text-gray-900 leading-5 col-span-2">
                     4
                   </dd>
                 </div>
-                <div class="bg-gray-100 px-4 py-5 grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm leading-5 font-medium text-gray-500">
+                <div class="px-4 py-5 bg-gray-100 grid grid-cols-3 gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500 leading-5">
                     Total projects
                   </dt>
-                  <dd class="text-sm leading-5 text-gray-900 col-span-2">
+                  <dd class="text-sm text-gray-900 leading-5 col-span-2">
                     9
                   </dd>
                 </div>
-                <div class="flex items-center bg-white px-4 py-5 grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm leading-5 font-medium text-gray-500">
+                <div class="flex items-center px-4 py-5 bg-white grid grid-cols-3 gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500 leading-5">
                     Latest project
                   </dt>
-                  <dd class="text-sm leading-5 text-gray-900 col-span-2">
+                  <dd class="text-sm text-gray-900 leading-5 col-span-2">
                     <ul class="border border-gray-200 rounded-md">
-                      <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm leading-5">
-                        <div class="w-0 flex-1 flex items-center">
-                          <div class="h-6 w-6 bg-blue-500 rounded-full flex items-center justify-center">
-                            <svg class="flex-shrink-0 h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                      <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm leading-5">
+                        <div class="flex items-center flex-1 w-0">
+                          <div class="flex items-center justify-center w-6 h-6 bg-blue-500 rounded-full">
+                            <svg class="flex-shrink-0 w-4 h-4 text-white" viewBox="0 0 20 20" fill="currentColor">
                               <path
                                 d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                               </svg>
                             </svg>
                           </div>
-                          <span class="ml-2 flex-1 w-0 truncate">
+                          <span class="flex-1 w-0 ml-2 truncate">
                             Project placeholder
                           </span>
                         </div>
@@ -201,12 +201,12 @@
     </div>
   </div>
   <div class="">
-    <div class="border-b border-gray-200 px-4 bg-white">
-      <nav class="flex justify-between sm:justify-start -mb-px">
+    <div class="px-4 bg-white border-b border-gray-200">
+      <nav class="flex justify-between -mb-px sm:justify-start">
         <button button
           :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'projects' }"
           @click="tab = 'projects'"
-          class="group inline-flex items-center py-4 px-1 border-b-2 border-transparent font-medium text-sm sm:text-base leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+          class="inline-flex items-center px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent group sm:text-base leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
           <svg class="-ml-0.5 mr-2 h-4 w-4 sm:h-5 sm:w-5 group-focus:text-gray-600" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -217,7 +217,7 @@
         <button button
           :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'tasks' }"
           @click="tab = 'tasks'"
-          class="ml-8 group inline-flex items-center py-4 px-1 border-b-2 border-transparent font-medium text-sm sm:text-base leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+          class="inline-flex items-center px-1 py-4 ml-8 text-sm font-medium text-gray-500 border-b-2 border-transparent group sm:text-base leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
           <svg class="-ml-0.5 mr-2 h-4 w-4 sm:h-5 sm:w-5 group-focus:text-gray-600" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -228,7 +228,7 @@
         <button button
           :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'invoices' }"
           @click="tab = 'invoices'"
-          class="ml-8 group inline-flex items-center py-4 px-1 border-b-2 border-transparent font-medium text-sm sm:text-base leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+          class="inline-flex items-center px-1 py-4 ml-8 text-sm font-medium text-gray-500 border-b-2 border-transparent group sm:text-base leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
           <svg class="-ml-0.5 mr-2 h-4 w-4 sm:h-5 sm:w-5 group-focus:text-gray-600" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

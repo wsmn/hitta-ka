@@ -2,7 +2,7 @@
   <transition name="fade">
     <div
       v-if="active"
-      class="w-full py-3 px-2 flex items-center"
+      class="flex items-center w-full px-2 py-3"
     >
       <div class="w-16 h-auto mx-auto">
         <svg

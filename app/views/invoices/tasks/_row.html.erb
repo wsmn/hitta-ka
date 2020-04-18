@@ -1,21 +1,21 @@
-<div class="hidden lg:flex flex-grow flex items-start py-4 text-gray-700 font-medium text-sm xl:text-base">
-  <div class="w-1/4 xl:w-1/3 border-r border-white">
+<div class="flex items-start flex-grow hidden py-4 text-sm font-medium text-gray-700 lg:flex xl:text-base">
+  <div class="w-1/4 border-r border-white xl:w-1/3">
     <p class="text-base xl:text-lg"><%= task.title %></p>
-    <p class="text-xs xl:text-sm text-gray-600"><%= task.project %></p>
+    <p class="text-xs text-gray-600 xl:text-sm"><%= task.project %></p>
   </div>
-  <div class="w-1/4 xl:w-1/5 flex border-r border-white">
+  <div class="flex w-1/4 border-r border-white xl:w-1/5">
     <%= l(task.created_at.to_date) %>
   </div>
-  <div class="w-1/5 xl:w-1/5 flex border-r border-white">
+  <div class="flex w-1/5 border-r border-white xl:w-1/5">
     999,00 kr
   </div>
-  <div class="w-1/6 xl:w-1/6 border-r border-white">
+  <div class="w-1/6 border-r border-white xl:w-1/6">
     <%= task.hours %>
   </div>
-  <div class="w-1/6 xl:w-1/6 border-r border-white">
+  <div class="w-1/6 border-r border-white xl:w-1/6">
     <%= number_to_currency(total = task.hours * 999) %>
   </div>
-  <div class="w-4 flex items-center px-2">
+  <div class="flex items-center w-4 px-2">
     <div class="flex items-center">
       <%= link_to(invoice_task_path(invoice, task), title: t('.delete'), method: :delete, class: 'text-red-700 text-lg hover:text-red-500', remote: true) do %>
         <%= icon('fas', 'times') %>
@@ -23,8 +23,8 @@
     </div>
   </div>
 </div>
-<div class="flex lg:hidden flex-grow py-4">
-  <div class="w-full flex justify-between">
+<div class="flex flex-grow py-4 lg:hidden">
+  <div class="flex justify-between w-full">
     <div>
       <p class="text-sm font-semibold text-blue-900"><%= task.title %></p>
       <p class="text-xs text-blue-900">
@@ -34,7 +34,7 @@
     </div>
     <div class="flex items-center">
       <div>
-        <span class="text-sm font-semibold text-blue-900 mr-6">
+        <span class="mr-6 text-sm font-semibold text-blue-900">
           <%= number_to_currency(task.cost) %>
         </span>
       </div>

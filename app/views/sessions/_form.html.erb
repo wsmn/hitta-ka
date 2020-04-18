@@ -1,9 +1,9 @@
 <div class="p-2">
-  <div class="container flex bg-white rounded-lg shadow mx-auto max-w-sm mt-4 md:mt-8">
+  <div class="container flex max-w-sm mx-auto mt-4 bg-white rounded-lg shadow md:mt-8">
     <div class="w-full p-8 text-left">
-      <h1 class="text-gray-900 text-2xl font-bold"><%= t('.sign_in_to_your_account') %></h1>
+      <h1 class="text-2xl font-bold text-gray-900"><%= t('.sign_in_to_your_account') %></h1>
       <div class="mb-4">
-        <span class="text-gray-600 text-sm">
+        <span class="text-sm text-gray-600">
           <%= t('.dont_have_an_account?') %>
         </span>
         <%= link_to(connect_path, class: 'text-gray-700 text-sm font-semibold') do %>
@@ -15,7 +15,7 @@
         <div class="mt-2">
           <%= form.input(:password, input_html: { autofocus: true }, input_html: { class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200 shadow-inner' }, label_html: { class: 'text-gray-700 text-sm font-bold' }) %>
         </div>
-        <p class="text-center text-sm text-gray-600 hover:text-gray-800 mt-2">
+        <p class="mt-2 text-sm text-center text-gray-600 hover:text-gray-800">
           <% if Clearance.configuration.allow_sign_up? %>
             <%= link_to t(".sign_up"), sign_up_path %>
           <% end %>

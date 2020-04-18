@@ -4,18 +4,18 @@
 <% content_for(:header_title) do %>
   <%= t('.title')%>
 <% end %>
-<div class="w-full overflow-y-auto pb-4 px-4 py-2 lg:px-6 lg:py-4">
-  <div class="w-full flex items-center mb-4">
+<div class="w-full px-4 py-2 pb-4 overflow-y-auto lg:px-6 lg:py-4">
+  <div class="flex items-center w-full mb-4">
     <%= link_to(projects_path, class: 'text-gray-500') do %>
       <%= t('.projects') %>
-    <% end %><svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+    <% end %><svg class="inline-block w-5 h-5 mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd"
         d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
         clip-rule="evenodd" />
     </svg>
     <%= link_to(customer_project_path(@project.customer, @project), class: 'text-gray-500') do %>
       <%= @project.title %>
-    <% end %> <svg class="h-5 w-5 inline-block mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+    <% end %> <svg class="inline-block w-5 h-5 mt-px text-gray-500" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd"
         d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
         clip-rule="evenodd" />
@@ -26,11 +26,11 @@
   </div>
   <%= render('form', project: @project, customer: @customer, customers: @customers) %>
   <div class="pb-16">
-    <div class="w-full flex flex-col flex-wrap bg-white rounded-md lg:mt-3">
-      <div class="h-12 bg-red-500 px-3 py-2 rounded-t-md">
-        <h1 class="text-white font-semibold text-lg xl:text-xl"><%= t('.danger_zone') %></h1>
+    <div class="flex flex-col flex-wrap w-full bg-white rounded-md lg:mt-3">
+      <div class="h-12 px-3 py-2 bg-red-500 rounded-t-md">
+        <h1 class="text-lg font-semibold text-white xl:text-xl"><%= t('.danger_zone') %></h1>
       </div>
-      <div class="w-full flex p-4 rounded-b-md border-l border-b border-r border-gray-600">
+      <div class="flex w-full p-4 border-b border-l border-r border-gray-600 rounded-b-md">
         <div class="flex flex-col">
           <p class="mb-4"><%= t('.delete_description') %></p>
           <%= render('application/delete_button',

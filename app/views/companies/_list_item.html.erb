@@ -1,13 +1,13 @@
-<div class="bg-white hover:bg-blue-600 text-blue-900 hover:text-white rounded p-2 mb-6">
+<div class="p-2 mb-6 text-blue-900 bg-white rounded hover:bg-blue-600 hover:text-white">
   <div class="flex items-center p-1">
-    <div class="bg-blue-400 rounded-full h-16 w-16 flex items-center justify-center text-white font-bold mr-4">
+    <div class="flex items-center justify-center w-16 h-16 mr-4 font-bold text-white bg-blue-400 rounded-full">
       Logo
     </div>
     <div class="w-3/4">
-      <p class="font-semibold text-lg">
+      <p class="text-lg font-semibold">
         <%= company.to_s %>
       </p>
-      <p class="text-sm font-light font-sans">
+      <p class="font-sans text-sm font-light">
         <%= company.geocode_address %>
       </p>
     </div>
