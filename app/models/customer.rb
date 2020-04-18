@@ -27,4 +27,26 @@ class Customer < ApplicationRecord
   def hours
     tasks.select("SUM(hours) as hours").to_a.first.try(:hours) || 0
   end
+
+  def invoiced_tasks
+    tasks.where.not(invoice: nil)
+  end
+
+  def invoiced_total
+    total = 0
+    invoiced_tasks.each { |task| total += task.cost }
+    total
+  end
+
+  def invoiced_paid
+    total = 0
+    tasks.includes(:invoice).where(invoices: {status: :paid}).each { |task| total += task.cost }
+    total
+  end
+
+  def invoiced_unpaid
+    total = 0
+    tasks.includes(:invoice).where(invoices: {status: :unpaid}).each { |task| total += task.cost }
+    total
+  end
 end
