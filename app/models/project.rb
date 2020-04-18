@@ -4,6 +4,7 @@ class Project < ApplicationRecord
 
   belongs_to(:customer)
   has_many(:tasks, dependent: :destroy)
+  has_many(:invoices, through: :tasks)
   validates(:title, presence: true)
   enum(status: {upcoming: 0, active: 10, paused: 20, completed: 30, cancelled: 40, archived: 50})
 
