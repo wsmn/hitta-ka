@@ -8,7 +8,7 @@ module Customers
 
     def show
       @customer, _ = find_customer
-      @project = @customer.projects.includes(:invoices).find(params[:id])
+      @project = @customer.projects.includes(:tasks, :invoices).find(params[:id])
     end
 
     def new

@@ -11,20 +11,20 @@
       <div class="w-full max-w-6xl lg:w-full xl:w-2/3 sm:px-2">
         <div class="overflow-hidden bg-white border-gray-300 sm:border sm:shadow sm:rounded-lg">
           <div class="hidden px-4 py-5 border-b border-gray-200 sm:px-6 sm:block">
-            <h3 class="text-lg font-medium text-gray-900 leading-6">
+            <h3 class="text-lg font-medium leading-6 text-gray-900">
               Customer information
             </h3>
-            <p class="max-w-2xl mt-1 text-sm text-gray-500 leading-5">
+            <p class="max-w-2xl mt-1 text-sm leading-5 text-gray-500">
               Contact and address details.
             </p>
           </div>
           <div class="px-4 py-5 sm:px-6">
-            <dl class="grid grid-cols-1 col-gap-4 row-gap-8 sm:grid-cols-2">
+            <dl class="grid grid-cols-1 row-gap-8 col-gap-4 sm:grid-cols-2">
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500 leading-5">
+                <dt class="text-sm font-medium leading-5 text-gray-500">
                   <%= t('.billing_address') %>
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 leading-5">
+                <dd class="mt-1 text-sm leading-5 text-gray-900">
                   <% if @customer.street.present? | @customer.zip_code.present? | @customer.city.present? %>
                     <% if @customer.street %>
                       <%= @customer.street %>
@@ -43,10 +43,10 @@
                 </dd>
               </div>
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500 leading-5">
+                <dt class="text-sm font-medium leading-5 text-gray-500">
                   <%= t('.phone') %>
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 leading-5">
+                <dd class="mt-1 text-sm leading-5 text-gray-900">
                   <% if @customer.phone.present? %>
                     <%= @customer.phone %>
                   <% else %>
@@ -55,10 +55,10 @@
                 </dd>
               </div>
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500 leading-5">
+                <dt class="text-sm font-medium leading-5 text-gray-500">
                   <%= t('.email') %>
                 </dt>
-                <dd class="mt-1 text-sm text-blue-500 leading-5">
+                <dd class="mt-1 text-sm leading-5 text-blue-500">
                   <% if @customer.email.present? %>
                     <%= link_to(@customer.email, "mailto:#{@customer.email}") %>
                   <% else %>
@@ -67,18 +67,18 @@
                 </dd>
               </div>
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500 leading-5">
+                <dt class="text-sm font-medium leading-5 text-gray-500">
                   <%= t('.custom_task_rate') %>
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 leading-5">
+                <dd class="mt-1 text-sm leading-5 text-gray-900">
                   999,00 SEK
                 </dd>
               </div>
               <div class="sm:col-span-2">
-                <dt class="text-sm font-medium text-gray-500 leading-5">
+                <dt class="text-sm font-medium leading-5 text-gray-500">
                   About
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 leading-5">
+                <dd class="mt-1 text-sm leading-5 text-gray-900">
                   Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat.
                   Excepteur
                   qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure
@@ -87,10 +87,10 @@
                 </dd>
               </div>
               <div class="sm:col-span-2">
-                <dt class="text-sm font-medium text-gray-500 leading-5">
+                <dt class="text-sm font-medium leading-5 text-gray-500">
                   <%= t('.download') %>
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 leading-5">
+                <dd class="mt-1 text-sm leading-5 text-gray-900">
                   <ul class="border border-gray-200 rounded-md">
                     <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm leading-5">
                       <div class="flex items-center flex-1 w-0">
@@ -105,7 +105,7 @@
                       </div>
                       <div class="flex-shrink-0 ml-4">
                         <a href="#"
-                          class="font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out">
+                          class="font-medium text-indigo-600 transition duration-150 ease-in-out hover:text-indigo-500">
                           Download
                         </a>
                       </div>
@@ -121,60 +121,63 @@
         <div class="flex flex-grow">
           <div class="flex-grow overflow-hidden bg-white border-gray-300 sm:border sm:shadow sm:rounded-lg">
             <div class="hidden px-4 py-5 border-b border-gray-200 sm:px-6 lg:block">
-              <h3 class="text-lg font-medium text-gray-900 leading-6">
+              <h3 class="text-lg font-medium leading-6 text-gray-900">
                 Summary
               </h3>
-              <p class="max-w-2xl mt-1 text-sm text-gray-500 leading-5">
+              <p class="max-w-2xl mt-1 text-sm leading-5 text-gray-500">
                 Hours, projects and invoicing overview.
               </p>
             </div>
             <div>
               <dl>
-                <div class="px-4 py-5 bg-gray-100 grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500 leading-5">
+                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6">
+                  <dt class="text-sm font-medium leading-5 text-gray-500">
                     Time logged
                   </dt>
-                  <dd class="mt-0 text-sm text-gray-900 leading-5 col-span-2">
-                    125 h
+                  <dd class="col-span-2 mt-0 text-sm leading-5 text-gray-900">
+                    <%= @customer.hours %> h
                   </dd>
                 </div>
-                <div class="px-4 py-5 bg-white grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500 leading-5">
+                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6">
+                  <dt class="text-sm font-medium leading-5 text-gray-500">
                     Invoiced
                   </dt>
-                  <dd class="mt-0 text-sm text-gray-900 leading-5 col-span-2">
-                    1 234,00 SEK <span class="text-xs text-red-600">(1 111,00 SEK)</span>
+                  <dd class="col-span-2 mt-0 text-sm leading-5 text-gray-900">
+                    <%= number_to_currency(@customer.invoiced_total) %>
+                    <% if @customer.invoiced_unpaid > 0 %>
+                      <span class="text-xs text-red-600">(<%= number_to_currency(@customer.invoiced_unpaid) %>)</span>
+                    <% end %>
                   </dd>
                 </div>
-                <div class="px-4 py-5 bg-gray-100 grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500 leading-5">
+                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6">
+                  <dt class="text-sm font-medium leading-5 text-gray-500">
                     Paid to date
                   </dt>
-                  <dd class="text-sm text-gray-900 leading-5 col-span-2">
-                    111,00 SEK
+                  <dd class="col-span-2 text-sm leading-5 text-gray-900">
+                    <%= number_to_currency(@customer.invoiced_paid) %>
                   </dd>
                 </div>
-                <div class="px-4 py-5 bg-white grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500 leading-5">
+                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6">
+                  <dt class="text-sm font-medium leading-5 text-gray-500">
                     Active projects
                   </dt>
-                  <dd class="text-sm text-gray-900 leading-5 col-span-2">
-                    4
+                  <dd class="col-span-2 text-sm leading-5 text-gray-900">
+                    <%= @customer.projects.active.count %>
                   </dd>
                 </div>
-                <div class="px-4 py-5 bg-gray-100 grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500 leading-5">
+                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6">
+                  <dt class="text-sm font-medium leading-5 text-gray-500">
                     Total projects
                   </dt>
-                  <dd class="text-sm text-gray-900 leading-5 col-span-2">
-                    9
+                  <dd class="col-span-2 text-sm leading-5 text-gray-900">
+                    <%= @customer.projects.count %>
                   </dd>
                 </div>
-                <div class="flex items-center px-4 py-5 bg-white grid grid-cols-3 gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500 leading-5">
+                <div class="flex grid items-center grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6">
+                  <dt class="text-sm font-medium leading-5 text-gray-500">
                     Latest project
                   </dt>
-                  <dd class="text-sm text-gray-900 leading-5 col-span-2">
+                  <dd class="col-span-2 text-sm leading-5 text-gray-900">
                     <ul class="border border-gray-200 rounded-md">
                       <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm leading-5">
                         <div class="flex items-center flex-1 w-0">
@@ -206,7 +209,7 @@
         <button button
           :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'projects' }"
           @click="tab = 'projects'"
-          class="inline-flex items-center px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent group sm:text-base leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+          class="inline-flex items-center px-1 py-4 text-sm font-medium leading-5 text-gray-500 border-b-2 border-transparent group sm:text-base hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
           <svg class="-ml-0.5 mr-2 h-4 w-4 sm:h-5 sm:w-5 group-focus:text-gray-600" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -217,7 +220,7 @@
         <button button
           :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'tasks' }"
           @click="tab = 'tasks'"
-          class="inline-flex items-center px-1 py-4 ml-8 text-sm font-medium text-gray-500 border-b-2 border-transparent group sm:text-base leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+          class="inline-flex items-center px-1 py-4 ml-8 text-sm font-medium leading-5 text-gray-500 border-b-2 border-transparent group sm:text-base hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
           <svg class="-ml-0.5 mr-2 h-4 w-4 sm:h-5 sm:w-5 group-focus:text-gray-600" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -228,7 +231,7 @@
         <button button
           :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'invoices' }"
           @click="tab = 'invoices'"
-          class="inline-flex items-center px-1 py-4 ml-8 text-sm font-medium text-gray-500 border-b-2 border-transparent group sm:text-base leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+          class="inline-flex items-center px-1 py-4 ml-8 text-sm font-medium leading-5 text-gray-500 border-b-2 border-transparent group sm:text-base hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
           <svg class="-ml-0.5 mr-2 h-4 w-4 sm:h-5 sm:w-5 group-focus:text-gray-600" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
