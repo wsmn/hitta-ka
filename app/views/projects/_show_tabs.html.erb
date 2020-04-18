@@ -23,17 +23,7 @@
 <div x-show="tab === 'tasks'" class="flex-grow bg-blue-100">
   <div class="w-full px-3 xl:px-6">
     <div class="flex justify-between mb-4 pt-4">
-      <h2 class="text-gray-900 text-2xl font-semibold">Tasks</h2>
-      <span class="inline-flex rounded-md shadow-sm">
-        <%= link_to(new_project_task_path(project), class: 'inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150') do %>
-          <svg class="-ml-0.5 mr-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-            clip-rule="evenodd" />
-          </svg>
-          <%= t('.new_task') %>
-        <% end %>
-      </span>
+      <h2 class="text-gray-900 text-2xl font-semibold"><%= t('.tasks') %></h2>
       <%= render('projects/tasks/modal_form', project: project) do %>
         <div @click="openModal = true"
           class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
@@ -42,7 +32,7 @@
               d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
               clip-rule="evenodd" />
           </svg>
-          <%= t('.modal') %>
+          <%= t('.new_task') %>
         </div>
       <% end %>
     </div>
@@ -54,7 +44,7 @@
 <div x-show="tab === 'invoices'" class="flex-grow bg-orange-50">
   <div class="w-full px-3 xl:px-6">
     <div class="flex justify-between mb-4 pt-4">
-      <h2 class="text-gray-900 text-2xl font-semibold">Invoices</h2>
+      <h2 class="text-gray-900 text-2xl font-semibold"><%= t('.invoices') %></h2>
       <span class="inline-flex rounded-md shadow-sm">
         <%= link_to(new_customer_invoice_path(project.customer), class: 'inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-orange-600 hover:bg-orange-500 focus:outline-none focus:border-orange-700 focus:shadow-outline-indigo active:bg-orange-700 transition ease-in-out duration-150') do %>
           <svg class="-ml-0.5 mr-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -74,7 +64,7 @@
 <div x-show="tab === 'timeline'" class="flex-grow bg-green-100">
   <div class="w-full px-3 xl:px-6">
     <div class="flex justify-between mb-4 pt-4">
-      <h2 class="text-gray-900 text-2xl font-semibold">Invoices</h2>
+      <h2 class="text-gray-900 text-2xl font-semibold"><%= t('.timeline') %></h2>
     </div>
     <div class="w-2/3 flex flex-wrap bg-white rounded p-4">
       <div class="w-full text-center mb-8">

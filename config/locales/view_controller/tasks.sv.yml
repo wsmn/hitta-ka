@@ -21,3 +21,8 @@ sv:
       success: Tidslogg raderades
     form:
       delete: Radera
+      new_task: Ny tidslogg
+      update_task: Ändra tidslogg
+      create_a_timelog_for_your_project: Skapa en tidslogg för ditt projekt.
+      change_or_update_your_timelog: Ändra eller uppdatera din tidslogg.
+      cancel: Avbryt

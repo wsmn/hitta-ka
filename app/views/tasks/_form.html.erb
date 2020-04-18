@@ -12,17 +12,20 @@
       <h3 class="text-2xl leading-6 font-medium text-gray-900">
         <% if task.persisted? %>
           <%= t('.update_task') %>
+          <p class="text-sm text-gray-600">
+            <%= t('.change_or_update_your_timelog') %>
+          </p>
         <% else %>
           <%= t('.new_task') %>
+          <p class="text-sm text-gray-600">
+            <%= t('.create_a_timelog_for_your_project') %>
+          </p>
         <% end %>
       </h3>
-      <p class="text-sm text-gray-600">
-        Create a timelog for your project.
-      </p>
     </div>
   </div>
   <div class="flex flex-wrap">
-    <div class="w-full px-6">
+    <div class="w-full px-4 sm:px-6">
       <div class="flex flex-wrap -mx-3">
         <div class="w-full">
           <div class="flex flex-wrap mb-6">
@@ -50,7 +53,7 @@
             <div class="w-full px-3">
               <%= form.label(:description, class: "form-label lg:mb-2") %>
               <%= form.text_area(:description, id: 'description', placeholder: 'Describe your task...',
-                        class: "form-input mt-2 h-24") %>
+                        class: "form-input mt-2 h-16 sm:h-24") %>
             </div>
           </div>
         </div>
@@ -90,15 +93,19 @@
       </div>
     </div>
   </div>
-  <div class="flex-grow mt-5 sm:mt-4 flex items-end justify-end p-4 border-t">
-    <%= yield %>
-    <span class="flex rounded-md shadow-sm ml-4">
-      <%= form.submit(class: "inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-green-500 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-600 focus:shadow-outline-green sm:text-sm sm:leading-5 btn-bounce") %></span>
+  <div class="flex-grow mt-3 sm:mt-4 flex items-end justify-between py-4 px-4 sm:px-6 border-t">
+    <div class="flex-grow">
+      <% if task.persisted? %>
+        <%= button_to(t('.delete'), project_task_path(task.project, task),
+          method: :delete,
+          class: "inline-flex justify-center rounded-md border border-transparent px-2.5 py-1.5 sm:px-4 sm:py-2 bg-red-500 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-600 focus:shadow-outline-red sm:text-sm sm:leading-5 btn-bounce") %>
+      <% end %>
+    </div>
+    <div class="flex justify-between">
+      <%= yield %>
+      <span class="flex rounded-md shadow-sm ml-4">
+        <%= form.submit(class: "inline-flex justify-center w-full rounded-md border border-transparent px-2.5 py-1.5 sm:px-4 sm:py-2 bg-green-500 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-600 focus:shadow-outline-green sm:text-sm sm:leading-5 btn-bounce") %></span>
+    </div>
   </div>
 </div>
-<% end %>
-<% if task.persisted? %>
-  <%= button_to(t('.delete'), project_task_path(task.project, task),
-      method: :delete,
-      class: "inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-500 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-600 focus:shadow-outline-red sm:text-sm sm:leading-5 btn-bounce") %>
 <% end %>
