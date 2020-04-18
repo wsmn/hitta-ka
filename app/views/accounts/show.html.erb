@@ -8,39 +8,10 @@
   <div class="flex-grow p-2 grid grid-cols-5 gap-4 sm:p-3 xl:p-6">
     <div class="col-span-5 grid grid-cols-8">
       <div x-data="{ tab: 'week' }" class="col-span-8">
-        <div class="flex justify-between">
+        <div class="flex justify-between p-1 sm:p-0">
           <div>
             <h1 class="text-3xl font-semibold leading-none text-gray-900 sm:text-4xl"><%= current_user.name %></h1>
-            <h2 class="text-base sm:text-lg font-normal text-gray-600 mt-0.5"><%= current_user.organisations.first %>
-            </h2>
-            <div class="mt-3 ml-1 lg:mt-4">
-              <nav class="flex -mb-px">
-                <button button
-                  :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'week' }"
-                  @click="tab = 'week'"
-                  class="pb-2 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-                  <%= t('.week') %>
-                </button>
-                <button button
-                  :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'timelogs' }"
-                  @click="tab = 'timelogs'"
-                  class="px-1 pb-2 ml-8 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-                  <%= t('.month') %>
-                </button>
-                <button button
-                  :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'year' }"
-                  @click="tab = 'year'"
-                  class="px-1 pb-2 ml-8 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-                  <%= t('.year') %>
-                </button>
-                <button button
-                :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'total' }"
-                @click="tab = 'total'"
-                class="px-1 pb-2 ml-8 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-                  <%= t('.total') %>
-                </button>
-              </nav>
-            </div>
+            <h2 class="text-lg sm:text-xl font-normal text-gray-600 mt-0.5"><%= current_user.organisations.first %></h2>
           </div>
           <div class="flex items-start text-white">
             <div class="flex flex-wrap-reverse justify-end">
@@ -66,6 +37,34 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="ml-1 mt-4">
+          <nav class="flex -mb-px">
+            <button button
+              :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'week' }"
+              @click="tab = 'week'"
+              class="pb-2 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+              <%= t('.week') %>
+            </button>
+            <button button
+              :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'timelogs' }"
+              @click="tab = 'timelogs'"
+              class="px-1 pb-2 ml-4 sm:ml-8 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+              <%= t('.month') %>
+            </button>
+            <button button
+              :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'year' }"
+              @click="tab = 'year'"
+              class="px-1 pb-2 ml-4 sm:ml-8 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+              <%= t('.year') %>
+            </button>
+            <button button
+            :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'total' }"
+            @click="tab = 'total'"
+            class="px-1 pb-2 ml-4 sm:ml-8 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+              <%= t('.total') %>
+            </button>
+          </nav>
         </div>
         <%= render("stats") %>
       </div>
