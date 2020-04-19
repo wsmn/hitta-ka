@@ -6,10 +6,10 @@ class Customer < ApplicationRecord
 
   validates(:name, presence: true)
   store_accessor(:address, :street, :city, :state, :zip_code)
-  store_accessor(:contact_information, :email, :phone)
+  store_accessor(:settings, :custom_task_rate)
 
   def self.searchable_columns
-    %i[name address contact_information]
+    %i[name address phone email]
   end
 
   def to_s
@@ -26,6 +26,14 @@ class Customer < ApplicationRecord
 
   def hours
     tasks.select("SUM(hours) as hours").to_a.first.try(:hours) || 0
+  end
+
+  def task_rate
+    if custom_task_rate.nil? || custom_task_rate.empty?
+      organisation.task_rate
+    else
+      custom_task_rate.to_f
+    end
   end
 
   def invoiced_tasks

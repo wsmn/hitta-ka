@@ -2,19 +2,19 @@
   <div class="hidden px-6 border-b-2 rounded-t lg:block">
     <div class="flex w-full py-4 text-sm font-semibold text-gray-900 uppercase">
       <div class="flex w-1/4 xl:w-1/3">
-        Task
+        <%= Task.human_attribute_name(:title) %>
       </div>
       <div class="flex w-1/4 xl:w-1/5">
-        Date
+        <%= Task.human_attribute_name(:date) %>
       </div>
       <div class="w-1/5 xl:w-1/5">
-        Cost
+        <%= Task.human_attribute_name(:rate) %>
       </div>
       <div class="w-1/6 xl:w-1/6">
-        Hours
+        <%= Task.human_attribute_name(:hours) %>
       </div>
       <div class="w-1/6 xl:w-1/6">
-        Total
+        <%= Task.human_attribute_name(:toal) %>
       </div>
       <div class="flex justify-center w-4 md:justify-start">
       </div>

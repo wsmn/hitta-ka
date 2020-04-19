@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_143319) do
+ActiveRecord::Schema.define(version: 2020_04_18_134211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -73,6 +73,9 @@ ActiveRecord::Schema.define(version: 2020_03_18_143319) do
     t.datetime "updated_at", precision: 6, null: false
     t.jsonb "address", default: {}, null: false
     t.jsonb "contact_information", default: {}, null: false
+    t.string "phone"
+    t.string "email"
+    t.jsonb "settings", default: {}, null: false
     t.index ["organisation_id"], name: "index_customers_on_organisation_id"
   end
 
@@ -121,6 +124,8 @@ ActiveRecord::Schema.define(version: 2020_03_18_143319) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "invoice_id"
+    t.jsonb "settings", default: {}, null: false
+    t.date "task_date"
     t.index ["invoice_id"], name: "index_tasks_on_invoice_id"
     t.index ["project_id"], name: "index_tasks_on_project_id"
   end

@@ -4,7 +4,13 @@
     <div class="w-full max-w-4xl px-2 xl:w-2/3">
       <div class="flex flex-wrap bg-white border border-gray-600 rounded-md">
         <div class="flex items-center flex-grow h-12 px-3 py-2 -m-px bg-green-600 rounded-t">
-          <h1 class="text-xl font-semibold text-white xl:text-2xl"><%= t('.new_customer') %></h1>
+          <h1 class="text-xl font-semibold text-white xl:text-2xl">
+            <% if customer.persisted? %>
+              <%= customer.name %>
+            <% else %>
+              <%= t('.new_customer') %>
+            <% end %>
+          </h1>
         </div>
         <div class="w-full px-4 py-2 mt-2 lg:px-8 lg:py-4">
           <div class="flex flex-wrap -mx-3">
@@ -20,8 +26,7 @@
                     <%= form.label(:organisation, class: 'form-label lg:mb-2') %>
                     <%= form.select(:organisation_id, organisations.collect { |org| [org.to_s, org.id] }, {}, id: 'organisation',
           class: 'form-input bg-gray-100 mt-2') %>
-                    <div class="absolute inset-y-0 flex items-center px-2 mt-8 text-gray-700 pointer-events-none right-0
- ">
+                    <div class="absolute inset-y-0 right-0 flex items-center px-2 mt-8 text-gray-700 pointer-events-none ">
                       <%= render('application/icons/arrow_down') %>
                     </div>
                   </div>
@@ -67,12 +72,12 @@
                       </div>
                       <div x-show="open" class="absolute z-50 w-64 p-4 bg-white border border-gray-400 rounded">
                         Use this option if you want to set a custom task rate for this customer. Your standard task rate
-                        can be changed on the settings page.
+                        is <%= number_to_currency(customer.organisation.task_rate) %> and can be changed on the settings page.
                       </div>
                     </div>
                   </div>
                 </div>
-                <%= form.text_field(:title, id: 'title', placeholder: '990,00',
+                <%= form.text_field(:custom_task_rate, id: 'title', placeholder: number_to_currency(customer.organisation.task_rate),
                           class: "form-input mt-2") %>
               </div>
             </div>
@@ -82,7 +87,7 @@
         <div class="flex w-full p-4 mt-2 border-t border-gray-400">
           <div class="flex items-center justify-end w-full">
             <div class="w-20 mr-2">
-              <%= link_to(t('.cancel'), customers_path, class: "text-red-500 uppercase font-bold text-sm hover:text-red-300") %>
+              <%= link_to(t('.cancel'), customer.persisted? ? customer_path(customer) : customers_path, class: "text-red-500 uppercase font-bold text-sm hover:text-red-300") %>
             </div>
             <div class="w-30">
               <%= form.submit(class: "py-2 px-2 w-full uppercase no-underline

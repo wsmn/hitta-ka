@@ -68,10 +68,10 @@
       <%= task.hours %>
     </div>
     <div class="float-left w-1/5 text-center">
-      999,00 kr
+      <%= number_to_currency(task.rate) %>
     </div>
     <div class="float-left w-1/6 text-right">
-      <%= number_to_currency(total = task.hours * 999) %>
+      <%= number_to_currency(task.cost) %>
     </div>
   </div>
 <% end %>
