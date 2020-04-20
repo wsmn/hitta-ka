@@ -2,7 +2,7 @@
   x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
   x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
   x-transition:leave-end="transform opacity-0 scale-95"
-  class="absolute right-0 z-50 w-48 mt-2 shadow-lg origin-top-right rounded-md">
+  class="absolute right-0 z-50 w-48 mt-2 origin-top-right rounded-md shadow-lg">
   <div class="bg-white border rounded-md shadow-xs">
     <div class="py-1">
       <%= link_to(edit_customer_invoice_path(invoice.customer, invoice), class: 'group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900') do %>
@@ -46,7 +46,7 @@
     <div class="border-t border-gray-100"></div>
     <div class="py-1">
       <a href="#"
-        class="flex items-center px-4 py-2 text-sm text-gray-700 group leading-5 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+        class="flex items-center px-4 py-2 text-sm leading-5 text-gray-700 group hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
         <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500" fill="currentColor"
           viewBox="0 0 20 20">
           <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
@@ -56,7 +56,7 @@
         </svg>
         <%= t('.archive') %>
       </a>
-      <%= link_to(new_customer_invoice_path(invoice.customer, invoice), class: 'group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900') do %>
+      <%= link_to(new_customer_invoice_path(invoice.customer), class: 'group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900') do %>
         <div class="flex items-center">
           <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500" viewBox="0 0 20 20"
           fill="currentColor">

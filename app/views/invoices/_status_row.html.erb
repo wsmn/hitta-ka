@@ -10,10 +10,10 @@
         </div>
       </div>
       <div class="ml-2 sm:ml-4">
-        <div class="text-base text-gray-800 leading-5">
+        <div class="text-base leading-5 text-gray-800">
           <%= invoice.customer %>
         </div>
-        <div class="text-xs text-gray-500 sm:text-sm leading-5">#<%= invoice.invoice_nbr %></div>
+        <div class="text-xs leading-5 text-gray-500 sm:text-sm">#<%= invoice.invoice_nbr %></div>
       </div>
     </div>
   </div>
@@ -27,7 +27,7 @@
   </div>
   <div class="w-1/4 px-2 xl:w-1/6 md:px-4">
     <div class="text-right text-gray">
-      <%= invoice.amount %> SEK
+      <%= number_to_currency(invoice.amount) %>
     </div>
   </div>
 <% end %>

@@ -7,13 +7,13 @@
     <%= l(task.created_at.to_date) %>
   </div>
   <div class="flex w-1/5 border-r border-white xl:w-1/5">
-    999,00 kr
+    <%= number_to_currency(task.rate) %>
   </div>
   <div class="w-1/6 border-r border-white xl:w-1/6">
     <%= task.hours %>
   </div>
   <div class="w-1/6 border-r border-white xl:w-1/6">
-    <%= number_to_currency(total = task.hours * 999) %>
+    <%= number_to_currency(task.cost) %>
   </div>
   <div class="flex items-center w-4 px-2">
     <div class="flex items-center">

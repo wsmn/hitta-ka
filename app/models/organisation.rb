@@ -6,4 +6,8 @@ class Organisation < ApplicationRecord
   def to_s
     title
   end
+
+  def task_rate
+    999
+  end
 end

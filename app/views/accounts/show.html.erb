@@ -5,8 +5,8 @@
   <%= t('.title') %>
 <% end %>
 <div class="w-full">
-  <div class="flex-grow p-2 grid grid-cols-5 gap-4 sm:p-3 xl:p-6">
-    <div class="col-span-5 grid grid-cols-8">
+  <div class="grid flex-grow grid-cols-5 gap-4 p-2 sm:p-3 xl:p-6">
+    <div class="grid grid-cols-8 col-span-5">
       <div x-data="{ tab: 'week' }" class="col-span-8">
         <div class="flex justify-between p-1 sm:p-0">
           <div>
@@ -38,30 +38,30 @@
             </div>
           </div>
         </div>
-        <div class="ml-1 mt-4">
+        <div class="mt-4 ml-1">
           <nav class="flex -mb-px">
             <button button
               :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'week' }"
               @click="tab = 'week'"
-              class="pb-2 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+              class="pb-2 text-base font-medium leading-5 text-gray-500 whitespace-no-wrap border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
               <%= t('.week') %>
             </button>
             <button button
               :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'timelogs' }"
               @click="tab = 'timelogs'"
-              class="px-1 pb-2 ml-4 sm:ml-8 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+              class="px-1 pb-2 ml-4 text-base font-medium leading-5 text-gray-500 whitespace-no-wrap border-b-2 border-transparent sm:ml-8 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
               <%= t('.month') %>
             </button>
             <button button
               :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'year' }"
               @click="tab = 'year'"
-              class="px-1 pb-2 ml-4 sm:ml-8 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+              class="px-1 pb-2 ml-4 text-base font-medium leading-5 text-gray-500 whitespace-no-wrap border-b-2 border-transparent sm:ml-8 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
               <%= t('.year') %>
             </button>
             <button button
             :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'total' }"
             @click="tab = 'total'"
-            class="px-1 pb-2 ml-4 sm:ml-8 text-base font-medium text-gray-500 whitespace-no-wrap border-b-2 border-transparent leading-5 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+            class="px-1 pb-2 ml-4 text-base font-medium leading-5 text-gray-500 whitespace-no-wrap border-b-2 border-transparent sm:ml-8 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
               <%= t('.total') %>
             </button>
           </nav>
@@ -73,6 +73,6 @@
       <%= render("projects", projects: @projects) %>
       <%= render("invoices", invoices: @invoices) %>
     </div>
-    <%= render("tasks") %>
+    <%= render("tasks", tasks: @tasks) %>
   </div>
 </div>

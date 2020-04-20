@@ -1,3 +1,4 @@
+<% tasks ||= [] %>
 <div class="col-span-5 md:col-span-2">
   <div class="bg-white border shadow sm:rounded">
     <div class="border-b">
@@ -5,6 +6,14 @@
         <h3 class="py-4 text-lg font-normal text-blue-700">Recent time logs</h3>
       </div>
     </div>
-    <%= render('tasks/empty') %>
+    <% if tasks.any? %>
+      <div class="flex flex-wrap items-start">
+        <% tasks.each do |task| %>
+          <%= render('tasks/status_row', task: task) %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= render('tasks/empty') %>
+    <% end %>
   </div>
 </div>

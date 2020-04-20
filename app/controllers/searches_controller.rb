@@ -9,13 +9,13 @@ class SearchesController < ApplicationController
   end
 
   def customer
-    search = params.fetch(:search)
+    search = params.fetch(:search, nil)
     customers = if search.present?
-      Customer.basic_search(search)
+      Customer.fuzzy_search(search)
     else
       Customer.all
     end
-    order = params.fetch(:order_by)
+    order = params.fetch(:order_by, nil)
     if order.present?
       customers = customers.order(order)
     end

@@ -1,0 +1,17 @@
+<%= link_to(project_task_path(task.project, task),
+  class: "flex w-full px-3 xl:px-6 py-4 text-gray-900 items-center border-b border-gray-200") do %>
+  <div class="hidden w-1/3 md:flex">
+    <%= task.title %>
+  </div>
+  <div class="hidden w-1/3 md:flex">
+    <%= task.project %>
+  </div>
+  <div class="w-1/4 px-2 xl:w-1/5 md:px-4">
+    <div class="text-center text-gray">
+      <%= task.hours %> h
+    </div>
+  </div>
+  <div class="flex justify-end w-1/6 mr-8">
+    <%= project_tag_mobile(task.project.status) %>
+  </div>
+<% end %>

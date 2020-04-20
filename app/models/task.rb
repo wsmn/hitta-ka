@@ -1,11 +1,18 @@
 class Task < ApplicationRecord
   belongs_to(:project, required: true)
   belongs_to(:invoice, required: false)
+  has_one(:customer, through: :project)
+
   enum(status: {upcoming: 0, done: 10, skipped: 20})
   validates(:title, presence: true)
+  store_accessor(:settings, :custom_rate)
 
   def rate
-    999
+    if custom_rate.nil? || custom_rate.empty?
+      project.customer.task_rate
+    else
+      custom_rate.to_f
+    end
   end
 
   def cost
