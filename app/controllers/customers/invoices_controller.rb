@@ -16,6 +16,7 @@ module Customers
         format.pdf do
           render pdf: "#{t("invoices.pdf.invoice")}_#{@invoice.invoice_nbr}",
                  template: "invoices/_pdf.html.erb",
+                 show_as_html: params.key?('debug'),
                  header: {
                    html: {
                      template: "invoices/_pdf_header.html.erb",
