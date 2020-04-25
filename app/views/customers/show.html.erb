@@ -129,8 +129,8 @@
               </p>
             </div>
             <div>
-              <dl>
-                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6">
+              <dl class="">
+                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6 flex items-center">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Time logged
                   </dt>
@@ -138,7 +138,7 @@
                     <%= @customer.hours %> h
                   </dd>
                 </div>
-                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6">
+                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6 flex items-center">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Invoiced
                   </dt>
@@ -149,7 +149,7 @@
                     <% end %>
                   </dd>
                 </div>
-                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6">
+                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6 flex items-center">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Paid to date
                   </dt>
@@ -157,7 +157,7 @@
                     <%= number_to_currency(@customer.invoiced_paid) %>
                   </dd>
                 </div>
-                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6">
+                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6 flex items-center">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Active projects
                   </dt>
@@ -165,7 +165,7 @@
                     <%= @customer.projects.active.count %>
                   </dd>
                 </div>
-                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6">
+                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6 flex items-center">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Total projects
                   </dt>
@@ -173,7 +173,7 @@
                     <%= @customer.projects.count %>
                   </dd>
                 </div>
-                <div class="flex grid items-center grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6">
+                <div class="flex grid items-center grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6 flex items-center">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Latest project
                   </dt>
