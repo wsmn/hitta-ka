@@ -53,4 +53,4 @@ company.save!
 ```
 
 ## Status
-[![CircleCI](https://circleci.com/gh/wesmn/hitta-ka/tree/master.svg?style=shield)](https://circleci.com/gh/wesmn/hitta-ka/tree/master)
+![](https://github.com/wsmn/hitta-ka/workflows/Tests/badge.svg)
