@@ -1,2 +1,20 @@
 #!/bin/sh
-cd `git rev-parse --git-dir`/.. && ./autoformat.sh
+FILES=$(git diff --cached --name-only --diff-filter=ACMR "*.rb" "*.vue" "*.js" | sed 's| |\\ |g')
+[ -z "$FILES" ] && exit 0
+
+# Prettify all selected files
+echo "$FILES" | xargs bundle exec standardrb --fix
+
+# Add back the modified/prettified files to staging
+echo "$FILES" | xargs git add
+
+FILES=$(git diff --cached --name-only --diff-filter=ACMR "*.html.erb" | sed 's| |\\ |g')
+[ -z "$FILES" ] && exit 0
+
+# Prettify all selected files
+echo "$FILES" | xargs bundle exec htmlbeautifier
+
+# Add back the modified/prettified files to staging
+echo "$FILES" | xargs git add
+
+exit 0

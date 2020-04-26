@@ -1,9 +1,10 @@
 {
-    "recommendations": [
-        "kaiwood.endwise",
-        "castwide.solargraph",
-        "wingrunr21.vscode-ruby",
-        "rebornix.ruby",
-        "heybourn.headwind"
-    ]
+  "recommendations": [
+    "castwide.solargraph",
+    "esbenp.prettier-vscode",
+    "heybourn.headwind",
+    "kaiwood.endwise",
+    "rebornix.ruby",
+    "wingrunr21.vscode-ruby"
+  ]
 }
