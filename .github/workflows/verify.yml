@@ -1,4 +1,4 @@
-name: Verify
+name: Tests
 on: [push]
 
 jobs:
