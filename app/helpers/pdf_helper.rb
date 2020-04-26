@@ -2,22 +2,12 @@
 # This helper helps in development mode.
 module PdfHelper
   def pdf_stylesheet_pack_tag(source)
-    if running_in_development?
-      options = {media: "all"}
-      wds = Webpacker.dev_server
-      options[:host] = "#{wds.host}:#{wds.port}"
-      stylesheet_pack_tag(source, options)
-    else
-      wicked_pdf_stylesheet_pack_tag(source)
-    end
+    stylesheet_link_tag(asset_pack_url("#{source}.css"))
   end
 
   def pdf_javascript_pack_tag(source)
-    if running_in_development?
-      options = {}
-      wds = Webpacker.dev_server
-      options[:host] = "#{wds.host}:#{wds.port}"
-      javascript_pack_tag(source, options)
+    if Rails.env.development?
+      javascript_pack_tag(source)
     else
       wicked_pdf_javascript_pack_tag(source)
     end
