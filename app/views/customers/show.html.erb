@@ -71,7 +71,8 @@
                   <%= t('.task_rate') %>
                 </dt>
                 <dd class="mt-1 text-sm leading-5 text-gray-900">
-                  <%= number_to_currency(@customer.task_rate) %> (<%= @customer.custom_task_rate.present? ? t('.custom') : t('.default') %>)
+                  <%= number_to_currency(@customer.task_rate) %>
+                  (<%= @customer.custom_task_rate.present? ? t('.custom') : t('.default') %>)
                 </dd>
               </div>
               <div class="sm:col-span-2">
@@ -130,7 +131,7 @@
             </div>
             <div>
               <dl class="">
-                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6 flex items-center">
+                <div class="flex grid items-center grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Time logged
                   </dt>
@@ -138,7 +139,7 @@
                     <%= @customer.hours %> h
                   </dd>
                 </div>
-                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6 flex items-center">
+                <div class="flex grid items-center grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Invoiced
                   </dt>
@@ -149,7 +150,7 @@
                     <% end %>
                   </dd>
                 </div>
-                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6 flex items-center">
+                <div class="flex grid items-center grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Paid to date
                   </dt>
@@ -157,7 +158,7 @@
                     <%= number_to_currency(@customer.invoiced_paid) %>
                   </dd>
                 </div>
-                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6 flex items-center">
+                <div class="flex grid items-center grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Active projects
                   </dt>
@@ -165,7 +166,7 @@
                     <%= @customer.projects.active.count %>
                   </dd>
                 </div>
-                <div class="grid grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6 flex items-center">
+                <div class="flex grid items-center grid-cols-3 gap-4 px-4 py-5 bg-gray-100 sm:px-6">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Total projects
                   </dt>
@@ -173,7 +174,7 @@
                     <%= @customer.projects.count %>
                   </dd>
                 </div>
-                <div class="flex grid items-center grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6 flex items-center">
+                <div class="flex grid items-center grid-cols-3 gap-4 px-4 py-5 bg-white sm:px-6">
                   <dt class="text-sm font-medium leading-5 text-gray-500">
                     Latest project
                   </dt>
@@ -203,52 +204,59 @@
       </div>
     </div>
   </div>
-  <div class="">
-    <div class="px-4 bg-white border-b border-gray-200">
-      <nav class="flex justify-between -mb-px sm:justify-start">
-        <button button
-          :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'projects' }"
-          @click="tab = 'projects'"
-          class="inline-flex items-center px-1 py-4 text-sm font-medium leading-5 text-gray-500 border-b-2 border-transparent group sm:text-base hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-          <svg class="-ml-0.5 mr-2 h-4 w-4 sm:h-5 sm:w-5 group-focus:text-gray-600" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-          </svg>
-          <%= t('.projects') %>
-        </button>
-        <button button
-          :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'tasks' }"
-          @click="tab = 'tasks'"
-          class="inline-flex items-center px-1 py-4 ml-8 text-sm font-medium leading-5 text-gray-500 border-b-2 border-transparent group sm:text-base hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-          <svg class="-ml-0.5 mr-2 h-4 w-4 sm:h-5 sm:w-5 group-focus:text-gray-600" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <%= t('.tasks') %>
-        </button>
-        <button button
-          :class="{ 'border-indigo-500 text-indigo-700 focus:text-indigo-800 focus:border-indigo-700 hover:border-indigo-700 hover:text-indigo-700': tab === 'invoices' }"
-          @click="tab = 'invoices'"
-          class="inline-flex items-center px-1 py-4 ml-8 text-sm font-medium leading-5 text-gray-500 border-b-2 border-transparent group sm:text-base hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-          <svg class="-ml-0.5 mr-2 h-4 w-4 sm:h-5 sm:w-5 group-focus:text-gray-600" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg>
-          <%= t('.invoices') %>
-        </button>
+  <div class="px-2 sm:px-4">
+    <div class="px-2 bg-green-700 rounded-t sm:px-4">
+      <nav class="flex justify-between text-gray-300">
+        <div class="flex">
+          <button button :class="{ 'text-white bg-green-900': tab === 'projects' }" @click="tab = 'projects'"
+            class="inline-flex items-center px-2 py-2 my-1 text-xs leading-5 rounded sm:my-2 group sm:text-base focus:outline-none hover:bg-green-800 hover:text-white">
+            <%= t('.projects') %>
+          </button>
+          <button button :class="{ 'text-white bg-green-900': tab === 'tasks' }" @click="tab = 'tasks'"
+            class="inline-flex items-center px-2 py-1 my-1 ml-2 text-xs leading-5 rounded sm:py-2 sm:my-2 sm:ml-8 group sm:text-base focus:outline-none hover:bg-green-800 hover:text-white">
+            <%= t('.tasks') %>
+          </button>
+          <button button :class="{ 'text-white bg-green-900': tab === 'invoices' }" @click="tab = 'invoices'"
+            class="inline-flex items-center px-2 py-1 my-1 ml-2 text-xs leading-5 rounded sm:py-2 sm:my-2 sm:ml-8 group sm:text-base focus:outline-none hover:bg-green-900 hover:text-white">
+            <%= t('.invoices') %>
+          </button>
+        </div>
+        <div class="flex items-center justify-end py-2">
+          <div class="border-l border-gray-300">
+            <div x-show="tab === 'projects'" class="pl-2">
+              <%= link_to(new_customer_project_path(@customer), class: 'btn text-xs sm:text-sm px-2 py-2 -my-1 hover:bg-green-900') do %>
+                <div class="flex items-center">
+                  <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                  </svg>
+                  <%= t('.new_project') %>
+                </div>
+              <% end %>
+            </div>
+            <div x-show="tab === 'invoices'" class="pl-2">
+              <%= link_to(new_customer_invoice_path(@customer), class: 'btn text-xs sm:text-sm px-2 py-2 -my-1 hover:bg-green-900') do %>
+                <div class="flex items-center">
+                  <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                  </svg>
+                  <%= t('.new_invoice') %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </nav>
     </div>
   </div>
-  <div x-show="tab === 'projects'" class="flex-grow -mt-px">
-    <%= render("projects/table", customer: @customer, projects: @projects, show_filters: false) %>
-  </div>
-  <div x-show="tab === 'invoices'" class="flex-grow -mt-px">
-    <%= render("invoices/table", customer: @customer, invoices: @invoices, show_filters: false) %>
-  </div>
-  <div x-show="tab === 'tasks'" class="flex-grow -mt-px">
-    <%= render('tasks/table', customer: @customer, tasks: @customer.tasks) %>
+  <div class="pb-16">
+    <div x-show="tab === 'projects'" class="lg:px-4">
+      <%= render("projects/table", customer: @customer, projects: @projects, show_filters: false) %>
+    </div>
+    <div x-show="tab === 'tasks'" class="px-2 sm:px-4">
+      <%= render('tasks/table', customer: @customer, tasks: @customer.tasks) %>
+    </div>
+    <div x-show="tab === 'invoices'" class="sm:px-4">
+      <%= render("invoices/table", customer: @customer, invoices: @invoices, show_filters: false) %>
+    </div>
   </div>
 </div>
