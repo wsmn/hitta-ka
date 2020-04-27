@@ -11,7 +11,7 @@
         <%= render('invoice_card') %>
       </div>
       <div class="w-full lg:w-2/3 xl:flex-grow lg:px-2 xl:px-3">
-        <div class="flex-grow mt-4 bg-white border border-gray-400 rounded-md lg:mt-0">
+        <div class="flex-grow mt-4 bg-white border rounded-md shadow lg:mt-0">
           <div class="flex-grow">
             <%= render('invoices/tasks/listing', invoice: @invoice, tasks: @invoice.tasks, new_tasks: @new_tasks ) %>
           </div>
