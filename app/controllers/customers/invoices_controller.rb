@@ -29,6 +29,11 @@ module Customers
                      layout: "pdf",
                    },
                  },
+                 margin:  {
+                   top: 35,
+                   bottom: 35,
+                   left: 10,
+                   right: 10},
                  layout: "pdf"
         end
       end
