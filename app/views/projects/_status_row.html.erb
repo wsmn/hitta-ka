@@ -1,4 +1,4 @@
-<%= link_to(customer_project_path(project.customer, project), class: "flex w-full px-3 xl:px-6 py-4 text-gray-900 items-center border-b border-gray-200") do %>
+<%= link_to(customer_project_path(project.customer, project), class: "flex w-full px-3 xl:px-6 py-4 text-gray-900 items-center border-b border-gray-200 hover:bg-blue-100") do %>
   <div class="flex items-center w-1/2 break-all xl:w-2/5">
     <div class="flex items-center">
       <div class="flex-shrink-0 w-10 h-10">
@@ -10,11 +10,11 @@
         </div>
       </div>
       <div class="ml-2 sm:ml-4">
-        <div class="text-base text-gray-800 leading-5"><%= project.title %>
+        <div class="text-base leading-5 text-gray-800"><%= project.title %>
           <div class="hidden lg:inline-block"> -
             #<%= project.id %></div>
         </div>
-        <div class="text-xs text-gray-500 sm:text-sm leading-5"><%= project.customer.name %></div>
+        <div class="text-xs leading-5 text-gray-500 sm:text-sm"><%= project.customer.name %></div>
       </div>
     </div>
   </div>
