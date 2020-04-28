@@ -51,6 +51,7 @@
 
 .form-input {
   @apply block w-full px-3 py-2 leading-tight text-gray-900 border border-gray-400 rounded-md appearance-none bg-cool-gray-50;
+}
 
 .form-input:focus {
   @apply bg-white border-blue-500 shadow-outline outline-none;
