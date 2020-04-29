@@ -75,7 +75,7 @@
     </div>
   </div>
 <% end %>
-<div class="clearfix float-left w-full mt-6 text-lg border-t border-gray-700">
+<div class="clearfix float-left w-full mt-6 text-lg border-b border-transparent" style="border-top: 1px solid #374150;">
   <div class="float-left w-3/5">
   </div>
   <div class="clearfix float-right w-2/5 mt-8">
@@ -95,7 +95,7 @@
         <span class="font-medium text-right"><%= number_to_currency(@invoice.tax) %></span>
       </div>
     </div>
-    <div class="clearfix float-left w-full px-2 py-3 mt-6 bg-gray-200 border-t-2 border-orange-600 ">
+    <div class="clearfix float-left w-full px-2 py-3 mt-6 bg-gray-200" style="border-top: 2px solid #CE3917;">
       <div class="float-left w-1/2">
         <span class="font-bold text-left"><%= t('invoices.pdf.total') %>:</span>
       </div>
