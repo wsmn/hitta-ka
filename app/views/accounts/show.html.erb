@@ -8,9 +8,9 @@
   <div class="grid flex-grow grid-cols-5 gap-4 p-2 sm:p-3 xl:p-6">
     <div class="grid grid-cols-8 col-span-5">
       <div x-data="{ tab: 'week' }" class="col-span-8">
-        <div class="flex justify-between p-1 sm:p-0">
+        <div class="flex justify-between p-1 sm:p-0 lg:pb-2">
           <div>
-            <h1 class="text-3xl font-semibold leading-none text-gray-900 sm:text-4xl"><%= current_user.name %></h1>
+            <h1 class="text-3xl font-medium leading-none text-gray-900 sm:text-4xl"><%= current_user.name %></h1>
             <h2 class="text-lg sm:text-xl font-normal text-gray-600 mt-0.5"><%= current_user.organisations.first %></h2>
           </div>
           <div class="flex items-start text-white">
