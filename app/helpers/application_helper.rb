@@ -15,7 +15,7 @@ module ApplicationHelper
     css
   end
 
-  def sidebar_link(action, url, css: "mt-2 -mx-3 px-3 py-2 flex items-center justify-between text-gray-200 hover:text-white font-medium hover:bg-gray-700 rounded-lg", active_css: "bg-gray-600 rounded-lg")
+  def sidebar_link(action, url, css: "mt-2 -mx-3 px-3 py-2 flex items-center justify-between hover:text-white hover:bg-gray-700 rounded-lg", active_css: "bg-gray-900 hover:bg-gray-900 text-white rounded-lg")
     if sidebar_active?(action)
       css = "#{css} #{active_css}"
     end

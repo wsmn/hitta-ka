@@ -1,5 +1,5 @@
 <% current ||= nil %>
-<div class="inset-y-0 left-0 hidden w-48 overflow-y-auto xl:w-64 bg-cool-gray-800 lg:block">
+<div class="inset-y-0 left-0 hidden w-48 overflow-y-auto text-gray-200 bg-gray-800 border-r xl:w-64 lg:block">
   <nav class="px-6 mt-6">
     <%= sidebar_link([:accounts, :show], account_url) do %>
       <span class="flex inline-flex items-center">
@@ -60,9 +60,6 @@
         </span>
       </span>
     <% end %>
-    <p class="mt-4 ml-4 text-xs font-semibold tracking-wide text-gray-600 uppercase">
-      <%= t('.settings') %>
-    </p>
     <%= sidebar_link([:accounts, :settings], settings_account_path) do %>
       <span class="flex inline-flex items-center">
         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -72,6 +69,33 @@
         </svg>
         <span class="ml-3">
           <%= t('.settings') %>
+        </span>
+      </span>
+    <% end %>
+    <p class="mt-8 ml-4 text-xs font-semibold tracking-wide text-gray-500 uppercase">
+      <%= t('.favorites') %>
+    </p>
+    <%= sidebar_link([], account_url) do %>
+      <span class="flex inline-flex items-center text-sm">
+        <span class="w-2 h-2 bg-blue-500 rounded-sm"></span>
+        <span class="ml-3">
+          <%= t('.Project 1') %>
+        </span>
+      </span>
+    <% end %>
+    <%= sidebar_link([], account_url) do %>
+      <span class="flex inline-flex items-center text-sm">
+        <span class="w-2 h-2 bg-orange-500 rounded-sm"></span>
+        <span class="ml-3">
+          <%= t('.Project 2') %>
+        </span>
+      </span>
+    <% end %>
+    <%= sidebar_link([], account_url) do %>
+      <span class="flex inline-flex items-center text-sm">
+        <span class="w-2 h-2 bg-green-500 rounded-sm"></span>
+        <span class="ml-3">
+          <%= t('.Project 3') %>
         </span>
       </span>
     <% end %>

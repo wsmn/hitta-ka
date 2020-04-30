@@ -33,9 +33,15 @@ sv:
       upcoming: Kommande
     show:
       title: Hem
-    stats:
+      project: Projekt
+      customer: Kund
       statistics: Statistik
-      projects: Projekt
+      week: Vecka
+      month: Månad
+      year: År
+      total: Totalt
+    stats:
+      new_projects: Nya projekt
       time_logs: Tidsloggar
       invoices: Fakturor
       1_D: 1 D

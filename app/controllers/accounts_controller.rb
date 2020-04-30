@@ -11,6 +11,27 @@ class AccountsController < ApplicationController
       archived: current_user.projects.archived.count,
       total: current_user.projects.count,
     }
+    @project_count_week = Project.where("created_at >= ?", Date.today.at_beginning_of_week).count
+    @project_count_month = Project.where("created_at >= ?", Date.today.at_beginning_of_month).count
+    @project_count_year = Project.where("created_at >= ?", Date.today.at_beginning_of_year).count
+    @project_count_total = Project.count
+    @task_count_week = Task.where("created_at >= ?", Date.today.at_beginning_of_month).count
+    @task_count_month = Task.where("created_at >= ?", Date.today.at_beginning_of_month).count
+    @task_count_year = Task.where("created_at >= ?", Date.today.at_beginning_of_year).count
+    @task_count_total = Task.count
+    @invoice_count_week = Invoice.where("created_at >= ?", Date.today.at_beginning_of_month).count
+    @invoice_count_month = Invoice.where("created_at >= ?", Date.today.at_beginning_of_month).count
+    @invoice_count_year = Invoice.where("created_at >= ?", Date.today.at_beginning_of_year).count
+    @invoice_count_total = Invoice.count
+    @project_count_last_week = Project.where("created_at >= ?", Date.today.at_beginning_of_week-7.days).count
+    @project_count_last_month = Project.where("created_at >= ?", Date.today.at_beginning_of_month-30.days).count
+    @project_count_last_year = Project.where("created_at >= ?", Date.today.at_beginning_of_year-365.days).count
+    @task_count_last_week = Task.where("created_at >= ?", Date.today.at_beginning_of_week-7.days).count
+    @task_count_last_month = Task.where("created_at >= ?", Date.today.at_beginning_of_month-30.days).count
+    @task_count_last_year = Task.where("created_at >= ?", Date.today.at_beginning_of_year-365.days).count
+    @invoice_count_last_week = Invoice.where("created_at >= ?", Date.today.at_beginning_of_week-7.days).count
+    @invoice_count_last_month = Invoice.where("created_at >= ?", Date.today.at_beginning_of_month-30.days).count
+    @invoice_count_last_year = Invoice.where("created_at >= ?", Date.today.at_beginning_of_year-365.days).count
   end
 
   def update

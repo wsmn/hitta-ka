@@ -1,5 +1,5 @@
 <div id="nav">
-  <nav class="flex flex-shrink-0 py-4 bg-cool-gray-800 lg:py-2">
+  <nav class="flex flex-shrink-0 py-4 bg-gray-900 lg:py-2">
     <div class="items-center flex-shrink-0 hidden w-48 px-6 xl:w-64 lg:flex">
       <div class="hidden lg:block">
         <%= link_to(root_path) do %>
@@ -7,57 +7,53 @@
         <% end %>
       </div>
     </div>
-    <div
-      class="flex items-center justify-between flex-1 px-2 lg:px-3 xl:px-6 ">
+    <div class="flex items-center justify-between flex-1 px-2 lg:px-3 xl:px-6 ">
       <div class="lg:hidden">
         <%= link_to(root_path) do %>
           <%= image_tag('apti_logo.svg', alt: "Home", style:"width: 3.5rem", class: "") %>
         <% end %>
       </div>
       <%= render('application/mobile_menu') %>
-      <div class="items-center hidden w-full grid grid-cols-3 gap-4 lg:grid">
-        <div class="">
-          <h1 class="text-2xl font-bold text-white"><%= yield(:header_title) %></h1>
-        </div>
-        <div class="flex items-center justify-center">
-          <div class="flex justify-center flex-1 flex-grow px-2">
-            <div class="w-full max-w-lg">
-              <label for="search" class="sr-only">Search</label>
-              <div class="relative">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <%= render('application/icons/search') %>
-                </div>
-                <input id="search" class="block w-full py-2 pl-10 pr-3 placeholder-gray-400 bg-gray-700 rounded leading-5 focus:outline-none focus:bg-white sm:text-sm transition duration-150 ease-in-out" placeholder="Search" type="search" />
-              </div>
-            </div>
-          </div>
-          <div @click.away="header_new_dropdown = false" x-data="{ header_new_dropdown: false }" class="ml-5">
+      <div class="items-center justify-center hidden w-2/5 lg:flex">
+        <div class="flex justify-center w-full px-2">
+          <div class="w-full max-w-lg">
+            <label for="search" class="sr-only">Search</label>
             <div class="relative">
-              <div @click="header_new_dropdown = !header_new_dropdown" @click="header_new_dropdown = true"
-                class="flex items-center justify-center w-8 h-8 bg-white rounded-full cursor-pointer btn-bounce">
-                <%= render('application/icons/plus') %>
+              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <%= render('application/icons/search') %>
               </div>
-              <%= render('header_new_dropdown') %>
+              <input id="search"
+                class="block w-full py-2 pl-10 pr-3 leading-5 placeholder-gray-400 transition duration-150 ease-in-out bg-gray-700 rounded focus:outline-none focus:bg-white sm:text-sm"
+                placeholder="Search" type="search" />
             </div>
           </div>
         </div>
-        <div class="flex items-center justify-end">
-          <div @click.away="open = false" class="relative inline-block" x-data="{ open: false }">
-            <button @click="open = !open" class="flex items-center text-white focus:outline-none" @click="open = true">
-              <div
-                class="flex items-center justify-center w-10 h-10 font-bold text-white uppercase bg-indigo-700 rounded">
-                <%= current_user.initials %>
-              </div>
-              <span class="hidden ml-2 mr-2 text-sm font-semibold lg:inline">
-                <%= current_user.name %>
-                <p class="flex justify-start text-xs text-gray-400"><%= current_user.organisations.first %></p>
-              </span>
-              <div class="-mt-4 transform" :class="{'rotate-180': open}">
-                <%= render('application/icons/arrow_down') %>
-              </div>
-            </button>
-            <%= render('header_dropdown') %>
+        <div @click.away="header_new_dropdown = false" x-data="{ header_new_dropdown: false }" class="ml-5">
+          <div class="relative">
+            <div @click="header_new_dropdown = !header_new_dropdown" @click="header_new_dropdown = true"
+              class="flex items-center justify-center w-8 h-8 bg-white rounded-full cursor-pointer btn-bounce">
+              <%= render('application/icons/plus') %>
+            </div>
+            <%= render('header_new_dropdown') %>
           </div>
+        </div>
+      </div>
+      <div class="items-center justify-end hidden lg:flex">
+        <div @click.away="open = false" class="relative inline-block" x-data="{ open: false }">
+          <button @click="open = !open" class="flex items-center text-white focus:outline-none" @click="open = true">
+            <div
+              class="flex items-center justify-center w-10 h-10 font-bold text-white uppercase bg-indigo-700 rounded">
+              <%= current_user.initials %>
+            </div>
+            <span class="hidden ml-2 mr-2 text-sm font-semibold lg:inline">
+              <%= current_user.name %>
+              <p class="flex justify-start text-xs text-gray-400"><%= current_user.organisations.first %></p>
+            </span>
+            <div class="-mt-4 transform" :class="{'rotate-180': open}">
+              <%= render('application/icons/arrow_down') %>
+            </div>
+          </button>
+          <%= render('header_dropdown') %>
         </div>
       </div>
     </div>
