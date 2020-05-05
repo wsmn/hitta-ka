@@ -12,18 +12,18 @@
         <dl class="grid grid-cols-4">
           <div class="grid col-span-2">
             <div class="grid sm:grid-cols-3 xl:grid-cols-4 sm:gap-4 sm:border-b sm:border-gray-200 sm:pb-5">
-              <dt class="text-sm font-medium leading-5 text-gray-500 sm:col-span-1">
+              <dt class="text-base font-medium leading-5 text-gray-500 sm:col-span-1">
                 <%= t('.customer') %>
               </dt>
-              <dd class="mt-1 text-sm leading-5 text-blue-600 sm:mt-0 sm:col-span-2 xl:col-span-3">
+              <dd class="mt-1 text-base leading-5 text-blue-600 sm:mt-0 sm:col-span-2 xl:col-span-3">
                 <%= link_to(customer_path(@customer)) do %><%= @customer.name %><% end %>
               </dd>
             </div>
             <div class="mt-8 sm:grid sm:mt-5 sm:grid-cols-3 xl:grid-cols-4 sm:gap-4">
-              <dt class="text-sm font-medium leading-5 text-gray-500 sm:col-span-1">
+              <dt class="text-base font-medium leading-5 text-gray-500 sm:col-span-1">
                 <%= t('.address') %>
               </dt>
-              <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2 xl:col-span-3">
+              <dd class="mt-1 text-base leading-5 text-gray-900 sm:mt-0 sm:col-span-2 xl:col-span-3">
                 <span class="flex">
                   Street 5, 123 12, City <svg class="w-5 h-5 ml-1 text-red-700 -mt-0.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -37,19 +37,19 @@
             </div>
             <div
               class="mt-8 sm:grid sm:mt-5 sm:grid-cols-3 xl:grid-cols-4 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-              <dt class="text-sm font-medium leading-5 text-gray-500 sm:col-span-1">
+              <dt class="text-base font-medium leading-5 text-gray-500 sm:col-span-1">
                 <%= t('.invoiced') %>
               </dt>
-              <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2 xl:col-span-3">
+              <dd class="mt-1 text-base leading-5 text-gray-900 sm:mt-0 sm:col-span-2 xl:col-span-3">
                 <%= number_to_currency(@project.invoiced_total) %>
               </dd>
             </div>
             <div
               class="mt-8 sm:grid sm:mt-5 sm:grid-cols-3 xl:grid-cols-4 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-              <dt class="text-sm font-medium leading-5 text-gray-500 sm:col-span-1">
+              <dt class="text-base font-medium leading-5 text-gray-500 sm:col-span-1">
                 <%= t('.timelogs') %>
               </dt>
-              <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2 xl:col-span-3">
+              <dd class="mt-1 text-base leading-5 text-gray-900 sm:mt-0 sm:col-span-2 xl:col-span-3">
                 <%= @project.tasks.count %> st - <%= @project.hours %> h
               </dd>
             </div>
@@ -60,10 +60,10 @@
           <div class="grid col-span-4">
             <div
               class="mt-8 sm:grid sm:mt-5 sm:grid-cols-6 xl:grid-cols-8 sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-              <dt class="text-sm font-medium leading-5 text-gray-500">
+              <dt class="text-base font-medium leading-5 text-gray-500">
                 <%= t('.about') %>
               </dt>
-              <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-5 xl:col-span-7">
+              <dd class="mt-1 text-base leading-5 text-gray-900 sm:mt-0 sm:col-span-5 xl:col-span-7">
                 Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat.
                 Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident.
                 <ul class="mt-4 border border-gray-200 rounded-md">

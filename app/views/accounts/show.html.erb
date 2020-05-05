@@ -16,7 +16,7 @@
           <div class="flex items-start mt-2 text-white sm:mt-0">
             <div class="flex flex-wrap-reverse justify-end">
               <div>
-                <%= link_to(new_project_path, class: 'inline-flex items-center px-2.5 py-2 sm:px-3 sm:py-2 border border-transparent text-sm leading-4 font-medium rounded text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition ease-in-out duration-150') do %>
+                <%= link_to(new_project_path, class: 'btn btn-blue btn-bounce sm:px-4 sm:py-2') do %>
                   <svg class="-ml-0.5 mr-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
                     d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
@@ -26,7 +26,7 @@
                 <% end %>
               </div>
               <div>
-                <%= link_to(new_customer_path, class: 'inline-flex items-center px-2.5 py-2 sm:px-3 sm:py-2 border border-transparent text-sm leading-4 font-medium rounded text-white bg-green-500 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition ease-in-out duration-150 ml-2 mb-2') do %>
+                <%= link_to(new_customer_path, class: 'btn btn-green btn-bounce sm:px-4 sm:py-2 ml-2') do %>
                   <svg class="-ml-0.5 mr-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
                     d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
@@ -54,29 +54,29 @@
                   </select>
                 </div>
                 <div class="hidden sm:block">
-                  <nav class="flex">
+                  <nav class="flex text-gray-500">
                     <button button
-                      :class="{ 'text-gray-700 bg-gray-200 focus:bg-gray-200': tab === 'week' }"
+                      :class="{ 'text-indigo-700 bg-indigo-100 font-semibold': tab === 'week' }"
                       @click="tab = 'week'"
-                      class="px-3 py-2 text-sm font-medium leading-5 text-gray-500 rounded-md hover:text-gray-700 focus:outline-none focus:text-gray-700 focus:bg-gray-100">
+                      class="px-3 py-2 text-sm font-medium leading-5 rounded-md hover:text-indigo-700 focus:outline-none focus:text-gray-700 focus:bg-gray-100">
                       <%= t('.week') %>
                     </button>
                     <button button
-                      :class="{ 'text-gray-700 bg-gray-200 focus:bg-gray-200': tab === 'month' }"
+                      :class="{ 'text-indigo-700 bg-indigo-100 font-semibold': tab === 'month' }"
                       @click="tab = 'month'"
-                      class="px-3 py-2 ml-4 text-sm font-medium leading-5 text-gray-500 rounded-md hover:text-gray-700 focus:outline-none focus:text-gray-700 focus:bg-gray-100">
+                      class="px-3 py-2 ml-4 text-sm font-medium leading-5 rounded-md hover:text-indigo-700 focus:outline-none focus:text-gray-700 focus:bg-gray-100">
                       <%= t('.month') %>
                     </button>
                     <button button
-                      :class="{ 'text-gray-700 bg-gray-200 focus:bg-gray-200': tab === 'year' }"
+                      :class="{ 'text-indigo-700 bg-indigo-100 font-semibold': tab === 'year' }"
                       @click="tab = 'year'"
-                      class="px-3 py-2 ml-4 text-sm font-medium leading-5 text-gray-500 rounded-md hover:text-gray-700 focus:outline-none focus:text-gray-700 focus:bg-gray-100">
+                      class="px-3 py-2 ml-4 text-sm font-medium leading-5 rounded-md hover:text-indigo-700 focus:outline-none focus:text-gray-700 focus:bg-gray-100">
                       <%= t('.year') %>
                     </button>
                     <button button
-                      :class="{ 'text-gray-700 bg-gray-200 focus:bg-gray-200': tab === 'total' }"
+                      :class="{ 'text-indigo-700 bg-indigo-100 font-semibold': tab === 'total' }"
                       @click="tab = 'total'"
-                      class="px-3 py-2 ml-4 text-sm font-medium leading-5 text-gray-500 rounded-md hover:text-gray-700 focus:outline-none focus:text-gray-700 focus:bg-gray-100">
+                      class="px-3 py-2 ml-4 text-sm font-medium leading-5 rounded-md hover:text-indigo-700 focus:outline-none focus:text-gray-700 focus:bg-gray-100">
                       <%= t('.total') %>
                     </button>
                   </nav>

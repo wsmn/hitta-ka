@@ -2,7 +2,7 @@
   x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95"
   x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
   x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
-  <div class="w-56 px-3 py-2 bg-white border border-gray-500 rounded">
+  <div class="w-56 px-3 py-2 bg-white border rounded shadow">
     <p class="text-xl font-semibold text-gray-900">Add new:</p>
     <%= link_to(new_project_path, class: 'block p-2 text-base text-gray-800 hover:bg-blue-200 hover:text-blue-800 rounded flex items-center justify-between -mx-2 mt-1') do %>
       <div class="flex items-center">
