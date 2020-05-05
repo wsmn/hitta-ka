@@ -226,7 +226,7 @@ GEM
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
-    solargraph (0.39.6)
+    solargraph (0.39.7)
       backport (~> 1.1)
       benchmark
       bundler (>= 1.17.2)
