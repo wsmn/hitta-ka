@@ -22,7 +22,7 @@
     <% end %>
   </div>
   <% if customer.address.present? %>
-    <div class="flex border-b border-gray-300">
+    <div class="flex">
       <div class="p-2 sm:p-3">
         <div class="text-xs font-bold tracking-wide text-gray-600 uppercase">
           <%= t('.address') %>
@@ -42,8 +42,8 @@
       </div>
     </div>
   <% end %>
-  <div class="p-2 text-base text-blue-600 rounded-b-lg sm:p-3">
-    <% if customer.email.present? %>
+  <% if customer.email.present? %>
+    <div class="p-2 text-base text-blue-600 border-t border-gray-300 rounded-b-lg sm:p-3">
       <div class="text-xs font-bold tracking-wide text-gray-600 uppercase">
         <%= t('.mail') %>
       </div>
@@ -55,6 +55,6 @@
           <%= link_to(customer.email, "mailto:#{customer.email}") %>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

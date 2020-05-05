@@ -1,5 +1,5 @@
 <div>
-  <div class="flex justify-between p-4 border-b border-gray-200">
+  <div class="flex justify-between p-4 border-b border-gray-200 sm:p-6">
     <div class="flex items-center pr-2">
       <div
         class="flex items-center justify-center flex-shrink-0 w-12 h-12 mr-2 text-xl font-semibold text-white bg-green-500 rounded-full sm:mr-4">
@@ -9,7 +9,7 @@
         <h3 class="flex items-center text-xl font-medium leading-none text-gray-900 sm:text-2xl">
           <%= @customer.name %>
         </h3>
-        <p class="max-w-2xl mt-1 text-base text-gray-500 leading-5">
+        <p class="max-w-2xl mt-1 text-base leading-5 text-gray-500">
           #<%= @customer.id %>
         </p>
       </div>
@@ -33,7 +33,7 @@
           x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
           x-transition:leave-start="transform opacity-100 scale-100"
           x-transition:leave-end="transform opacity-0 scale-95"
-          class="absolute right-0 w-48 mt-12 shadow-lg origin-top-right rounded-md">
+          class="absolute right-0 w-48 mt-12 origin-top-right rounded-md shadow-lg">
           <div class="bg-white rounded-md shadow-xs">
             <div class="">
               <%= link_to(new_customer_project_path(@customer), class: 'group flex items-center px-4 py-3 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900') do %>
@@ -65,7 +65,7 @@
             <div class="border-t border-gray-100"></div>
             <div class="">
               <a href="#"
-                class="flex items-center px-4 py-3 text-sm text-gray-700 group leading-5 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                class="flex items-center px-4 py-3 text-sm leading-5 text-gray-700 group hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
                 <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
                   fill="currentColor" viewBox="0 0 20 20">
                   <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
