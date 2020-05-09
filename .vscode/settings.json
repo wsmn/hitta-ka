@@ -27,5 +27,6 @@
       "useBundler": true,
     }
   },
+  "ruby.format": "standard",
   "ruby.useLanguageServer": true
 }
