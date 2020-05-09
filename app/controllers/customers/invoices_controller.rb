@@ -16,24 +16,25 @@ module Customers
         format.pdf do
           render pdf: "#{t("invoices.pdf.invoice")}_#{@invoice.invoice_nbr}",
                  template: "invoices/_pdf.html.erb",
-                 show_as_html: params.key?('debug'),
+                 show_as_html: params.key?("debug"),
                  header: {
                    html: {
                      template: "invoices/_pdf_header.html.erb",
-                     layout: "pdf",
-                   },
+                     layout: "pdf"
+                   }
                  },
                  footer: {
                    html: {
                      template: "invoices/_pdf_footer.html.erb",
-                     layout: "pdf",
-                   },
+                     layout: "pdf"
+                   }
                  },
-                 margin:  {
+                 margin: {
                    top: 35,
                    bottom: 35,
                    left: 10,
-                   right: 10},
+                   right: 10
+                 },
                  layout: "pdf"
         end
       end

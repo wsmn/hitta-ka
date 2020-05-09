@@ -12,7 +12,7 @@ gem "bootsnap"
 gem "clearance" # Authentication
 gem "font-awesome-sass"
 gem "geocoder"
-gem 'honeybadger', '~> 4.0'
+gem "honeybadger", "~> 4.0"
 gem "mini_magick"
 gem "pagy"
 gem "pg"

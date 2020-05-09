@@ -40,7 +40,7 @@ RSpec.describe("Customer", type: :request) do
         zip_code: "70055",
         state: "Gåse",
         email: "kund@kundsson.gås",
-        phone: "070055000",
+        phone: "070055000"
       }
       post(customers_path, params: {customer: parameters})
       customer = Customer.last
@@ -60,7 +60,7 @@ RSpec.describe("Customer", type: :request) do
         zip_code: "70055",
         state: "Gåse",
         email: "kund@kundsson.gås",
-        phone: "070055000",
+        phone: "070055000"
       }
       post(customers_path, params: {customer: parameters})
       expect(response).to have_http_status(422)
@@ -118,7 +118,7 @@ RSpec.describe("Customer", type: :request) do
       customer = create(:customer, organisation: org)
       parameters = {
         name: "Kund Kundsson",
-        organisation_id: 55,
+        organisation_id: 55
       }
       expect(customer.name).not_to eq("Kund Kundsson")
 
@@ -135,7 +135,7 @@ RSpec.describe("Customer", type: :request) do
       # Customer with new org
       customer = create(:customer)
       parameters = {
-        name: "Kund Kundsson",
+        name: "Kund Kundsson"
       }
       expect(customer.name).not_to eq("Kund Kundsson")
 

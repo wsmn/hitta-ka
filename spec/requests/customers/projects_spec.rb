@@ -19,7 +19,7 @@ RSpec.describe("Customers::Projects", type: :request) do
       customer = create(:customer, organisation: org)
       parameters = {
         title: "Villa Villekulla",
-        status: :active,
+        status: :active
       }
       post(customer_projects_path(customer), params: {project: parameters})
       project = Project.last
@@ -35,7 +35,7 @@ RSpec.describe("Customers::Projects", type: :request) do
       customer = create(:customer)
       parameters = {
         title: "Villa Villekulla",
-        status: :upcoming,
+        status: :upcoming
       }
 
       expect {
@@ -105,7 +105,7 @@ RSpec.describe("Customers::Projects", type: :request) do
       parameters = {
         title: "Villa Villekulla",
         status: :upcoming,
-        customer_id: 55, # this parameter is ignored
+        customer_id: 55 # this parameter is ignored
       }
       expect(project.title).not_to eq("Villa Villekulla")
 
@@ -123,7 +123,7 @@ RSpec.describe("Customers::Projects", type: :request) do
       project = customer.projects.first
 
       parameters = {
-        title: "Villa Villekulla",
+        title: "Villa Villekulla"
       }
       expect(project.title).not_to eq("Villa Villekulla")
 

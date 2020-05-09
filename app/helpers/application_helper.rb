@@ -31,12 +31,12 @@ module ApplicationHelper
 
     case action.length
     when 1
-      return controller_name.to_s == action[0].to_s
+      controller_name.to_s == action[0].to_s
     when 2
-      return (controller_name.to_s == action[0].to_s &&
+      (controller_name.to_s == action[0].to_s &&
               action_name.to_s == action[1].to_s)
     else
-      return false
+      false
     end
   end
 end
