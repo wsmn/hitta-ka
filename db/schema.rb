@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_18_134211) do
-
+ActiveRecord::Schema.define(version: 2020_05_09_094313) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "pgcrypto"
@@ -104,6 +103,11 @@ ActiveRecord::Schema.define(version: 2020_04_18_134211) do
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.jsonb "address", default: {}, null: false
+    t.jsonb "settings", default: {}, null: false
+    t.string "phone", default: "", null: false
+    t.string "email", default: "", null: false
+    t.string "website", default: "", null: false
   end
 
   create_table "projects", force: :cascade do |t|
