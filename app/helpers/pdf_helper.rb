@@ -12,4 +12,8 @@ module PdfHelper
       wicked_pdf_javascript_pack_tag(source)
     end
   end
+
+  def wicked_blob_path(file)
+    ActiveStorage::Blob.service.send(:path_for, file.blob.key)
+  end
 end
