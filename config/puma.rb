@@ -36,6 +36,6 @@ plugin :tmp_restart
 if Rails.env.development?
   ssl_bind "127.0.0.1", "8443", {
     key: Rails.root.join("config", "ssl", "example-key.pem"),
-    cert: Rails.root.join("config", "ssl", "example.pem"),
+    cert: Rails.root.join("config", "ssl", "example.pem")
   }
 end

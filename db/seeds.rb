@@ -11,7 +11,7 @@ Company.create(
   address: {
     city: "Norrhult",
     street: "Idvägen 75",
-    zip_code: "36071",
+    zip_code: "36071"
   },
   slug: "comp-a"
 )
@@ -20,7 +20,7 @@ Company.create(
   address: {
     city: "Munka-ljungby",
     street: "Granträsk 19",
-    zip_code: "26080",
+    zip_code: "26080"
   },
   slug: "comp-b"
 )
@@ -29,7 +29,7 @@ Company.create(
   address: {
     city: "Rydaholm",
     street: "Nybyvägen",
-    zip_code: "33017",
+    zip_code: "33017"
   },
   slug: "comp-c"
 )
@@ -38,7 +38,7 @@ Company.create(
   address: {
     city: "Vittsjö",
     street: "Esplanadgatan 31",
-    zip_code: "28022",
+    zip_code: "28022"
   },
   slug: "comp-d"
 )
@@ -47,7 +47,7 @@ Company.create(
   address: {
     city: "Axvall",
     street: "Eggelstad 13",
-    zip_code: "53259",
+    zip_code: "53259"
   },
   slug: "comp-e"
 )

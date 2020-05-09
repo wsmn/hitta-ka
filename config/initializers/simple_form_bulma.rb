@@ -72,7 +72,7 @@ SimpleForm.setup do |config|
     b.optional :min_max
     b.optional :readonly
     b.use :label, class: "label", wrap_with: {tag: "div",
-                                              class: "field-label is-normal",}
+                                              class: "field-label is-normal"}
 
     b.wrapper tag: "div", class: "field-body" do |ba|
       ba.wrapper tag: "div", class: "field" do |bb|
@@ -90,7 +90,7 @@ SimpleForm.setup do |config|
     b.use :html5
     b.optional :readonly
     b.use :label, class: "label", wrap_with: {tag: "div",
-                                              class: "field-label is-normal",}
+                                              class: "field-label is-normal"}
     b.wrapper tag: "div", class: "field-body" do |ba|
       ba.wrapper tag: "div", class: "field is-narrow" do |bb|
         bb.wrapper tag: "p", class: "control" do |bc|
@@ -108,7 +108,7 @@ SimpleForm.setup do |config|
     b.optional :readonly
 
     b.use :label, class: "label", wrap_with: {tag: "div",
-                                              class: "field-label is-normal",}
+                                              class: "field-label is-normal"}
     b.wrapper tag: "div", class: "field-body" do |ba|
       ba.wrapper tag: "div", class: "field" do |bb|
         bb.wrapper tag: "p", class: "control" do |bc|
@@ -127,7 +127,7 @@ SimpleForm.setup do |config|
     b.optional :readonly
 
     b.use :label, class: "label", wrap_with: {tag: "div",
-                                              class: "field-label is-normal",}
+                                              class: "field-label is-normal"}
 
     b.wrapper tag: "div", class: "field-body" do |ba|
       ba.wrapper tag: "div", class: "field" do |bb|
@@ -170,6 +170,6 @@ SimpleForm.setup do |config|
     boolean: :vertical_boolean,
     collection: :vertical_select,
     select: :vertical_select,
-    text: :textarea,
+    text: :textarea
   }
 end

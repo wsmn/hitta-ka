@@ -1,4 +1,5 @@
 class Invoice < ApplicationRecord
+  TAX_RATE = 0.25
   belongs_to(:customer, required: true)
   has_many(:tasks, dependent: :nullify)
   has_many(:projects, through: :tasks)
@@ -16,15 +17,11 @@ class Invoice < ApplicationRecord
   end
 
   def tax
-    result = 0
-    result = amount * 0.25
-    result
+    amount * TAX_RATE
   end
 
   def total
-    result = 0
-    result = tax + amount
-    result
+    tax + amount
   end
 
   def past_due?

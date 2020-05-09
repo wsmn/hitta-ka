@@ -9,7 +9,7 @@ module RequestMacro
 
   def sign_in_as(user)
     attributes = {session: {email: user.email,
-                            password: "passpass",}}
+                            password: "passpass"}}
     post(session_path, params: attributes)
     follow_redirect!
   end

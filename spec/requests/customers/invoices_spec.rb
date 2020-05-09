@@ -18,7 +18,7 @@ RSpec.describe("Customers::Invoices", type: :request) do
       sign_in_as(user)
       customer = create(:customer, organisation: org)
       parameters = {
-        invoice_date: 1.day.from_now.to_date,
+        invoice_date: 1.day.from_now.to_date
       }
       post(customer_invoices_path(customer), params: {invoice: parameters})
       invoice = Invoice.last
@@ -33,7 +33,7 @@ RSpec.describe("Customers::Invoices", type: :request) do
       # Customer with new organisation
       customer = create(:customer)
       parameters = {
-        invoice_date: 1.day.from_now.to_date,
+        invoice_date: 1.day.from_now.to_date
       }
 
       expect {
@@ -74,7 +74,7 @@ RSpec.describe("Customers::Invoices", type: :request) do
       due_date = 1000.days.from_now.to_date
       parameters = {
         due_date: due_date,
-        customer_id: 55,
+        customer_id: 55
       }
       expect(invoice.due_date).not_to eq(due_date)
 
@@ -90,7 +90,7 @@ RSpec.describe("Customers::Invoices", type: :request) do
       invoice = create(:invoice)
       due_date = 1000.days.from_now.to_date
       parameters = {
-        due_date: due_date,
+        due_date: due_date
       }
       expect(invoice.due_date).not_to eq("Kund Kundsson")
 

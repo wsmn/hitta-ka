@@ -9,5 +9,5 @@ Geocoder.configure(
   timeout: 5,
 
   # set default units to kilometers:
-  units: :km,
+  units: :km
 )

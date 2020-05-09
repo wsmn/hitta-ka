@@ -19,7 +19,7 @@ class Company < ApplicationRecord
       id: id,
       name: name,
       address: geocode_address,
-      coordinates: coordinates,
+      coordinates: coordinates
     }
   end
 
@@ -28,12 +28,12 @@ class Company < ApplicationRecord
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": coordinates,
+        "coordinates": coordinates
       },
       "properties": {
         "company_id": id,
-        "name": name,
-      },
+        "name": name
+      }
     }
   end
 end

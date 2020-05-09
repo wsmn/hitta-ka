@@ -37,7 +37,7 @@ RSpec.describe("Projects", type: :request) do
       parameters = {
         customer_id: customer.id,
         title: "Villa Villekulla",
-        status: :active,
+        status: :active
       }
       post(projects_path, params: {project: parameters})
       project = Project.last
@@ -53,7 +53,7 @@ RSpec.describe("Projects", type: :request) do
       parameters = {
         customer_id: create(:customer).id,
         title: "Villa Villekulla",
-        status: :active,
+        status: :active
       }
       post(projects_path, params: {project: parameters})
       expect(response).to have_http_status(422)
