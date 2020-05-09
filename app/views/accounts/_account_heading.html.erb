@@ -1,0 +1,30 @@
+<div class="flex flex-wrap justify-between p-1 sm:p-0 lg:pb-6">
+  <div>
+    <h1 class="text-3xl font-medium leading-none text-gray-900 sm:text-4xl"><%= current_user.name %></h1>
+    <h2 class="text-lg sm:text-xl font-normal text-gray-600 mt-0.5"><%= current_user.organisations.first %></h2>
+  </div>
+  <div class="flex items-start mt-2 text-white sm:mt-0">
+    <div class="flex flex-wrap-reverse justify-end">
+      <div>
+        <%= link_to(new_project_path, class: 'btn btn-blue btn-bounce sm:text-base sm:px-4 sm:py-2') do %>
+          <svg class="-ml-0.5 mr-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+            d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+            clip-rule="evenodd" />
+          </svg>
+          <%= t('.project') %>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to(new_customer_path, class: 'btn btn-green btn-bounce sm:text-base sm:px-4 sm:py-2 ml-2') do %>
+          <svg class="-ml-0.5 mr-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+            d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+            clip-rule="evenodd" />
+          </svg>
+          <%= t('.customer') %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
