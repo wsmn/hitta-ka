@@ -14,6 +14,10 @@ module PdfHelper
   end
 
   def wicked_blob_path(file)
-    ActiveStorage::Blob.service.send(:path_for, file.blob.key)
+    if Rails.env.production?
+      url_for(file)
+    else
+      ActiveStorage::Blob.service.send(:path_for, file.blob.key)
+    end
   end
 end

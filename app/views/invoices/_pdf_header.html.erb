@@ -3,7 +3,7 @@
     <% if current_organisation.logo.attached? %>
       <%= image_tag(wicked_blob_path(current_organisation.logo), class: 'h-24 w-auto object-scale-down', alt: 'logo') %>
     <% else %>
-      <h1 class="text-5xl font-black leading-none">Company Logo</h1>
+      <h1 class="text-5xl font-black leading-none"><%= current_user.organisations.first %></h1>
     <% end %>
   </div>
   <div class="float-left w-1/3 pr-10">
