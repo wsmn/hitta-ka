@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get(:sign_up, controller: "clearance/users", action: :new, path: "sign-up")
 
   resource(:account, only: %i[show update]) do
+    resource(:organisation, only: %i[show update])
     get(:settings, controller: :accounts, action: :settings)
   end
 

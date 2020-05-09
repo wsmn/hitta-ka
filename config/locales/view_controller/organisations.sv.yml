@@ -1,0 +1,28 @@
+sv:
+  organisations:
+    show:
+      account: Konto
+      cancel: Avbryt
+      company: Företag
+      localization: Inställningar
+      save: Spara
+      title: Inställningar
+      upload: Ladda upp
+    company_settings:
+      address: Adress
+      city: Stad
+      company_settings: Företagsinställningar
+      country: Land
+      email: E-mail
+      logo: Logo
+      logotype: Logotyp
+      name: Namn
+      phone: Telefon
+      save: Spara
+      street_&_nr: Väg & vägnr.
+      upload: Ladda upp
+      vat_number: Momsnr.
+      website: Hemsida
+      zip_code: Postnummer
+    update:
+      success: Företaget uppdaterades

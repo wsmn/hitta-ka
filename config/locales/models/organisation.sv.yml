@@ -1,0 +1,23 @@
+sv:
+  model:
+    organisation: ""
+  activerecord:
+    attributes:
+      organisation:
+        address: Adress
+        city: Stad
+        currency: Valuta
+        currency_format: Valutaformat
+        date_format: Datumformat
+        email: E-post
+        first_day_of_week: Veckans första dag
+        first_month_of_year: Årets första månad
+        language: Språk
+        phone: Telefonnummer
+        street: Gata
+        time_format: Tidsformat
+        time_zone: Tidszon
+        title: Namn
+        vat: Momsnummer
+        website: Webbplats
+        zip_code: Postnummer

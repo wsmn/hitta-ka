@@ -10,21 +10,7 @@ sv:
       last_name: Efternamn
       new_password: Nytt lösenord
       save: Spara
-    company_settings:
-      company_settings: Företagsinställningar
-      name: Namn
-      vat_number: Momsnr.
-      email: E-mail
-      website: Hemsida
-      phone: Telefon
-      address: Adress
-      street_&_nr: Väg & vägnr.
-      city: Stad
-      zip_code: Postnummer
-      country: Land
-      logotype: Logotyp
-      logo: Logo
-      upload: Ladda upp
+      cancel: Avbryt
     invoices:
       all_invoices: Alla fakturor
       recent_invoices: Senaste fakturorna

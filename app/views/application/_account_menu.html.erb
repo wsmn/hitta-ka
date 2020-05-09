@@ -72,6 +72,14 @@
         </span>
       </span>
     <% end %>
+    <%= sidebar_link([:organisations, :show], account_organisation_path) do %>
+      <span class="flex inline-flex items-center">
+        <%= render('application/icons/office_building') %>
+        <span class="ml-3">
+          <%= current_organisation %>
+        </span>
+      </span>
+    <% end %>
     <p class="mt-8 ml-4 text-xs font-semibold tracking-wide text-gray-500 uppercase">
       <%= t('.favorites') %>
     </p>
