@@ -28,7 +28,7 @@ gem "webpacker"
 gem "wicked_pdf"
 
 group :production do
-  gem "wkhtmltopdf-heroku", "2.12.5.0"
+  gem "wkhtmltopdf-heroku", github: "gregnavis/wkhtmltopdf-heroku", ref: '67460ad9cff3c871d6247d6d6af35cca847223a9'
 end
 
 group :development, :test do
