@@ -14,8 +14,12 @@ module PdfHelper
   end
 
   def wicked_blob_path(file)
-    if Rails.env.production?
-      url_for(file)
+    if Rails.env.production? || request.format.symbol == :html
+      url = url_for(file)
+      if url.include?("amazonaws.com")
+        url = url.gsub("https://", "http://")
+      end
+      url
     else
       ActiveStorage::Blob.service.send(:path_for, file.blob.key)
     end
