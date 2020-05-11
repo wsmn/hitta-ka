@@ -13,6 +13,7 @@ gem "bootsnap"
 gem "clearance" # Authentication
 gem "font-awesome-sass"
 gem "geocoder"
+gem "grover"
 gem "honeybadger", "~> 4.0"
 gem "mini_magick"
 gem "pagy"
@@ -25,7 +26,6 @@ gem "textacular", "~> 5.2"
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 gem "webpacker"
-gem "wicked_pdf"
 
 group :production do
   gem "wkhtmltopdf-heroku", '2.12.5'
