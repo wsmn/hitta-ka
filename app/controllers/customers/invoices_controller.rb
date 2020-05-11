@@ -14,30 +14,9 @@ module Customers
       respond_to do |format|
         format.html
         format.pdf do
-          render pdf: "#{t("invoices.pdf.invoice")}_#{@invoice.invoice_nbr}",
-                 template: "invoices/_pdf.html.erb",
-                 show_as_html: params.key?("html"),
-                 header: {
-                   html: {
-                     template: "invoices/_pdf_header.html.erb",
-                     layout: "pdf"
-                   }
-                 },
-                 footer: {
-                   html: {
-                     template: "invoices/_pdf_footer.html.erb",
-                     layout: "pdf"
-                   }
-                 },
-                 margin: {
-                   top: 35,
-                   bottom: 35,
-                   left: 10,
-                   right: 10
-                 },
-                 layout: "pdf",
-                 raise_on_all_errors: params.key?("raise"),
-                 log_level: params.key?("log") ? "info" : nil
+          html = render_to_string(action: "_pdf.html.erb", layout: "pdf")
+          pdf = Grover.new(html).to_pdf
+          send_data pdf, type: 'application/pdf', disposition: 'inline'
         end
       end
     end

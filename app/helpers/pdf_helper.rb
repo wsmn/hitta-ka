@@ -6,22 +6,6 @@ module PdfHelper
   end
 
   def pdf_javascript_pack_tag(source)
-    if Rails.env.development?
-      javascript_pack_tag(source)
-    else
-      wicked_pdf_javascript_pack_tag(source)
-    end
-  end
-
-  def wicked_blob_path(file)
-    if Rails.env.production? || request.format.symbol == :html
-      url = url_for(file)
-      if url.include?("amazonaws.com")
-        url = url.gsub("https://", "http://")
-      end
-      url
-    else
-      ActiveStorage::Blob.service.send(:path_for, file.blob.key)
-    end
+    javascript_pack_tag(source)
   end
 end

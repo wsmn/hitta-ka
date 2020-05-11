@@ -11,9 +11,9 @@
       <div class="justify-center w-full">
         <div class="bg-white border rounded-md shadow">
           <div class="py-8 border-b">
-            <div class="flex justify-center w-full mb-2">
+            <div class="flex justify-center mb-2">
               <% if current_organisation.logo.attached? %>
-                <%= image_tag(rails_blob_path(current_organisation.logo), class: 'rounded-lg w-64 object-scale-down') %>
+                <%= image_tag(rails_blob_path(current_organisation.logo), class: 'object-scale-down h-40 w-full') %>
               <% elsif "MODAL_IMPLEMENTED" == "DONE" %>
                 <div class="relative inline-flex items-center justify-center w-32 h-32 bg-indigo-700 rounded-full">
                   <span class="text-3xl font-bold text-white">
