@@ -28,7 +28,7 @@ gem "uglifier", ">= 1.3.0"
 gem "webpacker"
 
 group :production do
-  gem "wkhtmltopdf-heroku", '2.12.5'
+  gem "wkhtmltopdf-heroku", "2.12.5.0"
 end
 
 group :development, :test do
