@@ -222,18 +222,19 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.3)
-    rubocop (0.83.0)
+    rubocop (0.82.0)
+      jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.7.0.1)
       rainbow (>= 2.2.2, < 4.0)
       rexml
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-performance (1.5.2)
+      rubocop (>= 0.71.0)
     ruby-progressbar (1.10.1)
     ruby-rc4 (0.1.5)
     rubyzip (2.3.0)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.3.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -271,10 +272,9 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    standard (0.0.36)
-      rubocop (>= 0.63)
-    standardrb (1.0.0)
-      standard
+    standard (0.4.1)
+      rubocop (~> 0.82.0)
+      rubocop-performance (~> 1.5.2)
     textacular (5.2.0)
       activerecord (>= 5.0, < 6.1)
     thor (1.0.1)
@@ -297,8 +297,6 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
-    wkhtmltopdf-binary (0.12.5.4)
-    wkhtmltopdf-heroku (2.12.5.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     yard (0.9.25)
@@ -328,21 +326,19 @@ DEPENDENCIES
   rails (~> 6.0)
   rails_real_favicon
   rspec-rails
-  sass-rails
+  sassc-rails
   selenium-webdriver
   simple_form
   solargraph
-  standardrb
+  standard
   textacular (~> 5.2)
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
   webpacker
-  wkhtmltopdf-binary
-  wkhtmltopdf-heroku (= 2.12.5)
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 2.7.1p83
 
 BUNDLED WITH
    2.1.4
