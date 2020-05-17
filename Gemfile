@@ -5,10 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "2.7.0"
+ruby "2.7.1"
 gem "rails", "~> 6.0"
 
-gem "aws-sdk-s3"
+gem "aws-sdk-s3", require: false
 gem "bootsnap"
 gem "clearance" # Authentication
 gem "font-awesome-sass"
@@ -20,16 +20,12 @@ gem "pagy"
 gem "pg"
 gem "puma", "> 4.3.2"
 gem "rack-attack"
-gem "sass-rails"
+gem "sassc-rails"
 gem "simple_form"
 gem "textacular", "~> 5.2"
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 gem "webpacker"
-
-group :production do
-  gem "wkhtmltopdf-heroku", "2.12.5.0"
-end
 
 group :development, :test do
   gem "bullet"
@@ -38,14 +34,13 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "rspec-rails"
   gem "selenium-webdriver"
-  gem "wkhtmltopdf-binary"
 end
 
 group :development do
   gem "htmlbeautifier", require: false
   gem "rails_real_favicon"
   gem "solargraph", require: false
-  gem "standardrb", require: false
+  gem "standard", require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
