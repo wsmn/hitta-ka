@@ -1,5 +1,5 @@
 <div class="p-6 mt-8 mb-32 md:mt-32">
-  <div class="container flex max-w-sm mx-auto mt-4 bg-white rounded-lg shadow md:mt-8">
+  <div class="flex max-w-sm mx-auto mt-4 bg-white rounded-lg shadow md:mt-8">
     <div class="w-full p-8 text-center">
       <h1 class="text-2xl font-bold text-gray-900"><%= t('.title') %></h1>
       <div id="clearance" class="password-reset">
@@ -8,11 +8,13 @@
             <%= t('.description') %>
           </span>
         </div>
-        <%= simple_form_for(:password_reset, url: user_password_path(@user, token: @user.confirmation_token), method: :put) do |f| %>
-          <%= f.input(:password, input_html: { autofocus: true },
-                                 label: t('helpers.label.password_reset.password')) %>
+        <%= form_with(scope: :password_reset, url: user_password_path(@user, token: @user.confirmation_token), method: :put, local: true) do |form| %>
+          <div class="mb-4">
+            <%= form.label(:password, t('helpers.label.password_reset.password'), class: "form-label lg:mb-2") %>
+            <%= form.password_field(:password, id: 'password', class: 'form-input mt-2', autofocus: true) %>
+          </div>
           <div class="mt-6">
-            <%= f.button(:submit, class: "w-full bg-gray-800 hover:bg-gray-500 text-white text-sm h-10 font-semibold rounded") %>
+            <%= form.submit(class: "w-full bg-gray-800 hover:bg-gray-500 text-white text-sm h-10 font-semibold rounded") %>
           </div>
         <% end %>
       </div>

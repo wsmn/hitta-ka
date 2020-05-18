@@ -29,3 +29,5 @@ yarn-debug.log*
 .yarn-integrity
 /config/ssl
 /storage
+
+.DS_Store

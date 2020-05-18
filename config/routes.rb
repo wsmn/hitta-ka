@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   resources(:passwords, controller: :passwords, only: %i[create new])
   resource(:session, controller: :sessions, only: %i[create])
-  resources(:users, controller: "clearance/users", only: %i[create]) do
-    resource(:password, controller: "clearance/passwords",
+  resources(:users, controller: :users, only: %i[create]) do
+    resource(:password, controller: :passwords,
                         only: %i[create edit update])
   end
 
