@@ -21,7 +21,6 @@ gem "pg"
 gem "puma", "> 4.3.2"
 gem "rack-attack"
 gem "sassc-rails"
-gem "simple_form"
 gem "textacular", "~> 5.2"
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
@@ -38,6 +37,7 @@ end
 
 group :development do
   gem "htmlbeautifier", require: false
+  gem "letter_opener"
   gem "rails_real_favicon"
   gem "solargraph", require: false
   gem "standard", require: false
