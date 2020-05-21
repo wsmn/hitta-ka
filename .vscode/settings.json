@@ -7,13 +7,13 @@
   "[erb]": {
     "editor.tabSize": 2
   },
-  "[rb]": {
+  "[ruby]": {
     "editor.tabSize": 2
   },
   "[vue]": {
     "editor.tabSize": 2
   },
-  "[js]": {
+  "[javascript]": {
     "editor.tabSize": 2
   },
   "[css]": {

@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   end
   resources(:invoices, only: %i[index create new]) do
     scope(module: :invoices) do
+      resource(:prints, only: %i[create show])
       resources(:tasks, only: %i[update destroy])
     end
   end

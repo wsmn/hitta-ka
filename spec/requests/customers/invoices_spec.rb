@@ -7,7 +7,7 @@ RSpec.describe("Customers::Invoices", type: :request) do
       user, org = user_organisation
       customer = create(:customer, organisation: org)
       sign_in_as(user)
-      get(new_customer_invoice_path(customer))
+      get(new_customer_invoice_url(customer))
       expect(response).to have_http_status(200)
     end
   end
@@ -20,9 +20,12 @@ RSpec.describe("Customers::Invoices", type: :request) do
       parameters = {
         invoice_date: 1.day.from_now.to_date
       }
-      post(customer_invoices_path(customer), params: {invoice: parameters})
+      expect {
+        post(customer_invoices_url(customer), params: {invoice: parameters})
+      }.to change { Invoice.count }.by(1)
+
       invoice = Invoice.last
-      expect(response).to redirect_to(customer_invoice_path(customer, invoice))
+      expect(response).to redirect_to(customer_invoice_url(customer, invoice))
       expect(invoice.customer).to eq(customer)
       expect(invoice.invoice_date).to eq(1.day.from_now.to_date)
     end
@@ -37,7 +40,7 @@ RSpec.describe("Customers::Invoices", type: :request) do
       }
 
       expect {
-        post(customer_invoices_path(customer), params: {invoice: parameters})
+        post(customer_invoices_url(customer), params: {invoice: parameters})
       }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
@@ -49,7 +52,7 @@ RSpec.describe("Customers::Invoices", type: :request) do
       invoice = create(:invoice, customer: customer)
 
       sign_in_as(user)
-      get(customer_invoice_path(customer, invoice))
+      get(customer_invoice_url(customer, invoice))
       expect(response).to have_http_status(200)
     end
 
@@ -60,7 +63,7 @@ RSpec.describe("Customers::Invoices", type: :request) do
       # Sign is as new user, no organisations
       sign_in
       expect {
-        get(customer_invoice_path(invoice.customer, invoice))
+        get(customer_invoice_url(invoice.customer, invoice))
       }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
@@ -78,8 +81,8 @@ RSpec.describe("Customers::Invoices", type: :request) do
       }
       expect(invoice.due_date).not_to eq(due_date)
 
-      patch(customer_invoice_path(customer, invoice), params: {invoice: parameters})
-      expect(response).to redirect_to(customer_invoice_path(customer, invoice))
+      patch(customer_invoice_url(customer, invoice), params: {invoice: parameters})
+      expect(response).to redirect_to(customer_invoice_url(customer, invoice))
       invoice.reload
       expect(invoice.due_date).to eq(due_date)
       expect(invoice.customer).to eq(customer)
@@ -95,7 +98,7 @@ RSpec.describe("Customers::Invoices", type: :request) do
       expect(invoice.due_date).not_to eq("Kund Kundsson")
 
       expect {
-        patch(customer_invoice_path(invoice.customer, invoice), params: {invoice: parameters})
+        patch(customer_invoice_url(invoice.customer, invoice), params: {invoice: parameters})
       }.to raise_error(ActiveRecord::RecordNotFound)
 
       invoice.reload
@@ -111,9 +114,9 @@ RSpec.describe("Customers::Invoices", type: :request) do
       invoice = create(:invoice, customer: customer)
 
       expect {
-        delete(customer_invoice_path(customer, invoice))
+        delete(customer_invoice_url(customer, invoice))
       }.to change { Invoice.count }.by(-1)
-      expect(response).to redirect_to(customer_path(customer))
+      expect(response).to redirect_to(customer_url(customer))
     end
 
     it("fails if user not part of organisation") do
@@ -123,7 +126,7 @@ RSpec.describe("Customers::Invoices", type: :request) do
       invoice = create(:invoice, customer: customer)
 
       expect {
-        delete(customer_invoice_path(customer, invoice))
+        delete(customer_invoice_url(customer, invoice))
       }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end

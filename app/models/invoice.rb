@@ -3,6 +3,7 @@ class Invoice < ApplicationRecord
   belongs_to(:customer, required: true)
   has_many(:tasks, dependent: :nullify)
   has_many(:projects, through: :tasks)
+  has_one_attached(:pdf)
 
   enum(status: {unpaid: 0, paid: 10})
 
@@ -30,5 +31,9 @@ class Invoice < ApplicationRecord
     else
       due_date < Date.today
     end
+  end
+
+  def filename
+    "invoice-#{Date.today.strftime("%Y-%m-%d")}.pdf"
   end
 end

@@ -11,14 +11,6 @@ module Customers
       @invoice = @customer.invoices.includes(:tasks).find(params[:id])
       @new_tasks = @customer.tasks.where(invoice: nil).group_by(&:project)
       @task = @customer.tasks.build
-      respond_to do |format|
-        format.html
-        format.pdf do
-          html = render_to_string(action: "_pdf.html.erb", layout: "pdf")
-          pdf = Grover.new(html).to_pdf
-          send_data pdf, type: 'application/pdf', disposition: 'inline'
-        end
-      end
     end
 
     def new

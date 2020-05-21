@@ -25,7 +25,7 @@
       <div class="mx-auto bg-white border border-gray-400 rounded">
         <div class="relative m-10 a4">
           <div class="flex-grow">
-            <%= render('pdf') %>
+            <%= render('invoices/prints/print', invoice: invoice) %>
           </div>
           <div class="absolute bottom-0 w-full">
             <div class="flex items-center justify-between flex-grow mr-4 -mb-4">
@@ -36,7 +36,7 @@
               </div>
               <div class="flex items-center transform scale-125">
                 <div class="mr-2">
-                  <%= link_to(t('.download'), customer_invoice_path(@invoice.customer, format: :pdf),
+                  <%= link_to(t('.download'), customer_invoice_path(invoice.customer, format: :pdf),
                 class: "px-3 py-2 text-xs md:text-sm shadow-md no-underline rounded bg-gray-500 text-white font-bold hover:text-white hover:bg-gray-400 focus:outline-none active:shadow-none") %>
                 </div>
                 <button class="w-20 px-2 py-2 text-xs normal-case md:w-24 md:text-sm btn btn-blue">

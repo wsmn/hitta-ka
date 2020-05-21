@@ -1,5 +1,5 @@
 <div class="flex flex-col justify-between w-full h-screen">
-  <%= render('pdf_header') %>
+  <%= render('invoices/prints/header', invoice: invoice) %>
   <main class="flex flex-wrap mt-2 mb-auto text-xs">
     <div class="flex flex-col w-2/3">
       <div class="flex w-48">
@@ -15,7 +15,7 @@
           <span class="text-left"><%= t('invoices.pdf.your_reference') %>:</span>
         </div>
         <div class="w-1/2 text-right ">
-          <span class="text-right"><%= @invoice.customer.name %></span>
+          <span class="text-right"><%= invoice.customer.name %></span>
         </div>
       </div>
       <div class="flex w-48 mt-4">
@@ -31,18 +31,18 @@
           <span class="text-left"><%= t('invoices.pdf.due_date') %>:</span>
         </div>
         <div class="w-1/2 text-right ">
-          <span class="text-right"><%= @invoice.due_date %></span>
+          <span class="text-right"><%= invoice.due_date %></span>
         </div>
       </div>
     </div>
     <div class="w-1/3 mt-8">
       <div class="float-right w-56">
-        <span class="text-left"><%= link_to(@invoice.customer.name, customer_path(@invoice.customer)) %></span>
+        <span class="text-left"><%= link_to(invoice.customer.name, customer_path(invoice.customer)) %></span>
         <div class="">
-          <span class="text-left"><%= @customer.street %></span>
+          <span class="text-left"><%= invoice.customer.street %></span>
         </div>
         <div class="">
-          <span class="text-left"><%= @customer.zip_code %> <%= @customer.city %></span>
+          <span class="text-left"><%= invoice.customer.zip_code %> <%= invoice.customer.city %></span>
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@
         <%= t('invoices.pdf.linetotal') %>
       </div>
     </div>
-    <% @invoice.tasks.each do |task| %>
+    <% invoice.tasks.each do |task| %>
       <div class="flex h-10 w-full py-3 <%= cycle('bg-white', 'bg-gray-200') %>">
         <div class="w-2/5 pl-10">
           <p class=""><%= task.title %></p>
@@ -83,7 +83,7 @@
             <span class="text-left"><%= t('invoices.pdf.subtotal') %>:</span>
           </div>
           <div class="w-1/2 text-right ">
-            <span class="font-medium text-right"><%= number_to_currency(@invoice.amount) %></span>
+            <span class="font-medium text-right"><%= number_to_currency(invoice.amount) %></span>
           </div>
         </div>
         <div class="flex w-full px-2 mt-6 ">
@@ -91,7 +91,7 @@
             <span class="text-left"><%= t('invoices.pdf.tax') %> (<%= t('invoices.pdf.25%') %>):</span>
           </div>
           <div class="w-1/2 text-right ">
-            <span class="font-medium text-right"><%= number_to_currency(@invoice.tax) %></span>
+            <span class="font-medium text-right"><%= number_to_currency(invoice.tax) %></span>
           </div>
         </div>
         <div class="flex w-full px-2 py-3 mt-6 bg-gray-200 " style="border-top: 2px solid #CE3917;">
@@ -99,13 +99,13 @@
             <span class="font-bold text-left"><%= t('invoices.pdf.total') %>:</span>
           </div>
           <div class="w-1/2 text-right ">
-            <span class="font-bold text-right"><%= number_to_currency(@invoice.total) %></span>
+            <span class="font-bold text-right"><%= number_to_currency(invoice.total) %></span>
           </div>
         </div>
       </div>
     </div>
   </main>
   <div class="">
-    <%= render('pdf_footer') %>
+    <%= render('invoices/prints/footer', invoice: invoice) %>
   </div>
 </div>
