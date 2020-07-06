@@ -253,7 +253,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (2.3.0)
-    solargraph (0.39.10)
+    solargraph (0.39.11)
       backport (~> 1.1)
       benchmark
       bundler (>= 1.17.2)
