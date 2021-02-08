@@ -266,7 +266,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (2.3.0)
-    solargraph (0.40.2)
+    solargraph (0.40.3)
       backport (~> 1.1)
       benchmark
       bundler (>= 1.17.2)
@@ -292,7 +292,7 @@ GEM
       rubocop-performance (= 1.9.2)
     textacular (5.4.0)
       activerecord (>= 5.0, < 6.2)
-    thor (1.0.1)
+    thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
     turbolinks (5.2.1)
