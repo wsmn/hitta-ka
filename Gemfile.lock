@@ -142,7 +142,7 @@ GEM
     jaro_winkler (1.5.4)
     jmespath (1.4.0)
     json (2.3.0)
-    kramdown (2.3.0)
+    kramdown (2.3.1)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
