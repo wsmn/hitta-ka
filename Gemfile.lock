@@ -139,7 +139,7 @@ GEM
       nokogiri (~> 1.0)
     honeybadger (4.10.0)
     htmlbeautifier (1.4.1)
-    i18n (1.9.0)
+    i18n (1.9.1)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
     jmespath (1.5.0)
@@ -169,7 +169,7 @@ GEM
     nokogiri (1.13.1)
       mini_portile2 (~> 2.7.0)
       racc (~> 1.4)
-    pagy (5.9.1)
+    pagy (5.9.2)
       activesupport
     parallel (1.21.0)
     parser (3.1.0.0)
@@ -321,7 +321,7 @@ GEM
       nokogiri (~> 1.8)
     yard (0.9.27)
       webrick (~> 1.7.0)
-    zeitwerk (2.5.3)
+    zeitwerk (2.5.4)
 
 PLATFORMS
   ruby
