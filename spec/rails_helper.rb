@@ -6,6 +6,7 @@ require File.expand_path("../../config/environment", __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require "rspec/rails"
 # Add additional requires below this line. Rails is not loaded until this point!
+require "webdrivers"
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -46,4 +47,5 @@ RSpec.configure do |config|
   config.include Rails.application.routes.url_helpers
 
   config.include(RequestMacro, type: :request)
+  config.include(RequestMacro, type: :system)
 end

@@ -4,10 +4,10 @@ on: [push]
 jobs:
   tests:
     name: Tests
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:11
+        image: postgres:12
         env:
           POSTGRES_USER: postgres
           POSTGRES_DB: hitta_ka_test
@@ -42,4 +42,12 @@ jobs:
           bin/rails db:setup
 
       - name: Run tests
-        run: bundle exec rspec --profile 10 --format progress
+        run: bundle exec rspec --profile 10 --format RspecJunitFormatter --out rspec.xml
+
+      - name: Report to Blinka
+        if: always()
+        env:
+          BLINKA_TEAM_ID: 53d4fa00-4117-4991-913c-50dac0f5dbb0
+          BLINKA_TEAM_SECRET: bbef368e88030714789270143ad9e82826861e565bc4a31235780d5ac401d67ab31675c8
+          BLINKA_REPOSITORY: "wsmn/hitta-ka"
+        run: bundle exec blinka_reporter --tap --blinka --path ./rspec.xml
