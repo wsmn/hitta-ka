@@ -10,7 +10,7 @@ RSpec.describe(Customer, type: :model) do
   end
 
   it("gives ? if no name present") do
-    expect(Customer.new(name: "  ").initials).to eq("?")
+    expect(Customer.new(name: "  ").initials).to eq("what")
   end
 
   it("gets custom task rate as float") do

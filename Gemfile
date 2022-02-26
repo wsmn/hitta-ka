@@ -28,10 +28,13 @@ gem "webpacker"
 
 group :development, :test do
   gem "bullet"
+  gem "blinka-reporter", "~> 0.6.0"
   gem "capybara", "~> 3.36"
   gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "rspec-rails"
+  gem "rspec_junit_formatter"
+  gem "webdrivers", require: false
   gem "selenium-webdriver"
 end
 
