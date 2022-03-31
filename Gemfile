@@ -14,7 +14,7 @@ gem "clearance" # Authentication
 gem "font-awesome-sass"
 gem "geocoder"
 gem "grover"
-gem "honeybadger", "~> 4.11"
+gem "honeybadger", "~> 4.12"
 gem "mini_magick"
 gem "pagy"
 gem "pg"
