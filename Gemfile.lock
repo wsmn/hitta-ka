@@ -134,7 +134,7 @@ GEM
     geocoder (1.8.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    grover (1.1.1)
+    grover (1.1.2)
       combine_pdf (~> 1.0)
       nokogiri (~> 1.0)
     honeybadger (4.12.2)
