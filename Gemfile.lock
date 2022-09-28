@@ -218,7 +218,7 @@ GEM
       thor (>= 0.20.3, < 2.0)
     rainbow (3.1.1)
     rake (13.0.6)
-    regexp_parser (2.5.0)
+    regexp_parser (2.6.0)
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
@@ -271,7 +271,7 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
-    solargraph (0.47.0)
+    solargraph (0.47.1)
       backport (~> 1.2)
       benchmark
       bundler (>= 1.17.2)
