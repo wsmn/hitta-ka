@@ -141,7 +141,7 @@ GEM
     grover (1.1.2)
       combine_pdf (~> 1.0)
       nokogiri (~> 1.0)
-    honeybadger (5.0.0)
+    honeybadger (5.0.1)
     htmlbeautifier (1.4.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
