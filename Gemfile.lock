@@ -84,7 +84,7 @@ GEM
       aws-eventstream (~> 1, >= 1.0.2)
     backport (1.2.0)
     bcrypt (3.1.18)
-    benchmark (0.2.0)
+    benchmark (0.2.1)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -274,7 +274,7 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
-    solargraph (0.47.2)
+    solargraph (0.48.0)
       backport (~> 1.2)
       benchmark
       bundler (>= 1.17.2)
