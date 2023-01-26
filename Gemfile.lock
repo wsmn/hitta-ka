@@ -85,7 +85,7 @@ GEM
     backport (1.2.0)
     bcrypt (3.1.18)
     benchmark (0.2.1)
-    bootsnap (1.15.0)
+    bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
     bullet (7.0.7)
