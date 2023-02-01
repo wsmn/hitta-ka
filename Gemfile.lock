@@ -140,7 +140,7 @@ GEM
     grover (1.1.3)
       combine_pdf (~> 1.0)
       nokogiri (~> 1.0)
-    honeybadger (5.0.2)
+    honeybadger (5.1.0)
     htmlbeautifier (1.4.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -342,7 +342,7 @@ DEPENDENCIES
   font-awesome-sass
   geocoder
   grover
-  honeybadger (~> 5.0)
+  honeybadger (~> 5.1)
   htmlbeautifier
   letter_opener
   mini_magick
